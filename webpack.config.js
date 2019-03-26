@@ -6,15 +6,25 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     filename: 'index.html',
     inject: 'body'
 });
-
+console.log(__dirname)
 module.exports = {
-  entry: __dirname + './app/index.js',
+  entry: __dirname + '/app/index.js',
   module: {
-    loaders:[
+    rules:[
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
       }
     ]
   },
