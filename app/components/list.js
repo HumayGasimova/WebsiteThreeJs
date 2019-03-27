@@ -10,13 +10,9 @@ const mapStateToProps = state => {
 };
 
 const ConnectedList = ({articles}) => (
-    <ul>
-        {articles.map(el => (
-            <li key={el.id}>
-                {el.title}
-            </li>
-        ))}
-    </ul>
+    <div>
+       
+    </div>
 );
 
 const List = connect(mapStateToProps)(ConnectedList);
