@@ -1,13 +1,20 @@
-import React,{
-    Component
-} from 'react'
+import React from 'react';
+import List from "./list";
+import Form from "./form";
 
-class App extends Component {
-    render(){
-        return(
-            <h1>hhhh</h1>
-        )
-    }
+const App = () => {
+   return( 
+   <div>
+        <div>
+            <h2>Articles</h2>
+            <List/>
+        </div>
+        <div>
+            <h2>Add a new article</h2>
+            <Form/>
+        </div>
+    </div>
+   );
 };
 
 export default App
