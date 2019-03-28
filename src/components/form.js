@@ -4,10 +4,9 @@ import React,{
 import {
     connect
 } from 'react-redux';
-import uuidv1 from 'uuid';
 import {
     addArticle
-} from '../../src/js/actions/index';
+} from '../actions/index';
 
 function mapDispatchToProps(dispatch){
     return{
