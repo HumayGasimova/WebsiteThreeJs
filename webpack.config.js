@@ -25,7 +25,13 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|gif|jpg|jpeg|svg|ico)$/,
+        use: {
+          loader: '[path][name].[ext]'
+        }
+      },
     ]
   },
   output: {
