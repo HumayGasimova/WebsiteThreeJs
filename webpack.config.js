@@ -33,7 +33,8 @@ module.exports = {
     path: __dirname + '/build'
   },
   devServer: {
-    contentBase: './build'
+    contentBase: './build',
+    historyApiFallback: true
   },
   plugins: [HTMLWebpackPluginConfig]
 };
