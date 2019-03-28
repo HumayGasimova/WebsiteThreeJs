@@ -22,15 +22,13 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
+            loader: 'html-loader'
           }
         ]
       },
       {
         test: /\.(png|gif|jpg|jpeg|svg|ico)$/,
-        use: {
-          loader: '[path][name].[ext]'
-        }
+        use:  'file-loader?name=[name].[ext]'
       },
     ]
   },
@@ -40,6 +38,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './build',
+    port: 8080,
     historyApiFallback: true
   },
   plugins: [HTMLWebpackPluginConfig]

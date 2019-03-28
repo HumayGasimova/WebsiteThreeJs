@@ -14,6 +14,7 @@ import {
     ConnectedRouter
 } from 'connected-react-router';
 import App from './components/app';
+import Picture from './Image/Pic.jpg';
 
 const store = configureStore()
 ReactDOM.render(
@@ -23,7 +24,7 @@ ReactDOM.render(
                     <Route 
                         exact 
                         path="/MatchA"
-                        render={()=>(<div>Match1</div>)}/>
+                        render={()=>(<div><img src={Picture}/></div>)}/>
                     <Route 
                         exact 
                         path="/MatchB"
