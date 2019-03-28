@@ -7,6 +7,7 @@ import {
 import {
     addArticle
 } from '../actions/index';
+import './form.scss';
 
 function mapDispatchToProps(dispatch){
     return{
@@ -20,7 +21,9 @@ class ConnectedForm extends Component {
     
     render(){
         return(
-         null
+        <div className="ss">
+            <h2>{"Humay"}</h2>
+        </div>
         );
     }
 }

@@ -20,18 +20,20 @@ const store = configureStore()
 ReactDOM.render(
     <Provider store={store}>
        <ConnectedRouter history={history}>
-                <Switch>
-                    <Route 
-                        exact 
-                        path="/MatchA"
-                        render={()=>(<div><img src={Picture}/></div>)}/>
-                    <Route 
-                        exact 
-                        path="/MatchB"
-                        render={()=>(<div>Match2</div>)}/>
-                    <Route 
-                        render={()=>(<div>Match</div>)}/>
-                </Switch>
+               <App>
+                    <Switch>
+                        <Route 
+                            exact 
+                            path="/MatchA"
+                            render={()=>(<div><img src={Picture}/></div>)}/>
+                        <Route 
+                            exact 
+                            path="/MatchB"
+                            render={()=>(<div>Match2</div>)}/>
+                        <Route 
+                            render={()=>(<div>Match</div>)}/>
+                    </Switch>
+                </App>    
        </ConnectedRouter>
     </Provider>,
    document.getElementById('app')
