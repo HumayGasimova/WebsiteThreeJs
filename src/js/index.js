@@ -9,7 +9,7 @@ import configureStore,{
 import {
     Route,
     Switch
-} from 'react-router';
+} from 'react-router-dom';
 import {
     ConnectedRouter
 } from 'connected-react-router';
@@ -19,16 +19,18 @@ const store = configureStore()
 ReactDOM.render(
     <Provider store={store}>
        <ConnectedRouter history={history}>
-            <App>
                 <Switch>
                     <Route 
                         exact 
-                        path="/"
-                        render={()=>(<div>Match</div>)}/>
+                        path="/MatchA"
+                        render={()=>(<div>Match1</div>)}/>
+                    <Route 
+                        exact 
+                        path="/MatchB"
+                        render={()=>(<div>Match2</div>)}/>
                     <Route 
                         render={()=>(<div>Match</div>)}/>
                 </Switch>
-            </App>
        </ConnectedRouter>
     </Provider>,
    document.getElementById('app')
