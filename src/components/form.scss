@@ -1,5 +1,30 @@
-.ss {
-    &.aa {
-        background-color: red;
+.main-box {
+    
+}
+.outer-box{
+    border: 2px solid black;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    box-shadow: 2px 2px rgb(189, 186, 186);
+    .innerBox {
+        border: 2px solid black;
+        width: 100px;
+        height: 100px;
     }
 }
+.players{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    width: 312px;
+    .player {
+        border: 2px solid black;
+        width: 100px;
+        height: 35px;
+        border-radius: 10px;
+        box-shadow: 2px 2px rgb(189, 186, 186);
+    }
+}
+

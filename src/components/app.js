@@ -8,8 +8,7 @@ import './app.scss'
 export class App extends Component {
    render(){
       return(
-         <div className="abc">
-               <h2>{"JJnJ"}</h2>
+         <div>
                <Form/>
          </div>
       );
