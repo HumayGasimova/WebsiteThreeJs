@@ -1,0 +1,20 @@
+
+.outerBox {
+    width: 312px;
+    height: 312px;
+    flex-wrap: wrap;
+    display: flex;
+    border: 1.5px solid black;
+   
+}
+.innerBox {
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    &.firstPlayer {
+        background-color: red
+    }
+}
+
+
+
