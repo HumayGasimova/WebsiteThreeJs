@@ -1,11 +1,11 @@
 import React,{
    Component
 } from 'react';
-import Box from "./box";
+import Box from "./Box/box";
 import './app.scss'
-import './box.scss';
-import MainBox from './mainBox';
-import ChoosePlayer from './choosePlayer';
+import './Box/box.scss';
+import MainBox from './MainBox/mainBox'
+import ChoosePlayer from './ChoosePlayer/choosePlayer';
 
 export class App extends Component {
 

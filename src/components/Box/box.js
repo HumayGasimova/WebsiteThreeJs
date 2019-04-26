@@ -6,7 +6,7 @@ import {
 } from 'react-redux';
 import {
     addArticle
-} from '../actions/index';
+} from '../../actions/index';
 import './box.scss';
 
 function mapDispatchToProps(dispatch){
