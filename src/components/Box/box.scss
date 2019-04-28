@@ -1,20 +1,56 @@
-
 .outerBox {
     width: 312px;
     height: 312px;
     flex-wrap: wrap;
     display: flex;
-    border: 1.5px solid black;
    
 }
-.innerBox {
-    border: 2px solid black;
-    width: 100px;
-    height: 100px;
-    &.firstPlayer {
-        background-color: red
-    }
+
+.number0 {
+    border-right: 9px solid#489E93;
+    border-bottom: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
 }
-
-
-
+.number1 {
+    border-right: 9px solid#489E93;
+    border-bottom: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
+}
+.number2 {
+    border-bottom: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
+}
+.number3 {
+    border-right: 9px solid#489E93;
+    border-bottom: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
+}
+.number4 {
+    border-right: 9px solid#489E93;
+    border-bottom: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
+}
+.number5 {
+    border-bottom: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
+}
+.number6 {
+    border-right: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
+}
+.number7 {
+    border-right: 9px solid#489E93;
+    width: 98px;
+    height: 98px;
+}
+.number8 {
+    width: 98px;
+    height: 98px;
+}

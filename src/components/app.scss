@@ -1,5 +1,65 @@
-.abc {
-    &> h2 {
-        background-color: green;
+.background {
+    border: 1px solid rgb(221, 214, 214);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .mainBorder{
+        width: 310px;
+        height: 310px;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;;
+        
+        .emptyBorderVertical {
+            width: 97px;
+        }
+        .borderVertical {
+            border:2px solid#489E93;
+            height: 270px;
+            width: 5px;
+            background-color: #489E93; 
+           
+        }
+        .mainBorderHorizontal { 
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .emptyBorderHorizontal {
+                height: 97px;
+            }
+            .borderHorizontal {
+                border: 2px solid#489E93;
+                height: 5px;
+                width: 270px;
+                background-color: #489E93; 
+            }
+        }
+       
     }
+    .main{
+        background-color:#14bdac;
+        width: 100%;
+        .mainBox {
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .text {
+        margin-bottom: 10px;
+        color: rgb(110, 110, 110);
+    }
+}
+
+.textReset {
+    color: #58BAAD;
 }

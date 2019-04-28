@@ -1,0 +1,39 @@
+.x {
+    width: 98px;
+    height: 98px;
+    position: relative;
+    .diagonalFirst {
+        border: 5px solid #665757;
+        width: 73.5px;
+        position: absolute;
+        transform: rotateZ(45deg);
+        top: 45px;
+        right: 7px;
+        
+    }
+    .diagonalSecond {
+        border: 5px solid #665757;
+        width: 73.5px;
+        position: absolute;
+        transform: rotateZ(-45deg);
+        top: 45px;
+        right: 7px;
+    }
+}
+
+.o {
+    width: 98px;
+    height: 98px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .circle{ 
+        border: 10px solid #F1EBD5;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        
+        // border-radius: 50%;
+    }
+}

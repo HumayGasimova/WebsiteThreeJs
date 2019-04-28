@@ -1,8 +1,7 @@
 import React,{
     Component
 } from 'react';
-import '../Box/box.scss';
-
+import './mainBox.scss';
 class MainBox extends Component {
     constructor (){
         super();

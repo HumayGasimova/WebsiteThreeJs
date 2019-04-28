@@ -1,0 +1,18 @@
+.buttons {
+    display: flex;
+    padding: 7px;
+    .button{
+        border: 1px solid white;
+        width: 187px;
+        height: 37px;
+        border-radius: 7px;
+        margin: 3px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        box-shadow: 0px 1px 1px 0px #ccc;
+        &.chosen {
+            box-shadow: 0px 2px 0px 0px #14bdac;
+        }
+    }
+}

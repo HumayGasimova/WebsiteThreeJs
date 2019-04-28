@@ -18,19 +18,11 @@ class Box extends Component {
     constructor (){
         super();
     }
-
-// renderCross = () => {
-//     if(this.props.clicked){
-//         return (
-//             <div>{"X"}</div>
-//         )
-//     }
-   
-// }
+    
     renderInnerBoxes = () => {
         return(
             <div 
-                className={this.props.firstPlayer ? "innerBox firstPlayer" : "innerBox"}
+                className={this.props.number}
                 onClick={this.props.onClick}
             >
               {this.props.children}

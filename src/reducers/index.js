@@ -1,6 +1,6 @@
 import {
     TEST_TYPE
-} from '../constants/action-types';
+} from '../components/Other/constants/action-types';
 import {
     combineReducers
 } from 'redux';
