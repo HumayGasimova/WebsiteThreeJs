@@ -113,16 +113,16 @@ export class App extends Component {
       }
    }
 
-   renderChild = (i) => {
-      let state = this.state.mainBox;
-         if(state[i] === "X"){
+   renderChild = (el) => {
+      // let state = this.state.mainBox;
+         if(el === "X"){
             return(
                <div>
                      <X/>
                </div>
             )
          }else{
-            if(state[i] === "O")
+            if(el === "O")
             return(
                <div>
                   <O/>
@@ -146,7 +146,7 @@ export class App extends Component {
                               player={this.state.firstPlayer}
                               number={"number" + i}
                            >
-                             {this.renderChild(i)}
+                             {this.renderChild(el)}
                            </Box>
                         )
                      })}
@@ -198,11 +198,7 @@ export class App extends Component {
                </div>
             </div>
             {this.renderReset()}
-            <O/>
-            <X/>
          </div>
-
-
       );
    }
 }
