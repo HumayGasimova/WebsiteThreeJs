@@ -1,0 +1,46 @@
+.horizontalLineWhite {
+    border: 5px solid #F1EBD5;
+    width: 274px
+}
+.horizontalLineBrown {
+    border: 5px solid #665757;
+    width: 274px
+}
+
+.verticalLineWhite {
+    border: 5px solid #F1EBD5;
+    width: 274px;
+    transform: rotateZ(90deg);
+}
+
+.verticalLineBrown {
+    border: 5px solid #665757;
+    width: 274px; 
+    transform: rotateZ(90deg);
+}
+.diagonalLineLeftWhite {
+    border: 5px solid #F1EBD5;
+    width: 400px;
+    transform: rotateZ(45deg);
+    transition: width 2s;
+}
+
+.diagonalLineLeftBrown {
+    border: 5px solid #665757;
+    width: 400px; 
+    transform: rotateZ(45deg);
+    transition: width 2s;
+}
+.diagonalLineRightWhite {
+    border: 5px solid #F1EBD5;
+    width: 400px;
+    transform: rotateZ(-45deg);
+    transition: width 2s;
+}
+
+.diagonalLineRightBrown {
+    border: 5px solid #665757;
+    width: 400px; 
+    transform: rotateZ(-45deg);
+    transition: width 1000s;
+}

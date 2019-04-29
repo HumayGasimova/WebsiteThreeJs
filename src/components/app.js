@@ -9,6 +9,10 @@ import ChoosePlayer from './ChoosePlayer/choosePlayer';
 import SelectPlayer from './SelectPlayer/SelectPlayer';
 import X from './XO/x';
 import O from './XO/o';
+import VerticalLine from './WinnersLine/verticalLine';
+import HorizontalLine from './WinnersLine/horizontalLine';
+import DiagonalLineLeft from './WinnersLine/diagonalLineLeft';
+import DiagonalLineRight from './WinnersLine/diagonalLineRight';
 
 export class App extends Component {
 
@@ -17,7 +21,8 @@ export class App extends Component {
                '','','',
                '','',''],
       firstPlayer: null,
-      winner: null  
+      winner: null ,
+      winnerLine: [] 
    } 
 
    handleOnClick = (i) => {
@@ -32,6 +37,49 @@ export class App extends Component {
             this.checkWinner();
          }
       }
+   }
+
+   renderWinnerLine = () => {
+      let line = this.state.winnerLine
+      if(line[0] === "0" && line[1] === "1" && line[2] === "2"||
+         line[0] === "3" && line[1] === "4" && line[2] === "5"||
+         line[0] === "6" && line[1] === "7" && line[2] === "8"){
+            return (
+               <div className="">
+                  <HorizontalLine/>
+               </div>
+            )
+         }else{
+            if(line[0] === "0" && line[1] === "3" && line[2] === "6"||
+               line[0] === "1" && line[1] === "4" && line[2] === "7"||
+               line[0] === "2" && line[1] === "5" && line[2] === "8"){
+                  return (
+                     <div className="">
+                        <VerticalLine/>
+                     </div>
+                  )
+            }else{
+               if(line[0] === "0" && line[1] === "4" && line[2] === "8"){
+                     return (
+                        <div className="DiagonalLineLeft">
+                           <DiagonalLineLeft
+                              player={this.state.winner === "X"}
+                           />
+                        </div>
+                     )
+               }else{
+                  if(line[0] === "2" && line[1] === "4" && line[2] === "6"){
+                     return (
+                        <div className="DiagonalLineRight">
+                           <DiagonalLineRight
+                              player={this.state.winner === "X"}
+                           />
+                        </div>
+                     )
+                  }
+               }
+            }
+         }
    }
 
    checkWinner = () => {
@@ -50,7 +98,8 @@ export class App extends Component {
       let list = winnerList[i];
      if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
          this.setState({
-            winner: this.state.firstPlayer
+            winner: this.state.firstPlayer,
+            winnerLine: list
          })
       }
       })
@@ -86,35 +135,22 @@ export class App extends Component {
    renderPlayerForm = () => {
       if(this.state.firstPlayer === null){
          return (
-            // <ChoosePlayer
-            //    player={(e)=>this.setPlayer(e)}
-            // />
             <SelectPlayer
                select1Player={this.select1Player}
                select2Player={this.select2Player}
             />
          )
       }else{
-         if(!this.state.winner){
-            return(
-             
-               <SelectPlayer
-                  selected1Player={this.state.firstPlayer==="X"}
-                  selected2Player={this.state.firstPlayer==="O"}
-               />
-               )
-         }else{
-            return(
-               <div>
-                  <h3>The winner is {this.state.winner}</h3>
-               </div>
-            )
-         }
+         return(
+            <SelectPlayer
+               selected1Player={this.state.firstPlayer==="X"}
+               selected2Player={this.state.firstPlayer==="O"}
+            />
+         )
       }
    }
 
    renderChild = (el) => {
-      // let state = this.state.mainBox;
          if(el === "X"){
             return(
                <div>
@@ -123,11 +159,11 @@ export class App extends Component {
             )
          }else{
             if(el === "O")
-            return(
-               <div>
-                  <O/>
-               </div>
-            )
+               return(
+                  <div>
+                     <O/>
+                  </div>
+               )
          }   
    }
 
@@ -171,21 +207,30 @@ export class App extends Component {
             </div>
          )
       }else{
-         if(this.state.firstPlayer === "X"){
+         if(this.state.firstPlayer === "X" && !this.state.winner){
             return(
                <div className="text">
                   X Turn
                </div>
             )
          }else{
-            return(
-               <div className="text">
-                  O Turn
-               </div>
-            )
+            if(this.state.firstPlayer === "O" && !this.state.winner){
+               return(
+                  <div className="text">
+                     O Turn
+                  </div>
+               )
+            }else{
+               return(
+                  <div className="text">
+                     Game Over
+                  </div>
+               )
+            }
          }
       }
    }
+   
 
    render(){
       return(
@@ -198,6 +243,7 @@ export class App extends Component {
                </div>
             </div>
             {this.renderReset()}
+            {this.renderWinnerLine()}
          </div>
       );
    }
