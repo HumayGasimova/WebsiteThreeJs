@@ -14,6 +14,4 @@ class O extends Component {
     }
 }
 
-
-
 export default O;

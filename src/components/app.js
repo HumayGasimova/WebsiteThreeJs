@@ -117,7 +117,8 @@ export class App extends Component {
                    '','','',
                   '','',''],
          firstPlayer: null,
-         winner: null
+         winner: null,
+         winnerLine: [] 
       })
    }
 
@@ -242,8 +243,8 @@ export class App extends Component {
                   {this.renderMainBox()}
                </div>
             </div>
-            {this.renderReset()}
             {this.renderWinnerLine()}
+            {this.renderReset()}
          </div>
       );
    }

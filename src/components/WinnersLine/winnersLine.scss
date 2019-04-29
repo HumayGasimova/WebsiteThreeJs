@@ -19,28 +19,53 @@
     transform: rotateZ(90deg);
 }
 .diagonalLineLeftWhite {
-    border: 5px solid #F1EBD5;
-    width: 400px;
-    transform: rotateZ(45deg);
-    transition: width 2s;
+    // border: 5px solid #F1EBD5;
+    // width: 400px;
+    transform: rotateZ(90deg);
+    // transition: width 2s;
+    stroke: #F1EBD5;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
 
 .diagonalLineLeftBrown {
-    border: 5px solid #665757;
-    width: 400px; 
-    transform: rotateZ(45deg);
-    transition: width 2s;
+    // border: 5px solid #665757;
+    // width: 400px; 
+    transform: rotateZ(90deg);
+    // transition: width 2s;
+    stroke: #665757;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
 .diagonalLineRightWhite {
-    border: 5px solid #F1EBD5;
-    width: 400px;
-    transform: rotateZ(-45deg);
-    transition: width 2s;
+    stroke: #F1EBD5;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
 
 .diagonalLineRightBrown {
-    border: 5px solid #665757;
-    width: 400px; 
-    transform: rotateZ(-45deg);
-    transition: width 1000s;
+    stroke: #665757;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
+@keyframes css {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
