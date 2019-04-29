@@ -10,9 +10,9 @@
         display: flex;
         align-items: center;
         padding-left: 10px;
-        box-shadow: 0px 1px 1px 0px #ccc;
+        box-shadow: 0px 1px 1px 0px #ccc, 0px 0px 0px 0px #ccc;
         &.chosen {
-            box-shadow: 0px 2px 0px 0px #14bdac;
+            box-shadow: 0px 2px 0px 0px #14bdac, 0px 4px 8px 0px #ccc;
         }
     }
 }
