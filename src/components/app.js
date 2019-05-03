@@ -15,15 +15,36 @@ import DiagonalLineLeft from './WinnersLine/diagonalLineLeft';
 import DiagonalLineRight from './WinnersLine/diagonalLineRight';
 
 export class App extends Component {
-
-   state = {
-      mainBox:['','','',
-               '','','',
-               '','',''],
-      firstPlayer: null,
-      winner: null ,
-      winnerLine: [] 
-   } 
+   constructor(props){
+      super(props);
+      this.state = {
+         mainBox:['','','',
+                  '','','',
+                  '','',''],
+         firstPlayer: null,
+         winner: null,
+         winnerLine: [],
+         coordinateX:['','','',
+                     '','','',
+                     '','',''],
+         coordinateY:['','','',
+                     '','','',
+                     '','','']
+      } 
+   }
+  
+   centerXY = (i) => {
+      return (x,y) => {
+         let coordinateX = this.state.coordinateX;
+         let coordinateY = this.state.coordinateY;
+         coordinateX[i] = Math.round(x);
+         coordinateY[i] = Math.round(y);
+                  this.setState({
+                     coordinateX: coordinateX,
+                     coordinateY:coordinateY
+                  })
+               }
+   }
 
    handleOnClick = (i) => {
       if(this.state.firstPlayer && !this.state.winner){
@@ -41,12 +62,17 @@ export class App extends Component {
 
    renderWinnerLine = () => {
       let line = this.state.winnerLine
+      let coordinateX = this.state.coordinateX;
+      let coordinateY = this.state.coordinateY;
       if(line[0] === "0" && line[1] === "1" && line[2] === "2"||
          line[0] === "3" && line[1] === "4" && line[2] === "5"||
          line[0] === "6" && line[1] === "7" && line[2] === "8"){
+
             return (
                <div className="">
-                  <HorizontalLine/>
+                  <HorizontalLine
+                     player={this.state.winner === "X"}
+                  />
                </div>
             )
          }else{
@@ -55,7 +81,9 @@ export class App extends Component {
                line[0] === "2" && line[1] === "5" && line[2] === "8"){
                   return (
                      <div className="">
-                        <VerticalLine/>
+                        <VerticalLine
+                           player={this.state.winner === "X"}
+                        />
                      </div>
                   )
             }else{
@@ -64,6 +92,10 @@ export class App extends Component {
                         <div className="DiagonalLineLeft">
                            <DiagonalLineLeft
                               player={this.state.winner === "X"}
+                              coordinateX1={coordinateX[0]}
+                              coordinateX2={coordinateX[8]}
+                              coordinateY1={coordinateY[0]}
+                              coordinateY2={coordinateY[8]}
                            />
                         </div>
                      )
@@ -73,6 +105,10 @@ export class App extends Component {
                         <div className="DiagonalLineRight">
                            <DiagonalLineRight
                               player={this.state.winner === "X"}
+                              coordinateX1={coordinateX[2]}
+                              coordinateX2={coordinateX[6]}
+                              coordinateY1={coordinateY[2]}
+                              coordinateY2={coordinateY[6]}
                            />
                         </div>
                      )
@@ -168,6 +204,7 @@ export class App extends Component {
          }   
    }
 
+
    renderMainBox = () => {
       return(
             <MainBox
@@ -176,15 +213,18 @@ export class App extends Component {
                <div className='outerBox'>
                      {this.state.mainBox.map((el,i)=>{
                         return (
-                           <Box
-                              key={i}
-                              onClick={() => {this.handleOnClick(i)}}
-                              clicked={this.state.clicked}
-                              player={this.state.firstPlayer}
-                              number={"number" + i}
-                           >
-                             {this.renderChild(el)}
-                           </Box>
+                              <Box
+                                 key={i}
+                                 onClick={() => {this.handleOnClick(i)}}
+                                 clicked={this.state.clicked}
+                                 player={this.state.firstPlayer}
+                                 number={"number" + i}
+                                 centerXY={this.centerXY(i)}
+                                 // winnerLine={this.state.winnerLine}
+                                 // winner={this.state.winner}
+                              >
+                              {this.renderChild(el)}
+                              </Box>
                         )
                      })}
                </div>
@@ -243,7 +283,7 @@ export class App extends Component {
                   {this.renderMainBox()}
                </div>
             </div>
-            {this.renderWinnerLine()}
+             {this.renderWinnerLine()}
             {this.renderReset()}
          </div>
       );

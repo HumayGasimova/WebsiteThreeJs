@@ -9,10 +9,9 @@ class diagonalLineRight extends Component {
         return(
             // <div className={this.props.player ? "diagonalLineRightBrown" : "diagonalLineRightWhite"}/>
             <svg  
-                class={this.props.player ? "diagonalLineRightBrown" : "diagonalLineRightWhite"} 
-                width="100" 
-                height="100">
-                <line x1="293" y1="5" x2="5" y2="293"/>
+                className={this.props.player ? "diagonalLineRightBrown" : "diagonalLineRightWhite"} 
+                viewBox="330 155 303 303" >
+                <line x1={this.props.coordinateX1} y1={this.props.coordinateY1} x2={this.props.coordinateX2} y2={this.props.coordinateY2}/>
             </svg>
         );
     }

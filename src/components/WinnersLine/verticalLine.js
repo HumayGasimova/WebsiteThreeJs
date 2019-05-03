@@ -7,7 +7,7 @@ class verticalLine extends Component {
 
     render(){
         return(
-            <div className="verticalLineWhite"/>
+            <div className={this.props.player ? "verticalLineBrown" : "verticalLineWhite"}/>
         );
     }
 }
