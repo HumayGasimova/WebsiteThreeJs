@@ -1,22 +1,40 @@
 .horizontalLineWhite {
-    border: 5px solid #F1EBD5;
-    width: 274px
+    stroke: #F1EBD5;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
 .horizontalLineBrown {
-    border: 5px solid #665757;
-    width: 274px
+    stroke: #665757;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
 
 .verticalLineWhite {
-    border: 5px solid #F1EBD5;
-    width: 274px;
-    transform: rotateZ(90deg);
+    stroke: #F1EBD5;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
 
 .verticalLineBrown {
-    border: 5px solid #665757;
-    width: 274px; 
-    transform: rotateZ(90deg);
+    stroke: #665757;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: css 5s linear forwards;
+    width: 303px; 
+    height: 303px;
 }
 .diagonalLineLeftWhite {
     // border: 5px solid #F1EBD5;

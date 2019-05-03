@@ -69,9 +69,13 @@ export class App extends Component {
          line[0] === "6" && line[1] === "7" && line[2] === "8"){
 
             return (
-               <div className="">
+               <div className="winnerLine">
                   <HorizontalLine
                      player={this.state.winner === "X"}
+                     coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "3" ? coordinateX[3]: coordinateX[6])}
+                     coordinateX2={line[2] === "2" ? coordinateX[2]:(line[2] === "5" ? coordinateX[5]: coordinateX[8])}
+                     coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "3" ? coordinateY[3]: coordinateY[6])}
+                     coordinateY2={line[2] === "2" ? coordinateY[2]:(line[2] === "5" ? coordinateY[5]: coordinateY[8])}
                   />
                </div>
             )
@@ -80,16 +84,20 @@ export class App extends Component {
                line[0] === "1" && line[1] === "4" && line[2] === "7"||
                line[0] === "2" && line[1] === "5" && line[2] === "8"){
                   return (
-                     <div className="">
+                     <div className="winnerLine">
                         <VerticalLine
                            player={this.state.winner === "X"}
+                           coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "1" ? coordinateX[1]: coordinateX[2])}
+                           coordinateX2={line[2] === "6" ? coordinateX[6]:(line[2] === "7" ? coordinateX[7]: coordinateX[8])}
+                           coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "1" ? coordinateY[1]: coordinateY[2])}
+                           coordinateY2={line[2] === "6" ? coordinateY[6]:(line[2] === "7" ? coordinateY[7]: coordinateY[8])}
                         />
                      </div>
                   )
             }else{
                if(line[0] === "0" && line[1] === "4" && line[2] === "8"){
                      return (
-                        <div className="DiagonalLineLeft">
+                        <div className="winnerLine">
                            <DiagonalLineLeft
                               player={this.state.winner === "X"}
                               coordinateX1={coordinateX[0]}
@@ -102,7 +110,7 @@ export class App extends Component {
                }else{
                   if(line[0] === "2" && line[1] === "4" && line[2] === "6"){
                      return (
-                        <div className="DiagonalLineRight">
+                        <div className="winnerLine">
                            <DiagonalLineRight
                               player={this.state.winner === "X"}
                               coordinateX1={coordinateX[2]}
