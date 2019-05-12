@@ -67,7 +67,6 @@ export class App extends Component {
       if(line[0] === "0" && line[1] === "1" && line[2] === "2"||
          line[0] === "3" && line[1] === "4" && line[2] === "5"||
          line[0] === "6" && line[1] === "7" && line[2] === "8"){
-
             return (
                <div className="winnerLine">
                   <HorizontalLine
@@ -96,6 +95,7 @@ export class App extends Component {
                   )
             }else{
                if(line[0] === "0" && line[1] === "4" && line[2] === "8"){
+                  console.log(coordinateX[0],coordinateY[0])
                      return (
                         <div className="winnerLine">
                            <DiagonalLineLeft

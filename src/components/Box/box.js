@@ -25,7 +25,9 @@ class Box extends Component {
         this.select = React.createRef();
      }
 
-    componentDidMount = () => {
+
+
+    evaluateCenter = () => {
         const rect = this.select.current.getBoundingClientRect();
         const width = rect.width;
         const height = rect.height;
@@ -34,6 +36,13 @@ class Box extends Component {
         const centerX = left + width/2;
         const centerY = top + height/2;
         this.props.centerXY(centerX, centerY)
+    }
+   
+    componentDidMount = () => {
+        
+       this.evaluateCenter()
+        window.addEventListener('resize', this.evaluateCenter);
+
     };
 
     renderInnerBoxes = () => {
