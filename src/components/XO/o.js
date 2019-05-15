@@ -7,8 +7,13 @@ class O extends Component {
 
     render(){
         return(
-            <svg width="150" height="160" xmlns="http://www.w3.org/2000/svg">
-                <circle className="circle" r="35" cy="50" cx="50" strokeWidth="10" stroke="#F1EBD5" fill="none"/>
+            <svg 
+                width={this.props.width} 
+                height={this.props.height} 
+                xmlns="http://www.w3.org/2000/svg"
+                // viewBox="0 0 303 303" 
+                >
+                <circle className="circle" r={this.props.radius} cy={this.props.cy} cx={this.props.cx} strokeWidth={this.props.strokeWidth} stroke="#F1EBD5" fill="none"/>
             </svg>
         );
     }

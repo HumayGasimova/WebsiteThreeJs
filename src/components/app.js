@@ -13,6 +13,7 @@ import VerticalLine from './WinnersLine/verticalLine';
 import HorizontalLine from './WinnersLine/horizontalLine';
 import DiagonalLineLeft from './WinnersLine/diagonalLineLeft';
 import DiagonalLineRight from './WinnersLine/diagonalLineRight';
+import WinnerO from './WinnerScreen/winnerO'
 
 export class App extends Component {
    constructor(props){
@@ -199,14 +200,23 @@ export class App extends Component {
          if(el === "X"){
             return(
                <div>
-                     <X/>
+                     <X
+                      
+                      />
                </div>
             )
          }else{
             if(el === "O")
                return(
                   <div>
-                     <O/>
+                     <O
+                        radius={"35"}
+                        width={"150"}
+                        height={"160"}
+                        strokeWidth={"10"}
+                        cx={"50"}
+                        cy={"50"}
+                      />
                   </div>
                )
          }   
@@ -214,30 +224,40 @@ export class App extends Component {
 
 
    renderMainBox = () => {
-      return(
-            <MainBox
-               firstPlayer={this.state.firstPlayer}
-            >
-               <div className='outerBox'>
-                     {this.state.mainBox.map((el,i)=>{
-                        return (
-                              <Box
-                                 key={i}
-                                 onClick={() => {this.handleOnClick(i)}}
-                                 clicked={this.state.clicked}
-                                 player={this.state.firstPlayer}
-                                 number={"number" + i}
-                                 centerXY={this.centerXY(i)}
-                                 // winnerLine={this.state.winnerLine}
-                                 // winner={this.state.winner}
-                              >
-                              {this.renderChild(el)}
-                              </Box>
-                        )
-                     })}
-               </div>
-            </MainBox>
-      )
+      if(this.state.winner === null){
+         return(
+               <MainBox
+                  firstPlayer={this.state.firstPlayer}
+               >
+                  <div className='outerBox'>
+                        {this.state.mainBox.map((el,i)=>{
+                           return (
+                                 <Box
+                                    key={i}
+                                    onClick={() => {this.handleOnClick(i)}}
+                                    clicked={this.state.clicked}
+                                    player={this.state.firstPlayer}
+                                    number={"number" + i}
+                                    centerXY={this.centerXY(i)}
+                                    // winnerLine={this.state.winnerLine}
+                                    // winner={this.state.winner}
+                                 >
+                                 {this.renderChild(el)}
+                                 </Box>
+                           )
+                        })}
+                  </div>
+               </MainBox>
+         )
+      }else{
+         
+         if(this.state.winner === "O"){
+            return(
+               <WinnerO/>
+            )
+         }
+         
+      }
    }
 
    renderReset = () => {
