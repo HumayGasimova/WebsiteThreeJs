@@ -20,6 +20,29 @@
         right: 7px;
     }
 }
+.xScreen {
+    width: 98px;
+    height: 98px;
+    position: relative;
+    margin-top: 100px;
+   
+    .diagonalFirst {
+        border: 7px solid #665757;
+        width: 100.5px;
+        position: absolute;
+        transform: rotateZ(45deg);
+        top: 45px;
+        right: -7px;
+    }
+    .diagonalSecond {
+        border: 7px solid #665757;
+        width: 100.5px;
+        position: absolute;
+        transform: rotateZ(-45deg);
+        top: 45px;
+        right: -7px;
+    }
+}
 
     .circle{ 
         stroke-dasharray: 440;

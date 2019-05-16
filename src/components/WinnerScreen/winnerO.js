@@ -12,11 +12,11 @@ class WinnerO extends Component {
             <div className="winnerAlign">
                  <O
                     radius={"50"}
-                    width={"250"}
-                    height={"250"}
+                    width={"230"}
+                    height={"230"}
                     strokeWidth={"20"}
-                    cx={"125"}
-                    cy={"165"}
+                    cx={"115"}
+                    cy={"150"}
                     />
                 <Winner
                 winner={this.props.winner}

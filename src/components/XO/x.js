@@ -7,7 +7,7 @@ class X extends Component {
 
     render(){
         return(
-            <div className="x">
+            <div className={this.props.screen ? "xScreen" : "x"}>
                 <div className="diagonalFirst"/>
                 <div className="diagonalSecond"/>
             </div>

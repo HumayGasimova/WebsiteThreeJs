@@ -10,8 +10,7 @@ class WinnerX extends Component {
     render(){
         return(
             <div className="winnerIs">
-                 <X
-                    />
+                 <X screen={true}/>
                 <Winner
                 winner={this.props.winner}
                 />
