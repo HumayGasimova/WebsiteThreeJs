@@ -8,7 +8,7 @@ class Winner extends Component {
 
     render(){
         return(
-            <div className="winner">
+            <div className={this.props.winner === "O" ? "winnerO" : "winnerX"}>
                 WINNER!
             </div>
         );

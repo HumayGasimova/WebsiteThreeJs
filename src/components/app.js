@@ -13,7 +13,8 @@ import VerticalLine from './WinnersLine/verticalLine';
 import HorizontalLine from './WinnersLine/horizontalLine';
 import DiagonalLineLeft from './WinnersLine/diagonalLineLeft';
 import DiagonalLineRight from './WinnersLine/diagonalLineRight';
-import WinnerO from './WinnerScreen/winnerO'
+import WinnerO from './WinnerScreen/winnerO';
+import WinnerX from './WinnerScreen/winnerX'
 
 export class App extends Component {
    constructor(props){
@@ -32,6 +33,12 @@ export class App extends Component {
                      '','','',
                      '','','']
       } 
+   }
+
+   lineDone = () => {
+      this.setState({
+         winnerLineIsDrawn:true
+      })
    }
   
    centerXY = (i) => {
@@ -247,13 +254,20 @@ export class App extends Component {
                            )
                         })}
                   </div>
+                  {/* {this.renderWinnerLine()} */}
                </MainBox>
          )
       }else{
          
          if(this.state.winner === "O"){
             return(
-               <WinnerO/>
+               <WinnerO
+               winner={this.state.winner}/>
+            )
+         }else{
+            return(
+               <WinnerX
+               winner={this.state.winner}/>
             )
          }
          
@@ -311,7 +325,7 @@ export class App extends Component {
                   {this.renderMainBox()}
                </div>
             </div>
-             {this.renderWinnerLine()}
+           {this.renderWinnerLine()}
             {this.renderReset()}
          </div>
       );

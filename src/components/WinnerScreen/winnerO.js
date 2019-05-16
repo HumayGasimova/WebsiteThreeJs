@@ -16,9 +16,11 @@ class WinnerO extends Component {
                     height={"250"}
                     strokeWidth={"20"}
                     cx={"125"}
-                    cy={"125"}
+                    cy={"165"}
                     />
-                <Winner/>
+                <Winner
+                winner={this.props.winner}
+                />
             </div>
            
         );
