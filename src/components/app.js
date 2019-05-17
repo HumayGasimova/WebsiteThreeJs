@@ -5,7 +5,6 @@ import Box from "./Box/box";
 import './app.scss'
 import './Box/box.scss';
 import MainBox from './MainBox/mainBox';
-import ChoosePlayer from './ChoosePlayer/choosePlayer';
 import SelectPlayer from './SelectPlayer/SelectPlayer';
 import X from './XO/x';
 import O from './XO/o';
@@ -31,14 +30,9 @@ export class App extends Component {
                      '','',''],
          coordinateY:['','','',
                      '','','',
-                     '','','']
+                     '','',''],
+         draw: false
       } 
-   }
-
-   lineDone = () => {
-      this.setState({
-         winnerLineIsDrawn:true
-      })
    }
   
    centerXY = (i) => {
@@ -63,6 +57,7 @@ export class App extends Component {
                mainBox: updatedBox,
                firstPlayer: this.state.firstPlayer === "X" ? "O" : "X"
             })
+            this.checkIfDraw();
             this.checkWinner();
          }
       }
@@ -148,13 +143,63 @@ export class App extends Component {
 
    winnerList.map((el,i)=>{
       let list = winnerList[i];
-     if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
-         this.setState({
-            winner: this.state.firstPlayer,
-            winnerLine: list
-         })
-      }
+         if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
+            this.setState({
+               winner: this.state.firstPlayer,
+               winnerLine: list
+            })
+         }
       })
+   }
+
+   checkWinner = () => {
+      let winnerList = [
+         ["0","1","2"],
+         ["3","4","5"],
+         ["6","7","8"],
+         ["0","3","6"],
+         ["1","4","7"],
+         ["2","5","8"],
+         ["0","4","8"],
+         ["2","4","6"]
+   ]
+
+   winnerList.map((el,i)=>{
+      let list = winnerList[i];
+         if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
+            this.setState({
+               winner: this.state.firstPlayer,
+               winnerLine: list
+            })
+         }
+      })
+   }
+
+   checkIfDraw = () => {
+      let drawList = [
+         ["0","2","3","4","7"],
+         ["1","2","3","4","8"],
+         ["2","4","5","6","8"],
+         ["0","4","5","6","7"],
+
+         ["1","3","5","6","8"],
+         ["1","2","3","7","8"],
+         ["0","2","3","5","7"],
+         ["0","1","5","6","7"],
+
+         ["0","1","5","6","8"],
+         ["1","2","3","6","8"],
+         ["0","2","3","7","8"],
+         ["0","2","5","6","7"],
+      ]
+      drawList.map((el,i)=>{
+         let list = drawList[i];
+            if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[1]] === this.state.mainBox[list[2]] && this.state.mainBox[list[2]] === this.state.mainBox[list[3]] && this.state.mainBox[list[3]] === this.state.mainBox[list[4]]){
+               this.setState({
+                  draw: true
+               })
+            }
+         })
    }
 
    setPlayer = (player) => {
@@ -207,9 +252,7 @@ export class App extends Component {
          if(el === "X"){
             return(
                <div>
-                     <X
-                      
-                      />
+                     <X/>
                </div>
             )
          }else{
@@ -226,12 +269,12 @@ export class App extends Component {
                       />
                   </div>
                )
-         }   
+         }
    }
 
 
    renderMainBox = () => {
-      if(this.state.winner === null){
+      if(this.state.winner === null && this.state.draw === false){
          return(
                <MainBox
                   firstPlayer={this.state.firstPlayer}
@@ -258,17 +301,25 @@ export class App extends Component {
                </MainBox>
          )
       }else{
-         
          if(this.state.winner === "O"){
             return(
                <WinnerO
                winner={this.state.winner}/>
             )
          }else{
-            return(
-               <WinnerX
-               winner={this.state.winner}/>
-            )
+            if(this.state.winner === "X"){
+               return(
+                  <WinnerX
+                  winner={this.state.winner}/>
+               )
+            }else{
+               if(this.state.winner === null && this.state.draw === true){
+                  return(
+                     <WinnerX
+                     winner={this.state.winner}/>
+                  )
+               }
+            }
          }
          
       }
@@ -290,25 +341,28 @@ export class App extends Component {
             </div>
          )
       }else{
-         if(this.state.firstPlayer === "X" && !this.state.winner){
+         if(this.state.firstPlayer === "X" && this.state.winner !== null){
             return(
                <div className="text">
                   X Turn
                </div>
             )
          }else{
-            if(this.state.firstPlayer === "O" && !this.state.winner){
+            if(this.state.firstPlayer === "O" && this.state.winner !== null){
                return(
                   <div className="text">
                      O Turn
                   </div>
                )
             }else{
-               return(
-                  <div className="text">
-                     Game Over
-                  </div>
-               )
+               if(this.state.draw === true && this.state.winner === null){
+                  return(
+                     <div className="text">
+                        Game Over
+                     </div>
+                  )
+               }
+              
             }
          }
       }
@@ -327,7 +381,9 @@ export class App extends Component {
             </div>
            {this.renderWinnerLine()}
             {this.renderReset()}
+            <div>{console.log(this.state)}</div>
          </div>
+
       );
    }
 }
