@@ -1,9 +1,25 @@
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
+
+/**
+ * Styles
+ */
+
 import './winnersLine.scss';
 
+/**
+ * diagonalLineRight component definition and export
+ */
 class diagonalLineRight extends Component {
+
+    /**
+    * Markup
+    */
 
     render(){
         return(

@@ -1,10 +1,26 @@
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
+
+/**
+ * Styles
+ */
+
 import './winnersLine.scss';
 
+/**
+ * diagonalLineLeft component definition and export
+ */
 class diagonalLineLeft extends Component {
 
+    /**
+    * Markup
+    */
+   
     render(){
         return(
             // <div className={this.props.player ? "diagonalLineLeftBrown" : "diagonalLineLeftWhite"}/>

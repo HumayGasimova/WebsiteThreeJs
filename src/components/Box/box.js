@@ -1,31 +1,49 @@
+
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
+
 import {
     connect
 } from 'react-redux';
+
 import {
     addArticle
 } from '../../actions/index';
-import './box.scss';
 
-import VerticalLine from '../WinnersLine/verticalLine';
-import HorizontalLine from '../WinnersLine/horizontalLine';
-import DiagonalLineLeft from '../WinnersLine/diagonalLineLeft';
-import DiagonalLineRight from '../WinnersLine/diagonalLineRight';
+/**
+ * Styles
+ */
+
+import './box.scss';
 
 function mapDispatchToProps(dispatch){
     return{
         addArticle: article => dispatch(addArticle(article))
     };
 }
+
+/**
+ * Box component definition and export
+ */
 class Box extends Component {
+
+    /**
+    * Constructor
+    */
+
     constructor(props){
         super(props);
         this.select = React.createRef();
      }
 
-
+    /**
+    * Methods
+    */
 
     evaluateCenter = () => {
         const rect = this.select.current.getBoundingClientRect();
@@ -60,6 +78,10 @@ class Box extends Component {
             </div>
         );
     }
+
+    /**
+    * Markup
+    */
 
     render(){
         return(

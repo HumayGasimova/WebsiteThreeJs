@@ -1,10 +1,17 @@
+/**
+ * Libraries
+ */
+
 import React,{
    Component
 } from 'react';
-import Box from "./Box/box";
-import './app.scss'
-import './Box/box.scss';
+
+/**
+ * Components
+ */
+
 import MainBox from './MainBox/mainBox';
+import Box from "./Box/box";
 import SelectPlayer from './SelectPlayer/SelectPlayer';
 import X from './XO/x';
 import O from './XO/o';
@@ -15,7 +22,22 @@ import DiagonalLineRight from './WinnersLine/diagonalLineRight';
 import WinnerO from './WinnerScreen/winnerO';
 import WinnerX from './WinnerScreen/winnerX'
 
+/**
+ * Styles
+ */
+
+import './app.scss'
+import './Box/box.scss';
+
+/**
+ * Location component definition and export
+ */
 export class App extends Component {
+
+   /**
+    * Constructor
+    */
+
    constructor(props){
       super(props);
       this.state = {
@@ -35,6 +57,10 @@ export class App extends Component {
       } 
    }
   
+   /**
+    * Methods
+    */
+
    centerXY = (i) => {
       return (x,y) => {
          let coordinateX = this.state.coordinateX;
@@ -195,7 +221,12 @@ export class App extends Component {
          ["0","2","4","5","7"],
          ["0","1","4","5","6"],
          ["1","3","4","6","8"],
-         ["2","3","4","7","8"]
+         ["2","3","4","7","8"],
+
+         ["1","4","5","6","8"],
+         ["1","2","3","4","8"],
+         ["0","2","3","4","7"],
+         ["0","4","5","6","7"]
       ]
       drawList.map((el,i)=>{
          let list = drawList[i];
@@ -279,6 +310,7 @@ export class App extends Component {
                         strokeWidth={"10"}
                         cx={"50"}
                         cy={"50"}
+                        animationShow={true}
                       />
                   </div>
                )
@@ -395,6 +427,9 @@ export class App extends Component {
       }
    }
    
+   /**
+    * Markup
+    */
 
    render(){
       return(
@@ -414,5 +449,9 @@ export class App extends Component {
       );
    }
 }
+
+/**
+ * Prop types
+ */
 
 export default App;

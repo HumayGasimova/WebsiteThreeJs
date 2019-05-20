@@ -1,10 +1,26 @@
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
+
+/**
+ * Styles
+ */
+
 import './winnersLine.scss';
 
+/**
+ * verticalLine component definition and export
+ */
 class verticalLine extends Component {
 
+    /**
+    * Markup
+    */
+   
     render(){
         return(
             <svg  

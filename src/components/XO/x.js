@@ -1,9 +1,26 @@
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
+
+/**
+ * Styles
+ */
+
 import './xo.scss';
 
+/**
+ * X component definition and export
+ */
+
 class X extends Component {
+
+    /**
+    * Markup
+    */
 
     render(){
         return(
@@ -14,7 +31,5 @@ class X extends Component {
         );
     }
 }
-
-
 
 export default X;

@@ -1,11 +1,26 @@
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
+
+/**
+ * Components
+ */
+
 import X from '../XO/x';
 import Winner from './winner';
 
-
+/**
+ * WinnerX component definition and export
+ */
 class WinnerX extends Component {
+
+    /**
+    * Markup
+    */
 
     render(){
         return(
@@ -15,7 +30,6 @@ class WinnerX extends Component {
                 winner={this.props.winner}
                 />
             </div>
-           
         );
     }
 }

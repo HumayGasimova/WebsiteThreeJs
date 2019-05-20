@@ -1,14 +1,28 @@
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
 
-
+/**
+ * ChoosePlayer component definition and export
+ */
 class ChoosePlayer extends Component {
+
+    /**
+    * Methods
+    */
 
     handleSubmitForm = (e) => {
         e.preventDefault();
         this.props.player(e.target.player.value);
     } 
+
+    /**
+    * Markup
+    */
 
     render(){
         return(

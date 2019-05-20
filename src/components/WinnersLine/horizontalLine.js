@@ -1,10 +1,25 @@
+/**
+ * Libraries
+ */
 import React,{
     Component
 } from 'react';
+
+/**
+ * Styles
+ */
+
 import './winnersLine.scss';
 
+/**
+ * horizontalLine component definition and export
+ */
 class horizontalLine extends Component {
 
+    /**
+    * Methods
+    */
+   
     render(){
         return(
             <svg  

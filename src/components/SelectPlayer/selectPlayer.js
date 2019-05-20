@@ -1,14 +1,25 @@
+/**
+ * Libraries
+ */
+
 import React,{
     Component
 } from 'react';
+
+/**
+ * Styles
+ */
+
 import './selectPlayer.scss';
 
+/**
+ * SelectPlayer component definition and export
+ */
 class SelectPlayer extends Component {
 
-    state={
-        firstPlayer: "X",
-        secondPlayer: "O"
-    } 
+    /**
+    * Methods
+    */
 
     renderFirstButton = () => {
         return(
@@ -32,6 +43,10 @@ class SelectPlayer extends Component {
         )
     }
 
+    /**
+    * Markup
+    */
+
     render(){
         return(
             // <div>
@@ -54,7 +69,5 @@ class SelectPlayer extends Component {
         );
     }
 }
-
-
 
 export default SelectPlayer;

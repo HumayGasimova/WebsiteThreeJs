@@ -44,11 +44,11 @@
     }
 }
 
-    .circle{ 
-        stroke-dasharray: 440;
-        stroke-dashoffset: 440;
-        animation: css 3s ease-out forwards;
-    }
+.circle{ 
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    animation: css 3s ease-out forwards;
+}
 
 @keyframes css {
   to {
