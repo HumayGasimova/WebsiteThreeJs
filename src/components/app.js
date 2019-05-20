@@ -4,7 +4,6 @@ import React,{
 import Box from "./Box/box";
 import './app.scss'
 import './Box/box.scss';
-import './WinnerScreen/winner.scss';
 import MainBox from './MainBox/mainBox';
 import SelectPlayer from './SelectPlayer/SelectPlayer';
 import X from './XO/x';
@@ -335,14 +334,14 @@ export class App extends Component {
                            <X screen={true}/>
                            <O
                               radius={"40"}
-                              width={"230"}
+                              width={"120"}
                               height={"230"}
                               strokeWidth={"15"}
-                              cx={"115"}
+                              cx={"60"}
                               cy={"150"}
                               />
                         </div>
-                        <div className="winnerX">
+                        <div className="drawText">
                            DRAW!
                         </div>
                       </div>
