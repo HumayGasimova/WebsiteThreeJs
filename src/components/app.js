@@ -217,12 +217,19 @@ export class App extends Component {
 
    resetGame = () => {
       this.setState({
-         mainBox: ['','','',
-                   '','','',
-                  '','',''],
+         mainBox:['','','',
+         '','','',
+         '','',''],
          firstPlayer: null,
          winner: null,
-         winnerLine: [] 
+         winnerLine: [],
+         coordinateX:['','','',
+                     '','','',
+                     '','',''],
+         coordinateY:['','','',
+                     '','','',
+                     '','',''],
+         draw: false
       })
    }
 
