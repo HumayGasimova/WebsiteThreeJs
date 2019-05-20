@@ -4,6 +4,7 @@ import React,{
 import Box from "./Box/box";
 import './app.scss'
 import './Box/box.scss';
+import './WinnerScreen/winner.scss';
 import MainBox from './MainBox/mainBox';
 import SelectPlayer from './SelectPlayer/SelectPlayer';
 import X from './XO/x';
@@ -191,11 +192,17 @@ export class App extends Component {
          ["1","2","3","6","8"],
          ["0","2","3","7","8"],
          ["0","2","5","6","7"],
+
+         ["0","2","4","5","7"],
+         ["0","1","4","5","6"],
+         ["1","3","4","6","8"],
+         ["2","3","4","7","8"]
       ]
       drawList.map((el,i)=>{
          let list = drawList[i];
             if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[1]] === this.state.mainBox[list[2]] && this.state.mainBox[list[2]] === this.state.mainBox[list[3]] && this.state.mainBox[list[3]] === this.state.mainBox[list[4]]){
                this.setState({
+                  winner:"No One",
                   draw: true
                })
             }
@@ -313,15 +320,29 @@ export class App extends Component {
                   winner={this.state.winner}/>
                )
             }else{
-               if(this.state.winner === null && this.state.draw === true){
+               if(this.state.winner === "No One" && this.state.draw === true){
                   return(
-                     <WinnerX
-                     winner={this.state.winner}/>
+
+                     <div className="drawScreen">
+                        <div className="drawImages">
+                           <X screen={true}/>
+                           <O
+                              radius={"40"}
+                              width={"230"}
+                              height={"230"}
+                              strokeWidth={"15"}
+                              cx={"115"}
+                              cy={"150"}
+                              />
+                        </div>
+                        <div className="winnerX">
+                           DRAW!
+                        </div>
+                      </div>
                   )
                }
             }
-         }
-         
+         }  
       }
    }
 
@@ -334,28 +355,28 @@ export class App extends Component {
    }
 
    renderWhoseTurn = () => {
-      if(this.state.firstPlayer === null){
+      if(this.state.firstPlayer === null && this.state.winner === null){
          return(
             <div className="text">
                Start game or select player
             </div>
          )
       }else{
-         if(this.state.firstPlayer === "X" && this.state.winner !== null){
+         if(this.state.firstPlayer === "X" && this.state.winner === null){
             return(
                <div className="text">
                   X Turn
                </div>
             )
          }else{
-            if(this.state.firstPlayer === "O" && this.state.winner !== null){
+            if(this.state.firstPlayer === "O" && this.state.winner === null){
                return(
                   <div className="text">
                      O Turn
                   </div>
                )
             }else{
-               if(this.state.draw === true && this.state.winner === null){
+               if(this.state.firstPlayer === "O"||this.state.firstPlayer === "X" && this.state.draw === true && this.state.winner !== null){
                   return(
                      <div className="text">
                         Game Over
