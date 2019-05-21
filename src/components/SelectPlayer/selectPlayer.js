@@ -29,7 +29,7 @@ class SelectPlayer extends Component {
             >
                 <div> X </div>
                 <div>
-                    {this.props.counterX}
+                    {this.props.dash === null ? this.props.counterX : this.props.dash}
                 </div>
             </div>
         )
@@ -43,7 +43,7 @@ class SelectPlayer extends Component {
             >
                <div> O </div>
                <div>
-                    {this.props.counterY}
+                    {this.props.dash === null ? this.props.counterY : this.props.dash}
                 </div>
             </div>
         )

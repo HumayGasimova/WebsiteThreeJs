@@ -12,7 +12,7 @@ import React,{
 
 import MainBox from './MainBox/mainBox';
 import Box from "./Box/box";
-import SelectPlayer from './SelectPlayer/SelectPlayer';
+import SelectPlayer from './SelectPlayer/selectPlayer';
 import X from './XO/x';
 import O from './XO/o';
 import VerticalLine from './WinnersLine/verticalLine';
@@ -55,7 +55,8 @@ export class App extends Component {
                      '','',''],
          draw: false,
          counterX: 0,
-         counterY: 0
+         counterY: 0,
+         dash: "-"
       } 
    }
   
@@ -71,7 +72,7 @@ export class App extends Component {
          coordinateY[i] = Math.round(y);
                   this.setState({
                      coordinateX: coordinateX,
-                     coordinateY:coordinateY
+                     coordinateY: coordinateY
                   })
                }
    }
@@ -246,12 +247,14 @@ export class App extends Component {
 
    select1Player = () => {
       this.setState({
-         firstPlayer: "X"
+         firstPlayer: "X",
+         dash: null
       })
    }
    select2Player = () => {
       this.setState({
-         firstPlayer: "O"
+         firstPlayer: "O",
+         dash: null
       })
    }
 
@@ -263,6 +266,7 @@ export class App extends Component {
                select2Player={this.select2Player}
                counterX={this.state.counterX}
                counterY={this.state.counterY}
+               dash={this.state.dash}
             />
          )
       }else{
@@ -272,6 +276,7 @@ export class App extends Component {
                selected2Player={this.state.firstPlayer==="O"}
                counterX={this.state.counterX}
                counterY={this.state.counterY}
+               dash={this.state.dash}
             />
          )
       }
