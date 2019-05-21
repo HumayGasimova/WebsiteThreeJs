@@ -261,6 +261,8 @@ export class App extends Component {
             <SelectPlayer
                select1Player={this.select1Player}
                select2Player={this.select2Player}
+               counterX={this.state.counterX}
+               counterY={this.state.counterY}
             />
          )
       }else{
