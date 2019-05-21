@@ -53,7 +53,9 @@ export class App extends Component {
          coordinateY:['','','',
                      '','','',
                      '','',''],
-         draw: false
+         draw: false,
+         counterX: 0,
+         counterY: 0
       } 
    }
   
@@ -172,30 +174,9 @@ export class App extends Component {
          if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
             this.setState({
                winner: this.state.firstPlayer,
-               winnerLine: list
-            })
-         }
-      })
-   }
-
-   checkWinner = () => {
-      let winnerList = [
-         ["0","1","2"],
-         ["3","4","5"],
-         ["6","7","8"],
-         ["0","3","6"],
-         ["1","4","7"],
-         ["2","5","8"],
-         ["0","4","8"],
-         ["2","4","6"]
-   ]
-
-   winnerList.map((el,i)=>{
-      let list = winnerList[i];
-         if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
-            this.setState({
-               winner: this.state.firstPlayer,
-               winnerLine: list
+               winnerLine: list,
+               counterX: this.state.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
+               counterY: this.state.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY,
             })
          }
       })
@@ -287,6 +268,8 @@ export class App extends Component {
             <SelectPlayer
                selected1Player={this.state.firstPlayer==="X"}
                selected2Player={this.state.firstPlayer==="O"}
+               counterX={this.state.counterX}
+               counterY={this.state.counterY}
             />
          )
       }

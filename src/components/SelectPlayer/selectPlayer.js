@@ -27,7 +27,10 @@ class SelectPlayer extends Component {
                 className={this.props.selected1Player ? "button chosen" : "button"}
                 onClick={this.props.select1Player}
             >
-                X
+                <div> X </div>
+                <div>
+                    {this.props.counterX}
+                </div>
             </div>
         )
     }
@@ -38,7 +41,10 @@ class SelectPlayer extends Component {
                 className={this.props.selected2Player ? "button chosen" : "button"}
                 onClick={this.props.select2Player}
             >
-                O
+               <div> O </div>
+               <div>
+                    {this.props.counterY}
+                </div>
             </div>
         )
     }
