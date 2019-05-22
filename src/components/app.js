@@ -237,12 +237,6 @@ export class App extends Component {
          firstPlayer: null,
          winner: null,
          winnerLine: [],
-         coordinateX:['','','',
-                     '','','',
-                     '','',''],
-         coordinateY:['','','',
-                     '','','',
-                     '','',''],
          draw: false
       })
    }
@@ -375,6 +369,8 @@ export class App extends Component {
    //       }  
    //    }
    // }
+
+   
 
    renderMainBox = () => {
      return(
