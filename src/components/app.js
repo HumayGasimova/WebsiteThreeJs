@@ -6,6 +6,8 @@ import React,{
    Component
 } from 'react';
 
+import {useSpring, animated} from 'react-spring';
+
 /**
  * Components
  */
@@ -403,20 +405,17 @@ export class App extends Component {
    }
 
    renderWinnerScreen = () => {
+      
       if(this.state.winner === "O"){
          return(
-            <div className="winnerScreen">
                <WinnerO
-               winner={this.state.winner}/>
-            </div>
+               winner={this.state.winner}/> 
          )
       }else{
          if(this.state.winner === "X"){
             return(
-               <div className="winnerScreen">
                   <WinnerX
                   winner={this.state.winner}/>
-               </div>
             )
          }else{
             if(this.state.winner === "No One" && this.state.draw === true){

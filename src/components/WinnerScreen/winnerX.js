@@ -6,6 +6,8 @@ import React,{
     Component
 } from 'react';
 
+import {useSpring, animated} from 'react-spring';
+
 /**
  * Components
  */
@@ -16,22 +18,24 @@ import Winner from './winner';
 /**
  * WinnerX component definition and export
  */
-class WinnerX extends Component {
+export const WinnerX = (props) => {
 
-    /**
-    * Markup
-    */
-
-    render(){
+    const props1 = useSpring({
+        to:{opacity: 1},
+        from: { opacity: 0},
+        delay: 2000
+      })
         return(
-            <div className="winnerIs">
-                 <X screen={true}/>
-                <Winner
-                winner={this.props.winner}
-                />
-            </div>
+            <animated.div 
+                className="winnerScreen"
+                style={props1}
+                >
+                    <X screen={true}/>
+                    <Winner
+                    winner={props.winner}
+                    />
+             </animated.div>
         );
-    }
 }
 
 export default WinnerX;

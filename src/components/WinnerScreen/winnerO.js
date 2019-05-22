@@ -7,6 +7,8 @@ import React,{
     Component
 } from 'react';
 
+import {useSpring, animated} from 'react-spring';
+
 /**
  * Components
  */
@@ -17,16 +19,20 @@ import Winner from './winner';
 /**
  * WinnerO component definition and export
  */
-class WinnerO extends Component {
+export const WinnerO = (props) => {
 
-    /**
-    * Markup
-    */
+    const props1 = useSpring({
+        to:{opacity: 1},
+        from: { opacity: 0},
+        delay: 2000
+      })
 
-    render(){
         return(
-            <div className="winnerAlign">
-                 <O
+            <animated.div 
+                className="winnerScreen"
+                style={props1}
+                >
+                <O
                     radius={"50"}
                     width={"230"}
                     height={"230"}
@@ -35,11 +41,10 @@ class WinnerO extends Component {
                     cy={"150"}
                     />
                 <Winner
-                winner={this.props.winner}
+                winner={props.winner}
                 />
-            </div>
+             </animated.div>
         );
-    }
 }
 
 export default WinnerO;
