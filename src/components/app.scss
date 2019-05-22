@@ -68,9 +68,15 @@
     position: absolute;
 }
 
-
+.drawScreen {
+    height: 320;
+    width: 320;
+    background-color: #14bdac;
+    position: absolute;
+}
 .drawImages {
     display: flex;  
+    justify-content: center;
 }
 .drawText {
     color:  #665757;;
@@ -79,4 +85,13 @@
     text-align: center;
     margin-bottom: 40px;
     font-weight: bold;
+}
+
+.winnerScreen {
+    height: 320;
+    width: 320;
+    background-color: #14bdac;
+    position: absolute;
+    display: flex;
+    justify-content: center;
 }

@@ -308,9 +308,74 @@ export class App extends Component {
    }
 
 
+   // renderMainBox = () => {
+   //    if(this.state.winner === null && this.state.draw === false){
+   //       return(
+   //             <MainBox
+   //                firstPlayer={this.state.firstPlayer}
+   //             >
+   //                <div className='outerBox'>
+   //                      {this.state.mainBox.map((el,i)=>{
+   //                         return (
+   //                               <Box
+   //                                  key={i}
+   //                                  onClick={() => {this.handleOnClick(i)}}
+   //                                  clicked={this.state.clicked}
+   //                                  player={this.state.firstPlayer}
+   //                                  number={"number" + i}
+   //                                  centerXY={this.centerXY(i)}
+   //                                  // winnerLine={this.state.winnerLine}
+   //                                  // winner={this.state.winner}
+   //                               >
+   //                               {this.renderChild(el)}
+   //                               </Box>
+   //                         )
+   //                      })}
+   //                </div>
+   //                {/* {this.renderWinnerLine()} */}
+   //             </MainBox>
+   //       )
+   //    }else{
+   //       if(this.state.winner === "O"){
+   //          return(
+   //             <WinnerO
+   //             winner={this.state.winner}/>
+   //          )
+   //       }else{
+   //          if(this.state.winner === "X"){
+   //             return(
+   //                <WinnerX
+   //                winner={this.state.winner}/>
+   //             )
+   //          }else{
+   //             if(this.state.winner === "No One" && this.state.draw === true){
+   //                return(
+
+   //                   <div className="drawScreen">
+   //                      <div className="drawImages">
+   //                         <X screen={true}/>
+   //                         <O
+   //                            radius={"40"}
+   //                            width={"120"}
+   //                            height={"230"}
+   //                            strokeWidth={"15"}
+   //                            cx={"60"}
+   //                            cy={"150"}
+   //                            />
+   //                      </div>
+   //                      <div className="drawText">
+   //                         DRAW!
+   //                      </div>
+   //                    </div>
+   //                )
+   //             }
+   //          }
+   //       }  
+   //    }
+   // }
+
    renderMainBox = () => {
-      if(this.state.winner === null && this.state.draw === false){
-         return(
+     return(
                <MainBox
                   firstPlayer={this.state.firstPlayer}
                >
@@ -334,44 +399,49 @@ export class App extends Component {
                   </div>
                   {/* {this.renderWinnerLine()} */}
                </MainBox>
-         )
-      }else{
-         if(this.state.winner === "O"){
-            return(
+     )
+   }
+
+   renderWinnerScreen = () => {
+      if(this.state.winner === "O"){
+         return(
+            <div className="winnerScreen">
                <WinnerO
                winner={this.state.winner}/>
-            )
-         }else{
-            if(this.state.winner === "X"){
-               return(
+            </div>
+         )
+      }else{
+         if(this.state.winner === "X"){
+            return(
+               <div className="winnerScreen">
                   <WinnerX
                   winner={this.state.winner}/>
-               )
-            }else{
-               if(this.state.winner === "No One" && this.state.draw === true){
-                  return(
+               </div>
+            )
+         }else{
+            if(this.state.winner === "No One" && this.state.draw === true){
+               return(
 
-                     <div className="drawScreen">
-                        <div className="drawImages">
-                           <X screen={true}/>
-                           <O
-                              radius={"40"}
-                              width={"120"}
-                              height={"230"}
-                              strokeWidth={"15"}
-                              cx={"60"}
-                              cy={"150"}
-                              />
-                        </div>
-                        <div className="drawText">
-                           DRAW!
-                        </div>
-                      </div>
-                  )
-               }
+                  <div className="drawScreen">
+                     <div className="drawImages">
+                        <X screen={true}/>
+                        <O
+                           radius={"40"}
+                           width={"120"}
+                           height={"230"}
+                           strokeWidth={"15"}
+                           cx={"60"}
+                           cy={"150"}
+                           />
+                     </div>
+                     <div className="drawText">
+                        DRAW!
+                     </div>
+                   </div>
+               )
             }
-         }  
-      }
+         }
+      }  
    }
 
    renderReset = () => {
@@ -429,6 +499,7 @@ export class App extends Component {
             <div className="main">
                <div className="mainBox">
                   {this.renderMainBox()}
+                  {this.renderWinnerScreen()}
                </div>
             </div>
            {this.renderWinnerLine()}
