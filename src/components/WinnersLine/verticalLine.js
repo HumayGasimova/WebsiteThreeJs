@@ -6,6 +6,8 @@ import React,{
     Component
 } from 'react';
 
+import {useSpring, animated} from 'react-spring';
+
 /**
  * Styles
  */
@@ -15,22 +17,28 @@ import './winnersLine.scss';
 /**
  * verticalLine component definition and export
  */
-class verticalLine extends Component {
 
-    /**
-    * Markup
-    */
+export const verticalLine = (props) =>  {
+
+    const props1 = useSpring({
+        to:{opacity: 0},
+        from: { opacity: 1},
+        delay: 2000
+      })
    
-    render(){
         return(
-            <svg  
-                className={this.props.player ? "verticalLineBrown" : "verticalLineWhite"} 
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="280 155 303 303">
-                <line x1={this.props.coordinateX1} y1={this.props.coordinateY1} x2={this.props.coordinateX2} y2={this.props.coordinateY2}/>
-            </svg>
+            <animated.div 
+            style={props1}
+            >
+                <svg  
+                    className={props.player ? "verticalLineBrown" : "verticalLineWhite"} 
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="280 155 303 303">
+                    <line x1={props.coordinateX1} y1={props.coordinateY1} x2={props.coordinateX2} y2={props.coordinateY2}/>
+                </svg>
+            </animated.div>
         );
-    }
+
 }
 
 export default verticalLine;
