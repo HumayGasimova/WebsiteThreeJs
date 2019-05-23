@@ -178,6 +178,7 @@ export class App extends Component {
             this.setState({
                winner: this.state.firstPlayer,
                winnerLine: list,
+               firstPlayer: null,
                counterX: this.state.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
                counterY: this.state.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY,
             })
@@ -217,7 +218,8 @@ export class App extends Component {
             if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[1]] === this.state.mainBox[list[2]] && this.state.mainBox[list[2]] === this.state.mainBox[list[3]] && this.state.mainBox[list[3]] === this.state.mainBox[list[4]]){
                this.setState({
                   winner:"No One",
-                  draw: true
+                  draw: true,
+                  firstPlayer: null
                })
             }
          })
@@ -469,14 +471,13 @@ export class App extends Component {
                   </div>
                )
             }else{
-               if(this.state.firstPlayer === "O"||this.state.firstPlayer === "X" && this.state.draw === true && this.state.winner !== null){
+               if(this.state.firstPlayer === null && this.state.winner !== null){
                   return(
                      <div className="text">
                         Game Over
                      </div>
                   )
                }
-              
             }
          }
       }
@@ -494,7 +495,7 @@ export class App extends Component {
             <div className="main">
                <div className="mainBox">
                   {this.renderMainBox()}
-                  {/* {this.renderWinnerScreen()} */}
+                  {this.renderWinnerScreen()}
                </div>
             </div>
            {this.renderWinnerLine()}
