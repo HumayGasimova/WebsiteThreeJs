@@ -494,7 +494,7 @@ export class App extends Component {
             <div className="main">
                <div className="mainBox">
                   {this.renderMainBox()}
-                  {this.renderWinnerScreen()}
+                  {/* {this.renderWinnerScreen()} */}
                </div>
             </div>
            {this.renderWinnerLine()}
