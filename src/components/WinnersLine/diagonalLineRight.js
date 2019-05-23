@@ -33,7 +33,7 @@ export const diagonalLineRight = (props) =>  {
             <svg  
                 className={props.player ? "diagonalLineRightBrown" : "diagonalLineRightWhite"} 
                 preserveAspectRatio="xMidYMid meet"
-                viewBox="275 155 303 303" >
+                 >
                 <line x1={props.coordinateX1} y1={props.coordinateY1} x2={props.coordinateX2} y2={props.coordinateY2}/>
             </svg>
         </animated.div>
