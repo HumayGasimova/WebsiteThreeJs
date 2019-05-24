@@ -22,6 +22,7 @@ import DiagonalLineRight from './WinnersLine/diagonalLineRight';
 import WinnerO from './WinnerScreen/winnerO';
 import WinnerX from './WinnerScreen/winnerX';
 import MenuButton from './MenuButton/menuButton';
+import Head from './Head/head';
 
 /**
  * Styles
@@ -304,75 +305,6 @@ export class App extends Component {
          }
    }
 
-
-   // renderMainBox = () => {
-   //    if(this.state.winner === null && this.state.draw === false){
-   //       return(
-   //             <MainBox
-   //                firstPlayer={this.state.firstPlayer}
-   //             >
-   //                <div className='outerBox'>
-   //                      {this.state.mainBox.map((el,i)=>{
-   //                         return (
-   //                               <Box
-   //                                  key={i}
-   //                                  onClick={() => {this.handleOnClick(i)}}
-   //                                  clicked={this.state.clicked}
-   //                                  player={this.state.firstPlayer}
-   //                                  number={"number" + i}
-   //                                  centerXY={this.centerXY(i)}
-   //                                  // winnerLine={this.state.winnerLine}
-   //                                  // winner={this.state.winner}
-   //                               >
-   //                               {this.renderChild(el)}
-   //                               </Box>
-   //                         )
-   //                      })}
-   //                </div>
-   //                {/* {this.renderWinnerLine()} */}
-   //             </MainBox>
-   //       )
-   //    }else{
-   //       if(this.state.winner === "O"){
-   //          return(
-   //             <WinnerO
-   //             winner={this.state.winner}/>
-   //          )
-   //       }else{
-   //          if(this.state.winner === "X"){
-   //             return(
-   //                <WinnerX
-   //                winner={this.state.winner}/>
-   //             )
-   //          }else{
-   //             if(this.state.winner === "No One" && this.state.draw === true){
-   //                return(
-
-   //                   <div className="drawScreen">
-   //                      <div className="drawImages">
-   //                         <X screen={true}/>
-   //                         <O
-   //                            radius={"40"}
-   //                            width={"120"}
-   //                            height={"230"}
-   //                            strokeWidth={"15"}
-   //                            cx={"60"}
-   //                            cy={"150"}
-   //                            />
-   //                      </div>
-   //                      <div className="drawText">
-   //                         DRAW!
-   //                      </div>
-   //                    </div>
-   //                )
-   //             }
-   //          }
-   //       }  
-   //    }
-   // }
-
-   
-
    renderMainBox = () => {
      return(
                <MainBox
@@ -482,6 +414,13 @@ export class App extends Component {
       }
    }
    
+   renderMenuButton = () => {
+      return(
+         <Head>
+            <MenuButton/>
+         </Head>
+      )
+   }
    /**
     * Markup
     */
@@ -490,6 +429,7 @@ export class App extends Component {
       return(
          <div>
          <div className="background">
+            {this.renderMenuButton()}
             {this.renderPlayerForm()}
             {this.renderWhoseTurn()}
             <div className="main">
@@ -503,7 +443,7 @@ export class App extends Component {
             <div>{console.log(this.state)}</div>
          </div>
          <div>
-         <MenuButton/>
+        
          </div>
          </div>
 
