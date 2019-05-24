@@ -21,7 +21,7 @@ class SideDrawer extends Component {
         return(
             <div 
                 onClick={this.props.sideDrawerHandler}
-                className="sideDrawer">
+                className={this.props.sideDrawerOpen === "Yes" ? "sideDrawerOpen" : this.props.sideDrawerOpen === "No" ? "sideDrawerClose" :null}>
             </div>
         );
     }

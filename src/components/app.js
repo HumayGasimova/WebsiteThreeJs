@@ -60,7 +60,7 @@ export class App extends Component {
          counterX: 0,
          counterY: 0,
          dash: "-",
-         menuButtonClicked: false
+         sideDrawerOpen: ""
       } 
    }
   
@@ -418,31 +418,30 @@ export class App extends Component {
 
    menuButtonHandler = () => {
       this.setState({
-         menuButtonClicked: true
+         sideDrawerOpen: "Yes"
       })
    }
    sideDrawerHandler = () => {
       this.setState({
-         menuButtonClicked: false
+         sideDrawerOpen: "No"
       })
    }
 
    renderMenuButton = () => {
-         return(
-               <MenuButton
-                  menuButtonHandler={this.menuButtonHandler}
-               />
-         )
+      return(
+         <MenuButton
+            menuButtonHandler={this.menuButtonHandler}
+         />
+      )
    }
 
    renderSideDrawer = () => {
-      if(this.state.menuButtonClicked === true){
-         return(
-               <SideDrawer
-                  sideDrawerHandler={this.sideDrawerHandler}
-               />
-         )
-      }
+      return(
+         <SideDrawer
+            sideDrawerHandler={this.sideDrawerHandler}
+            sideDrawerOpen={this.state.sideDrawerOpen}
+         />
+      )
    }
 
    /**
@@ -469,6 +468,8 @@ export class App extends Component {
                {this.renderReset()}
                <div>{console.log(this.state)}</div>
             </div>
+
+            <canvas />
          </div>
       );
    }
