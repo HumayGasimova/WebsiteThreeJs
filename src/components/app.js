@@ -6,8 +6,6 @@ import React,{
    Component
 } from 'react';
 
-import {useSpring, animated} from 'react-spring';
-
 /**
  * Components
  */
@@ -22,7 +20,8 @@ import HorizontalLine from './WinnersLine/horizontalLine';
 import DiagonalLineLeft from './WinnersLine/diagonalLineLeft';
 import DiagonalLineRight from './WinnersLine/diagonalLineRight';
 import WinnerO from './WinnerScreen/winnerO';
-import WinnerX from './WinnerScreen/winnerX'
+import WinnerX from './WinnerScreen/winnerX';
+import MenuButton from './MenuButton/menuButton';
 
 /**
  * Styles
@@ -489,6 +488,7 @@ export class App extends Component {
 
    render(){
       return(
+         <div>
          <div className="background">
             {this.renderPlayerForm()}
             {this.renderWhoseTurn()}
@@ -501,6 +501,10 @@ export class App extends Component {
            {this.renderWinnerLine()}
             {this.renderReset()}
             <div>{console.log(this.state)}</div>
+         </div>
+         <div>
+         <MenuButton/>
+         </div>
          </div>
 
       );
