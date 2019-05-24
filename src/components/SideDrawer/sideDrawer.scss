@@ -7,4 +7,14 @@
     position: absolute;
     right: 0px;
     top: 0px;
+    animation: move 1s linear;
+}
+
+@keyframes move {
+    from {
+        width: 0%;
+    }
+    to {
+    width: 185px;
+    }
 }

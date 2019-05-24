@@ -428,13 +428,11 @@ export class App extends Component {
    }
 
    renderMenuButton = () => {
-      if(this.state.menuButtonClicked === false){
          return(
                <MenuButton
                   menuButtonHandler={this.menuButtonHandler}
                />
          )
-      }
    }
 
    renderSideDrawer = () => {

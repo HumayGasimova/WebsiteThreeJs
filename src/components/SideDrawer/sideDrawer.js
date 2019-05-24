@@ -22,7 +22,6 @@ class SideDrawer extends Component {
             <div 
                 onClick={this.props.sideDrawerHandler}
                 className="sideDrawer">
-                  
             </div>
         );
     }
