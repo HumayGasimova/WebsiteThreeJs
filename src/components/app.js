@@ -23,6 +23,7 @@ import WinnerO from './WinnerScreen/winnerO';
 import WinnerX from './WinnerScreen/winnerX';
 import MenuButton from './MenuButton/menuButton';
 import Head from './Head/head';
+import SideDrawer from './SideDrawer/sideDrawer'
 
 /**
  * Styles
@@ -58,7 +59,8 @@ export class App extends Component {
          draw: false,
          counterX: 0,
          counterY: 0,
-         dash: "-"
+         dash: "-",
+         menuButtonClicked: false
       } 
    }
   
@@ -413,14 +415,38 @@ export class App extends Component {
          }
       }
    }
-   
-   renderMenuButton = () => {
-      return(
-         <Head>
-            <MenuButton/>
-         </Head>
-      )
+
+   menuButtonHandler = () => {
+      this.setState({
+         menuButtonClicked: true
+      })
    }
+   sideDrawerHandler = () => {
+      this.setState({
+         menuButtonClicked: false
+      })
+   }
+
+   renderMenuButton = () => {
+      if(this.state.menuButtonClicked === false){
+         return(
+               <MenuButton
+                  menuButtonHandler={this.menuButtonHandler}
+               />
+         )
+      }
+   }
+
+   renderSideDrawer = () => {
+      if(this.state.menuButtonClicked === true){
+         return(
+               <SideDrawer
+                  sideDrawerHandler={this.sideDrawerHandler}
+               />
+         )
+      }
+   }
+
    /**
     * Markup
     */
@@ -428,25 +454,24 @@ export class App extends Component {
    render(){
       return(
          <div>
-         <div className="background">
-            {this.renderMenuButton()}
-            {this.renderPlayerForm()}
-            {this.renderWhoseTurn()}
-            <div className="main">
-               <div className="mainBox">
-                  {this.renderMainBox()}
-                  {this.renderWinnerScreen()}
+            <div className="background">
+               <Head>
+                  {this.renderMenuButton()}
+               </Head>
+               {this.renderSideDrawer()}
+               {this.renderPlayerForm()}
+               {this.renderWhoseTurn()}
+               <div className="main">
+                  <div className="mainBox">
+                     {this.renderMainBox()}
+                     {this.renderWinnerScreen()}
+                  </div>
                </div>
+               {this.renderWinnerLine()}
+               {this.renderReset()}
+               <div>{console.log(this.state)}</div>
             </div>
-           {this.renderWinnerLine()}
-            {this.renderReset()}
-            <div>{console.log(this.state)}</div>
          </div>
-         <div>
-        
-         </div>
-         </div>
-
       );
    }
 }

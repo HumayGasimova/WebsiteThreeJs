@@ -20,7 +20,10 @@ class MenuButton extends Component {
 
     render(){
         return(
-            <div className="menuButton">
+            <div 
+                onClick={this.props.menuButtonHandler}
+                className="menuButton"
+                >
                    <div className="menuLine"/>
                    <div className="menuEmptyLine"/>
                    <div className="menuLine"/>
