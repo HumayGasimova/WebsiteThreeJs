@@ -4,6 +4,7 @@
     position: relative;
     .diagonalFirst {
         border: 5px solid #665757;
+        background-color: #665757;
         width: 73.5px;
         position: absolute;
         transform: rotateZ(45deg);
@@ -13,6 +14,7 @@
     }
     .diagonalSecond {
         border: 5px solid #665757;
+        background-color: #665757;
         width: 73.5px;
         position: absolute;
         transform: rotateZ(-45deg);
@@ -28,6 +30,7 @@
    
     .diagonalFirst {
         border: 7px solid #665757;
+        background-color: #665757;
         width: 100.5px;
         position: absolute;
         transform: rotateZ(45deg);
@@ -36,6 +39,7 @@
     }
     .diagonalSecond {
         border: 7px solid #665757;
+        background-color: #665757;
         width: 100.5px;
         position: absolute;
         transform: rotateZ(-45deg);
