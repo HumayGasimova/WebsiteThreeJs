@@ -1,6 +1,6 @@
 import {
     TEST_TYPE
-} from '../components/Other/constants/action-types'
+} from '../constants/actionTypes';
 
 export function addArticle(payload){
     return {

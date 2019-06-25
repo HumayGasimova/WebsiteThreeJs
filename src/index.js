@@ -10,7 +10,7 @@ import {
 } from 'react-redux';
 import configureStore,{
     history
-} from './store/index';
+} from './store/store';
 
 import {
     Route,

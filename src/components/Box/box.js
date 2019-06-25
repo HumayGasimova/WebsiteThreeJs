@@ -13,7 +13,7 @@ import {
 
 import {
     addArticle
-} from '../../actions/index';
+} from '../../actions/actions';
 
 /**
  * Styles

@@ -38,6 +38,8 @@
     "firebase-tools": "^6.8.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-spring": "^8.0.20"
+    "react-spring": "^8.0.20",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   }
 }

@@ -6,6 +6,10 @@ import React,{
    Component
 } from 'react';
 
+import {
+   connect
+} from 'react-redux';
+
 /**
  * Components
  */
@@ -225,12 +229,6 @@ export class App extends Component {
                })
             }
          })
-   }
-
-   setPlayer = (player) => {
-      this.setState({
-         firstPlayer:player
-      })
    }
 
    resetGame = () => {
@@ -478,5 +476,11 @@ export class App extends Component {
 /**
  * Prop types
  */
+const mapStateToProps = state => {
+   return { 
+      winner: state.winner
+   };
+ };
+ 
+ export default connect(mapStateToProps)(App);
 
-export default App;
