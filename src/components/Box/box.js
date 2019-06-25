@@ -11,21 +11,13 @@ import {
     connect
 } from 'react-redux';
 
-import {
-    addArticle
-} from '../../actions/actions';
+
 
 /**
  * Styles
  */
 
 import './box.scss';
-
-function mapDispatchToProps(dispatch){
-    return{
-        addArticle: article => dispatch(addArticle(article))
-    };
-}
 
 /**
  * Box component definition and export
@@ -91,7 +83,5 @@ class Box extends Component {
         );
     }
 }
-
-const Form = connect(null, mapDispatchToProps)(Box);
 
 export default Box;

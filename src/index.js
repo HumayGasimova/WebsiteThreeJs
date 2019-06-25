@@ -19,6 +19,7 @@ import {
 import {
     ConnectedRouter
 } from 'connected-react-router';
+import store from './store/store';
 
 // import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 /**
@@ -28,12 +29,12 @@ import {
 import App from './components/app';
 import Welcome from './WelcomePage/welcomePage';
 
-const store = configureStore()
+// const store = configureStore()
 
 
 ReactDOM.render(
     <Provider store={store}>
-       <ConnectedRouter history={history}>
+       {/* <ConnectedRouter history={history}> */}
                <App>
                     <Switch>
                         {/* <Route 
@@ -50,7 +51,7 @@ ReactDOM.render(
                             component={Welcome}/> */}
                     </Switch>
                 </App>    
-       </ConnectedRouter>
+       {/* </ConnectedRouter> */}
     </Provider>,
    document.getElementById('app')
 );

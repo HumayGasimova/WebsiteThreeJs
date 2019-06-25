@@ -1,0 +1,13 @@
+import * as actionTypes from '../constants/actionTypes';
+
+export function setXPlayer(){
+    return {
+        type: actionTypes.SET_X_PLAYER
+    }
+};
+
+export function setOPlayer(){
+    return {
+        type: actionTypes.SET_O_PLAYER
+    }
+};

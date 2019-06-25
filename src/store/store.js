@@ -3,7 +3,7 @@ import {
     applyMiddleware,
     compose
 } from 'redux';
-import rootReducer from '../reducers/reducers';
+import rootReducer from '../reducers/setPlayerReducer';
 import {
     createBrowserHistory
 } from 'history';
@@ -23,19 +23,24 @@ const logger = createLogger({
     collapsed: true
 });
 
-// if (process.env.ENVIRONMENT !== 'production') {
-//     middleware.push(logger);
-// }
+const middleware = [thunk];
 
-export const history = createBrowserHistory();
+if (process.env.ENVIRONMENT !== 'production') {
+    middleware.push(logger);
+}
 
-export default function configureStore(preloadedState){
-    const store = createStore(
-        rootReducer(history),
-        preloadedState,
-        compose(
-            applyMiddleware(logger, routerMiddleware(history))
-        )
-    );
-    return store
-};
+export default createStore(rootReducer, applyMiddleware(logger));
+
+
+// export const history = createBrowserHistory();
+
+// export default function configureStore(preloadedState){
+//     const store = createStore(
+//         rootReducer(history),
+//         preloadedState,
+//         compose(
+//             applyMiddleware(logger, routerMiddleware(history))
+//         )
+//     );
+//     return store
+// };

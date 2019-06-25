@@ -10,6 +10,10 @@ import {
    connect
 } from 'react-redux';
 
+import {
+   bindActionCreators
+} from 'redux';
+
 /**
  * Components
  */
@@ -37,8 +41,15 @@ import './app.scss'
 import './Box/box.scss';
 
 /**
- * Location component definition and export
+ * Actions
  */
+
+import * as setPlayerActions from '../actions/setPlayerActions';
+
+/**
+ * App component definition and export
+ */
+
 export class App extends Component {
 
    /**
@@ -86,13 +97,13 @@ export class App extends Component {
    }
 
    handleOnClick = (i) => {
-      if(this.state.firstPlayer && !this.state.winner){
+      if(this.props.firstPlayer && !this.state.winner){
          let updatedBox = this.state.mainBox;
          if(this.state.mainBox[i]===''){
-            updatedBox[i] = this.state.firstPlayer;
+            updatedBox[i] = this.props.firstPlayer;
             this.setState({
                mainBox: updatedBox,
-               firstPlayer: this.state.firstPlayer === "X" ? "O" : "X"
+               firstPlayer: this.props.firstPlayer === "X" ? "O" : "X"
             })
             this.checkIfDraw();
             this.checkWinner();
@@ -182,11 +193,11 @@ export class App extends Component {
       let list = winnerList[i];
          if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
             this.setState({
-               winner: this.state.firstPlayer,
+               winner: this.props.firstPlayer,
                winnerLine: list,
                firstPlayer: null,
-               counterX: this.state.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
-               counterY: this.state.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY,
+               counterX: this.props.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
+               counterY: this.props.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY,
             })
          }
       })
@@ -244,20 +255,16 @@ export class App extends Component {
    }
 
    select1Player = () => {
-      this.setState({
-         firstPlayer: "X",
-         dash: null
-      })
+
+      this.props.setXPlayer();
+      
    }
    select2Player = () => {
-      this.setState({
-         firstPlayer: "O",
-         dash: null
-      })
+      this.props.setOPlayer();
    }
 
    renderPlayerForm = () => {
-      if(this.state.firstPlayer === null){
+      if(this.props.firstPlayer === null){
          return (
             <SelectPlayer
                select1Player={this.select1Player}
@@ -270,8 +277,8 @@ export class App extends Component {
       }else{
          return(
             <SelectPlayer
-               selected1Player={this.state.firstPlayer==="X"}
-               selected2Player={this.state.firstPlayer==="O"}
+               selected1Player={this.props.firstPlayer==="X"}
+               selected2Player={this.props.firstPlayer==="O"}
                counterX={this.state.counterX}
                counterY={this.state.counterY}
                dash={this.state.dash}
@@ -308,7 +315,7 @@ export class App extends Component {
    renderMainBox = () => {
      return(
                <MainBox
-                  firstPlayer={this.state.firstPlayer}
+                  firstPlayer={this.props.firstPlayer}
                >
                   <div className='outerBox'>
                         {this.state.mainBox.map((el,i)=>{
@@ -317,7 +324,7 @@ export class App extends Component {
                                     key={i}
                                     onClick={() => {this.handleOnClick(i)}}
                                     clicked={this.state.clicked}
-                                    player={this.state.firstPlayer}
+                                    player={this.props.firstPlayer}
                                     number={"number" + i}
                                     centerXY={this.centerXY(i)}
                                     // winnerLine={this.state.winnerLine}
@@ -381,28 +388,28 @@ export class App extends Component {
    }
 
    renderWhoseTurn = () => {
-      if(this.state.firstPlayer === null && this.state.winner === null){
+      if(this.props.firstPlayer === null && this.state.winner === null){
          return(
             <div className="text">
                Start game or select player
             </div>
          )
       }else{
-         if(this.state.firstPlayer === "X" && this.state.winner === null){
+         if(this.props.firstPlayer === "X" && this.state.winner === null){
             return(
                <div className="text">
                   X Turn
                </div>
             )
          }else{
-            if(this.state.firstPlayer === "O" && this.state.winner === null){
+            if(this.props.firstPlayer === "O" && this.state.winner === null){
                return(
                   <div className="text">
                      O Turn
                   </div>
                )
             }else{
-               if(this.state.firstPlayer === null && this.state.winner !== null){
+               if(this.props.firstPlayer === null && this.state.winner !== null){
                   return(
                      <div className="text">
                         Game Over
@@ -476,11 +483,20 @@ export class App extends Component {
 /**
  * Prop types
  */
-const mapStateToProps = state => {
-   return { 
-      winner: state.winner
-   };
- };
+
  
- export default connect(mapStateToProps)(App);
+export default connect(
+   (state) => {
+      return {
+          firstPlayer: state.firstPlayer,
+         // storedResults: state.res.results
+      };
+   },
+   (dispatch) => {
+      return {
+         setXPlayer: bindActionCreators(setPlayerActions.setXPlayer, dispatch),
+         setOPlayer: bindActionCreators(setPlayerActions.setOPlayer, dispatch)
+      };
+   }
+)(App);
 
