@@ -27,7 +27,7 @@ import winnerReducer from '../reducers/winnerReducer';
 const rootReducer = combineReducers({
     setPlayer: setPlayerReducer,
     mainBox: mainBoxReducer,
-    win: winnerReducer
+    gameOver: winnerReducer
 })
 
 // const middleware = [thunk];

@@ -3,4 +3,6 @@ export const SET_O_PLAYER = 'SET_O_PLAYER';
 export const UPDATE_BOX = 'UPDATE_BOX';
 export const UPDATE_PLAYER = 'UPDATE_PLAYER';
 export const SET_WINNER = 'SET_WINNER';
+export const RESET_PLAYER = 'RESET_PLAYER';
+
 

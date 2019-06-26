@@ -22,6 +22,11 @@ function setPlayer (state = initialState, action){
                 ...state,
                 firstPlayer: state.firstPlayer === "X" ? "O" : "X"
             }
+        case actionTypes.RESET_PLAYER:
+                return {
+                    ...state,
+                    firstPlayer: null
+                }
     }
         return state;
 }

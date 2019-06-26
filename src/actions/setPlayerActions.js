@@ -17,3 +17,9 @@ export function updatePlayer(){
         type: actionTypes.UPDATE_PLAYER
     }
 };
+
+export function resetPlayer(){
+    return {
+        type: actionTypes.RESET_PLAYER
+    }
+};

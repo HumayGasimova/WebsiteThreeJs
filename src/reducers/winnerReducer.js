@@ -3,9 +3,7 @@ import * as actionTypes from '../constants/actionTypes';
 const initialState = {
     winner: null,
     winnerLine: [],
-    draw: false,
-    counterX: 0,
-    counterY: 0
+    draw: false
 };
 
 function winner (state = initialState, action){
@@ -13,7 +11,8 @@ function winner (state = initialState, action){
         case actionTypes.SET_WINNER:
             return {
                 ...state,
-                winner: action.winner
+                winner: action.winner,
+                winnerLine: action.winnerLine
             }
         
     }

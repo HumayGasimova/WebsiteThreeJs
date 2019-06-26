@@ -61,8 +61,6 @@ export class App extends Component {
    constructor(props){
       super(props);
       this.state = {
-         winner: null,
-         winnerLine: [],
          coordinateX:['','','',
                      '','','',
                      '','',''],
@@ -95,7 +93,6 @@ export class App extends Component {
 
    handleOnClick = (i) => {
       if(this.props.firstPlayer && !this.props.winner){
-         let updatedBox = this.props.mainBox;
          if(this.props.mainBox[i]===''){
             this.props.updateBox(i,this.props.firstPlayer);
             this.props.updatePlayer();
@@ -106,7 +103,7 @@ export class App extends Component {
    }
 
    renderWinnerLine = () => {
-      let line = this.state.winnerLine
+      let line = this.props.winnerLine
       let coordinateX = this.state.coordinateX;
       let coordinateY = this.state.coordinateY;
       if(line[0] === "0" && line[1] === "1" && line[2] === "2"||
@@ -186,13 +183,12 @@ export class App extends Component {
    winnerList.map((el,i)=>{
       let list = winnerList[i];
          if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[0]] === this.props.mainBox[list[2]]){
-           this.props.setWinner(this.props.firstPlayer);
+           this.props.setWinner(this.props.firstPlayer, list);
+           this.props.resetPlayer();
            
             this.setState({
-               winnerLine: list,
-               firstPlayer: null,
                counterX: this.props.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
-               counterY: this.props.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY,
+               counterY: this.props.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY
             })
          }
       })
@@ -240,8 +236,8 @@ export class App extends Component {
    resetGame = () => {
       this.setState({
          mainBox:['','','',
-         '','','',
-         '','',''],
+                  '','','',
+                  '','',''],
          firstPlayer: null,
          winner: null,
          winnerLine: [],
@@ -321,7 +317,7 @@ export class App extends Component {
                                     player={this.props.firstPlayer}
                                     number={"number" + i}
                                     centerXY={this.centerXY(i)}
-                                    // winnerLine={this.state.winnerLine}
+                                    // winnerLine={this.props.winnerLine}
                                     // winner={this.props.winner}
                                  >
                                  {this.renderChild(el)}
@@ -484,16 +480,19 @@ export default connect(
       return {
           firstPlayer: state.setPlayer.firstPlayer,
           mainBox: state.mainBox.mainBox,
-          winner: state.win.winner
+          winner: state.gameOver.winner,
+          winnerLine: state.gameOver.winnerLine
       };
    },
    (dispatch) => {
       return {
          setXPlayer: bindActionCreators(setPlayerActions.setXPlayer, dispatch),
          setOPlayer: bindActionCreators(setPlayerActions.setOPlayer, dispatch),
+         resetPlayer: bindActionCreators(setPlayerActions.resetPlayer, dispatch),
          updateBox: bindActionCreators(updateBoxActions.updateBox, dispatch),
          updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch),
          setWinner: bindActionCreators(winnerActions.setWinner, dispatch)
+    
       };
    }
 )(App);
