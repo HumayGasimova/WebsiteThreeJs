@@ -8,4 +8,10 @@ export function setWinner(winner, list){
     }
 };
 
+export function draw(){
+    return {
+        type: actionTypes.DRAW
+    }
+};
+
 

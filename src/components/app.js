@@ -14,6 +14,7 @@ import {
    bindActionCreators
 } from 'redux';
 import store from '../store/store';
+
 /**
  * Components
  */
@@ -224,6 +225,8 @@ export class App extends Component {
       drawList.map((el,i)=>{
          let list = drawList[i];
             if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[1]] === this.props.mainBox[list[2]] && this.props.mainBox[list[2]] === this.props.mainBox[list[3]] && this.props.mainBox[list[3]] === this.props.mainBox[list[4]]){
+              this.props.setDraw();
+              this.props.resetPlayer();
                this.setState({
                   winner:"No One",
                   draw: true,
@@ -344,7 +347,7 @@ export class App extends Component {
                   winner={this.props.winner}/>
             )
          }else{
-            if(this.props.winner === "No One" && this.state.draw === true){
+            if(this.props.winner === "No One" && this.props.draw === true){
                return(
 
                   <div className="drawScreen">
@@ -461,7 +464,7 @@ export class App extends Component {
                </div>
                {this.renderWinnerLine()}
                {this.renderReset()}
-               {/* <div>{console.log(this.state)}</div> */}
+               {/* <div>{console.log(this.props.draw)}</div> */}
             </div>
 <div>{console.log(store.getState())}</div>
             <canvas />
@@ -481,7 +484,8 @@ export default connect(
           firstPlayer: state.setPlayer.firstPlayer,
           mainBox: state.mainBox.mainBox,
           winner: state.gameOver.winner,
-          winnerLine: state.gameOver.winnerLine
+          winnerLine: state.gameOver.winnerLine,
+          draw: state.gameOver.draw
       };
    },
    (dispatch) => {
@@ -491,7 +495,8 @@ export default connect(
          resetPlayer: bindActionCreators(setPlayerActions.resetPlayer, dispatch),
          updateBox: bindActionCreators(updateBoxActions.updateBox, dispatch),
          updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch),
-         setWinner: bindActionCreators(winnerActions.setWinner, dispatch)
+         setWinner: bindActionCreators(winnerActions.setWinner, dispatch),
+         setDraw: bindActionCreators(winnerActions.draw, dispatch)
     
       };
    }

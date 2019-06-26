@@ -14,7 +14,12 @@ function winner (state = initialState, action){
                 winner: action.winner,
                 winnerLine: action.winnerLine
             }
-        
+        case actionTypes.DRAW:
+                return {
+                    ...state,
+                    draw: true,
+                    winner: "No One"
+                }
     }
         return state;
 }
