@@ -45,6 +45,7 @@ import './Box/box.scss';
  */
 
 import * as setPlayerActions from '../actions/setPlayerActions';
+import * as updateBoxAction from '../actions/updateBoxAction';
 
 /**
  * App component definition and export
@@ -98,11 +99,11 @@ export class App extends Component {
 
    handleOnClick = (i) => {
       if(this.props.firstPlayer && !this.state.winner){
-         let updatedBox = this.state.mainBox;
-         if(this.state.mainBox[i]===''){
-            updatedBox[i] = this.props.firstPlayer;
+         let updatedBox = this.props.mainBox;
+         if(this.props.mainBox[i]===''){
+            // updatedBox[i] = this.props.firstPlayer;
+            this.props.updateBox(i,this.props.firstPlayer)
             this.setState({
-               mainBox: updatedBox,
                firstPlayer: this.props.firstPlayer === "X" ? "O" : "X"
             })
             this.checkIfDraw();
@@ -191,7 +192,7 @@ export class App extends Component {
 
    winnerList.map((el,i)=>{
       let list = winnerList[i];
-         if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[0]] === this.state.mainBox[list[2]]){
+         if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[0]] === this.props.mainBox[list[2]]){
             this.setState({
                winner: this.props.firstPlayer,
                winnerLine: list,
@@ -232,7 +233,7 @@ export class App extends Component {
       ]
       drawList.map((el,i)=>{
          let list = drawList[i];
-            if(this.state.mainBox[list[0]] && this.state.mainBox[list[0]] === this.state.mainBox[list[1]] && this.state.mainBox[list[1]] === this.state.mainBox[list[2]] && this.state.mainBox[list[2]] === this.state.mainBox[list[3]] && this.state.mainBox[list[3]] === this.state.mainBox[list[4]]){
+            if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[1]] === this.props.mainBox[list[2]] && this.props.mainBox[list[2]] === this.props.mainBox[list[3]] && this.props.mainBox[list[3]] === this.props.mainBox[list[4]]){
                this.setState({
                   winner:"No One",
                   draw: true,
@@ -318,7 +319,7 @@ export class App extends Component {
                   firstPlayer={this.props.firstPlayer}
                >
                   <div className='outerBox'>
-                        {this.state.mainBox.map((el,i)=>{
+                        {this.props.mainBox.map((el,i)=>{
                            return (
                                  <Box
                                     key={i}
@@ -471,9 +472,9 @@ export class App extends Component {
                </div>
                {this.renderWinnerLine()}
                {this.renderReset()}
-               <div>{console.log(this.state)}</div>
+               {/* <div>{console.log(this.state)}</div> */}
             </div>
-
+<div>{console.log(this.props.mainBox)}</div>
             <canvas />
          </div>
       );
@@ -488,14 +489,15 @@ export class App extends Component {
 export default connect(
    (state) => {
       return {
-          firstPlayer: state.firstPlayer,
-         // storedResults: state.res.results
+          firstPlayer: state.setPlayer.firstPlayer,
+          mainBox: state.mainBox.mainBox
       };
    },
    (dispatch) => {
       return {
          setXPlayer: bindActionCreators(setPlayerActions.setXPlayer, dispatch),
-         setOPlayer: bindActionCreators(setPlayerActions.setOPlayer, dispatch)
+         setOPlayer: bindActionCreators(setPlayerActions.setOPlayer, dispatch),
+         updateBox: bindActionCreators(updateBoxAction.updateBox, dispatch),
       };
    }
 )(App);

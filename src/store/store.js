@@ -1,12 +1,14 @@
 import {
     createStore,
     applyMiddleware,
-    compose
+    compose,
+    combineReducers
 } from 'redux';
-import rootReducer from '../reducers/setPlayerReducer';
+
 import {
     createBrowserHistory
 } from 'history';
+
 import {
     routerMiddleware
 } from 'connected-react-router';
@@ -16,6 +18,15 @@ import {
 } from 'redux-logger';
 
 import thunk from 'redux-thunk';
+
+import setPlayerReducer from '../reducers/setPlayerReducer';
+import mainBoxReducer from '../reducers/mainBoxReducer';
+
+
+const rootReducer = combineReducers({
+    setPlayer: setPlayerReducer,
+    mainBox: mainBoxReducer
+})
 
 // const middleware = [thunk];
 

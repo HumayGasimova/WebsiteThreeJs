@@ -1,12 +1,4 @@
 import * as actionTypes from '../constants/actionTypes';
-import {
-    combineReducers
-} from 'redux';
-import {
-    connectRouter
-} from 'connected-react-router';
-
-
 
 const initialState = {
     firstPlayer: null,
