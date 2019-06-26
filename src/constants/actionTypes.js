@@ -5,5 +5,6 @@ export const UPDATE_PLAYER = 'UPDATE_PLAYER';
 export const SET_WINNER = 'SET_WINNER';
 export const RESET_PLAYER = 'RESET_PLAYER';
 export const DRAW = 'DRAW';
+export const SIDE_DRAWER_IS_OPEN = 'SIDE_DRAWER_IS_OPEN';
 
 

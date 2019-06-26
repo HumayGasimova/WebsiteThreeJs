@@ -48,6 +48,7 @@ import './Box/box.scss';
 import * as setPlayerActions from '../actions/setPlayerActions';
 import * as updateBoxActions from '../actions/updateBoxActions';
 import * as winnerActions from '../actions/winnerActions';
+import * as sideDrawerHandler from '../actions/sideDrawerHandler';
 
 /**
  * App component definition and export
@@ -68,7 +69,6 @@ export class App extends Component {
          coordinateY:['','','',
                      '','','',
                      '','',''],
-         draw: false,
          counterX: 0,
          counterY: 0,
          sideDrawerOpen: ""
@@ -415,14 +415,16 @@ export class App extends Component {
    }
 
    menuButtonHandler = () => {
-      this.setState({
-         sideDrawerOpen: "Yes"
-      })
+      this.props. sideDrawerIsOpen("Yes")
+      // this.setState({
+      //    sideDrawerOpen: "Yes"
+      // })
    }
    sideDrawerHandler = () => {
-      this.setState({
-         sideDrawerOpen: "No"
-      })
+      this.props. sideDrawerIsOpen("No")
+      // this.setState({
+      //    sideDrawerOpen: "No"
+      // })
    }
 
    renderMenuButton = () => {
@@ -437,7 +439,7 @@ export class App extends Component {
       return(
          <SideDrawer
             sideDrawerHandler={this.sideDrawerHandler}
-            sideDrawerOpen={this.state.sideDrawerOpen}
+            sideDrawerOpen={this.props.sideDrawerOpen}
          />
       )
    }
@@ -485,7 +487,8 @@ export default connect(
           mainBox: state.mainBox.mainBox,
           winner: state.gameOver.winner,
           winnerLine: state.gameOver.winnerLine,
-          draw: state.gameOver.draw
+          draw: state.gameOver.draw,
+          sideDrawerOpen: state.sideDrawer.sideDrawerOpen
       };
    },
    (dispatch) => {
@@ -496,8 +499,8 @@ export default connect(
          updateBox: bindActionCreators(updateBoxActions.updateBox, dispatch),
          updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch),
          setWinner: bindActionCreators(winnerActions.setWinner, dispatch),
-         setDraw: bindActionCreators(winnerActions.draw, dispatch)
-    
+         setDraw: bindActionCreators(winnerActions.draw, dispatch),
+         sideDrawerIsOpen:bindActionCreators(sideDrawerHandler.sideDrawerOpen, dispatch)
       };
    }
 )(App);

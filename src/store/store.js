@@ -22,12 +22,14 @@ import thunk from 'redux-thunk';
 import setPlayerReducer from '../reducers/setPlayerReducer';
 import mainBoxReducer from '../reducers/mainBoxReducer';
 import winnerReducer from '../reducers/winnerReducer';
+import sideDrawerReducer from '../reducers/sideDrawerReducer';
 
 
 const rootReducer = combineReducers({
     setPlayer: setPlayerReducer,
     mainBox: mainBoxReducer,
-    gameOver: winnerReducer
+    gameOver: winnerReducer,
+    sideDrawer: sideDrawerReducer
 })
 
 // const middleware = [thunk];

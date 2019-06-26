@@ -9,11 +9,13 @@ function setPlayer (state = initialState, action){
     switch(action.type){
         case actionTypes.SET_X_PLAYER:
             return {
+                ...state,
                 firstPlayer: "X",
                 dash: null
             }
         case actionTypes.SET_O_PLAYER:
             return {
+                ...state,
                 firstPlayer: "O",
                 dash: null
             }
