@@ -13,7 +13,7 @@ import {
 import {
    bindActionCreators
 } from 'redux';
-
+import store from '../store/store';
 /**
  * Components
  */
@@ -45,7 +45,8 @@ import './Box/box.scss';
  */
 
 import * as setPlayerActions from '../actions/setPlayerActions';
-import * as updateBoxActions from '../actions/updateBoxAction';
+import * as updateBoxActions from '../actions/updateBoxActions';
+import * as winnerActions from '../actions/winnerActions';
 
 /**
  * App component definition and export
@@ -71,7 +72,6 @@ export class App extends Component {
          draw: false,
          counterX: 0,
          counterY: 0,
-         dash: "-",
          sideDrawerOpen: ""
       } 
    }
@@ -94,10 +94,9 @@ export class App extends Component {
    }
 
    handleOnClick = (i) => {
-      if(this.props.firstPlayer && !this.state.winner){
+      if(this.props.firstPlayer && !this.props.winner){
          let updatedBox = this.props.mainBox;
          if(this.props.mainBox[i]===''){
-            // updatedBox[i] = this.props.firstPlayer;
             this.props.updateBox(i,this.props.firstPlayer);
             this.props.updatePlayer();
             this.checkIfDraw();
@@ -116,7 +115,7 @@ export class App extends Component {
             return (
                <div className="winnerLine">
                   <HorizontalLine
-                     player={this.state.winner === "X"}
+                     player={this.props.winner === "X"}
                      coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "3" ? coordinateX[3]: coordinateX[6])}
                      coordinateX2={line[2] === "2" ? coordinateX[2]:(line[2] === "5" ? coordinateX[5]: coordinateX[8])}
                      coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "3" ? coordinateY[3]: coordinateY[6])}
@@ -131,7 +130,7 @@ export class App extends Component {
                   return (
                      <div className="winnerLine">
                         <VerticalLine
-                           player={this.state.winner === "X"}
+                           player={this.props.winner === "X"}
                            coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "1" ? coordinateX[1]: coordinateX[2])}
                            coordinateX2={line[2] === "6" ? coordinateX[6]:(line[2] === "7" ? coordinateX[7]: coordinateX[8])}
                            coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "1" ? coordinateY[1]: coordinateY[2])}
@@ -145,7 +144,7 @@ export class App extends Component {
                      return (
                         <div className="winnerLine">
                            <DiagonalLineLeft
-                              player={this.state.winner === "X"}
+                              player={this.props.winner === "X"}
                               coordinateX1={coordinateX[0]}
                               coordinateX2={coordinateX[8]}
                               coordinateY1={coordinateY[0]}
@@ -158,7 +157,7 @@ export class App extends Component {
                      return (
                         <div className="winnerLine">
                            <DiagonalLineRight
-                              player={this.state.winner === "X"}
+                              player={this.props.winner === "X"}
                               coordinateX1={coordinateX[2]}
                               coordinateX2={coordinateX[6]}
                               coordinateY1={coordinateY[2]}
@@ -187,8 +186,9 @@ export class App extends Component {
    winnerList.map((el,i)=>{
       let list = winnerList[i];
          if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[0]] === this.props.mainBox[list[2]]){
+           this.props.setWinner(this.props.firstPlayer);
+           
             this.setState({
-               winner: this.props.firstPlayer,
                winnerLine: list,
                firstPlayer: null,
                counterX: this.props.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
@@ -250,10 +250,9 @@ export class App extends Component {
    }
 
    select1Player = () => {
-
       this.props.setXPlayer();
-      
    }
+
    select2Player = () => {
       this.props.setOPlayer();
    }
@@ -323,7 +322,7 @@ export class App extends Component {
                                     number={"number" + i}
                                     centerXY={this.centerXY(i)}
                                     // winnerLine={this.state.winnerLine}
-                                    // winner={this.state.winner}
+                                    // winner={this.props.winner}
                                  >
                                  {this.renderChild(el)}
                                  </Box>
@@ -337,19 +336,19 @@ export class App extends Component {
 
    renderWinnerScreen = () => {
       
-      if(this.state.winner === "O"){
+      if(this.props.winner === "O"){
          return(
                <WinnerO
-               winner={this.state.winner}/> 
+               winner={this.props.winner}/> 
          )
       }else{
-         if(this.state.winner === "X"){
+         if(this.props.winner === "X"){
             return(
                   <WinnerX
-                  winner={this.state.winner}/>
+                  winner={this.props.winner}/>
             )
          }else{
-            if(this.state.winner === "No One" && this.state.draw === true){
+            if(this.props.winner === "No One" && this.state.draw === true){
                return(
 
                   <div className="drawScreen">
@@ -383,28 +382,28 @@ export class App extends Component {
    }
 
    renderWhoseTurn = () => {
-      if(this.props.firstPlayer === null && this.state.winner === null){
+      if(this.props.firstPlayer === null && this.props.winner === null){
          return(
             <div className="text">
                Start game or select player
             </div>
          )
       }else{
-         if(this.props.firstPlayer === "X" && this.state.winner === null){
+         if(this.props.firstPlayer === "X" && this.props.winner === null){
             return(
                <div className="text">
                   X Turn
                </div>
             )
          }else{
-            if(this.props.firstPlayer === "O" && this.state.winner === null){
+            if(this.props.firstPlayer === "O" && this.props.winner === null){
                return(
                   <div className="text">
                      O Turn
                   </div>
                )
             }else{
-               if(this.props.firstPlayer === null && this.state.winner !== null){
+               if(this.props.firstPlayer === null && this.props.winner !== null){
                   return(
                      <div className="text">
                         Game Over
@@ -468,7 +467,7 @@ export class App extends Component {
                {this.renderReset()}
                {/* <div>{console.log(this.state)}</div> */}
             </div>
-<div>{console.log(this.props.mainBox)}</div>
+<div>{console.log(store.getState())}</div>
             <canvas />
          </div>
       );
@@ -484,7 +483,8 @@ export default connect(
    (state) => {
       return {
           firstPlayer: state.setPlayer.firstPlayer,
-          mainBox: state.mainBox.mainBox
+          mainBox: state.mainBox.mainBox,
+          winner: state.winner.winner
       };
    },
    (dispatch) => {
@@ -492,7 +492,8 @@ export default connect(
          setXPlayer: bindActionCreators(setPlayerActions.setXPlayer, dispatch),
          setOPlayer: bindActionCreators(setPlayerActions.setOPlayer, dispatch),
          updateBox: bindActionCreators(updateBoxActions.updateBox, dispatch),
-         updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch)
+         updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch),
+         setWinner: bindActionCreators(winnerActions.setWinner, dispatch)
       };
    }
 )(App);
