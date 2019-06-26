@@ -11,3 +11,9 @@ export function setOPlayer(){
         type: actionTypes.SET_O_PLAYER
     }
 };
+
+export function updatePlayer(){
+    return {
+        type: actionTypes.UPDATE_PLAYER
+    }
+};

@@ -17,7 +17,12 @@ function setPlayer (state = initialState, action){
                 firstPlayer: "O",
                 dash: null
             }
-        }
+        case actionTypes.UPDATE_PLAYER:
+            return {
+                ...state,
+                firstPlayer: state.firstPlayer === "X" ? "O" : "X"
+            }
+    }
         return state;
 }
 

@@ -45,7 +45,7 @@ import './Box/box.scss';
  */
 
 import * as setPlayerActions from '../actions/setPlayerActions';
-import * as updateBoxAction from '../actions/updateBoxAction';
+import * as updateBoxActions from '../actions/updateBoxAction';
 
 /**
  * App component definition and export
@@ -60,10 +60,6 @@ export class App extends Component {
    constructor(props){
       super(props);
       this.state = {
-         mainBox:['','','',
-                  '','','',
-                  '','',''],
-         firstPlayer: null,
          winner: null,
          winnerLine: [],
          coordinateX:['','','',
@@ -102,10 +98,8 @@ export class App extends Component {
          let updatedBox = this.props.mainBox;
          if(this.props.mainBox[i]===''){
             // updatedBox[i] = this.props.firstPlayer;
-            this.props.updateBox(i,this.props.firstPlayer)
-            this.setState({
-               firstPlayer: this.props.firstPlayer === "X" ? "O" : "X"
-            })
+            this.props.updateBox(i,this.props.firstPlayer);
+            this.props.updatePlayer();
             this.checkIfDraw();
             this.checkWinner();
          }
@@ -497,7 +491,8 @@ export default connect(
       return {
          setXPlayer: bindActionCreators(setPlayerActions.setXPlayer, dispatch),
          setOPlayer: bindActionCreators(setPlayerActions.setOPlayer, dispatch),
-         updateBox: bindActionCreators(updateBoxAction.updateBox, dispatch),
+         updateBox: bindActionCreators(updateBoxActions.updateBox, dispatch),
+         updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch)
       };
    }
 )(App);
