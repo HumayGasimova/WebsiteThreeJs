@@ -21,13 +21,13 @@ import thunk from 'redux-thunk';
 
 import setPlayerReducer from '../reducers/setPlayerReducer';
 import mainBoxReducer from '../reducers/mainBoxReducer';
-import winnerReducer from '../reducers/mainBoxReducer';
+import winnerReducer from '../reducers/winnerReducer';
 
 
 const rootReducer = combineReducers({
     setPlayer: setPlayerReducer,
     mainBox: mainBoxReducer,
-    winner: winnerReducer
+    win: winnerReducer
 })
 
 // const middleware = [thunk];

@@ -13,7 +13,7 @@ function winner (state = initialState, action){
         case actionTypes.SET_WINNER:
             return {
                 ...state,
-                winner: action.winner 
+                winner: action.winner
             }
         
     }

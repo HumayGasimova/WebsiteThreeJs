@@ -484,7 +484,7 @@ export default connect(
       return {
           firstPlayer: state.setPlayer.firstPlayer,
           mainBox: state.mainBox.mainBox,
-          winner: state.winner.winner
+          winner: state.win.winner
       };
    },
    (dispatch) => {
