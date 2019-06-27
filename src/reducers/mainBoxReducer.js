@@ -13,8 +13,18 @@ function updateBox (state = initialState, action){
             const newState = Object.assign({}, state);
             newState.mainBox[action.i] = action.player
         return newState
+       
+        case actionTypes.RESET_MAINBOX:
+               
+            return {
+                ...state,
+                mainBox: ['','','',
+                         '','','',
+                         '','','']
+            }
     }
-        return state;
+
+    return state;
 }
 
 export default updateBox;

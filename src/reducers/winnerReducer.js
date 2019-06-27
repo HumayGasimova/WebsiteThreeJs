@@ -20,6 +20,13 @@ function winner (state = initialState, action){
                     draw: true,
                     winner: "No One"
                 }
+        case actionTypes.RESET_GAME:
+                return {
+                    ...state,
+                    winner: null,
+                    winnerLine: [],
+                    draw: false
+                }
     }
         return state;
 }

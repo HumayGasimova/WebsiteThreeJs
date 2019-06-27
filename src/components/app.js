@@ -48,7 +48,7 @@ import './Box/box.scss';
 import * as setPlayerActions from '../actions/setPlayerActions';
 import * as updateBoxActions from '../actions/updateBoxActions';
 import * as winnerActions from '../actions/winnerActions';
-import * as sideDrawerHandler from '../actions/sideDrawerHandler';
+import * as sideDrawerActions from '../actions/sideDrawerActions';
 
 /**
  * App component definition and export
@@ -237,6 +237,10 @@ export class App extends Component {
    }
 
    resetGame = () => {
+
+      this.props.resetPlayer();
+      this.props.resetGame();
+      this.props.resetMainBox();
       this.setState({
          mainBox:['','','',
                   '','','',
@@ -500,7 +504,9 @@ export default connect(
          updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch),
          setWinner: bindActionCreators(winnerActions.setWinner, dispatch),
          setDraw: bindActionCreators(winnerActions.draw, dispatch),
-         sideDrawerIsOpen:bindActionCreators(sideDrawerHandler.sideDrawerOpen, dispatch)
+         sideDrawerIsOpen: bindActionCreators(sideDrawerActions.sideDrawerOpen, dispatch),
+         resetGame: bindActionCreators(winnerActions.resetGame, dispatch),
+         resetMainBox: bindActionCreators(updateBoxActions.resetMainBox, dispatch)
       };
    }
 )(App);

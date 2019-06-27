@@ -14,4 +14,10 @@ export function draw (){
     }
 };
 
+export function resetGame (){
+    return {
+        type: actionTypes.RESET_GAME
+    }
+};
+
 
