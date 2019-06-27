@@ -29,8 +29,9 @@ function setPlayer (state = initialState, action){
                     ...state,
                     firstPlayer: null
                 }
+        default:
+                return state;
     }
-        return state;
 }
 
 // export default (history) => combineReducers({

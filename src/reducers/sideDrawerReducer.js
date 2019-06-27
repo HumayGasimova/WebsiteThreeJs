@@ -11,8 +11,9 @@ function sideDrawerHandler (state = initialState, action){
                 ...state,
                 sideDrawerOpen: action.option
             }
+        default:
+             return state;
     }
-        return state;
 }
 
 

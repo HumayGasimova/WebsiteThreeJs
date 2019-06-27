@@ -70,8 +70,7 @@ export class App extends Component {
                      '','','',
                      '','',''],
          counterX: 0,
-         counterY: 0,
-         sideDrawerOpen: ""
+         counterY: 0
       } 
    }
   
@@ -237,19 +236,9 @@ export class App extends Component {
    }
 
    resetGame = () => {
-
       this.props.resetPlayer();
       this.props.resetGame();
       this.props.resetMainBox();
-      this.setState({
-         mainBox:['','','',
-                  '','','',
-                  '','',''],
-         firstPlayer: null,
-         winner: null,
-         winnerLine: [],
-         draw: false
-      })
    }
 
    select1Player = () => {
@@ -418,23 +407,10 @@ export class App extends Component {
       }
    }
 
-   menuButtonHandler = () => {
-      this.props. sideDrawerIsOpen("Yes")
-      // this.setState({
-      //    sideDrawerOpen: "Yes"
-      // })
-   }
-   sideDrawerHandler = () => {
-      this.props. sideDrawerIsOpen("No")
-      // this.setState({
-      //    sideDrawerOpen: "No"
-      // })
-   }
-
    renderMenuButton = () => {
       return(
          <MenuButton
-            menuButtonHandler={this.menuButtonHandler}
+            menuButtonHandler={() => this.props. sideDrawerIsOpen("Yes")}
          />
       )
    }
@@ -442,7 +418,7 @@ export class App extends Component {
    renderSideDrawer = () => {
       return(
          <SideDrawer
-            sideDrawerHandler={this.sideDrawerHandler}
+            sideDrawerHandler={() => this.props. sideDrawerIsOpen("No")}
             sideDrawerOpen={this.props.sideDrawerOpen}
          />
       )

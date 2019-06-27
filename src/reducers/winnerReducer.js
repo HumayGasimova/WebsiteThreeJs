@@ -15,20 +15,21 @@ function winner (state = initialState, action){
                 winnerLine: action.winnerLine
             }
         case actionTypes.DRAW:
-                return {
-                    ...state,
-                    draw: true,
-                    winner: "No One"
-                }
+            return {
+                ...state,
+                draw: true,
+                winner: "No One"
+            }
         case actionTypes.RESET_GAME:
-                return {
-                    ...state,
-                    winner: null,
-                    winnerLine: [],
-                    draw: false
-                }
+            return {
+                ...state,
+                winner: null,
+                winnerLine: [],
+                draw: false
+            }
+        default:
+            return state;
     }
-        return state;
 }
 
 export default winner;
