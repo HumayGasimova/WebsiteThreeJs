@@ -38,13 +38,19 @@ const logger = createLogger({
     collapsed: true
 });
 
-const middleware = [thunk];
+const middleware = [];
 
 if (process.env.ENVIRONMENT !== 'production') {
     middleware.push(logger);
 }
 
-export default createStore(rootReducer, applyMiddleware(logger));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+export default createStore(
+    rootReducer, 
+    composeEnhancers(
+        applyMiddleware(thunk,logger)
+));
 
 
 // export const history = createBrowserHistory();
