@@ -19,8 +19,11 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    transform: translateX(200px);
-    transition: all 1s linear;
+    // transform: translateX(200px);
+    // transition: all 1s linear;
+    visibility: hidden;
+ 
+    
 }
 
 @keyframes moveOpen {
@@ -31,3 +34,25 @@
         width: 185px;
     }
 }
+// @keyframes moveClose {
+//     from {
+//         width:  185px;
+//     }
+//     to {
+//         width: 0px;
+//     }
+// }
+
+
+// div {
+//     border: 1px solid #eee;
+//   }
+//   div > ul {
+//     visibility: hidden;
+//     opacity: 0;
+//     transition: visibility 0s, opacity 0.5s linear;
+//   }
+//   div:hover > ul {
+//     visibility: visible;
+//     opacity: 1;
+//   }
