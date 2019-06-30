@@ -431,25 +431,29 @@ export class App extends Component {
    render(){
       return(
          <div>
-            <div className="background">
-               <Head>
-                  {this.renderMenuButton()}
-               </Head>
-               {this.renderSideDrawer()}
-               {this.renderPlayerForm()}
-               {this.renderWhoseTurn()}
-               <div className="main">
-                  <div className="mainBox">
-                     {this.renderMainBox()}
-                     {this.renderWinnerScreen()}
+            <div >
+               <div className="background">
+               <div className={this.props.sideDrawerOpen === "Yes" ? "showCurtains" : null}/>
+                  <Head>
+                     {this.renderMenuButton()}
+                  </Head>
+                  {this.renderSideDrawer()}
+                  {this.renderPlayerForm()}
+                  {this.renderWhoseTurn()}
+                  <div className="main">
+                     <div className="mainBox">
+                        {this.renderMainBox()}
+                        {this.renderWinnerScreen()}
+                     </div>
                   </div>
+                  {this.renderWinnerLine()}
+                  {this.renderReset()}
+                  {/* <div>{console.log(this.props.draw)}</div> */}
+                  <div className="emptyDiv"/>
                </div>
-               {this.renderWinnerLine()}
-               {this.renderReset()}
-               {/* <div>{console.log(this.props.draw)}</div> */}
+               <div>{console.log(store.getState())}</div>
+               <canvas />
             </div>
-<div>{console.log(store.getState())}</div>
-            <canvas />
          </div>
       );
    }
