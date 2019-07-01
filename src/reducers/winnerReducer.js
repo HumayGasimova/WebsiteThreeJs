@@ -1,4 +1,7 @@
 import * as actionTypes from '../constants/actionTypes';
+import {
+    updateObject
+} from './utility';
 
 const initialState = {
     winner: null,
@@ -9,24 +12,21 @@ const initialState = {
 function winner (state = initialState, action){
     switch(action.type){
         case actionTypes.SET_WINNER:
-            return {
-                ...state,
+            return updateObject(state, {
                 winner: action.winner,
                 winnerLine: action.winnerLine
-            }
+            });
         case actionTypes.DRAW:
-            return {
-                ...state,
+            return updateObject(state, {
                 draw: true,
                 winner: "No One"
-            }
+            });
         case actionTypes.RESET_GAME:
-            return {
-                ...state,
+            return updateObject(state, {
                 winner: null,
                 winnerLine: [],
                 draw: false
-            }
+            });
         default:
             return state;
     }

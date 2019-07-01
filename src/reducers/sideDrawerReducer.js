@@ -1,4 +1,7 @@
 import * as actionTypes from '../constants/actionTypes';
+import {
+    updateObject
+} from './utility';
 
 const initialState = {
     sideDrawerOpen: ""
@@ -7,10 +10,7 @@ const initialState = {
 function sideDrawerHandler (state = initialState, action){
     switch(action.type){
         case actionTypes.SIDE_DRAWER_IS_OPEN:
-            return {
-                ...state,
-                sideDrawerOpen: action.option
-            }
+            return updateObject(state, {sideDrawerOpen: action.option});
         default:
              return state;
     }

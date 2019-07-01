@@ -15,7 +15,6 @@ function updateBox (state = initialState, action){
         return newState
        
         case actionTypes.RESET_MAINBOX:
-               
             return {
                 ...state,
                 mainBox: ['','','',
