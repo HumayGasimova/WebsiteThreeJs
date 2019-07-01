@@ -45,10 +45,8 @@ import './Box/box.scss';
  * Actions
  */
 
-import * as setPlayerActions from '../actions/setPlayerActions';
-import * as updateBoxActions from '../actions/updateBoxActions';
-import * as winnerActions from '../actions/winnerActions';
-import * as sideDrawerActions from '../actions/sideDrawerActions';
+import * as Actions from '../actions';
+
 
 /**
  * App component definition and export
@@ -477,16 +475,16 @@ export default connect(
    },
    (dispatch) => {
       return {
-         setXPlayer: bindActionCreators(setPlayerActions.setXPlayer, dispatch),
-         setOPlayer: bindActionCreators(setPlayerActions.setOPlayer, dispatch),
-         resetPlayer: bindActionCreators(setPlayerActions.resetPlayer, dispatch),
-         updateBox: bindActionCreators(updateBoxActions.updateBox, dispatch),
-         updatePlayer: bindActionCreators(setPlayerActions.updatePlayer, dispatch),
-         setWinner: bindActionCreators(winnerActions.setWinner, dispatch),
-         setDraw: bindActionCreators(winnerActions.draw, dispatch),
-         sideDrawerIsOpen: bindActionCreators(sideDrawerActions.sideDrawerOpen, dispatch),
-         resetGame: bindActionCreators(winnerActions.resetGame, dispatch),
-         resetMainBox: bindActionCreators(updateBoxActions.resetMainBox, dispatch)
+         setXPlayer: bindActionCreators(Actions.setXPlayer, dispatch),
+         setOPlayer: bindActionCreators(Actions.setOPlayer, dispatch),
+         resetPlayer: bindActionCreators(Actions.resetPlayer, dispatch),
+         updateBox: bindActionCreators(Actions.updateBox, dispatch),
+         updatePlayer: bindActionCreators(Actions.updatePlayer, dispatch),
+         setWinner: bindActionCreators(Actions.setWinner, dispatch),
+         setDraw: bindActionCreators(Actions.draw, dispatch),
+         sideDrawerIsOpen: bindActionCreators(Actions.sideDrawerOpen, dispatch),
+         resetGame: bindActionCreators(Actions.resetGame, dispatch),
+         resetMainBox: bindActionCreators(Actions.resetMainBox, dispatch)
       };
    }
 )(App);
