@@ -66,7 +66,7 @@ import './xLogo.scss';
 
     render(){
        return(
-            <div className={this.props.left ? "leftAirBallon": "rightAirBallon"}>
+            <div className={this.props.left ? "leftX": "rightX"}>
                 <X/>
             </div>
        );

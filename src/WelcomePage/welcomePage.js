@@ -43,6 +43,7 @@ class WelcomePage extends Component {
                 <div className="backgroundBox">
                 <Headline/>
                 <XLogo left/>
+                <XLogo />
                 </div>
             </div>
         );
