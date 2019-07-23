@@ -22,8 +22,22 @@ class WelcomePage extends Component {
     * Constructor
     */
 
-    constructor (){
-        super();
+    constructor(props) {
+        super(props);
+        this.state={
+        slower: 0
+        }
+    }
+
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll)
+    }
+
+    handleScroll = () => {
+        let scrollHeight = document.body.scrollTop
+        this.setState({
+            slower: scrollHeight/2
+        })
     }
     
     /**
@@ -32,7 +46,10 @@ class WelcomePage extends Component {
 
     render(){
         return(
-            <div className="headline">
+            <div 
+                className="headline"
+                style={{transform: `translate(0px, ${this.state.slower}px)`}}
+            >
                Tic Tac Toe
             </div>
         );
