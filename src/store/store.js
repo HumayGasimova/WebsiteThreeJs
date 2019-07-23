@@ -21,19 +21,6 @@ import thunk from 'redux-thunk';
 
 import createRootReducer from '../reducers/reducers';
 
-// import setPlayerReducer from '../reducers/setPlayerReducer';
-// import mainBoxReducer from '../reducers/mainBoxReducer';
-// import winnerReducer from '../reducers/winnerReducer';
-// import sideDrawerReducer from '../reducers/sideDrawerReducer';
-
-
-// const rootReducer = combineReducers({
-//     setPlayer: setPlayerReducer,
-//     mainBox: mainBoxReducer,
-//     gameOver: winnerReducer,
-//     sideDrawer: sideDrawerReducer
-// })
-
 // const middleware = [thunk];
 
 const logger = createLogger({

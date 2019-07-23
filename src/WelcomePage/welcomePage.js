@@ -7,7 +7,19 @@ import React,{
 } from 'react';
 
 /**
- * MainBox component definition and export
+ * Components
+ */
+
+import Headline from './Headline/headline';
+
+/**
+ * Styles
+ */
+
+import './welcomePage.scss';
+
+/**
+ * WelcomePage component definition and export
  */
 
 class WelcomePage extends Component {
@@ -26,8 +38,10 @@ class WelcomePage extends Component {
 
     render(){
         return(
-            <div>
-                Welcome
+            <div className="main">
+                <div className="backgroundBox">
+                <Headline/>
+                </div>
             </div>
         );
     }
