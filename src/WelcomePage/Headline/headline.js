@@ -13,10 +13,10 @@ import React,{
 import './headline.scss';
 
 /**
- * WelcomePage component definition and export
+ * Headline component definition and export
  */
 
-class WelcomePage extends Component {
+class Headline extends Component {
 
     /**
     * Constructor
@@ -56,4 +56,4 @@ class WelcomePage extends Component {
     }
 }
 
-export default WelcomePage;
+export default Headline;

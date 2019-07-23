@@ -11,6 +11,7 @@ import React,{
  */
 
 import Headline from './Headline/headline';
+import XLogo from './X/xLogo';
 
 /**
  * Styles
@@ -41,6 +42,7 @@ class WelcomePage extends Component {
             <div className="main">
                 <div className="backgroundBox">
                 <Headline/>
+                <XLogo left/>
                 </div>
             </div>
         );
