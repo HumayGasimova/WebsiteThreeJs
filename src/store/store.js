@@ -19,18 +19,20 @@ import {
 
 import thunk from 'redux-thunk';
 
-import setPlayerReducer from '../reducers/setPlayerReducer';
-import mainBoxReducer from '../reducers/mainBoxReducer';
-import winnerReducer from '../reducers/winnerReducer';
-import sideDrawerReducer from '../reducers/sideDrawerReducer';
+import createRootReducer from '../reducers/reducers';
+
+// import setPlayerReducer from '../reducers/setPlayerReducer';
+// import mainBoxReducer from '../reducers/mainBoxReducer';
+// import winnerReducer from '../reducers/winnerReducer';
+// import sideDrawerReducer from '../reducers/sideDrawerReducer';
 
 
-const rootReducer = combineReducers({
-    setPlayer: setPlayerReducer,
-    mainBox: mainBoxReducer,
-    gameOver: winnerReducer,
-    sideDrawer: sideDrawerReducer
-})
+// const rootReducer = combineReducers({
+//     setPlayer: setPlayerReducer,
+//     mainBox: mainBoxReducer,
+//     gameOver: winnerReducer,
+//     sideDrawer: sideDrawerReducer
+// })
 
 // const middleware = [thunk];
 
@@ -46,14 +48,25 @@ if (process.env.ENVIRONMENT !== 'production') {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// export default createStore(
+//     rootReducer, 
+//     composeEnhancers(
+//         applyMiddleware(thunk,logger)
+// ));
+
+
+export const history = createBrowserHistory();
+
 export default createStore(
-    rootReducer, 
+    createRootReducer(history), 
     composeEnhancers(
-        applyMiddleware(thunk,logger)
-));
-
-
-// export const history = createBrowserHistory();
+        applyMiddleware(
+            routerMiddleware(history),
+            logger,
+            thunk
+            )
+        )
+    );
 
 // export default function configureStore(preloadedState){
 //     const store = createStore(

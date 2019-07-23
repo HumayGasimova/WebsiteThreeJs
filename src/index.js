@@ -34,24 +34,40 @@ import Welcome from './WelcomePage/welcomePage';
 
 ReactDOM.render(
     <Provider store={store}>
-       {/* <ConnectedRouter history={history}> */}
-               <App>
-                    <Switch>
-                        {/* <Route 
-                            exact 
-                            path="/MatchA"
-                            render={()=>(<div><img src={Picture}/></div>)}/> */}
-                        {/* <Route 
-                            exact 
-                            path="/MatchA"
-                            component={App}/>
-                        <Route 
-                            exact 
-                            path="/MatchB"
-                            component={Welcome}/> */}
-                    </Switch>
-                </App>    
-       {/* </ConnectedRouter> */}
+       <ConnectedRouter history={history}>
+            <Switch>
+                <Route 
+                  // exact 
+                  path="/ticTacToe"
+                  component={App}/>
+               <Route 
+                  exact 
+                  path="/"
+                  component={Welcome}/>
+             
+               {/* <Redirect from="/" to="/Welcome"/> */}
+               
+               {/* <Route 
+                  // exact 
+                  path="/Home"
+                  component={AsyncHome}/> */}
+               {/* <Route 
+                  render={()=>(<h1>404</h1>)}/> */}
+               {/* <Route 
+                  exact 
+                  path="/"
+                  render={()=>(<div>Hey</div>)}/> */}
+
+               {/* <Route
+                  // exact 
+                  path="/Home"
+                  render={() => (
+                     <Suspense fallback={<div>Loading...</div>}>
+                        <Home />
+                     </Suspense>
+                  )}/> */}
+            </Switch>
+       </ConnectedRouter>
     </Provider>,
    document.getElementById('app')
 );

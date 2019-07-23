@@ -32,7 +32,7 @@ import WinnerO from './WinnerScreen/winnerO';
 import WinnerX from './WinnerScreen/winnerX';
 import MenuButton from './MenuButton/menuButton';
 import Head from './Head/head';
-import SideDrawer from './SideDrawer/sideDrawer'
+import SideDrawer from './SideDrawer/sideDrawer';
 
 /**
  * Styles
@@ -46,6 +46,7 @@ import './Box/box.scss';
  */
 
 import * as Actions from '../actions';
+import Pic from '../Image/Pic.jpg';
 
 
 /**
@@ -450,6 +451,7 @@ export class App extends Component {
                   <div className="emptyDiv"/>
                </div>
                <div>{console.log(store.getState())}</div>
+               <img src={Pic}/>
                <canvas />
             </div>
          </div>
