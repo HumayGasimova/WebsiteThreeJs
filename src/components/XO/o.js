@@ -30,7 +30,16 @@ class O extends Component {
                 xmlns="http://www.w3.org/2000/svg"
                 // viewBox="0 0 303 303" 
                 >
-                <circle className={this.props.animationShow ? "circle" : null} r={this.props.radius} cy={this.props.cy} cx={this.props.cx} strokeWidth={this.props.strokeWidth} stroke="#F1EBD5" fill="none"/>
+                <circle 
+                    className={this.props.animationShow ? "circle" : null} 
+                    r={this.props.radius} 
+                    cy={this.props.cy} 
+                    cx={this.props.cx} 
+                    strokeWidth={this.props.strokeWidth} 
+                    stroke="#F1EBD5" 
+                    fill="none" 
+                    opacity={this.props.opacity}
+                />
             </svg>
         );
     }

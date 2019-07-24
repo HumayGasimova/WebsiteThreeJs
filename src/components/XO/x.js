@@ -24,7 +24,10 @@ class X extends Component {
 
     render(){
         return(
-            <div className={this.props.screen ? "xScreen" : "x"}>
+            <div 
+                className={this.props.screen ? "xScreen" : this.props.centerX ? "smallX" : "x"} 
+                style={{opacity: this.props.opacity}}
+            >
                 <div className="diagonalFirst"/>
                 <div className="diagonalSecond"/>
             </div>
