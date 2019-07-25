@@ -36,9 +36,9 @@ ReactDOM.render(
     <Provider store={store}>
        <ConnectedRouter history={history}>
             <Switch>
-                <Route 
+               <Route 
                   // exact 
-                  path="/ticTacToe"
+                  path="/tictactoe"
                   component={App}/>
                <Route 
                   exact 

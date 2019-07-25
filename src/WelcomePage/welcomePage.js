@@ -6,6 +6,10 @@ import React,{
     Component
 } from 'react';
 
+import {
+    NavLink
+ } from 'react-router-dom';
+
 /**
  * Components
  */
@@ -38,8 +42,9 @@ class WelcomePage extends Component {
 
     render(){
         return(
-            <div className="main">
+            <div className="welcomePage">
                <Page1/>
+               <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink>
             </div>
         );
     }

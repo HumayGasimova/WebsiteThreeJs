@@ -451,7 +451,6 @@ export class App extends Component {
                   <div className="emptyDiv"/>
                </div>
                <div>{console.log(store.getState())}</div>
-               <img src={Pic}/>
                <canvas />
             </div>
          </div>
