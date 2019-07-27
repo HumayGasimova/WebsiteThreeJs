@@ -27,6 +27,7 @@ import store from './store/store';
  */
 
 import App from './components/app';
+import App4x4 from './components/app4x4';
 import Welcome from './WelcomePage/welcomePage';
 
 // const store = configureStore()
@@ -39,7 +40,7 @@ ReactDOM.render(
                <Route 
                   // exact 
                   path="/tictactoe"
-                  component={App}/>
+                  component={App4x4}/>
                <Route 
                   exact 
                   path="/"
