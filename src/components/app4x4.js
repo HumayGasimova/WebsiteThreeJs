@@ -105,20 +105,28 @@ import React,{
  
     checkWinner = () => {
        let winnerList = [
-          ["0","1","2"],
-          ["3","4","5"],
-          ["6","7","8"],
-          ["0","3","6"],
-          ["1","4","7"],
-          ["2","5","8"],
-          ["0","4","8"],
-          ["2","4","6"]
+          ["0","1","2","3"],
+          ["4","5","6","7"],
+          ["8","9","10","11"],
+          ["12","13","14","15"],
+          ["0","4","8","12"],
+          ["1","5","9","13"],
+          ["2","6","10","14"],
+          ["3","7","11","15"],
+          ["0","5","10","15"],
+          ["3","6","9","12"]
+        
     ]
  
  
        winnerList.map((el,i)=>{
           let list = winnerList[i];
-             if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[0]] === this.props.mainBox[list[2]]){
+             if(
+                 this.props.mainBox[list[0]] && 
+                 this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && 
+                 this.props.mainBox[list[0]] === this.props.mainBox[list[2]] &&
+                 this.props.mainBox[list[0]] === this.props.mainBox[list[3]]
+                ){
                this.props.setWinner(this.props.firstPlayer, list);
                this.props.resetPlayer();
                
@@ -156,59 +164,63 @@ import React,{
        let line = this.props.winnerLine
        let coordinateX = this.state.coordinateX;
        let coordinateY = this.state.coordinateY;
-       if(line[0] === "0" && line[1] === "1" && line[2] === "2"||
-          line[0] === "3" && line[1] === "4" && line[2] === "5"||
-          line[0] === "6" && line[1] === "7" && line[2] === "8"){
+       if(line[0] === "0" && line[1] === "1" && line[2] === "2" && line[3] === "3"||
+          line[0] === "4" && line[1] === "5" && line[2] === "6" && line[3] === "7"||
+          line[0] === "8" && line[1] === "9" && line[2] === "10" && line[3] === "11"||
+          line[0] === "12" && line[1] === "13" && line[2] === "14" && line[3] === "15"
+          ){
+            debugger
              return (
                 <div className="winnerLine4x4">
                    <HorizontalLine
                       player={this.props.winner === "X"}
-                      coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "3" ? coordinateX[3]: coordinateX[6])}
-                      coordinateX2={line[2] === "2" ? coordinateX[2]:(line[2] === "5" ? coordinateX[5]: coordinateX[8])}
-                      coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "3" ? coordinateY[3]: coordinateY[6])}
-                      coordinateY2={line[2] === "2" ? coordinateY[2]:(line[2] === "5" ? coordinateY[5]: coordinateY[8])}
+                      coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "4" ? coordinateX[4]: (line[0] === "8" ? coordinateX[8]: coordinateX[12]))}
+                      coordinateX2={line[3] === "3" ? coordinateX[3]:(line[3] === "7" ? coordinateX[7]: (line[3] === "11" ? coordinateX[11]: coordinateX[15]))}
+                      coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "4" ? coordinateY[4]: (line[0] === "8" ? coordinateX[8]: coordinateX[12]))}
+                      coordinateY2={line[3] === "3" ? coordinateY[3]:(line[3] === "7" ? coordinateY[7]: (line[3] === "11" ? coordinateX[11]: coordinateX[15]))}
                    />
                 </div>
              )
           }else{
-             if(line[0] === "0" && line[1] === "3" && line[2] === "6"||
-                line[0] === "1" && line[1] === "4" && line[2] === "7"||
-                line[0] === "2" && line[1] === "5" && line[2] === "8"){
+             if(line[0] === "0" && line[1] === "4" && line[2] === "8" && line[3] === "12"||
+                line[0] === "1" && line[1] === "5" && line[2] === "9" && line[3] === "13"||
+                line[0] === "2" && line[1] === "6" && line[2] === "10" && line[3] === "14"||
+                line[0] === "3" && line[1] === "7" && line[2] === "11" && line[3] === "15"
+                ){
                    return (
                       <div className="winnerLine4x4">
                          <VerticalLine
                             player={this.props.winner === "X"}
-                            coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "1" ? coordinateX[1]: coordinateX[2])}
-                            coordinateX2={line[2] === "6" ? coordinateX[6]:(line[2] === "7" ? coordinateX[7]: coordinateX[8])}
-                            coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "1" ? coordinateY[1]: coordinateY[2])}
-                            coordinateY2={line[2] === "6" ? coordinateY[6]:(line[2] === "7" ? coordinateY[7]: coordinateY[8])}
+                            coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "1" ? coordinateX[1]: (line[0] === "2" ? coordinateX[2]: coordinateX[3]))}
+                            coordinateX2={line[3] === "12" ? coordinateX[12]:(line[3] === "13" ? coordinateX[13]: (line[3] === "14" ? coordinateX[14]: coordinateX[15]))}
+                            coordinateY1={line[0] === "0" ? coordinateY[0]:(line[0] === "1" ? coordinateY[1]: (line[0] === "2" ? coordinateX[2]: coordinateX[3]))}
+                            coordinateY2={line[3] === "12" ? coordinateY[12]:(line[3] === "13" ? coordinateY[13]: (line[3] === "14" ? coordinateX[14]: coordinateX[15]))}
                          />
                       </div>
                    )
              }else{
-                if(line[0] === "0" && line[1] === "4" && line[2] === "8"){
-                   console.log(coordinateX[0],coordinateY[0])
+                if(line[0] === "0" && line[1] === "5" && line[2] === "10" && line[3] === "15"){
                       return (
                          <div className="winnerLine4x4">
                             <DiagonalLineLeft
                                player={this.props.winner === "X"}
                                coordinateX1={coordinateX[0]}
-                               coordinateX2={coordinateX[8]}
+                               coordinateX2={coordinateX[15]}
                                coordinateY1={coordinateY[0]}
-                               coordinateY2={coordinateY[8]}
+                               coordinateY2={coordinateY[15]}
                             />
                          </div>
                       )
                 }else{
-                   if(line[0] === "2" && line[1] === "4" && line[2] === "6"){
+                   if(line[0] === "3" && line[1] === "6" && line[2] === "9" && line[3] === "12"){
                       return (
                          <div className="winnerLine4x4">
                             <DiagonalLineRight
                                player={this.props.winner === "X"}
-                               coordinateX1={coordinateX[2]}
+                               coordinateX1={coordinateX[3]}
                                coordinateX2={coordinateX[6]}
-                               coordinateY1={coordinateY[2]}
-                               coordinateY2={coordinateY[6]}
+                               coordinateY1={coordinateY[9]}
+                               coordinateY2={coordinateY[12]}
                             />
                          </div>
                       )
@@ -259,24 +271,20 @@ import React,{
     renderChild = (el) => {
           if(el === "X"){
              return(
-                <div>
                       <X/>
-                </div>
              )
           }else{
              if(el === "O")
                 return(
-                   <div>
                       <O
-                         radius={"35"}
-                         width={"150"}
-                         height={"160"}
+                         radius={"30"}
+                         width={"130"}
+                         height={"140"}
                          strokeWidth={"10"}
                          cx={"50"}
                          cy={"50"}
                          animationShow={true}
                        />
-                   </div>
                 )
           }
     }
@@ -393,7 +401,7 @@ import React,{
     renderMenuButton = () => {
        return(
           <MenuButton
-             menuButtonHandler={() => this.props. sideDrawerIsOpen("Yes")}
+             menuButtonHandler={() => this.props.sideDrawerIsOpen("Yes")}
           />
        )
     }
@@ -401,7 +409,7 @@ import React,{
     renderSideDrawer = () => {
        return(
           <SideDrawer
-             sideDrawerHandler={() => this.props. sideDrawerIsOpen("No")}
+             sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
              sideDrawerOpen={this.props.sideDrawerOpen}
           />
        )
@@ -426,7 +434,7 @@ import React,{
                    <div className="main4x4">
                       <div className="mainBox4x4">
                          {this.renderMainBox()}
-                         {this.renderWinnerScreen()}
+                         {/* {this.renderWinnerScreen()} */}
                       </div>
                    </div>
                    {this.renderWinnerLine()}
@@ -434,7 +442,8 @@ import React,{
                    {/* <div>{console.log(this.props.draw)}</div> */}
                    <div className="emptyDiv4x4"/>
                 </div>
-                <div>{console.log(store.getState())}</div>
+                {/* <div>{console.log(store.getState())}</div> */}
+                <div>{console.log(this.state.coordinateX, this.state.coordinateY)}</div>
                 <canvas />
              </div>
           </div>

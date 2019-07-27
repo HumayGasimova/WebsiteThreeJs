@@ -35,6 +35,7 @@ export const diagonalLineRight = (props) =>  {
                 preserveAspectRatio="xMidYMid meet"
                  >
                 <line x1={props.coordinateX1} y1={props.coordinateY1} x2={props.coordinateX2} y2={props.coordinateY2}/>
+                <div>{console.log(props.coordinateX1, props.coordinateX2)}</div>
             </svg>
         </animated.div>
     );
