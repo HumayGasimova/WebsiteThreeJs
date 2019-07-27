@@ -15,13 +15,13 @@ import React,{
  * Styles
  */
 
-import './button.scss';
+import './buttonImage.scss';
 
 /**
  * WelcomePage component definition and export
  */
 
-class Button extends Component {
+class ButtonImage extends Component {
 
     /**
     * Constructor
@@ -37,11 +37,11 @@ class Button extends Component {
 
     render(){
         return(
-            <div className="backgroundBox">
-              
+            <div className="buttonImage">
+              {this.props.children}
             </div>
         );
     }
 }
 
-export default Button;
+export default ButtonImage;

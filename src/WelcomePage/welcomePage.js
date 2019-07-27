@@ -15,6 +15,7 @@ import {
  */
 
 import Page1 from './Page1/page1';
+import Page2 from './Page2/page2';
 
 /**
  * Styles
@@ -44,7 +45,8 @@ class WelcomePage extends Component {
         return(
             <div className="welcomePage">
                <Page1/>
-               <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink>
+               {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
+               <Page2/>
             </div>
         );
     }
