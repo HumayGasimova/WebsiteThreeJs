@@ -18,7 +18,7 @@ import OLogo from '../O/oLogo';
  * Styles
  */
 
-import './Page1.scss';
+import './page1.scss';
 
 /**
  * WelcomePage component definition and export

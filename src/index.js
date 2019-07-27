@@ -40,18 +40,19 @@ ReactDOM.render(
                <Route 
                   // exact 
                   path="/tictactoe"
+                  component={App}/>
+               <Route 
+                  // exact 
+                  path="/tictactoe4x4"
                   component={App4x4}/>
                <Route 
                   exact 
                   path="/"
                   component={Welcome}/>
-             
+              
                {/* <Redirect from="/" to="/Welcome"/> */}
                
-               {/* <Route 
-                  // exact 
-                  path="/Home"
-                  component={AsyncHome}/> */}
+              
                {/* <Route 
                   render={()=>(<h1>404</h1>)}/> */}
                {/* <Route 
