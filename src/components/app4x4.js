@@ -490,7 +490,7 @@ import React,{
                    <div className="main4x4">
                       <div className="mainBox4x4">
                          {this.renderMainBox()}
-                         {/* {this.renderWinnerScreen()} */}
+                         {this.renderWinnerScreen()}
                       </div>
                    </div>
                    {this.renderWinnerLine()}

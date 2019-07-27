@@ -10,8 +10,6 @@ import React,{
  * Components
  */
 
-import O from '../XO/o';
-
 /**
  * Styles
  */
