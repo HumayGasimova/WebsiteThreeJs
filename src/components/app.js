@@ -97,9 +97,102 @@ export class App extends Component {
             this.props.updatePlayer();
             this.checkIfDraw();
             this.checkWinner();
+           
          }
       }
    }
+
+   
+
+   checkWinner = () => {
+      let winnerList = [
+         ["0","1","2"],
+         ["3","4","5"],
+         ["6","7","8"],
+         ["0","3","6"],
+         ["1","4","7"],
+         ["2","5","8"],
+         ["0","4","8"],
+         ["2","4","6"]
+   ]
+
+
+      winnerList.map((el,i)=>{
+         let list = winnerList[i];
+            if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[0]] === this.props.mainBox[list[2]]){
+              this.props.setWinner(this.props.firstPlayer, list);
+              this.props.resetPlayer();
+              
+               this.setState({
+                  counterX: this.props.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
+                  counterY: this.props.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY
+               })
+            }
+         })
+   
+  
+   }
+
+
+   checkIfDraw = () => {
+      let checkIfDraw = [];
+      let allBoxesFull;
+      
+      this.props.mainBox.map((el, i) => {
+         if(el === ''){
+            checkIfDraw.push(0);
+         }else{
+            checkIfDraw.push(1);
+         }
+      })
+
+      allBoxesFull = checkIfDraw.every((val, i, arr) => val === arr[0]);
+     if(allBoxesFull){
+         this.props.setDraw();
+         this.props.resetPlayer();
+     }
+   }
+  
+   // checkIfDraw = () => {
+   //    let drawList = [
+   //       ["0","2","3","4","7"],
+   //       ["1","2","3","4","8"],
+   //       ["2","4","5","6","8"],
+   //       ["0","4","5","6","7"],
+
+   //       ["1","3","5","6","8"],
+   //       ["1","2","3","7","8"],
+   //       ["0","2","3","5","7"],
+   //       ["0","1","5","6","7"],
+
+   //       ["0","1","5","6","8"],
+   //       ["1","2","3","6","8"],
+   //       ["0","2","3","7","8"],
+   //       ["0","2","5","6","7"],
+
+   //       ["0","2","4","5","7"],
+   //       ["0","1","4","5","6"],
+   //       ["1","3","4","6","8"],
+   //       ["2","3","4","7","8"],
+
+   //       ["1","4","5","6","8"],
+   //       ["1","2","3","4","8"],
+   //       ["0","2","3","4","7"],
+   //       ["0","4","5","6","7"]
+   //    ]
+   //    drawList.map((el,i)=>{
+   //       let list = drawList[i];
+   //          if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[1]] === this.props.mainBox[list[2]] && this.props.mainBox[list[2]] === this.props.mainBox[list[3]] && this.props.mainBox[list[3]] === this.props.mainBox[list[4]]){
+   //            this.props.setDraw();
+   //            this.props.resetPlayer();
+   //             this.setState({
+   //                winner:"No One",
+   //                draw: true,
+   //                firstPlayer: null
+   //             })
+   //          }
+   //       })
+   // }
 
    renderWinnerLine = () => {
       let line = this.props.winnerLine
@@ -165,73 +258,6 @@ export class App extends Component {
                }
             }
          }
-   }
-
-   checkWinner = () => {
-      let winnerList = [
-         ["0","1","2"],
-         ["3","4","5"],
-         ["6","7","8"],
-         ["0","3","6"],
-         ["1","4","7"],
-         ["2","5","8"],
-         ["0","4","8"],
-         ["2","4","6"]
-   ]
-
-   winnerList.map((el,i)=>{
-      let list = winnerList[i];
-         if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[0]] === this.props.mainBox[list[2]]){
-           this.props.setWinner(this.props.firstPlayer, list);
-           this.props.resetPlayer();
-           
-            this.setState({
-               counterX: this.props.firstPlayer === "X" ? this.state.counterX + 1 : this.state.counterX,
-               counterY: this.props.firstPlayer === "O" ? this.state.counterY + 1 : this.state.counterY
-            })
-         }
-      })
-   }
-
-   checkIfDraw = () => {
-      let drawList = [
-         ["0","2","3","4","7"],
-         ["1","2","3","4","8"],
-         ["2","4","5","6","8"],
-         ["0","4","5","6","7"],
-
-         ["1","3","5","6","8"],
-         ["1","2","3","7","8"],
-         ["0","2","3","5","7"],
-         ["0","1","5","6","7"],
-
-         ["0","1","5","6","8"],
-         ["1","2","3","6","8"],
-         ["0","2","3","7","8"],
-         ["0","2","5","6","7"],
-
-         ["0","2","4","5","7"],
-         ["0","1","4","5","6"],
-         ["1","3","4","6","8"],
-         ["2","3","4","7","8"],
-
-         ["1","4","5","6","8"],
-         ["1","2","3","4","8"],
-         ["0","2","3","4","7"],
-         ["0","4","5","6","7"]
-      ]
-      drawList.map((el,i)=>{
-         let list = drawList[i];
-            if(this.props.mainBox[list[0]] && this.props.mainBox[list[0]] === this.props.mainBox[list[1]] && this.props.mainBox[list[1]] === this.props.mainBox[list[2]] && this.props.mainBox[list[2]] === this.props.mainBox[list[3]] && this.props.mainBox[list[3]] === this.props.mainBox[list[4]]){
-              this.props.setDraw();
-              this.props.resetPlayer();
-               this.setState({
-                  winner:"No One",
-                  draw: true,
-                  firstPlayer: null
-               })
-            }
-         })
    }
 
    resetGame = () => {
@@ -339,7 +365,7 @@ export class App extends Component {
                   winner={this.props.winner}/>
             )
          }else{
-            if(this.props.winner === "No One" && this.props.draw === true){
+            if(this.props.winner === "No One" && this.props.draw){
                return(
 
                   <div className="drawScreen">
