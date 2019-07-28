@@ -6,10 +6,6 @@ import React,{
     Component
 } from 'react';
 
-import {
-    NavLink
- } from 'react-router-dom';
-
 /**
  * Components
  */
@@ -74,16 +70,18 @@ class Page2 extends Component {
                 className={this.state.showImageButtons ? "buttons-images" : "hide-buttons-images"}
                 id="buttons-images"
                 >
-                    <NavLink to={{ pathname: '/tictactoe'}}>
-                        <ButtonImage>
-                            <img src={ticTacToe3x3} alt="ticTacToe3x3"/>
-                        </ButtonImage>
-                    </NavLink>
-                    <NavLink to={{ pathname: '/tictactoe4x4'}}>
-                        <ButtonImage>
-                            <img src={ticTacToe4x4} alt="ticTacToe4x4"/>
-                        </ButtonImage>
-                    </NavLink>
+                <ButtonImage
+                    pathname={"/tictactoe"}
+                    text={"TicTacToe 3x3"}
+                    >
+                    <img src={ticTacToe3x3} alt="ticTacToe3x3"/>
+                </ButtonImage>
+                <ButtonImage
+                    pathname={"/tictactoe4x4"}
+                    text={"TicTacToe 4x4"}
+                    >
+                    <img src={ticTacToe4x4} alt="ticTacToe4x4"/>
+                </ButtonImage>
             </div>
         );
     }

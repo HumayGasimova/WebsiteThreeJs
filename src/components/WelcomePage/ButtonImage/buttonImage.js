@@ -6,6 +6,10 @@ import React,{
     Component
 } from 'react';
 
+import {
+    NavLink
+ } from 'react-router-dom';
+
 /**
  * Components
  */
@@ -35,10 +39,21 @@ class ButtonImage extends Component {
     * Markup
     */
 
+    renderText = () => {
+        return(
+            <div className="textUnderButtonImages">
+                {this.props.text}
+            </div>
+        )
+    }
+
     render(){
         return(
             <div className="buttonImage">
-              {this.props.children}
+               <NavLink to={this.props.pathname}>
+                     {this.props.children}
+                </NavLink>
+              {this.renderText()}
             </div>
         );
     }
