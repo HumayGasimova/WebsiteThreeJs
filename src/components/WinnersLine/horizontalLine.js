@@ -27,7 +27,8 @@ export const horizontalLine = (props) =>  {
             <animated.div 
             style={props1}
             >
-                <svg  
+                <svg 
+                    height={props.height}
                     className={props.player ? "horizontalLineBrown" : "horizontalLineWhite"}
                     preserveAspectRatio="xMidYMid meet" 
                    >

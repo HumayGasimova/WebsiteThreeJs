@@ -204,6 +204,7 @@ export class App extends Component {
             return (
                <div className="winnerLine">
                   <HorizontalLine
+                     height={"450"}
                      player={this.props.winner === "X"}
                      coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "3" ? coordinateX[3]: coordinateX[6])}
                      coordinateX2={line[2] === "2" ? coordinateX[2]:(line[2] === "5" ? coordinateX[5]: coordinateX[8])}
@@ -219,6 +220,7 @@ export class App extends Component {
                   return (
                      <div className="winnerLine">
                         <VerticalLine
+                           height={"450"}
                            player={this.props.winner === "X"}
                            coordinateX1={line[0] === "0" ? coordinateX[0]:(line[0] === "1" ? coordinateX[1]: coordinateX[2])}
                            coordinateX2={line[2] === "6" ? coordinateX[6]:(line[2] === "7" ? coordinateX[7]: coordinateX[8])}
@@ -233,6 +235,7 @@ export class App extends Component {
                      return (
                         <div className="winnerLine">
                            <DiagonalLineLeft
+                              height={"450"}
                               player={this.props.winner === "X"}
                               coordinateX1={coordinateX[0]}
                               coordinateX2={coordinateX[8]}
@@ -246,6 +249,7 @@ export class App extends Component {
                      return (
                         <div className="winnerLine">
                            <DiagonalLineRight
+                              height={"450"}
                               player={this.props.winner === "X"}
                               coordinateX1={coordinateX[2]}
                               coordinateX2={coordinateX[6]}

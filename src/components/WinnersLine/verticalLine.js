@@ -31,6 +31,7 @@ export const verticalLine = (props) =>  {
             style={props1}
             >
                 <svg  
+                    height={props.height}
                     className={props.player ? "verticalLineBrown" : "verticalLineWhite"} 
                     preserveAspectRatio="xMidYMid meet"
                    >

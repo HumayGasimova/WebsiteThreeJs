@@ -42,6 +42,7 @@ class RenderWinnerLine extends Component {
                 return(
                     <div className="winnerLine4x4">
                         <HorizontalLine
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[0]}
                            coordinateX2={coordinateX[3]}
@@ -54,6 +55,7 @@ class RenderWinnerLine extends Component {
                 return(
                     <div className="winnerLine4x4">
                         <HorizontalLine
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[4]}
                            coordinateX2={coordinateX[7]}
@@ -66,6 +68,7 @@ class RenderWinnerLine extends Component {
                   return(
                      <div className="winnerLine4x4">
                         <HorizontalLine
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[8]}
                            coordinateX2={coordinateX[11]}
@@ -78,6 +81,7 @@ class RenderWinnerLine extends Component {
                   return(
                      <div className="winnerLine4x4">
                         <HorizontalLine
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[12]}
                            coordinateX2={coordinateX[15]}
@@ -90,18 +94,20 @@ class RenderWinnerLine extends Component {
                return(
                   <div className="winnerLine4x4">
                      <VerticalLine
-                           player={this.props.winner === "X"}
-                           coordinateX1={coordinateX[0]}
-                           coordinateX2={coordinateX[12]}
-                           coordinateY1={coordinateY[0]}
-                           coordinateY2={coordinateY[12]}
-                        />
+                        height={"550"}
+                        player={this.props.winner === "X"}
+                        coordinateX1={coordinateX[0]}
+                        coordinateX2={coordinateX[12]}
+                        coordinateY1={coordinateY[0]}
+                        coordinateY2={coordinateY[12]}
+                     />
                   </div>
                );    
                case "15913":
                   return(
                      <div className="winnerLine4x4">
                         <VerticalLine
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[1] }
                            coordinateX2={coordinateX[13]}
@@ -114,6 +120,7 @@ class RenderWinnerLine extends Component {
                   return(
                      <div className="winnerLine4x4">
                         <VerticalLine
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[2]}
                            coordinateX2={coordinateX[14]}
@@ -126,6 +133,7 @@ class RenderWinnerLine extends Component {
                   return(
                      <div className="winnerLine4x4">
                         <VerticalLine
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[3]}
                            coordinateX2={coordinateX[15]}
@@ -138,6 +146,7 @@ class RenderWinnerLine extends Component {
                   return(
                     <div className="winnerLine4x4">
                         <DiagonalLineLeft
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[0]}
                            coordinateX2={coordinateX[15]}
@@ -150,6 +159,7 @@ class RenderWinnerLine extends Component {
                   return(
                     <div className="winnerLine4x4">
                         <DiagonalLineRight
+                           height={"550"}
                            player={this.props.winner === "X"}
                            coordinateX1={coordinateX[3]}
                            coordinateX2={coordinateX[12]}

@@ -31,6 +31,7 @@ export const diagonalLineRight = (props) =>  {
             style={props1}
             >
             <svg  
+                height={props.height}
                 className={props.player ? "diagonalLineRightBrown" : "diagonalLineRightWhite"} 
                 preserveAspectRatio="xMidYMid meet"
                  >
