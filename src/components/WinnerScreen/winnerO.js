@@ -29,7 +29,7 @@ export const WinnerO = (props) => {
 
         return(
             <animated.div 
-                className="winnerScreen"
+                className={props.winnerScreen}
                 style={props1}
                 >
                 <O

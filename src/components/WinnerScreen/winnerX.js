@@ -27,7 +27,7 @@ export const WinnerX = (props) => {
       })
         return(
             <animated.div 
-                className="winnerScreen"
+                className={props.winnerScreen}
                 style={props1}
                 >
                     <X screen={true}/>

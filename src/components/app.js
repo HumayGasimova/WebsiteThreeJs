@@ -356,13 +356,17 @@ export class App extends Component {
       if(this.props.winner === "O"){
          return(
                <WinnerO
-               winner={this.props.winner}/> 
+                  winnerScreen={"winnerScreen3x3"}
+                  winner={this.props.winner}
+                  /> 
          )
       }else{
          if(this.props.winner === "X"){
             return(
                   <WinnerX
-                  winner={this.props.winner}/>
+                     winnerScreen={"winnerScreen3x3"}
+                     winner={this.props.winner}
+                     />
             )
          }else{
             if(this.props.winner === "No One" && this.props.draw){

@@ -15,25 +15,38 @@
     text-align: center;
     font-weight: bold;
 }
+
 .winnerIs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.winnerScreen {
-    height: 360;
-    width: 360;
+
+.winnerScreen3x3 {
+    height: 320px;
+    width: 320px;
     background-color: #14bdac;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
-   
 }
+
+.winnerScreen4x4 {
+    height: 360px;
+    width: 360px;
+    background-color: #14bdac;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
 @media (max-width: 463px){
-    .winnerScreen {
+    .winnerScreen3x3 {
         height: 260px;
         width: 260px;
         background-color: #14bdac;
@@ -41,6 +54,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position: absolute; 
+        position: absolute;
+    }
+    
+    .winnerScreen4x4 {
+        height: 260px;
+        width: 260px;
+        background-color: #14bdac;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
     }
 }
