@@ -39,6 +39,10 @@ class Headline extends Component {
             slower: scrollHeight/2
         })
     }
+
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleScroll)
+    }
     
     /**
     * Markup

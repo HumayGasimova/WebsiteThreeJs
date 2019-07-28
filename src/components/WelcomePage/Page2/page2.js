@@ -64,10 +64,15 @@ class Page2 extends Component {
         }
     }
 
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleScroll)
+    }
+
     render(){
         return(
             <div 
                 className={this.state.showImageButtons ? "buttons-images" : "hide-buttons-images"}
+                // className="buttons-images"
                 id="buttons-images"
                 >
                 <ButtonImage

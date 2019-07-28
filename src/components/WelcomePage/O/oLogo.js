@@ -44,6 +44,11 @@ import './oLogo.scss';
              slower2x: scrollHeight/10
          })
     }
+
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleScroll)
+    }
+
     renderImage = () => {
         if(this.props.left){
            return(

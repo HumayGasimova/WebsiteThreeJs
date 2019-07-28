@@ -43,7 +43,9 @@ import './xLogo.scss';
              slower2x: scrollHeight/7
          })
     }
-
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleScroll)
+    }
     renderImage = () => {
         if(this.props.left){
            return(

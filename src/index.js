@@ -38,17 +38,23 @@ ReactDOM.render(
        <ConnectedRouter history={history}>
             <Switch>
                <Route 
-                  // exact 
+                  exact 
                   path="/tictactoe"
-                  component={App}/>
+                  component={App}
+                  // render={props => <App {...props}/>}
+                  />
                <Route 
-                  // exact 
+                  exact 
                   path="/tictactoe4x4"
-                  component={App4x4}/>
+                  component={App4x4}
+                  // render={props => <App4x4 {...props}/>}
+                  />
                <Route 
                   exact 
                   path="/"
-                  component={Welcome}/>
+                  component={Welcome}
+                  // render={props => <Welcome {...props}/>}
+                  />
               
                {/* <Redirect from="/" to="/Welcome"/> */}
                
