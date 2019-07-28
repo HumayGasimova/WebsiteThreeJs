@@ -6,6 +6,10 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+ } from 'react-redux';
+ 
 /**
  * Styles
  */
@@ -76,4 +80,11 @@ class SelectPlayer extends Component {
     }
 }
 
-export default SelectPlayer;
+export default connect(
+    (state) => {
+       return {
+            dash: state.setPlayer.dash,
+       };
+    }
+ )(SelectPlayer);
+ 
