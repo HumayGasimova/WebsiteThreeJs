@@ -17,6 +17,7 @@
         .emptyBorderVertical {
             width: 97px;
         }
+
         .borderVertical {
             border:2px solid#489E93;
             height: 270px;
@@ -24,6 +25,7 @@
             background-color: #489E93; 
            
         }
+
         .mainBorderHorizontal { 
             position: absolute;
             width: 310px;
@@ -32,9 +34,11 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+
             .emptyBorderHorizontal {
                 height: 97px;
             }
+
             .borderHorizontal {
                 border: 2px solid#489E93;
                 height: 5px;
@@ -48,6 +52,7 @@
     .main{
         background-color:#14bdac;
         width: 100%;
+
         .mainBox {
             padding: 15px;
             display: flex;
@@ -78,10 +83,12 @@
     background-color: #14bdac;
     position: absolute;
 }
+
 .drawImages {
     display: flex;  
     justify-content: center;
 }
+
 .drawText {
     color:  #665757;;
     font-family: 'Verdana';
@@ -100,76 +107,86 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    .mainBorder{
-        width: 310px;
-        height: 310px;
-        position: absolute;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-        .emptyBorderVertical {
-            width: 97px;
-        }
-        .borderVertical {
-            border:2px solid#489E93;
-            height: 270px;
-            width: 5px;
-            background-color: #489E93; 
-           
-        }
-        .mainBorderHorizontal { 
-            position: absolute;
+
+        .mainBorder{
             width: 310px;
             height: 310px;
+            position: absolute;
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            .emptyBorderHorizontal {
-                height: 97px;
+            
+            .emptyBorderVertical {
+                width: 97px;
             }
-            .borderHorizontal {
-                border: 2px solid#489E93;
-                height: 5px;
-                width: 270px;
-                background-color: #489E93; 
+
+            .borderVertical {
+                border:2px solid#489E93;
+                height: 270px;
+                width: 5px;
+                background-color: #489E93;
+            }
+
+            .mainBorderHorizontal { 
+                position: absolute;
+                width: 310px;
+                height: 310px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .emptyBorderHorizontal {
+                    height: 97px;
+                }
+
+                .borderHorizontal {
+                    border: 2px solid#489E93;
+                    height: 5px;
+                    width: 270px;
+                    background-color: #489E93; 
+                }
+            }
+        
+        }
+
+        .main{
+            background-color:#14bdac;
+            width: 100%;
+
+            .mainBox {
+                padding: 15px;
+                display: flex;
+                justify-content: center;
             }
         }
-       
-    }
-    .main{
-        background-color:#14bdac;
-        width: 100%;
-        .mainBox {
-            padding: 15px;
-            display: flex;
-            justify-content: center;
+
+        .text {
+            margin-bottom: 10px;
+            color: rgb(110, 110, 110);
         }
     }
-    .text {
-        margin-bottom: 10px;
-        color: rgb(110, 110, 110);
+
+    .drawScreen {
+        height: 260px;
+        width: 260px;
+        background-color: #14bdac;
+        position: absolute;
     }
-}
-.drawScreen {
-    height: 260px;
-    width: 260px;
-    background-color: #14bdac;
-    position: absolute;
-}
-.drawImages {
-    display: flex;  
-    justify-content: center;
-}
-.drawText {
-    color:  #665757;;
-    font-family: 'Verdana';
-    font-size: 35px;
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: bold;
-}
+
+    .drawImages {
+        display: flex;  
+        justify-content: center;
+    }
+
+    .drawText {
+        color:  #665757;;
+        font-family: 'Verdana';
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
        
 }
 
@@ -179,7 +196,7 @@
     position: absolute;
     border-radius: 7px;
     background:  rgba(black, 0.5);
- }
+}
 
 .emptyDiv {
     height: 50px;

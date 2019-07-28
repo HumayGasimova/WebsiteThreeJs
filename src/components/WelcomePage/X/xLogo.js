@@ -32,9 +32,10 @@ import './xLogo.scss';
            faster: 0
        }
    }
-   componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll)
- }
+   
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll)
+    }
 
     handleScroll = () => {
         let scrollHeight = document.body.scrollTop
@@ -43,9 +44,11 @@ import './xLogo.scss';
              slower2x: scrollHeight/7
          })
     }
+
     componentWillUnmount = () => {
         window.removeEventListener('scroll', this.handleScroll)
     }
+
     renderImage = () => {
         if(this.props.left){
            return(

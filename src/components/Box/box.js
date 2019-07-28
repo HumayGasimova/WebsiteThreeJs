@@ -55,6 +55,10 @@ class Box extends Component {
 
     };
 
+    componentWillUnmount = () => {
+        window.removeEventListener('resize', this.evaluateCenter)
+    }
+
     renderInnerBoxes = () => {
         
         return(

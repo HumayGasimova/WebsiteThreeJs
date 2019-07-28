@@ -383,7 +383,7 @@ import React,{
                 </div>
                 {/* <div>{console.log(store.getState())}</div> */}
                 <div>{console.log(this.state.coordinateX, this.state.coordinateY)}</div>
-                <canvas />
+                {/* <canvas /> */}
              </div>
           </div>
        );

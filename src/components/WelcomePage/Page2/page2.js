@@ -37,7 +37,7 @@ class Page2 extends Component {
    constructor(props) {
     super(props);
     this.state = {
-       showImageButtons: false
+       showImageButtons: true
     }
 }
     

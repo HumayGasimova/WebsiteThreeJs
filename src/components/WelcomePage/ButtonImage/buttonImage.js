@@ -7,7 +7,7 @@ import React,{
 } from 'react';
 
 import {
-    NavLink
+    Link
  } from 'react-router-dom';
 
 /**
@@ -50,9 +50,9 @@ class ButtonImage extends Component {
     render(){
         return(
             <div className="buttonImage">
-               <NavLink to={this.props.pathname}>
+               <Link to={this.props.pathname}>
                      {this.props.children}
-                </NavLink>
+                </Link>
               {this.renderText()}
             </div>
         );
