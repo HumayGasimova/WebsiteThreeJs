@@ -38,27 +38,52 @@ class Page2 extends Component {
     * Constructor
     */
 
-    constructor (){
-        super();
+   constructor(props) {
+    super(props);
+    this.state = {
+       showImageButtons: false
     }
+}
     
     /**
     * Markup
     */
 
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll)
+    }
+
+    handleScroll = () => {
+        let scrollHeight = document.body.scrollTop
+        let el = document.getElementById("buttons-images")
+        
+        if(scrollHeight > el.offsetTop - window.innerHeight/2){
+           this.setState({
+                showImageButtons: true
+           })
+        }else{
+            this.setState({
+                showImageButtons: false
+            })
+        }
+    }
+
     render(){
         return(
-            <div className="page2">
-                <NavLink to={{ pathname: '/tictactoe'}}>
-                    <ButtonImage>
-                        <img src={ticTacToe3x3} alt="ticTacToe3x3"/>
-                    </ButtonImage>
-                </NavLink>
-                <NavLink to={{ pathname: '/tictactoe4x4'}}>
-                    <ButtonImage>
-                        <img src={ticTacToe4x4} alt="ticTacToe4x4"/>
-                    </ButtonImage>
-                </NavLink>
+            <div 
+                className={this.state.showImageButtons ? "buttons-images" : "hide-buttons-images"}
+                id="buttons-images"
+                >
+                    <NavLink to={{ pathname: '/tictactoe'}}>
+                        <ButtonImage>
+                            <img src={ticTacToe3x3} alt="ticTacToe3x3"/>
+                        </ButtonImage>
+                    </NavLink>
+                    <NavLink to={{ pathname: '/tictactoe4x4'}}>
+                        <ButtonImage>
+                            <img src={ticTacToe4x4} alt="ticTacToe4x4"/>
+                        </ButtonImage>
+                    </NavLink>
             </div>
         );
     }
