@@ -353,7 +353,10 @@ import React,{
           <div>
              <div >
                 <div className="background4x4">
-                <div className={this.props.sideDrawerOpen === "Yes" ? "showCurtains4x4" : null}/>
+                <div 
+                  className={this.props.sideDrawerOpen === "Yes" ? "showCurtains4x4" : null}
+                  onClick={() => this.props.sideDrawerIsOpen("No")}
+                  />
                    <Head>
                       {this.renderMenuButton()}
                    </Head>

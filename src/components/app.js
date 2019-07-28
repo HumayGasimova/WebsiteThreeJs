@@ -458,7 +458,10 @@ export class App extends Component {
          <div>
             <div >
                <div className="background">
-               <div className={this.props.sideDrawerOpen === "Yes" ? "showCurtains" : null}/>
+               <div 
+                  className={this.props.sideDrawerOpen === "Yes" ? "showCurtains" : null}
+                  onClick={() => this.props.sideDrawerIsOpen("No")}
+                  />
                   <Head>
                      {this.renderMenuButton()}
                   </Head>
