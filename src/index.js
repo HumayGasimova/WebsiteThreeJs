@@ -28,7 +28,7 @@ import store from './store/store';
 
 import App from './components/app';
 import App4x4 from './components/app4x4';
-import Welcome from './WelcomePage/welcomePage';
+import Welcome from './components/WelcomePage/welcomePage';
 
 // const store = configureStore()
 

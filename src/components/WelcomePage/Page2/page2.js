@@ -14,14 +14,14 @@ import {
  * Components
  */
 
-import ButtonImage from '../Button/buttonImage';
+import ButtonImage from '../ButtonImage/buttonImage';
 
 /**
  * Pictures
  */
 
-import ticTacToe3x3 from '../../Image/3x3TicTacToe.png';
-import ticTacToe4x4 from '../../Image/4x4TicTacToe.png';
+import ticTacToe3x3 from '../../../Image/3x3TicTacToe.png';
+import ticTacToe4x4 from '../../../Image/4x4TicTacToe.png';
 /**
  * Styles
  */

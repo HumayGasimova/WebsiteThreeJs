@@ -9,7 +9,7 @@ import React,{
  /**
   * Components
   */
-import O from '../../components/XO/o';
+import O from '../../XO/o';
  
  /**
   * Styles
