@@ -61,7 +61,7 @@ import './xLogo.scss';
            )}else{
                if(this.props.center){
                     return(
-                        <div  style={{transform: `translate(0px, ${this.state.slower}px)`}}>
+                        <div  style={{transform: `translate(0px, ${this.state.slower2x}px)`}}>
                             <X 
                                 screen={this.props.screen}
                                 centerX

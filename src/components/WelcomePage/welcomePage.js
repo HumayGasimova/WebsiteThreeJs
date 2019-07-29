@@ -43,7 +43,7 @@ class WelcomePage extends Component {
 
     render(){
         return(
-            <div>
+            <div className="welcomePage">
                <Page1/>
                {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
                <Page2/>

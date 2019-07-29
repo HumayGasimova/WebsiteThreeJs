@@ -457,6 +457,12 @@ export class App extends Component {
       )
    }
 
+   componentWillUnmount = () => {
+      this.props.resetPlayer();
+      this.props.resetGame();
+      this.props.resetMainBox();
+   }
+
    /**
     * Markup
     */

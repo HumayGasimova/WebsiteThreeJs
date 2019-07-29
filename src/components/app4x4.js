@@ -348,6 +348,13 @@ import React,{
        )
     }
  
+
+    componentWillUnmount = () => {
+      this.props.resetPlayer();
+      this.props.resetGame();
+      this.props.resetMainBox();
+   }
+   
     /**
      * Markup
      */
