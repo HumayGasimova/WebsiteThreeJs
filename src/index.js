@@ -29,6 +29,7 @@ import store from './store/store';
 import App from './components/app';
 import App4x4 from './components/app4x4';
 import Welcome from './components/WelcomePage/welcomePage';
+import Login from './components/WelcomePage/Login/login';
 
 // const store = configureStore()
 
@@ -52,7 +53,7 @@ ReactDOM.render(
                <Route 
                   exact 
                   path="/"
-                  component={Welcome}
+                  component={Login}
                   // render={props => <Welcome {...props}/>}
                   />
               

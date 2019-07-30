@@ -1,0 +1,27 @@
+.login {
+    border: 1px solid rgb(13, 48, 42);;
+    border-radius: 7px;
+    box-shadow: 3px 2px 5px 0px rgb(221, 214, 214);
+    width: 400px;
+    height: 310px;
+
+}
+.login-child {
+    height: inherit;
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.login-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: rgb(13, 48, 42);
+}
+
+.close-button{
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    color: rgb(13, 48, 42);
+}

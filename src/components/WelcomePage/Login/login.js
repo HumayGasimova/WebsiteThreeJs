@@ -10,16 +10,18 @@ import React,{
  * Components
  */
 
-import Page1 from './Page1/page1';
+import InputField from '../InputField/inputField';
+import Button from '../Button/button';
+import EmptyDivV1 from '../Empty/emptyDivV1';
 
 /**
  * Styles
  */
 
-import './welcomePage.scss';
+import './login.scss';
 
 /**
- * WelcomePage component definition and export
+ * Login component definition and export
  */
 
 class Login extends Component {
@@ -28,8 +30,8 @@ class Login extends Component {
     * Constructor
     */
 
-    constructor (){
-        super();
+    constructor (props){
+        super(props);
     }
     
     /**
@@ -38,8 +40,36 @@ class Login extends Component {
 
     render(){
         return(
-            <div className="main">
-               <Page1/>
+            <div className="login">
+                <div className="login-child">
+                    <div className="close-button">X</div>
+                    <div className="login-text">USER AUTHENTICATION</div>
+                    <EmptyDivV1/>
+                    <InputField
+                        placeholder={" Email"}
+                        type={"text"}
+                        width={"200px"}
+                        height={"37px"}
+                        borderRadius={"7px"}
+                        />
+                    <EmptyDivV1/>   
+                    <InputField
+                        placeholder={" Password"}
+                        type={"password"}
+                        width={"200px"}
+                        height={"37px"}
+                        borderRadius={"7px"}
+                        />  
+                    <EmptyDivV1/>
+                    <Button
+                        type={"button"}
+                        disabled={false}
+                        text={"Login"}
+                        width={"200px"}
+                        height={"37px"}
+                        borderRadius={"7px"}
+                        />    
+                </div>
             </div>
         );
     }
