@@ -18,13 +18,13 @@ import EmptyDivV1 from '../Empty/emptyDivV1';
  * Styles
  */
 
-import './login.scss';
+import './signUp.scss';
 
 /**
  * Login component definition and export
  */
 
-class Login extends Component {
+class SignUp extends Component {
 
     /**
     * Constructor
@@ -33,7 +33,7 @@ class Login extends Component {
     constructor (props){
         super(props);
         this.state={
-            showLoginForm: true
+            showSignUpForm: true
         }
     }
     
@@ -41,19 +41,35 @@ class Login extends Component {
     * Markup
     */
 
-   closeLoginForm = () => {
+   closeSignUpForm = () => {
        this.setState({
-           showLoginForm: false
+            showSignUpForm: false
        })
    }
 
-   renderLoginForm = () => {
-       if(this.state.showLoginForm === true){
+   renderSignUpForm = () => {
+       if(this.state.showSignUpForm === true){
            return(
-               <div className="login">
-                    <div className="login-child">
-                        <div className="login-close-button" onClick={this.closeLoginForm}>X</div>
-                        <div className="login-text">USER AUTHENTICATION</div>
+               <div className="sign-up">
+                    <div className="sign-up-child">
+                        <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
+                        <div className="sign-up-text">SIGN UP</div>
+                        <EmptyDivV1/>
+                        <InputField
+                            placeholder={" Name"}
+                            type={"text"}
+                            width={"200px"}
+                            height={"37px"}
+                            borderRadius={"7px"}
+                            />
+                        <EmptyDivV1/>
+                        <InputField
+                            placeholder={" Surname"}
+                            type={"text"}
+                            width={"200px"}
+                            height={"37px"}
+                            borderRadius={"7px"}
+                            />
                         <EmptyDivV1/>
                         <InputField
                             placeholder={" Email"}
@@ -87,10 +103,10 @@ class Login extends Component {
     render(){
         return(
             <div>
-                {this.renderLoginForm()}
+                {this.renderSignUpForm()}
             </div>
         );
     }
 }
 
-export default Login;
+export default SignUp;

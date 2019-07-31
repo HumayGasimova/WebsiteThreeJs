@@ -1,25 +1,25 @@
-.login {
+.sign-up {
     border: 1px solid rgb(13, 48, 42);;
     border-radius: 7px;
     box-shadow: 3px 2px 5px 0px rgb(221, 214, 214);
     width: 400px;
-    height: 290px;
+    height: 380px;
 
 }
-.login-child {
+.sign-up-child {
     height: inherit;
     position: relative;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
-.login-text {
+.sign-up-text {
     font-family: 'Dancing Script', cursive;
     font-size: 25px;
     color: rgb(13, 48, 42);
 }
 
-.login-close-button{
+.sign-up-close-button{
     position: absolute;
     right: 12px;
     top: 10px;
