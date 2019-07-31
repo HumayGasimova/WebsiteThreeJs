@@ -33,7 +33,11 @@ class SignUp extends Component {
     constructor (props){
         super(props);
         this.state={
-            showSignUpForm: true
+            showSignUpForm: true,
+            name: '',
+            lastName: '',
+            email: '',
+            password: ''
         }
     }
     
@@ -47,10 +51,22 @@ class SignUp extends Component {
        })
    }
 
+//    handleSubmit = (e) => {
+//         this.setState({
+//             [e.target.id]: e.target.value
+//         })
+//    }
+
+   handleOnClick = () => {
+
+   }
+
    renderSignUpForm = () => {
        if(this.state.showSignUpForm === true){
            return(
-               <div className="sign-up">
+               <form 
+                    className="sign-up"
+                    onSubmit={this.handleSubmit}>
                     <div className="sign-up-child">
                         <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
                         <div className="sign-up-text">SIGN UP</div>
@@ -61,14 +77,16 @@ class SignUp extends Component {
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
+                            id={'name'}
                             />
                         <EmptyDivV1/>
                         <InputField
-                            placeholder={" Surname"}
+                            placeholder={" Last Name"}
                             type={"text"}
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
+                            id={'lastName'}
                             />
                         <EmptyDivV1/>
                         <InputField
@@ -77,6 +95,7 @@ class SignUp extends Component {
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
+                            id={'email'}
                             />
                         <EmptyDivV1/>   
                         <InputField
@@ -85,18 +104,20 @@ class SignUp extends Component {
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
+                            id={'password'}
                             />  
                         <EmptyDivV1/>
                         <Button
                             type={"button"}
                             disabled={false}
-                            text={"Login"}
+                            text={"Sign Up"}
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
+                            onClick={this.handleOnClick}
                             />    
                     </div>
-                </div>
+                </form>
            )
        }
    }

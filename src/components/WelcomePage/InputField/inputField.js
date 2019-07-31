@@ -33,11 +33,9 @@ class InputField extends Component {
         }
     }
     
-    handleOnChange = (event) => {
-        this.setState({
-            value: event.target.value
-        })
-    }
+    // handleOnChange = (e) => {
+    //    this.props.
+    // }
 
     // handleOnClick = () => {
     //     alert(this.state.value)
@@ -45,7 +43,7 @@ class InputField extends Component {
 
     keyPressed = (event) => {
         if(event.key === 'Enter'){
-            alert("hey")
+            // this.props.
         }
     }
 
@@ -62,6 +60,7 @@ class InputField extends Component {
                     value={this.state.value}
                     onChange={this.handleOnChange}
                     onKeyPress={this.keyPressed}
+                    id={this.props.id}
                     style={{ width: `${this.props.width}`, height: `${this.props.height}`, borderRadius: `${this.props.borderRadius}`}}
                     />
                 {/* <button onClick={this.handleOnClick}>Add</button> */}
