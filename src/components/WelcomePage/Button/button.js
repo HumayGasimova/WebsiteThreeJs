@@ -38,6 +38,7 @@ class Button extends Component {
         return(
             <div className="button">
                 <button 
+                    onClick={this.props.onClick}
                     type={this.props.type}
                     disabled={this.props.disabled}
                     style={{ width: `${this.props.width}`, height: `${this.props.height}`, borderRadius: `${this.props.borderRadius}`}}

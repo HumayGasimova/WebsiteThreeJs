@@ -33,19 +33,19 @@ class InputField extends Component {
         }
     }
     
-    // handleOnChange = (e) => {
-    //    this.props.
-    // }
+    handleOnChange = (e) => {
+       this.props.getValue(e)
+    }
 
     // handleOnClick = () => {
     //     alert(this.state.value)
     // }
 
-    keyPressed = (event) => {
-        if(event.key === 'Enter'){
-            // this.props.
-        }
-    }
+    // keyPressed = (event) => {
+    //     if(event.key === 'Enter'){
+    //         // this.props.
+    //     }
+    // }
 
     /**
     * Markup
@@ -54,10 +54,10 @@ class InputField extends Component {
     render(){
         return(
             <div className={this.props.style}>
-               <input 
+               <input
                     placeholder={this.props.placeholder} 
                     type={this.props.type}
-                    value={this.state.value}
+                    value={this.props.value}
                     onChange={this.handleOnChange}
                     onKeyPress={this.keyPressed}
                     id={this.props.id}

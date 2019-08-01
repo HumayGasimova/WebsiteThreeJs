@@ -51,14 +51,15 @@ class SignUp extends Component {
        })
    }
 
-//    handleSubmit = (e) => {
-//         this.setState({
-//             [e.target.id]: e.target.value
-//         })
-//    }
-
    handleOnClick = () => {
+    // e.preventDefault();
+    console.log(this.state)
+   }
 
+   getValue = (e) => {
+       this.setState({
+           [e.target.id]: e.target.value
+       })
    }
 
    renderSignUpForm = () => {
@@ -66,45 +67,53 @@ class SignUp extends Component {
            return(
                <form 
                     className="sign-up"
-                    onSubmit={this.handleSubmit}>
+                >
                     <div className="sign-up-child">
                         <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
                         <div className="sign-up-text">SIGN UP</div>
                         <EmptyDivV1/>
                         <InputField
+                            value={this.state.name}
                             placeholder={" Name"}
                             type={"text"}
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
                             id={'name'}
+                            getValue={(e)=>this.getValue(e)}
                             />
                         <EmptyDivV1/>
                         <InputField
+                            value={this.state.lastName}
                             placeholder={" Last Name"}
                             type={"text"}
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
                             id={'lastName'}
+                            getValue={(e)=>this.getValue(e)}
                             />
                         <EmptyDivV1/>
                         <InputField
+                            value={this.state.email}
                             placeholder={" Email"}
                             type={"text"}
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
                             id={'email'}
+                            getValue={(e)=>this.getValue(e)}
                             />
                         <EmptyDivV1/>   
                         <InputField
+                            value={this.state.password}
                             placeholder={" Password"}
                             type={"password"}
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
                             id={'password'}
+                            getValue={(e)=>this.getValue(e)}
                             />  
                         <EmptyDivV1/>
                         <Button
@@ -114,8 +123,10 @@ class SignUp extends Component {
                             width={"200px"}
                             height={"37px"}
                             borderRadius={"7px"}
+                            getValue={(e)=>this.getValue(e)}
                             onClick={this.handleOnClick}
-                            />    
+                            />   
+
                     </div>
                 </form>
            )
