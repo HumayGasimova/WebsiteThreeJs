@@ -23,9 +23,9 @@ function setPlayer (state = initialState, action){
         case actionTypes.UPDATE_PLAYER:
             return updateObject(state, {firstPlayer: state.firstPlayer === "X" ? "O" : "X"});
         case actionTypes.RESET_PLAYER:
-                return updateObject(state, {firstPlayer: null});
+            return updateObject(state, {firstPlayer: null});
         default:
-                return state;
+            return state;
     }
 }
 

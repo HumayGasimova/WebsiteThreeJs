@@ -6,6 +6,14 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+ } from 'react-redux';
+
+ import {
+    bindActionCreators
+ } from 'redux';
+
 /**
  * Components
  */
@@ -19,6 +27,12 @@ import EmptyDivV1 from '../Empty/emptyDivV1';
  */
 
 import './signUp.scss';
+
+/**
+ * Actions
+ */
+
+import * as Actions from '../../../actions';
 
 /**
  * Login component definition and export
@@ -52,9 +66,16 @@ class SignUp extends Component {
    }
 
    handleOnClick = () => {
-    // e.preventDefault();
-    console.log(this.state)
-   }
+        let signUpData = {
+            name: this.state.name,
+            lastName: this.state.lastName,
+            email: this.state.emai,
+            password: this.state.password
+
+        }
+
+        this.props.userSignUpRequest(signUpData)
+    }
 
    getValue = (e) => {
        this.setState({
@@ -140,5 +161,14 @@ class SignUp extends Component {
         );
     }
 }
+ 
+export default connect(
+ null,
+    (dispatch) => {
+       return {
+          userSignUpRequest: bindActionCreators(Actions.userSignUpRequest, dispatch),
+       };
+    }
+ )(SignUp);
 
-export default SignUp;
+// export default SignUp;

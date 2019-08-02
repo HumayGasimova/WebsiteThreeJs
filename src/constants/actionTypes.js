@@ -8,6 +8,8 @@ export const DRAW = 'DRAW';
 export const SIDE_DRAWER_IS_OPEN = 'SIDE_DRAWER_IS_OPEN';
 export const RESET_GAME = 'RESET_GAME';
 export const RESET_MAINBOX = 'RESET_MAINBOX';
+export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
+
 
 
 

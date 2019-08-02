@@ -19,3 +19,7 @@ export {
     draw,
     resetGame
 } from './winnerActions';
+
+export {
+    userSignUpRequest
+} from './signUpActions';
