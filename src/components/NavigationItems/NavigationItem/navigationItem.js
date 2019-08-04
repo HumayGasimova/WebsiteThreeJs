@@ -18,8 +18,8 @@ export const NavigationItem = (props) => {
     return(
        <li className="navigationItem">
            <a 
-            href={props.link}
-            className={props.className}
+            // href={props.link}
+            // className={props.className}
             >
                 {props.children}
             </a>

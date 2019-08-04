@@ -57,9 +57,9 @@ class Toolbar extends Component {
             <div className="toolbar">
                 <img src={LogoOX} alt="logoXO"/>
                 <NavigationItems/>
-                <MenuButton
+                {/* <MenuButton
                     menuButtonHandler={() => this.props.sideDrawerIsOpen("Yes")}
-                />
+                /> */}
             </div>
         );
     }

@@ -22,7 +22,7 @@ import './navigationItems.scss';
 
 export const NavigationItems = (props) => {
     return(
-        <ul className="navigationItems">
+        <div className="navigationItems">
             <NavigationItem 
                 link
                 className>
@@ -38,7 +38,7 @@ export const NavigationItems = (props) => {
                 className>
                     TicTacToe4x4
             </NavigationItem>  
-        </ul>
+        </div>
     );
 }
 

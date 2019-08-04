@@ -1,21 +1,18 @@
 .toolbar {
-    width: 95%;
+    width: 90%;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 20px;
     border-bottom: 1px solid rgb(221, 214, 214);
 }
 
-@media (max-width : 967px){
+@media (max-width :653px){
     .toolbar {
         width: 85%;
-        height: 50px;
-        display: flex;
-        align-items: center;
         justify-content: flex-end;
-        padding: 20px;
-        border-bottom: 1px solid rgb(221, 214, 214);
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
