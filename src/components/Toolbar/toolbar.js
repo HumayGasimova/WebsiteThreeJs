@@ -20,6 +20,7 @@ bindActionCreators
 
 import MenuButton from '../MenuButton/menuButton';
 import NavigationItems from '../NavigationItems/navigationItems';
+import LogoOX from '../../Image/LogoXO.png';
 
 /**
  * Styles
@@ -54,6 +55,7 @@ class Toolbar extends Component {
     render(){
         return(
             <div className="toolbar">
+                <img src={LogoOX} alt="logoXO"/>
                 <NavigationItems/>
                 <MenuButton
                     menuButtonHandler={() => this.props.sideDrawerIsOpen("Yes")}
