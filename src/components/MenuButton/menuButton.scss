@@ -1,24 +1,31 @@
+
 .menuButton {
-    border: 1px solid rgb(221, 214, 214);
-    border-radius: 7px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    display: none;
+}
 
-    .menuLine {
-        border: 1px solid #489E93;
-        background-color: #489E93;
-        width: 15px;
-        height: 1px;
+@media only screen and (max-device-width : 425px){
+    .menuButton {
+        border: 1px solid rgb(221, 214, 214);
+        border-radius: 7px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    
+        .menuLine {
+            border: 1px solid #489E93;
+            background-color: #489E93;
+            width: 15px;
+            height: 1px;
+        }
+        .menuEmptyLine {
+            border: 1px solid white;
+            background-color: white;
+            width: 15px;
+            height: 0.5px;
+        }
+    
     }
-    .menuEmptyLine {
-        border: 1px solid white;
-        background-color: white;
-        width: 15px;
-        height: 0.5px;
-    }
-
 }
