@@ -331,16 +331,6 @@ import React,{
        }
     }
 
-   //  renderSideDrawer = () => {
-   //     return(
-   //        <SideDrawer
-   //           sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
-   //           sideDrawerOpen={this.props.sideDrawerOpen}
-   //        />
-   //     )
-   //  }
- 
-
     componentWillUnmount = () => {
       this.props.resetPlayer();
       this.props.resetGame();
@@ -385,7 +375,6 @@ import React,{
  /**
   * Prop types
   */
- 
   
  export default connect(
     (state) => {

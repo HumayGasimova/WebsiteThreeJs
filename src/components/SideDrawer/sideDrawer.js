@@ -7,14 +7,22 @@ import React,{
 } from 'react';
 
 /**
+ * Components
+ */
+
+import NavigationItems from '../NavigationItems/navigationItems';
+
+/**
  * Styles
  */
+
 
 import './sideDrawer.scss';
 
 /**
- * SelectPlayer component definition and export
+ * SideDrawer component definition and export
  */
+
 class SideDrawer extends Component {
 
     render(){
@@ -22,6 +30,7 @@ class SideDrawer extends Component {
             <div 
                 onClick={this.props.sideDrawerHandler}
                 className={this.props.sideDrawerOpen === "Yes" ? "sideDrawerOpen" : null}>
+                    {/* <NavigationItems/> */}
             </div>
         );
     }
