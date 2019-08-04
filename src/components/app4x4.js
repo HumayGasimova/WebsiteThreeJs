@@ -356,12 +356,7 @@ import React,{
           <div>
              <div >
                 <div className="background4x4">
-                {/* <div 
-                  className={this.props.sideDrawerOpen === "Yes" ? "showCurtains4x4" : null}
-                  onClick={() => this.props.sideDrawerIsOpen("No")}
-                  /> */}
                    <Toolbar/>
-                   {/* {this.renderSideDrawer()} */}
                    {this.renderPlayerForm()}
                    {this.renderWhoseTurn()}
                    <div className="main4x4">

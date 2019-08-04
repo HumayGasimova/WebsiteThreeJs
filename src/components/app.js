@@ -440,15 +440,6 @@ export class App extends Component {
       }
    }
 
-   // renderSideDrawer = () => {
-   //    return(
-   //       <SideDrawer
-   //          sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
-   //          sideDrawerOpen={this.props.sideDrawerOpen}
-   //       />
-   //    )
-   // }
-
    componentWillUnmount = () => {
       this.props.resetPlayer();
       this.props.resetGame();
@@ -463,12 +454,7 @@ export class App extends Component {
       return(
             <div >
                <div className="background">
-               {/* <div 
-                  className={this.props.sideDrawerOpen === "Yes" ? "showCurtains" : null}
-                  onClick={() => this.props.sideDrawerIsOpen("No")}
-                  /> */}
                   <Toolbar/>
-                  {/* {this.renderSideDrawer()} */}
                   {this.renderPlayerForm()}
                   {this.renderWhoseTurn()}
                   <div className="main">

@@ -1,8 +1,8 @@
 .sideDrawerOpen {
     border: 1px solid rgb(221, 214, 214);
     border-radius: 7px;
-    width: 185px;
-    height: 350px;
+    width: 50%;
+    height: 100%;
     background: white;
     position: absolute;
     right: 0px;
@@ -11,21 +11,12 @@
     z-index: 1000;
 }
 
-.sideDrawerClose {
-    border: 1px solid rgb(221, 214, 214);
-    border-radius: 7px;
-    width: 185px;
-    height: 350px;
-    background: white;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    // transform: translateX(200px);
-    // transition: all 1s linear;
-    visibility: hidden;
- 
-    
-}
+// .sideDrawerClose {
+  
+//     // transform: translateX(200px);
+//     // transition: all 1s linear;
+//     visibility: hidden;
+// }
 
 
 
