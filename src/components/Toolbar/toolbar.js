@@ -21,6 +21,8 @@ bindActionCreators
 import MenuButton from '../MenuButton/menuButton';
 import NavigationItems from '../NavigationItems/navigationItems';
 import LogoOX from '../../Image/LogoXO.png';
+import Backdrop from '../../library/Backdrop/backdrop';
+import SideDrawer from '../SideDrawer/sideDrawer';
 
 /**
  * Styles
@@ -52,11 +54,24 @@ class Toolbar extends Component {
     * Markup
     */
 
+   renderSideDrawer = () => {
+    return(
+       <SideDrawer
+          sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
+          sideDrawerOpen={this.props.sideDrawerOpen}
+       />
+    )
+ }
+
     render(){
         return(
             <div className="toolbar">
                 <img src={LogoOX} alt="logoXO"/>
                 <NavigationItems/>
+                {this.renderSideDrawer()}
+                <Backdrop 
+                    show={this.props.sideDrawerOpen === "Yes"}
+                    onClick={() => this.props.sideDrawerIsOpen("No")}/>
                 <MenuButton
                     menuButtonHandler={() => this.props.sideDrawerIsOpen("Yes")}
                 />
@@ -68,12 +83,12 @@ class Toolbar extends Component {
 export default connect(
     (state) => {
        return {
-  
+        sideDrawerOpen: state.sideDrawer.sideDrawerOpen
        };
     },
     (dispatch) => {
        return {
-          sideDrawerIsOpen: bindActionCreators(Actions.sideDrawerOpen, dispatch),
+        sideDrawerIsOpen: bindActionCreators(Actions.sideDrawerOpen, dispatch),
        };
     }
  )(Toolbar);

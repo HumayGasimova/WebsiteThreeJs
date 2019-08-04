@@ -440,14 +440,14 @@ export class App extends Component {
       }
    }
 
-   renderSideDrawer = () => {
-      return(
-         <SideDrawer
-            sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
-            sideDrawerOpen={this.props.sideDrawerOpen}
-         />
-      )
-   }
+   // renderSideDrawer = () => {
+   //    return(
+   //       <SideDrawer
+   //          sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
+   //          sideDrawerOpen={this.props.sideDrawerOpen}
+   //       />
+   //    )
+   // }
 
    componentWillUnmount = () => {
       this.props.resetPlayer();
@@ -463,12 +463,12 @@ export class App extends Component {
       return(
             <div >
                <div className="background">
-               <div 
+               {/* <div 
                   className={this.props.sideDrawerOpen === "Yes" ? "showCurtains" : null}
                   onClick={() => this.props.sideDrawerIsOpen("No")}
-                  />
+                  /> */}
                   <Toolbar/>
-                  {this.renderSideDrawer()}
+                  {/* {this.renderSideDrawer()} */}
                   {this.renderPlayerForm()}
                   {this.renderWhoseTurn()}
                   <div className="main">
@@ -498,12 +498,12 @@ export class App extends Component {
 export default connect(
    (state) => {
       return {
-          firstPlayer: state.setPlayer.firstPlayer,
-          mainBox: state.mainBox.mainBox,
-          winner: state.gameOver.winner,
-          winnerLine: state.gameOver.winnerLine,
-          draw: state.gameOver.draw,
-          sideDrawerOpen: state.sideDrawer.sideDrawerOpen
+         firstPlayer: state.setPlayer.firstPlayer,
+         mainBox: state.mainBox.mainBox,
+         winner: state.gameOver.winner,
+         winnerLine: state.gameOver.winnerLine,
+         draw: state.gameOver.draw,
+         sideDrawerOpen: state.sideDrawer.sideDrawerOpen
       };
    },
    (dispatch) => {

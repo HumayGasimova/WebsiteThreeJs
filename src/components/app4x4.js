@@ -331,14 +331,14 @@ import React,{
        }
     }
 
-    renderSideDrawer = () => {
-       return(
-          <SideDrawer
-             sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
-             sideDrawerOpen={this.props.sideDrawerOpen}
-          />
-       )
-    }
+   //  renderSideDrawer = () => {
+   //     return(
+   //        <SideDrawer
+   //           sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
+   //           sideDrawerOpen={this.props.sideDrawerOpen}
+   //        />
+   //     )
+   //  }
  
 
     componentWillUnmount = () => {
@@ -356,12 +356,12 @@ import React,{
           <div>
              <div >
                 <div className="background4x4">
-                <div 
+                {/* <div 
                   className={this.props.sideDrawerOpen === "Yes" ? "showCurtains4x4" : null}
                   onClick={() => this.props.sideDrawerIsOpen("No")}
-                  />
+                  /> */}
                    <Toolbar/>
-                   {this.renderSideDrawer()}
+                   {/* {this.renderSideDrawer()} */}
                    {this.renderPlayerForm()}
                    {this.renderWhoseTurn()}
                    <div className="main4x4">
