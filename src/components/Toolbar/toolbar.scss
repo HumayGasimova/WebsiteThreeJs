@@ -1,8 +1,9 @@
-.head {
+.toolbar {
     width: 95%;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 10px;
+    padding: 20px;
+    border-bottom: 1px solid rgb(221, 214, 214);
 }

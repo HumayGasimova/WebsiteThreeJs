@@ -31,8 +31,9 @@ import DiagonalLineRight from './WinnersLine/diagonalLineRight';
 import WinnerO from './WinnerScreen/winnerO';
 import WinnerX from './WinnerScreen/winnerX';
 import MenuButton from './MenuButton/menuButton';
-import Head from './Head/head';
+import Toolbar from './Toolbar/toolbar';
 import SideDrawer from './SideDrawer/sideDrawer';
+import Layout from './Layout/layout';
 
 /**
  * Styles
@@ -469,16 +470,15 @@ export class App extends Component {
 
    render(){
       return(
-         <div>
             <div >
                <div className="background">
                <div 
                   className={this.props.sideDrawerOpen === "Yes" ? "showCurtains" : null}
                   onClick={() => this.props.sideDrawerIsOpen("No")}
                   />
-                  <Head>
+                  <Toolbar>
                      {this.renderMenuButton()}
-                  </Head>
+                  </Toolbar>
                   {this.renderSideDrawer()}
                   {this.renderPlayerForm()}
                   {this.renderWhoseTurn()}
@@ -493,11 +493,10 @@ export class App extends Component {
                   {/* <div>{console.log(this.props.draw)}</div> */}
                   <div className="emptyDiv"/>
                </div>
-               <div>{console.log(store.getState())}</div>
+               {/* <div>{console.log(store.getState())}</div> */}
                {/* <div>{console.log(history)}</div> */}
                {/* <canvas /> */}
             </div>
-         </div>
       );
    }
 }

@@ -1,0 +1,15 @@
+.navigationItem {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    align-items: center;
+        a {
+            text-decoration: none;
+            height: 100%;
+            padding: 16px 10px;
+            border-bottom: 4px solid transparent;
+            box-sizing: border-box;
+            display: block;
+        }
+}

@@ -28,7 +28,7 @@ import React,{
  import WinnerO from './WinnerScreen/winnerO';
  import WinnerX from './WinnerScreen/winnerX';
  import MenuButton from './MenuButton/menuButton';
- import Head from './Head/head';
+ import Toolbar from './Toolbar/toolbar';
  import SideDrawer from './SideDrawer/sideDrawer';
  
  /**
@@ -368,9 +368,9 @@ import React,{
                   className={this.props.sideDrawerOpen === "Yes" ? "showCurtains4x4" : null}
                   onClick={() => this.props.sideDrawerIsOpen("No")}
                   />
-                   <Head>
+                   <Toolbar>
                       {this.renderMenuButton()}
-                   </Head>
+                   </Toolbar>
                    {this.renderSideDrawer()}
                    {this.renderPlayerForm()}
                    {this.renderWhoseTurn()}

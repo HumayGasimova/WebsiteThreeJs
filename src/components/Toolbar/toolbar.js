@@ -10,13 +10,13 @@ import React,{
  * Styles
  */
 
-import './head.scss';
+import './toolbar.scss';
 
 /**
  * MainBox component definition and export
  */
 
-class Head extends Component {
+class Toolbar extends Component {
 
     /**
     * Constructor
@@ -32,11 +32,11 @@ class Head extends Component {
 
     render(){
         return(
-            <div className="head">
+            <div className="toolbar">
                 {this.props.children}
             </div>
         );
     }
 }
 
-export default Head;
+export default Toolbar;
