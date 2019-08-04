@@ -3,7 +3,19 @@
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 20px;
     border-bottom: 1px solid rgb(221, 214, 214);
+}
+
+@media (max-width : 967px){
+    .toolbar {
+        width: 85%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px;
+        border-bottom: 1px solid rgb(221, 214, 214);
+    }
 }

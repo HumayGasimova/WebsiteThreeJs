@@ -26,8 +26,18 @@ export const NavigationItems = (props) => {
             <NavigationItem 
                 link
                 className>
-                    name
+                   Welcome Page
             </NavigationItem>   
+            <NavigationItem 
+                link
+                className>
+                    TicTacToe3x3
+            </NavigationItem>   
+            <NavigationItem 
+                link
+                className>
+                    TicTacToe4x4
+            </NavigationItem>  
         </ul>
     );
 }

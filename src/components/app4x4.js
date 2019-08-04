@@ -330,15 +330,7 @@ import React,{
           }
        }
     }
- 
-    renderMenuButton = () => {
-       return(
-          <MenuButton
-             menuButtonHandler={() => this.props.sideDrawerIsOpen("Yes")}
-          />
-       )
-    }
- 
+
     renderSideDrawer = () => {
        return(
           <SideDrawer
@@ -368,9 +360,7 @@ import React,{
                   className={this.props.sideDrawerOpen === "Yes" ? "showCurtains4x4" : null}
                   onClick={() => this.props.sideDrawerIsOpen("No")}
                   />
-                   <Toolbar>
-                      {this.renderMenuButton()}
-                   </Toolbar>
+                   <Toolbar/>
                    {this.renderSideDrawer()}
                    {this.renderPlayerForm()}
                    {this.renderWhoseTurn()}

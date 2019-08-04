@@ -30,7 +30,6 @@ import DiagonalLineLeft from './WinnersLine/diagonalLineLeft';
 import DiagonalLineRight from './WinnersLine/diagonalLineRight';
 import WinnerO from './WinnerScreen/winnerO';
 import WinnerX from './WinnerScreen/winnerX';
-import MenuButton from './MenuButton/menuButton';
 import Toolbar from './Toolbar/toolbar';
 import SideDrawer from './SideDrawer/sideDrawer';
 import Layout from './Layout/layout';
@@ -441,18 +440,10 @@ export class App extends Component {
       }
    }
 
-   renderMenuButton = () => {
-      return(
-         <MenuButton
-            menuButtonHandler={() => this.props. sideDrawerIsOpen("Yes")}
-         />
-      )
-   }
-
    renderSideDrawer = () => {
       return(
          <SideDrawer
-            sideDrawerHandler={() => this.props. sideDrawerIsOpen("No")}
+            sideDrawerHandler={() => this.props.sideDrawerIsOpen("No")}
             sideDrawerOpen={this.props.sideDrawerOpen}
          />
       )
@@ -476,9 +467,7 @@ export class App extends Component {
                   className={this.props.sideDrawerOpen === "Yes" ? "showCurtains" : null}
                   onClick={() => this.props.sideDrawerIsOpen("No")}
                   />
-                  <Toolbar>
-                     {this.renderMenuButton()}
-                  </Toolbar>
+                  <Toolbar/>
                   {this.renderSideDrawer()}
                   {this.renderPlayerForm()}
                   {this.renderWhoseTurn()}
