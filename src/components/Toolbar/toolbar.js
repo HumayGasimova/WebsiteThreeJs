@@ -71,18 +71,18 @@ class Toolbar extends Component {
                 <img src={LogoOX} alt="logoXO"/>
                 <NavigationItems className={"navigationItems-toolbar"}>
                     <NavigationItem 
-                        link
-                        className>
+                        path={"/"}
+                        >
                         Welcome Page
                     </NavigationItem>   
                     <NavigationItem 
-                        link
-                        className>
+                        path={"/tictactoe"}
+                        >
                             TicTacToe3x3
                     </NavigationItem>   
                     <NavigationItem 
-                        link
-                        className>
+                        path={"/tictactoe4x4"}
+                        >
                             TicTacToe4x4
                     </NavigationItem>  
                 </NavigationItems>

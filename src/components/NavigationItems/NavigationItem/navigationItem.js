@@ -3,6 +3,10 @@
  */
 
 import React from 'react';
+import {
+    NavLink
+ } from 'react-router-dom';
+ 
 
 /**
  * Styles
@@ -17,12 +21,9 @@ import './navigationItem.scss';
 export const NavigationItem = (props) => {
     return(
        <li className={props.className}>
-           <a 
-            // href={props.link}
-            // className={props.className}
-            >
+           <NavLink to={props.path}>
                 {props.children}
-            </a>
+           </NavLink>
        </li>
     );
 }

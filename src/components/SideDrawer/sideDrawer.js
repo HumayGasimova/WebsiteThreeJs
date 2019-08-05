@@ -38,19 +38,19 @@ class SideDrawer extends Component {
                     </div>
                     <NavigationItems className={"navigationItems-sideDrawer"}>
                         <NavigationItem 
-                            link
+                            path={"/"}
                             className="navigationItem-sideDrawer"
                             >
                             Welcome Page
                         </NavigationItem>   
                         <NavigationItem 
-                            link
+                            path={"/tictactoe"}
                             className="navigationItem-sideDrawer"
                             >
                                 TicTacToe3x3
                         </NavigationItem>   
                         <NavigationItem 
-                            link
+                            path={"/tictactoe4x4"}
                             className="navigationItem-sideDrawer"
                             >
                                 TicTacToe4x4
