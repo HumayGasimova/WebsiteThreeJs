@@ -1,4 +1,4 @@
-.navigationItems {
+.navigationItems-toolbar {
     margin: 0;
     padding-top: 15px;
     // padding-left: 140px;
@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 700px){
-    .navigationItems {
+    .navigationItems-toolbar {
         margin: 0;
         padding-top: 20px;
         // padding-left: 140px;
@@ -21,7 +21,7 @@
         align-items: center;
         height: 100%;
         font-family: 'Berkshire Swash', cursive;
-        font-size: 20px;
+        font-size: 50px;
         color:rgb(68, 109, 103);
     }
     
@@ -29,7 +29,15 @@
 
 
 @media only screen and (max-device-width : 425px){
-    .navigationItems {
+    .navigationItems-toolbar {
        display: none;
     }
+}
+
+.navigationItems-sideDrawer {
+    list-style: none;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 64px;
+    color:rgb(30, 59, 55);
+    margin-top: 60px;
 }

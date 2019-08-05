@@ -16,7 +16,7 @@ import './navigationItem.scss';
 
 export const NavigationItem = (props) => {
     return(
-       <li className="navigationItem">
+       <li className={props.className}>
            <a 
             // href={props.link}
             // className={props.className}

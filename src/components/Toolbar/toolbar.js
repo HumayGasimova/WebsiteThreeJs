@@ -20,9 +20,11 @@ bindActionCreators
 
 import MenuButton from '../MenuButton/menuButton';
 import NavigationItems from '../NavigationItems/navigationItems';
+import NavigationItem from '../NavigationItems/NavigationItem/navigationItem';
 import LogoOX from '../../Image/LogoXO.png';
 import Backdrop from '../../library/Backdrop/backdrop';
 import SideDrawer from '../SideDrawer/sideDrawer';
+
 
 /**
  * Styles
@@ -67,7 +69,23 @@ class Toolbar extends Component {
         return(
             <div className="toolbar">
                 <img src={LogoOX} alt="logoXO"/>
-                <NavigationItems/>
+                <NavigationItems className={"navigationItems-toolbar"}>
+                    <NavigationItem 
+                        link
+                        className>
+                        Welcome Page
+                    </NavigationItem>   
+                    <NavigationItem 
+                        link
+                        className>
+                            TicTacToe3x3
+                    </NavigationItem>   
+                    <NavigationItem 
+                        link
+                        className>
+                            TicTacToe4x4
+                    </NavigationItem>  
+                </NavigationItems>
                 {this.renderSideDrawer()}
                 <Backdrop 
                     show={this.props.sideDrawerOpen === "Yes"}

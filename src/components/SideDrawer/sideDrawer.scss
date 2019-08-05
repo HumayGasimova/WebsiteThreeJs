@@ -1,13 +1,13 @@
 .sideDrawerOpen {
-    border: 1px solid rgb(221, 214, 214);
+    border: 5px solid rgb(51, 92, 86);
     border-radius: 7px;
     width: 50%;
     height: 100%;
-    background: white;
+    background: linear-gradient(to bottom,  rgb(185, 226, 220) 0%,  rgb(48, 114, 104) 100%);
     position: absolute;
-    right: 0px;
+    left: 0px;
     top: 0px;
-    animation: moveOpen 1s linear;
+    animation: moveOpen 0.2s linear;
     z-index: 1000;
 }
 
@@ -17,6 +17,23 @@
 //     // transition: all 1s linear;
 //     visibility: hidden;
 // }
+.LogoXO-sideDrawer {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 463px;
+    height: 126px;
+    text-align: center;
+    padding-top: 10px;
+    background: white;
+    border: 5px double rgb(51, 92, 86);
+    animation: moveOpen 0.2s linear;
+    img{
+        width: 230px;
+        height: 120px;
+        animation: moveOpen 0.2s linear;
+    }
+}
 
 
 
@@ -25,7 +42,7 @@
         width: 0%;
     }
     to {
-        width: 185px;
+        width: 50%;
     }
 }
 // @keyframes moveClose {
@@ -50,3 +67,4 @@
 //     visibility: visible;
 //     opacity: 1;
 //   }
+
