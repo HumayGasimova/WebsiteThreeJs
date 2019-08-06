@@ -52,7 +52,7 @@ import './oLogo.scss';
     renderImage = () => {
         if(this.props.left){
            return(
-            <div style={{transform: `translate(0px, ${this.state.slower}px)`}}>
+            <div style={{transform: `translate(0px, ${this.state.slower2x}px)`}}>
                 <O
                     radius={this.props.radius}
                     width={this.props.widths}
