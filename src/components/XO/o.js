@@ -29,6 +29,7 @@ class O extends Component {
                 height={this.props.height} 
                 xmlns="http://www.w3.org/2000/svg"
                 // viewBox="0 0 303 303" 
+                viewBox={this.props.viewBox}
                 >
                 <circle 
                     className={this.props.animationShow ? "circle" : null} 

@@ -198,12 +198,13 @@ import React,{
                 return(
                       <O
                          radius={"30"}
-                         width={"130"}
-                         height={"140"}
-                         strokeWidth={"10"}
+                         width={"100"}
+                         height={"100"}
+                         strokeWidth={"12"}
                          cx={"50"}
                          cy={"50"}
                          animationShow={true}
+                         viewBox={"0 0 120 120"}
                        />
                 )
           }
