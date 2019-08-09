@@ -353,7 +353,7 @@ import React,{
                    />
                    {this.renderReset()}
                    {/* <div>{console.log(this.props.draw)}</div> */}
-                   <div className="emptyDiv4x4"/>
+                   {/* <div className="emptyDiv4x4"/> */}
                 </div>
                 {/* <div>{console.log(store.getState())}</div> */}
                 <div>{console.log(this.state.coordinateX, this.state.coordinateY)}</div>
