@@ -74,6 +74,31 @@
     }
 }
 
+.X4x4 {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    .diagonalFirst {
+        border: 4.5px solid #665757;
+        background-color: #665757;
+        width: 60px;
+        position: absolute;
+        transform: rotateZ(45deg);
+        top: 37px;
+        right: 6px;
+        
+    }
+    .diagonalSecond {
+        border: 4.5px solid #665757;
+        background-color: #665757;
+        width: 60px;
+        position: absolute;
+        transform: rotateZ(-45deg);
+        top: 37px;
+        right: 6px;
+    }
+}
+
 .circle{ 
     stroke-dasharray: 440;
     stroke-dashoffset: 440;

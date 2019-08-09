@@ -30,7 +30,7 @@ export const WinnerX = (props) => {
                 className={props.winnerScreen}
                 style={props1}
                 >
-                    <X screen={true}/>
+                    <X className={"xScreen"}/>
                     <Winner
                     winner={props.winner}
                     />

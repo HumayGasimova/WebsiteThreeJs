@@ -42,9 +42,12 @@ class Page1 extends Component {
         return(
             <div className="backgroundBox">
                 <Headline/>
-                <XLogo left/>
+                <XLogo 
+                    left
+                    className={"x"}
+                />
                 <XLogo center/>
-                <XLogo screen/>
+                <XLogo className={"xScreen"}/>
                 <OLogo 
                     left
                     radius={"50"}

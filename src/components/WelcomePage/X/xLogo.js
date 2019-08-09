@@ -54,7 +54,7 @@ import './xLogo.scss';
            return(
             <div style={{transform: `translate(0px, -${this.state.slower2x}px)`}}>
                 <X 
-                    screen={this.props.screen}
+                    className={this.props.className}
                     opacity={"0.9"}
                 />
             </div>
@@ -63,8 +63,7 @@ import './xLogo.scss';
                     return(
                         <div  style={{transform: `translate(0px, ${this.state.slower2x}px)`}}>
                             <X 
-                                screen={this.props.screen}
-                                centerX
+                                className={'smallX'}
                                 opacity={"0.5"}
                             />
                         </div>
@@ -72,7 +71,7 @@ import './xLogo.scss';
                }else{
                     return(
                         <div  style={{transform: `translate(0px, ${this.state.slower}px)`}}>
-                            <X screen={this.props.screen}/>
+                            <X className={this.props.className}/>
                         </div>
                     )
                }

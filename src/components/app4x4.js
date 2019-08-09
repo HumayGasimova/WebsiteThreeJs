@@ -27,9 +27,7 @@ import React,{
  import O from './XO/o';
  import WinnerO from './WinnerScreen/winnerO';
  import WinnerX from './WinnerScreen/winnerX';
- import MenuButton from './MenuButton/menuButton';
  import Toolbar from './Toolbar/toolbar';
- import SideDrawer from './SideDrawer/sideDrawer';
  
  /**
   * Styles
@@ -112,10 +110,7 @@ import React,{
           ["3","7","11","15"],
           ["0","5","10","15"],
           ["3","6","9","12"]
-        
     ]
- 
- 
        winnerList.map((el,i)=>{
           let list = winnerList[i];
              if(
@@ -133,8 +128,6 @@ import React,{
                 })
              }
           })
-    
-   
     }
  
  
@@ -156,8 +149,6 @@ import React,{
           this.props.resetPlayer();
       }
     }
- 
-    
  
     resetGame = () => {
        this.props.resetPlayer();
@@ -200,7 +191,7 @@ import React,{
     renderChild = (el) => {
           if(el === "X"){
              return(
-                      <X/>
+                      <X className={"X4x4"}/>
              )
           }else{
              if(el === "O")

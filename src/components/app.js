@@ -306,7 +306,7 @@ export class App extends Component {
          if(el === "X"){
             return(
                <div>
-                     <X/>
+                     <X className={"x"}/>
                </div>
             )
          }else{
