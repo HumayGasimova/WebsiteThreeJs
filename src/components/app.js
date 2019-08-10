@@ -446,6 +446,10 @@ export class App extends Component {
       this.props.resetMainBox();
    }
 
+   // componentDidMount() {
+   //    window.scrollTo(0, 0);
+   //  }
+
    /**
     * Markup
     */
@@ -466,10 +470,10 @@ export class App extends Component {
                   {this.renderWinnerLine()}
                   {this.renderReset()}
                   {/* <div>{console.log(this.props.draw)}</div> */}
-                  <div className="emptyDiv"/>
+                  {/* <div className="emptyDiv"/> */}
                </div>
                {/* <div>{console.log(store.getState())}</div> */}
-               {/* <div>{console.log(history)}</div> */}
+               <div>{console.log(this.props.history)}</div>
                {/* <canvas /> */}
             </div>
       );
