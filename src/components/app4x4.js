@@ -3,31 +3,35 @@
  */
 
 import React,{
-    Component
- } from 'react';
- 
- import {
-    connect
- } from 'react-redux';
- 
- import {
-    bindActionCreators
- } from 'redux';
- import store from '../store/store';
- 
- /**
-  * Components
-  */
- 
- import MainBox from './MainBox/mainBox';
- import Boxes4x4 from "./Boxes4x4/boxes4x4";
- import SelectPlayer from './SelectPlayer/selectPlayer';
- import RenderWinnerLine from './WinnersLine/renderWinnerLine';
- import X from './XO/x';
- import O from './XO/o';
- import WinnerO from './WinnerScreen/winnerO';
- import WinnerX from './WinnerScreen/winnerX';
- import Toolbar from './Toolbar/toolbar';
+   Component
+} from 'react';
+
+import {
+   connect
+} from 'react-redux';
+
+import {
+   bindActionCreators
+} from 'redux';
+import store from '../store/store';
+
+/**
+ * Components
+ */
+
+import MainBox from './MainBox/mainBox';
+import Boxes4x4 from "./Boxes4x4/boxes4x4";
+import SelectPlayer from './SelectPlayer/selectPlayer';
+import RenderWinnerLine from './WinnersLine/renderWinnerLine';
+import X from './XO/x';
+import O from './XO/o';
+import WinnerO from './WinnerScreen/winnerO';
+import WinnerX from './WinnerScreen/winnerX';
+import Toolbar from './Toolbar/toolbar';
+import VerticalLine from './WinnersLine/verticalLine';
+import HorizontalLine from './WinnersLine/horizontalLine';
+import DiagonalLineLeft from './WinnersLine/diagonalLineLeft';
+import DiagonalLineRight from './WinnersLine/diagonalLineRight';
  
  /**
   * Styles
@@ -323,6 +327,147 @@ import React,{
        }
     }
 
+    renderWinnerLine = () => {
+      let line = this.props.winnerLine
+      let coordinateX = this.state.coordinateX;
+      let coordinateY = this.state.coordinateY;
+      let keyWord = line.join('')
+      
+      switch(keyWord){
+          case "0123":
+              return(
+                  <div className="winnerLine4x4">
+                      <HorizontalLine
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[0]}
+                         coordinateX2={coordinateX[3]}
+                         coordinateY1={coordinateY[0]}
+                         coordinateY2={coordinateY[3]}
+                      />
+                  </div>
+              );
+          case "4567":
+              return(
+                  <div className="winnerLine4x4">
+                      <HorizontalLine
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[4]}
+                         coordinateX2={coordinateX[7]}
+                         coordinateY1={coordinateY[4]}
+                         coordinateY2={coordinateY[7]}
+                      />
+                  </div>
+              );
+          case "891011":
+                return(
+                   <div className="winnerLine4x4">
+                      <HorizontalLine
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[8]}
+                         coordinateX2={coordinateX[11]}
+                         coordinateY1={coordinateY[8]}
+                         coordinateY2={coordinateY[11]}
+                      />
+                   </div>
+                );
+          case "12131415":
+                return(
+                   <div className="winnerLine4x4">
+                      <HorizontalLine
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[12]}
+                         coordinateX2={coordinateX[15]}
+                         coordinateY1={coordinateY[12]}
+                         coordinateY2={coordinateY[15]}
+                      />
+                   </div>
+                );
+          case "04812":
+             return(
+                <div className="winnerLine4x4">
+                   <VerticalLine
+                      height={"550"}
+                      player={this.props.winner === "X"}
+                      coordinateX1={coordinateX[0]}
+                      coordinateX2={coordinateX[12]}
+                      coordinateY1={coordinateY[0]}
+                      coordinateY2={coordinateY[12]}
+                   />
+                </div>
+             );    
+             case "15913":
+                return(
+                   <div className="winnerLine4x4">
+                      <VerticalLine
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[1] }
+                         coordinateX2={coordinateX[13]}
+                         coordinateY1={coordinateY[1]}
+                         coordinateY2={coordinateY[13]}
+                      />
+                   </div>
+                );   
+             case "261014":
+                return(
+                   <div className="winnerLine4x4">
+                      <VerticalLine
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[2]}
+                         coordinateX2={coordinateX[14]}
+                         coordinateY1={coordinateY[2]}
+                         coordinateY2={coordinateY[14]}
+                      />
+                   </div>
+                );   
+             case "371115":
+                return(
+                   <div className="winnerLine4x4">
+                      <VerticalLine
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[3]}
+                         coordinateX2={coordinateX[15]}
+                         coordinateY1={coordinateY[3]}
+                         coordinateY2={coordinateY[15]}
+                      />
+                   </div>
+                );   
+             case "051015":
+                return(
+                  <div className="winnerLine4x4">
+                      <DiagonalLineLeft
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[0]}
+                         coordinateX2={coordinateX[15]}
+                         coordinateY1={coordinateY[0]}
+                         coordinateY2={coordinateY[15]}
+                      />
+                  </div>
+                );
+             case "36912":
+                return(
+                  <div className="winnerLine4x4">
+                      <DiagonalLineRight
+                         height={"550"}
+                         player={this.props.winner === "X"}
+                         coordinateX1={coordinateX[3]}
+                         coordinateX2={coordinateX[12]}
+                         coordinateY1={coordinateY[3]}
+                         coordinateY2={coordinateY[12]}
+                      />
+                  </div>
+                ); 
+
+      }
+  }
+
     componentWillUnmount = () => {
       this.props.resetPlayer();
       this.props.resetGame();
@@ -347,10 +492,11 @@ import React,{
                          {this.renderWinnerScreen()}
                       </div>
                    </div>
-                   <RenderWinnerLine
+                   {/* <RenderWinnerLine
                      coordinateX={this.state.coordinateX}
                      coordinateY={this.state.coordinateY}
-                   />
+                   />       */}
+                   {this.renderWinnerLine()}
                    {this.renderReset()}
                    {/* <div>{console.log(this.props.draw)}</div> */}
                    {/* <div className="emptyDiv4x4"/> */}
