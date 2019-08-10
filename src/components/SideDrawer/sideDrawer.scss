@@ -8,7 +8,7 @@
     left: 0px;
     top: 0px;
     // animation: moveOpen 0.2s linear;
-    // z-index: -1;
+    // z-index: 1000;
     transition: all 0.3s ease-out;
 
     &.sideDrawerOpen {
@@ -19,7 +19,7 @@
     &.sideDrawerClose {
         z-index: -1;
         opacity: 0;
-        transform: translateX(-100);
+        transform: translateX(-100%);
     }
 }
 
