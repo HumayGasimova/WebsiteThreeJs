@@ -1,4 +1,4 @@
-.sideDrawerOpen {
+.sideDrawer {
     border: 5px solid rgb(51, 92, 86);
     border-radius: 7px;
     width: 50%;
@@ -7,9 +7,21 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    animation: moveOpen 0.2s linear;
+    // animation: moveOpen 0.2s linear;
     z-index: 1000;
+    transition: all 0.3s ease-out;
+
+    &.sideDrawerOpen {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    &.sideDrawerClose {
+        opacity: 0;
+        transform: translateX(0);
+    }
 }
+
+
 
 // .sideDrawerClose {
   
@@ -37,14 +49,14 @@
 
 
 
-@keyframes moveOpen {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 50%;
-    }
-}
+// @keyframes moveOpen {
+//     from {
+//         width: 0%;
+//     }
+//     to {
+//         width: 50%;
+//     }
+// }
 // @keyframes moveClose {
 //     from {
 //         width:  185px;

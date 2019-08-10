@@ -23,7 +23,7 @@ export const NavigationItem = (props) => {
            <NavLink
                 exact
                 to={props.path}
-                activeStyle={{color: "rgb(74, 165, 153)"}}
+                activeStyle={{color: "rgb(60, 134, 124)"}}
             >
                 {props.children}
             </NavLink>
