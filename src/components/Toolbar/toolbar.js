@@ -14,6 +14,10 @@ import {
 bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+  } from 'react-router-dom'
+
 /**
  * Components
  */
@@ -65,10 +69,17 @@ class Toolbar extends Component {
     )
  }
 
+ navigateToWelcomePage = () => {
+     debugger
+     this.props.history.push('/');
+ }
+
     render(){
         return(
             <div className="toolbar">
-                <img src={LogoOX} alt="logoXO"/>
+                <div onClick={this.navigateToWelcomePage}>
+                    <img src={LogoOX} alt="logoXO"/>
+                </div>
                 <NavigationItems className={"navigationItems-toolbar"}>
                     <NavigationItem 
                         className={"navigationItem"}
@@ -112,4 +123,4 @@ export default connect(
         sideDrawerIsOpen: bindActionCreators(Actions.sideDrawerOpen, dispatch),
        };
     }
- )(Toolbar);
+ )( withRouter(Toolbar));
