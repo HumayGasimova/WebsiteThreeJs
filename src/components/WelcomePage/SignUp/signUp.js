@@ -205,7 +205,7 @@ renderInput = () => {
                                 value={formElement.config.value}
                                 onChange={(event) => this.inputChangedHandler(event, formElement.id)}
                                 shouldvalidate={formElement.config.validation}
-                                className={null}
+                                className={"input_error"}
                                 touched={formElement.config.touched}
                             />
                             <EmptyDivV1/>
@@ -214,7 +214,7 @@ renderInput = () => {
                 })}
             <Button 
                     className={"button"}
-                    text={"Add"}
+                    text={"SIGN UP"}
                     disabled={!this.state.formIsValid}
                 />
             </div>

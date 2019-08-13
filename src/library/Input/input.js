@@ -56,7 +56,7 @@ class Input extends Component {
                             className={
                                 this.props.valid === "false" && 
                                 this.props.shouldvalidate !== "undefined" && 
-                                this.props.touched === "true"  ? "invalid" : this.props.className
+                                this.props.touched === "true"  ? "invalid" : this.props.classNameInput
                             } 
                             value={this.props.value} 
                             {...this.props.elementconfig}
@@ -71,7 +71,7 @@ class Input extends Component {
                     className={
                         this.props.valid === "false" && 
                         this.props.shouldvalidate !== "undefined" && 
-                        this.props.touched === "true"  ? "invalid" : this.props.className
+                        this.props.touched === "true"  ? "invalid" : this.props.classNameInput
                     }  
                     {...this.props}
                     onChange={this.props.onChange}
@@ -83,7 +83,7 @@ class Input extends Component {
                     className={
                         this.props.valid === "false" && 
                         this.props.shouldvalidate !== "undefined" && 
-                        this.props.touched === "true"  ? "invalid" : this.props.className
+                        this.props.touched === "true"  ? "invalid" : this.props.classNameInput
                     } 
                     {...this.props}
                     onChange={this.props.onChange}
@@ -104,7 +104,7 @@ class Input extends Component {
                         className={
                             this.props.valid === "false" && 
                             this.props.shouldvalidate !== "undefined" && 
-                            this.props.touched === "true"  ? "invalid" : this.props.className
+                            this.props.touched === "true"  ? "invalid" : this.props.classNameInput
                         }
                         value={this.props.value} 
                         {...this.props.elementconfig}

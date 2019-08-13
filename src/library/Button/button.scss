@@ -1,7 +1,7 @@
 .button {
     width: 120px;
     &:disabled{
-        color:red;
+        color:rgb(150, 150, 150);
         cursor: not-allowed;
     }
 }

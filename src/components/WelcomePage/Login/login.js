@@ -11,7 +11,7 @@ import React,{
  */
 
 import Input from '../../../library/Input/input';
-import Button from '../Button/button';
+import Button from '../../../library/Button/button';
 import EmptyDivV1 from '../Empty/emptyDivV1';
 
 /**

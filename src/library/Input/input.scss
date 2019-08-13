@@ -1,17 +1,23 @@
 input {
-    border-radius: 7px;
-    width: 200px;
-    height: 37px;
+    border: 1px solid rgb(13, 48, 42);
+    border-radius: 3px;
+    width: 250px;
+    height: 30px;
 }
 
 .invalid {
-    border: 1px solid red;
-    background-color: rgb(247, 181, 181);
+    border: 1px solid rgb(185, 35, 8);
 }
 
 .error {
-    border-radius: 7px;
-    border: 1px solid green;
-    width: 200px;
-    height: 37px;
+    border-radius: 3px;
+    border: 1px solid rgb(185, 35, 8);
+    background-color: rgb(250, 229, 229);
+    width: 250px;
+    height: 25px;
+}
+
+.input_error {
+    display: flex;
+    justify-content: center;
 }
