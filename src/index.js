@@ -54,7 +54,7 @@ ReactDOM.render(
                <Route 
                   exact 
                   path="/"
-                  component={Welcome}
+                  component={SignUp}
                   // render={props => <Welcome {...props}/>}
                   />
               

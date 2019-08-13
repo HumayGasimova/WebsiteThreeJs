@@ -1,3 +1,17 @@
 input {
     border-radius: 7px;
+    width: 200px;
+    height: 37px;
+}
+
+.invalid {
+    border: 1px solid red;
+    background-color: rgb(247, 181, 181);
+}
+
+.error {
+    border-radius: 7px;
+    border: 1px solid green;
+    width: 200px;
+    height: 37px;
 }

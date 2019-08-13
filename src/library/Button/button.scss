@@ -1,6 +1,11 @@
 .button {
     width: 120px;
+    &:disabled{
+        color:red;
+        cursor: not-allowed;
+    }
 }
 .clicked {
     height: 360px;
 }
+

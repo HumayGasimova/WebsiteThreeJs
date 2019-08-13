@@ -10,7 +10,7 @@ import React,{
  * Components
  */
 
-import InputField from '../InputField/inputField';
+import Input from '../../../library/Input/input';
 import Button from '../Button/button';
 import EmptyDivV1 from '../Empty/emptyDivV1';
 
