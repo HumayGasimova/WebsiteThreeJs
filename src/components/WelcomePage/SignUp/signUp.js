@@ -144,6 +144,9 @@ checkValidity = (value, rules) => {
 
     if(rules && rules.required ){
         isValid = value.trim() !== '' && isValid;
+        this.setState({
+            errorMessage: "Please enter Name"
+        })
     }
 
     if(rules && rules.minLength){
@@ -212,7 +215,7 @@ renderInput = () => {
                         </div>
                     )
                 })}
-            <Button 
+                <Button 
                     className={"button"}
                     text={"SIGN UP"}
                     disabled={!this.state.formIsValid}

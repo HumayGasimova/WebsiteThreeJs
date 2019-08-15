@@ -18,6 +18,7 @@ import Page1 from './Page1/page1';
 import Page2 from './Page2/page2';
 import SignUp from './SignUp/signUp';
 import Spinner from '../Spinner/spinner';
+import Login from '../WelcomePage/Login/login';
 
 /**
  * Styles
@@ -49,8 +50,9 @@ class WelcomePage extends Component {
                <Page1/>
                {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
                <Page2/>
-               <SignUp/>
+               {/* <SignUp/> */}
                {/* <Spinner/> */}
+               <Login/>
             </div>
         );
     }
