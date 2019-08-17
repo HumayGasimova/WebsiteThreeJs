@@ -46,7 +46,7 @@ class Login extends Component {
                     },
                     valid: "false",
                     touched: "false",
-                    errorMessage: "Please enter valid email!"
+                    errorMessage: []
                 },
                 password: {
                     elementType: 'input',
@@ -61,7 +61,7 @@ class Login extends Component {
                     },
                     valid: "false",
                     touched: "false",
-                    errorMessage: "Password should be more than 8 characters!"
+                    errorMessage: []
                 }
             },
             formIsValid: false
@@ -81,10 +81,13 @@ class Login extends Component {
         };
         updatedFormElement.value = event.target.value;
         updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+
+        updatedFormElement.errorMessage = this.errorMessages(inputIdentifier, updatedFormElement.validation, updatedFormElement.valid)// {required: "enter valid 'inputIdentifier'"}
+
         updatedFormElement.touched = "true";
 
         updatedSignUpForm[inputIdentifier] = updatedFormElement;
-    console.log(updatedSignUpForm)
+    // console.log(updatedSignUpForm)
         let formIsValid = true;
         for(let inputIdentifier in updatedSignUpForm){
             formIsValid = updatedSignUpForm[inputIdentifier].valid === "true" && formIsValid;
@@ -97,14 +100,28 @@ class Login extends Component {
 
     }
 
+    errorMessages = (inputIdentifier, rules, validity) => {
+        let errors = []
+        if(rules ){
+            debugger
+            if(validity === "false" && rules.required ){
+                errors.push(`Please enter valid ${inputIdentifier}`)
+            }
+
+            // if(validity === "false" && rules.minLength ){
+            //     errors.push(`${inputIdentifier} should be more than 8 characters!`)
+            // }
+        }
+
+        console.log(errors)
+        return errors;
+    }
+
     checkValidity = (value, rules) => {
         let isValid = true;
 
         if(rules && rules.required ){
             isValid = value.trim() !== '' && isValid;
-            this.setState({
-                errorMessage: "Please enter Name"
-            })
         }
 
         if(rules && rules.minLength){
@@ -143,7 +160,7 @@ class Login extends Component {
                 config: this.state.signUpForm[key]
             })
         }
-        console.log(formElementsArray)
+        // console.log(formElementsArray)
         return(
             <form 
                 className="login"
@@ -186,6 +203,7 @@ class Login extends Component {
         return(
             <div>
                 {this.renderInput()}
+                {console.log(this.state.signUpForm)}
             </div>
         );
     }
