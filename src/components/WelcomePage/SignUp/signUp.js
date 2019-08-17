@@ -55,26 +55,32 @@ class SignUp extends Component {
                         placeholder: ' Name'
                     },
                     value: '',
-                    validation: {
-                        required: true
-                    },
-                    valid: "false",
+                    validation: [
+                        {
+                            required: true,
+                            valid: "false"
+                        }
+                    ],
+                    validField: "false",
                     touched: "false",
-                    errorMessage: "Please enter name!"
+                    errorMessage: []
                 },
-                lastName: {
+                LastName: {
                     elementType: 'input',
                     elementConfig: {
                         type: 'text',
                         placeholder: ' Last Name'
                     },
                     value: '',
-                    validation: {
-                        required: true
-                    },
-                    valid: "false",
+                    validation: [
+                        {
+                            required: true,
+                            valid: "false"
+                        }
+                    ],
+                    validField: "false",
                     touched: "false",
-                    errorMessage: "Please enter street!"
+                    errorMessage: []
                 },
                 email: {
                     elementType: 'input',
@@ -83,12 +89,15 @@ class SignUp extends Component {
                         placeholder: ' Your E-Mail'
                     },
                     value: '',
-                    validation: {
-                        required: true
-                    },
-                    valid: "false",
+                    validation: [
+                        {
+                            required: true,
+                            valid: "false"
+                        }
+                    ],
+                    validField: "false",
                     touched: "false",
-                    errorMessage: "Please enter valid email!"
+                    errorMessage: []
                 },
                 password: {
                     elementType: 'input',
@@ -97,13 +106,19 @@ class SignUp extends Component {
                         placeholder: ' Password'
                     },
                     value: '',
-                    validation: {
-                        required: true,
-                        minLength: 8
-                    },
-                    valid: "false",
+                    validation: [
+                        {
+                            required: true,
+                            valid: "false"
+                        },
+                        {
+                            minLength: 8,
+                            valid: "false"
+                        }
+                    ],
+                    validField: "false",
                     touched: "false",
-                    errorMessage: "Password should be more than 8 characters!"
+                    errorMessage: []
                 }
             },
             formIsValid: false
@@ -121,15 +136,24 @@ class SignUp extends Component {
     const updatedFormElement = { 
         ...updatedSignUpForm[inputIdentifier]
     };
-    updatedFormElement.value = event.target.value;
-    updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
-    updatedFormElement.touched = "true";
 
+    updatedFormElement.value = event.target.value;
+    updatedFormElement.validation = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+    updatedFormElement.errorMessage = this.errorMessages(inputIdentifier, updatedFormElement.validation)// {required: "enter valid 'inputIdentifier'"}
+    
+
+    updatedFormElement.touched = "true";
+    updatedFormElement.validField = this.checkValidityOfField(updatedFormElement.validation);
     updatedSignUpForm[inputIdentifier] = updatedFormElement;
-   console.log(updatedSignUpForm)
+   
+    // let validField = true;
+    // for(let inputIdentifier in updatedSignUpForm){
+    //     formIsValid = updatedSignUpForm[inputIdentifier].valid === "true" && formIsValid;
+    // }
+
     let formIsValid = true;
     for(let inputIdentifier in updatedSignUpForm){
-        formIsValid = updatedSignUpForm[inputIdentifier].valid === "true" && formIsValid;
+        formIsValid = updatedSignUpForm[inputIdentifier].validField === "true" && formIsValid;
     }
 
     this.setState({
@@ -139,200 +163,115 @@ class SignUp extends Component {
 
 }
 
-checkValidity = (value, rules) => {
-    let isValid = true;
-
-    if(rules && rules.required ){
-        isValid = value.trim() !== '' && isValid;
-        this.setState({
-            errorMessage: "Please enter Name"
+    checkValidityOfField = (validation) => {
+        let checkIfTrue=[]
+        validation.map((el) => {
+            checkIfTrue.push(el.valid)
         })
+
+        return checkIfTrue.every(x => x === "true").toString();
     }
 
-    if(rules && rules.minLength){
-        isValid = value.length >= rules.minLength && isValid;
+    errorMessages = (inputIdentifier, rules) => {
+        let errors = []
+        if(rules){
+            rules.map((rule) => {
+                if(rule.required && rule.valid === "false"){
+                    errors.push(`Please enter valid ${inputIdentifier}`)
+                }
+                if(rule.minLength && rule.valid === "false"){
+                    errors.push(`${inputIdentifier.charAt(0).toUpperCase() + inputIdentifier.slice(1)} should be more than 8 charachters!`)
+                }
+            })
+        }
+
+        // console.log(errors)
+        return errors;
     }
 
-    if(rules && rules.maxLength){
-        isValid = value.length <= rules.maxLength && isValid;
+    checkValidity = (value, rules) => {
+        let validation = [];
+        if(rules){
+            rules.map((rule) => {
+                if(rule.required){
+                    let isValid = value.trim() !== '' ;
+                    validation.push({...rule,valid: isValid.toString()});
+                }
+                if(rule.minLength){
+                    let isValid = value.length >= rule.minLength;
+                    validation.push({...rule,valid: isValid.toString()});
+                }
+            
+            })
+        return validation;
+        }
     }
 
-    return isValid.toString();
-}
+    onSubmitHandler = (event) => {
+        event.preventDefault();
+        const formData = {};
 
-onSubmitHandler = (event) => {
-    event.preventDefault();
-    const formData = {};
+        for (let formElementIdentifier in this.state.signUpForm) {
+            formData[formElementIdentifier] = this.state.signUpForm[formElementIdentifier].value
+        }
 
-    for (let formElementIdentifier in this.state.signUpForm) {
-        formData[formElementIdentifier] = this.state.signUpForm[formElementIdentifier].value
+        const order = {
+            orderData: formData
+        }
+
+        axios.post('/orders.json', order )
+        .then(res=>console.log(res))
+        .catch(err=> console.log(err))
     }
 
-    const order = {
-        orderData: formData
+    renderInput = () => {
+        const formElementsArray = [];
+        for(let key in this.state.signUpForm){
+            formElementsArray.push({
+                id: key,
+                config: this.state.signUpForm[key]
+            })
+        }
+        console.log(formElementsArray)
+        return(
+            <form 
+                className="sign-up"
+                onSubmit={this.onSubmitHandler}
+            >
+                <div className="sign-up-child">
+                    <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
+                    <div className="sign-up-text">SIGN UP</div>
+                    <EmptyDivV1/>
+                    {formElementsArray.map((formElement) => {
+                        // console.log(!formElement.config.valid)
+                        return(
+                            <div key={formElement.id}>
+                                <Input 
+                                    classnameerror={"errors"}
+                                    errormessage={formElement.config.errorMessage}
+                                    valid={formElement.config.validField}
+                                    elementtype={formElement.config.elementType} 
+                                    elementconfig={formElement.config.elementConfig}
+                                    value={formElement.config.value}
+                                    onChange={(event) => this.inputChangedHandler(event, formElement.id)}
+                                    shouldvalidate={formElement.config.validation}
+                                    className={"input_error"}
+                                    touched={formElement.config.touched}
+                                />
+                                <EmptyDivV1/>
+                            </div>
+                        )
+                    })}
+                    <Button 
+                        className={"button"}
+                        text={"SIGN UP"}
+                        disabled={!this.state.formIsValid}
+                    />
+                </div>
+            </form>
+        )
     }
 
-    axios.post('/orders.json', order )
-    .then(res=>console.log(res))
-    .catch(err=> console.log(err))
-}
-
-renderInput = () => {
-    const formElementsArray = [];
-    for(let key in this.state.signUpForm){
-        formElementsArray.push({
-            id: key,
-            config: this.state.signUpForm[key]
-        })
-    }
-    console.log(formElementsArray)
-    return(
-        <form 
-            className="sign-up"
-            onSubmit={this.onSubmitHandler}
-        >
-            <div className="sign-up-child">
-                <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
-                <div className="sign-up-text">SIGN UP</div>
-                <EmptyDivV1/>
-                {formElementsArray.map((formElement) => {
-                    // console.log(!formElement.config.valid)
-                    return(
-                        <div key={formElement.id}>
-                            <Input 
-                                classnameerror={"error"}
-                                errormessage={formElement.config.errorMessage}
-                                valid={formElement.config.valid}
-                                elementtype={formElement.config.elementType} 
-                                elementconfig={formElement.config.elementConfig}
-                                value={formElement.config.value}
-                                onChange={(event) => this.inputChangedHandler(event, formElement.id)}
-                                shouldvalidate={formElement.config.validation}
-                                className={"input_error"}
-                                touched={formElement.config.touched}
-                            />
-                            <EmptyDivV1/>
-                        </div>
-                    )
-                })}
-                <Button 
-                    className={"button"}
-                    text={"SIGN UP"}
-                    disabled={!this.state.formIsValid}
-                />
-            </div>
-        </form>
-    )
-        
-    
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-//    closeSignUpForm = () => {
-//        this.setState({
-//             showSignUpForm: false
-//        })
-//    }
-
-//    handleOnClick = () => {
-//         let signUpData = {
-//             name: this.state.name,
-//             lastName: this.state.lastName,
-//             email: this.state.emai,
-//             password: this.state.password
-
-//         }
-
-//         this.props.userSignUpRequest(signUpData)
-//     }
-
-//    getValue = (e) => {
-//        this.setState({
-//            [e.target.id]: e.target.value
-//        })
-//    }
-
-//    renderSignUpForm = () => {
-//        if(this.state.showSignUpForm === true){
-//            return(
-//                <form 
-//                     className="sign-up"
-//                 >
-//                     <div className="sign-up-child">
-//                         <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
-//                         <div className="sign-up-text">SIGN UP</div>
-//                         <EmptyDivV1/>
-//                         <InputField
-//                             value={this.state.name}
-//                             placeholder={" Name"}
-//                             type={"text"}
-//                             width={"200px"}
-//                             height={"37px"}
-//                             borderRadius={"7px"}
-//                             id={'name'}
-//                             getValue={(e)=>this.getValue(e)}
-//                             />
-//                         <EmptyDivV1/>
-//                         <InputField
-//                             value={this.state.lastName}
-//                             placeholder={" Last Name"}
-//                             type={"text"}
-//                             width={"200px"}
-//                             height={"37px"}
-//                             borderRadius={"7px"}
-//                             id={'lastName'}
-//                             getValue={(e)=>this.getValue(e)}
-//                             />
-//                         <EmptyDivV1/>
-//                         <InputField
-//                             value={this.state.email}
-//                             placeholder={" Email"}
-//                             type={"text"}
-//                             width={"200px"}
-//                             height={"37px"}
-//                             borderRadius={"7px"}
-//                             id={'email'}
-//                             getValue={(e)=>this.getValue(e)}
-//                             />
-//                         <EmptyDivV1/>   
-//                         <InputField
-//                             value={this.state.password}
-//                             placeholder={" Password"}
-//                             type={"password"}
-//                             width={"200px"}
-//                             height={"37px"}
-//                             borderRadius={"7px"}
-//                             id={'password'}
-//                             getValue={(e)=>this.getValue(e)}
-//                             />  
-//                         <EmptyDivV1/>
-//                         <Button
-//                             type={"button"}
-//                             disabled={false}
-//                             text={"Sign Up"}
-//                             width={"200px"}
-//                             height={"37px"}
-//                             borderRadius={"7px"}
-//                             getValue={(e)=>this.getValue(e)}
-//                             onClick={this.handleOnClick}
-//                             />   
-
-//                     </div>
-//                 </form>
-//            )
-//        }
-//    }
     render(){
         return(
             <div>

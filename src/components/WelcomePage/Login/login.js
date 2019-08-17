@@ -97,11 +97,6 @@ class Login extends Component {
         updatedFormElement.touched = "true";
         updatedFormElement.validField = this.checkValidityOfField(updatedFormElement.validation);
         updatedSignUpForm[inputIdentifier] = updatedFormElement;
-       
-        // let validField = true;
-        // for(let inputIdentifier in updatedSignUpForm){
-        //     formIsValid = updatedSignUpForm[inputIdentifier].valid === "true" && formIsValid;
-        // }
 
         let formIsValid = true;
         for(let inputIdentifier in updatedSignUpForm){
@@ -136,8 +131,6 @@ class Login extends Component {
                 }
             })
         }
-
-        // console.log(errors)
         return errors;
     }
 
@@ -184,7 +177,6 @@ class Login extends Component {
                 config: this.state.signUpForm[key]
             })
         }
-        // console.log(formElementsArray)
         return(
             <form 
                 className="login"
@@ -195,7 +187,6 @@ class Login extends Component {
                     <div className="login-text">LOGIN</div>
                     <EmptyDivV1/>
                     {formElementsArray.map((formElement) => {
-                        // console.log(!formElement.config.valid)
                         return(
                             <div key={formElement.id}>
                                 <Input 
@@ -227,7 +218,6 @@ class Login extends Component {
         return(
             <div>
                 {this.renderInput()}
-                {/* {console.log(this.state)} */}
             </div>
         );
     }
