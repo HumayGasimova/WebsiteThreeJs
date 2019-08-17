@@ -41,10 +41,13 @@ class Login extends Component {
                         placeholder: ' Your E-Mail'
                     },
                     value: '',
-                    validation: {
-                        required: true
-                    },
-                    valid: "false",
+                    validation: [
+                        {
+                            required: true,
+                            valid: "false"
+                        }
+                    ],
+                    validField: "false",
                     touched: "false",
                     errorMessage: []
                 },
@@ -55,11 +58,17 @@ class Login extends Component {
                         placeholder: ' Password'
                     },
                     value: '',
-                    validation: {
-                        required: true,
-                        minLength: 8
-                    },
-                    valid: "false",
+                    validation: [
+                        {
+                            required: true,
+                            valid: "false"
+                        },
+                        {
+                            minLength: 8,
+                            valid: "false"
+                        }
+                    ],
+                    validField: "false",
                     touched: "false",
                     errorMessage: []
                 }
@@ -79,18 +88,24 @@ class Login extends Component {
         const updatedFormElement = { 
             ...updatedSignUpForm[inputIdentifier]
         };
-        updatedFormElement.value = event.target.value;
-        updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
 
-        updatedFormElement.errorMessage = this.errorMessages(inputIdentifier, updatedFormElement.validation, updatedFormElement.valid)// {required: "enter valid 'inputIdentifier'"}
+        updatedFormElement.value = event.target.value;
+        updatedFormElement.validation = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+        updatedFormElement.errorMessage = this.errorMessages(inputIdentifier, updatedFormElement.validation)// {required: "enter valid 'inputIdentifier'"}
+        
 
         updatedFormElement.touched = "true";
-
+        updatedFormElement.validField = this.checkValidityOfField(updatedFormElement.validation);
         updatedSignUpForm[inputIdentifier] = updatedFormElement;
-    // console.log(updatedSignUpForm)
+       
+        // let validField = true;
+        // for(let inputIdentifier in updatedSignUpForm){
+        //     formIsValid = updatedSignUpForm[inputIdentifier].valid === "true" && formIsValid;
+        // }
+
         let formIsValid = true;
         for(let inputIdentifier in updatedSignUpForm){
-            formIsValid = updatedSignUpForm[inputIdentifier].valid === "true" && formIsValid;
+            formIsValid = updatedSignUpForm[inputIdentifier].validField === "true" && formIsValid;
         }
 
         this.setState({
@@ -100,39 +115,69 @@ class Login extends Component {
 
     }
 
-    errorMessages = (inputIdentifier, rules, validity) => {
-        let errors = []
-        if(rules ){
-            debugger
-            if(validity === "false" && rules.required ){
-                errors.push(`Please enter valid ${inputIdentifier}`)
-            }
+    checkValidityOfField = (validation) => {
+        let checkIfTrue=[]
+        validation.map((el) => {
+            checkIfTrue.push(el.valid)
+        })
 
-            // if(validity === "false" && rules.minLength ){
-            //     errors.push(`${inputIdentifier} should be more than 8 characters!`)
-            // }
+        return checkIfTrue.every(x => x === "true").toString();
+    }
+
+    errorMessages = (inputIdentifier, rules) => {
+        let errors = []
+        if(rules){
+            rules.map((rule) => {
+                if(rule.required && rule.valid === "false"){
+                    errors.push(`Please enter valid ${inputIdentifier}`)
+                }
+                if(rule.minLength && rule.valid === "false"){
+                    errors.push(`${inputIdentifier} should be more than 8 charachters!`)
+                }
+            })
         }
 
-        console.log(errors)
+        // console.log(errors)
         return errors;
     }
 
     checkValidity = (value, rules) => {
-        let isValid = true;
-
-        if(rules && rules.required ){
-            isValid = value.trim() !== '' && isValid;
+        let validation = [];
+        // console.log(rules)
+        if(rules){
+            rules.map((rule) => {
+                if(rule.required){
+                    let isValid = value.trim() !== '' ;
+                    let a = {...rule,valid: isValid.toString()};
+                    // console.log(a)
+                    validation.push(a);
+                }
+                if(rule.minLength){
+                    let isValid = value.length >= rule.minLength;
+                    let a = {...rule,valid: isValid.toString()};
+                    // console.log(a)
+                    validation.push(a);
+                }
+            
+            })
+// console.log(validation)
+           return validation;
         }
+      
+// return [{req,valid},{minle, valid}]
+        // if(rules && rules.required ){
+        //     isValid = value.trim() !== '' && isValid;
+        // }
 
-        if(rules && rules.minLength){
-            isValid = value.length >= rules.minLength && isValid;
-        }
+        // if(rules && rules.minLength){
+        //     isValid = value.length >= rules.minLength && isValid;
+        // }
 
-        if(rules && rules.maxLength){
-            isValid = value.length <= rules.maxLength && isValid;
-        }
+        // if(rules && rules.maxLength){
+        //     isValid = value.length <= rules.maxLength && isValid;
+        // }
 
-        return isValid.toString();
+        // return isValid.toString();
     }
 
     onSubmitHandler = (event) => {
@@ -177,7 +222,7 @@ class Login extends Component {
                                 <Input 
                                     classnameerror={"error"}
                                     errormessage={formElement.config.errorMessage}
-                                    valid={formElement.config.valid}
+                                    valid={formElement.config.validation}
                                     elementtype={formElement.config.elementType} 
                                     elementconfig={formElement.config.elementConfig}
                                     value={formElement.config.value}
@@ -203,7 +248,7 @@ class Login extends Component {
         return(
             <div>
                 {this.renderInput()}
-                {console.log(this.state.signUpForm)}
+                {console.log(this.state)}
             </div>
         );
     }
