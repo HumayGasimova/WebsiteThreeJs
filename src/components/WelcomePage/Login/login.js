@@ -33,7 +33,7 @@ class Login extends Component {
     constructor (props){
         super(props);
         this.state={
-            signUpForm: {
+            loginForm: {
                 email: {
                     elementType: 'input',
                     elementConfig: {
@@ -82,11 +82,11 @@ class Login extends Component {
     */
 
     inputChangedHandler = (event, inputIdentifier) => {
-        const updatedSignUpForm = {
-            ...this.state.signUpForm
+        const updatedLoginForm = {
+            ...this.state.loginForm
         };
         const updatedFormElement = { 
-            ...updatedSignUpForm[inputIdentifier]
+            ...updatedLoginForm[inputIdentifier]
         };
 
         updatedFormElement.value = event.target.value;
@@ -96,15 +96,15 @@ class Login extends Component {
 
         updatedFormElement.touched = "true";
         updatedFormElement.validField = this.checkValidityOfField(updatedFormElement.validation);
-        updatedSignUpForm[inputIdentifier] = updatedFormElement;
+        updatedLoginForm[inputIdentifier] = updatedFormElement;
 
         let formIsValid = true;
-        for(let inputIdentifier in updatedSignUpForm){
-            formIsValid = updatedSignUpForm[inputIdentifier].validField === "true" && formIsValid;
+        for(let inputIdentifier in updatedLoginForm){
+            formIsValid = updatedLoginForm[inputIdentifier].validField === "true" && formIsValid;
         }
 
         this.setState({
-            signUpForm: updatedSignUpForm,
+            loginForm: updatedLoginForm,
             formIsValid: formIsValid
         });
 
@@ -124,10 +124,13 @@ class Login extends Component {
         if(rules){
             rules.map((rule) => {
                 if(rule.required && rule.valid === "false"){
-                    errors.push(`Please enter valid ${inputIdentifier}`)
+                    errors.push(`Please enter ${inputIdentifier}`)
                 }
                 if(rule.minLength && rule.valid === "false"){
                     errors.push(`${inputIdentifier.charAt(0).toUpperCase() + inputIdentifier.slice(1)} should be more than 8 charachters!`)
+                }
+                if(rule.isEmail && rule.valid === "false"){
+                    errors.push(`Please enter valid ${inputIdentifier}`)
                 }
             })
         }
@@ -146,6 +149,20 @@ class Login extends Component {
                     let isValid = value.length >= rule.minLength;
                     validation.push({...rule,valid: isValid.toString()});
                 }
+                if(rule.maxLength){
+                    let isValid = value.length <= rules.maxLength 
+                    validation.push({...rule,valid: isValid.toString()});
+                }
+                if(rule.isEmail){
+                    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+                    let isValid = pattern.test(value);
+                    validation.push({...rule,valid: isValid.toString()});
+                }
+                if(rule.isNumeric){
+                    const pattern = /^\d+$/;
+                    let isValid = pattern.test(value);
+                    validation.push({...rule,valid: isValid.toString()});
+                }
             
             })
         return validation;
@@ -156,8 +173,8 @@ class Login extends Component {
         event.preventDefault();
         const formData = {};
 
-        for (let formElementIdentifier in this.state.signUpForm) {
-            formData[formElementIdentifier] = this.state.signUpForm[formElementIdentifier].value
+        for (let formElementIdentifier in this.state.loginForm) {
+            formData[formElementIdentifier] = this.state.oginForm[formElementIdentifier].value
         }
 
         const order = {
@@ -171,10 +188,10 @@ class Login extends Component {
 
     renderInput = () => {
         const formElementsArray = [];
-        for(let key in this.state.signUpForm){
+        for(let key in this.state.oginForm){
             formElementsArray.push({
                 id: key,
-                config: this.state.signUpForm[key]
+                config: this.state.oginForm[key]
             })
         }
         return(
