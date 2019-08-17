@@ -116,16 +116,24 @@ class Input extends Component {
         }
     }
 
-    // renderErrorMessage = () => {
-    //     let valid = this.props.valid
-    //     if(this.props.valid === "false" && this.props.touched === "true"){
-    //         return(
-    //             <div className={this.props.classnameerror}>
-    //                 {this.props.errormessage}
-    //             </div>
-    //         )
-    //     }
-    // }
+    renderErrorMessage = () => {
+        let errorMessages = this.props.errormessage;
+        console.log(errorMessages)
+        
+        if(this.props.valid === "false" && this.props.touched === "true"){
+            return(
+                <div className={this.props.classnameerror}>
+                    {errorMessages.map((msg, i) => {
+                        return(
+                            <div key={i}>
+                                {msg}
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        }
+    }
     /**
     * Markup
     */

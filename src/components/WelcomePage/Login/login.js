@@ -132,7 +132,7 @@ class Login extends Component {
                     errors.push(`Please enter valid ${inputIdentifier}`)
                 }
                 if(rule.minLength && rule.valid === "false"){
-                    errors.push(`${inputIdentifier} should be more than 8 charachters!`)
+                    errors.push(`${inputIdentifier.charAt(0).toUpperCase() + inputIdentifier.slice(1)} should be more than 8 charachters!`)
                 }
             })
         }
@@ -143,41 +143,20 @@ class Login extends Component {
 
     checkValidity = (value, rules) => {
         let validation = [];
-        // console.log(rules)
         if(rules){
             rules.map((rule) => {
                 if(rule.required){
                     let isValid = value.trim() !== '' ;
-                    let a = {...rule,valid: isValid.toString()};
-                    // console.log(a)
-                    validation.push(a);
+                    validation.push({...rule,valid: isValid.toString()});
                 }
                 if(rule.minLength){
                     let isValid = value.length >= rule.minLength;
-                    let a = {...rule,valid: isValid.toString()};
-                    // console.log(a)
-                    validation.push(a);
+                    validation.push({...rule,valid: isValid.toString()});
                 }
             
             })
-// console.log(validation)
-           return validation;
+        return validation;
         }
-      
-// return [{req,valid},{minle, valid}]
-        // if(rules && rules.required ){
-        //     isValid = value.trim() !== '' && isValid;
-        // }
-
-        // if(rules && rules.minLength){
-        //     isValid = value.length >= rules.minLength && isValid;
-        // }
-
-        // if(rules && rules.maxLength){
-        //     isValid = value.length <= rules.maxLength && isValid;
-        // }
-
-        // return isValid.toString();
     }
 
     onSubmitHandler = (event) => {
@@ -220,9 +199,9 @@ class Login extends Component {
                         return(
                             <div key={formElement.id}>
                                 <Input 
-                                    classnameerror={"error"}
+                                    classnameerror={"errors"}
                                     errormessage={formElement.config.errorMessage}
-                                    valid={formElement.config.validation}
+                                    valid={formElement.config.validField}
                                     elementtype={formElement.config.elementType} 
                                     elementconfig={formElement.config.elementConfig}
                                     value={formElement.config.value}
@@ -248,7 +227,7 @@ class Login extends Component {
         return(
             <div>
                 {this.renderInput()}
-                {console.log(this.state)}
+                {/* {console.log(this.state)} */}
             </div>
         );
     }
