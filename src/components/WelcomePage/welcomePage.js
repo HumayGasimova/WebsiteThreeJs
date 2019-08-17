@@ -52,7 +52,7 @@ class WelcomePage extends Component {
                <Page2/>
                {/* <SignUp/> */}
                {/* <Spinner/> */}
-               <Login/>
+               {/* <Login/> */}
             </div>
         );
     }

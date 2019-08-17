@@ -473,7 +473,7 @@ export class App extends Component {
                   {/* <div className="emptyDiv"/> */}
                </div>
                {/* <div>{console.log(store.getState())}</div> */}
-               <div>{console.log(this.props.history)}</div>
+               {/* <div>{console.log(this.props.history)}</div> */}
                {/* <canvas /> */}
             </div>
       );

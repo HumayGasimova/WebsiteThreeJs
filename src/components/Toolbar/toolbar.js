@@ -70,7 +70,6 @@ class Toolbar extends Component {
  }
 
  navigateToWelcomePage = () => {
-     debugger
      this.props.history.push('/');
  }
 
