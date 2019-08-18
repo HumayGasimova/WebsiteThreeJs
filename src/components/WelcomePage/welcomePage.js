@@ -50,7 +50,7 @@ class WelcomePage extends Component {
                <Page1/>
                {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
                <Page2/>
-               {/* <SignUp/> */}
+               <SignUp/>
                {/* <Spinner/> */}
                {/* <Login/> */}
             </div>
