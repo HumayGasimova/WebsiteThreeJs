@@ -48,40 +48,6 @@ class SignUp extends Component {
         super(props);
         this.state={
             signUpForm: {
-                name: {
-                    elementType: 'input',
-                    elementConfig: {
-                        type: 'text',
-                        placeholder: ' Name'
-                    },
-                    value: '',
-                    validation: [
-                        {
-                            required: true,
-                            valid: "false"
-                        }
-                    ],
-                    validField: "false",
-                    touched: "false",
-                    errorMessage: []
-                },
-                LastName: {
-                    elementType: 'input',
-                    elementConfig: {
-                        type: 'text',
-                        placeholder: ' Last Name'
-                    },
-                    value: '',
-                    validation: [
-                        {
-                            required: true,
-                            valid: "false"
-                        }
-                    ],
-                    validField: "false",
-                    touched: "false",
-                    errorMessage: []
-                },
                 email: {
                     elementType: 'input',
                     elementConfig: {
@@ -92,6 +58,10 @@ class SignUp extends Component {
                     validation: [
                         {
                             required: true,
+                            valid: "false"
+                        },
+                        {
+                            isEmail: true,
                             valid: "false"
                         }
                     ],
@@ -121,7 +91,8 @@ class SignUp extends Component {
                     errorMessage: []
                 }
             },
-            formIsValid: false
+            formIsValid: false,
+            isSignup: true
         }
     }
     
@@ -177,10 +148,13 @@ class SignUp extends Component {
         if(rules){
             rules.map((rule) => {
                 if(rule.required && rule.valid === "false"){
-                    errors.push(`Please enter valid ${inputIdentifier}`)
+                    errors.push(`Please enter ${inputIdentifier}`)
                 }
                 if(rule.minLength && rule.valid === "false"){
                     errors.push(`${inputIdentifier.charAt(0).toUpperCase() + inputIdentifier.slice(1)} should be more than 8 charachters!`)
+                }
+                if(rule.isEmail && rule.valid === "false"){
+                    errors.push(`Please enter valid ${inputIdentifier}`)
                 }
             })
         }
@@ -201,7 +175,20 @@ class SignUp extends Component {
                     let isValid = value.length >= rule.minLength;
                     validation.push({...rule,valid: isValid.toString()});
                 }
-            
+                if(rule.maxLength){
+                    let isValid = value.length <= rules.maxLength 
+                    validation.push({...rule,valid: isValid.toString()});
+                }
+                if(rule.isEmail){
+                    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+                    let isValid = pattern.test(value);
+                    validation.push({...rule,valid: isValid.toString()});
+                }
+                if(rule.isNumeric){
+                    const pattern = /^\d+$/;
+                    let isValid = pattern.test(value);
+                    validation.push({...rule,valid: isValid.toString()});
+                }
             })
         return validation;
         }
@@ -209,19 +196,20 @@ class SignUp extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault();
-        const formData = {};
+        this.props.onAuth(this.state.signUpForm.email.value, this.state.signUpForm.password.value, this.state.isSignup);
 
-        for (let formElementIdentifier in this.state.signUpForm) {
-            formData[formElementIdentifier] = this.state.signUpForm[formElementIdentifier].value
-        }
+        // const formData = {};
+        // for (let formElementIdentifier in this.state.signUpForm) {
+        //     formData[formElementIdentifier] = this.state.signUpForm[formElementIdentifier].value
+        // }
 
-        const order = {
-            orderData: formData
-        }
+        // const order = {
+        //     orderData: formData
+        // }
 
-        axios.post('/orders.json', order )
-        .then(res=>console.log(res))
-        .catch(err=> console.log(err))
+        // axios.post('/orders.json', order )
+        // .then(res=>console.log(res))
+        // .catch(err=> console.log(err))
     }
 
     renderInput = () => {
@@ -282,10 +270,16 @@ class SignUp extends Component {
 }
  
 export default connect(
- null,
+    (state) => {
+        return {
+           loading: state.auth.loading,
+           error: state.auth.error,
+           isAuthenticated: state.auth.token !== null
+        };
+     },
     (dispatch) => {
        return {
-          userSignUpRequest: bindActionCreators(Actions.userSignUpRequest, dispatch),
+        onAuth: bindActionCreators(Actions.auth, dispatch)
        };
     }
  )(SignUp);

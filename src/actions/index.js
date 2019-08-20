@@ -23,3 +23,8 @@ export {
 export {
     userSignUpRequest
 } from './signUpActions';
+
+export {
+    auth,
+    logout
+} from './authActions';

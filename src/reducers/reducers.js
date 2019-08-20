@@ -5,11 +5,12 @@ import {
      connectRouter 
 } from 'connected-react-router';
 
-import setPlayerReducer from '../reducers/setPlayerReducer';
-import mainBoxReducer from '../reducers/mainBoxReducer';
-import mainBox4x4Reducer from '../reducers/mainBox4x4Reducer';
-import winnerReducer from '../reducers/winnerReducer';
-import sideDrawerReducer from '../reducers/sideDrawerReducer';
+import setPlayerReducer from './setPlayerReducer';
+import mainBoxReducer from './mainBoxReducer';
+import mainBox4x4Reducer from './mainBox4x4Reducer';
+import winnerReducer from './winnerReducer';
+import sideDrawerReducer from './sideDrawerReducer';
+import authReducer from './authReducer'
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -17,7 +18,8 @@ export default (history) => combineReducers({
     mainBox: mainBoxReducer,
     mainBox4x4: mainBox4x4Reducer,
     gameOver: winnerReducer,
-    sideDrawer: sideDrawerReducer
+    sideDrawer: sideDrawerReducer,
+    auth: authReducer
 });
 
 // import {
