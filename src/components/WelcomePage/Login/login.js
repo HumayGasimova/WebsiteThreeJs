@@ -184,7 +184,8 @@ class Login extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault();
-        const formData = {};
+        this.props.onAuth(null, this.state.loginForm.email.value, this.state.loginForm.password.value, this.props.isSignUp);
+        // const formData = {};
 
         // for (let formElementIdentifier in this.state.loginForm) {
         //     formData[formElementIdentifier] = this.state.loginForm[formElementIdentifier].value
@@ -273,10 +274,12 @@ export default connect(
     (state) => {
         return {
         //    loading: state.auth.loading,
+        isSignUp: state.auth.isSignUp
         };
      },
     (dispatch) => {
        return {
+        onAuth: bindActionCreators(Actions.auth, dispatch),
         newUser: bindActionCreators(Actions.userSignUp, dispatch)
        };
     }

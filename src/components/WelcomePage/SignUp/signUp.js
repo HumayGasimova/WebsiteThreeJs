@@ -214,7 +214,7 @@ class SignUp extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault();
-        this.props.onAuth(this.state.signUpForm.fullName.value, this.state.signUpForm.email.value, this.state.signUpForm.password.value, this.state.isSignup);
+        this.props.onAuth(this.state.signUpForm.fullName.value, this.state.signUpForm.email.value, this.state.signUpForm.password.value, this.props.isSignUp);
 
         // const formData = {};
         // for (let formElementIdentifier in this.state.signUpForm) {
@@ -307,7 +307,8 @@ export default connect(
         return {
            loading: state.auth.loading,
            error: state.auth.error,
-           isAuthenticated: state.auth.token !== null
+           isAuthenticated: state.auth.token !== null,
+           isSignUp: state.auth.isSignUp
         };
      },
     (dispatch) => {

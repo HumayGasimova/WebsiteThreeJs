@@ -60,9 +60,12 @@ export function auth(fullName, email, password, isSignup) {
         .then(response => {
             console.log("res",response);
             dispatch(authSuccess(response.data.idToken, response.data.localId));
-            axios.post("https://tictactoe-8fa18.firebaseio.com/users.json", authData)
-            .then(x=>console.log("x",x))
-            .catch(x=>console.log("err",x))
+            if(isSignup){
+                axios.post("https://tictactoe-8fa18.firebaseio.com/users.json", authData)
+                .then(x=>console.log("x",x))
+                .catch(x=>console.log("err",x))
+            }
+           
 
             // dispatch(saveUser(response.data.expiresIn))
             dispatch(checkAuthTimeout(response.data.expiresIn));
