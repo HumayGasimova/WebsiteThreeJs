@@ -8,7 +8,7 @@ const initialState = {
     userId: null,
     error: null,
     loading: false,
-    isSignUp: true
+    isSignUp: null
 }
 
 const authStart = (state, action) => {

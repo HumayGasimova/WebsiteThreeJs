@@ -24,6 +24,7 @@ import {
 
 import Page1 from './Page1/page1';
 import Page2 from './Page2/page2';
+import Page3 from './Page3/page3';
 import SignUp from './SignUp/signUp';
 import Spinner from '../Spinner/spinner';
 import Login from '../WelcomePage/Login/login';
@@ -83,15 +84,13 @@ class WelcomePage extends Component {
         return(
             <div className="welcomePage">
                <Page1/>
-               {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
                <Page2/>
+               {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
+               <Page3/>
                <Backdrop 
                     show={this.props.isSignUp !== null}
                     onClick={() => this.props.newUser(null)}/>
-               {/* {this.props.isSignUp === null ? null : this.props.isSignUp ? <SignUp onClick={this.switch}/> : <Login onClick={this.switch}/>} */}
                {this.renderForm()}
-               {/* {this.props.loading ? <Spinner/> : null} */}
-               {/* <Login/> */}
             </div>
         );
     }

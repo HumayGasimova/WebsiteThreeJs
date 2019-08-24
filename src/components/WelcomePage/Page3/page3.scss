@@ -1,0 +1,64 @@
+.backgroundBoxPage3 {
+    // position: relative;
+    height: 600px;
+    background-image: url('../../../Image/background1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    overflow: hidden;
+    border: 7px solid rgb(13, 48, 42);
+
+    .buttons-images {
+        display: flex;
+        justify-content: space-evenly;
+        height: 350px;
+        padding-top: 110px;
+    }
+    
+    .hide-buttons-images {
+        display: flex;
+        justify-content: space-evenly;
+        height: 750px;
+        padding-top: 70px;
+        opacity: 0;
+    }
+
+}
+
+.cat1 {
+    width: 220px;
+    height: 260px;
+    position: absolute;
+    top: 1205px;
+    right: -35px;
+}
+.cat2 {
+    width: 270px;
+    height: 330px;
+    position: absolute;
+    top: 1137px;
+    left: -40px;
+}
+.cat3 {
+    width: 240px;
+    height: 200px;
+    position: absolute;
+    top: 754.5px;
+    left: 350px;
+}
+.cat4 {
+    width: 120px;
+    height: 100px;
+    position: absolute;
+    top: 787px;
+    right: 275px;
+    transform: scaleX(-1);
+}
+
+
+
+
+
+
+
