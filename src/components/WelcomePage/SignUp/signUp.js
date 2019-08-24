@@ -238,12 +238,21 @@ class SignUp extends Component {
                 config: this.state.signUpForm[key]
             })
         }
+
+        let errorMessages = null;
+        if(this.props.error){
+            errorMessages =  (
+                 <div>{this.props.error.message}</div>
+            );
+        }
+
         console.log(formElementsArray)
         return(
             <form 
                 className="sign-up"
                 // onSubmit={this.onSubmitHandler}
             >
+                {errorMessages}
                 <div className="sign-up-child">
                     <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
                     <div className="sign-up-text">SIGN UP</div>

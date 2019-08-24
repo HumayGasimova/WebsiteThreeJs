@@ -76,6 +76,7 @@ class WelcomePage extends Component {
                 <Spinner/>
            )
        }
+    
    }
 
     render(){
