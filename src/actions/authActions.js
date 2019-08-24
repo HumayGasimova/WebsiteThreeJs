@@ -36,10 +36,18 @@ export const checkAuthTimeout = (expirationTime) => {
     };
 }
 
-export function auth(email, password, isSignup) {
+export function userSignUp (option){
+    return {
+        type: actionTypes.SIGN_UP_FORM,
+        option: option
+    }
+};
+
+export function auth(fullName, email, password, isSignup) {
     return dispatch => {
         dispatch(authStart());
         const authData = {
+            name: fullName,
             email: email,
             password: password,
             returnSecureToken: true
@@ -50,12 +58,17 @@ export function auth(email, password, isSignup) {
         }
         axios.post(url, authData)
         .then(response => {
-            console.log(response);
+            console.log("res",response);
             dispatch(authSuccess(response.data.idToken, response.data.localId));
-            dispatch(checkAuthTimeout(response.data.expiresIn))
+            axios.post("https://tictactoe-8fa18.firebaseio.com/users.json", authData)
+            .then(x=>console.log("x",x))
+            .catch(x=>console.log("err",x))
+
+            // dispatch(saveUser(response.data.expiresIn))
+            dispatch(checkAuthTimeout(response.data.expiresIn));
         })
         .catch(err => {
-            console.log(err.response);
+            // console.log(err.response);
             dispatch(authFail(err.response.data.error));
         })
            

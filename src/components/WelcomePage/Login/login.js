@@ -5,6 +5,13 @@
 import React,{
     Component
 } from 'react';
+import {
+    connect
+ } from 'react-redux';
+
+ import {
+    bindActionCreators
+ } from 'redux';
 
 /**
  * Components
@@ -19,6 +26,12 @@ import EmptyDivV1 from '../Empty/emptyDivV1';
  */
 
 import './login.scss';
+
+/**
+ * Actions
+ */
+
+import * as Actions from '../../../actions';
 
 /**
  * Login component definition and export
@@ -173,31 +186,31 @@ class Login extends Component {
         event.preventDefault();
         const formData = {};
 
-        for (let formElementIdentifier in this.state.loginForm) {
-            formData[formElementIdentifier] = this.state.oginForm[formElementIdentifier].value
-        }
+        // for (let formElementIdentifier in this.state.loginForm) {
+        //     formData[formElementIdentifier] = this.state.loginForm[formElementIdentifier].value
+        // }
 
-        const order = {
-            orderData: formData
-        }
+        // const order = {
+        //     orderData: formData
+        // }
 
-        axios.post('/orders.json', order )
-        .then(res=>console.log(res))
-        .catch(err=> console.log(err))
+        // axios.post('/orders.json', order )
+        // .then(res=>console.log(res))
+        // .catch(err=> console.log(err))
     }
 
     renderInput = () => {
         const formElementsArray = [];
-        for(let key in this.state.oginForm){
+        for(let key in this.state.loginForm){
             formElementsArray.push({
                 id: key,
-                config: this.state.oginForm[key]
+                config: this.state.loginForm[key]
             })
         }
         return(
             <form 
                 className="login"
-                onSubmit={this.onSubmitHandler}
+                // onSubmit={this.onSubmitHandler}
             >
                 <div className="login-child">
                     <div className="login-close-button" onClick={this.closeSignUpForm}>X</div>
@@ -226,11 +239,27 @@ class Login extends Component {
                         className={"button"}
                         text={"Login"}
                         disabled={!this.state.formIsValid}
+                        onClick={this.onSubmitHandler}
                     />
+                <EmptyDivV1/>
+                <Button 
+                    className={"button"}
+                    text={"Switch to Login"}
+                    onClick={this.switch}
+                />
                 </div>
             </form>
         )
     }
+
+    switch = () => {
+        this.props.newUser(true)
+    }
+
+    closeSignUpForm = () => {
+        this.props.newUser(null)
+    }
+
     render(){
         return(
             <div>
@@ -240,4 +269,15 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default connect(
+    (state) => {
+        return {
+        //    loading: state.auth.loading,
+        };
+     },
+    (dispatch) => {
+       return {
+        newUser: bindActionCreators(Actions.userSignUp, dispatch)
+       };
+    }
+ )(Login);

@@ -21,10 +21,7 @@ export {
 } from './winnerActions';
 
 export {
-    userSignUpRequest
-} from './signUpActions';
-
-export {
     auth,
-    logout
+    logout,
+    userSignUp
 } from './authActions';

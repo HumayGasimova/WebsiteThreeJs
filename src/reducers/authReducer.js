@@ -7,7 +7,8 @@ const initialState = {
     token: null,
     userId: null,
     error: null,
-    loading: false
+    loading: false,
+    isSignUp: true
 }
 
 const authStart = (state, action) => {
@@ -48,8 +49,8 @@ const authReducer = (state = initialState, action) => {
             return authSuccess(state, action);
         case actionTypes.AUTH_FAIL:
             return authFail(state, action);
-        case actionTypes.AUTH_LOGOUT:
-            return authLogout(state, action);
+        case actionTypes.SIGN_UP_FORM:
+            return updateObject(state, {isSignUp: action.option});
         default: 
             return state;
     }

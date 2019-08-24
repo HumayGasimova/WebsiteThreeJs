@@ -14,6 +14,8 @@ import {
     bindActionCreators
  } from 'redux';
 
+ import axios from 'axios';
+
 /**
  * Components
  */
@@ -48,6 +50,23 @@ class SignUp extends Component {
         super(props);
         this.state={
             signUpForm: {
+                fullName: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'text',
+                        placeholder: ' Full Name'
+                    },
+                    value: '',
+                    validation: [
+                        {
+                            required: true,
+                            valid: "false"
+                        }
+                    ],
+                    validField: "false",
+                    touched: "false",
+                    errorMessage: []
+                },
                 email: {
                     elementType: 'input',
                     elementConfig: {
@@ -91,8 +110,7 @@ class SignUp extends Component {
                     errorMessage: []
                 }
             },
-            formIsValid: false,
-            isSignup: true
+            formIsValid: false
         }
     }
     
@@ -196,7 +214,7 @@ class SignUp extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault();
-        this.props.onAuth(this.state.signUpForm.email.value, this.state.signUpForm.password.value, this.state.isSignup);
+        this.props.onAuth(this.state.signUpForm.fullName.value, this.state.signUpForm.email.value, this.state.signUpForm.password.value, this.state.isSignup);
 
         // const formData = {};
         // for (let formElementIdentifier in this.state.signUpForm) {
@@ -207,7 +225,7 @@ class SignUp extends Component {
         //     orderData: formData
         // }
 
-        // axios.post('/orders.json', order )
+        // axios.post('https://tictactoe-8fa18.firebaseio.com/orders.json', order )
         // .then(res=>console.log(res))
         // .catch(err=> console.log(err))
     }
@@ -224,7 +242,7 @@ class SignUp extends Component {
         return(
             <form 
                 className="sign-up"
-                onSubmit={this.onSubmitHandler}
+                // onSubmit={this.onSubmitHandler}
             >
                 <div className="sign-up-child">
                     <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
@@ -254,10 +272,25 @@ class SignUp extends Component {
                         className={"button"}
                         text={"SIGN UP"}
                         disabled={!this.state.formIsValid}
+                        onClick={this.onSubmitHandler}
+                    />
+                    <EmptyDivV1/>
+                     <Button 
+                        className={"button"}
+                        text={"Switch to Login"}
+                        onClick={this.switch}
                     />
                 </div>
             </form>
         )
+    }
+
+    switch = () => {
+       this.props.newUser(false)
+    }
+
+    closeSignUpForm = () => {
+        this.props.newUser(null)
     }
 
     render(){
@@ -279,7 +312,8 @@ export default connect(
      },
     (dispatch) => {
        return {
-        onAuth: bindActionCreators(Actions.auth, dispatch)
+        onAuth: bindActionCreators(Actions.auth, dispatch),
+        newUser: bindActionCreators(Actions.userSignUp, dispatch)
        };
     }
  )(SignUp);
