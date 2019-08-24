@@ -34,7 +34,7 @@ const authFail = (state, action) => {
     });
 }
 
-const authLogout = (state, action) => {
+const authLogout = (state) => {
     return updateObject(state, {
         token: null,
         userId: null
@@ -49,6 +49,8 @@ const authReducer = (state = initialState, action) => {
             return authSuccess(state, action);
         case actionTypes.AUTH_FAIL:
             return authFail(state, action);
+        case actionTypes.AUTH_LOGOUT:
+            return authLogout(state);
         case actionTypes.SIGN_UP_FORM:
             return updateObject(state, {isSignUp: action.option});
         default: 

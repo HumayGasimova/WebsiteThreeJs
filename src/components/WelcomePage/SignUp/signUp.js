@@ -252,7 +252,7 @@ class SignUp extends Component {
                 className="sign-up"
                 // onSubmit={this.onSubmitHandler}
             >
-                {errorMessages}
+                {/* {errorMessages} */}
                 <div className="sign-up-child">
                     <div className="sign-up-close-button" onClick={this.closeSignUpForm}>X</div>
                     <div className="sign-up-text">SIGN UP</div>
