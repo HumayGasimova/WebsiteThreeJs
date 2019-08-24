@@ -61,7 +61,7 @@ export function auth(fullName, email, password, isSignup) {
             console.log("res",response);
             dispatch(authSuccess(response.data.idToken, response.data.localId));
             if(isSignup){
-                axios.post("https://tictactoe-8fa18.firebaseio.com/users.json", authData)
+                axios.post(`https://tictactoe-8fa18.firebaseio.com/users.json`, authData)
                 .then(x=>console.log("x",x))
                 .catch(x=>console.log("err",x))
             }

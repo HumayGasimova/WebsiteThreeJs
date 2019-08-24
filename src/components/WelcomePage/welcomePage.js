@@ -59,7 +59,24 @@ class WelcomePage extends Component {
     /**
     * Markup
     */
-   
+   renderForm = () => {
+       if(this.props.isSignUp === null && !this.props.loading) return;
+        if(this.props.isSignUp && !this.props.loading){
+            return (
+                <SignUp onClick={this.switch}/>
+            )
+        }
+        if(!this.props.isSignUp && !this.props.loading){
+            return (
+                <Login onClick={this.switch}/>
+            )
+        }
+       if(this.props.loading){
+           return (
+                <Spinner/>
+           )
+       }
+   }
 
     render(){
         return(
@@ -70,8 +87,9 @@ class WelcomePage extends Component {
                <Backdrop 
                     show={this.props.isSignUp !== null}
                     onClick={() => this.props.newUser(null)}/>
-               {this.props.isSignUp === null ? null : this.props.isSignUp ? <SignUp onClick={this.switch}/> : <Login onClick={this.switch}/>}
-               {/* <Spinner/> */}
+               {/* {this.props.isSignUp === null ? null : this.props.isSignUp ? <SignUp onClick={this.switch}/> : <Login onClick={this.switch}/>} */}
+               {this.renderForm()}
+               {/* {this.props.loading ? <Spinner/> : null} */}
                {/* <Login/> */}
             </div>
         );
@@ -81,7 +99,8 @@ class WelcomePage extends Component {
 export default connect(
     (state) => {
         return {
-           isSignUp: state.auth.isSignUp
+           isSignUp: state.auth.isSignUp,
+           loading: state.auth.loading
         };
      },
     (dispatch) => {
