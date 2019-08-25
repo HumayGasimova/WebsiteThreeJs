@@ -44,7 +44,7 @@ class Page5 extends Component {
                <div className="border1">
                     <div className="border2">
                         <div className="border3">
-                        
+                           <div className="page5-text"> © 2019 TicTacToe. All Rights Reserved.</div>
                         </div>
                     </div>
                </div>

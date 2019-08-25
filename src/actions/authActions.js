@@ -7,13 +7,19 @@ export function authStart() {
     };
 };
 
-export function authSuccess(token, userId, fullName) {
+export function authSuccess(token, userId) {
     return { 
         type: actionTypes.AUTH_SUCCESS, 
         idToken: token,
-        userId: userId,
-        name: fullName
+        userId: userId
     };
+};
+
+export function authGetUserName (name){
+    return {
+        type: actionTypes.GET_USER_NAME,
+        name: name
+    }
 };
 
 export function authFail(error) {
@@ -44,6 +50,8 @@ export function userSignUp (option){
     }
 };
 
+
+
 export function auth(fullName, email, password, isSignup) {
     return dispatch => {
         dispatch(authStart());
@@ -60,19 +68,44 @@ export function auth(fullName, email, password, isSignup) {
         axios.post(url, authData)
         .then(response => {
             console.log("res",response);
-            dispatch(authSuccess(response.data.idToken, response.data.localId, fullName));
+            dispatch(authSuccess(response.data.idToken, response.data.localId));
+
             if(isSignup){
-                axios.post(`https://tictactoe-8fa18.firebaseio.com/users.json`, authData)
+                dispatch(authGetUserName(fullName));
+                const userInfo = {
+                    name: fullName,
+                    email: response.data.email,
+                    password: password,
+                    userId: response.data.localId
+                }
+                axios.post(`https://tictactoe-8fa18.firebaseio.com/users.json`, userInfo)
                 .then(x=>console.log("x",x))
                 .catch(x=>console.log("err",x))
             }
+
+            if(!isSignup){
+                axios.get('https://tictactoe-8fa18.firebaseio.com/users.json')
+                .then(res => {
+                    let data = res.data;
+                    let usersArray=[]
+                    for(let key in data){
+                        usersArray.push({
+                            id: key,
+                            data: data[key]
+                        })
+                    }
+                    let userData = usersArray.find(x=>x.data.userId === response.data.localId)
+                    dispatch(authGetUserName(userData.data.name));
+                })
+            }
+
+            
            
 
-            // dispatch(saveUser(response.data.expiresIn))
+      
             dispatch(checkAuthTimeout(response.data.expiresIn));
         })
         .catch(err => {
-            // console.log(err.response);
             dispatch(authFail(err.response.data.error));
         })
            

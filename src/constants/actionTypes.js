@@ -12,6 +12,7 @@ export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
 
 export const AUTH_START = "AUTH_START";
 export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const GET_USER_NAME = "GET_USER_NAME";
 export const AUTH_FAIL = "AUTH_FAIL";
 export const AUTH_LOGOUT = "AUTH_LOGOUT";
 

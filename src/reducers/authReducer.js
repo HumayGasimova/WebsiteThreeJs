@@ -23,8 +23,13 @@ const authSuccess = (state, action) => {
         token: action.idToken,
         userId: action.userId,
         error: null,
-        name: action.name,
         loading: false
+    });
+}
+
+const getUserName = (state, action) => {
+    return updateObject(state, {
+        name: action.name
     });
 }
 
@@ -49,6 +54,8 @@ const authReducer = (state = initialState, action) => {
             return authStart(state, action);
         case actionTypes.AUTH_SUCCESS:
             return authSuccess(state, action);
+        case actionTypes.GET_USER_NAME:
+            return getUserName(state, action);
         case actionTypes.AUTH_FAIL:
             return authFail(state, action);
         case actionTypes.AUTH_LOGOUT:

@@ -29,6 +29,8 @@ import './page2.scss';
  */
 
 import * as Actions from '../../../actions';
+import axios from 'axios';
+import { format } from 'util';
 
 /**
  * WelcomePage component definition and export
@@ -45,6 +47,23 @@ class Page2 extends Component {
         this.state = {
         showImageButtons: true
         }
+    }
+
+    componentDidMount() {
+        axios.get('https://tictactoe-8fa18.firebaseio.com/users.json')
+        .then(res => {
+            let data = res.data;
+            let usersArray=[]
+            for(let key in data){
+                usersArray.push({
+                    id: key,
+                    data: data[key]
+                })
+            }
+
+            let a = usersArray.find(x=>x.data.name === "Humay")
+            console.log(a )
+        })
     }
 
     /**
