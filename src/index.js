@@ -14,10 +14,11 @@ import configureStore,{
 
 import {
     Route,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom';
 import {
-    ConnectedRouter
+    ConnectedRouter,
 } from 'connected-react-router';
 import store from './store/store';
 
@@ -58,7 +59,7 @@ ReactDOM.render(
                   // render={props => <Welcome {...props}/>}
                   />
               
-               {/* <Redirect from="/" to="/Welcome"/> */}
+               <Redirect from="/login" to="/"/>
                
               
                {/* <Route 

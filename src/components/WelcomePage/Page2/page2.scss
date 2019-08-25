@@ -1,4 +1,18 @@
 .page2 {
-    border: 2px solid red;
     height: 140px;
+}
+.login-page2{
+    text-align: center;
+    width: 170px;
+    height: 70px;
+    position: relative;
+    top: 20px;
+    left: 43%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    color: rgb(13, 48, 42);
+    &:hover {
+        color:  rgb(52, 151, 135);
+    }
+    
 }

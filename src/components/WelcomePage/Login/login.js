@@ -58,6 +58,10 @@ class Login extends Component {
                         {
                             required: true,
                             valid: "false"
+                        },
+                        {
+                            isEmail: true,
+                            valid: "false"
                         }
                     ],
                     validField: "false",
@@ -245,7 +249,7 @@ class Login extends Component {
                 <EmptyDivV1/>
                 <Button 
                     className={"button"}
-                    text={"Switch to Login"}
+                    text={"Switch to Sign Up"}
                     onClick={this.switch}
                 />
                 </div>

@@ -1,5 +1,17 @@
 .button {
-    width: 120px;
+    width: 140px;
+    height: 27px;
+    border: 1px solid rgb(13, 48, 42);
+    background-color: rgb(21, 71, 63);
+    color: #F1EBD5;
+    font-weight: 100;
+    box-shadow: 2px 2px 5px 0px rgb(172, 202, 190);
+    &:hover {
+        background-color: rgb(125, 182, 172);
+        color: rgb(13, 48, 42);
+        font-weight: 100;
+    }
+    
     &:disabled{
         color:rgb(150, 150, 150);
         cursor: not-allowed;

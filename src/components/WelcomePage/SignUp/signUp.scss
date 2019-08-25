@@ -1,12 +1,12 @@
 .sign-up {
     position: fixed;
     left: calc(50% - 200px);
-    top: 17%;
+    top: 10%;
     border: 1px solid rgb(13, 48, 42);
     border-radius: 7px;
     box-shadow: 3px 2px 5px 0px rgb(221, 214, 214);
     width: 400px;
-    height: 310px;
+    height: 410px;
     background-color: white;
     // transition: all 0.3s ease-out;
     z-index: 1000;
@@ -15,7 +15,7 @@
     height: inherit;
     position: relative;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 25px;
 }
 
 .sign-up-text {

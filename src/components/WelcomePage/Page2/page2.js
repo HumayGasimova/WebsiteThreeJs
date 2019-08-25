@@ -5,6 +5,13 @@
 import React,{
     Component
 } from 'react';
+import {
+    connect
+ } from 'react-redux';
+
+ import {
+    bindActionCreators
+ } from 'redux';
 
 /**
  * Components
@@ -25,6 +32,12 @@ import ticTacToe4x4 from '../../../Image/4x4TicTacToe.png';
 import './page2.scss';
 
 /**
+ * Actions
+ */
+
+import * as Actions from '../../../actions';
+
+/**
  * WelcomePage component definition and export
  */
 
@@ -35,12 +48,16 @@ class Page2 extends Component {
     */
 
    constructor(props) {
-    super(props);
-    this.state = {
-       showImageButtons: true
+        super(props);
+        this.state = {
+        showImageButtons: true
+        }
     }
-}
     
+    showLoginForm = () => {
+        this.props.newUser(false);
+    }
+
     /**
     * Markup
     */
@@ -48,10 +65,22 @@ class Page2 extends Component {
     render(){
         return(
             <div className="page2">
-
+                <div 
+                    className={"login-page2"}
+                    onClick={this.showLoginForm}
+                >
+                    Login
+                </div>
             </div>
         );
     }
 }
 
-export default Page2;
+export default connect(
+  null,
+    (dispatch) => {
+       return {
+        newUser: bindActionCreators(Actions.userSignUp, dispatch)
+       };
+    }
+ )(Page2);
