@@ -49,23 +49,6 @@ class Page2 extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get('https://tictactoe-8fa18.firebaseio.com/users.json')
-        .then(res => {
-            let data = res.data;
-            let usersArray=[]
-            for(let key in data){
-                usersArray.push({
-                    id: key,
-                    data: data[key]
-                })
-            }
-
-            let a = usersArray.find(x=>x.data.name === "Humay")
-            console.log(a )
-        })
-    }
-
     /**
     * Markup
     */

@@ -23,5 +23,6 @@ export {
 export {
     auth,
     logout,
-    userSignUp
+    userSignUp,
+    authCheckState
 } from './authActions';

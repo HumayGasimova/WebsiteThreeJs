@@ -83,6 +83,10 @@ class WelcomePage extends Component {
        }
    }
 
+   componentDidMount() {
+       this.props.autoLogin();
+   }
+
     render(){
         return(
             <div className="welcomePage">
@@ -122,7 +126,8 @@ export default connect(
     (dispatch) => {
        return {
         newUser: bindActionCreators(Actions.userSignUp, dispatch),
-        logout: bindActionCreators(Actions.logout, dispatch)
+        logout: bindActionCreators(Actions.logout, dispatch),
+        autoLogin: bindActionCreators(Actions.authCheckState, dispatch)
        };
     }
  )(WelcomePage);

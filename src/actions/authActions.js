@@ -1,6 +1,7 @@
 import * as actionTypes from "../constants/actionTypes";
 import axios from 'axios';
 
+
 export function authStart() {
     return { 
         type: actionTypes.AUTH_START
@@ -30,6 +31,11 @@ export function authFail(error) {
 };
 
 export const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('expirationDate');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('name');
+   
     return {
         type: actionTypes.AUTH_LOGOUT
     };
@@ -50,6 +56,29 @@ export function userSignUp (option){
     }
 };
 
+export function authCheckState() {
+  return dispatch => {
+      const token = localStorage.getItem('token');
+      if(!token){
+          dispatch(logout());
+      }else {
+          const expirationDate = new Date(localStorage.getItem('expirationDate'));
+
+          console.log(expirationDate)
+            if(expirationDate <= new Date()){
+                dispatch(logout());
+            }else{
+                const userId = localStorage.getItem('userId');
+                const userName = localStorage.getItem('name');
+
+                dispatch(authSuccess(token, userId));
+                dispatch(authGetUserName(userName));
+                dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime())/1000));
+            }
+      }
+  }
+};
+
 
 
 export function auth(fullName, email, password, isSignup) {
@@ -68,10 +97,15 @@ export function auth(fullName, email, password, isSignup) {
         axios.post(url, authData)
         .then(response => {
             console.log("res",response);
+            const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+            localStorage.setItem('token', response.data.idToken);
+            localStorage.setItem('expirationDate', expirationDate);
+            localStorage.setItem('userId', response.data.localId);
             dispatch(authSuccess(response.data.idToken, response.data.localId));
 
             if(isSignup){
                 dispatch(authGetUserName(fullName));
+                localStorage.setItem('name', fullName);
                 const userInfo = {
                     name: fullName,
                     email: response.data.email,
@@ -96,13 +130,10 @@ export function auth(fullName, email, password, isSignup) {
                     }
                     let userData = usersArray.find(x=>x.data.userId === response.data.localId)
                     dispatch(authGetUserName(userData.data.name));
+                    localStorage.setItem('name', userData.data.name);
                 })
             }
 
-            
-           
-
-      
             dispatch(checkAuthTimeout(response.data.expiresIn));
         })
         .catch(err => {
