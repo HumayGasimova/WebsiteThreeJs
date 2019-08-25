@@ -90,7 +90,7 @@ class WelcomePage extends Component {
                <Page2 
                     newUser={this.props.newUser}
                     isAuth={this.props.isAuthenticated}
-                    user={"Hey"}
+                    user={this.props.userName}
                     />
                {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
                <Page3/>
@@ -114,6 +114,7 @@ export default connect(
            isSignUp: state.auth.isSignUp,
            loading: state.auth.loading,
            isAuthenticated: state.auth.token !== null,
+           userName: state.auth.name
         //    user: state.auth.
         };
      },

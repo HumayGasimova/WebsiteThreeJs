@@ -7,11 +7,12 @@ export function authStart() {
     };
 };
 
-export function authSuccess(token, userId) {
+export function authSuccess(token, userId, fullName) {
     return { 
         type: actionTypes.AUTH_SUCCESS, 
         idToken: token,
-        userId: userId
+        userId: userId,
+        name: fullName
     };
 };
 
@@ -59,7 +60,7 @@ export function auth(fullName, email, password, isSignup) {
         axios.post(url, authData)
         .then(response => {
             console.log("res",response);
-            dispatch(authSuccess(response.data.idToken, response.data.localId));
+            dispatch(authSuccess(response.data.idToken, response.data.localId, fullName));
             if(isSignup){
                 axios.post(`https://tictactoe-8fa18.firebaseio.com/users.json`, authData)
                 .then(x=>console.log("x",x))

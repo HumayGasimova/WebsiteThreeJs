@@ -23,6 +23,7 @@ const authSuccess = (state, action) => {
         token: action.idToken,
         userId: action.userId,
         error: null,
+        name: action.name,
         loading: false
     });
 }
