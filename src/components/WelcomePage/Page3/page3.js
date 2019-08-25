@@ -19,15 +19,12 @@ import ButtonImage from '../ButtonImage/buttonImage';
 import ticTacToe3x3 from '../../../Image/3x3TicTacToe.png';
 import ticTacToe4x4 from '../../../Image/4x4TicTacToe.png';
 
-import cat1 from '../../../Image/pngguru.com-id-bgzfv.png';
-import cat2 from '../../../Image/pngguru.com-id-bpdqo.png';
+
 import cat3 from '../../../Image/pngguru.com-id-dwxwu.png';
-import cat4 from '../../../Image/pngguru.com-id-ekjjo.png';
 import cat5 from '../../../Image/pngguru.com-id-eldmj.png';
-import cat6 from '../../../Image/pngguru.com-id-gfomw.png';
-import cat7 from '../../../Image/pngguru.com-id-kgegy.png';
 import cat8 from '../../../Image/pngguru.com-id-kvnun.png';
 import cat9 from '../../../Image/pngguru.com-id-znfce.png';
+
 /**
  * Styles
  */

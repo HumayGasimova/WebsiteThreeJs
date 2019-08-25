@@ -16,9 +16,25 @@
                     text-align: center;
                     position: relative;
                     top: 147px;
-                    font-size: 20px;
+                    font-size: 25px;
                 }
             }
         }
     }
+}
+
+.page5-img1{
+    width: 157px;
+    height: 157px;
+    position: relative;
+    top: -20px;
+    left: 2px;
+}
+.page5-img2{
+    width: 157px;
+    height: 157px;
+    position: relative;
+    top: -20px;
+    left: 987px;
+    transform: scaleX(-1);
 }
