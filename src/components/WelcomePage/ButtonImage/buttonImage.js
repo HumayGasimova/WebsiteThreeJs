@@ -7,6 +7,14 @@ import React,{
 } from 'react';
 
 import {
+    connect
+ } from 'react-redux';
+
+import {
+bindActionCreators
+} from 'redux';
+
+import {
     Link
  } from 'react-router-dom';
 
@@ -20,6 +28,12 @@ import {
  */
 
 import './buttonImage.scss';
+
+/**
+ * Actions
+ */
+
+import * as Actions from '../../../actions';
 
 /**
  * WelcomePage component definition and export
@@ -58,5 +72,15 @@ class ButtonImage extends Component {
         );
     }
 }
-
-export default ButtonImage;
+export default connect(
+    (state) => {
+        return {
+            isAuthenticated: state.auth.token !== null,
+        };
+     },
+     (dispatch) => {
+        return {
+         newUser: bindActionCreators(Actions.userSignUp, dispatch)
+        };
+     }
+ )(ButtonImage);

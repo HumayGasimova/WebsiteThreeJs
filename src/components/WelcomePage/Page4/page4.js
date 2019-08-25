@@ -6,35 +6,22 @@ import React,{
     Component
 } from 'react';
 
-/**
- * Components
- */
 
-import ButtonImage from '../ButtonImage/buttonImage';
-
-/**
- * Pictures
- */
-
-import ticTacToe3x3 from '../../../Image/3x3TicTacToe.png';
-import ticTacToe4x4 from '../../../Image/4x4TicTacToe.png';
 /**
  * Styles
  */
 
-import './page2.scss';
+import './page4.scss';
 
 /**
  * Actions
  */
 
-import * as Actions from '../../../actions';
-
 /**
  * WelcomePage component definition and export
  */
 
-class Page2 extends Component {
+class Page4 extends Component {
 
     /**
     * Constructor
@@ -55,14 +42,14 @@ class Page2 extends Component {
         return(
             <div className="page2">
                 <div 
-                    className={"login-page2"}
-                    onClick={() => this.props.newUser(false)}
+                    className={"logout-page4"}
+                    onClick={this.props.logout}
                 >
-                    {this.props.isAuth ? `Welcome ${this.props.user}`: "Login"}
+                    {this.props.isAuth ? "Logout" : null}
                 </div>
             </div>
         );
     }
 }
 
-export default Page2;
+export default Page4;

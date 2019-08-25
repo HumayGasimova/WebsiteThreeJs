@@ -25,6 +25,7 @@ import {
 import Page1 from './Page1/page1';
 import Page2 from './Page2/page2';
 import Page3 from './Page3/page3';
+import Page4 from './Page4/page4';
 import SignUp from './SignUp/signUp';
 import Spinner from '../Spinner/spinner';
 import Login from '../WelcomePage/Login/login';
@@ -84,13 +85,21 @@ class WelcomePage extends Component {
         return(
             <div className="welcomePage">
                <Page1/>
-               <Page2/>
+               <Page2 
+                    newUser={this.props.newUser}
+                    isAuth={this.props.isAuthenticated}
+                    user={"Hey"}
+                    />
                {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
                <Page3/>
                <Backdrop 
                     show={this.props.isSignUp !== null}
                     onClick={() => this.props.newUser(null)}/>
                {this.renderForm()}
+               <Page4 
+                    isAuth={this.props.isAuthenticated}
+                    logout={this.props.logout}
+                />
             </div>
         );
     }
@@ -100,12 +109,15 @@ export default connect(
     (state) => {
         return {
            isSignUp: state.auth.isSignUp,
-           loading: state.auth.loading
+           loading: state.auth.loading,
+           isAuthenticated: state.auth.token !== null,
+        //    user: state.auth.
         };
      },
     (dispatch) => {
        return {
-        newUser: bindActionCreators(Actions.userSignUp, dispatch)
+        newUser: bindActionCreators(Actions.userSignUp, dispatch),
+        logout: bindActionCreators(Actions.logout, dispatch)
        };
     }
  )(WelcomePage);
