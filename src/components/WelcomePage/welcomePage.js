@@ -26,6 +26,7 @@ import Page1 from './Page1/page1';
 import Page2 from './Page2/page2';
 import Page3 from './Page3/page3';
 import Page4 from './Page4/page4';
+import Page5 from './Page5/page5';
 import SignUp from './SignUp/signUp';
 import Spinner from '../Spinner/spinner';
 import Login from '../WelcomePage/Login/login';
@@ -101,6 +102,7 @@ class WelcomePage extends Component {
                     isAuth={this.props.isAuthenticated}
                     logout={this.props.logout}
                 />
+                <Page5/>
             </div>
         );
     }

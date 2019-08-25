@@ -1,4 +1,12 @@
 .button {
+    width: 120px;      
+    &:disabled{
+        color:rgb(150, 150, 150);
+        cursor: not-allowed;
+    }
+}
+
+.button-loginForm {
     width: 140px;
     height: 27px;
     border: 1px solid rgb(13, 48, 42);

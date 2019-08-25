@@ -241,14 +241,14 @@ class Login extends Component {
                         )
                     })}
                 <Button 
-                        className={"button"}
+                        className={"button-loginForm"}
                         text={"Login"}
                         disabled={!this.state.formIsValid}
                         onClick={this.onSubmitHandler}
                     />
                 <EmptyDivV1/>
                 <Button 
-                    className={"button"}
+                    className={"button-loginForm"}
                     text={"Switch to Sign Up"}
                     onClick={this.switch}
                 />

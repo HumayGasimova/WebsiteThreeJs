@@ -60,14 +60,31 @@ class ButtonImage extends Component {
             </div>
         )
     }
+    renderButtonImage = () => {
+        if(this.props.isAuthenticated){
+            return (
+                <div className="buttonImage">
+                    <Link to={this.props.pathname}>
+                        {this.props.children}
+                    </Link>
+                </div>
+            )
+        }else{
+            return(
+                <div className="buttonImage">
+                    <div onClick={() => this.props.newUser(false)}>
+                        {this.props.children}
+                    </div>
+                </div>
+            )
+        }
+    }
 
     render(){
         return(
-            <div className="buttonImage">
-               <Link to={this.props.pathname}>
-                     {this.props.children}
-                </Link>
-              {this.renderText()}
+            <div >
+                {this.renderButtonImage()}
+                {this.renderText()}
             </div>
         );
     }
