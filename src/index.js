@@ -59,7 +59,7 @@ ReactDOM.render(
                   // render={props => <Welcome {...props}/>}
                   />
               
-               <Redirect from="/login" to="/"/>
+               {/* <Redirect from="/login" to="/"/> */}
                
               
                {/* <Route 

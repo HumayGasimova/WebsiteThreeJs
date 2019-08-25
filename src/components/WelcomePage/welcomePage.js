@@ -62,23 +62,24 @@ class WelcomePage extends Component {
     * Markup
     */
    renderForm = () => {
-       if(this.props.isSignUp === null && !this.props.loading) return;
-        if(this.props.isSignUp && !this.props.loading){
+       if(!this.props.isAuthenticated){
+            if(this.props.isSignUp === null && !this.props.loading) return;
+            if(this.props.isSignUp && !this.props.loading){
+                return (
+                    <SignUp onClick={this.switch}/>
+                )
+            }
+            if(!this.props.isSignUp && !this.props.loading){
+                return (
+                    <Login onClick={this.switch}/>
+                )
+            }
+        if(this.props.loading){
             return (
-                <SignUp onClick={this.switch}/>
+                    <Spinner/>
             )
         }
-        if(!this.props.isSignUp && !this.props.loading){
-            return (
-                <Login onClick={this.switch}/>
-            )
-        }
-       if(this.props.loading){
-           return (
-                <Spinner/>
-           )
        }
-    
    }
 
     render(){
@@ -93,7 +94,7 @@ class WelcomePage extends Component {
                {/* <NavLink className="startGame" to={{ pathname: '/tictactoe'}}>Start Game</NavLink> */}
                <Page3/>
                <Backdrop 
-                    show={this.props.isSignUp !== null}
+                    show={this.props.isSignUp !== null && !this.props.isAuthenticated}
                     onClick={() => this.props.newUser(null)}/>
                {this.renderForm()}
                <Page4 

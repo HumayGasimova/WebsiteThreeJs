@@ -98,12 +98,10 @@ class Page3 extends Component {
                         <img src={ticTacToe4x4} alt="ticTacToe4x4"/>
                     </ButtonImage>
                 </div>
-              
-                    <img className="cat1" src={cat9}/>
-                    <img className="cat2" src={cat3}/>
-                    <img className={this.state.showImageButtons ? "cat3": null} src={cat5}/>
-                    <img className={this.state.showImageButtons ? "cat4": null} src={cat8}/>
-               
+                <img className="cat1" src={cat9}/>
+                <img className="cat2" src={cat3}/>
+                <img className={this.state.showImageButtons ? "cat3": null} src={cat5}/>
+                <img className={this.state.showImageButtons ? "cat4": null} src={cat8}/>
             </div>
         );
     }
