@@ -6,16 +6,32 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
+
 
 /**
 * Components
 */
+
+import Button from '../../../library/Button/button';
 
 /**
 * Styles
 */
 
 import './general.scss';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
 
 /**
 * General component definition and export
@@ -30,6 +46,14 @@ class General extends Component {
     constructor (props){
         super(props);
     }
+
+    /**
+     * Methods
+     */
+
+    makePaperclip = () => {
+        this.props.makePaperclip();
+    }
     
     /**
     * Markup
@@ -38,10 +62,25 @@ class General extends Component {
     render(){
         return(
             <div className="general">
-             
+               <div className="general-text"> Paperclips : {this.props.paperClips} </div>
+                <Button 
+                    onClick={this.makePaperclip}
+                    text={"Make Paperclip"}
+                />
             </div>
         );
     }
 }
 
-export default General;
+export default connect(
+    (state) => {
+        return {
+            paperClips: state.general.paperClips
+        };
+    },
+    (dispatch) => {
+        return {
+            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch)
+        };
+    }
+)(General);
