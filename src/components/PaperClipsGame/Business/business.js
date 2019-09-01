@@ -6,6 +6,13 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
 
 /**
 * Components
@@ -43,8 +50,8 @@ class Business extends Component {
                 <div className="business-label">Business</div>
                 <div className="business-line"/>
                 <div className="business-section">
-                    <div className="business-text">Available Funds: </div>
-                    <div className="business-text">Unsold Inventory: </div>
+                    <div className="business-text">Available Funds: $ {this.props.funds}</div>
+                    <div className="business-text">Unsold Inventory: {this.props.unsoldInventory.length}</div>
                     <div className="business-wrapper1">
                         <Button
                             // onClick={this.makePaperclip}
@@ -54,7 +61,7 @@ class Business extends Component {
                             // onClick={this.makePaperclip}
                             text={"raise"}
                         />
-                        <div className="business-text">Price per Clip: </div>
+                        <div className="business-text">Price per Clip: $ {this.props.paperclipPrice}</div>
                     </div>
                     <div className="business-text">Public Demand: </div>
                 </div>
@@ -73,4 +80,18 @@ class Business extends Component {
     }
 }
 
-export default Business;
+export default connect(
+    (state) => {
+        return {
+            paperClips: state.business.paperClips,
+            unsoldInventory: state.business.unsoldInventory,
+            funds: state.business.funds,
+            paperclipPrice: state.business.paperclipPrice
+        };
+    },
+    (dispatch) => {
+        return {
+            // makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch)
+        };
+    }
+)(Business);

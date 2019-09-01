@@ -14,7 +14,7 @@ import {
     bindActionCreators
 } from 'redux';
 
-
+import store from '../../../store/store';
 /**
 * Components
 */
@@ -52,7 +52,8 @@ class General extends Component {
      */
 
     makePaperclip = () => {
-        this.props.makePaperclip();
+        // this.props.makePaperclip();
+        this.props.sellPaperclips(this.props.unsoldInventory, this.props.paperclipPrice, this.props.funds)
     }
     
     /**
@@ -75,12 +76,16 @@ class General extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: state.general.paperClips
+            paperClips: state.business.paperClips,
+            funds: state.business.funds,
+            unsoldInventory: state.business.unsoldInventory,
+            paperclipPrice: state.business.paperclipPrice
         };
     },
     (dispatch) => {
         return {
-            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch)
+            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
+            sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
         };
     }
 )(General);

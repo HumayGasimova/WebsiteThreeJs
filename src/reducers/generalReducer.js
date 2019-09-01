@@ -22,4 +22,4 @@ const generalReducer = (state = initialState, action) => {
     }
 }
 
-export default  generalReducer;
+export default generalReducer;

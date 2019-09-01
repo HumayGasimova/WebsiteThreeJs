@@ -1,3 +1,8 @@
+// export {
+   
+// } from './generalActions';
+
 export {
-    makePaperclip
-} from './generalActions';
+    makePaperclip,
+    sellPaperclips
+} from './businessActions';
