@@ -1,22 +1,22 @@
 /**
- * Libraries
- */
+* Libraries
+*/
 
 import React from 'react';
 
 /**
- * Styles
- */
+* Styles
+*/
 
 import './toolbar.scss';
 
 /**
- * Toolbar component definition and export
- */
+* Toolbar component definition and export
+*/
 
 export const Toolbar = (props) => {
     return(
-        <header classNmae="toolbar">
+        <header className="toolbar">
             <div>Menu</div>
             <div>Logo</div>
             <nav>
@@ -27,5 +27,3 @@ export const Toolbar = (props) => {
 }
 
 export default Toolbar;
-
-
