@@ -24,6 +24,12 @@ import Toolbar from './components/Toolbar/toolbar';
 import PaperClipsGame from './components/PaperClipsGame/paperClipsGame';
 
 /**
+* Components
+*/
+
+import './app.scss';
+
+/**
 * App component definition and export
 */
 
@@ -77,7 +83,7 @@ export class App extends Component {
 
    render(){
       return(
-            <div>
+            <div className="app">
                <Toolbar/>
                <PaperClipsGame/>
             </div>

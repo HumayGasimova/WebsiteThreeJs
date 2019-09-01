@@ -1,7 +1,7 @@
 .toolbar {
     height: 56px;
     width: 100%;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -10,7 +10,4 @@
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 90;
-        nav{
-            height: 100%;
-        }
 }
