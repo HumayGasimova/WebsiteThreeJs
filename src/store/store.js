@@ -1,9 +1,10 @@
 import {
     createStore,
     applyMiddleware,
-    compose,
-    combineReducers
+    compose
 } from 'redux';
+
+import { createEpicMiddleware } from 'redux-observable';
 
 import {
     createBrowserHistory
@@ -18,8 +19,11 @@ import {
 } from 'redux-logger';
 
 import thunk from 'redux-thunk';
-
 import createRootReducer from '../reducers/reducers';
+import rootEpic from '../epics';
+
+// import pingEpic from '../epics/exEpic1';
+
 
 // const middleware = [thunk];
 
@@ -28,6 +32,7 @@ const logger = createLogger({
 });
 
 const middleware = [];
+const epicMiddleware = createEpicMiddleware();
 
 if (process.env.ENVIRONMENT !== 'production') {
     middleware.push(logger);
@@ -45,15 +50,20 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const history = createBrowserHistory();
 
 export default createStore(
-    createRootReducer(history), 
+    createRootReducer(history),
     composeEnhancers(
         applyMiddleware(
+            epicMiddleware,
             routerMiddleware(history),
+           
             logger,
+            
             thunk
             )
         )
     );
+
+epicMiddleware.run(rootEpic);
 
 // export default function configureStore(preloadedState){
 //     const store = createStore(

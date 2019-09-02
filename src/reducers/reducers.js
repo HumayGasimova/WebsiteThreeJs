@@ -7,9 +7,11 @@ import {
 
 import generalReducer from './generalReducer';
 import businessReducer from './businessReducer';
+import pingReducer from './exEpicReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
     // general: generalReducer,
-    business: businessReducer
+    business: businessReducer,
+    epic: pingReducer
 });

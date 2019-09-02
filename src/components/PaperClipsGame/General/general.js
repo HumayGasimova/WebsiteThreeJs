@@ -53,7 +53,8 @@ class General extends Component {
 
     makePaperclip = () => {
         // this.props.makePaperclip();
-        this.props.sellPaperclips(this.props.unsoldInventory, this.props.paperclipPrice, this.props.funds)
+        // this.props.sellPaperclips(this.props.unsoldInventory, this.props.paperclipPrice, this.props.funds)
+        this.props.ping()
     }
     
     /**
@@ -68,6 +69,7 @@ class General extends Component {
                     onClick={this.makePaperclip}
                     text={"Make Paperclip"}
                 />
+                <div>{this.props.isPing}</div>
             </div>
         );
     }
@@ -79,13 +81,15 @@ export default connect(
             paperClips: state.business.paperClips,
             funds: state.business.funds,
             unsoldInventory: state.business.unsoldInventory,
-            paperclipPrice: state.business.paperclipPrice
+            paperclipPrice: state.business.paperclipPrice,
+            isPing: state.epic.isPinging
         };
     },
     (dispatch) => {
         return {
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
             sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
+            ping: bindActionCreators(Actions.ping, dispatch),
         };
     }
 )(General);
