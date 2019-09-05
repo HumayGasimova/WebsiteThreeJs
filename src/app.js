@@ -85,9 +85,9 @@ export class App extends Component {
    render(){
       return(
             <div className="app">
-               {/* <Toolbar/>
-               <PaperClipsGame/> */}
-               <Epic/>
+               <Toolbar/>
+               <PaperClipsGame/>
+               {/* <Epic/> */}
             </div>
       );
    }

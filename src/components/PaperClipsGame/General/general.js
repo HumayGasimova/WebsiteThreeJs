@@ -52,7 +52,7 @@ class General extends Component {
      */
 
     makePaperclip = () => {
-        // this.props.makePaperclip();
+        this.props.makePaperclip();
         // this.props.sellPaperclips(this.props.unsoldInventory, this.props.paperclipPrice, this.props.funds)
      
     }
