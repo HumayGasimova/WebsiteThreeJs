@@ -1,13 +1,17 @@
-import * as actionTypes from '../constants/actionTypes';
+export const FETCH_WHISKIES = 'FETCH_WHISKYS';
+export const FETCH_WHISKIES_SUCCESS = 'FETCH_WHISKYS_SUCCESS';
+export const FETCH_WHISKIES_FAILURE = 'FETCH_WHISKYS_FAILURE';
 
-export function ping () {
-    return {
-        type: 'PING'
-    }
-};
+export const fetchWhiskies = () => ({
+    type: FETCH_WHISKIES,
+});
 
-export function pong () {
-    return {
-        type: 'PONG'
-    }
-};
+export const fetchWhiskiesSuccess = (whiskies) => ({
+    type: FETCH_WHISKIES_SUCCESS,
+    payload: whiskies
+});
+
+export const fetchWhiskiesFailure = (message) => ({
+    type: FETCH_WHISKIES_FAILURE,
+    payload: message
+});

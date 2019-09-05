@@ -20,7 +20,7 @@ import {
 
 import thunk from 'redux-thunk';
 import createRootReducer from '../reducers/reducers';
-import rootEpic from '../epics';
+import {rootEpic} from '../epics';
 
 // import pingEpic from '../epics/exEpic1';
 

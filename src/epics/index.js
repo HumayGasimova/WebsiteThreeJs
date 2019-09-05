@@ -1,8 +1,4 @@
 import { combineEpics } from 'redux-observable';
-import pingEpic from './exEpic1'
+import fetchWhiskiesEpic from '../epics/exEpic1'
 
-const rootEpic = combineEpics(
-    pingEpic
-);
-
-export default rootEpic;
+export const rootEpic = combineEpics(fetchWhiskiesEpic);
