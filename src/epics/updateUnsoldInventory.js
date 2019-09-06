@@ -8,18 +8,20 @@ import { ajax } from 'rxjs/observable/dom/ajax';
 import * as actionTypes from '../constants/actionTypes';
 
 
-function paperclipsGenerateEpic(action$) { 
+function updateUnsoldInventory(action$) { 
     
     return action$
-        .ofType(actionTypes.START_SELLING)
+        .ofType(actionTypes.UPDATE_FUNDS)
     
         .mergeMap(action => {
             return Observable.of(
-                {type: actionTypes.MAKE_PAPERCLIP},
-                {type: actionTypes.UPDATE_FUNDS, value: action.priceOfPaperclip},
-                // {type: actionTypes.UPDATE_UNSOLD_INVENTORY}
-            )
-        })       
+                {type: actionTypes.UPDATE_UNSOLD_INVENTORY}
+            ) 
+            .delay(2000)
+        })
+       
+       
+       
 }
 
-export default paperclipsGenerateEpic;
+export default updateUnsoldInventory;

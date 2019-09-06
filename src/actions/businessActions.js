@@ -6,9 +6,12 @@ export function makePaperclip() {
     }
 };
 
-export function startSelling() {
+export function sellPaperclips(paperclipsInStock, priceOfPaperclip, funds) {
     return { 
-        type: actionTypes.START_SELLING
+        type: actionTypes.START_SELLING,
+        paperclipsInStock: paperclipsInStock,
+        priceOfPaperclip: priceOfPaperclip,
+        funds: funds
     };
 };
 
@@ -27,49 +30,49 @@ export function updateUnsoldInventory() {
 
 
 
-export function sellPaperclips(paperclipsInStock, priceOfPaperclip, funds) {
-    return dispatch => {
-        dispatch(startSelling());
-        dispatch(makePaperclip());
+// export function sellPaperclips(paperclipsInStock, priceOfPaperclip, funds) {
+//     return dispatch => {
+//         dispatch(startSelling());
+//         dispatch(makePaperclip());
     
-        setTimeout(() => {
-            let newFunds = funds + priceOfPaperclip;
-            dispatch(updateFunds(newFunds));
+//         // setTimeout(() => {
+//         //     let newFunds = funds + priceOfPaperclip;
+//         //     dispatch(updateFunds(newFunds));
 
-            dispatch(updateUnsoldInventory());
+//         //     dispatch(updateUnsoldInventory());
                 
-        }, 1000)
+//         // }, 1000)
      
-        dispatch(updateUnsoldInventory());
+//         // dispatch(updateUnsoldInventory());
            
 
-            // if(currentInventory === 0){
-            //     clearInterval(a);
-            // }
+//             // if(currentInventory === 0){
+//             //     clearInterval(a);
+//             // }
         
 
 
-    //    let a = setInterval(() => {
-    //         let paperclips = paperclipsInStock;
-    //         if(paperclipsInStock === 0){
-    //             return paperclips = 1;
-    //         }
+//     //    let a = setInterval(() => {
+//     //         let paperclips = paperclipsInStock;
+//     //         if(paperclipsInStock === 0){
+//     //             return paperclips = 1;
+//     //         }
             
-    //         let newFunds = funds + priceOfPaperclip;
-    //         dispatch(updateFunds(newFunds));
+//     //         let newFunds = funds + priceOfPaperclip;
+//     //         dispatch(updateFunds(newFunds));
 
-    //         let currentInventory = paperclips - 1;
-    //         dispatch(updateUnsoldInventory(currentInventory));
-    //         // debugger
-    //         if(currentInventory === 0){
-    //             // debugger
-    //             clearInterval(a);
-    //         }
+//     //         let currentInventory = paperclips - 1;
+//     //         dispatch(updateUnsoldInventory(currentInventory));
+//     //         // debugger
+//     //         if(currentInventory === 0){
+//     //             // debugger
+//     //             clearInterval(a);
+//     //         }
             
-    //     }, 1000)
+//     //     }, 1000)
        
-    }
-};
+//     }
+// };
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

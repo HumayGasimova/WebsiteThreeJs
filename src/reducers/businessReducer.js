@@ -22,7 +22,7 @@ const addPaperclip = (state) => {
 
 const updateFunds = (state, action) => {
     return updateObject(state, {
-       funds: action.value
+       funds: state.funds + action.value
     });
 }
 
