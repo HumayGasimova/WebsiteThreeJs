@@ -27,6 +27,12 @@ import Button from '../../../library/Button/button';
 import './business.scss';
 
 /**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
+
+/**
 * Business component definition and export
 */
 
@@ -54,11 +60,11 @@ class Business extends Component {
                     <div className="business-text">Unsold Inventory: {this.props.unsoldInventory.length}</div>
                     <div className="business-wrapper1">
                         <Button
-                            // onClick={this.makePaperclip}
+                            onClick={this.props.lowerPrice}
                             text={"lower"}
                         />
                         <Button
-                            // onClick={this.makePaperclip}
+                            onClick={this.props.raisePrice}
                             text={"raise"}
                         />
                         <div className="business-text">Price per Clip: $ {this.props.paperclipPrice}</div>
@@ -91,7 +97,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch)
+            lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
+            raisePrice: bindActionCreators(Actions.raisePrice, dispatch)
         };
     }
 )(Business);

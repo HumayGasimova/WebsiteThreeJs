@@ -29,6 +29,18 @@ export function updateUnsoldInventory() {
     };
 };
 
+export function lowerPrice() {
+    return { 
+        type: actionTypes.LOWER_PRICE
+    };
+};
+
+export function raisePrice() {
+    return { 
+        type: actionTypes.RAISE_PRICE
+    };
+};
+
 
 
 // export function sellPaperclips(paperclipsInStock, priceOfPaperclip, funds) {

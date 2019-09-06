@@ -4,6 +4,8 @@
 
 export {
     makePaperclip,
-    sellPaperclips
+    sellPaperclips,
+    lowerPrice,
+    raisePrice
 } from './businessActions';
 

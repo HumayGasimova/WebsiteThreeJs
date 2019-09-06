@@ -34,6 +34,20 @@ const updateUnsoldInventory = (state, action) => {
     });
 }
 
+const lowerPrice = (state) => {
+    let paperclipPrice = state.paperclipPrice - 0.01
+    return updateObject(state, {
+        paperclipPrice: +paperclipPrice.toFixed(2)
+    });
+}
+
+const raisePrice = (state) => {
+    let paperclipPrice = state.paperclipPrice + 0.01
+    return updateObject(state, {
+        paperclipPrice: +paperclipPrice.toFixed(2)
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MAKE_PAPERCLIP:
@@ -44,6 +58,10 @@ const businessReducer = (state = initialState, action) => {
             return updateFunds(state, action);
         case actionTypes.UPDATE_UNSOLD_INVENTORY:
             return updateUnsoldInventory(state, action);
+        case actionTypes.LOWER_PRICE:
+            return lowerPrice(state, action);
+        case actionTypes.RAISE_PRICE:
+            return raisePrice(state, action);
         default: 
             return state;
     }
