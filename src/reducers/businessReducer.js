@@ -12,7 +12,7 @@ const initialState = {
 
 const addPaperclip = (state) => {
     let updatedInventory = state.unsoldInventory;
-    updatedInventory.push('')
+    updatedInventory.push(' ')
 
     return updateObject(state, {
        paperClips: state.paperClips + 1,

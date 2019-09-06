@@ -1,8 +1,9 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function makePaperclip() {
+export function makePaperclip(priceOfPaperclip) {
     return {
-        type: actionTypes.MAKE_PAPERCLIP
+        type: actionTypes.MAKE_PAPERCLIP,
+        priceOfPaperclip: priceOfPaperclip
     }
 };
 

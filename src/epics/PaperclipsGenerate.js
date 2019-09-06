@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/delay';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import * as actionTypes from '../constants/actionTypes';
+import * as Actions from '../actions';
 
 
 function paperclipsGenerateEpic(action$) { 
@@ -14,11 +15,7 @@ function paperclipsGenerateEpic(action$) {
         .ofType(actionTypes.START_SELLING)
     
         .mergeMap(action => {
-            return Observable.of(
-                {type: actionTypes.MAKE_PAPERCLIP},
-                {type: actionTypes.UPDATE_FUNDS, value: action.priceOfPaperclip},
-                // {type: actionTypes.UPDATE_UNSOLD_INVENTORY}
-            )
+            return Observable.of(Actions.makePaperclip(action.priceOfPaperclip))
         })       
 }
 

@@ -11,13 +11,14 @@ import * as actionTypes from '../constants/actionTypes';
 function updateUnsoldInventory(action$) { 
     
     return action$
-        .ofType(actionTypes.UPDATE_FUNDS)
+        .ofType(actionTypes.MAKE_PAPERCLIP)
     
         .mergeMap(action => {
             return Observable.of(
-                {type: actionTypes.UPDATE_UNSOLD_INVENTORY}
+                {type: actionTypes.UPDATE_UNSOLD_INVENTORY},
+                {type: actionTypes.UPDATE_FUNDS, value: action.priceOfPaperclip}
             ) 
-            .delay(2000)
+            .delay(5000)
         })
        
        
