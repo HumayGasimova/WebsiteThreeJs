@@ -21,8 +21,9 @@ const addPaperclip = (state) => {
 }
 
 const updateFunds = (state, action) => {
+    let updatedFunds = state.funds + action.value
     return updateObject(state, {
-       funds: state.funds + action.value
+       funds: +updatedFunds.toFixed(2)
     });
 }
 
