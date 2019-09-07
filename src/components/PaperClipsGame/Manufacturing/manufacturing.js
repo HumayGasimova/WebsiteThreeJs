@@ -45,6 +45,24 @@ class Manufacturing extends Component {
     constructor (props){
         super(props);
     }
+
+    renderAutoClippers = () => {
+        if(this.props.funds >= 5){
+            return(
+                <div className="manufacturing-section">
+                    <div className="manufacturing-wrapper2">
+                        <Button
+                            // onClick={this.makePaperclip}
+                            text={"AutoClippers"}
+                            // disabled={this.props.marketingButtonDisabled}
+                        />
+                        <div className="manufacturing-text"> Number </div>
+                    </div>
+                    <div className="manufacturing-text">Cost: $</div>
+                </div>  
+            )
+        }
+    }
     
     /**
     * Markup
@@ -69,17 +87,7 @@ class Manufacturing extends Component {
                     </div>
                     <div className="manufacturing-text">Cost: $</div>
                 </div>
-                <div className="manufacturing-section">
-                    <div className="manufacturing-wrapper2">
-                        <Button
-                            // onClick={this.makePaperclip}
-                            text={"AutoClippers"}
-                            // disabled={this.props.marketingButtonDisabled}
-                        />
-                        <div className="manufacturing-text"> Number </div>
-                    </div>
-                    <div className="manufacturing-text">Cost: $</div>
-                </div>            
+                {this.renderAutoClippers()} 
             </div>
         );
     }
@@ -89,8 +97,8 @@ export default connect(
     (state) => {
         return {
             wire: state.business.wire,
+            funds: state.business.funds
             // unsoldInventory: state.business.unsoldInventory,
-            // funds: state.business.funds,
             // paperclipPrice: state.business.paperclipPrice,
             // publicDemand: state.business.publicDemand,
             // marketingLevel: state.business.marketingLevel,
