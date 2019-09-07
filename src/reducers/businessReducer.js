@@ -53,6 +53,7 @@ const raisePrice = (state) => {
 
 const updatePublicDemand = (state) => {
     let updatedPublicDemand = state.maxPublicDemand/(state.paperclipPrice*100)
+
     return updateObject(state, {
         publicDemand: +updatedPublicDemand.toFixed()
     });
