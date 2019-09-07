@@ -15,7 +15,7 @@ function updateUnsoldInventoryEpic(action$) {
                 Actions.updateFunds(action.priceOfPaperclip),
                 Actions.toggleMarketingButton()
             ) 
-            .delay(5000)
+            .delay(action.delay)
         })
 }
 

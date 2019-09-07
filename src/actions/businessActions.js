@@ -1,9 +1,10 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function sellPaperclips(priceOfPaperclip) {
+export function sellPaperclips(priceOfPaperclip, delay) {
     return { 
         type: actionTypes.START_SELLING,
         priceOfPaperclip: priceOfPaperclip,
+        delay: delay
     };
 };
 

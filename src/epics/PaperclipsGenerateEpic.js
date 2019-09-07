@@ -10,7 +10,7 @@ function paperclipsGenerateEpic(action$) {
     return action$
         .ofType(actionTypes.START_SELLING)
         .mergeMap(action => {
-            return Observable.of(Actions.makePaperclip(action.priceOfPaperclip))
+            return Observable.of(Actions.makePaperclip(action.priceOfPaperclip, action.delay))
         })       
 }
 
