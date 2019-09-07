@@ -74,7 +74,7 @@ class Business extends Component {
                 <div className="business-section">
                     <div className="business-wrapper2">
                         <Button
-                            onClick={this.makePaperclip}
+                            onClick={this.props.marketingNextLevel}
                             text={"Marketing"}
                             disabled={this.props.marketingButtonDisabled}
                         />
@@ -104,7 +104,7 @@ export default connect(
         return {
             lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
             raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
-            marketingNextLevel: bindActionCreators(Actions.marketingNextLevel, dispatch),
+            marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
         };
     }
 )(Business);

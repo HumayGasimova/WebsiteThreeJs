@@ -3,10 +3,11 @@ import { combineEpics } from 'redux-observable';
 import paperclipsGenerateEpic from './PaperclipsGenerateEpic';
 import updateUnsoldInventoryEpic from './updateUnsoldInventoryEpic';
 import raisePriceEpic from '../epics/raisePriceEpic';
-// export const rootEpic = combineEpics(fetchWhiskiesEpic);\
+import marketingNextLevelEpic from '../epics/marketingNextLevelEpic';
 
 export const rootEpic = combineEpics(
     paperclipsGenerateEpic,
     updateUnsoldInventoryEpic,
-    raisePriceEpic
+    raisePriceEpic,
+    marketingNextLevelEpic
 );

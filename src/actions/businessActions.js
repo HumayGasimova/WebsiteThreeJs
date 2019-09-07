@@ -53,6 +53,12 @@ export function toggleMarketingButton() {
     };
 };
 
+export function marketing() {
+    return { 
+        type: actionTypes.MARKETING
+    };
+};
+
 export function marketingNextLevel() {
     return { 
         type: actionTypes.MARKETING_NEXT_LEVEL

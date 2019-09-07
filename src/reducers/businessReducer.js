@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     paperClips: 0,
-    funds: 99,
+    funds: 1000,
     paperclipPrice: 0.50,
     unsoldInventory: [],
     maxPublicDemand: 800,
@@ -69,9 +69,11 @@ const toggleMarketingButton = (state) => {
 }
 
 const marketingNextLevel = (state) => {
-    let isDisable = state.funds >= state.marketingCost;
+    let updatedFunds = state.funds - state.marketingCost;
     return updateObject(state, {
-        marketingButtonDisabled: !isDisable
+        marketingLevel: +state.marketingLevel + 1,
+        marketingCost: +state.marketingCost * 2,
+        funds: +updatedFunds
     });
 }
 
@@ -89,6 +91,8 @@ const businessReducer = (state = initialState, action) => {
             return lowerPrice(state, action);
         case actionTypes.RAISE_PRICE:
             return raisePrice(state, action);
+        case actionTypes.MARKETING:
+            return state;
         case actionTypes.UPDATE_PUBLIC_DEMAND:
             return updatePublicDemand(state, action);
         case actionTypes.TOGGLE_MARKETING_BUTTON:

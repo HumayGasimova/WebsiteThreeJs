@@ -6,6 +6,13 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
 
 /**
 * Components
@@ -18,6 +25,12 @@ import Button from '../../../library/Button/button';
 */
 
 import './manufacturing.scss';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
 
 /**
 * Manufacturing component definition and export
@@ -72,4 +85,24 @@ class Manufacturing extends Component {
     }
 }
 
-export default Manufacturing;
+export default connect(
+    (state) => {
+        return {
+            // paperClips: state.business.paperClips,
+            // unsoldInventory: state.business.unsoldInventory,
+            // funds: state.business.funds,
+            // paperclipPrice: state.business.paperclipPrice,
+            // publicDemand: state.business.publicDemand,
+            // marketingLevel: state.business.marketingLevel,
+            // marketingCost: state.business.marketingCost,
+            // marketingButtonDisabled: state.business.marketingButtonDisabled
+        };
+    },
+    (dispatch) => {
+        return {
+            // lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
+            // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
+            // marketingNextLevel: bindActionCreators(Actions.marketingNextLevel, dispatch),
+        };
+    }
+)(Manufacturing);
