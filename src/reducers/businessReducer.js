@@ -13,7 +13,7 @@ const initialState = {
     marketingLevel: 1,
     marketingCost: 100,
     marketingButtonDisabled: true,
-    // speedOfSelling: 
+    delay: 5000,
     wire: 1000
 }
 

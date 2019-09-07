@@ -7,10 +7,11 @@ export function sellPaperclips(priceOfPaperclip) {
     };
 };
 
-export function makePaperclip(priceOfPaperclip) {
+export function makePaperclip(priceOfPaperclip, delay) {
     return {
         type: actionTypes.MAKE_PAPERCLIP,
-        priceOfPaperclip: priceOfPaperclip
+        priceOfPaperclip: priceOfPaperclip,
+        delay: delay
     }
 };
 

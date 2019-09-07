@@ -6,7 +6,7 @@ import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function marketingNextLevelEpic (action$) { 
+function marketingNextLevelEpic (action$) {
     return action$
         .ofType(actionTypes.MARKETING)
         .mergeMap(action => {

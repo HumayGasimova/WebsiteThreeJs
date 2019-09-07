@@ -53,7 +53,7 @@ class General extends Component {
 
     makePaperclip = () => {
         // this.props.makePaperclip();
-        this.props.sellPaperclips(this.props.paperclipPrice)
+        this.props.sellPaperclips(this.props.paperclipPrice, this.props.delay)
      
     }
     
@@ -82,14 +82,13 @@ export default connect(
             funds: state.business.funds,
             unsoldInventory: state.business.unsoldInventory,
             paperclipPrice: state.business.paperclipPrice,
-          
+            delay: state.business.delay
         };
     },
     (dispatch) => {
         return {
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
-            sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
-          
+            sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
         };
     }
 )(General);
