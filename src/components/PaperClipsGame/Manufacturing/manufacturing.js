@@ -65,7 +65,7 @@ class Manufacturing extends Component {
                             text={"Wire"}
                             // disabled={this.props.marketingButtonDisabled}
                         />
-                        <div className="manufacturing-text"> inches </div>
+                        <div className="manufacturing-text">{this.props.wire} inches </div>
                     </div>
                     <div className="manufacturing-text">Cost: $</div>
                 </div>
@@ -88,7 +88,7 @@ class Manufacturing extends Component {
 export default connect(
     (state) => {
         return {
-            // paperClips: state.business.paperClips,
+            wire: state.business.wire,
             // unsoldInventory: state.business.unsoldInventory,
             // funds: state.business.funds,
             // paperclipPrice: state.business.paperclipPrice,

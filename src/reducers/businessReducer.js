@@ -12,7 +12,9 @@ const initialState = {
     publicDemand: 16,
     marketingLevel: 1,
     marketingCost: 100,
-    marketingButtonDisabled: true
+    marketingButtonDisabled: true,
+    // speedOfSelling: 
+    wire: 1000
 }
 
 const addPaperclip = (state) => {
@@ -21,7 +23,8 @@ const addPaperclip = (state) => {
 
     return updateObject(state, {
        paperClips: state.paperClips + 1,
-       unsoldInventory: updatedInventory
+       unsoldInventory: updatedInventory,
+       wire: state.wire - 1
     });
 }
 

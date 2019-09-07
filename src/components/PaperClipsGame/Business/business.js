@@ -80,7 +80,7 @@ class Business extends Component {
                         />
                         <div className="business-text">Level: {this.props.marketingLevel}</div>
                     </div>
-                    <div className="business-text">Cost: ${this.props.marketingCost}</div>
+                    <div className="business-text">Cost: ${this.props.marketingCost.toFixed(2)}</div>
                 </div>
             </div>
         );
