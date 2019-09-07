@@ -12,7 +12,9 @@ function marketingNextLevelEpic (action$) {
         .mergeMap(action => {
             return Observable.of(
                 Actions.marketingNextLevel(),
-                Actions.toggleMarketingButton()
+                Actions.toggleMarketingButton(),
+                Actions.updateMaxPublicDemand(),
+                Actions.updatePublicDemand()
             )
         })       
 }

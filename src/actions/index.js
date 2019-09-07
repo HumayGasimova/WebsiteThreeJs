@@ -8,5 +8,6 @@ export {
     updatePublicDemand,
     toggleMarketingButton,
     marketing,
-    marketingNextLevel
+    marketingNextLevel,
+    updateMaxPublicDemand
 } from './businessActions';

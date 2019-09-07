@@ -9,7 +9,7 @@ const initialState = {
     paperclipPrice: 0.50,
     unsoldInventory: [],
     maxPublicDemand: 800,
-    publicDemand: 50,
+    publicDemand: 16,
     marketingLevel: 1,
     marketingCost: 100,
     marketingButtonDisabled: true
@@ -77,6 +77,13 @@ const marketingNextLevel = (state) => {
     });
 }
 
+const updateMaxPublicDemand = (state) => {
+    let updatedMaxPublicDemand = state.maxPublicDemand + state.maxPublicDemand * 0.1
+    return updateObject(state, {
+        maxPublicDemand: updatedMaxPublicDemand
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MAKE_PAPERCLIP:
@@ -99,6 +106,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleMarketingButton(state, action);
         case actionTypes.MARKETING_NEXT_LEVEL:
             return marketingNextLevel(state, action);
+        case actionTypes.UPDATE_MAX_PUBLIC_DEMAND:
+            return updateMaxPublicDemand(state, action);
         default: 
             return state;
     }

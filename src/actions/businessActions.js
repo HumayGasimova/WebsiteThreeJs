@@ -65,6 +65,12 @@ export function marketingNextLevel() {
     };
 };
 
+export function updateMaxPublicDemand() {
+    return { 
+        type: actionTypes.UPDATE_MAX_PUBLIC_DEMAND
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
