@@ -69,7 +69,7 @@ class Business extends Component {
                         />
                         <div className="business-text">Price per Clip: $ {this.props.paperclipPrice}</div>
                     </div>
-                    <div className="business-text">Public Demand: </div>
+                    <div className="business-text">Public Demand: {this.props.publicDemand}%</div>
                 </div>
                 <div className="business-section">
                     <div className="business-wrapper2">
@@ -92,7 +92,8 @@ export default connect(
             paperClips: state.business.paperClips,
             unsoldInventory: state.business.unsoldInventory,
             funds: state.business.funds,
-            paperclipPrice: state.business.paperclipPrice
+            paperclipPrice: state.business.paperclipPrice,
+            publicDemand: state.business.publicDemand
         };
     },
     (dispatch) => {

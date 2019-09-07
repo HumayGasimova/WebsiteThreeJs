@@ -12,6 +12,5 @@ import pingReducer from './exEpicReducer';
 export default (history) => combineReducers({
     router: connectRouter(history),
     // general: generalReducer,
-    business: businessReducer,
-    epic: pingReducer
+    business: businessReducer
 });

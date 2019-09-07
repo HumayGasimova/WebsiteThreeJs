@@ -7,7 +7,9 @@ const initialState = {
     paperClips: 0,
     funds: 0,
     paperclipPrice: 0.50,
-    unsoldInventory: []
+    unsoldInventory: [],
+    maxPublicDemand: 800,
+    publicDemand: 50,
 }
 
 const addPaperclip = (state) => {
@@ -49,6 +51,13 @@ const raisePrice = (state) => {
     });
 }
 
+const updatePublicDemand = (state) => {
+    let updatedPublicDemand = state.maxPublicDemand/(state.paperclipPrice*100)
+    return updateObject(state, {
+        publicDemand: +updatedPublicDemand.toFixed()
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MAKE_PAPERCLIP:
@@ -63,6 +72,8 @@ const businessReducer = (state = initialState, action) => {
             return lowerPrice(state, action);
         case actionTypes.RAISE_PRICE:
             return raisePrice(state, action);
+        case actionTypes.UPDATE_PUBLIC_DEMAND:
+            return updatePublicDemand(state, action);
         default: 
             return state;
     }

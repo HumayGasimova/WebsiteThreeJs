@@ -1,11 +1,7 @@
-// export {
-   
-// } from './generalActions';
-
 export {
     makePaperclip,
     sellPaperclips,
     lowerPrice,
-    raisePrice
+    raisePrice,
+    updatePublicDemand
 } from './businessActions';
-

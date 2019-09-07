@@ -2,17 +2,12 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/delay';
-import { ajax } from 'rxjs/observable/dom/ajax';
 import * as actionTypes from '../constants/actionTypes';
 
-
-function updateUnsoldInventory(action$) { 
-    
+function updateUnsoldInventoryEpic(action$) { 
     return action$
         .ofType(actionTypes.MAKE_PAPERCLIP)
-    
         .mergeMap(action => {
             return Observable.of(
                 {type: actionTypes.UPDATE_UNSOLD_INVENTORY},
@@ -20,9 +15,6 @@ function updateUnsoldInventory(action$) {
             ) 
             .delay(5000)
         })
-       
-       
-       
 }
 
-export default updateUnsoldInventory;
+export default updateUnsoldInventoryEpic;
