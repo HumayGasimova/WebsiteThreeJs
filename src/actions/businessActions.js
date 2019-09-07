@@ -53,6 +53,12 @@ export function toggleMarketingButton() {
     };
 };
 
+export function marketingNextLevel() {
+    return { 
+        type: actionTypes.MARKETING_NEXT_LEVEL
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 

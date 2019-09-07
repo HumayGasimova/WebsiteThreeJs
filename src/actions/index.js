@@ -6,5 +6,6 @@ export {
     lowerPrice,
     raisePrice,
     updatePublicDemand,
-    toggleMarketingButton
+    toggleMarketingButton,
+    marketingNextLevel
 } from './businessActions';

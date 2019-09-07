@@ -68,6 +68,13 @@ const toggleMarketingButton = (state) => {
     });
 }
 
+const marketingNextLevel = (state) => {
+    let isDisable = state.funds >= state.marketingCost;
+    return updateObject(state, {
+        marketingButtonDisabled: !isDisable
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MAKE_PAPERCLIP:
@@ -86,6 +93,8 @@ const businessReducer = (state = initialState, action) => {
             return updatePublicDemand(state, action);
         case actionTypes.TOGGLE_MARKETING_BUTTON:
             return toggleMarketingButton(state, action);
+        case actionTypes.MARKETING_NEXT_LEVEL:
+            return marketingNextLevel(state, action);
         default: 
             return state;
     }
