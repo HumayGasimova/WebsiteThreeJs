@@ -1,7 +1,10 @@
 export {
     makePaperclip,
     sellPaperclips,
+    updateFunds,
+    updateUnsoldInventory,
     lowerPrice,
     raisePrice,
-    updatePublicDemand
+    updatePublicDemand,
+    toggleMarketingButton
 } from './businessActions';

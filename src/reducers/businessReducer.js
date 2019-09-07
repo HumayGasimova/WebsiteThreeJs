@@ -5,16 +5,19 @@ import {
 
 const initialState = {
     paperClips: 0,
-    funds: 0,
+    funds: 99,
     paperclipPrice: 0.50,
     unsoldInventory: [],
     maxPublicDemand: 800,
     publicDemand: 50,
+    marketingLevel: 1,
+    marketingCost: 100,
+    marketingButtonDisabled: true
 }
 
 const addPaperclip = (state) => {
     let updatedInventory = state.unsoldInventory;
-    updatedInventory.push(' ')
+    updatedInventory.push(' ');
 
     return updateObject(state, {
        paperClips: state.paperClips + 1,
@@ -23,7 +26,7 @@ const addPaperclip = (state) => {
 }
 
 const updateFunds = (state, action) => {
-    let updatedFunds = state.funds + action.value
+    let updatedFunds = state.funds + action.value;
     return updateObject(state, {
        funds: +updatedFunds.toFixed(2)
     });
@@ -38,24 +41,30 @@ const updateUnsoldInventory = (state, action) => {
 }
 
 const lowerPrice = (state) => {
-    let paperclipPrice = state.paperclipPrice - 0.01
+    let paperclipPrice = state.paperclipPrice - 0.01;
     return updateObject(state, {
         paperclipPrice: +paperclipPrice.toFixed(2)
     });
 }
 
 const raisePrice = (state) => {
-    let paperclipPrice = state.paperclipPrice + 0.01
+    let paperclipPrice = state.paperclipPrice + 0.01;
     return updateObject(state, {
         paperclipPrice: +paperclipPrice.toFixed(2)
     });
 }
 
 const updatePublicDemand = (state) => {
-    let updatedPublicDemand = state.maxPublicDemand/(state.paperclipPrice*100)
-
+    let updatedPublicDemand = state.maxPublicDemand/(state.paperclipPrice*100);
     return updateObject(state, {
         publicDemand: +updatedPublicDemand.toFixed()
+    });
+}
+
+const toggleMarketingButton = (state) => {
+    let isDisable = state.funds >= state.marketingCost;
+    return updateObject(state, {
+        marketingButtonDisabled: !isDisable
     });
 }
 
@@ -75,6 +84,8 @@ const businessReducer = (state = initialState, action) => {
             return raisePrice(state, action);
         case actionTypes.UPDATE_PUBLIC_DEMAND:
             return updatePublicDemand(state, action);
+        case actionTypes.TOGGLE_MARKETING_BUTTON:
+            return toggleMarketingButton(state, action);
         default: 
             return state;
     }

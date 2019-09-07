@@ -76,10 +76,11 @@ class Business extends Component {
                         <Button
                             // onClick={this.makePaperclip}
                             text={"Marketing"}
+                            disabled={this.props.marketingButtonDisabled}
                         />
-                        <div className="business-text">Level: </div>
+                        <div className="business-text">Level: {this.props.marketingLevel}</div>
                     </div>
-                    <div className="business-text">Cost:</div>
+                    <div className="business-text">Cost: ${this.props.marketingCost}</div>
                 </div>
             </div>
         );
@@ -93,7 +94,10 @@ export default connect(
             unsoldInventory: state.business.unsoldInventory,
             funds: state.business.funds,
             paperclipPrice: state.business.paperclipPrice,
-            publicDemand: state.business.publicDemand
+            publicDemand: state.business.publicDemand,
+            marketingLevel: state.business.marketingLevel,
+            marketingCost: state.business.marketingCost,
+            marketingButtonDisabled: state.business.marketingButtonDisabled
         };
     },
     (dispatch) => {

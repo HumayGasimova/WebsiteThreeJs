@@ -47,6 +47,12 @@ export function updatePublicDemand() {
     };
 };
 
+export function toggleMarketingButton() {
+    return { 
+        type: actionTypes.TOGGLE_MARKETING_BUTTON
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
