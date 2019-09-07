@@ -14,6 +14,8 @@ export const MARKETING_NEXT_LEVEL = 'MARKETING_NEXT_LEVEL';
 export const UPDATE_MAX_PUBLIC_DEMAND = 'UPDATE_MAX_PUBLIC_DEMAND';
 
 
+export const BUY_WIRE = 'BUY_WIRE';
+
 
 
 

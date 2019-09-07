@@ -87,6 +87,14 @@ const updateMaxPublicDemand = (state) => {
     });
 }
 
+const buyWire = (state) => {
+    return updateObject(state, {
+        wire: state.wire + 1000
+    });
+}
+
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MAKE_PAPERCLIP:
@@ -111,6 +119,8 @@ const businessReducer = (state = initialState, action) => {
             return marketingNextLevel(state, action);
         case actionTypes.UPDATE_MAX_PUBLIC_DEMAND:
             return updateMaxPublicDemand(state, action);
+        case actionTypes.BUY_WIRE:
+            return buyWire(state, action);
         default: 
             return state;
     }

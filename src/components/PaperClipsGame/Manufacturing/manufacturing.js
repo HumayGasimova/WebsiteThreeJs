@@ -79,14 +79,14 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper1">
                         <Button
-                            // onClick={this.makePaperclip}
+                            onClick={this.props.buyWire}
                             text={"Wire"}
                             // disabled={this.props.marketingButtonDisabled}
                         />
                         <div className="manufacturing-text">{this.props.wire} inches </div>
                     </div>
                     <div className="manufacturing-text">Cost: $</div>
-                </div>
+                </div> 
                 {this.renderAutoClippers()} 
             </div>
         );
@@ -108,7 +108,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
+            buyWire: bindActionCreators(Actions.buyWire, dispatch),
             // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             // marketingNextLevel: bindActionCreators(Actions.marketingNextLevel, dispatch),
         };

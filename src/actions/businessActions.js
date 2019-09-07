@@ -69,6 +69,12 @@ export function updateMaxPublicDemand() {
     };
 };
 
+export function buyWire() {
+    return { 
+        type: actionTypes.BUY_WIRE
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 

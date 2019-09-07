@@ -9,5 +9,6 @@ export {
     toggleMarketingButton,
     marketing,
     marketingNextLevel,
-    updateMaxPublicDemand
+    updateMaxPublicDemand,
+    buyWire
 } from './businessActions';
