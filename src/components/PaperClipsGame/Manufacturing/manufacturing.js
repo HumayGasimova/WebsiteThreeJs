@@ -105,7 +105,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper1">
                         <Button
-                            onClick={this.props.buyWire}
+                            onClick={this.props.startBuyingWire}
                             text={"Wire"}
                             disabled={this.props.wireButtonDisabled}
                         />
@@ -134,7 +134,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            buyWire: bindActionCreators(Actions.buyWire, dispatch),
+            startBuyingWire: bindActionCreators(Actions.startBuyingWire, dispatch),
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             // marketingNextLevel: bindActionCreators(Actions.marketingNextLevel, dispatch),
         };

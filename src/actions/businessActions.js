@@ -71,6 +71,12 @@ export function updateMaxPublicDemand() {
     };
 };
 
+export function startBuyingWire() {
+    return { 
+        type: actionTypes.START_BUYING_WIRE
+    };
+};
+
 export function buyWire() {
     return { 
         type: actionTypes.BUY_WIRE

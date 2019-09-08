@@ -12,5 +12,6 @@ export {
     updateMaxPublicDemand,
     buyWire,
     randomWirePrice,
-    toggleWireButton
+    toggleWireButton,
+    startBuyingWire
 } from './businessActions';
