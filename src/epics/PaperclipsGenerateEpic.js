@@ -6,11 +6,19 @@ import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function paperclipsGenerateEpic(action$) { 
+function paperclipsGenerateEpic(action$) {
     return action$
         .ofType(actionTypes.START_SELLING)
         .mergeMap(action => {
-            return Observable.of(Actions.makePaperclip(action.priceOfPaperclip, action.delay))
+
+            // let wirePrice 
+            // setInterval(()=>{
+            //     wirePrice = +(Math.random()*(30-10)).toFixed();
+            // }, 2000)
+            return Observable.of(
+                Actions.makePaperclip(action.priceOfPaperclip, action.delay),
+                // Actions.randomWirePrice()
+            )
         })       
 }
 

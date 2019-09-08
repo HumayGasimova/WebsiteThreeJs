@@ -46,6 +46,10 @@ class Manufacturing extends Component {
         super(props);
     }
 
+    /**
+    * Methods
+    */
+
     renderAutoClippers = () => {
         if(this.props.funds >= 5){
             return(
@@ -62,6 +66,28 @@ class Manufacturing extends Component {
                 </div>  
             )
         }
+    }
+
+    getRandomDelay = () => {
+        let a = Math.floor(Math.random()*35000) + 10000;
+        console.log(a)
+        return a
+   
+    }
+
+    getRandomNumber = () => {
+        return Math.floor(Math.random()*30) + 10;
+    }
+
+    componentDidMount () {
+        this.interval = setInterval(()=>{
+            this.props.randomWirePrice(this.getRandomNumber())
+        }, this.getRandomDelay())
+
+    }
+
+    componentWillUnmount = () => {
+        clearInterval(this.interval)
     }
     
     /**
@@ -85,7 +111,7 @@ class Manufacturing extends Component {
                         />
                         <div className="manufacturing-text">{this.props.wire} inches </div>
                     </div>
-                    <div className="manufacturing-text">Cost: $</div>
+                    <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
                 {this.renderAutoClippers()} 
             </div>
@@ -97,8 +123,8 @@ export default connect(
     (state) => {
         return {
             wire: state.business.wire,
-            funds: state.business.funds
-            // unsoldInventory: state.business.unsoldInventory,
+            funds: state.business.funds,
+            wirePrice: state.business.wirePrice
             // paperclipPrice: state.business.paperclipPrice,
             // publicDemand: state.business.publicDemand,
             // marketingLevel: state.business.marketingLevel,
@@ -109,7 +135,7 @@ export default connect(
     (dispatch) => {
         return {
             buyWire: bindActionCreators(Actions.buyWire, dispatch),
-            // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
+            randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             // marketingNextLevel: bindActionCreators(Actions.marketingNextLevel, dispatch),
         };
     }

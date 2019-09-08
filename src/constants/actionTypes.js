@@ -15,6 +15,8 @@ export const UPDATE_MAX_PUBLIC_DEMAND = 'UPDATE_MAX_PUBLIC_DEMAND';
 
 
 export const BUY_WIRE = 'BUY_WIRE';
+export const RANDOM_WIRE_PRICE = 'RANDOM_WIRE_PRICE';
+export const WIRE_PRICE = 'WIRE_PRICE';
 
 
 

@@ -10,5 +10,7 @@ export {
     marketing,
     marketingNextLevel,
     updateMaxPublicDemand,
-    buyWire
+    buyWire,
+    randomWirePrice,
+    // wirePrice
 } from './businessActions';

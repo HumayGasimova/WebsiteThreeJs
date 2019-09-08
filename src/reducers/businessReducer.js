@@ -14,7 +14,8 @@ const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 1000
+    wire: 1000,
+    wirePrice: 20
 }
 
 const addPaperclip = (state) => {
@@ -93,6 +94,18 @@ const buyWire = (state) => {
     });
 }
 
+const randomWirePrice = (state, action) => {
+    return updateObject(state, {
+        wirePrice: action.value
+    });
+}
+
+// const wirePrice = (state, action) => {
+//     return updateObject(state, {
+//         wirePrice: action.value
+//     });
+// }
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -121,6 +134,10 @@ const businessReducer = (state = initialState, action) => {
             return updateMaxPublicDemand(state, action);
         case actionTypes.BUY_WIRE:
             return buyWire(state, action);
+        case actionTypes.RANDOM_WIRE_PRICE:
+            return randomWirePrice(state, action);
+        // case actionTypes.WIRE_PRICE:
+        //     return wirePrice(state, action);
         default: 
             return state;
     }

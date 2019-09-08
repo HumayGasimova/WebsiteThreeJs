@@ -77,6 +77,21 @@ export function buyWire() {
     };
 };
 
+export function randomWirePrice(value) {
+    return { 
+        type: actionTypes.RANDOM_WIRE_PRICE,
+        value: value
+    };
+};
+
+// export function wirePrice(value) {
+//     return { 
+//         type: actionTypes.WIRE_PRICE,
+//         value: value
+//     };
+// };
+
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
