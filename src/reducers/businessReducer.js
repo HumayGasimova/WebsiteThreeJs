@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     paperClips: 0,
-    funds: 100,
+    funds: 0,
     paperclipPrice: 0.50,
     unsoldInventory: [],
     maxPublicDemand: 800,
