@@ -17,7 +17,8 @@ const initialState = {
     wire: 1000,
     wirePrice: 20,
     wireButtonDisabled: true,
-    autoClippersPerSec: 0
+    autoClippersPerSec: 0,
+    autoPaperclips: 0
 }
 
 const addPaperclip = (state) => {
@@ -116,6 +117,12 @@ const autoClippersAddOne = (state) => {
     });
 }
 
+const autoPaperclips = (state) => {
+    return updateObject(state, {
+        autoPaperclips: state.autoPaperclips + 1
+    });
+}
+
 
 // const wirePrice = (state, action) => {
 //     return updateObject(state, {
@@ -156,9 +163,13 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.RANDOM_WIRE_PRICE:
             return randomWirePrice(state, action);
         case actionTypes.TOGGLE_WIRE_BUTTON:
-            return toggleWireButton(state, action);   
+            return toggleWireButton(state, action); 
+        case actionTypes.AUTO_PAPERCLIPS_START:
+            return state;   
         case actionTypes.AUTO_CLIPPERS_ADD_ONE:
             return autoClippersAddOne(state, action); 
+        case actionTypes.AUTO_PAPERCLIPS:
+            return autoPaperclips(state, action); 
         default: 
             return state;
     }

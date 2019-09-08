@@ -5,11 +5,14 @@ import updateUnsoldInventoryEpic from './updateUnsoldInventoryEpic';
 import raisePriceEpic from '../epics/raisePriceEpic';
 import marketingNextLevelEpic from '../epics/marketingNextLevelEpic';
 import buyWireEpic from '../epics/buyWireEpic';
+import autoPaperclipsStartEpic from '../epics/autoPaperclipsStartEpic';
+
 
 export const rootEpic = combineEpics(
     paperclipsGenerateEpic,
     updateUnsoldInventoryEpic,
     raisePriceEpic,
     marketingNextLevelEpic,
-    buyWireEpic
+    buyWireEpic,
+    autoPaperclipsStartEpic
 );

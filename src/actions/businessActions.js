@@ -96,6 +96,12 @@ export function toggleWireButton() {
     };
 };
 
+export function autoPaperclipsStart() {
+    return { 
+        type: actionTypes.AUTO_PAPERCLIPS_START
+    };
+};
+
 export function autoClippersAddOne() {
     return { 
         type: actionTypes.AUTO_CLIPPERS_ADD_ONE
