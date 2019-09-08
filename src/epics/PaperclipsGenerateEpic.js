@@ -10,14 +10,8 @@ function paperclipsGenerateEpic(action$) {
     return action$
         .ofType(actionTypes.START_SELLING)
         .mergeMap(action => {
-
-            // let wirePrice 
-            // setInterval(()=>{
-            //     wirePrice = +(Math.random()*(30-10)).toFixed();
-            // }, 2000)
             return Observable.of(
-                Actions.makePaperclip(action.priceOfPaperclip, action.delay),
-                // Actions.randomWirePrice()
+                Actions.makePaperclip(action.priceOfPaperclip, action.delay)
             )
         })       
 }

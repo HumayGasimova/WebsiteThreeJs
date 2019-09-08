@@ -15,7 +15,8 @@ const initialState = {
     marketingButtonDisabled: true,
     delay: 1000,
     wire: 1000,
-    wirePrice: 20
+    wirePrice: 20,
+    wireButtonDisables: true
 }
 
 const addPaperclip = (state) => {
@@ -66,9 +67,9 @@ const updatePublicDemand = (state) => {
 }
 
 const toggleMarketingButton = (state) => {
-    let isDisable = state.funds >= state.marketingCost;
+    let isDisable = state.funds <= state.marketingCost;
     return updateObject(state, {
-        marketingButtonDisabled: !isDisable
+        marketingButtonDisabled: isDisable
     });
 }
 
@@ -97,6 +98,13 @@ const buyWire = (state) => {
 const randomWirePrice = (state, action) => {
     return updateObject(state, {
         wirePrice: action.value
+    });
+}
+
+const toggleWireButton = (state) => {
+    let isDisable = state.funds <= state.wirePrice;
+    return updateObject(state, {
+        wireButtonDisables: isDisable
     });
 }
 
@@ -136,8 +144,8 @@ const businessReducer = (state = initialState, action) => {
             return buyWire(state, action);
         case actionTypes.RANDOM_WIRE_PRICE:
             return randomWirePrice(state, action);
-        // case actionTypes.WIRE_PRICE:
-        //     return wirePrice(state, action);
+        case actionTypes.TOGGLE_WIRE_BUTTON:
+            return toggleWireButton(state, action);    
         default: 
             return state;
     }

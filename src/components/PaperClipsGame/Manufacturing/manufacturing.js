@@ -69,14 +69,14 @@ class Manufacturing extends Component {
     }
 
     getRandomDelay = () => {
-        let a = Math.floor(Math.random()*35000) + 10000;
+        let a = Math.floor(Math.random()*15000) + 5000;
         console.log(a)
         return a
    
     }
 
     getRandomNumber = () => {
-        return Math.floor(Math.random()*30) + 10;
+        return Math.floor(Math.random()*20) + 10;
     }
 
     componentDidMount () {
@@ -107,7 +107,7 @@ class Manufacturing extends Component {
                         <Button
                             onClick={this.props.buyWire}
                             text={"Wire"}
-                            // disabled={this.props.marketingButtonDisabled}
+                            disabled={this.props.wireButtonDisabled}
                         />
                         <div className="manufacturing-text">{this.props.wire} inches </div>
                     </div>
@@ -124,8 +124,8 @@ export default connect(
         return {
             wire: state.business.wire,
             funds: state.business.funds,
-            wirePrice: state.business.wirePrice
-            // paperclipPrice: state.business.paperclipPrice,
+            wirePrice: state.business.wirePrice,
+            wireButtonDisabled: state.business.wireButtonDisabled,
             // publicDemand: state.business.publicDemand,
             // marketingLevel: state.business.marketingLevel,
             // marketingCost: state.business.marketingCost,

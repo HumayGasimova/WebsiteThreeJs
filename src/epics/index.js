@@ -4,12 +4,10 @@ import paperclipsGenerateEpic from './PaperclipsGenerateEpic';
 import updateUnsoldInventoryEpic from './updateUnsoldInventoryEpic';
 import raisePriceEpic from '../epics/raisePriceEpic';
 import marketingNextLevelEpic from '../epics/marketingNextLevelEpic';
-import randomWirePriceEpic from '../epics/randomWirePriceEpic';
 
 export const rootEpic = combineEpics(
     paperclipsGenerateEpic,
     updateUnsoldInventoryEpic,
     raisePriceEpic,
-    marketingNextLevelEpic,
-    // randomWirePriceEpic
+    marketingNextLevelEpic
 );

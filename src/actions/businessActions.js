@@ -84,12 +84,11 @@ export function randomWirePrice(value) {
     };
 };
 
-// export function wirePrice(value) {
-//     return { 
-//         type: actionTypes.WIRE_PRICE,
-//         value: value
-//     };
-// };
+export function toggleWireButton() {
+    return { 
+        type: actionTypes.TOGGLE_WIRE_BUTTON
+    };
+};
 
 
 export const checkAuthTimeout = (expirationTime) => {

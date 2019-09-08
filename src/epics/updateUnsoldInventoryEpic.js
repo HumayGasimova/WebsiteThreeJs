@@ -13,7 +13,8 @@ function updateUnsoldInventoryEpic(action$) {
             return Observable.of(
                 Actions.updateUnsoldInventory(),
                 Actions.updateFunds(action.priceOfPaperclip),
-                Actions.toggleMarketingButton()
+                Actions.toggleMarketingButton(),
+                Actions.toggleWireButton()
             ) 
             .delay(action.delay)
         })
