@@ -96,6 +96,11 @@ export function toggleWireButton() {
     };
 };
 
+export function autoClippersAddOne() {
+    return { 
+        type: actionTypes.AUTO_CLIPPERS_ADD_ONE
+    };
+};
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

@@ -56,11 +56,11 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper2">
                         <Button
-                            // onClick={this.makePaperclip}
+                            onClick={this.props.autoClippersAddOne}
                             text={"AutoClippers"}
                             // disabled={this.props.marketingButtonDisabled}
                         />
-                        <div className="manufacturing-text"> Number </div>
+                        <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
                     </div>
                     <div className="manufacturing-text">Cost: $</div>
                 </div>  
@@ -126,7 +126,7 @@ export default connect(
             funds: state.business.funds,
             wirePrice: state.business.wirePrice,
             wireButtonDisabled: state.business.wireButtonDisabled,
-            // publicDemand: state.business.publicDemand,
+            autoClippersPerSec: state.business.autoClippersPerSec,
             // marketingLevel: state.business.marketingLevel,
             // marketingCost: state.business.marketingCost,
             // marketingButtonDisabled: state.business.marketingButtonDisabled
@@ -136,7 +136,7 @@ export default connect(
         return {
             startBuyingWire: bindActionCreators(Actions.startBuyingWire, dispatch),
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
-            // marketingNextLevel: bindActionCreators(Actions.marketingNextLevel, dispatch),
+            autoClippersAddOne: bindActionCreators(Actions.autoClippersAddOne, dispatch),
         };
     }
 )(Manufacturing);

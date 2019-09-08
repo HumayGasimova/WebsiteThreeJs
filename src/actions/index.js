@@ -13,5 +13,6 @@ export {
     buyWire,
     randomWirePrice,
     toggleWireButton,
-    startBuyingWire
+    startBuyingWire,
+    autoClippersAddOne
 } from './businessActions';
