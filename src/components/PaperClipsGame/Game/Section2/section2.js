@@ -11,7 +11,7 @@ import React,{
 * Components
 */
 
-
+import ComputationalResources from '../../Parts/ComputationalResources/computationalResources';
 
 /**
 * Styles
@@ -20,7 +20,7 @@ import React,{
 import './section2.scss';
 
 /**
-* Section1 component definition and export
+* Section2 component definition and export
 */
 
 class Section2 extends Component {
@@ -40,9 +40,8 @@ class Section2 extends Component {
     render(){
         return(
             <div className="section2">
-               {/* <General/>
-               <Business/>
-               <Manufacturing/> */}
+                <ComputationalResources/>
+                {/* <Projects/> */}
             </div>
         );
     }

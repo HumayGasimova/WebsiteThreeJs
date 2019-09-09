@@ -1,0 +1,29 @@
+.computationalResources{
+    margin-left: 10px;
+    margin-top: 30px;
+    .computationalResources-label {
+       font-weight: bold;
+    }
+
+    .computationalResources-line {
+        border: 0.5px solid rgb(179, 179, 179);
+        width: 280px;
+    }
+    
+    .computationalResources-section {
+       padding: 5px 0 20px 0;
+    }
+}
+
+.computationalResources-wrapper1{
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.computationalResources-wrapper2{
+    display: flex;
+    justify-content: space-between;
+    width: 135px;
+}
+
