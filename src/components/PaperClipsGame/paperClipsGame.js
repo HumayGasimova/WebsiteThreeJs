@@ -12,9 +12,7 @@ import React,{
 */
 
 import Terminal from './Terminal/terminal';
-import General from './General/general';
-import Business from './Business/business';
-import Manufacturing from './Manufacturing/manufacturing';
+import Game from './Game/game';
 
 /**
 * Styles
@@ -43,10 +41,8 @@ class PaperClipsGame extends Component {
     render(){
         return(
             <div className="paper-clips-game">
-               <Terminal/>
-               <General/>
-               <Business/>
-               <Manufacturing/>
+                <Terminal/>
+                <Game/>
             </div>
         );
     }

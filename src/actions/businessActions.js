@@ -114,9 +114,11 @@ export function setAutoClipperInitPrice() {
     };
 };
 
-export function toggleAutoClippersButton() {
+export function toggleAutoClippersButton(priceOfPaperclip, delay) {
     return { 
-        type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON
+        type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON,
+        priceOfPaperclip: priceOfPaperclip,
+        delay: delay
     };
 };
 
