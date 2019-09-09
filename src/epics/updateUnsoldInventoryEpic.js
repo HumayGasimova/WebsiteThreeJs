@@ -15,7 +15,8 @@ function updateUnsoldInventoryEpic(action$) {
                 Actions.updateFunds(action.priceOfPaperclip),
                 Actions.setAutoClipperInitPrice(),
                 Actions.toggleMarketingButton(),
-                Actions.toggleWireButton()
+                Actions.toggleWireButton(),
+                Actions.toggleAutoClippersButton(),
             ) 
             .delay(action.delay)
         })

@@ -58,7 +58,7 @@ class Manufacturing extends Component {
                         <Button
                             onClick={this.props.autoPaperclipsStart}
                             text={"AutoClippers"}
-                            // disabled={this.props.marketingButtonDisabled}
+                            disabled={this.props.autoClippersButtonDisabled}
                         />
                         <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
                     </div>
@@ -128,8 +128,8 @@ export default connect(
             wireButtonDisabled: state.business.wireButtonDisabled,
             autoClippersPerSec: state.business.autoClippersPerSec,
             autoClipperInitPrice: state.business.autoClipperInitPrice,
-            autoClipperPrice: state.business.autoClipperPrice
-            // marketingButtonDisabled: state.business.marketingButtonDisabled
+            autoClipperPrice: state.business.autoClipperPrice,
+            autoClippersButtonDisabled: state.business.autoClippersButtonDisabled
         };
     },
     (dispatch) => {

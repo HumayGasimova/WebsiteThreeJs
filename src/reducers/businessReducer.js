@@ -20,7 +20,8 @@ const initialState = {
     autoClippersPerSec: 0,
     autoPaperclips: 0,
     autoClipperInitPrice: 0,
-    autoClipperPrice: 6.1
+    autoClipperPrice: 6.1,
+    autoClippersButtonDisabled: true
 }
 
 const addPaperclip = (state) => {
@@ -138,9 +139,20 @@ const autoPaperclips = (state) => {
 }
 
 const setAutoClipperInitPrice = (state) => {
-
     return updateObject(state, {
         autoClipperInitPrice: state.funds >= 5 ? 5 : state.autoClipperInitPrice
+    });
+}
+
+const toggleAutoClippersButton = (state) => {
+    let isDisable
+    if(state.autoClippersPerSec === 0){
+        isDisable = state.funds <= state.autoClipperInitPrice;
+    }else{
+        isDisable = state.funds <= state.autoClipperPrice;
+    }
+    return updateObject(state, {
+       autoClippersButtonDisabled: isDisable
     });
 }
 
@@ -193,6 +205,8 @@ const businessReducer = (state = initialState, action) => {
             return autoPaperclips(state, action); 
         case actionTypes.SET_AUTO_CLIPPER_INIT_PRICE:
             return setAutoClipperInitPrice(state, action); 
+        case actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON:
+            return toggleAutoClippersButton(state, action); 
         default: 
             return state;
     }

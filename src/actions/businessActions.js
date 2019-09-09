@@ -114,6 +114,12 @@ export function setAutoClipperInitPrice() {
     };
 };
 
+export function toggleAutoClippersButton() {
+    return { 
+        type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
