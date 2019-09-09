@@ -62,7 +62,7 @@ class Manufacturing extends Component {
                         />
                         <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
                     </div>
-                    <div className="manufacturing-text">Cost: $</div>
+                    <div className="manufacturing-text">Cost: ${this.props.autoClippersPerSec === 0 ? this.props.autoClipperInitPrice : this.props.autoClipperPrice}</div>
                 </div>  
             )
         }
@@ -127,8 +127,8 @@ export default connect(
             wirePrice: state.business.wirePrice,
             wireButtonDisabled: state.business.wireButtonDisabled,
             autoClippersPerSec: state.business.autoClippersPerSec,
-            // marketingLevel: state.business.marketingLevel,
-            // marketingCost: state.business.marketingCost,
+            autoClipperInitPrice: state.business.autoClipperInitPrice,
+            autoClipperPrice: state.business.autoClipperPrice
             // marketingButtonDisabled: state.business.marketingButtonDisabled
         };
     },

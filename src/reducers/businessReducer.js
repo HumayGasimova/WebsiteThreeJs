@@ -18,7 +18,9 @@ const initialState = {
     wirePrice: 20,
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
-    autoPaperclips: 0
+    autoPaperclips: 0,
+    autoClipperInitPrice: 5,
+    autoClipperPrice: 6.1
 }
 
 const addPaperclip = (state) => {
@@ -112,8 +114,20 @@ const toggleWireButton = (state) => {
 }
 
 const autoClippersAddOne = (state) => {
+    let updatedAutoClipperPrice;
+    let updatedFunds
+    if(state.autoClippersPerSec === 0){
+        updatedAutoClipperPrice = state.autoClipperPrice;
+        updatedFunds = state.funds - state.autoClipperInitPrice;
+    }else{
+        updatedAutoClipperPrice = +(state.autoClipperPrice + (state.autoClipperPrice * 0.018)).toFixed(2);
+        updatedFunds = state.funds - state.autoClipperPrice;
+    }
+
     return updateObject(state, {
-        autoClippersPerSec: state.autoClippersPerSec + 1
+        autoClippersPerSec: state.autoClippersPerSec + 1,
+        autoClipperPrice: updatedAutoClipperPrice,
+        funds: +updatedFunds
     });
 }
 
