@@ -19,7 +19,7 @@ const initialState = {
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
     autoPaperclips: 0,
-    autoClipperInitPrice: 5,
+    autoClipperInitPrice: 0,
     autoClipperPrice: 6.1
 }
 
@@ -137,6 +137,13 @@ const autoPaperclips = (state) => {
     });
 }
 
+const setAutoClipperInitPrice = (state) => {
+
+    return updateObject(state, {
+        autoClipperInitPrice: state.funds >= 5 ? 5 : state.autoClipperInitPrice
+    });
+}
+
 
 // const wirePrice = (state, action) => {
 //     return updateObject(state, {
@@ -184,6 +191,8 @@ const businessReducer = (state = initialState, action) => {
             return autoClippersAddOne(state, action); 
         case actionTypes.AUTO_PAPERCLIPS:
             return autoPaperclips(state, action); 
+        case actionTypes.SET_AUTO_CLIPPER_INIT_PRICE:
+            return setAutoClipperInitPrice(state, action); 
         default: 
             return state;
     }

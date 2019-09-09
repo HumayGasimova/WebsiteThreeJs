@@ -51,7 +51,7 @@ class Manufacturing extends Component {
     */
 
     renderAutoClippers = () => {
-        if(this.props.funds >= 5){
+        if(this.props.autoClipperInitPrice === 5){
             return(
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper2">

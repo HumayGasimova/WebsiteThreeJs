@@ -13,6 +13,7 @@ function updateUnsoldInventoryEpic(action$) {
             return Observable.of(
                 Actions.updateUnsoldInventory(),
                 Actions.updateFunds(action.priceOfPaperclip),
+                Actions.setAutoClipperInitPrice(),
                 Actions.toggleMarketingButton(),
                 Actions.toggleWireButton()
             ) 

@@ -15,5 +15,6 @@ export {
     toggleWireButton,
     startBuyingWire,
     autoPaperclipsStart,
-    autoClippersAddOne
+    autoClippersAddOne,
+    setAutoClipperInitPrice
 } from './businessActions';

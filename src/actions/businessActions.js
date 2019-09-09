@@ -108,6 +108,12 @@ export function autoClippersAddOne() {
     };
 };
 
+export function setAutoClipperInitPrice() {
+    return { 
+        type: actionTypes.SET_AUTO_CLIPPER_INIT_PRICE
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
