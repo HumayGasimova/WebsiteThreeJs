@@ -4,7 +4,7 @@ import {
   } from './utility';
 
 const initialState = {
-    paperClips: 2999,
+    paperClips: 0,
     funds: 0,
     paperclipPrice: 0.50,
     unsoldInventory: [],
@@ -32,7 +32,7 @@ const addPaperclip = (state) => {
     updatedInventory.push(' ');
 
     return updateObject(state, {
-       paperClips: state.paperClips + 1000,
+       paperClips: state.paperClips + 1,
        unsoldInventory: updatedInventory,
        wire: state.wire - 1
     });
