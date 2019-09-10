@@ -33,6 +33,14 @@ import './computationalResources.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Utility
+*/
+
+import {
+    commaSeparator
+} from '../../../../utility/commaSeparator';
+
+/**
 * ComputationalResources component definition and export
 */
 
@@ -56,8 +64,8 @@ class ComputationalResources extends Component {
                 <div className="computationalResources-label">Computational Resources</div>
                 <div className="computationalResources-line"/>
                 <div className="computationalResources-section">
-                    <div className="computationalResources-text">Trust: </div>
-                    <div className="computationalResources-text">+1 Trust at:  </div>
+                    <div className="computationalResources-text">Trust: {this.props.trust}</div>
+                    <div className="computationalResources-text">+1 Trust at: {commaSeparator(this.props.clipsToBuyTrust)}</div>
                 </div>
 
                 <div className="computationalResources-section">
@@ -94,13 +102,9 @@ export default connect(
     (state) => {
         return {
             paperClips: state.business.paperClips,
-            // unsoldInventory: state.business.unsoldInventory,
-            // funds: state.business.funds,
-            // paperclipPrice: state.business.paperclipPrice,
-            // publicDemand: state.business.publicDemand,
-            // marketingLevel: state.business.marketingLevel,
-            // marketingCost: state.business.marketingCost,
-            // marketingButtonDisabled: state.business.marketingButtonDisabled
+            trust: state.business.trust,
+            clipsToBuyTrust: state.business.clipsToBuyTrust,
+   
         };
     },
     (dispatch) => {

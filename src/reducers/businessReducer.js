@@ -21,7 +21,9 @@ const initialState = {
     autoPaperclips: 0,
     autoClipperInitPrice: 0,
     autoClipperPrice: 6.1,
-    autoClippersButtonDisabled: true
+    autoClippersButtonDisabled: true,
+    trust: 2,
+    clipsToBuyTrust: 3000
 }
 
 const addPaperclip = (state) => {
