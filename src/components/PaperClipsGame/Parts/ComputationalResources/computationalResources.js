@@ -45,7 +45,7 @@ class ComputationalResources extends Component {
     constructor (props){
         super(props);
     }
-    
+
     /**
     * Markup
     */
@@ -93,7 +93,7 @@ class ComputationalResources extends Component {
 export default connect(
     (state) => {
         return {
-            // paperClips: state.business.paperClips,
+            paperClips: state.business.paperClips,
             // unsoldInventory: state.business.unsoldInventory,
             // funds: state.business.funds,
             // paperclipPrice: state.business.paperclipPrice,
