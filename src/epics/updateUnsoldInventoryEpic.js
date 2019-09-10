@@ -17,6 +17,7 @@ function updateUnsoldInventoryEpic(action$) {
                 Actions.toggleMarketingButton(),
                 Actions.toggleWireButton(),
                 Actions.toggleAutoClippersButton(),
+                Actions.trustPlusOne()
             ) 
             .delay(action.delay)
         })

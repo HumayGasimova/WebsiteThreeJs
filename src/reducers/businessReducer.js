@@ -159,11 +159,20 @@ const toggleAutoClippersButton = (state) => {
 }
 
 
-// const wirePrice = (state, action) => {
-//     return updateObject(state, {
-//         wirePrice: action.value
-//     });
-// }
+const trustPlusOne = (state) => {
+    let updatedTrust;
+    let updatedClipsToBuyTrust;
+
+    if(state.paperClips>=state.clipsToBuyTrust){
+        updatedTrust = state.trust + 1;
+        updatedClipsToBuyTrust = state.clipsToBuyTrust * 2 - (state.trust - 1) * 1000
+    }
+
+    return updateObject(state, {
+        trust: updatedTrust,
+        clipsToBuyTrust: updatedClipsToBuyTrust
+    });
+}
 
 
 
@@ -209,6 +218,8 @@ const businessReducer = (state = initialState, action) => {
             return setAutoClipperInitPrice(state, action); 
         case actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON:
             return toggleAutoClippersButton(state, action); 
+        case actionTypes.TRUST_PLUS_ONE:
+            return trustPlusOne(state, action); 
         default: 
             return state;
     }

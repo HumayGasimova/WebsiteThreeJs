@@ -17,5 +17,6 @@ export {
     autoPaperclipsStart,
     autoClippersAddOne,
     setAutoClipperInitPrice,
-    toggleAutoClippersButton
+    toggleAutoClippersButton,
+    trustPlusOne
 } from './businessActions';

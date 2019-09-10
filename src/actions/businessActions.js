@@ -122,6 +122,12 @@ export function toggleAutoClippersButton(priceOfPaperclip, delay) {
     };
 };
 
+export function trustPlusOne() {
+    return { 
+        type: actionTypes.TRUST_PLUS_ONE,
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
