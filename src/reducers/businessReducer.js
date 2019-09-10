@@ -4,7 +4,7 @@ import {
   } from './utility';
 
 const initialState = {
-    paperClips: 0,
+    paperClips: 2999,
     funds: 0,
     paperclipPrice: 0.50,
     unsoldInventory: [],
@@ -22,6 +22,7 @@ const initialState = {
     autoClipperInitPrice: 0,
     autoClipperPrice: 6.1,
     autoClippersButtonDisabled: true,
+    prevTrust: 3000,
     trust: 2,
     clipsToBuyTrust: 3000
 }
@@ -31,7 +32,7 @@ const addPaperclip = (state) => {
     updatedInventory.push(' ');
 
     return updateObject(state, {
-       paperClips: state.paperClips + 1,
+       paperClips: state.paperClips + 1000,
        unsoldInventory: updatedInventory,
        wire: state.wire - 1
     });
@@ -160,15 +161,23 @@ const toggleAutoClippersButton = (state) => {
 
 
 const trustPlusOne = (state) => {
-    let updatedTrust;
-    let updatedClipsToBuyTrust;
+    let updatedPrevTrust = state.prevTrust;
+    let updatedTrust = state.trust;
+    let updatedClipsToBuyTrust = state.clipsToBuyTrust;
 
-    if(state.paperClips>=state.clipsToBuyTrust){
+    if(state.paperClips >= state.clipsToBuyTrust){
         updatedTrust = state.trust + 1;
-        updatedClipsToBuyTrust = state.clipsToBuyTrust * 2 - (state.trust - 1) * 1000
+        if(state.trust === 2 ){
+            updatedClipsToBuyTrust = 5000;
+        }else{
+            updatedPrevTrust = state.clipsToBuyTrust;
+            updatedClipsToBuyTrust = state.prevTrust + state.clipsToBuyTrust;
+        }
     }
+  
 
     return updateObject(state, {
+        prevTrust: updatedPrevTrust,
         trust: updatedTrust,
         clipsToBuyTrust: updatedClipsToBuyTrust
     });
