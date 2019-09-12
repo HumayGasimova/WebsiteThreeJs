@@ -11,12 +11,6 @@ import * as Actions from '../actions';
 function autoPaperclipsStartsEpic(action$) {
     return action$
         .ofType(actionTypes.AUTO_PAPERCLIPS_START)
-        // switchMap(() =>{
-        //     Observable.interval(200)
-        //     .takeUntil(action$.ofType('ABORT_PAGE_PROCESSING'))
-        //     .mapTo({ type: 'PROCESS_PAGE' })
-        // }
-            
         .mergeMap(action => {
             return Observable.of(
                 Actions.makePaperclip(action.priceOfPaperclip, action.delay),

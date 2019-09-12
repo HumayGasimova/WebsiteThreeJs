@@ -96,6 +96,15 @@ export function toggleWireButton() {
     };
 };
 
+export function autoPaperclips(priceOfPaperclip, delay, delay2) {
+    return { 
+        type: actionTypes.AUTO_PAPERCLIPS,
+        priceOfPaperclip: priceOfPaperclip,
+        delay: delay,
+        delayAutoPaperClippers: delay2
+    };
+};
+
 export function autoPaperclipsStart(priceOfPaperclip, delay, delay2) {
     return { 
         type: actionTypes.AUTO_PAPERCLIPS_START,

@@ -138,12 +138,6 @@ const autoClippersAddOne = (state) => {
     });
 }
 
-const autoPaperclips = (state) => {
-    return updateObject(state, {
-        autoPaperclips: state.autoPaperclips + 1
-    });
-}
-
 const setAutoClipperInitPrice = (state) => {
     return updateObject(state, {
         autoClipperInitPrice: state.funds >= 5 ? 5 : state.autoClipperInitPrice
@@ -220,20 +214,21 @@ const businessReducer = (state = initialState, action) => {
             return randomWirePrice(state, action);
         case actionTypes.TOGGLE_WIRE_BUTTON:
             return toggleWireButton(state, action); 
-        case actionTypes.AUTO_PAPERCLIPS_START:
-            return state;   
+        case actionTypes.AUTO_PAPERCLIPS:
+            return state;
         case actionTypes.AUTO_CLIPPERS_ADD_ONE:
             return autoClippersAddOne(state, action); 
-        case actionTypes.AUTO_PAPERCLIPS:
-            return autoPaperclips(state, action); 
+        case actionTypes.AUTO_PAPERCLIPS_START:
+            return state;  
+        case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
+            return state;
         case actionTypes.SET_AUTO_CLIPPER_INIT_PRICE:
             return setAutoClipperInitPrice(state, action); 
         case actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON:
             return toggleAutoClippersButton(state, action); 
         case actionTypes.TRUST_PLUS_ONE:
             return trustPlusOne(state, action); 
-        case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
-            return state;
+       
         default: 
             return state;
     }

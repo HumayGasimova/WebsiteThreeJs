@@ -14,6 +14,7 @@ export {
     randomWirePrice,
     toggleWireButton,
     startBuyingWire,
+    autoPaperclips,
     autoPaperclipsStart,
     autoClippersAddOne,
     setAutoClipperInitPrice,

@@ -8,15 +8,15 @@ import 'rxjs/add/observable/of';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function repeatAutoPaperClippersEpic(action$) {
+function autoPaperClippersAddOneEpic(action$) {
     return action$
-        .ofType(actionTypes.REPEAT_AUTO_PAPER_CLIPPERS)
+        .ofType(actionTypes.AUTO_PAPERCLIPS)        
         .mergeMap(action => {
             return Observable.of(
+                Actions.autoClippersAddOne(action.priceOfPaperclip, action.delay),
                 Actions.autoPaperclipsStart(action.priceOfPaperclip, action.delay, action.delayAutoPaperClippers)
-            )
-            .delay(action.delayAutoPaperClippers)
-        })
+            )            
+        }) 
 }
 
-export default repeatAutoPaperClippersEpic;
+export default autoPaperClippersAddOneEpic;

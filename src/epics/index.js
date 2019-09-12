@@ -6,8 +6,8 @@ import raisePriceEpic from '../epics/raisePriceEpic';
 import marketingNextLevelEpic from '../epics/marketingNextLevelEpic';
 import buyWireEpic from '../epics/buyWireEpic';
 import autoPaperclipsStartEpic from '../epics/autoPaperclipsStartEpic';
-import repeatAutoPaperClippersEpic from '../epics/repeatAutoPaperClippersEpic'
-
+import repeatAutoPaperClippersEpic from '../epics/repeatAutoPaperClippersEpic';
+import autoPaperClippersAddOneEpic from '../epics/autoPaperClippersAddOneEpic';
 
 export const rootEpic = combineEpics(
     paperclipsGenerateEpic,
@@ -16,5 +16,6 @@ export const rootEpic = combineEpics(
     marketingNextLevelEpic,
     buyWireEpic,
     autoPaperclipsStartEpic,
-    repeatAutoPaperClippersEpic
+    repeatAutoPaperClippersEpic,
+    autoPaperClippersAddOneEpic
 );
