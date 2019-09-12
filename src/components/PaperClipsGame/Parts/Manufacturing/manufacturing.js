@@ -56,7 +56,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper2">
                         <Button
-                            onClick={()=>this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay)}
+                            onClick={()=>this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers)}
                             text={"AutoClippers"}
                             disabled={this.props.autoClippersButtonDisabled}
                         />
@@ -137,7 +137,8 @@ export default connect(
             autoClipperPrice: state.business.autoClipperPrice,
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
             paperclipPrice: state.business.paperclipPrice,
-            delay: state.business.delay
+            delay: state.business.delay,
+            delayAutoPaperClippers: state.business.delayAutoPaperClippers
         };
     },
     (dispatch) => {

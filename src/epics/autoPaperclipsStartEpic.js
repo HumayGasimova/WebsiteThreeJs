@@ -11,15 +11,18 @@ import * as Actions from '../actions';
 function autoPaperclipsStartsEpic(action$) {
     return action$
         .ofType(actionTypes.AUTO_PAPERCLIPS_START)
-        .delay(5000)
+        // switchMap(() =>{
+        //     Observable.interval(200)
+        //     .takeUntil(action$.ofType('ABORT_PAGE_PROCESSING'))
+        //     .mapTo({ type: 'PROCESS_PAGE' })
+        // }
+            
         .mergeMap(action => {
             return Observable.of(
                 Actions.makePaperclip(action.priceOfPaperclip, action.delay),
-                Actions.autoPaperclipsStart()
-            )
-        })
-          
-            // .repeat(3)     
+                Actions.repeatAutoPaperClippers(action.priceOfPaperclip, action.delay, action.delayAutoPaperClippers)
+            )            
+        }) 
 }
 
 export default autoPaperclipsStartsEpic;

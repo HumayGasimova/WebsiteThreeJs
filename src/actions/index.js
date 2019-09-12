@@ -18,5 +18,6 @@ export {
     autoClippersAddOne,
     setAutoClipperInitPrice,
     toggleAutoClippersButton,
-    trustPlusOne
+    trustPlusOne,
+    repeatAutoPaperClippers
 } from './businessActions';

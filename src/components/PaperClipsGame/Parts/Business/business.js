@@ -56,7 +56,7 @@ class Business extends Component {
                 <div className="business-label">Business</div>
                 <div className="business-line"/>
                 <div className="business-section">
-                    <div className="business-text">Available Funds: $ {+this.props.funds.toFixed(2)}</div>
+                    <div className="business-text">Available Funds: $ {this.props.funds}</div>
                     <div className="business-text">Unsold Inventory: {this.props.unsoldInventory.length}</div>
                     <div className="business-wrapper1">
                         <Button

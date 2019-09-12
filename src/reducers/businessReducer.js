@@ -24,7 +24,8 @@ const initialState = {
     autoClippersButtonDisabled: true,
     prevTrust: 3000,
     trust: 2,
-    clipsToBuyTrust: 3000
+    clipsToBuyTrust: 3000,
+    delayAutoPaperClippers: 1000
 }
 
 const addPaperclip = (state) => {
@@ -131,7 +132,9 @@ const autoClippersAddOne = (state) => {
     return updateObject(state, {
         autoClippersPerSec: state.autoClippersPerSec + 1,
         autoClipperPrice: updatedAutoClipperPrice,
-        funds: +updatedFunds
+        funds: +updatedFunds,
+        delayAutoPaperClippers: state.delayAutoPaperClippers - 10
+        
     });
 }
 
@@ -229,6 +232,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleAutoClippersButton(state, action); 
         case actionTypes.TRUST_PLUS_ONE:
             return trustPlusOne(state, action); 
+        case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
+            return state;
         default: 
             return state;
     }
