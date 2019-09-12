@@ -56,7 +56,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper2">
                         <Button
-                            onClick={this.props.autoPaperclipsStart}
+                            onClick={()=>this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay)}
                             text={"AutoClippers"}
                             disabled={this.props.autoClippersButtonDisabled}
                         />
@@ -78,6 +78,12 @@ class Manufacturing extends Component {
     getRandomNumber = () => {
         return Math.floor(Math.random()*20) + 10;
     }
+
+    // autoClipper = () => {
+    //     this.intervalAutoPaperClippers = setInterval(()=>{
+    //         this.props.makePaperclip()
+    //     }, 30000)
+    // }
 
     componentDidMount () {
         this.interval = setInterval(()=>{
@@ -105,7 +111,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper1">
                         <Button
-                            onClick={this.props.startBuyingWire}
+                            onClick={this.autoClipper}
                             text={"Wire"}
                             disabled={this.props.wireButtonDisabled}
                         />
@@ -129,14 +135,17 @@ export default connect(
             autoClippersPerSec: state.business.autoClippersPerSec,
             autoClipperInitPrice: state.business.autoClipperInitPrice,
             autoClipperPrice: state.business.autoClipperPrice,
-            autoClippersButtonDisabled: state.business.autoClippersButtonDisabled
+            autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
+            paperclipPrice: state.business.paperclipPrice,
+            delay: state.business.delay
         };
     },
     (dispatch) => {
         return {
             startBuyingWire: bindActionCreators(Actions.startBuyingWire, dispatch),
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
-            autoPaperclipsStart: bindActionCreators(Actions.autoClippersAddOne, dispatch),
+            autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
+            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
         };
     }
 )(Manufacturing);

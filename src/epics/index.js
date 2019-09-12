@@ -14,5 +14,5 @@ export const rootEpic = combineEpics(
     raisePriceEpic,
     marketingNextLevelEpic,
     buyWireEpic,
-    // autoPaperclipsStartEpic
+    autoPaperclipsStartEpic
 );
