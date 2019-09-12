@@ -22,5 +22,7 @@ export {
     toggleAutoClippersButton,
     trustPlusOne,
     repeatAutoPaperClippers,
-    increaseOps
+    increaseOps,
+    increaseProcessors,
+    increaseProcessorsMemory
 } from './businessActions';

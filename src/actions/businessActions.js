@@ -159,6 +159,20 @@ export function increaseOps() {
     };
 };
 
+export function increaseProcessors() {
+    return { 
+        type: actionTypes.INCREASE_PROCESSORS
+    };
+};
+
+export function increaseProcessorsMemory() {
+    return { 
+        type: actionTypes.INCREASE_PROCESSORS_MEMORY
+    };
+};
+
+
+
 
 
 export const checkAuthTimeout = (expirationTime) => {

@@ -27,7 +27,10 @@ const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 10
+    opsMax: 1000,
+    delayProcessorSpeed: 300,
+    processorsNumber: 1,
+    processorsMemory: 1
 }
 
 const addPaperclip = (state) => {
@@ -188,6 +191,21 @@ const increaseOps = (state) => {
     });
 }
 
+const increaseProcessors = (state) => {
+    return updateObject(state, {
+        processorsNumber: state.processorsNumber + 1,
+        delayProcessorSpeed: state.delayProcessorSpeed - 30
+    });
+}
+
+const increaseProcessorsMemory = (state) => {
+    return updateObject(state, {
+        processorsMemory: state.processorsMemory + 1,
+        opsMax: state.opsMax + 1000
+    });
+}
+
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -239,7 +257,10 @@ const businessReducer = (state = initialState, action) => {
             return trustPlusOne(state, action); 
         case actionTypes.INCREASE_OPS:
             return increaseOps(state, action); 
-       
+        case actionTypes.INCREASE_PROCESSORS:
+            return increaseProcessors(state, action); 
+        case actionTypes.INCREASE_PROCESSORS_MEMORY:
+            return increaseProcessorsMemory(state, action); 
         default: 
             return state;
     }

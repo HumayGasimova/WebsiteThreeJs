@@ -63,7 +63,7 @@ class ComputationalResources extends Component {
             if(this.props.ops < this.props.opsMax){
                 this.props.increaseOps()
             }
-        }, 700);
+        }, this.props.delayProcessorSpeed);
     }
 
     componentWillUnmount = () => {
@@ -89,20 +89,20 @@ class ComputationalResources extends Component {
                     <div className="computationalResources-wrapper1">
                         <Button
                             className="computationalResources-button"
-                            // onClick={this.props.marketingNextLevel}
+                            onClick={this.props.increaseProcessors}
                             text={"Processors"}
                             // disabled={this.props.marketingButtonDisabled}
                         />
-                        <div className="computationalResources-text">1</div>
+                        <div className="computationalResources-text">{this.props.processorsNumber}</div>
                     </div>
                     <div className="computationalResources-wrapper1">
                         <Button
                             className="computationalResources-button"
-                            // onClick={this.props.marketingNextLevel}
+                            onClick={this.props.increaseProcessorsMemory}
                             text={"Memory"}
                             // disabled={this.props.marketingButtonDisabled}
                         />
-                        <div className="computationalResources-text">1</div>
+                        <div className="computationalResources-text">{this.props.processorsMemory}</div>
                     </div>
                 </div>
 
@@ -122,14 +122,17 @@ export default connect(
             trust: state.business.trust,
             clipsToBuyTrust: state.business.clipsToBuyTrust,
             ops: state.business.ops,
-            opsMax: state.business.opsMax
+            opsMax: state.business.opsMax,
+            processorsNumber: state.business.processorsNumber,
+            processorsMemory: state.business.processorsMemory,
+            delayProcessorSpeed: state.business.delayProcessorSpeed
         };
     },
     (dispatch) => {
         return {
             increaseOps: bindActionCreators(Actions.increaseOps, dispatch),
-            // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
-            // marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
+            increaseProcessors: bindActionCreators(Actions.increaseProcessors, dispatch),
+            increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
         };
     }
 )(ComputationalResources);

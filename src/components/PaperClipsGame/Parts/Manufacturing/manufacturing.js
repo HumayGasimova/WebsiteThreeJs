@@ -145,7 +145,7 @@ export default connect(
             startBuyingWire: bindActionCreators(Actions.startBuyingWire, dispatch),
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
-            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch)
+            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
         };
     }
 )(Manufacturing);
