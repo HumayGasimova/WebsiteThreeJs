@@ -15,8 +15,9 @@ function autoPaperclipsStartsEpic(action$) {
             return Observable.of(
                 Actions.makePaperclip(action.priceOfPaperclip, action.delay),
                 Actions.repeatAutoPaperClippers(action.priceOfPaperclip, action.delay, action.delayAutoPaperClippers)
-            )            
-        }) 
+            )        
+        })
+        
 }
 
 export default autoPaperclipsStartsEpic;

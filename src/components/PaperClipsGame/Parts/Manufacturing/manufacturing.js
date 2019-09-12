@@ -106,12 +106,12 @@ class Manufacturing extends Component {
                 <div className="manufacturing-label">Manufacturing</div>
                 <div className="manufacturing-line"/>
                 <div className="manufacturing-section">
-                    <div className="manufacturing-text">Clips per Second: </div>
+                    <div className="manufacturing-text">Clips per Second: {this.props.autoClippersPerSec}</div>
                 </div>
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper1">
                         <Button
-                            onClick={this.autoClipper}
+                            onClick={this.props.startBuyingWire}
                             text={"Wire"}
                             disabled={this.props.wireButtonDisabled}
                         />
