@@ -25,7 +25,9 @@ const initialState = {
     prevTrust: 3000,
     trust: 2,
     clipsToBuyTrust: 3000,
-    delayAutoPaperClippers: 1000
+    delayAutoPaperClippers: 1000,
+    ops: 0,
+    opsMax: 10
 }
 
 const addPaperclip = (state) => {
@@ -180,6 +182,11 @@ const trustPlusOne = (state) => {
     });
 }
 
+const increaseOps = (state) => {
+    return updateObject(state, {
+        ops: state.ops + 1
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -230,6 +237,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleAutoClippersButton(state, action); 
         case actionTypes.TRUST_PLUS_ONE:
             return trustPlusOne(state, action); 
+        case actionTypes.INCREASE_OPS:
+            return increaseOps(state, action); 
        
         default: 
             return state;

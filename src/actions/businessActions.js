@@ -153,6 +153,14 @@ export function repeatAutoPaperClippers(priceOfPaperclip, delay, delay2) {
     };
 };
 
+export function increaseOps() {
+    return { 
+        type: actionTypes.INCREASE_OPS
+    };
+};
+
+
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 

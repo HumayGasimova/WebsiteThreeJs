@@ -21,5 +21,6 @@ export {
     setAutoClipperInitPrice,
     toggleAutoClippersButton,
     trustPlusOne,
-    repeatAutoPaperClippers
+    repeatAutoPaperClippers,
+    increaseOps
 } from './businessActions';

@@ -82,14 +82,16 @@ class Manufacturing extends Component {
     componentDidMount () {
         this.interval = setInterval(()=>{
             this.props.randomWirePrice(this.getRandomNumber())
-        }, this.getRandomDelay())
-        setInterval(()=>{
+        }, this.getRandomDelay());
+
+        this.intervalCheckButton = setInterval(()=>{
             this.props.checkButtons()
-        }, 1000)
+        }, 1000);
     }
 
     componentWillUnmount = () => {
         clearInterval(this.interval)
+        clearInterval(this.intervalCheckButton)
     }
     
     /**

@@ -55,6 +55,23 @@ class ComputationalResources extends Component {
     }
 
     /**
+    * Methods
+    */
+
+    componentDidMount () {
+        this.intervalOperations = setInterval(()=>{
+            if(this.props.ops < this.props.opsMax){
+                this.props.increaseOps()
+            }
+        }, 700);
+    }
+
+    componentWillUnmount = () => {
+        clearInterval(this.interval)
+        clearInterval(this.intervalCheckButton)
+    }
+
+    /**
     * Markup
     */
 
@@ -90,7 +107,7 @@ class ComputationalResources extends Component {
                 </div>
 
                  <div className="computationalResources-section">
-                    <div className="computationalResources-text">Operations: </div>
+                    <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div>
                     <div className="computationalResources-text">Creativity: </div>
                 </div>
             </div>
@@ -104,12 +121,13 @@ export default connect(
             paperClips: state.business.paperClips,
             trust: state.business.trust,
             clipsToBuyTrust: state.business.clipsToBuyTrust,
-   
+            ops: state.business.ops,
+            opsMax: state.business.opsMax
         };
     },
     (dispatch) => {
         return {
-            // lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
+            increaseOps: bindActionCreators(Actions.increaseOps, dispatch),
             // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             // marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
         };
