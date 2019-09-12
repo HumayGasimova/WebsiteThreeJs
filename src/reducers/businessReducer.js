@@ -76,7 +76,7 @@ const updatePublicDemand = (state) => {
 }
 
 const toggleMarketingButton = (state) => {
-    let isDisable = state.funds <= state.marketingCost;
+    let isDisable = state.funds < state.marketingCost;
     return updateObject(state, {
         marketingButtonDisabled: isDisable
     });
@@ -112,7 +112,7 @@ const randomWirePrice = (state, action) => {
 }
 
 const toggleWireButton = (state) => {
-    let isDisable = state.funds <= state.wirePrice;
+    let isDisable = state.funds < state.wirePrice;
     return updateObject(state, {
         wireButtonDisabled: isDisable
     });
@@ -147,9 +147,9 @@ const setAutoClipperInitPrice = (state) => {
 const toggleAutoClippersButton = (state) => {
     let isDisable
     if(state.autoClippersPerSec === 0){
-        isDisable = state.funds <= state.autoClipperInitPrice;
+        isDisable = state.funds < state.autoClipperInitPrice;
     }else{
-        isDisable = state.funds <= state.autoClipperPrice;
+        isDisable = state.funds < state.autoClipperPrice;
     }
     return updateObject(state, {
        autoClippersButtonDisabled: isDisable
@@ -184,6 +184,8 @@ const trustPlusOne = (state) => {
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
+        case actionTypes.CHECK_BUTTONS:
+            return state;
         case actionTypes.MAKE_PAPERCLIP:
             return addPaperclip(state, action);
         case actionTypes.START_SELLING:

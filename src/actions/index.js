@@ -1,4 +1,5 @@
 export {
+    checkButtons,
     makePaperclip,
     sellPaperclips,
     updateFunds,

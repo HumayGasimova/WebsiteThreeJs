@@ -1,5 +1,11 @@
 import * as actionTypes from '../constants/actionTypes';
 
+export function checkButtons() {
+    return { 
+        type: actionTypes.CHECK_BUTTONS
+    };
+};
+
 export function sellPaperclips(priceOfPaperclip, delay) {
     return { 
         type: actionTypes.START_SELLING,

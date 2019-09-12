@@ -79,17 +79,13 @@ class Manufacturing extends Component {
         return Math.floor(Math.random()*20) + 10;
     }
 
-    // autoClipper = () => {
-    //     this.intervalAutoPaperClippers = setInterval(()=>{
-    //         this.props.makePaperclip()
-    //     }, 30000)
-    // }
-
     componentDidMount () {
         this.interval = setInterval(()=>{
             this.props.randomWirePrice(this.getRandomNumber())
         }, this.getRandomDelay())
-
+        setInterval(()=>{
+            this.props.checkButtons()
+        }, 1000)
     }
 
     componentWillUnmount = () => {
@@ -143,6 +139,7 @@ export default connect(
     },
     (dispatch) => {
         return {
+            checkButtons: bindActionCreators(Actions.checkButtons, dispatch),
             startBuyingWire: bindActionCreators(Actions.startBuyingWire, dispatch),
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),

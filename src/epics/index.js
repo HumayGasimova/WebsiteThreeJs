@@ -1,5 +1,7 @@
 import { combineEpics } from 'redux-observable';
 // import fetchWhiskiesEpic from '../epics/exEpic1'
+
+import checkButtonsEpic from './checkButtonsEpic';
 import paperclipsGenerateEpic from './PaperclipsGenerateEpic';
 import updateUnsoldInventoryEpic from './updateUnsoldInventoryEpic';
 import raisePriceEpic from '../epics/raisePriceEpic';
@@ -10,6 +12,7 @@ import repeatAutoPaperClippersEpic from '../epics/repeatAutoPaperClippersEpic';
 import autoPaperClippersAddOneEpic from '../epics/autoPaperClippersAddOneEpic';
 
 export const rootEpic = combineEpics(
+    checkButtonsEpic,
     paperclipsGenerateEpic,
     updateUnsoldInventoryEpic,
     raisePriceEpic,

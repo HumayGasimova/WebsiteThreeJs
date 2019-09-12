@@ -1,3 +1,5 @@
+export const CHECK_BUTTONS = 'CHECK_BUTTONS';
+
 export const MAKE_PAPERCLIP = 'MAKE_PAPERCLIP';
 
 export const START_SELLING = 'START_SELLING';
