@@ -19,6 +19,7 @@ import {
 */
 
 import ComputationalResources from '../../Parts/ComputationalResources/computationalResources';
+import Projects from '../../Parts/Projects/projects';
 
 /**
 * Styles
@@ -54,8 +55,10 @@ class Section2 extends Component {
         // if(this.props.paperClips >= 2000){
             if(this.props.paperClips){
             return(
-                <ComputationalResources/>
-                // {/* <Projects/> */}
+                <div>
+                    <ComputationalResources/>
+                    <Projects/> 
+                </div>
             )
         }
     }
