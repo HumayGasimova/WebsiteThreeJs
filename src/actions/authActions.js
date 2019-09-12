@@ -79,8 +79,6 @@ export function authCheckState() {
   }
 };
 
-
-
 export function auth(fullName, email, password, isSignup) {
     return dispatch => {
         dispatch(authStart());
