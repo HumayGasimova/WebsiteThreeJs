@@ -64,11 +64,17 @@ class ComputationalResources extends Component {
                 this.props.increaseOps()
             }
         }, this.props.delayProcessorSpeed);
+        this.intervalCreativity = setInterval(()=>{
+            if(this.props.ops === this.props.opsMax){
+                this.props.increaseCreativity()
+            }
+        }, 300);
+        console.log(this.props.delayProcessorSpeed)
     }
 
     componentWillUnmount = () => {
-        clearInterval(this.interval)
-        clearInterval(this.intervalCheckButton)
+        clearInterval(this.intervalOperations)
+        clearInterval(this.intervalCreativity)
     }
 
     /**
@@ -108,7 +114,7 @@ class ComputationalResources extends Component {
 
                  <div className="computationalResources-section">
                     <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div>
-                    <div className="computationalResources-text">Creativity: </div>
+                    <div className="computationalResources-text">Creativity: {this.props.creativity}</div>
                 </div>
             </div>
         );
@@ -125,7 +131,8 @@ export default connect(
             opsMax: state.business.opsMax,
             processorsNumber: state.business.processorsNumber,
             processorsMemory: state.business.processorsMemory,
-            delayProcessorSpeed: state.business.delayProcessorSpeed
+            delayProcessorSpeed: state.business.delayProcessorSpeed,
+            creativity: state.business.creativity
         };
     },
     (dispatch) => {
@@ -133,6 +140,7 @@ export default connect(
             increaseOps: bindActionCreators(Actions.increaseOps, dispatch),
             increaseProcessors: bindActionCreators(Actions.increaseProcessors, dispatch),
             increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
+            increaseCreativity: bindActionCreators(Actions. increaseCreativity, dispatch),
         };
     }
 )(ComputationalResources);

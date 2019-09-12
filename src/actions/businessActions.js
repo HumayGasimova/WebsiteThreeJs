@@ -171,6 +171,12 @@ export function increaseProcessorsMemory() {
     };
 };
 
+export function increaseCreativity() {
+    return { 
+        type: actionTypes.INCREASE_CREATIVITY
+    };
+};
+
 
 
 

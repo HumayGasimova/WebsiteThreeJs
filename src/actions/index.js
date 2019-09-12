@@ -24,5 +24,6 @@ export {
     repeatAutoPaperClippers,
     increaseOps,
     increaseProcessors,
-    increaseProcessorsMemory
+    increaseProcessorsMemory,
+    increaseCreativity
 } from './businessActions';
