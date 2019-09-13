@@ -28,7 +28,6 @@ const initialState = {
     delayAutoPaperClippers: 1000,
     ops: 0,
     opsMax: 100,
-    delayProcessorSpeed: 300,
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0
@@ -194,8 +193,7 @@ const increaseOps = (state) => {
 
 const increaseProcessors = (state) => {
     return updateObject(state, {
-        processorsNumber: state.processorsNumber + 1,
-        delayProcessorSpeed: state.delayProcessorSpeed - 30
+        processorsNumber: state.processorsNumber + 1
     });
 }
 

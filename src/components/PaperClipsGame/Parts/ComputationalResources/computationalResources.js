@@ -52,6 +52,9 @@ class ComputationalResources extends Component {
 
     constructor (props){
         super(props);
+        this.state = {
+            delayOperations: 1000
+        }
     }
 
     /**
@@ -63,13 +66,32 @@ class ComputationalResources extends Component {
             if(this.props.ops < this.props.opsMax){
                 this.props.increaseOps()
             }
-        }, this.props.delayProcessorSpeed);
+        }, this.state.delayOperations);
+
         this.intervalCreativity = setInterval(()=>{
             if(this.props.ops === this.props.opsMax){
                 this.props.increaseCreativity()
             }
         }, 300);
         console.log(this.props.delayProcessorSpeed)
+    }
+
+    increaseProcessors = () => { 
+        this.props.increaseProcessors();
+        this.setState({
+            delayOperations: this.state.delayOperations - 100
+        })
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.delayOperations !== this.state.delayOperations) {
+            clearInterval(this.intervalOperations);
+            this.intervalOperations = setInterval(()=>{
+                if(this.props.ops < this.props.opsMax){
+                    this.props.increaseOps()
+                }
+            }, this.state.delayOperations);
+        }
     }
 
     componentWillUnmount = () => {
@@ -95,7 +117,7 @@ class ComputationalResources extends Component {
                     <div className="computationalResources-wrapper1">
                         <Button
                             className="computationalResources-button"
-                            onClick={this.props.increaseProcessors}
+                            onClick={this.increaseProcessors}
                             text={"Processors"}
                             // disabled={this.props.marketingButtonDisabled}
                         />
