@@ -61,7 +61,7 @@ class Section2 extends Component {
                 </div>
             )
         }
-    }
+    } 
 
     /**
     * Markup
