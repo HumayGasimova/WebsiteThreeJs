@@ -30,7 +30,8 @@ const initialState = {
     opsMax: 100,
     processorsNumber: 1,
     processorsMemory: 1,
-    creativity: 0
+    creativity: 0,
+    cards: ['','']
 }
 
 const addPaperclip = (state) => {
