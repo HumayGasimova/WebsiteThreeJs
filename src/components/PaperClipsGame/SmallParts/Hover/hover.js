@@ -18,13 +18,11 @@ import {
 * Components
 */
 
-import Card from '../../SmallParts/Card/card';
-
 /**
 * Styles
 */
 
-import './projects.scss';
+import './hover.scss';
 
 /**
 * Actions
@@ -33,10 +31,10 @@ import './projects.scss';
 import * as Actions from '../../../../actions';
 
 /**
-* Projects component definition and export
+* Card component definition and export
 */
 
-class Projects extends Component {
+class Hover extends Component {
 
     /**
     * Constructor
@@ -46,30 +44,9 @@ class Projects extends Component {
         super(props);
     }
 
-    handleOnClick = (i) => {
-
-    }
-
     /**
     * Methods
     */
-
-    renderCards = () => {
-        return(
-            <div>
-                {this.props.cards.map((el,i)=>{
-                    return(
-                        <Card
-                            key={i}
-                            onClick={() => {this.handleOnClick(i)}}
-                        >
-                          
-                        </Card>
-                    )
-                })}
-            </div>
-        )
-    }
     
     /**
     * Markup
@@ -77,10 +54,8 @@ class Projects extends Component {
 
     render(){
         return(
-            <div className="projects">
-                <div className="projects-label">Projects</div>
-                <div className="projects-line"/>
-                {this.renderCards()}
+            <div className="hoverComponent">
+                {this.props.children}
             </div>
         );
     }
@@ -89,7 +64,7 @@ class Projects extends Component {
 export default connect(
     (state) => {
         return {
-            cards: state.business.cards,
+            // cards: state.business.cards,
             // funds: state.business.funds,
             // unsoldInventory: state.business.unsoldInventory,
             // paperclipPrice: state.business.paperclipPrice,
@@ -102,4 +77,4 @@ export default connect(
             // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
         };
     }
-)(Projects);
+)(Hover);

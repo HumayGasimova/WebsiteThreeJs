@@ -19,6 +19,7 @@ import {
 */
 
 import Button from '../../../../library/Button/button';
+import Hover from '../../SmallParts/Hover/hover';
 
 /**
 * Styles
@@ -44,6 +45,9 @@ class General extends Component {
 
     constructor (props){
         super(props);
+        this.state = {
+            isHovering: false
+        }
     }
 
     /**
@@ -55,6 +59,29 @@ class General extends Component {
         this.props.sellPaperclips(this.props.paperclipPrice, this.props.delay)
      
     }
+
+    handleMouseEnter = () => {
+        this.setState({
+            isHovering: true
+        })
+    }
+
+    handleMouseLeave = () => {
+        this.setState({
+            isHovering: false
+        })
+    }
+
+    renderHoverComponent = () => {
+        if(this.state.isHovering){
+            return(
+                <Hover>
+                    {this.props.paperClips}
+                </Hover>
+            )
+        }
+       
+    }
     
     /**
     * Markup
@@ -63,7 +90,13 @@ class General extends Component {
     render(){
         return(
             <div className="general">
-               <div className="general-text"> Paperclips : {this.props.paperClips} </div>
+               <div 
+                    onMouseEnter={this.handleMouseEnter} 
+                    onMouseLeave={this.handleMouseLeave} 
+                    className="general-text"> 
+                    Paperclips : {this.props.paperClips} 
+                </div>
+                {this.renderHoverComponent()}
                 <Button 
                     onClick={this.makePaperclip}
                     text={"Make Paperclip"}
