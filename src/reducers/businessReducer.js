@@ -7,7 +7,7 @@ const initialState = {
     paperClips: 0,
     funds: 0,
     paperclipPrice: 0.50,
-    unsoldInventory: [],
+    unsoldInventory: 0,
     maxPublicDemand: 800,
     publicDemand: 16,
     marketingLevel: 1,
@@ -34,12 +34,12 @@ const initialState = {
 }
 
 const addPaperclip = (state) => {
-    let updatedInventory = state.unsoldInventory;
-    updatedInventory.push(' ');
+    // let updatedInventory = state.unsoldInventory;
+    // updatedInventory.push(' ');
 
     return updateObject(state, {
        paperClips: state.paperClips + 1,
-       unsoldInventory: updatedInventory,
+       unsoldInventory: state.unsoldInventory + 1,
        wire: state.wire - 1
     });
 }
@@ -52,10 +52,10 @@ const updateFunds = (state, action) => {
 }
 
 const updateUnsoldInventory = (state, action) => {
-   let updatedInventory = state.unsoldInventory;
-    updatedInventory.splice(-1,1)
+//    let updatedInventory = state.unsoldInventory;
+    // updatedInventory.splice(-1,1)
     return updateObject(state, {
-        unsoldInventory: updatedInventory
+        unsoldInventory: state.unsoldInventory - 1
     });
 }
 
