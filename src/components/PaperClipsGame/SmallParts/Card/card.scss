@@ -1,7 +1,25 @@
 .card {
     border: 1px solid black;
-    height: 65px;
+    height: 60px;
     width: 278px;
-    background-color: rgb(180, 177, 177);
+    background-color: rgb(185, 185, 185);
     margin: 7px 7px 7px 0;
+    padding: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-invalid {
+    height: 60px;
+    width: 278px;
+    background-color: rgb(185, 185, 185);
+    margin: 7px 7px 7px 0;
+    padding: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.6;
 }

@@ -62,8 +62,11 @@ class Projects extends Component {
                         <Card
                             key={i}
                             onClick={() => {this.handleOnClick(i)}}
+                            valid={el.valid}
                         >
-                          
+                            <div>{el.text1}</div>
+                            <div>{el.text2}</div>
+                            {el.text3 ? <div>{el.text3}</div> : null}
                         </Card>
                     )
                 })}

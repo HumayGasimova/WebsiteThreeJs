@@ -31,7 +31,33 @@ const initialState = {
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
-    cards: ['','']
+    cards: [
+        {
+            text1: "Improved AutoClippers (750 ops)",
+            text2 : "Increases AutoClipper performance 25%",
+            price: 750,
+            action: 25,
+            next: '',
+            valid: false
+        },
+        {
+            text1: "Improved Wire Extrusion (1,750 ops)",
+            text2 : "50% more wire supply from every spool",
+            price: 1750,
+            action: 50,
+            next: '',
+            valid: false
+        },
+        {
+            text1: "RecTracker (500 ops)",
+            text2 : "Automatically calculates average revenue",
+            text3 : "per second",
+            price: 1750,
+            action: 50,
+            next: '',
+            valid: false
+        }
+    ]
 }
 
 const addPaperclip = (state) => {

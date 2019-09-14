@@ -54,7 +54,7 @@ class Card extends Component {
 
     render(){
         return(
-            <div className="card">
+            <div className={this.props.valid ? "card" : "card-invalid"}>
                 {this.props.children}
             </div>
         );
