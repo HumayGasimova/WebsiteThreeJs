@@ -54,7 +54,9 @@ class Projects extends Component {
             card1:  {
                 text1: "Improved AutoClippers (750 ops)",
                 text2 : "Increases AutoClipper performance 25%",
-                price: 10,
+                price: {
+                    ops: 10
+                },
                 action: 25,
                 next: 'AutoClippers25',
                 valid: false,
@@ -64,7 +66,9 @@ class Projects extends Component {
             card2: {
                 text1: "Improved Wire Extrusion (1,750 ops)",
                 text2 : "50% more wire supply from every spool",
-                price: 5,
+                price: {
+                    ops: 5
+                },
                 action: 50,
                 next: '',
                 valid: false,
@@ -75,7 +79,9 @@ class Projects extends Component {
                 text1: "RecTracker (500 ops)",
                 text2 : "Automatically calculates average revenue",
                 text3 : "per second",
-                price: 3,
+                price: {
+                    ops: 3
+                },
                 action: 50,
                 next: 'showRevTracker',
                 valid: false,
@@ -89,11 +95,11 @@ class Projects extends Component {
         this.props.deleteCard(id);
         switch(next){
             case 'showRevTracker':
-                this.props.showRevTracker(price);
+                this.props.showRevTracker(price.ops);
                 break;
             case 'AutoClippers25':
                 this.props.addProject(projects.AutoClippers50);
-                this.props.removePriceOfProjectOps(price)
+                this.props.removePriceOfProjectOps(price.ops)
                 break;
         }
 
@@ -115,7 +121,7 @@ class Projects extends Component {
                                 key={el.id}
                                 onClick={() => this.handleOnClick(el.id, el.next, el.price)}
                                 valid={el.valid}
-                                price={el.price}
+                                price={el.price.ops}
                                 id={el.id}
                                 action={el.action}
                                 i={i}
