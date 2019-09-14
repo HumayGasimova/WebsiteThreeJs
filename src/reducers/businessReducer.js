@@ -208,7 +208,7 @@ const increaseProcessorsMemory = (state) => {
 
 const increaseCreativity = (state) => {
     return updateObject(state, {
-      creativity: state.creativity + 1
+        creativity: state.creativity + 1
     });
 }
 
@@ -216,7 +216,7 @@ const initProjects = (state, action) => {
     let updatedCards = state.cards;
     updatedCards.push(action.card1, action.card2, action.card3);
     return updateObject(state, {
-      cards: updatedCards
+        cards: updatedCards
     });
 }
 
@@ -229,7 +229,7 @@ const checkCardValidity = (state, action) => {
     // console.log("before", state.cards)
     // console.log("after",updatedCards)
     return updateObject(state, {
-      cards: updatedCards
+        cards: updatedCards
     });
 }
 
@@ -238,14 +238,14 @@ const deleteCard = (state, action) => {
     let updatedCards = oldCards.filter(x => x.id !== action.cardId);
 
     return updateObject(state, {
-      cards: updatedCards
+        cards: updatedCards
     });
 }
 
 const showRevTracker = (state, action) => {
     return updateObject(state, {
-      revTracker: true,
-      ops: state.ops - action.price
+        revTracker: true,
+        ops: state.ops - action.price
     });
 }
 
@@ -254,7 +254,7 @@ const addProject = (state, action) => {
     updatedCards.push(action.project);
 
     return updateObject(state, {
-      cards: updatedCards
+        cards: updatedCards
     });
 }
 
@@ -263,7 +263,14 @@ const removePriceOfProjectOps = (state, action) => {
     updatedCards.push(action.project);
 
     return updateObject(state, {
-      ops: state.ops - action.ops
+        ops: state.ops - action.ops
+    });
+}
+
+const improveAutoClippers = (state, action) => {
+    let updatedAutoPaperClippers = state.delayAutoPaperClippers - (state.delayAutoPaperClippers * action.val / 100);
+    return updateObject(state, {
+       delayAutoPaperClippers: updatedAutoPaperClippers
     });
 }
 
@@ -337,7 +344,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.ADD_PROJECT:
             return addProject(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS:
-                return removePriceOfProjectOps(state, action);  
+            return removePriceOfProjectOps(state, action);  
+        case actionTypes.IMPROVE_AUTO_PAPER_CLIPPER:
+            return improveAutoClippers(state, action);  
         default: 
             return state;
     }

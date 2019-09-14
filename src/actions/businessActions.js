@@ -223,6 +223,12 @@ export function removePriceOfProjectOps(price) {
     };
 };
 
+export function improveAutoClippers(val) {
+    return { 
+        type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
+        val: val
+    };
+};
 
 
 

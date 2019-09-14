@@ -91,7 +91,7 @@ class Projects extends Component {
         }
     }
 
-    handleOnClick = (id, next, price) => {
+    handleOnClick = (id, next, price, action) => {
         this.props.deleteCard(id);
         switch(next){
             case 'showRevTracker':
@@ -99,11 +99,13 @@ class Projects extends Component {
                 break;
             case 'AutoClippers25':
                 this.props.addProject(projects.AutoClippers50);
-                this.props.removePriceOfProjectOps(price.ops)
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveAutoClippers(action)
                 break;
             case 'autoClippers50':
-                    this.props.addProject(projects.OptimizedAutoClippers75);
-                    this.props.removePriceOfProjectOps(price.ops)
+                this.props.addProject(projects.OptimizedAutoClippers75);
+                this.props.removePriceOfProjectOps(price.ops)
+                this.props.improveAutoClippers(action)
                 break;
             // case 'autoClippers75':
             //     this.props.addProject(projects.AutoClippers50);
@@ -127,7 +129,7 @@ class Projects extends Component {
                         return(
                             <Card
                                 key={el.id}
-                                onClick={() => this.handleOnClick(el.id, el.next, el.price)}
+                                onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action)}
                                 valid={el.valid}
                                 price={el.price.ops}
                                 id={el.id}
@@ -183,6 +185,7 @@ export default connect(
             showRevTracker: bindActionCreators(Actions.showRevTracker, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
             removePriceOfProjectOps: bindActionCreators(Actions.removePriceOfProjectOps, dispatch),
+            improveAutoClippers: bindActionCreators(Actions.improveAutoClippers, dispatch),
         };
     }
 )(Projects);

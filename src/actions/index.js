@@ -31,5 +31,6 @@ export {
     deleteCard,
     showRevTracker,
     addProject,
-    removePriceOfProjectOps
+    removePriceOfProjectOps,
+    improveAutoClippers
 } from './businessActions';
