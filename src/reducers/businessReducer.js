@@ -244,7 +244,8 @@ const deleteCard = (state, action) => {
 
 const showRevTracker = (state, action) => {
     return updateObject(state, {
-      revTracker: true
+      revTracker: true,
+      ops: state.ops - action.price
     });
 }
 

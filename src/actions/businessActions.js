@@ -202,10 +202,10 @@ export function deleteCard(id) {
     };
 };
 
-export function showRevTracker(id) {
+export function showRevTracker(price) {
     return { 
         type: actionTypes.SHOW_REV_TRACKER,
-        cardId: id
+        price: price
     };
 };
 

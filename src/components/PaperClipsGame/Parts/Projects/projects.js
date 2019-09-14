@@ -71,22 +71,24 @@ class Projects extends Component {
                 text3 : "per second",
                 price: 3,
                 action: 50,
-                next: '',
+                next: 'showRevTracker',
                 valid: false,
                 id: "card3",
-                terminal: ""
+                terminal: "RevTracker online"
             }
         }
     }
 
-    handleOnClick = (id, next) => {
+    handleOnClick = (id, next, price) => {
         this.props.deleteCard(id);
-
         switch(next){
-            case "":
-                this.props.showRevTracker()
+            case 'showRevTracker':
+                this.props.showRevTracker(price);
+               
         }
 
+
+        
     }
 
     /**
@@ -101,7 +103,7 @@ class Projects extends Component {
                         return(
                             <Card
                                 key={el.id}
-                                onClick={() => this.handleOnClick(el.id, el.next)}
+                                onClick={() => this.handleOnClick(el.id, el.next, el.price)}
                                 valid={el.valid}
                                 price={el.price}
                                 id={el.id}
