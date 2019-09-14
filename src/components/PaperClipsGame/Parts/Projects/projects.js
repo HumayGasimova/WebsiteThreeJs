@@ -55,7 +55,7 @@ class Projects extends Component {
                 text1: "Improved AutoClippers (750 ops)",
                 text2 : "Increases AutoClipper performance 25%",
                 price: {
-                    ops: 10
+                    ops: 5
                 },
                 action: 25,
                 next: 'AutoClippers25',
@@ -80,9 +80,9 @@ class Projects extends Component {
                 text2 : "Automatically calculates average revenue",
                 text3 : "per second",
                 price: {
-                    ops: 3
+                    ops: 5
                 },
-                action: 50,
+                action: 0,
                 next: 'showRevTracker',
                 valid: false,
                 id: "card3",
@@ -101,6 +101,14 @@ class Projects extends Component {
                 this.props.addProject(projects.AutoClippers50);
                 this.props.removePriceOfProjectOps(price.ops)
                 break;
+            case 'autoClippers50':
+                    this.props.addProject(projects.OptimizedAutoClippers75);
+                    this.props.removePriceOfProjectOps(price.ops)
+                break;
+            // case 'autoClippers75':
+            //     this.props.addProject(projects.AutoClippers50);
+            //     this.props.removePriceOfProjectOps(price.ops)
+            //     break;
         }
 
 
