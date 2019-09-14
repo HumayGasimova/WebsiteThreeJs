@@ -68,7 +68,7 @@ class Card extends Component {
 
     render(){
         return(
-            <div className={this.props.valid ? "card" : "card-invalid"}>
+            <div onClick={this.props.onClick} className={this.props.valid ? "card" : "card-invalid"}>
                 {this.props.children}
             </div>
         );

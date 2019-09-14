@@ -225,22 +225,17 @@ const checkCardValidity = (state, action) => {
     updatedCard.valid = action.valid;
     updatedCards[action.i] = updatedCard;
 
-    console.log("before", state.cards)
-    console.log("after",updatedCards)
+    // console.log("before", state.cards)
+    // console.log("after",updatedCards)
     return updateObject(state, {
       cards: updatedCards
     });
 }
 
-const addProject = (state, action) => {
-    let updatedCards = [...state.cards];
-
-//     let a = [1, 2, 3];
-// let copy1 = [...a];
-// let copy2 = a.slice();
-// let copy3 = a.concat();
-
-    updatedCards.push('');
+const deleteCard = (state, action) => {
+    let oldCards = [...state.cards];
+    let updatedCards = oldCards.filter(x => x.id !== action.cardId);
+    
     return updateObject(state, {
       cards: updatedCards
     });
@@ -308,12 +303,25 @@ const businessReducer = (state = initialState, action) => {
             return initProjects(state, action); 
         case actionTypes.CHECK_CARD_VALIDITY:
             return checkCardValidity(state, action); 
-
-        case actionTypes.ADD_PROJECT:
-            return addProject(state, action); 
+        case actionTypes.DELETE_CARD:
+            return deleteCard(state, action); 
         default: 
             return state;
     }
 }
 
 export default businessReducer;
+
+// const addProject = (state, action) => {
+//     let updatedCards = [...state.cards];
+
+// //     let a = [1, 2, 3];
+// // let copy1 = [...a];
+// // let copy2 = a.slice();
+// // let copy3 = a.concat();
+
+//     updatedCards.push('');
+//     return updateObject(state, {
+//       cards: updatedCards
+//     });
+// }

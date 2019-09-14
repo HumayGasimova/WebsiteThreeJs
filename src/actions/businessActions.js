@@ -195,10 +195,10 @@ export function checkCardValidity(id, val, i) {
     };
 };
 
-export function addProject() {
+export function deleteCard(id) {
     return { 
-        type: actionTypes.ADD_PROJECT,
-     
+        type: actionTypes.DELETE_CARD,
+        cardId: id
     };
 };
 

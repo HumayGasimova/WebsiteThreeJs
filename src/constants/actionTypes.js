@@ -39,6 +39,7 @@ export const INIT_PROJECTS = 'INIT_PROJECTS';
 export const CHECK_CARD_VALIDITY = 'CHECK_CARD_VALIDITY';
 
 export const ADD_PROJECT = 'ADD_PROJECT';
+export const DELETE_CARD = 'DELETE_CARD';
 
 
 
