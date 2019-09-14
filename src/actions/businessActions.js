@@ -209,6 +209,23 @@ export function showRevTracker(price) {
     };
 };
 
+export function addProject(obj) {
+    return { 
+        type: actionTypes.ADD_PROJECT,
+        project: obj
+    };
+};
+
+export function removePriceOfProjectOps(price) {
+    return { 
+        type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS,
+        ops: price
+    };
+};
+
+
+
+
 
 
 

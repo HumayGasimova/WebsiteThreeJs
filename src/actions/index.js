@@ -29,5 +29,7 @@ export {
     initProjects,
     checkCardValidity,
     deleteCard,
-    showRevTracker
+    showRevTracker,
+    addProject,
+    removePriceOfProjectOps
 } from './businessActions';

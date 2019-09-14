@@ -249,6 +249,23 @@ const showRevTracker = (state, action) => {
     });
 }
 
+const addProject = (state, action) => {
+    let updatedCards = [...state.cards];
+    updatedCards.push(action.project);
+
+    return updateObject(state, {
+      cards: updatedCards
+    });
+}
+
+const removePriceOfProjectOps = (state, action) => {
+    let updatedCards = [...state.cards];
+    updatedCards.push(action.project);
+
+    return updateObject(state, {
+      ops: state.ops - action.ops
+    });
+}
 
 
 
@@ -317,6 +334,10 @@ const businessReducer = (state = initialState, action) => {
             return deleteCard(state, action); 
         case actionTypes.SHOW_REV_TRACKER:
             return showRevTracker(state, action); 
+        case actionTypes.ADD_PROJECT:
+            return addProject(state, action);
+        case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS:
+                return removePriceOfProjectOps(state, action);  
         default: 
             return state;
     }

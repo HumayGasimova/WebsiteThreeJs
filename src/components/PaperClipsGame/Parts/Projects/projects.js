@@ -33,6 +33,12 @@ import './projects.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Const
+*/
+
+import * as projects from '../../../../constants/projects';
+
+/**
 * Projects component definition and export
 */
 
@@ -50,10 +56,10 @@ class Projects extends Component {
                 text2 : "Increases AutoClipper performance 25%",
                 price: 10,
                 action: 25,
-                next: '',
+                next: 'AutoClippers25',
                 valid: false,
                 id: "card1",
-                terminal: ""
+                terminal: "AutoClippper performance boosted by 25%"
             },
             card2: {
                 text1: "Improved Wire Extrusion (1,750 ops)",
@@ -84,7 +90,11 @@ class Projects extends Component {
         switch(next){
             case 'showRevTracker':
                 this.props.showRevTracker(price);
-               
+                break;
+            case 'AutoClippers25':
+                this.props.addProject(projects.AutoClippers50);
+                this.props.removePriceOfProjectOps(price)
+                break;
         }
 
 
@@ -157,6 +167,8 @@ export default connect(
             initProjects: bindActionCreators(Actions.initProjects, dispatch),
             deleteCard: bindActionCreators(Actions.deleteCard, dispatch),
             showRevTracker: bindActionCreators(Actions.showRevTracker, dispatch),
+            addProject: bindActionCreators(Actions.addProject, dispatch),
+            removePriceOfProjectOps: bindActionCreators(Actions.removePriceOfProjectOps, dispatch),
         };
     }
 )(Projects);
