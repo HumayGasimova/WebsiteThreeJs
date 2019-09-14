@@ -40,6 +40,7 @@ export const CHECK_CARD_VALIDITY = 'CHECK_CARD_VALIDITY';
 
 export const ADD_PROJECT = 'ADD_PROJECT';
 export const DELETE_CARD = 'DELETE_CARD';
+export const SHOW_REV_TRACKER = 'SHOW_REV_TRACKER'
 
 
 

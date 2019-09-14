@@ -79,8 +79,14 @@ class Projects extends Component {
         }
     }
 
-    handleOnClick = (id) => {
-        this.props.deleteCard(id)
+    handleOnClick = (id, next) => {
+        this.props.deleteCard(id);
+
+        switch(next){
+            case "":
+                this.props.showRevTracker()
+        }
+
     }
 
     /**
@@ -95,7 +101,7 @@ class Projects extends Component {
                         return(
                             <Card
                                 key={el.id}
-                                onClick={() => this.handleOnClick(el.id)}
+                                onClick={() => this.handleOnClick(el.id, el.next)}
                                 valid={el.valid}
                                 price={el.price}
                                 id={el.id}
@@ -148,6 +154,7 @@ export default connect(
         return {
             initProjects: bindActionCreators(Actions.initProjects, dispatch),
             deleteCard: bindActionCreators(Actions.deleteCard, dispatch),
+            showRevTracker: bindActionCreators(Actions.showRevTracker, dispatch),
         };
     }
 )(Projects);

@@ -202,6 +202,12 @@ export function deleteCard(id) {
     };
 };
 
+export function showRevTracker(id) {
+    return { 
+        type: actionTypes.SHOW_REV_TRACKER,
+        cardId: id
+    };
+};
 
 
 

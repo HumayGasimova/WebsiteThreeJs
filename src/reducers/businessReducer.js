@@ -31,7 +31,8 @@ const initialState = {
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
-    cards: []
+    cards: [],
+    revTracker: false
 }
 
 const addPaperclip = (state) => {
@@ -235,11 +236,19 @@ const checkCardValidity = (state, action) => {
 const deleteCard = (state, action) => {
     let oldCards = [...state.cards];
     let updatedCards = oldCards.filter(x => x.id !== action.cardId);
-    
+
     return updateObject(state, {
       cards: updatedCards
     });
 }
+
+const showRevTracker = (state, action) => {
+    return updateObject(state, {
+      revTracker: true
+    });
+}
+
+
 
 
 
@@ -305,6 +314,8 @@ const businessReducer = (state = initialState, action) => {
             return checkCardValidity(state, action); 
         case actionTypes.DELETE_CARD:
             return deleteCard(state, action); 
+        case actionTypes.SHOW_REV_TRACKER:
+            return showRevTracker(state, action); 
         default: 
             return state;
     }

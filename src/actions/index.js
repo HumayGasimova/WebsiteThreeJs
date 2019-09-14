@@ -28,5 +28,6 @@ export {
     increaseCreativity,
     initProjects,
     checkCardValidity,
-    deleteCard
+    deleteCard,
+    showRevTracker
 } from './businessActions';

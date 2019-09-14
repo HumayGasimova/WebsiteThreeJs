@@ -45,6 +45,21 @@ class Business extends Component {
     constructor (props){
         super(props);
     }
+
+    /**
+    * Methods
+    */
+
+    renderRevTracker = () => {
+        if(this.props.revTracker){
+            return(
+                <div>
+                    <div className="business-text">Avg. Rev. per sec: $ 0.00</div>
+                    <div className="business-text">Avg. Clips Sold per sec: $ </div>
+                </div>
+            )
+        }
+    }
     
     /**
     * Markup
@@ -57,6 +72,7 @@ class Business extends Component {
                 <div className="business-line"/>
                 <div className="business-section">
                     <div className="business-text">Available Funds: $ {this.props.funds}</div>
+                    {this.renderRevTracker()}
                     <div className="business-text">Unsold Inventory: {this.props.unsoldInventory}</div>
                     <div className="business-wrapper1">
                         <Button
@@ -97,7 +113,8 @@ export default connect(
             publicDemand: state.business.publicDemand,
             marketingLevel: state.business.marketingLevel,
             marketingCost: state.business.marketingCost,
-            marketingButtonDisabled: state.business.marketingButtonDisabled
+            marketingButtonDisabled: state.business.marketingButtonDisabled,
+            revTracker: state.business.revTracker
         };
     },
     (dispatch) => {
