@@ -47,6 +47,20 @@ class Card extends Component {
     /**
     * Methods
     */
+
+    componentDidMount () {
+        this.intervalCheckCardValidity = setInterval(()=>{
+            if(this.props.ops >= this.props.price){
+                this.props.checkCardValidity(this.props.id, true, this.props.i)
+            }else{
+                this.props.checkCardValidity(this.props.id, false, this.props.i)
+            }
+        }, 1000);
+    }
+
+    componentWillUnmount = () => {
+        clearInterval(this.intervalCheckCardValidity)
+    }
     
     /**
     * Markup
@@ -64,7 +78,7 @@ class Card extends Component {
 export default connect(
     (state) => {
         return {
-            // cards: state.business.cards,
+            ops: state.business.ops,
             // funds: state.business.funds,
             // unsoldInventory: state.business.unsoldInventory,
             // paperclipPrice: state.business.paperclipPrice,
@@ -73,7 +87,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
+            checkCardValidity: bindActionCreators(Actions.checkCardValidity, dispatch),
             // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
         };
     }

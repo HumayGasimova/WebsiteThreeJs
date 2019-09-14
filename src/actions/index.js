@@ -25,5 +25,8 @@ export {
     increaseOps,
     increaseProcessors,
     increaseProcessorsMemory,
-    increaseCreativity
+    increaseCreativity,
+    initProjects,
+    checkCardValidity,
+    addProject
 } from './businessActions';

@@ -27,37 +27,11 @@ const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 100,
+    opsMax: 1000,
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
-    cards: [
-        {
-            text1: "Improved AutoClippers (750 ops)",
-            text2 : "Increases AutoClipper performance 25%",
-            price: 750,
-            action: 25,
-            next: '',
-            valid: false
-        },
-        {
-            text1: "Improved Wire Extrusion (1,750 ops)",
-            text2 : "50% more wire supply from every spool",
-            price: 1750,
-            action: 50,
-            next: '',
-            valid: false
-        },
-        {
-            text1: "RecTracker (500 ops)",
-            text2 : "Automatically calculates average revenue",
-            text3 : "per second",
-            price: 1750,
-            action: 50,
-            next: '',
-            valid: false
-        }
-    ]
+    cards: []
 }
 
 const addPaperclip = (state) => {
@@ -237,6 +211,41 @@ const increaseCreativity = (state) => {
     });
 }
 
+const initProjects = (state, action) => {
+    let updatedCards = state.cards;
+    updatedCards.push(action.card1, action.card2, action.card3);
+    return updateObject(state, {
+      cards: updatedCards
+    });
+}
+
+const checkCardValidity = (state, action) => {
+    let updatedCards = [...state.cards];
+    let updatedCard = updatedCards.find(card => card.id === action.cardId);
+    updatedCard.valid = action.valid;
+    updatedCards[action.i] = updatedCard;
+
+    console.log("before", state.cards)
+    console.log("after",updatedCards)
+    return updateObject(state, {
+      cards: updatedCards
+    });
+}
+
+const addProject = (state, action) => {
+    let updatedCards = [...state.cards];
+
+//     let a = [1, 2, 3];
+// let copy1 = [...a];
+// let copy2 = a.slice();
+// let copy3 = a.concat();
+
+    updatedCards.push('');
+    return updateObject(state, {
+      cards: updatedCards
+    });
+}
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -295,6 +304,13 @@ const businessReducer = (state = initialState, action) => {
             return increaseProcessorsMemory(state, action); 
         case actionTypes.INCREASE_CREATIVITY:
             return increaseCreativity(state, action); 
+        case actionTypes.INIT_PROJECTS:
+            return initProjects(state, action); 
+        case actionTypes.CHECK_CARD_VALIDITY:
+            return checkCardValidity(state, action); 
+
+        case actionTypes.ADD_PROJECT:
+            return addProject(state, action); 
         default: 
             return state;
     }

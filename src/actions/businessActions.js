@@ -177,6 +177,31 @@ export function increaseCreativity() {
     };
 };
 
+export function initProjects(x, y, z) {
+    return { 
+        type: actionTypes.INIT_PROJECTS,
+        card1: x,
+        card2: y,
+        card3: z
+    };
+};
+
+export function checkCardValidity(id, val, i) {
+    return { 
+        type: actionTypes.CHECK_CARD_VALIDITY,
+        cardId: id,
+        valid: val,
+        i: i
+    };
+};
+
+export function addProject() {
+    return { 
+        type: actionTypes.ADD_PROJECT,
+     
+    };
+};
+
 
 
 
