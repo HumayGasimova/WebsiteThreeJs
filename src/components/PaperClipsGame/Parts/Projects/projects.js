@@ -36,7 +36,7 @@ import * as Actions from '../../../../actions';
 * Const
 */
 
-import * as projects from '../../../../constants/projects';
+import * as projectsToAdd from '../../../../constants/projectsToAdd';
 
 /**
 * Projects component definition and export
@@ -98,14 +98,14 @@ class Projects extends Component {
                 this.props.showRevTracker(price.ops);
                 break;
             case 'AutoClippers25':
-                this.props.addProject(projects.AutoClippers50);
+                this.props.addProject(projectsToAdd.AutoClippers50);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
                 this.props.stop();
                 this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
                 break;
             case 'autoClippers50':
-                this.props.addProject(projects.OptimizedAutoClippers75);
+                this.props.addProject(projectsToAdd.OptimizedAutoClippers75);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
                 this.props.stop();
@@ -118,17 +118,21 @@ class Projects extends Component {
                 this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
                 break;
             case 'wireExtrusion50':
-                this.props.addProject(projects.WireExtrusion75);
+                this.props.addProject(projectsToAdd.WireExtrusion75);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
             case 'wireExtrusion75':
-                this.props.addProject(projects.MicrolatticeShapecasting100);
+                this.props.addProject(projectsToAdd.MicrolatticeShapecasting100);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
             case 'microlatticeShapecasting100':
-                this.props.addProject(projects.SpectralFrothAnnealment200);
+                this.props.addProject(projectsToAdd.SpectralFrothAnnealment200);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveWireExtrusion(action);
+                break;
+            case 'spectralFrothAnnealment200':
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;

@@ -49,7 +49,7 @@ export const MicrolatticeShapecasting100 =   {
     next: 'microlatticeShapecasting100',
     valid: false,
     id: "card7",
-    terminal: "Using microlattice shapecasting techniques we now get 5,250 supply from every spool|"
+    terminal: "Using microlattice shapecasting techniques we now get 5,250 supply from every spool"
 }
 
 export const SpectralFrothAnnealment200 =   {
@@ -62,5 +62,5 @@ export const SpectralFrothAnnealment200 =   {
     next: 'spectralFrothAnnealment200',
     valid: false,
     id: "card8",
-    terminal: "Using microlattice shapecasting techniques we now get 5,250 supply from every spool|"
+    terminal: "Using spectral froth annealment we now get 15,750 supply from every spool|"
 }
