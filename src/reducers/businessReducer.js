@@ -133,14 +133,14 @@ const autoClippersAddOne = (state) => {
         updatedFunds = state.funds - state.autoClipperInitPrice;
     }else{
         updatedAutoClipperPrice = +(state.autoClipperPrice + (state.autoClipperPrice * 0.018)).toFixed(2);
-        updatedFunds = state.funds - state.autoClipperPrice;
+        updatedFunds = +state.funds - +state.autoClipperPrice;
     }
 
     return updateObject(state, {
         autoClippersPerSec: state.autoClippersPerSec + 1,
         autoClipperPrice: updatedAutoClipperPrice,
-        funds: +updatedFunds,
-        delayAutoPaperClippers: state.delayAutoPaperClippers - 10
+        funds: +updatedFunds.toFixed(2),
+        delayAutoPaperClippers: state.delayAutoPaperClippers / 1.01
         
     });
 }
