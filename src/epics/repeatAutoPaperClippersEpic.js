@@ -13,7 +13,7 @@ function repeatAutoPaperClippersEpic(action$) {
         .ofType(actionTypes.REPEAT_AUTO_PAPER_CLIPPERS)
         .mergeMap(action => {
             return Observable.of(
-                Actions.autoPaperclipsStart(action.priceOfPaperclip, action.delay, action.delayAutoPaperClippers)
+                Actions.autoPaperclipsStart(action.priceOfPaperclip, action.delay, action.delayAutoPaperClippers, action.wire)
             )
             .delay(action.delayAutoPaperClippers)
         })

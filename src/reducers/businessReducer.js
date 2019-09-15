@@ -37,13 +37,12 @@ const initialState = {
 }
 
 const addPaperclip = (state) => {
-    // let updatedInventory = state.unsoldInventory;
-    // updatedInventory.push(' ');
+    let updateWire = state.wire >= 1 ? state.wire - 1 : 0  
 
     return updateObject(state, {
        paperClips: state.paperClips + 1,
        unsoldInventory: state.unsoldInventory + 1,
-       wire: state.wire - 1
+       wire: updateWire
     });
 }
 

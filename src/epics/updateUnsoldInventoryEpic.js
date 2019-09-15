@@ -19,7 +19,6 @@ function updateUnsoldInventoryEpic(action$) {
                     Actions.toggleWireButton(),
                     Actions.toggleAutoClippersButton(),
                     Actions.trustPlusOne()
-                    // Action.checkWireExistence()
                 ) 
                 .delay(action.delay)
             }else{

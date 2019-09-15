@@ -104,21 +104,23 @@ export function toggleWireButton() {
     };
 };
 
-export function autoPaperclips(priceOfPaperclip, delay, delay2) {
+export function autoPaperclips(priceOfPaperclip, delay, delay2, wire) {
     return { 
         type: actionTypes.AUTO_PAPERCLIPS,
         priceOfPaperclip: priceOfPaperclip,
         delay: delay,
-        delayAutoPaperClippers: delay2
+        delayAutoPaperClippers: delay2,
+        wire: wire
     };
 };
 
-export function autoPaperclipsStart(priceOfPaperclip, delay, delay2) {
+export function autoPaperclipsStart(priceOfPaperclip, delay, delay2, wire) {
     return { 
         type: actionTypes.AUTO_PAPERCLIPS_START,
         priceOfPaperclip: priceOfPaperclip,
         delay: delay,
-        delayAutoPaperClippers: delay2
+        delayAutoPaperClippers: delay2,
+        wire: wire
     };
 };
 
@@ -146,12 +148,13 @@ export function trustPlusOne() {
     };
 };
 
-export function repeatAutoPaperClippers(priceOfPaperclip, delay, delay2) {
+export function repeatAutoPaperClippers(priceOfPaperclip, delay, delay2, wire) {
     return { 
         type: actionTypes.REPEAT_AUTO_PAPER_CLIPPERS,
         priceOfPaperclip: priceOfPaperclip,
         delay: delay,
-        delayAutoPaperClippers: delay2
+        delayAutoPaperClippers: delay2,
+        wire: wire
     };
 };
 

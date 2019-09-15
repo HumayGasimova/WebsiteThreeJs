@@ -45,6 +45,7 @@ class Manufacturing extends Component {
     constructor (props){
         super(props);
     }
+    
 
     /**
     * Methods
@@ -56,7 +57,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper2">
                         <Button
-                            onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers)}
+                            onClick={this.autoClippersBuyOne}
                             text={"AutoClippers"}
                             disabled={this.props.autoClippersButtonDisabled}
                         />
@@ -66,6 +67,11 @@ class Manufacturing extends Component {
                 </div>  
             )
         }
+    }
+
+    autoClippersBuyOne = () => {
+        this.props.autoClippersAddOne(this.props.priceOfPaperclip, this.props.delay);
+        this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)
     }
 
     getRandomDelay = () => {
@@ -118,6 +124,7 @@ class Manufacturing extends Component {
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
                 {this.renderAutoClippers()} 
+                {console.log(this.props.wire)}
             </div>
         );
     }
@@ -136,7 +143,9 @@ export default connect(
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
             paperclipPrice: state.business.paperclipPrice,
             delay: state.business.delay,
-            delayAutoPaperClippers: state.business.delayAutoPaperClippers
+            delayAutoPaperClippers: state.business.delayAutoPaperClippers,
+            wire: state.business.wire,
+            priceOfPaperclip: state.business.priceOfPaperclip
         };
     },
     (dispatch) => {
@@ -146,6 +155,8 @@ export default connect(
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
+            autoClippersAddOne: bindActionCreators(Actions.autoClippersAddOne, dispatch),
+           
         };
     }
 )(Manufacturing);
