@@ -49,5 +49,18 @@ export const MicrolatticeShapecasting100 =   {
     next: 'microlatticeShapecasting100',
     valid: false,
     id: "card7",
-    terminal: "Wire extrusion technique optimized, 2,625 supply from every spool"
+    terminal: "Using microlattice shapecasting techniques we now get 5,250 supply from every spool|"
+}
+
+export const SpectralFrothAnnealment200 =   {
+    text1: "Spectral Froth Annealment (12,000 ops)",
+    text2 : "200% more wire supply from every spool",
+    price: {
+        ops: 3
+    },
+    action: 200,
+    next: 'spectralFrothAnnealment200',
+    valid: false,
+    id: "card8",
+    terminal: "Using microlattice shapecasting techniques we now get 5,250 supply from every spool|"
 }
