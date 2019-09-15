@@ -122,6 +122,11 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
+            case 'wireExtrusion75':
+                this.props.addProject(projects.MicrolatticeShapecasting100);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveWireExtrusion(action);
+                break;
         }
 
 
