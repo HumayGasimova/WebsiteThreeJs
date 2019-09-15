@@ -101,15 +101,21 @@ class Projects extends Component {
                 this.props.addProject(projects.AutoClippers50);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
+                this.props.stop();
+                this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
                 break;
             case 'autoClippers50':
                 this.props.addProject(projects.OptimizedAutoClippers75);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
+                this.props.stop();
+                this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
                 break;
             case 'autoClippers75':
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
+                this.props.stop();
+                this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
                 break;
         }
 
@@ -172,10 +178,10 @@ export default connect(
     (state) => {
         return {
             cards: state.business.cards,
-            // funds: state.business.funds,
-            // unsoldInventory: state.business.unsoldInventory,
-            // paperclipPrice: state.business.paperclipPrice,
-            // delay: state.business.delay
+            paperclipPrice: state.business.paperclipPrice,
+            wire: state.business.wire,
+            delay: state.business.delay,
+            delayAutoPaperClippers: state.business.delayAutoPaperClippers
         };
     },
     (dispatch) => {
@@ -186,6 +192,8 @@ export default connect(
             addProject: bindActionCreators(Actions.addProject, dispatch),
             removePriceOfProjectOps: bindActionCreators(Actions.removePriceOfProjectOps, dispatch),
             improveAutoClippers: bindActionCreators(Actions.improveAutoClippers, dispatch),
+            stop: bindActionCreators(Actions.stop, dispatch),
+            autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
         };
     }
 )(Projects);

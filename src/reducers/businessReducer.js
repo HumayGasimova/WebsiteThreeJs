@@ -14,7 +14,7 @@ const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 50,
+    wire: 1000,
     wirePrice: 20,
     wireButtonDisabled: true,
     autoClippersPerSec: 0,

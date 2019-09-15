@@ -15,7 +15,6 @@ import { take } from 'rxjs-compat/operator/take';
 export const autoPaperclipsStartsEpic = action$ => 
     action$
     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
-
     .mergeMap(action => {
             return interval(action.delayAutoPaperClippers).pipe(
                 mergeMap(() => Observable.of(
