@@ -15,7 +15,7 @@ export {
     randomWirePrice,
     toggleWireButton,
     checkExistenceOfWire,
-    noWire,
+    stop,
     startBuyingWire,
     autoPaperclips,
     autoPaperclipsStart,

@@ -111,9 +111,9 @@ export function checkExistenceOfWire(wire) {
     };
 };
 
-export function noWire() {
+export function stop() {
     return { 
-        type: actionTypes.NO_WIRE
+        type: actionTypes.STOP
     };
 };
 

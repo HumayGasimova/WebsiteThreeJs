@@ -10,16 +10,18 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 import { mergeMap, takeUntil, ofType } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
+import { take } from 'rxjs-compat/operator/take';
 
 export const autoPaperclipsStartsEpic = action$ => 
     action$
     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
+
     .mergeMap(action => {
             return interval(action.delayAutoPaperClippers).pipe(
                 mergeMap(() => Observable.of(
                     Actions.makePaperclip(action.priceOfPaperclip, action.delay, action.wire)
                     )),
-                takeUntil(action$.ofType(actionTypes.NO_WIRE)),
+                takeUntil(action$.ofType(actionTypes.STOP)),
             )
         
     })

@@ -318,7 +318,7 @@ const businessReducer = (state = initialState, action) => {
             return toggleWireButton(state, action); 
         case actionTypes.CHECK_EXISTENCE_OF_WIRE:
             return state; 
-        case actionTypes.NO_WIRE:
+        case actionTypes.STOP:
             return state; 
         case actionTypes.AUTO_PAPERCLIPS:
             return state;

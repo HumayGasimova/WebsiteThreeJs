@@ -14,13 +14,11 @@ function checkWireEpic(action$) {
         .mergeMap(action => {
             if(action.wire === 0){
                 return Observable.of(
-                    Actions.noWire(),
+                    Actions.stop(),
                 ) 
             }else{
                 return Observable.of(
                     // Actions.toggleWireButton(),
-                    // Actions.toggleMarketingButton(),
-                    // Actions.toggleAutoClippersButton()
                 ) 
             }
                   
