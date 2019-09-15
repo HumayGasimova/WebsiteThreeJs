@@ -100,17 +100,17 @@ class Projects extends Component {
             case 'AutoClippers25':
                 this.props.addProject(projects.AutoClippers50);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveAutoClippers(action)
+                this.props.improveAutoClippers(action);
                 break;
             case 'autoClippers50':
                 this.props.addProject(projects.OptimizedAutoClippers75);
-                this.props.removePriceOfProjectOps(price.ops)
-                this.props.improveAutoClippers(action)
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveAutoClippers(action);
                 break;
-            // case 'autoClippers75':
-            //     this.props.addProject(projects.AutoClippers50);
-            //     this.props.removePriceOfProjectOps(price.ops)
-            //     break;
+            case 'autoClippers75':
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveAutoClippers(action);
+                break;
         }
 
 
