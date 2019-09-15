@@ -14,7 +14,7 @@ const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 1000,
+    wire: 50,
     wirePrice: 20,
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
@@ -32,7 +32,8 @@ const initialState = {
     processorsMemory: 1,
     creativity: 0,
     cards: [],
-    revTracker: false
+    revTracker: false,
+    makePaperclipDisabled: false
 }
 
 const addPaperclip = (state) => {
@@ -274,7 +275,11 @@ const improveAutoClippers = (state, action) => {
     });
 }
 
-
+const toggleMakePaperclipButton = (state, action) => {
+    return updateObject(state, {
+        makePaperclipDisabled: action.val
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -311,6 +316,7 @@ const businessReducer = (state = initialState, action) => {
             return randomWirePrice(state, action);
         case actionTypes.TOGGLE_WIRE_BUTTON:
             return toggleWireButton(state, action); 
+    
         case actionTypes.AUTO_PAPERCLIPS:
             return state;
         case actionTypes.AUTO_CLIPPERS_ADD_ONE:
@@ -347,6 +353,8 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectOps(state, action);  
         case actionTypes.IMPROVE_AUTO_PAPER_CLIPPER:
             return improveAutoClippers(state, action);  
+        case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
+                return toggleMakePaperclipButton(state, action);  
         default: 
             return state;
     }

@@ -56,7 +56,7 @@ class General extends Component {
 
     makePaperclip = () => {
         // this.props.makePaperclip();
-        this.props.sellPaperclips(this.props.paperclipPrice, this.props.delay)
+        this.props.sellPaperclips(this.props.paperclipPrice, this.props.delay, this.props.wire)
      
     }
 
@@ -100,6 +100,7 @@ class General extends Component {
                 <Button 
                     onClick={this.makePaperclip}
                     text={"Make Paperclip"}
+                    disabled={this.props.makePaperclipDisabled}
                 />
                 <div>{this.props.isPing}</div>
             </div>
@@ -114,7 +115,9 @@ export default connect(
             funds: state.business.funds,
             unsoldInventory: state.business.unsoldInventory,
             paperclipPrice: state.business.paperclipPrice,
-            delay: state.business.delay
+            delay: state.business.delay,
+            wire: state.business.wire,
+            makePaperclipDisabled: state.business.makePaperclipDisabled
         };
     },
     (dispatch) => {

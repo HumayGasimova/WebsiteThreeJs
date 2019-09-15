@@ -10,16 +10,24 @@ function updateUnsoldInventoryEpic(action$) {
     return action$
         .ofType(actionTypes.MAKE_PAPERCLIP)
         .mergeMap(action => {
-            return Observable.of(
-                Actions.updateUnsoldInventory(),
-                Actions.updateFunds(action.priceOfPaperclip),
-                Actions.setAutoClipperInitPrice(),
-                Actions.toggleMarketingButton(),
-                Actions.toggleWireButton(),
-                Actions.toggleAutoClippersButton(),
-                Actions.trustPlusOne()
-            ) 
-            .delay(action.delay)
+            if(action.wire > 1){
+                return Observable.of(
+                    Actions.updateUnsoldInventory(),
+                    Actions.updateFunds(action.priceOfPaperclip),
+                    Actions.setAutoClipperInitPrice(),
+                    Actions.toggleMarketingButton(),
+                    Actions.toggleWireButton(),
+                    Actions.toggleAutoClippersButton(),
+                    Actions.trustPlusOne()
+                    // Action.checkWireExistence()
+                ) 
+                .delay(action.delay)
+            }else{
+                return Observable.of(
+                    Actions.toggleMakePaperclipButton(true)
+                ) 
+            }
+            
         })
 }
 

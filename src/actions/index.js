@@ -32,5 +32,6 @@ export {
     showRevTracker,
     addProject,
     removePriceOfProjectOps,
-    improveAutoClippers
+    improveAutoClippers, 
+    toggleMakePaperclipButton
 } from './businessActions';

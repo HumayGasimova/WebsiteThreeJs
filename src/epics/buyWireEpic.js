@@ -12,7 +12,8 @@ function buyWireEpic (action$) {
         .mergeMap(action => {
             return Observable.of(
                 Actions.buyWire(),
-                Actions.toggleWireButton()
+                Actions.toggleWireButton(),
+                Actions.toggleMakePaperclipButton(false)
             )
         })       
 }

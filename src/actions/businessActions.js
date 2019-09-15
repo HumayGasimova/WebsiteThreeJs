@@ -6,19 +6,21 @@ export function checkButtons() {
     };
 };
 
-export function sellPaperclips(priceOfPaperclip, delay) {
+export function sellPaperclips(priceOfPaperclip, delay, wire) {
     return { 
         type: actionTypes.START_SELLING,
         priceOfPaperclip: priceOfPaperclip,
-        delay: delay
+        delay: delay,
+        wire: wire
     };
 };
 
-export function makePaperclip(priceOfPaperclip, delay) {
+export function makePaperclip(priceOfPaperclip, delay, wire) {
     return {
         type: actionTypes.MAKE_PAPERCLIP,
         priceOfPaperclip: priceOfPaperclip,
-        delay: delay
+        delay: delay,
+        wire: wire
     }
 };
 
@@ -230,7 +232,12 @@ export function improveAutoClippers(val) {
     };
 };
 
-
+export function toggleMakePaperclipButton(val) {
+    return { 
+        type: actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON,
+        val: val
+    };
+};
 
 
 
