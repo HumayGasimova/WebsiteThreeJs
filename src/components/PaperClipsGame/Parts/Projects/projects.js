@@ -70,10 +70,10 @@ class Projects extends Component {
                     ops: 5
                 },
                 action: 50,
-                next: '',
+                next: 'wireExtrusion50',
                 valid: false,
                 id: "card2",
-                terminal: ""
+                terminal: "Wire extrusion technique improved, 1,500 supply from every spool"
             },
             card3: {
                 text1: "RecTracker (500 ops)",
@@ -116,6 +116,11 @@ class Projects extends Component {
                 this.props.improveAutoClippers(action);
                 this.props.stop();
                 this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                break;
+            case 'wireExtrusion50':
+                this.props.addProject(projects.WireExtrusion75);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveWireExtrusion(action);
                 break;
         }
 
@@ -194,6 +199,8 @@ export default connect(
             improveAutoClippers: bindActionCreators(Actions.improveAutoClippers, dispatch),
             stop: bindActionCreators(Actions.stop, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
+            improveWireExtrusion: bindActionCreators(Actions.improveWireExtrusion, dispatch),
+            
         };
     }
 )(Projects);

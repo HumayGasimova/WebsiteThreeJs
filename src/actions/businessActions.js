@@ -255,6 +255,12 @@ export function toggleMakePaperclipButton(val) {
     };
 };
 
+export function improveWireExtrusion(val) {
+    return { 
+        type: actionTypes.IMPROVE_WIRE_EXTRUSION,
+        val: val
+    };
+};
 
 
 

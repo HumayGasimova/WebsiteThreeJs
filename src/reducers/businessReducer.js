@@ -15,6 +15,7 @@ const initialState = {
     marketingButtonDisabled: true,
     delay: 1000,
     wire: 1000,
+    wireToAdd: 1000,
     wirePrice: 20,
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
@@ -108,7 +109,7 @@ const updateMaxPublicDemand = (state) => {
 const buyWire = (state) => {
     let updatedFunds = +state.funds - +state.wirePrice;
     return updateObject(state, {
-        wire: state.wire + 1000,
+        wire: +state.wire + +state.wireToAdd,
         funds: +updatedFunds.toFixed(2)
     });
 }
@@ -281,6 +282,13 @@ const toggleMakePaperclipButton = (state, action) => {
     });
 }
 
+const improveWireExtrusion = (state, action) => {
+    let updatedWireToAdd = +state.wireToAdd + (+state.wireToAdd * action.val / 100);
+    return updateObject(state, {
+        wireToAdd: updatedWireToAdd
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -357,7 +365,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.IMPROVE_AUTO_PAPER_CLIPPER:
             return improveAutoClippers(state, action);  
         case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
-                return toggleMakePaperclipButton(state, action);  
+            return toggleMakePaperclipButton(state, action);  
+        case actionTypes.IMPROVE_WIRE_EXTRUSION:
+                return improveWireExtrusion(state, action);  
         default: 
             return state;
     }

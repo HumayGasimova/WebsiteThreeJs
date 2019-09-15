@@ -35,5 +35,6 @@ export {
     addProject,
     removePriceOfProjectOps,
     improveAutoClippers, 
-    toggleMakePaperclipButton
+    toggleMakePaperclipButton,
+    improveWireExtrusion
 } from './businessActions';
