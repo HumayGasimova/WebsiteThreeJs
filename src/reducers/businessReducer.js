@@ -106,9 +106,10 @@ const updateMaxPublicDemand = (state) => {
 }
 
 const buyWire = (state) => {
+    let updatedFunds = +state.funds - +state.wirePrice;
     return updateObject(state, {
         wire: state.wire + 1000,
-        funds: state.funds - state.wirePrice
+        funds: +updatedFunds.toFixed(2)
     });
 }
 
@@ -315,7 +316,7 @@ const businessReducer = (state = initialState, action) => {
             return randomWirePrice(state, action);
         case actionTypes.TOGGLE_WIRE_BUTTON:
             return toggleWireButton(state, action); 
-        case actionTypes.CHECK_WIRE:
+        case actionTypes.CHECK_EXISTENCE_OF_WIRE:
             return state; 
         case actionTypes.NO_WIRE:
             return state; 

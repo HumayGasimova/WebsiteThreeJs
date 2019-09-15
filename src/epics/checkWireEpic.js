@@ -10,7 +10,7 @@ import * as Actions from '../actions';
 
 function checkWireEpic(action$) {
     return action$
-        .ofType(actionTypes.CHECK_WIRE)
+        .ofType(actionTypes.CHECK_EXISTENCE_OF_WIRE)
         .mergeMap(action => {
             if(action.wire === 0){
                 return Observable.of(

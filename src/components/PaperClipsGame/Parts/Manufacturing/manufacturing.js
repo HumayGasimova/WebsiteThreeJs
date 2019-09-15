@@ -86,7 +86,7 @@ class Manufacturing extends Component {
 
         this.intervalCheckButton = setInterval(()=>{
             this.props.checkButtons();
-            this.props.checkWire(this.props.wire);
+            this.props.checkExistenceOfWire(this.props.wire);
         }, 1000);
     }
 
@@ -148,7 +148,7 @@ export default connect(
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
-            checkWire: bindActionCreators(Actions.checkWire, dispatch),
+            checkExistenceOfWire: bindActionCreators(Actions.checkExistenceOfWire, dispatch),
         };
     }
 )(Manufacturing);
