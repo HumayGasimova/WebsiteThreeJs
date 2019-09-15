@@ -37,12 +37,12 @@ const initialState = {
 }
 
 const addPaperclip = (state) => {
-    let updateWire = state.wire >= 1 ? state.wire - 1 : 0  
+    let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0  
 
     return updateObject(state, {
        paperClips: state.paperClips + 1,
        unsoldInventory: state.unsoldInventory + 1,
-       wire: updateWire
+       wire: +updateWire.toFixed(2)
     });
 }
 
@@ -315,7 +315,10 @@ const businessReducer = (state = initialState, action) => {
             return randomWirePrice(state, action);
         case actionTypes.TOGGLE_WIRE_BUTTON:
             return toggleWireButton(state, action); 
-    
+        case actionTypes.CHECK_WIRE:
+            return state; 
+        case actionTypes.NO_WIRE:
+            return state; 
         case actionTypes.AUTO_PAPERCLIPS:
             return state;
         case actionTypes.AUTO_CLIPPERS_ADD_ONE:

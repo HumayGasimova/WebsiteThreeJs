@@ -45,7 +45,6 @@ class Manufacturing extends Component {
     constructor (props){
         super(props);
     }
-    
 
     /**
     * Methods
@@ -57,7 +56,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper2">
                         <Button
-                            onClick={this.autoClippersBuyOne}
+                            onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
                             text={"AutoClippers"}
                             disabled={this.props.autoClippersButtonDisabled}
                         />
@@ -67,11 +66,6 @@ class Manufacturing extends Component {
                 </div>  
             )
         }
-    }
-
-    autoClippersBuyOne = () => {
-        this.props.autoClippersAddOne(this.props.priceOfPaperclip, this.props.delay);
-        this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)
     }
 
     getRandomDelay = () => {
@@ -91,7 +85,8 @@ class Manufacturing extends Component {
         }, this.getRandomDelay());
 
         this.intervalCheckButton = setInterval(()=>{
-            this.props.checkButtons()
+            this.props.checkButtons();
+            this.props.checkWire(this.props.wire);
         }, 1000);
     }
 
@@ -123,8 +118,7 @@ class Manufacturing extends Component {
                     </div>
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
-                {this.renderAutoClippers()} 
-                {console.log(this.props.wire)}
+                {this.renderAutoClippers()}
             </div>
         );
     }
@@ -144,8 +138,7 @@ export default connect(
             paperclipPrice: state.business.paperclipPrice,
             delay: state.business.delay,
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
-            wire: state.business.wire,
-            priceOfPaperclip: state.business.priceOfPaperclip
+            wire: state.business.wire
         };
     },
     (dispatch) => {
@@ -155,8 +148,7 @@ export default connect(
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
-            autoClippersAddOne: bindActionCreators(Actions.autoClippersAddOne, dispatch),
-           
+            checkWire: bindActionCreators(Actions.checkWire, dispatch),
         };
     }
 )(Manufacturing);

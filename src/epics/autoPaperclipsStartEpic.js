@@ -14,16 +14,16 @@ import { map } from 'rxjs/operators';
 export const autoPaperclipsStartsEpic = action$ => 
     action$
     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
-    .mergeMap(action => 
-            interval(action.delayAutoPaperClippers).pipe(
-            mergeMap(() => Observable.of(
-                Actions.makePaperclip(action.priceOfPaperclip, action.delay, action.wire)
-                )),
-            takeUntil(action$.ofType(actionTypes.INCREASE_PROCESSORS)),
-            
-        )
-     
-    )
+    .mergeMap(action => {
+            return interval(action.delayAutoPaperClippers).pipe(
+                mergeMap(() => Observable.of(
+                    Actions.makePaperclip(action.priceOfPaperclip, action.delay, action.wire)
+                    )),
+                takeUntil(action$.ofType(actionTypes.NO_WIRE)),
+            )
+        
+    })
+    
     // return action$
     //     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
     //     .mergeMap(action => {
@@ -40,17 +40,5 @@ export const autoPaperclipsStartsEpic = action$ =>
     //         // }  
 
     //     })
-        
-// .mergeMap(action => 
-//     interval(action.delayAutoPaperClippers).pipe(
-//     mergeMap(() => {
-//         return Observable.of(
-//             Actions.makePaperclip(action.priceOfPaperclip, action.delay, action.wire)
-//         )   
-//     })
-    
-// )
-// // .takeUntil(actionTypes.START_SELLING),
-// )
 
 export default autoPaperclipsStartsEpic;

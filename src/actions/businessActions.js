@@ -104,6 +104,19 @@ export function toggleWireButton() {
     };
 };
 
+export function checkWire(wire) {
+    return { 
+        type: actionTypes.CHECK_WIRE,
+        wire: wire
+    };
+};
+
+export function noWire() {
+    return { 
+        type: actionTypes.NO_WIRE
+    };
+};
+
 export function autoPaperclips(priceOfPaperclip, delay, delay2, wire) {
     return { 
         type: actionTypes.AUTO_PAPERCLIPS,
