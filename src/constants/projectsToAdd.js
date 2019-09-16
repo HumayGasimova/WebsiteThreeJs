@@ -64,3 +64,157 @@ export const SpectralFrothAnnealment200 =   {
     id: "card8",
     terminal: "Using spectral froth annealment we now get 15,750 supply from every spool|"
 }
+
+export const Creativity = {
+    text1: "Creativity (1,000 ops)",
+    text2 : "Use idle operations to generate new",
+    text3: "problems and new solutions",
+    price: {
+        ops: 3
+    },
+    action: null,
+    next: 'creativity',
+    valid: false,
+    id: "card9",
+    terminal: "WireBuyer online "
+}
+
+// export const WireBuyer =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: "WireBuyer online| "
+// }
+
+
+
+
+
+
+// export const AlgorithmicTrading =   {
+//     text1: "Algorithmic Trading (10,000 ops)",
+//     text2 : "Develop an investment engine for",
+//     text3: "generating funds",
+//     price: {
+//         ops: 3
+//     },
+//     action: null,
+//     next: 'algorithmicTrading',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+
+
+// export const HypnoDrones =   {
+//     text1: "HypnoDrones (70,000 ops)",
+//     text2 : "Autonomous aerial brand ambassadors",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: 'hypnoDrones',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+
+
+// export const  =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+// export const  =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+// export const  =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+// export const  =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+// export const  =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+// export const  =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }
+
+// export const  =   {
+//     text1: "Spectral Froth Annealment (12,000 ops)",
+//     text2 : "200% more wire supply from every spool",
+//     price: {
+//         ops: 3
+//     },
+//     action: ,
+//     next: '',
+//     valid: false,
+//     id: "",
+//     terminal: ""
+// }

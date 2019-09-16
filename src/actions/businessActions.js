@@ -262,6 +262,12 @@ export function improveWireExtrusion(val) {
     };
 };
 
+export function startCreativityCounter() {
+    return { 
+        type: actionTypes.START_CREATIVITY_COUNTER
+    };
+};
+
 
 
 export const checkAuthTimeout = (expirationTime) => {

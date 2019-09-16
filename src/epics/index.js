@@ -5,12 +5,14 @@ import checkButtonsEpic from './checkButtonsEpic';
 import checkWireEpic from './checkWireEpic';
 import paperclipsGenerateEpic from './PaperclipsGenerateEpic';
 import updateUnsoldInventoryEpic from './updateUnsoldInventoryEpic';
-import raisePriceEpic from '../epics/raisePriceEpic';
-import marketingNextLevelEpic from '../epics/marketingNextLevelEpic';
-import buyWireEpic from '../epics/buyWireEpic';
-import autoPaperclipsStartEpic from '../epics/autoPaperclipsStartEpic';
+import raisePriceEpic from './raisePriceEpic';
+import marketingNextLevelEpic from './marketingNextLevelEpic';
+import buyWireEpic from './buyWireEpic';
+import autoPaperclipsStartEpic from './autoPaperclipsStartEpic';
 // import repeatAutoPaperClippersEpic from '../epics/repeatAutoPaperClippersEpic';
-import autoPaperClippersAddOneEpic from '../epics/autoPaperClippersAddOneEpic';
+import autoPaperClippersAddOneEpic from './autoPaperClippersAddOneEpic';
+import startCreativityEpic from '../epicsProject/startCreativityEpic';
+
 
 
 
@@ -24,5 +26,6 @@ export const rootEpic = combineEpics(
     buyWireEpic,
     autoPaperclipsStartEpic,
     // repeatAutoPaperClippersEpic,
-    autoPaperClippersAddOneEpic
+    autoPaperClippersAddOneEpic,
+    startCreativityEpic
 );

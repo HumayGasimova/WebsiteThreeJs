@@ -68,11 +68,18 @@ class ComputationalResources extends Component {
             }
         }, this.state.delayOperations);
 
-        this.intervalCreativity = setInterval(()=>{
+        this.intervalStartCreativity = setInterval(()=>{
             if(this.props.ops === this.props.opsMax){
-                this.props.increaseCreativity()
+                this.props.startCreativityCounter();
             }
-        }, 300);
+        }, 1000);
+
+        // this.intervalCreativity = setInterval(()=>{
+        //     if(this.props.ops === this.props.opsMax){
+        //         this.props.increaseCreativity()
+        //     }
+        // }, 300);
+      
         console.log(this.props.delayProcessorSpeed)
     }
 
@@ -95,8 +102,10 @@ class ComputationalResources extends Component {
     }
 
     componentWillUnmount = () => {
-        clearInterval(this.intervalOperations)
-        clearInterval(this.intervalCreativity)
+        clearInterval(this.intervalOperations);
+        clearInterval(this.intervalCreativity);
+        clearInterval(this.intervalStartCreativity);
+        
     }
 
     /**
@@ -162,7 +171,8 @@ export default connect(
             increaseOps: bindActionCreators(Actions.increaseOps, dispatch),
             increaseProcessors: bindActionCreators(Actions.increaseProcessors, dispatch),
             increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
-            increaseCreativity: bindActionCreators(Actions. increaseCreativity, dispatch),
+            increaseCreativity: bindActionCreators(Actions.increaseCreativity, dispatch),
+            startCreativityCounter: bindActionCreators(Actions.startCreativityCounter, dispatch),
         };
     }
 )(ComputationalResources);

@@ -82,7 +82,7 @@ class Projects extends Component {
                 price: {
                     ops: 5
                 },
-                action: 0,
+                action: null,
                 next: 'showRevTracker',
                 valid: false,
                 id: "card3",
@@ -136,6 +136,10 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
+            case 'creativity':
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveWireExtrusion(action);
+                break;
                 
         }
 
@@ -178,6 +182,9 @@ class Projects extends Component {
         this.props.initProjects(this.state.card1, this.state.card2, this.state.card3)
     }
 
+    // componentWillMount = () => {
+    //     this.props.initProjects(this.state.card1, this.state.card2, this.state.card3)
+    // }
     
     /**
     * Markup

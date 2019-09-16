@@ -28,7 +28,7 @@ const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 1000,
+    opsMax: 10,
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
@@ -289,7 +289,6 @@ const improveWireExtrusion = (state, action) => {
     });
 }
 
-
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -367,7 +366,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
             return toggleMakePaperclipButton(state, action);  
         case actionTypes.IMPROVE_WIRE_EXTRUSION:
-                return improveWireExtrusion(state, action);  
+            return improveWireExtrusion(state, action);  
+        case actionTypes.START_CREATIVITY_COUNTER:
+            return state;  
         default: 
             return state;
     }
