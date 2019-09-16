@@ -164,7 +164,7 @@ class Projects extends Component {
                                 onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action)}
                                 valid={el.valid}
                                 priceOps={el.price.ops}
-                                priceCreativity={el.price.create}
+                                priceCreat={el.price.creat}
                                 id={el.id}
                                 action={el.action}
                                 i={i}

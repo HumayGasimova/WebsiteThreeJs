@@ -50,7 +50,7 @@ class Card extends Component {
 
     componentDidMount () {
         this.intervalCheckCardValidity = setInterval(()=>{
-            if(this.props.priceOps && this.props.ops >= this.props.priceOps || this.props.priceCreativity && this.props.creativity  >= this.props.priceCreativity){
+            if(this.props.priceOps && this.props.ops >= this.props.priceOps || this.props.priceCreat && this.props.creativity  >= this.props.priceCreat){
                 this.props.checkCardValidity(this.props.id, true, this.props.i)
             }else{
                 this.props.checkCardValidity(this.props.id, false, this.props.i)
