@@ -74,11 +74,11 @@ class ComputationalResources extends Component {
             }
         }, 1000);
 
-        // this.intervalCreativity = setInterval(()=>{
-        //     if(this.props.ops === this.props.opsMax){
-        //         this.props.increaseCreativity()
-        //     }
-        // }, 300);
+        this.intervalCreativity = setInterval(()=>{
+            if(this.props.ops === this.props.opsMax && this.props.creativityTurnOn){
+                this.props.increaseCreativity()
+            }
+        }, 300);
       
         console.log(this.props.delayProcessorSpeed)
     }
@@ -163,7 +163,8 @@ export default connect(
             processorsNumber: state.business.processorsNumber,
             processorsMemory: state.business.processorsMemory,
             delayProcessorSpeed: state.business.delayProcessorSpeed,
-            creativity: state.business.creativity
+            creativity: state.business.creativity,
+            creativityTurnOn: state.business.creativityTurnOn
         };
     },
     (dispatch) => {

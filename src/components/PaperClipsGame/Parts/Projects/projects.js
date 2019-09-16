@@ -138,7 +138,7 @@ class Projects extends Component {
                 break;
             case 'creativity':
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveWireExtrusion(action);
+                this.props.creativityTurnOn(this.props.ops, this.props.opsMax);
                 break;
                 
         }
@@ -208,7 +208,9 @@ export default connect(
             paperclipPrice: state.business.paperclipPrice,
             wire: state.business.wire,
             delay: state.business.delay,
-            delayAutoPaperClippers: state.business.delayAutoPaperClippers
+            delayAutoPaperClippers: state.business.delayAutoPaperClippers,
+            ops: state.business.ops,
+            opsMax: state.business.opsMax,
         };
     },
     (dispatch) => {
@@ -222,7 +224,7 @@ export default connect(
             stop: bindActionCreators(Actions.stop, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
             improveWireExtrusion: bindActionCreators(Actions.improveWireExtrusion, dispatch),
-            
+            creativityTurnOn: bindActionCreators(Actions.creativityTurnOn, dispatch),
         };
     }
 )(Projects);

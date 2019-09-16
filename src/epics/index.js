@@ -12,6 +12,8 @@ import autoPaperclipsStartEpic from './autoPaperclipsStartEpic';
 // import repeatAutoPaperClippersEpic from '../epics/repeatAutoPaperClippersEpic';
 import autoPaperClippersAddOneEpic from './autoPaperClippersAddOneEpic';
 import startCreativityEpic from '../epicsProject/startCreativityEpic';
+import creativityTurnOnEpic from '../epicsProject/creativityTurnOnEpic';
+
 
 
 
@@ -27,5 +29,6 @@ export const rootEpic = combineEpics(
     autoPaperclipsStartEpic,
     // repeatAutoPaperClippersEpic,
     autoPaperClippersAddOneEpic,
-    startCreativityEpic
+    startCreativityEpic,
+    // creativityTurnOnEpic
 );

@@ -34,7 +34,8 @@ const initialState = {
     creativity: 0,
     cards: [],
     revTracker: false,
-    makePaperclipDisabled: false
+    makePaperclipDisabled: false,
+    creativityTurnOn: false
 }
 
 const addPaperclip = (state) => {
@@ -288,6 +289,11 @@ const improveWireExtrusion = (state, action) => {
         wireToAdd: updatedWireToAdd
     });
 }
+const creativityTurnOn = (state) => {
+    return updateObject(state, {
+        creativityTurnOn: true
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -369,6 +375,8 @@ const businessReducer = (state = initialState, action) => {
             return improveWireExtrusion(state, action);  
         case actionTypes.START_CREATIVITY_COUNTER:
             return state;  
+        case actionTypes.CREATIVITY_TURN_ON:
+            return creativityTurnOn(state, action);  
         default: 
             return state;
     }

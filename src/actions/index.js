@@ -37,5 +37,6 @@ export {
     improveAutoClippers, 
     toggleMakePaperclipButton,
     improveWireExtrusion,
-    startCreativityCounter
+    startCreativityCounter,
+    creativityTurnOn
 } from './businessActions';

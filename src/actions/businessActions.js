@@ -268,6 +268,13 @@ export function startCreativityCounter() {
     };
 };
 
+export function creativityTurnOn() {
+    return { 
+        type: actionTypes.CREATIVITY_TURN_ON
+    };
+};
+
+
 
 
 export const checkAuthTimeout = (expirationTime) => {
