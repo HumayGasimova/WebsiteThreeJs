@@ -138,7 +138,7 @@ class Projects extends Component {
                 break;
             case 'creativity':
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.creativityTurnOn(this.props.ops, this.props.opsMax);
+                this.props.creativityTurnOn();
                 break;
                 
         }

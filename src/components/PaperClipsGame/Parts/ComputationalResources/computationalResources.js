@@ -103,9 +103,8 @@ class ComputationalResources extends Component {
 
     componentWillUnmount = () => {
         clearInterval(this.intervalOperations);
-        clearInterval(this.intervalCreativity);
         clearInterval(this.intervalStartCreativity);
-        
+        clearInterval(this.intervalCreativity);
     }
 
     /**

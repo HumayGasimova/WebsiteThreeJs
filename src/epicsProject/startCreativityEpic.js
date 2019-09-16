@@ -13,8 +13,7 @@ function startCreativityEpic(action$) {
         .take(1)
         .mergeMap(action => {
             return Observable.of(
-              Actions.addProject(projectsToAdd.Creativity),
-              Actions.creativityTurnOn()
+              Actions.addProject(projectsToAdd.Creativity)
             ) 
         })
 }
