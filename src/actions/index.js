@@ -38,5 +38,6 @@ export {
     toggleMakePaperclipButton,
     improveWireExtrusion,
     startCreativityCounter,
-    creativityTurnOn
+    creativityTurnOn,
+    trustPlusOneFromProject
 } from './businessActions';

@@ -89,7 +89,7 @@ export const Limerick = {
     next: 'limerick',
     valid: false,
     id: "card10",
-    terminal: "Creativity unlocked (creativity increases while operations are at max)"
+    terminal: " There was an AI made of dust, whose poetry gained it man's trust..."
 }
 
 // export const WireBuyer =   {

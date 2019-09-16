@@ -181,12 +181,16 @@ const trustPlusOne = (state) => {
             updatedClipsToBuyTrust = state.prevTrust + state.clipsToBuyTrust;
         }
     }
-  
-
     return updateObject(state, {
         prevTrust: updatedPrevTrust,
         trust: updatedTrust,
         clipsToBuyTrust: updatedClipsToBuyTrust
+    });
+}
+
+const trustPlusOneFromProject = (state) => {
+    return updateObject(state, {
+        trust: state.trust + 1
     });
 }
 
@@ -347,6 +351,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleAutoClippersButton(state, action); 
         case actionTypes.TRUST_PLUS_ONE:
             return trustPlusOne(state, action); 
+        case actionTypes.TRUST_PLUS_ONE_FROM_PROJECT:
+            return trustPlusOneFromProject(state, action); 
         case actionTypes.INCREASE_OPS:
             return increaseOps(state, action); 
         case actionTypes.INCREASE_PROCESSORS:
@@ -377,6 +383,8 @@ const businessReducer = (state = initialState, action) => {
             return state;  
         case actionTypes.CREATIVITY_TURN_ON:
             return creativityTurnOn(state, action);  
+
+
         default: 
             return state;
     }

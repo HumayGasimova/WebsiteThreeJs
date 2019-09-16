@@ -161,6 +161,13 @@ export function trustPlusOne() {
     };
 };
 
+export function trustPlusOneFromProject() {
+    return { 
+        type: actionTypes.TRUST_PLUS_ONE_FROM_PROJECT,
+    };
+};
+
+
 export function repeatAutoPaperClippers(priceOfPaperclip, delay, delay2, wire) {
     return { 
         type: actionTypes.REPEAT_AUTO_PAPER_CLIPPERS,

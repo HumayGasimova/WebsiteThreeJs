@@ -140,6 +140,7 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.Limerick);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.creativityTurnOn();
+                this.props.trustPlusOneFromProject()
                 break;
                 
         }
@@ -227,6 +228,7 @@ export default connect(
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
             improveWireExtrusion: bindActionCreators(Actions.improveWireExtrusion, dispatch),
             creativityTurnOn: bindActionCreators(Actions.creativityTurnOn, dispatch),
+            trustPlusOneFromProject: bindActionCreators(Actions.trustPlusOneFromProject, dispatch),
         };
     }
 )(Projects);
