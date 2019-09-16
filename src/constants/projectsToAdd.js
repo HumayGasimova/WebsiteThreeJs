@@ -83,7 +83,7 @@ export const Limerick = {
     text1: "Limerick (10 creat)",
     text2 : "Algorithmically-generated poem (+1 Trust)",
     price: {
-        creat: 3
+        create: 3
     },
     action: 1,
     next: 'limerick',
