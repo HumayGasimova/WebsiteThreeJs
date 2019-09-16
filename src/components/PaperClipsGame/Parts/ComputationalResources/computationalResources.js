@@ -79,8 +79,6 @@ class ComputationalResources extends Component {
                 this.props.increaseCreativity()
             }
         }, 300);
-      
-        console.log(this.props.delayProcessorSpeed)
     }
 
     increaseProcessors = () => { 
@@ -161,7 +159,6 @@ export default connect(
             opsMax: state.business.opsMax,
             processorsNumber: state.business.processorsNumber,
             processorsMemory: state.business.processorsMemory,
-            delayProcessorSpeed: state.business.delayProcessorSpeed,
             creativity: state.business.creativity,
             creativityTurnOn: state.business.creativityTurnOn
         };

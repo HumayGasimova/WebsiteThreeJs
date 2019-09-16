@@ -76,7 +76,20 @@ export const Creativity = {
     next: 'creativity',
     valid: false,
     id: "card9",
-    terminal: "WireBuyer online "
+    terminal: "Creativity unlocked (creativity increases while operations are at max)"
+}
+
+export const Limerick = {
+    text1: "Limerick (10 creat)",
+    text2 : "Algorithmically-generated poem (+1 Trust)",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'limerick',
+    valid: false,
+    id: "card10",
+    terminal: "Creativity unlocked (creativity increases while operations are at max)"
 }
 
 // export const WireBuyer =   {

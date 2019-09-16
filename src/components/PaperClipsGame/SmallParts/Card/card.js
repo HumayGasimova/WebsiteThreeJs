@@ -50,7 +50,7 @@ class Card extends Component {
 
     componentDidMount () {
         this.intervalCheckCardValidity = setInterval(()=>{
-            if(this.props.ops >= this.props.price){
+            if(this.props.priceOps && this.props.ops >= this.props.priceOps || this.props.priceCreativity && this.props.creativity  >= this.props.priceCreativity){
                 this.props.checkCardValidity(this.props.id, true, this.props.i)
             }else{
                 this.props.checkCardValidity(this.props.id, false, this.props.i)
@@ -68,9 +68,13 @@ class Card extends Component {
 
     render(){
         return(
-            <div onClick={this.props.onClick} className={this.props.valid ? "card" : "card-invalid"}>
+            <button 
+                onClick={this.props.onClick} 
+                className={this.props.valid ? "card" : "card-invalid"}
+                disabled={!this.props.valid}
+            >
                 {this.props.children}
-            </div>
+            </button>
         );
     }
 }
@@ -79,7 +83,7 @@ export default connect(
     (state) => {
         return {
             ops: state.business.ops,
-            // funds: state.business.funds,
+            creativity: state.business.creativity,
             // unsoldInventory: state.business.unsoldInventory,
             // paperclipPrice: state.business.paperclipPrice,
             // delay: state.business.delay

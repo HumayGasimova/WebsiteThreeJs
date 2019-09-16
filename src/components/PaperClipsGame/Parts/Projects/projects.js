@@ -137,6 +137,7 @@ class Projects extends Component {
                 this.props.improveWireExtrusion(action);
                 break;
             case 'creativity':
+                this.props.addProject(projectsToAdd.Limerick);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.creativityTurnOn();
                 break;
@@ -161,7 +162,8 @@ class Projects extends Component {
                                 key={el.id}
                                 onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action)}
                                 valid={el.valid}
-                                price={el.price.ops}
+                                priceOps={el.price.ops}
+                                priceCreativity={el.price.creativity}
                                 id={el.id}
                                 action={el.action}
                                 i={i}
