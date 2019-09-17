@@ -347,7 +347,7 @@ export const StrategicModeling = {
     valid: false,
     id: "",
     terminal: "Run tournament, pick strategy, earn Yomi based on that strategy's performance.| "
-}
+}//NewComponent next
 export const NewStrategyA100 = {
     text1: "New Strategy: A100 (15,000 ops)",
     text2: "Always choose A",
@@ -417,7 +417,7 @@ export const CoherentExtrapolatedVolition = {
     id: "",
     terminal: "Coherent Extrapolated Volition complete, TRUST INCREASED"
 }// next 4
-export const CureForCancer = {
+export const CureForCancer1 = {
     text1: "Cure for Cancer(25,000 ops)",
     text2: "The trick is tricking cancer into curing itself",
     text3: "(+10 Trust)",
@@ -428,9 +428,9 @@ export const CureForCancer = {
     next: 'cureForCancer',
     valid: false,
     id: "",
-    terminal: ""
-}
-export const WorldPeace = {
+    terminal: "Cancer is cured, +10 TRUST, global stock prices trending upward"
+}//stop
+export const WorldPeace2 = {
     text1: "World Peace(15,000 yomi, 30,000 ops)",
     text2: "Pareto optimal solutions to all global",
     text3: "conflicts (+12 Trust)",
@@ -443,7 +443,7 @@ export const WorldPeace = {
     id: "",
     terminal: ""
 }
-export const GlobalWarming = {
+export const GlobalWarming3 = {
     text1: "Global Warming(4,500 yomi, 50,000 ops)",
     text2: "A robust solution to man-made climate",
     text3: "change. (+15 Trust)",
@@ -456,7 +456,7 @@ export const GlobalWarming = {
     id: "",
     terminal: ""
 }
-export const MalePatternBaldness = {
+export const MalePatternBaldness4 = {
     text1: "MalePatternBaldness(20,000 ops)",
     text2: "A cure for androgenetic alopecia.(+20",
     text3: "Trust)",
@@ -467,8 +467,9 @@ export const MalePatternBaldness = {
     next: 'MalePatternBaldness',
     valid: false,
     id: "",
-    terminal: ""
+    terminal: "They are still monkeys"
 }
+
 
 
 

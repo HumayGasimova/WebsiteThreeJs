@@ -13,6 +13,7 @@ import React,{
 
 import Section1 from './Section1/section1';
 import Section2 from './Section2/section2';
+import Section3 from './Section3/section3';
 
 /**
 * Styles
@@ -43,6 +44,7 @@ class Game extends Component {
             <div className="game">
               <Section1/>
               <Section2/>
+              <Section3/>
             </div>
         );
     }
