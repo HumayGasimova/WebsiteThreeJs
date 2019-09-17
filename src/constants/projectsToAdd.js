@@ -304,34 +304,7 @@ export const TheTothSausageConjecture = {
 
 
 
-export const NewStrategyBeatLast = {
-    text1: "New Strategy: BEAT LAST (32,500 ops)",
-    text2: "Choose the option that does the best",
-    text3: "against what your opponent chose last",
-    text4: "round",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyBeatLast',
-    valid: false,
-    id: "",
-    terminal: "BEAT LAST added to strategy pool|"
-}
-export const TheoryOfMind = {
-    text1: "Theory Of Mind (25,000 ops)",
-    text2: "Double the cost of strategy modeling and",
-    text3: "the amount of Yomi generated",
-    text4: "round",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'theoryOfMind',
-    valid: false,
-    id: "",
-    terminal: ""
-}
+
 
 
 
@@ -373,12 +346,54 @@ export const StrategicModeling = {
     next: 'strategicModeling',
     valid: false,
     id: "",
+    terminal: "Run tournament, pick strategy, earn Yomi based on that strategy's performance.| "
+}
+export const NewStrategyA100 = {
+    text1: "New Strategy: A100 (15,000 ops)",
+    text2: "Always choose A",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyA100',
+    valid: false,
+    id: "",
     terminal: " "
 }
 
 
 
 
+
+
+export const NewStrategyBeatLast = {
+    text1: "New Strategy: BEAT LAST (32,500 ops)",
+    text2: "Choose the option that does the best",
+    text3: "against what your opponent chose last",
+    text4: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyBeatLast',
+    valid: false,
+    id: "",
+    terminal: "BEAT LAST added to strategy pool|"
+}
+export const TheoryOfMind = {
+    text1: "Theory Of Mind (25,000 ops)",
+    text2: "Double the cost of strategy modeling and",
+    text3: "the amount of Yomi generated",
+    text4: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'theoryOfMind',
+    valid: false,
+    id: "",
+    terminal: ""
+}
 
 
 
