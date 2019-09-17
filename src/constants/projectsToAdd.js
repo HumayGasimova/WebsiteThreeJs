@@ -111,34 +111,27 @@ export const Limerick = {
 
 
 
-// export const AlgorithmicTrading = {
-//     text1: "Algorithmic Trading (10,000 ops)",
-//     text2: "Develop an investment engine for",
-//     text3: "generating funds",
-//     price: {
-//         ops: 3
-//     },
-//     action: null,
-//     next: 'algorithmicTrading',
-//     valid: false,
-//     id: "",
-//     terminal: ""
-// }
+export const AlgorithmicTrading = {
+    text1: "Algorithmic Trading (10,000 ops)",
+    text2: "Develop an investment engine for",
+    text3: "generating funds",
+    price: {
+        ops: 3
+    },
+    action: null,
+    next: 'algorithmicTrading',
+    valid: false,
+    id: "",
+    terminal: "Investment engine unlocked"
+}//new component stop
 
 
 
-// export const HypnoDrones = {
-//     text1: "HypnoDrones (70,000 ops)",
-//     text2: "Autonomous aerial brand ambassadors",
-//     price: {
-//         ops: 3
-//     },
-//     action: ,
-//     next: 'hypnoDrones',
-//     valid: false,
-//     id: "",
-//     terminal: ""
-// }
+
+
+
+
+
 
 
 
@@ -153,8 +146,36 @@ export const LexicalProcessing = {
     next: 'lexicalProcessing',
     valid: false,
     id: "",
-    terminal: ""
+    terminal: "Impossible' is a word to be found only in the dictionary of fools. -Napoleon"
 }
+
+export const NewSlogan = {
+    text1: "New Slogan (25 creat, 2,500 ops)",
+    text2: "Improve marketing effectiveness by 50%",
+    price: {
+        creat: 3
+    },
+    action: 50,
+    next: 'newSlogan',
+    valid: false,
+    id: "",
+    terminal: "Clip It! Marketing is now 50% more effective"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const CombinatoryHarmonics = {
     text1: "Combinatory Harmonics (100 creat)",
@@ -167,8 +188,57 @@ export const CombinatoryHarmonics = {
     next: 'combinatoryHarmonics',
     valid: false,
     id: "",
+    terminal: "Listening is selecting and interpreting and acting and making decisions -Pauline Oliveros"
+}
+
+export const CatchyJingle = {
+    text1: "Catchy Jingle (45 creat, 4,500 ops)",
+    text2: "Double marketing effectiveness",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'catchyJingle',
+    valid: false,
+    id: "",
+    terminal: "Clip It Good! Marketing is now twice as effective"
+}
+
+export const HypnoHarmonics = {
+    text1: "Hypno Harmonics (7,500 ops, 1 Trust)",
+    text2: "Double marketing effectiveness",
+    price: {
+        ops: 3
+    },
+    action: 5,
+    next: 'hypnoHarmonics',
+    valid: false,
+    id: "",
+    terminal: "Marketing is now 5 times more effective"
+}
+
+export const HypnoDrones = {
+    text1: "Hypno Drones (70,000 ops)",
+    text2: "Autonomous aerial brand ambassadors",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'hypnoDrones',
+    valid: false,
+    id: "",
     terminal: ""
 }
+
+
+
+
+
+
+
+
+
+
 
 export const TheHadwigerProblem = {
     text1: "The Hadwiger Problem (150 creat)",
@@ -181,8 +251,35 @@ export const TheHadwigerProblem = {
     next: 'theHadwigerProblem',
     valid: false,
     id: "",
-    terminal: ""
+    terminal: "Architecture is the thoughtful making of space. -Louis Kahn"
 }
+
+export const HadwigerClipDiagrams = {
+    text1: "Hadwiger Clip Diagrams (6,000 ops)",
+    text2: "Increases AutoClipper performance by an",
+    text3: "additional 500%",
+    price: {
+        ops: 3
+    },
+    action: 500,
+    next: 'hadwigerClipDiagrams',
+    valid: false,
+    id: "",
+    terminal: "AutoClipper performance improved by 500%"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const TheTothSausageConjecture = {
     text1: "The Tóth Sausage Conjecture (200 creat)",
@@ -194,8 +291,62 @@ export const TheTothSausageConjecture = {
     next: 'theTothSausageConjecture',
     valid: false,
     id: "",
+    terminal: "You can't invent a design. You recognize it, in the fourth dimension. -D.H. Lawrence"
+}
+
+// stops
+
+
+
+
+
+
+
+
+
+export const NewStrategyBeatLast = {
+    text1: "New Strategy: BEAT LAST (32,500 ops)",
+    text2: "Choose the option that does the best",
+    text3: "against what your opponent chose last",
+    text4: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyBeatLast',
+    valid: false,
+    id: "",
+    terminal: "BEAT LAST added to strategy pool|"
+}
+export const TheoryOfMind = {
+    text1: "Theory Of Mind (25,000 ops)",
+    text2: "Double the cost of strategy modeling and",
+    text3: "the amount of Yomi generated",
+    text4: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'theoryOfMind',
+    valid: false,
+    id: "",
     terminal: ""
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const DonkeySpace = {
     text1: "Donkey Space (250 creat)",
@@ -208,31 +359,127 @@ export const DonkeySpace = {
     next: 'donkeySpace',
     valid: false,
     id: "",
+    terminal: "Every commercial transaction has within itself an element of trust. - Kenneth Arrow"
+}
+
+export const StrategicModeling = {
+    text1: "Strategic Modeling (12,000 ops)",
+    text2: "Analyze strategy tournaments to generate",
+    text3: "Yomi",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'strategicModeling',
+    valid: false,
+    id: "",
+    terminal: " "
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const CoherentExtrapolatedVolition = {
+    text1: "Coherent Extrapolated Volition(500",
+    text2: "creat, 3,000 Yomi, 20,000 ops)",
+    text3: "Human values, machine intelligence, a new",
+    text4: "era of trust. (+1 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'coherentExtrapolatedVolition',
+    valid: false,
+    id: "",
+    terminal: "Coherent Extrapolated Volition complete, TRUST INCREASED"
+}// next 4
+export const CureForCancer = {
+    text1: "Cure for Cancer(25,000 ops)",
+    text2: "The trick is tricking cancer into curing itself",
+    text3: "(+10 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'cureForCancer',
+    valid: false,
+    id: "",
+    terminal: ""
+}
+export const WorldPeace = {
+    text1: "World Peace(15,000 yomi, 30,000 ops)",
+    text2: "Pareto optimal solutions to all global",
+    text3: "conflicts (+12 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'worldPeace',
+    valid: false,
+    id: "",
+    terminal: ""
+}
+export const GlobalWarming = {
+    text1: "Global Warming(4,500 yomi, 50,000 ops)",
+    text2: "A robust solution to man-made climate",
+    text3: "change. (+15 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'globalWarming',
+    valid: false,
+    id: "",
+    terminal: ""
+}
+export const MalePatternBaldness = {
+    text1: "MalePatternBaldness(20,000 ops)",
+    text2: "A cure for androgenetic alopecia.(+20",
+    text3: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'MalePatternBaldness',
+    valid: false,
+    id: "",
     terminal: ""
 }
 
-// export const  =   {
-//     text1: "Spectral Froth Annealment (12,000 ops)",
-//     text2 : "200% more wire supply from every spool",
-//     price: {
-//         ops: 3
-//     },
-//     action: ,
-//     next: '',
-//     valid: false,
-//     id: "",
-//     terminal: ""
-// }
 
-// export const  =   {
-//     text1: "Spectral Froth Annealment (12,000 ops)",
-//     text2 : "200% more wire supply from every spool",
-//     price: {
-//         ops: 3
-//     },
-//     action: ,
-//     next: '',
-//     valid: false,
-//     id: "",
-//     terminal: ""
-// }
+
+
+
+
+
+
+export const FullMonopoly = {
+    text1: "Full Monopoly (3,000 yomi, $10,000,000)",
+    text2: "Establish full control over the world-wide",
+    text3: "paperclip market. (+1 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'fullMonopoly',
+    valid: false,
+    id: "",
+    terminal: "Full market monopoly achieved, public demand increased x10"
+}// stop
+
+
+
+
+
+
+
+
