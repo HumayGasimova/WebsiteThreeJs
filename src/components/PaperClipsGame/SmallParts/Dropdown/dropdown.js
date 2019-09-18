@@ -42,6 +42,9 @@ class Dropdown extends Component {
 
     constructor (props){
         super(props);
+        this.state = {
+            showDropdown: false
+        }
     }
 
     /**
@@ -51,9 +54,9 @@ class Dropdown extends Component {
    renderDropdown = () => {
        return(
            <div className="dropdown-bottom">
-               {this.props.list.map(el => {
+               {this.props.list.map((el,i) => {
                    return(
-                        <div>
+                        <div key={i}>
                             {el}
                         </div>
                    )
@@ -69,10 +72,13 @@ class Dropdown extends Component {
     render(){
         return(
             <div className="dropdown">
-                <div className="dropdown-top">
+                <div 
+                    className={this.state.showDropdown ? "dropdown-bottom-active" :"dropdown-top"}
+                    onClick={()=>{this.setState({showDropdown: !this.state.showDropdown})}}
+                >
                     <div></div>
                 </div>
-                {this.renderDropdown()}
+                {this.state.showDropdown ? this.renderDropdown() : null}
             </div>
         );
     }
