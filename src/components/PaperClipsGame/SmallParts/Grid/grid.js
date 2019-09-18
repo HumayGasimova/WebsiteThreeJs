@@ -54,13 +54,13 @@ class Grid extends Component {
 
     render(){
         return(
-            <button 
-                onClick={this.props.onClick} 
-                className={this.props.valid ? "card" : "card-invalid"}
-                disabled={!this.props.valid}
-            >
-                {this.props.children}
-            </button>
+            <div className="grid-row">
+                <div className={this.props.className}></div>
+                <div className={this.props.className}></div>
+                <div className={this.props.className}></div>
+                <div className={this.props.className}></div>
+                <div className={this.props.className}></div>
+            </div>
         );
     }
 }

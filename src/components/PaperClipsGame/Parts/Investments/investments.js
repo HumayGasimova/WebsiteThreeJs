@@ -19,6 +19,7 @@ import {
 */
 
 import Button from '../../../../library/Button/button';
+import Grid from '../../SmallParts/Grid/grid';
 
 /**
 * Styles
@@ -61,8 +62,8 @@ class Investments extends Component {
     render(){
         return(
             <div className="investments">
-                <div className="business-wrapper1">
-                    <div className="business-label">Investments</div>
+                <div className="investments-wrapper1">
+                    <div className="investments-label">Investments</div>
                     <div>DropDown component</div>
                 </div>
                 <div className="investments-wrapper1">
@@ -84,10 +85,22 @@ class Investments extends Component {
                         <div>Total: $0</div>
                     </div>
                 </div>
-                <div>
-
+                <div className="investments-wrapper2">
+                    <div className="investments-part3">
+                        <div>Stock</div>
+                        <div>Amt.</div>
+                        <div>Price</div>
+                        <div>Total</div>
+                        <div>P/L</div>
+                    </div>
+                    <div>
+                    <Grid className="grid-cell-gray"/>
+                    <Grid className="grid-cell-white"/>
+                    <Grid className="grid-cell-gray"/>
+                    <Grid className="grid-cell-white"/>
+                    <Grid className="grid-cell-gray"/>
+                    </div>
                 </div>
-    
             </div>
         );
     }
