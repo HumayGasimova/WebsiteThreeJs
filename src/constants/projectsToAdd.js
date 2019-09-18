@@ -438,6 +438,19 @@ export const NewStrategyGreedy = {
     next: 'newStrategyGreedy',
     valid: false,
     id: "",
+    terminal: "GREEDY added to strategy pool"
+}
+export const NewStrategyGenerous = {
+    text1: "New Strategy: GENEROUS (22,500 ops)",
+    text2: "Choose the option that gives your opponent",
+    text3: "the largest potential payoff",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyGenerous',
+    valid: false,
+    id: "",
     terminal: ""
 }
 
