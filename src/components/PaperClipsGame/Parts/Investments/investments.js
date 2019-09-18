@@ -120,40 +120,52 @@ class Investments extends Component {
     render(){
         return(
             <div className="investments">
-                <div className="investments-wrapper1">
-                    <div className="investments-label">Investments</div>
-                    <Dropdown list={this.props.listInvestments}/>
+                <div className="investments-box">
+                    <div className="investments-wrapper1">
+                        <div className="investments-label">Investments</div>
+                        <Dropdown list={this.props.listInvestments}/>
+                    </div>
+                    <div className="investments-wrapper1">
+                        <div className="investments-part1">
+                            <Button
+                                className="investments-button"
+                                // onClick={this.props.lowerPrice}
+                                text={"Deposit"}
+                            />
+                            <Button
+                                className="investments-button"
+                                // onClick={this.props.raisePrice}
+                                text={"Withdraw"}
+                            />
+                        </div>
+                        <div className="investments-part2">
+                            <div>Cash: $0</div>
+                            <div>Stocks: $0</div>
+                            <div>Total: $0</div>
+                        </div>
+                    </div>
+                    <div className="investments-wrapper2">
+                        <div className="investments-part3">
+                            <div>Stock</div>
+                            <div>Amt.</div>
+                            <div>Price</div>
+                            <div>Total</div>
+                            <div>P/L</div>
+                        </div>
+                        <div>
+                            {this.renderGrid()}
+                        </div>
+                    </div>
                 </div>
-                <div className="investments-wrapper1">
-                    <div className="investments-part1">
+                <div>
+                    <div className="investments-wrapper3">
                         <Button
-                            className="investments-button"
-                            // onClick={this.props.lowerPrice}
-                            text={"Deposit"}
-                        />
-                        <Button
-                            className="investments-button"
                             // onClick={this.props.raisePrice}
-                            text={"Withdraw"}
+                            text={"Upgrade Investment Engine"}
                         />
+                        <div>Level: 0</div>
                     </div>
-                    <div className="investments-part2">
-                        <div>Cash: $0</div>
-                        <div>Stocks: $0</div>
-                        <div>Total: $0</div>
-                    </div>
-                </div>
-                <div className="investments-wrapper2">
-                    <div className="investments-part3">
-                        <div>Stock</div>
-                        <div>Amt.</div>
-                        <div>Price</div>
-                        <div>Total</div>
-                        <div>P/L</div>
-                    </div>
-                    <div>
-                        {this.renderGrid()}
-                    </div>
+                    <div>Cost: 1000 Yomi</div>
                 </div>
             </div>
         );

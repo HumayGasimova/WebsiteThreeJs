@@ -418,7 +418,7 @@ export const NewStrategyA100 = {
 }
 export const NewStrategyB100 = {
     text1: "New Strategy: B100 (17,500 ops)",
-    text2: "Always choose A",
+    text2: "Always choose B",
     price: {
         ops: 3
     },
@@ -430,7 +430,7 @@ export const NewStrategyB100 = {
 }
 export const NewStrategyGreedy = {
     text1: "New Strategy: GREEDY (20,000 ops)",
-    text2: "Always choose A",
+    text2: "Choose the option with the largest potential payoff",
     price: {
         ops: 3
     },
