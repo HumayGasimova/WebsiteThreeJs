@@ -19,7 +19,7 @@
         height: 19px;
         display: flex;
         justify-content: space-between;
-    
+
     }
     .dropdown-bottom {
         position: absolute;
@@ -32,6 +32,11 @@
         width: 88px;
         >div{
             padding: 3px 0 3px 4px;
+            &:hover{
+                background-color: rgb(33, 148, 255);
+                color: white;
+                cursor: context-menu;
+            }
         }
     }
 }
