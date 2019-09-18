@@ -55,11 +55,11 @@ class Grid extends Component {
     render(){
         return(
             <div className="grid-row">
-                <div className={this.props.className}></div>
-                <div className={this.props.className}></div>
-                <div className={this.props.className}></div>
-                <div className={this.props.className}></div>
-                <div className={this.props.className}></div>
+                <div className={this.props.className}>{this.props.stock}</div>
+                <div className={this.props.className}>{this.props.amt}</div>
+                <div className={this.props.className}>{this.props.price}</div>
+                <div className={this.props.className}>{this.props.total}</div>
+                <div className={this.props.className}>{this.props.pl}</div>
             </div>
         );
     }

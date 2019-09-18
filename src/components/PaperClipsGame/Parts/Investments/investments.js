@@ -46,7 +46,43 @@ class Investments extends Component {
     constructor (props){
         super(props);
         this.state = {
-            
+            example: [
+                {
+                    stock: 100,
+                    amt: 100,
+                    price: 100,
+                    total: 100,
+                    pl: 100
+                },
+                {
+                    stock: 100,
+                    amt: 100,
+                    price: 100,
+                    total: 100,
+                    pl: 100
+                },
+                {
+                    stock: 100,
+                    amt: 100,
+                    price: 100,
+                    total: 100,
+                    pl: 100
+                },
+                {
+                    stock: 100,
+                    amt: 100,
+                    price: 100,
+                    total: 100,
+                    pl: 100
+                },
+                {
+                    stock: 100,
+                    amt: 100,
+                    price: 100,
+                    total: 100,
+                    pl: 100
+                }
+            ]
         }
     }
 
@@ -54,6 +90,27 @@ class Investments extends Component {
      * Methods
      */
 
+    renderGrid = () => {
+        if(true){
+            return(
+                <div>
+                    {this.state.example.map((el,i) => {
+                        return(
+                            <Grid
+                                key={i}
+                                className={`grid-line${i}`}
+                                stock={el.stock}
+                                amt={el.amt}
+                                price={el.price}
+                                total={el.total}
+                                pl={el.pl}    
+                            />
+                        )
+                    })}
+                </div>
+            )
+        }
+    }
     
     /**
     * Markup
@@ -94,11 +151,7 @@ class Investments extends Component {
                         <div>P/L</div>
                     </div>
                     <div>
-                    <Grid className="grid-cell-gray"/>
-                    <Grid className="grid-cell-white"/>
-                    <Grid className="grid-cell-gray"/>
-                    <Grid className="grid-cell-white"/>
-                    <Grid className="grid-cell-gray"/>
+                        {this.renderGrid()}
                     </div>
                 </div>
             </div>

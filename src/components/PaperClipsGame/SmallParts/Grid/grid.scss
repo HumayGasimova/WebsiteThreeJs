@@ -1,20 +1,49 @@
 .grid-row {
     display: flex;
 
-    .grid-cell-gray {
+    .grid-line0 {
         width: 54px;
         height: 14.5px;
         background-color: rgb(216, 216, 216);
         padding: 0px 4px 0 4px;
         border-left: 1px solid white;
         border-right: 1px solid white;
+        font-size: 12px;
     }
-    .grid-cell-white {
+    .grid-line1 {
         width: 54px;
         height: 14.5px;
         background-color: white;
         padding: 0px 4px 0 4px;
         border-left: 1px solid white;
         border-right: 1px solid white;
+        font-size: 12px;
+    }
+    .grid-line2 {
+        width: 54px;
+        height: 14.5px;
+        background-color: rgb(216, 216, 216);
+        padding: 0px 4px 0 4px;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        font-size: 12px;
+    }
+    .grid-line3 {
+        width: 54px;
+        height: 14.5px;
+        background-color: white;
+        padding: 0px 4px 0 4px;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        font-size: 12px;
+    }
+    .grid-line4 {
+        width: 54px;
+        height: 14.5px;
+        background-color: rgb(216, 216, 216);
+        padding: 0px 4px 0 4px;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        font-size: 12px;
     }
 }
