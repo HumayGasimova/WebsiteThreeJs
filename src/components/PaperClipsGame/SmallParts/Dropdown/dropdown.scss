@@ -8,14 +8,18 @@
         border: 1px solid rgb(190, 190, 190);
         width: 87px;
         height: 19px;
-
+        display: flex;
+        justify-content: space-evenly;  
     }
-    .dropdown-bottom-active {
+    .dropdown-top-active {
         margin-left: 5px;
         border: 1px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
         width: 87px;
         height: 19px;
+        display: flex;
+        justify-content: space-between;
+    
     }
     .dropdown-bottom {
         position: absolute;
@@ -30,4 +34,18 @@
             padding: 3px 0 3px 4px;
         }
     }
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    transform: rotateZ(180deg);
+}
+
+.dropdown-top-text{
+    padding-left: 5px;
+    padding-top: 1px;
+    width: 67px;
+    height: 18px;
+    font-size: 15px;
 }

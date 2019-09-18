@@ -24,6 +24,13 @@ import {
 
 import './dropdown.scss';
 
+
+/**
+* Images
+*/
+
+import Arrow from '../../../../images/arrow__triangle-small-2-01-512.png';
+
 /**
 * Actions
 */
@@ -73,10 +80,14 @@ class Dropdown extends Component {
         return(
             <div className="dropdown">
                 <div 
-                    className={this.state.showDropdown ? "dropdown-bottom-active" :"dropdown-top"}
+                    className={this.state.showDropdown ? "dropdown-top-active" :"dropdown-top"}
                     onClick={()=>{this.setState({showDropdown: !this.state.showDropdown})}}
                 >
-                    <div></div>
+                    <div className="dropdown-top-text"> Low Risk
+                    </div>
+                    <div>
+                        <img src={Arrow} alt="arrow"/>
+                    </div>
                 </div>
                 {this.state.showDropdown ? this.renderDropdown() : null}
             </div>
