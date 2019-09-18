@@ -221,8 +221,9 @@ export const OptimizedMegaClippers = {
     next: 'optimizedMegaClippers',
     valid: false,
     id: "",
-    terminal: ""
-}
+    terminal: "MegaClipper performance increased by 100%| "
+}//stop
+
 
 
 

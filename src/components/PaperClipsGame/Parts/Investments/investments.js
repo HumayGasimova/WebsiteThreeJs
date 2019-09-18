@@ -20,6 +20,7 @@ import {
 
 import Button from '../../../../library/Button/button';
 import Grid from '../../SmallParts/Grid/grid';
+import Dropdown from '../../SmallParts/Dropdown/dropdown';
 
 /**
 * Styles
@@ -121,7 +122,7 @@ class Investments extends Component {
             <div className="investments">
                 <div className="investments-wrapper1">
                     <div className="investments-label">Investments</div>
-                    <div>DropDown component</div>
+                    <Dropdown/>
                 </div>
                 <div className="investments-wrapper1">
                     <div className="investments-part1">
