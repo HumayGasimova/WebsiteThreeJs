@@ -426,6 +426,18 @@ export const NewStrategyB100 = {
     next: 'newStrategyB100',
     valid: false,
     id: "",
+    terminal: "B100 added to strategy pool"
+}
+export const NewStrategyGreedy = {
+    text1: "New Strategy: GREEDY (20,000 ops)",
+    text2: "Always choose A",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyGreedy',
+    valid: false,
+    id: "",
     terminal: ""
 }
 
