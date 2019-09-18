@@ -48,6 +48,20 @@ class Dropdown extends Component {
     * Methods
     */
     
+   renderDropdown = () => {
+       return(
+           <div className="dropdown-bottom">
+               {this.props.list.map(el => {
+                   return(
+                        <div>
+                            {el}
+                        </div>
+                   )
+               })}
+           </div>
+       )
+   }
+
     /**
     * Markup
     */
@@ -57,9 +71,8 @@ class Dropdown extends Component {
             <div className="dropdown">
                 <div className="dropdown-top">
                     <div></div>
-                    <div></div>
                 </div>
-                <div className={this.props.className}>{this.props.amt}</div>
+                {this.renderDropdown()}
             </div>
         );
     }

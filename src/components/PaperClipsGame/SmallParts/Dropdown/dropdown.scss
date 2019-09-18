@@ -2,8 +2,20 @@
     .dropdown-top {
         margin-left: 5px;
         border: 2px solid red;
-        width: 73px;
+        width: 87px;
         height: 15px;
 
+    }
+    .dropdown-bottom {
+        position: absolute;
+        background-color: white;
+        margin-left: 5px;
+        border: 2px solid lightblue;
+        font-size: 15px;
+        padding: 0 0 0 4px;
+        width: 83px;
+        >div{
+            padding: 3px 0 3px 0;
+        }
     }
 }

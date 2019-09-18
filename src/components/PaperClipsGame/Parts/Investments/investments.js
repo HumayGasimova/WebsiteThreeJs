@@ -122,7 +122,7 @@ class Investments extends Component {
             <div className="investments">
                 <div className="investments-wrapper1">
                     <div className="investments-label">Investments</div>
-                    <Dropdown/>
+                    <Dropdown list={this.props.listInvestments}/>
                 </div>
                 <div className="investments-wrapper1">
                     <div className="investments-part1">
@@ -163,7 +163,7 @@ class Investments extends Component {
 export default connect(
     (state) => {
         return {
-            // paperClips: state.business.paperClips,
+            listInvestments: state.business.listInvestments,
             // funds: state.business.funds,
             // unsoldInventory: state.business.unsoldInventory,
             // paperclipPrice: state.business.paperclipPrice,

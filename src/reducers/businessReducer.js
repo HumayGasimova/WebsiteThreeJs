@@ -35,7 +35,8 @@ const initialState = {
     cards: [],
     revTracker: false,
     makePaperclipDisabled: false,
-    creativityTurnOn: false
+    creativityTurnOn: false,
+    listInvestments: ["Low Risk","Med Risk","High Risk"]
 }
 
 const addPaperclip = (state) => {
