@@ -61,6 +61,32 @@ class Investments extends Component {
     render(){
         return(
             <div className="investments">
+                <div className="business-wrapper1">
+                    <div className="business-label">Investments</div>
+                    <div>DropDown component</div>
+                </div>
+                <div className="investments-wrapper1">
+                    <div className="investments-part1">
+                        <Button
+                            className="investments-button"
+                            // onClick={this.props.lowerPrice}
+                            text={"Deposit"}
+                        />
+                        <Button
+                            className="investments-button"
+                            // onClick={this.props.raisePrice}
+                            text={"Withdraw"}
+                        />
+                    </div>
+                    <div className="investments-part2">
+                        <div>Cash: $0</div>
+                        <div>Stocks: $0</div>
+                        <div>Total: $0</div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
     
             </div>
         );

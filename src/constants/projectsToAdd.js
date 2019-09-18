@@ -171,6 +171,61 @@ export const NewSlogan = {
 
 
 
+export const MegaClippers = {
+    text1: "Mega Clippers (12,000 ops)",
+    text2: "500x more powerful than a standard",
+    text3: "AutoClipper",
+    price: {
+        creat: 3
+    },
+    action: 50,
+    next: 'megaClippers',
+    valid: false,
+    id: "",
+    terminal: "MegaClipper technology online"
+} // new component next
+export const ImprovedMegaClippers = {
+    text1: "Improved Mega Clippers (14,000 ops)",
+    text2: "Increases MegaClipper performance 25%",
+    text3: "AutoClipper",
+    price: {
+        creat: 3
+    },
+    action: 25,
+    next: 'improvedMegaClippers',
+    valid: false,
+    id: "",
+    terminal: "MegaClipper performance increased by 25%"
+}
+export const EvenBetterMegaClippers = {
+    text1: "Even Better MegaClippers (17,000 ops)",
+    text2: "Increases MegaClipper performance by an",
+    text3: "additional 50%",
+    price: {
+        creat: 3
+    },
+    action: 50,
+    next: 'EevenBetterMegaClippers',
+    valid: false,
+    id: "",
+    terminal: "MegaClipper performance increased by 50%"
+}
+export const OptimizedMegaClippers = {
+    text1: "Optimized MegaClippers (19,500 ops)",
+    text2: "Increases MegaClipper performance by an",
+    text3: "additional 100%",
+    price: {
+        creat: 3
+    },
+    action: 50,
+    next: 'optimizedMegaClippers',
+    valid: false,
+    id: "",
+    terminal: ""
+}
+
+
+
 
 
 
@@ -358,8 +413,25 @@ export const NewStrategyA100 = {
     next: 'newStrategyA100',
     valid: false,
     id: "",
-    terminal: " "
+    terminal: "A100 added to strategy pool"
 }
+export const NewStrategyB100 = {
+    text1: "New Strategy: B100 (17,500 ops)",
+    text2: "Always choose A",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyB100',
+    valid: false,
+    id: "",
+    terminal: ""
+}
+
+
+
+
+
 
 
 
