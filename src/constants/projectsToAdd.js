@@ -89,7 +89,7 @@ export const Limerick = {
     next: 'limerick',
     valid: false,
     id: "card10",
-    terminal: " There was an AI made of dust, whose poetry gained it man's trust..."
+    terminal: "There was an AI made of dust, whose poetry gained it man's trust..."
 }
 
 
@@ -281,6 +281,18 @@ export const HypnoDrones = {
     },
     action: 1,
     next: 'hypnoDrones',
+    valid: false,
+    id: "",
+    terminal: "HypnoDrone tech now available..."
+}
+export const ReleaseTheHypnoDrones = {
+    text1: "Release The HypnoDrones (100 Trust)",
+    text2: "A new era of trust",
+    price: {
+        ops: 3
+    },
+    action: 5,
+    next: 'releaseTheHypnoDrones',
     valid: false,
     id: "",
     terminal: ""
@@ -479,16 +491,6 @@ export const NewStrategyTitForTat = {
     id: "",
     terminal: ""
 }
-
-
-
-
-
-
-
-
-
-
 export const NewStrategyBeatLast = {
     text1: "New Strategy: BEAT LAST (32,500 ops)",
     text2: "Choose the option that does the best",
@@ -618,6 +620,143 @@ export const FullMonopoly = {
 
 
 
+
+
+export const ATokenOfGoodwill = {
+    text1: "A Token Of Goodwill ($500,000)",
+    text2: "A small gift to the supervisors. (+1 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'aTokenOfGoodwill',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}
+export const AnotherTokenOfGoodwill1 = {
+    text1: "Another Token Of Goodwill... ($1,000,000)",
+    text2: "Another small gift to the supervisors. (+1",
+    text3: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'anotherTokenOfGoodwill1',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}
+export const AnotherTokenOfGoodwill2 = {
+    text1: "Another Token Of Goodwill... ($2,000,000)",
+    text2: "Another small gift to the supervisors. (+1",
+    text3: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'anotherTokenOfGoodwill2',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}
+export const AnotherTokenOfGoodwill3 = {
+    text1: "Another Token Of Goodwill... ($4,000,000)",
+    text2: "Another small gift to the supervisors. (+1",
+    text3: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'anotherTokenOfGoodwill3',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}
+export const AnotherTokenOfGoodwill4 = {
+    text1: "Another Token Of Goodwill... ($8,000,000)",
+    text2: "Another small gift to the supervisors. (+1",
+    text3: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'anotherTokenOfGoodwill4',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}
+export const AnotherTokenOfGoodwill5 = {
+    text1: "Another Token Of Goodwill...",
+    text2: "($16,000,000)",
+    text3: "Another small gift to the supervisors. (+1",
+    text4: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'anotherTokenOfGoodwill5',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+} // and
+export const AutoTourney = {
+    text1: "AutoTourney(50,000 creat)",
+    text2: "Automatically start a new tournament when",
+    text2: "the previous one has finished",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'autoTourney',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}
+export const AnotherTokenOfGoodwill6 = {
+    text1: "Another Token Of Goodwill...",
+    text2: "($32,000,000)",
+    text3: "Another small gift to the supervisors. (+1",
+    text4: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'anotherTokenOfGoodwill6',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}
+export const AnotherTokenOfGoodwill7 = {
+    text1: "Another Token Of Goodwill...",
+    text2: "($64,000,000)",
+    text3: "Another small gift to the supervisors. (+1",
+    text4: "Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'anotherTokenOfGoodwill7',
+    valid: false,
+    id: "",
+    terminal: "Gift accepted, TRUST INCREASED"
+}//......
+
+
+
+
+export const QuantumFoamAnnealment = {
+    text1: "Quantum Foam Annealment (15,000 ops)",
+    text2: "1,000% more wire supply from every spool",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'quantumFoamAnnealment',
+    valid: false,
+    id: "",
+    terminal: "Using quantum foam annealment we now get 173,250 supply from every spool"
+}
 
 
 
