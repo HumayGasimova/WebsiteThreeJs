@@ -94,38 +94,17 @@ class StrategicModeling extends Component {
                             dropdownBottomClassName={"dropdown-bottom-strategicModeling"}
                             dropdownTopTextClassName={"dropdown-top-text-strategicModeling"}
                         />
+                        <Button
+                            className="strategicModeling-button-run"
+                            // onClick={this.props.lowerPrice}
+                            text={"Run"}
+                        />
                     </div>
+                    <div>Pick strategy, run tournament, gain yomi</div>
                     <div className="strategicModeling-wrapper1">
-                        <div className="strategicModeling-part1">
-                            <Button
-                                className="strategicModeling-button"
-                                // onClick={this.props.lowerPrice}
-                                text={"Deposit"}
-                            />
-                            <Button
-                                className="strategicModeling-button"
-                                // onClick={this.props.raisePrice}
-                                text={"Withdraw"}
-                            />
-                        </div>
-                        <div className="strategicModeling-part2">
-                            <div>Cash: $0</div>
-                            <div>Stocks: $0</div>
-                            <div>Total: $0</div>
-                        </div>
+                        
                     </div>
-                    <div className="strategicModeling-wrapper2">
-                        <div className="strategicModeling-part3">
-                            <div>Stock</div>
-                            <div>Amt.</div>
-                            <div>Price</div>
-                            <div>Total</div>
-                            <div>P/L</div>
-                        </div>
-                        <div>
-                            {this.renderGrid()}
-                        </div>
-                    </div>
+                   
                 </div>
                 <div>
                     <div className="strategicModeling-wrapper3">

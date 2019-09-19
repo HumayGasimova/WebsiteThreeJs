@@ -159,7 +159,7 @@ class Investments extends Component {
                             <div>Total</div>
                             <div>P/L</div>
                         </div>
-                        <div>
+                        <div className="investments-part4">
                             {this.renderGrid()}
                         </div>
                     </div>

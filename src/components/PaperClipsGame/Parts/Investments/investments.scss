@@ -3,7 +3,7 @@
     margin-top: 30px;
     .investments-box {
         border: 1px solid rgb(156, 156, 156);
-        width: 300px;
+        width: 330px;
         height: 170px;
         padding: 7px;
         .investments-label {
@@ -41,6 +41,10 @@
     display: flex;
     justify-content: space-between;
     width: 250px;
+}
+
+.investments-part4 {
+    padding-left: 4px;
 }
 
 
