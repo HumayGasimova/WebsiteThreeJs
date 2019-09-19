@@ -1,9 +1,9 @@
-.dropdown {
+.dropdown-investments {
     // box-shadow: 0px 0px 1px 1px #ccc;
     width: 87px;
     height: 19px;
 
-    .dropdown-top {
+    .dropdown-top-investments {
         margin-left: 5px;
         border: 1px solid rgb(190, 190, 190);
         width: 87px;
@@ -11,7 +11,7 @@
         display: flex;
         justify-content: space-evenly;  
     }
-    .dropdown-top-active {
+    .dropdown-top-active-investments {
         margin-left: 5px;
         border: 1px solid rgb(190, 190, 190);
         box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
@@ -21,7 +21,7 @@
         justify-content: space-between;
 
     }
-    .dropdown-bottom {
+    .dropdown-bottom-investments {
         position: absolute;
         // right: 171px;
         background-color: white;
@@ -47,10 +47,60 @@ img {
     transform: rotateZ(180deg);
 }
 
-.dropdown-top-text{
+.dropdown-top-text-investments{
     padding-left: 5px;
     padding-top: 1px;
     width: 67px;
+    height: 18px;
+    font-size: 15px;
+}
+
+.dropdown-strategicModeling {
+    // box-shadow: 0px 0px 1px 1px #ccc;
+    width: 121px;
+    height: 19px;
+
+    .dropdown-top-strategicModeling {
+        margin-left: 5px;
+        border: 1px solid rgb(190, 190, 190);
+        width: 121px;
+        height: 19px;
+        display: flex;
+        justify-content: space-between;  
+    }
+    .dropdown-top-active-strategicModeling {
+        margin-left: 5px;
+        border: 1px solid rgb(190, 190, 190);
+        box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
+        width: 121px;
+        height: 19px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .dropdown-bottom-strategicModeling {
+        position: absolute;
+        // right: 171px;
+        background-color: white;
+        margin-left: 5px;
+        border: 0.5px solid rgb(190, 190, 190);
+        box-shadow: 0px 0px 1px 1px rgb(157, 222, 248);
+        font-size: 15px;
+        width: 122px;
+        >div{
+            padding: 3px 0 3px 5px;
+            &:hover{
+                background-color: rgb(33, 148, 255);
+                color: white;
+                cursor: context-menu;
+            }
+        }
+    }
+}
+
+.dropdown-top-text-strategicModeling{
+    padding-left: 3px;
+    padding-top: 1px;
+    width: 89px;
     height: 18px;
     font-size: 15px;
 }

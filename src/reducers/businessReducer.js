@@ -36,7 +36,8 @@ const initialState = {
     revTracker: false,
     makePaperclipDisabled: false,
     creativityTurnOn: false,
-    listInvestments: ["Low Risk","Med Risk","High Risk"]
+    listInvestments: ["Low Risk","Med Risk","High Risk"],
+    listStrategicModeling: ["Pick a Start","RANDOM"]
 }
 
 const addPaperclip = (state) => {

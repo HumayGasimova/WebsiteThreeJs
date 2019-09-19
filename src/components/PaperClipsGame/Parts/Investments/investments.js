@@ -35,7 +35,7 @@ import './investments.scss';
 import * as Actions from '../../../../actions';
 
 /**
-* General component definition and export
+* Investments component definition and export
 */
 
 class Investments extends Component {
@@ -123,7 +123,14 @@ class Investments extends Component {
                 <div className="investments-box">
                     <div className="investments-wrapper1">
                         <div className="investments-label">Investments</div>
-                        <Dropdown list={this.props.listInvestments}/>
+                        <Dropdown 
+                            list={this.props.listInvestments}
+                            dropdownClassName={"dropdown-investments"}
+                            dropdownTopClassName={"dropdown-top-investments"}
+                            dropdownTopActiveClassName={"dropdown-top-active-investments"}
+                            dropdownBottomClassName={"dropdown-bottom-investments"}
+                            dropdownTopTextClassName={"dropdown-top-text-investments"}
+                        />
                     </div>
                     <div className="investments-wrapper1">
                         <div className="investments-part1">

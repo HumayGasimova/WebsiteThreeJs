@@ -19,7 +19,7 @@ import {
 */
 
 import Investments from '../../Parts/Investments/investments';
-import Projects from '../../Parts/Projects/projects';
+import StrategicModeling from '../../Parts/StrategicModeling/strategicModeling';
 
 /**
 * Styles
@@ -57,6 +57,7 @@ class Section3 extends Component {
             return(
                 <div>
                     <Investments/> 
+                    <StrategicModeling/>
                 </div>
             )
         }

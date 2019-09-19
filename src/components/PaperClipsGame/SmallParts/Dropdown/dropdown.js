@@ -60,7 +60,7 @@ class Dropdown extends Component {
     
    renderDropdown = () => {
        return(
-           <div className="dropdown-bottom">
+           <div className={this.props.dropdownBottomClassName}>
                {this.props.list.map((el,i) => {
                    return(
                         <div key={i}>
@@ -78,12 +78,13 @@ class Dropdown extends Component {
 
     render(){
         return(
-            <div className="dropdown">
+            <div className={this.props.dropdownClassName}>
                 <div 
-                    className={this.state.showDropdown ? "dropdown-top-active" :"dropdown-top"}
+                    className={this.state.showDropdown ? this.props.dropdownTopActiveClassName : this.props.dropdownTopClassName}
                     onClick={()=>{this.setState({showDropdown: !this.state.showDropdown})}}
                 >
-                    <div className="dropdown-top-text"> Low Risk
+                    <div className={this.props.dropdownTopTextClassName}> 
+                        {this.props.list[0]}
                     </div>
                     <div>
                         <img src={Arrow} alt="arrow"/>

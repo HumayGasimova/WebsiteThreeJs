@@ -451,9 +451,34 @@ export const NewStrategyGenerous = {
     next: 'newStrategyGenerous',
     valid: false,
     id: "",
+    terminal: "GENEROUS added to strategy pool"
+}
+export const NewStrategyMinimax = {
+    text1: "New Strategy: MINIMAX (25,000 ops)",
+    text2: "Choose the option that gives your opponent",
+    text3: "the smallest potential payoff",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyMinimax',
+    valid: false,
+    id: "",
+    terminal: "MINIMAX added to strategy pool"
+}
+export const NewStrategyTitForTat = {
+    text1: "New Strategy: TIT FOR TAT (30,000 ops)",
+    text2: "Choose the option your opponent chose last",
+    text3: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyTitForTat',
+    valid: false,
+    id: "",
     terminal: ""
 }
-
 
 
 
@@ -552,7 +577,7 @@ export const GlobalWarming3 = {
     next: 'globalWarming',
     valid: false,
     id: "",
-    terminal: ""
+    terminal: "Global Warming solved, +15 TRUST, global stock prices trending upward"
 }
 export const MalePatternBaldness4 = {
     text1: "MalePatternBaldness(20,000 ops)",
