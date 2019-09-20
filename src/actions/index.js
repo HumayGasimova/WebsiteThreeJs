@@ -39,5 +39,6 @@ export {
     improveWireExtrusion,
     startCreativityCounter,
     creativityTurnOn,
-    trustPlusOneFromProject
+    trustPlusOneFromProject,
+    wireExists
 } from './businessActions';

@@ -56,7 +56,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper2">
                         <Button
-                            onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
+                            onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire, this.props.noWire)}
                             text={"AutoClippers"}
                             disabled={this.props.autoClippersButtonDisabled}
                         />
@@ -88,6 +88,10 @@ class Manufacturing extends Component {
             this.props.checkButtons();
             this.props.checkExistenceOfWire(this.props.wire);
         }, 1000);
+
+        if(this.props.noWire===0){
+            console.log("HHHH")
+          }
     }
 
     componentWillUnmount = () => {
@@ -95,6 +99,11 @@ class Manufacturing extends Component {
         clearInterval(this.intervalCheckButton)
     }
     
+    // checkWire = () => {
+    //     if(this.props.wire === 0){
+    //         this.props.stop()
+    //     }
+    // }
     /**
     * Markup
     */
@@ -138,7 +147,8 @@ export default connect(
             paperclipPrice: state.business.paperclipPrice,
             delay: state.business.delay,
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
-            wire: state.business.wire
+            wire: state.business.wire,
+            noWire: state.business.noWire,
         };
     },
     (dispatch) => {

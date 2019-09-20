@@ -14,8 +14,8 @@ const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 1000,
-    wireToAdd: 1000,
+    wire: 50,
+    wireToAdd: 50,
     wirePrice: 20,
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
@@ -37,7 +37,8 @@ const initialState = {
     makePaperclipDisabled: false,
     creativityTurnOn: false,
     listInvestments: ["Low Risk","Med Risk","High Risk"],
-    listStrategicModeling: ["Pick a Start","RANDOM"]
+    listStrategicModeling: ["Pick a Start","RANDOM"],
+    noWire: false
 }
 
 const addPaperclip = (state) => {
@@ -301,6 +302,13 @@ const creativityTurnOn = (state) => {
     });
 }
 
+const wireExists = (state,action) => {
+    return updateObject(state, {
+        noWire: action.val
+    });
+}
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -385,8 +393,8 @@ const businessReducer = (state = initialState, action) => {
             return state;  
         case actionTypes.CREATIVITY_TURN_ON:
             return creativityTurnOn(state, action);  
-
-
+        case actionTypes.WIRE_EXISTS:
+            return wireExists(state, action);
         default: 
             return state;
     }

@@ -15,10 +15,12 @@ function checkWireEpic(action$) {
             if(action.wire === 0){
                 return Observable.of(
                     Actions.stop(),
+                    Actions.wireExists(false)
                 ) 
             }else{
                 return Observable.of(
                     // Actions.toggleWireButton(),
+                    Actions.wireExists(true)
                 ) 
             }
                   

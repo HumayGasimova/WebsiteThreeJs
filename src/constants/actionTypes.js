@@ -22,6 +22,8 @@ export const WIRE_PRICE = 'WIRE_PRICE';
 export const TOGGLE_WIRE_BUTTON = 'TOGGLE_WIRE_BUTTON';
 export const CHECK_EXISTENCE_OF_WIRE = 'CHECK_EXISTENCE_OF_WIRE';
 export const STOP = 'STOP';
+export const WIRE_EXISTS = 'WIRE_EXISTS';
+
 
 
 
