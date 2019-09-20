@@ -124,14 +124,13 @@ export function wireExists(val) {
     };
 };
 
-export function autoPaperclips(priceOfPaperclip, delay, delay2, wire, noWire) {
+export function autoPaperclips(priceOfPaperclip, delay, delay2, wire) {
     return { 
         type: actionTypes.AUTO_PAPERCLIPS,
         priceOfPaperclip: priceOfPaperclip,
         delay: delay,
         delayAutoPaperClippers: delay2,
-        wire: wire,
-        noWire: noWire
+        wire: wire
     };
 };
 
