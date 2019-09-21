@@ -270,7 +270,7 @@ export const HypnoHarmonics = {
     price: {
         ops: 3
     },
-    action: 5,
+    action: 400,
     next: 'hypnoHarmonics',
     valid: false,
     id: "",
@@ -295,7 +295,7 @@ export const ReleaseTheHypnoDrones = {
     price: {
         ops: 3
     },
-    action: 5,
+    action: 500,
     next: 'releaseTheHypnoDrones',
     valid: false,
     id: "",

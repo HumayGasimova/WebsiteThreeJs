@@ -165,7 +165,12 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
                 this.props.improveMarketing(action)
                 break;
-                    
+            case 'hypnoHarmonics':
+                this.props.addProject(projectsToAdd.ReleaseTheHypnoDrones);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveMarketing(action)
+                break;
+                   
         }
 
 
