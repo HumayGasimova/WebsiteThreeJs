@@ -92,6 +92,48 @@ export const Limerick = {
     terminal: "There was an AI made of dust, whose poetry gained it man's trust..."
 }
 
+export const LexicalProcessing = {
+    text1: "Lexical Processing (50 creat)",
+    text2: "Gain ability to interpret and understand",
+    text3: "human language (+1 Trust)",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'lexicalProcessing',
+    valid: false,
+    id: "card11",
+    terminal: "Impossible' is a word to be found only in the dictionary of fools. -Napoleon"
+}
+
+export const NewSlogan = {
+    text1: "New Slogan (25 creat, 2,500 ops)",
+    text2: "Improve marketing effectiveness by 50%",
+    price: {
+        ops: 3,
+        creat: 3
+    },
+    action: 50,
+    next: 'newSlogan',
+    valid: false,
+    id: "card16",
+    terminal: "Clip It! Marketing is now 50% more effective"
+}
+
+export const AlgorithmicTrading = {
+    text1: "Algorithmic Trading (10,000 ops)",
+    text2: "Develop an investment engine for",
+    text3: "generating funds",
+    price: {
+        ops: 3
+    },
+    action: null,
+    next: 'algorithmicTrading',
+    valid: false,
+    id: "card17",
+    terminal: "Investment engine unlocked"
+}
+
 
 // export const WireBuyer = {
 //     text1: "Spectral Froth Annealment (12,000 ops)",
@@ -123,47 +165,7 @@ export const Limerick = {
 
 
 
-export const LexicalProcessing = {
-    text1: "Lexical Processing (50 creat)",
-    text2: "Gain ability to interpret and understand",
-    text3: "human language (+1 Trust)",
-    price: {
-        creat: 3
-    },
-    action: 1,
-    next: 'lexicalProcessing',
-    valid: false,
-    id: "card11",
-    terminal: "Impossible' is a word to be found only in the dictionary of fools. -Napoleon"
-}// creativity 50
 
-export const NewSlogan = {
-    text1: "New Slogan (25 creat, 2,500 ops)",
-    text2: "Improve marketing effectiveness by 50%",
-    price: {
-        ops: 3,
-        creat: 3
-    },
-    action: 50,
-    next: 'newSlogan',
-    valid: false,
-    id: "card16",
-    terminal: "Clip It! Marketing is now 50% more effective"
-}
-
-export const AlgorithmicTrading = {
-    text1: "Algorithmic Trading (10,000 ops)",
-    text2: "Develop an investment engine for",
-    text3: "generating funds",
-    price: {
-        ops: 3
-    },
-    action: null,
-    next: 'algorithmicTrading',
-    valid: false,
-    id: "card17",
-    terminal: "Investment engine unlocked"
-}//new component stop
 
 
 
@@ -239,7 +241,7 @@ export const CombinatoryHarmonics = {
     text2: "Daisy, Daisy, give me your answer do ... (+1",
     text3: "Trust)",
     price: {
-        ops: 3
+        creat: 3
     },
     action: 1,
     next: 'combinatoryHarmonics',
@@ -252,12 +254,13 @@ export const CatchyJingle = {
     text1: "Catchy Jingle (45 creat, 4,500 ops)",
     text2: "Double marketing effectiveness",
     price: {
-        ops: 3
+        ops: 3,
+        creat: 3
     },
-    action: 1,
+    action: 100,
     next: 'catchyJingle',
     valid: false,
-    id: "",
+    id: "card18",
     terminal: "Clip It Good! Marketing is now twice as effective"
 }
 

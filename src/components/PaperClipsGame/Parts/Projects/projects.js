@@ -140,13 +140,12 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.Limerick);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.creativityTurnOn();
-                // this.props.trustPlusOneFromProject()
                 break;
             case 'lexicalProcessing':
                 this.props.addProject(projectsToAdd.NewSlogan);
                 this.props.addProject(projectsToAdd.AlgorithmicTrading);
                 this.props.removePriceOfProjectCreat(price.creat);
-                this.props.trustPlusOneFromProject()
+                this.props.trustPlusOneFromProject();
                 break;
             case 'newSlogan':
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
@@ -155,6 +154,16 @@ class Projects extends Component {
             case 'algorithmicTrading':
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showInvestEngine();
+                break;
+            case 'combinatoryHarmonics':
+                this.props.addProject(projectsToAdd.CatchyJingle);
+                this.props.removePriceOfProjectCreat(price.creat);
+                this.props.trustPlusOneFromProject();
+                break;
+            case 'catchyJingle':
+                this.props.addProject(projectsToAdd.HypnoHarmonics);
+                this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
+                this.props.improveMarketing(action)
                 break;
                     
         }
