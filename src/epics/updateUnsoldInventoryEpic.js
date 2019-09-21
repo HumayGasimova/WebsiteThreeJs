@@ -6,11 +6,11 @@ import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function updateUnsoldInventoryEpic(action$) { 
+function updateUnsoldInventoryEpic(action$, state$) { 
     return action$
         .ofType(actionTypes.MAKE_PAPERCLIP)
         .mergeMap(action => {
-            if(action.wire > 1){
+            if(state$.value.business.wire > 1){
                 return Observable.of(
                     Actions.updateUnsoldInventory(),
                     Actions.updateFunds(action.priceOfPaperclip),

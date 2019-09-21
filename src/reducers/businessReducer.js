@@ -23,6 +23,7 @@ const initialState = {
     autoClipperInitPrice: 0,
     autoClipperPrice: 6.1,
     autoClippersButtonDisabled: true,
+    autoClipperOn: false,
     prevTrust: 3000,
     trust: 2,
     clipsToBuyTrust: 3000,
@@ -146,7 +147,8 @@ const autoClippersAddOne = (state) => {
         autoClippersPerSec: state.autoClippersPerSec + 1,
         autoClipperPrice: updatedAutoClipperPrice,
         funds: +updatedFunds.toFixed(2),
-        delayAutoPaperClippers: state.delayAutoPaperClippers / 1.01
+        delayAutoPaperClippers: state.delayAutoPaperClippers / 1.01,
+        autoClipperOn: true
         
     });
 }

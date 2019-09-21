@@ -12,7 +12,7 @@ import { mergeMap, takeUntil, ofType } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 import { take } from 'rxjs-compat/operator/take';
 
-export const autoPaperclipsStartsEpic = action$ => 
+export const autoPaperclipsStartsEpic = (action$, state$) => 
     action$
     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
     .mergeMap(action => {
