@@ -340,6 +340,12 @@ export function improveMarketing(val) {
     };
 };
 
+export function showInvestEngine() {
+    return { 
+        type: actionTypes.SHOW_INVESTMENT_ENGINE
+    };
+};
+
 
 
 

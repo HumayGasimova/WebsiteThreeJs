@@ -152,7 +152,11 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
                 this.props.improveMarketing(action);
                 break;
-                
+            case 'algorithmicTrading':
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showInvestEngine();
+                break;
+                    
         }
 
 
@@ -242,6 +246,8 @@ export default connect(
             creativityTurnOn: bindActionCreators(Actions.creativityTurnOn, dispatch),
             trustPlusOneFromProject: bindActionCreators(Actions.trustPlusOneFromProject, dispatch),
             improveMarketing: bindActionCreators(Actions.improveMarketing, dispatch),
+            showInvestEngine: bindActionCreators(Actions.showInvestEngine, dispatch),
+            
         };
     }
 )(Projects);

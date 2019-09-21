@@ -48,5 +48,6 @@ export {
     addTheHadwingerProblem,
     addTheTothSausageConjecture,
     addDonkeySpace,
-    improveMarketing
+    improveMarketing,
+    showInvestEngine
 } from './businessActions';
