@@ -262,6 +262,14 @@ export function removePriceOfProjectCreat(price) {
     };
 };
 
+export function removePriceOfProjectOpsAndCreat(ops, creat) {
+    return { 
+        type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT,
+        ops: ops,
+        creativity: creat
+    };
+};
+
 export function improveAutoClippers(val) {
     return { 
         type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
@@ -322,6 +330,13 @@ export function addTheTothSausageConjecture() {
 export function addDonkeySpace() {
     return { 
         type: actionTypes.ADD_DONKEY_SPACE
+    };
+};
+
+export function improveMarketing(val) {
+    return { 
+        type: actionTypes.IMPROVE_MARKETING,
+        val: val
     };
 };
 

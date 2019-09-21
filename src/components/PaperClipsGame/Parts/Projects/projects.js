@@ -148,6 +148,10 @@ class Projects extends Component {
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.trustPlusOneFromProject()
                 break;
+            case 'newSlogan':
+                this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
+                this.props.improveMarketing(action);
+                break;
                 
         }
 
@@ -230,12 +234,14 @@ export default connect(
             addProject: bindActionCreators(Actions.addProject, dispatch),
             removePriceOfProjectOps: bindActionCreators(Actions.removePriceOfProjectOps, dispatch),
             removePriceOfProjectCreat: bindActionCreators(Actions.removePriceOfProjectCreat, dispatch),
+            removePriceOfProjectOpsAndCreat: bindActionCreators(Actions.removePriceOfProjectOpsAndCreat, dispatch),
             improveAutoClippers: bindActionCreators(Actions.improveAutoClippers, dispatch),
             stop: bindActionCreators(Actions.stop, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
             improveWireExtrusion: bindActionCreators(Actions.improveWireExtrusion, dispatch),
             creativityTurnOn: bindActionCreators(Actions.creativityTurnOn, dispatch),
             trustPlusOneFromProject: bindActionCreators(Actions.trustPlusOneFromProject, dispatch),
+            improveMarketing: bindActionCreators(Actions.improveMarketing, dispatch),
         };
     }
 )(Projects);

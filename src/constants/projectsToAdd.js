@@ -141,6 +141,7 @@ export const NewSlogan = {
     text1: "New Slogan (25 creat, 2,500 ops)",
     text2: "Improve marketing effectiveness by 50%",
     price: {
+        ops: 3,
         creat: 3
     },
     action: 50,

@@ -35,6 +35,7 @@ export {
     addProject,
     removePriceOfProjectOps,
     removePriceOfProjectCreat,
+    removePriceOfProjectOpsAndCreat,
     improveAutoClippers, 
     toggleMakePaperclipButton,
     improveWireExtrusion,
@@ -46,5 +47,6 @@ export {
     addCombinatoryHarmonics,
     addTheHadwingerProblem,
     addTheTothSausageConjecture,
-    addDonkeySpace
+    addDonkeySpace,
+    improveMarketing
 } from './businessActions';

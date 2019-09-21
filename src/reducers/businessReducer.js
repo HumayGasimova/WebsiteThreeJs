@@ -271,19 +271,20 @@ const addProject = (state, action) => {
 }
 
 const removePriceOfProjectOps = (state, action) => {
-    let updatedCards = [...state.cards];
-    updatedCards.push(action.project);
-
     return updateObject(state, {
         ops: state.ops - action.ops
     });
 }
 
 const removePriceOfProjectCreat = (state, action) => {
-    let updatedCards = [...state.cards];
-    updatedCards.push(action.project);
+     return updateObject(state, {
+        creativity: state.creativity - action.creativity
+    });
+}
 
+const removePriceOfProjectOpsAndCreat = (state, action) => {
     return updateObject(state, {
+        ops: state.ops - action.ops,
         creativity: state.creativity - action.creativity
     });
 }
@@ -313,9 +314,16 @@ const creativityTurnOn = (state) => {
     });
 }
 
-const wireExists = (state,action) => {
+const wireExists = (state, action) => {
     return updateObject(state, {
         noWire: action.val
+    });
+}
+
+const improveMarketing = (state, action) => {
+    let updatedMaxPublicDemand = +state.maxPublicDemand + (+state.maxPublicDemand * action.val / 100);
+    return updateObject(state, {
+        maxPublicDemand: updatedMaxPublicDemand
     });
 }
 
@@ -396,6 +404,8 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectOps(state, action);  
         case actionTypes.REMOVE_PRICE_OF_PROJECT_CREAT:
             return removePriceOfProjectCreat(state, action);  
+        case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT:
+            return removePriceOfProjectOpsAndCreat(state, action);  
         case actionTypes.IMPROVE_AUTO_PAPER_CLIPPER:
             return improveAutoClippers(state, action);  
         case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
@@ -418,6 +428,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.ADD_DONKEY_SPACE:
             return state;
+        case actionTypes.IMPROVE_MARKETING:
+            return improveMarketing(state, action);
         default: 
             return state;
     }
