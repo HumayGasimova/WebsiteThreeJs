@@ -279,6 +279,15 @@ const removePriceOfProjectOps = (state, action) => {
     });
 }
 
+const removePriceOfProjectCreat = (state, action) => {
+    let updatedCards = [...state.cards];
+    updatedCards.push(action.project);
+
+    return updateObject(state, {
+        creativity: state.creativity - action.creativity
+    });
+}
+
 const improveAutoClippers = (state, action) => {
     let updatedAutoPaperClippers = state.delayAutoPaperClippers - (state.delayAutoPaperClippers * action.val / 100);
     return updateObject(state, {
@@ -385,6 +394,8 @@ const businessReducer = (state = initialState, action) => {
             return addProject(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS:
             return removePriceOfProjectOps(state, action);  
+        case actionTypes.REMOVE_PRICE_OF_PROJECT_CREAT:
+            return removePriceOfProjectCreat(state, action);  
         case actionTypes.IMPROVE_AUTO_PAPER_CLIPPER:
             return improveAutoClippers(state, action);  
         case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:

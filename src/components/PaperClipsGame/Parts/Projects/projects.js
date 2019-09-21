@@ -140,6 +140,12 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.Limerick);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.creativityTurnOn();
+                // this.props.trustPlusOneFromProject()
+                break;
+            case 'lexicalProcessing':
+                this.props.addProject(projectsToAdd.NewSlogan);
+                this.props.addProject(projectsToAdd.AlgorithmicTrading);
+                this.props.removePriceOfProjectCreat(price.creat);
                 this.props.trustPlusOneFromProject()
                 break;
                 
@@ -223,6 +229,7 @@ export default connect(
             showRevTracker: bindActionCreators(Actions.showRevTracker, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
             removePriceOfProjectOps: bindActionCreators(Actions.removePriceOfProjectOps, dispatch),
+            removePriceOfProjectCreat: bindActionCreators(Actions.removePriceOfProjectCreat, dispatch),
             improveAutoClippers: bindActionCreators(Actions.improveAutoClippers, dispatch),
             stop: bindActionCreators(Actions.stop, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),

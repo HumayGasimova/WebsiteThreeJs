@@ -111,19 +111,7 @@ export const Limerick = {
 
 
 
-export const AlgorithmicTrading = {
-    text1: "Algorithmic Trading (10,000 ops)",
-    text2: "Develop an investment engine for",
-    text3: "generating funds",
-    price: {
-        ops: 3
-    },
-    action: null,
-    next: 'algorithmicTrading',
-    valid: false,
-    id: "",
-    terminal: "Investment engine unlocked"
-}//new component stop
+
 
 
 
@@ -158,11 +146,23 @@ export const NewSlogan = {
     action: 50,
     next: 'newSlogan',
     valid: false,
-    id: "",
+    id: "card16",
     terminal: "Clip It! Marketing is now 50% more effective"
 }
 
-
+export const AlgorithmicTrading = {
+    text1: "Algorithmic Trading (10,000 ops)",
+    text2: "Develop an investment engine for",
+    text3: "generating funds",
+    price: {
+        ops: 3
+    },
+    action: null,
+    next: 'algorithmicTrading',
+    valid: false,
+    id: "card17",
+    terminal: "Investment engine unlocked"
+}//new component stop
 
 
 

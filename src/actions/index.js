@@ -34,6 +34,7 @@ export {
     showRevTracker,
     addProject,
     removePriceOfProjectOps,
+    removePriceOfProjectCreat,
     improveAutoClippers, 
     toggleMakePaperclipButton,
     improveWireExtrusion,
