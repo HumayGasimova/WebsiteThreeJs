@@ -72,6 +72,21 @@ class ComputationalResources extends Component {
             if(this.props.ops === this.props.opsMax){
                 this.props.startCreativityCounter();
             }
+            if(this.props.creativity === 50){
+                this.props.addLexicalProcessing()
+            }
+            if(this.props.creativity === 100){
+                this.props.addCombinatoryHarmonics()
+            }
+            if(this.props.creativity === 150){
+                this.props.addTheHadwingerProblem()
+            }
+            if(this.props.creativity === 200){
+                this.props.addTheTothSausageConjecture()
+            }
+            if(this.props.creativity === 250){
+                this.props.addDonkeySpace()
+            }
         }, 1000);
 
         this.intervalCreativity = setInterval(()=>{
@@ -170,6 +185,11 @@ export default connect(
             increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
             increaseCreativity: bindActionCreators(Actions.increaseCreativity, dispatch),
             startCreativityCounter: bindActionCreators(Actions.startCreativityCounter, dispatch),
+            addLexicalProcessing: bindActionCreators(Actions.addLexicalProcessing, dispatch),
+            addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
+            addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
+            addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
+            addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
         };
     }
 )(ComputationalResources);

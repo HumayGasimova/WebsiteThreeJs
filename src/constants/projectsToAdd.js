@@ -145,9 +145,9 @@ export const LexicalProcessing = {
     action: 1,
     next: 'lexicalProcessing',
     valid: false,
-    id: "",
+    id: "card11",
     terminal: "Impossible' is a word to be found only in the dictionary of fools. -Napoleon"
-}
+}// creativity 50
 
 export const NewSlogan = {
     text1: "New Slogan (25 creat, 2,500 ops)",
@@ -171,58 +171,58 @@ export const NewSlogan = {
 
 
 
-export const MegaClippers = {
-    text1: "Mega Clippers (12,000 ops)",
-    text2: "500x more powerful than a standard",
-    text3: "AutoClipper",
-    price: {
-        creat: 3
-    },
-    action: 50,
-    next: 'megaClippers',
-    valid: false,
-    id: "",
-    terminal: "MegaClipper technology online"
-} // new component next
-export const ImprovedMegaClippers = {
-    text1: "Improved Mega Clippers (14,000 ops)",
-    text2: "Increases MegaClipper performance 25%",
-    text3: "AutoClipper",
-    price: {
-        creat: 3
-    },
-    action: 25,
-    next: 'improvedMegaClippers',
-    valid: false,
-    id: "",
-    terminal: "MegaClipper performance increased by 25%"
-}
-export const EvenBetterMegaClippers = {
-    text1: "Even Better MegaClippers (17,000 ops)",
-    text2: "Increases MegaClipper performance by an",
-    text3: "additional 50%",
-    price: {
-        creat: 3
-    },
-    action: 50,
-    next: 'EevenBetterMegaClippers',
-    valid: false,
-    id: "",
-    terminal: "MegaClipper performance increased by 50%"
-}
-export const OptimizedMegaClippers = {
-    text1: "Optimized MegaClippers (19,500 ops)",
-    text2: "Increases MegaClipper performance by an",
-    text3: "additional 100%",
-    price: {
-        creat: 3
-    },
-    action: 50,
-    next: 'optimizedMegaClippers',
-    valid: false,
-    id: "",
-    terminal: "MegaClipper performance increased by 100%| "
-}//stop
+                                                                                                            export const MegaClippers = {
+                                                                                                                text1: "Mega Clippers (12,000 ops)",
+                                                                                                                text2: "500x more powerful than a standard",
+                                                                                                                text3: "AutoClipper",
+                                                                                                                price: {
+                                                                                                                    creat: 3
+                                                                                                                },
+                                                                                                                action: 50,
+                                                                                                                next: 'megaClippers',
+                                                                                                                valid: false,
+                                                                                                                id: "",
+                                                                                                                terminal: "MegaClipper technology online"
+                                                                                                            } // new component next
+                                                                                                            export const ImprovedMegaClippers = {
+                                                                                                                text1: "Improved Mega Clippers (14,000 ops)",
+                                                                                                                text2: "Increases MegaClipper performance 25%",
+                                                                                                                text3: "AutoClipper",
+                                                                                                                price: {
+                                                                                                                    creat: 3
+                                                                                                                },
+                                                                                                                action: 25,
+                                                                                                                next: 'improvedMegaClippers',
+                                                                                                                valid: false,
+                                                                                                                id: "",
+                                                                                                                terminal: "MegaClipper performance increased by 25%"
+                                                                                                            }
+                                                                                                            export const EvenBetterMegaClippers = {
+                                                                                                                text1: "Even Better MegaClippers (17,000 ops)",
+                                                                                                                text2: "Increases MegaClipper performance by an",
+                                                                                                                text3: "additional 50%",
+                                                                                                                price: {
+                                                                                                                    creat: 3
+                                                                                                                },
+                                                                                                                action: 50,
+                                                                                                                next: 'EevenBetterMegaClippers',
+                                                                                                                valid: false,
+                                                                                                                id: "",
+                                                                                                                terminal: "MegaClipper performance increased by 50%"
+                                                                                                            }
+                                                                                                            export const OptimizedMegaClippers = {
+                                                                                                                text1: "Optimized MegaClippers (19,500 ops)",
+                                                                                                                text2: "Increases MegaClipper performance by an",
+                                                                                                                text3: "additional 100%",
+                                                                                                                price: {
+                                                                                                                    creat: 3
+                                                                                                                },
+                                                                                                                action: 50,
+                                                                                                                next: 'optimizedMegaClippers',
+                                                                                                                valid: false,
+                                                                                                                id: "",
+                                                                                                                terminal: "MegaClipper performance increased by 100%| "
+                                                                                                            }//stop
 
 
 
@@ -243,9 +243,9 @@ export const CombinatoryHarmonics = {
     action: 1,
     next: 'combinatoryHarmonics',
     valid: false,
-    id: "",
+    id: "card12",
     terminal: "Listening is selecting and interpreting and acting and making decisions -Pauline Oliveros"
-}
+}// 100 creat
 
 export const CatchyJingle = {
     text1: "Catchy Jingle (45 creat, 4,500 ops)",
@@ -318,9 +318,9 @@ export const TheHadwigerProblem = {
     action: 1,
     next: 'theHadwigerProblem',
     valid: false,
-    id: "",
+    id: "card13",
     terminal: "Architecture is the thoughtful making of space. -Louis Kahn"
-}
+}//150creat
 
 export const HadwigerClipDiagrams = {
     text1: "Hadwiger Clip Diagrams (6,000 ops)",
@@ -358,11 +358,11 @@ export const TheTothSausageConjecture = {
     action: 1,
     next: 'theTothSausageConjecture',
     valid: false,
-    id: "",
+    id: "card14",
     terminal: "You can't invent a design. You recognize it, in the fourth dimension. -D.H. Lawrence"
 }
 
-// stops
+// 200 creat stops
 
 
 
@@ -399,9 +399,9 @@ export const DonkeySpace = {
     action: 1,
     next: 'donkeySpace',
     valid: false,
-    id: "",
+    id: "card15",
     terminal: "Every commercial transaction has within itself an element of trust. - Kenneth Arrow"
-}
+}//250 creat
 
 export const StrategicModeling = {
     text1: "Strategic Modeling (12,000 ops)",

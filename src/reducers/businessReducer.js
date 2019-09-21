@@ -397,6 +397,16 @@ const businessReducer = (state = initialState, action) => {
             return creativityTurnOn(state, action);  
         case actionTypes.WIRE_EXISTS:
             return wireExists(state, action);
+        case actionTypes.ADD_LEXICAL_PROCESSING:
+            return state;  
+        case actionTypes.ADD_COMBINATORY_HARMONICS:
+            return state;
+        case actionTypes.ADD_THE_HADWINGER_PROBLEM:
+            return state;  
+        case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
+            return state;
+        case actionTypes.ADD_DONKEY_SPACE:
+            return state;
         default: 
             return state;
     }

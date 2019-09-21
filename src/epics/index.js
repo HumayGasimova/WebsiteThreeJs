@@ -13,6 +13,12 @@ import autoPaperclipsStartEpic from './autoPaperclipsStartEpic';
 import autoPaperClippersAddOneEpic from './autoPaperClippersAddOneEpic';
 import startCreativityEpic from '../epicsProject/startCreativityEpic';
 import creativityTurnOnEpic from '../epicsProject/creativityTurnOnEpic';
+import throwLexicalProcessingEpic from '../epicsProject/throwLexicalProcessingEpic';
+import throwCombinatoryHarmonicsEpic from '../epicsProject/throwCombinatoryHarmonicsEpic';
+import throwTheHadwingerProblemEpic from '../epicsProject/throwTheHadwingerProblemEpic';
+import throwTheTothSausageConjectureEpic from '../epicsProject/throwTheTothSausageConjectureEpic';
+import throwDonkeySpaceEpic from '../epicsProject/throwDonkeySpaceEpic';
+
 
 
 
@@ -30,5 +36,10 @@ export const rootEpic = combineEpics(
     // repeatAutoPaperClippersEpic,
     autoPaperClippersAddOneEpic,
     startCreativityEpic,
-    // creativityTurnOnEpic
+    // creativityTurnOnEpic,
+    throwLexicalProcessingEpic,
+    throwCombinatoryHarmonicsEpic,
+    throwTheHadwingerProblemEpic,
+    throwTheTothSausageConjectureEpic,
+    throwDonkeySpaceEpic
 );

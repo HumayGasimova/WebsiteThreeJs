@@ -40,5 +40,10 @@ export {
     startCreativityCounter,
     creativityTurnOn,
     trustPlusOneFromProject,
-    wireExists
+    wireExists,
+    addLexicalProcessing,
+    addCombinatoryHarmonics,
+    addTheHadwingerProblem,
+    addTheTothSausageConjecture,
+    addDonkeySpace
 } from './businessActions';
