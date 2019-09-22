@@ -195,8 +195,7 @@ export default connect(
             addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
             addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
             addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
-            addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
-            throwProject: bindActionCreators(Actions.throwProject, dispatch),
+            addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch)
         };
     }
 )(ComputationalResources);
