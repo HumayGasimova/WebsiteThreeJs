@@ -353,6 +353,12 @@ export function showInvestEngine() {
     };
 };
 
+export function throwProject() {
+    return { 
+        type: actionTypes.THROW_PROJECT
+    };
+};
+
 
 
 

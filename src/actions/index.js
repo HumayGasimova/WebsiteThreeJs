@@ -50,5 +50,6 @@ export {
     addTheTothSausageConjecture,
     addDonkeySpace,
     improveMarketing,
-    showInvestEngine
+    showInvestEngine,
+    throwProject
 } from './businessActions';

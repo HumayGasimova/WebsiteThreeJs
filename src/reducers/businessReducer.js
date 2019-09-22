@@ -14,7 +14,7 @@ const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 50,
+    wire: 100,
     wireToAdd: 50,
     wirePrice: 20,
     wireButtonDisabled: true,
@@ -448,7 +448,8 @@ const businessReducer = (state = initialState, action) => {
             return showInvestEngine(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
             return removePriceOfProjectTrust(state, action);
-            
+        case actionTypes.THROW_PROJECT:
+                return state; 
         default: 
             return state;
     }

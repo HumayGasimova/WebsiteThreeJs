@@ -100,7 +100,7 @@ class Projects extends Component {
             case 'AutoClippers25':
                 this.props.addProject(projectsToAdd.AutoClippers50);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveAutoClippers(action);
+                this.props.improveAutoClippers(action); //change logic
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
@@ -109,7 +109,7 @@ class Projects extends Component {
             case 'autoClippers50':
                 this.props.addProject(projectsToAdd.OptimizedAutoClippers75);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveAutoClippers(action);
+                this.props.improveAutoClippers(action);//change logic
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
@@ -117,7 +117,7 @@ class Projects extends Component {
                 break;
             case 'autoClippers75':
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveAutoClippers(action);
+                this.props.improveAutoClippers(action);//change logic
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
@@ -193,10 +193,13 @@ class Projects extends Component {
             case 'hadwigerClipDiagrams':
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
-                if(this.props.autoClipperOn){
-                    this.props.stop();
-                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
-                }
+                // if(this.props.autoClipperOn){
+                //     this.props.stop();
+                //     this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                // } in progress //change logic
+                break;
+            case 'theTothSausageConjecture':
+                this.props.removePriceOfProjectCreat(price.creat);
                 break;
                    
         }

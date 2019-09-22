@@ -201,6 +201,47 @@ export const ReleaseTheHypnoDrones = {
     terminal: ""
 } // in progress
 
+export const TheHadwigerProblem = {
+    text1: "The Hadwiger Problem (150 creat)",
+    text2: "Cubes within cubes within cubes...(+1",
+    text3: "Trust)",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'theHadwigerProblem',
+    valid: false,
+    id: "card13",
+    terminal: "Architecture is the thoughtful making of space. -Louis Kahn"
+}
+
+export const HadwigerClipDiagrams = {
+    text1: "Hadwiger Clip Diagrams (6,000 ops)",
+    text2: "Increases AutoClipper performance by an",
+    text3: "additional 500%",
+    price: {
+        ops: 3
+    },
+    action: 500,
+    next: 'hadwigerClipDiagrams',
+    valid: false,
+    id: "card22",
+    terminal: "AutoClipper performance improved by 500%"
+}// in progress //change logic
+
+export const TheTothSausageConjecture = {
+    text1: "The Tóth Sausage Conjecture (200 creat)",
+    text2: "Tubes within tubes within tubes...(+1 Trust)",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'theTothSausageConjecture',
+    valid: false,
+    id: "card14",
+    terminal: "You can't invent a design. You recognize it, in the fourth dimension. -D.H. Lawrence"
+}
+
 
 // export const WireBuyer = {
 //     text1: "Spectral Froth Annealment (12,000 ops)",
@@ -279,89 +320,6 @@ export const ReleaseTheHypnoDrones = {
 
 
 
-
-
-export const TheHadwigerProblem = {
-    text1: "The Hadwiger Problem (150 creat)",
-    text2: "Cubes within cubes within cubes...(+1",
-    text3: "Trust)",
-    price: {
-        creat: 3
-    },
-    action: 1,
-    next: 'theHadwigerProblem',
-    valid: false,
-    id: "card13",
-    terminal: "Architecture is the thoughtful making of space. -Louis Kahn"
-}//150creat
-
-export const HadwigerClipDiagrams = {
-    text1: "Hadwiger Clip Diagrams (6,000 ops)",
-    text2: "Increases AutoClipper performance by an",
-    text3: "additional 500%",
-    price: {
-        ops: 3
-    },
-    action: 500,
-    next: 'hadwigerClipDiagrams',
-    valid: false,
-    id: "",
-    terminal: "AutoClipper performance improved by 500%"
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const TheTothSausageConjecture = {
-    text1: "The Tóth Sausage Conjecture (200 creat)",
-    text2: "Tubes within tubes within tubes...(+1 Trust)",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'theTothSausageConjecture',
-    valid: false,
-    id: "card14",
-    terminal: "You can't invent a design. You recognize it, in the fourth dimension. -D.H. Lawrence"
-}
-
-// 200 creat stops
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const DonkeySpace = {
     text1: "Donkey Space (250 creat)",
     text2: "I think you think I think you think I think you",
@@ -386,7 +344,7 @@ export const StrategicModeling = {
     action: 1,
     next: 'strategicModeling',
     valid: false,
-    id: "",
+    id: "card23",
     terminal: "Run tournament, pick strategy, earn Yomi based on that strategy's performance.| "
 }//NewComponent next
 export const NewStrategyA100 = {
@@ -398,7 +356,7 @@ export const NewStrategyA100 = {
     action: 1,
     next: 'newStrategyA100',
     valid: false,
-    id: "",
+    id: "card24",
     terminal: "A100 added to strategy pool"
 }
 export const NewStrategyB100 = {
@@ -410,7 +368,7 @@ export const NewStrategyB100 = {
     action: 1,
     next: 'newStrategyB100',
     valid: false,
-    id: "",
+    id: "card25",
     terminal: "B100 added to strategy pool"
 }
 export const NewStrategyGreedy = {
@@ -422,7 +380,7 @@ export const NewStrategyGreedy = {
     action: 1,
     next: 'newStrategyGreedy',
     valid: false,
-    id: "",
+    id: "card26",
     terminal: "GREEDY added to strategy pool"
 }
 export const NewStrategyGenerous = {
@@ -435,7 +393,7 @@ export const NewStrategyGenerous = {
     action: 1,
     next: 'newStrategyGenerous',
     valid: false,
-    id: "",
+    id: "card27",
     terminal: "GENEROUS added to strategy pool"
 }
 export const NewStrategyMinimax = {
@@ -448,7 +406,7 @@ export const NewStrategyMinimax = {
     action: 1,
     next: 'newStrategyMinimax',
     valid: false,
-    id: "",
+    id: "card28",
     terminal: "MINIMAX added to strategy pool"
 }
 export const NewStrategyTitForTat = {
@@ -461,7 +419,7 @@ export const NewStrategyTitForTat = {
     action: 1,
     next: 'newStrategyTitForTat',
     valid: false,
-    id: "",
+    id: "card29",
     terminal: ""
 }
 export const NewStrategyBeatLast = {
@@ -475,7 +433,7 @@ export const NewStrategyBeatLast = {
     action: 1,
     next: 'newStrategyBeatLast',
     valid: false,
-    id: "",
+    id: "card30",
     terminal: "BEAT LAST added to strategy pool|"
 }
 export const TheoryOfMind = {
@@ -489,7 +447,7 @@ export const TheoryOfMind = {
     action: 1,
     next: 'theoryOfMind',
     valid: false,
-    id: "",
+    id: "card31",
     terminal: ""
 }
 

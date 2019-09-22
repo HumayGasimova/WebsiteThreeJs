@@ -70,22 +70,23 @@ class ComputationalResources extends Component {
 
         this.intervalStartCreativity = setInterval(()=>{
             if(this.props.ops === this.props.opsMax){
+                
                 this.props.startCreativityCounter();
             }
             if(this.props.creativity === 50){
-                this.props.addLexicalProcessing()
+                this.props.addLexicalProcessing();
             }
             if(this.props.creativity === 100){
-                this.props.addCombinatoryHarmonics()
+                this.props.addCombinatoryHarmonics();
             }
             if(this.props.creativity === 150){
-                this.props.addTheHadwingerProblem()
+                this.props.addTheHadwingerProblem();
             }
             if(this.props.creativity === 200){
-                this.props.addTheTothSausageConjecture()
+                this.props.addTheTothSausageConjecture();
             }
             if(this.props.creativity === 250){
-                this.props.addDonkeySpace()
+                this.props.addDonkeySpace();
             }
         }, 1000);
 
@@ -94,6 +95,8 @@ class ComputationalResources extends Component {
                 this.props.increaseCreativity()
             }
         }, 300);
+
+        // this.props.throwProject();
     }
 
     increaseProcessors = () => { 
@@ -190,6 +193,7 @@ export default connect(
             addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
             addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
             addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
+            throwProject: bindActionCreators(Actions.throwProject, dispatch),
         };
     }
 )(ComputationalResources);
