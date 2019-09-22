@@ -290,6 +290,13 @@ const removePriceOfProjectOpsAndCreat = (state, action) => {
     });
 }
 
+const removePriceOfProjectTrust = (state, action) => {
+    return updateObject(state, {
+        trust: state.trust - action.trust
+    });
+}
+
+
 const improveAutoClippers = (state, action) => {
     let updatedAutoPaperClippers = state.delayAutoPaperClippers - (state.delayAutoPaperClippers * action.val / 100);
     return updateObject(state, {
@@ -439,6 +446,9 @@ const businessReducer = (state = initialState, action) => {
             return improveMarketing(state, action);
         case actionTypes.SHOW_INVESTMENT_ENGINE:
             return showInvestEngine(state, action);
+        case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
+            return removePriceOfProjectTrust(state, action);
+            
         default: 
             return state;
     }

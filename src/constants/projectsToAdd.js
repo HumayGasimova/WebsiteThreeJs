@@ -273,7 +273,7 @@ export const HypnoHarmonics = {
     action: 400,
     next: 'hypnoHarmonics',
     valid: false,
-    id: "",
+    id: "card19",
     terminal: "Marketing is now 5 times more effective"
 }
 
@@ -286,19 +286,19 @@ export const HypnoDrones = {
     action: 1,
     next: 'hypnoDrones',
     valid: false,
-    id: "",
+    id: "card20",
     terminal: "HypnoDrone tech now available..."
 }
 export const ReleaseTheHypnoDrones = {
     text1: "Release The HypnoDrones (100 Trust)",
     text2: "A new era of trust",
     price: {
-        ops: 3
+        trust: 3
     },
     action: 500,
     next: 'releaseTheHypnoDrones',
     valid: false,
-    id: "",
+    id: "card21",
     terminal: ""
 }
 

@@ -270,6 +270,13 @@ export function removePriceOfProjectOpsAndCreat(ops, creat) {
     };
 };
 
+export function removePriceOfProjectTrust(price) {
+    return { 
+        type: actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST,
+        trust: price
+    };
+};
+
 export function improveAutoClippers(val) {
     return { 
         type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,

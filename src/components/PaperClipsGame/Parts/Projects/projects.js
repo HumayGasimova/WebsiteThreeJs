@@ -166,8 +166,17 @@ class Projects extends Component {
                 this.props.improveMarketing(action)
                 break;
             case 'hypnoHarmonics':
+                this.props.addProject(projectsToAdd.HypnoDrones);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveMarketing(action)
+                break;
+            case 'hypnoDrones':
                 this.props.addProject(projectsToAdd.ReleaseTheHypnoDrones);
                 this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveMarketing(action)
+                break;
+            case 'releaseTheHypnoDrones':
+                this.props.removePriceOfProjectTrust(price.trust);
                 this.props.improveMarketing(action)
                 break;
                    
@@ -193,6 +202,7 @@ class Projects extends Component {
                                 valid={el.valid}
                                 priceOps={el.price.ops}
                                 priceCreat={el.price.creat}
+                                priceTrust={el.price.trust}
                                 id={el.id}
                                 action={el.action}
                                 i={i}
@@ -252,6 +262,7 @@ export default connect(
             addProject: bindActionCreators(Actions.addProject, dispatch),
             removePriceOfProjectOps: bindActionCreators(Actions.removePriceOfProjectOps, dispatch),
             removePriceOfProjectCreat: bindActionCreators(Actions.removePriceOfProjectCreat, dispatch),
+            removePriceOfProjectTrust: bindActionCreators(Actions. removePriceOfProjectTrust, dispatch),
             removePriceOfProjectOpsAndCreat: bindActionCreators(Actions.removePriceOfProjectOpsAndCreat, dispatch),
             improveAutoClippers: bindActionCreators(Actions.improveAutoClippers, dispatch),
             stop: bindActionCreators(Actions.stop, dispatch),

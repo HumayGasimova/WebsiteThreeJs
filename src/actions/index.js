@@ -36,6 +36,7 @@ export {
     removePriceOfProjectOps,
     removePriceOfProjectCreat,
     removePriceOfProjectOpsAndCreat,
+    removePriceOfProjectTrust,
     improveAutoClippers, 
     toggleMakePaperclipButton,
     improveWireExtrusion,
