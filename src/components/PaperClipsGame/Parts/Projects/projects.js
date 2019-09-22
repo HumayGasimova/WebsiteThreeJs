@@ -101,21 +101,27 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.AutoClippers50);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
-                this.props.stop();
-                this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                if(this.props.autoClipperOn){
+                    this.props.stop();
+                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                }
                 break;
             case 'autoClippers50':
                 this.props.addProject(projectsToAdd.OptimizedAutoClippers75);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
-                this.props.stop();
-                this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                if(this.props.autoClipperOn){
+                    this.props.stop();
+                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                }
                 break;
             case 'autoClippers75':
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
-                this.props.stop();
-                this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                if(this.props.autoClipperOn){
+                    this.props.stop();
+                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                }
                 break;
             case 'wireExtrusion50':
                 this.props.addProject(projectsToAdd.WireExtrusion75);
@@ -178,6 +184,19 @@ class Projects extends Component {
             case 'releaseTheHypnoDrones':
                 this.props.removePriceOfProjectTrust(price.trust);
                 this.props.improveMarketing(action)
+                break;
+            case 'theHadwigerProblem':
+                this.props.addProject(projectsToAdd.HadwigerClipDiagrams);
+                this.props.removePriceOfProjectCreat(price.creat);
+                this.props.trustPlusOneFromProject();
+                break;
+            case 'hadwigerClipDiagrams':
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveAutoClippers(action);
+                if(this.props.autoClipperOn){
+                    this.props.stop();
+                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                }
                 break;
                    
         }
@@ -252,6 +271,7 @@ export default connect(
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
             ops: state.business.ops,
             opsMax: state.business.opsMax,
+            autoClipperOn: state.business.autoClipperOn
         };
     },
     (dispatch) => {

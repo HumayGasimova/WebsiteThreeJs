@@ -19,7 +19,7 @@ export const OptimizedAutoClippers75 = {
     price: {
         ops: 3
     },
-    action: 50,
+    action: 75,
     next: 'autoClippers75',
     valid: false,
     id: "card5",
@@ -134,6 +134,73 @@ export const AlgorithmicTrading = {
     terminal: "Investment engine unlocked"
 }
 
+export const CombinatoryHarmonics = {
+    text1: "Combinatory Harmonics (100 creat)",
+    text2: "Daisy, Daisy, give me your answer do ... (+1",
+    text3: "Trust)",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'combinatoryHarmonics',
+    valid: false,
+    id: "card12",
+    terminal: "Listening is selecting and interpreting and acting and making decisions -Pauline Oliveros"
+}
+
+export const CatchyJingle = {
+    text1: "Catchy Jingle (45 creat, 4,500 ops)",
+    text2: "Double marketing effectiveness",
+    price: {
+        ops: 3,
+        creat: 3
+    },
+    action: 100,
+    next: 'catchyJingle',
+    valid: false,
+    id: "card18",
+    terminal: "Clip It Good! Marketing is now twice as effective"
+}
+
+export const HypnoHarmonics = {
+    text1: "Hypno Harmonics (7,500 ops, 1 Trust)",
+    text2: "Double marketing effectiveness",
+    price: {
+        ops: 3
+    },
+    action: 400,
+    next: 'hypnoHarmonics',
+    valid: false,
+    id: "card19",
+    terminal: "Marketing is now 5 times more effective"
+}
+
+export const HypnoDrones = {
+    text1: "Hypno Drones (70,000 ops)",
+    text2: "Autonomous aerial brand ambassadors",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'hypnoDrones',
+    valid: false,
+    id: "card20",
+    terminal: "HypnoDrone tech now available..."
+} // in progress
+
+export const ReleaseTheHypnoDrones = {
+    text1: "Release The HypnoDrones (100 Trust)",
+    text2: "A new era of trust",
+    price: {
+        trust: 3
+    },
+    action: 500,
+    next: 'releaseTheHypnoDrones',
+    valid: false,
+    id: "card21",
+    terminal: ""
+} // in progress
+
 
 // export const WireBuyer = {
 //     text1: "Spectral Froth Annealment (12,000 ops)",
@@ -147,26 +214,6 @@ export const AlgorithmicTrading = {
 //     id: "",
 //     terminal: "WireBuyer online| "
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -234,90 +281,12 @@ export const AlgorithmicTrading = {
 
 
 
-
-
-export const CombinatoryHarmonics = {
-    text1: "Combinatory Harmonics (100 creat)",
-    text2: "Daisy, Daisy, give me your answer do ... (+1",
-    text3: "Trust)",
-    price: {
-        creat: 3
-    },
-    action: 1,
-    next: 'combinatoryHarmonics',
-    valid: false,
-    id: "card12",
-    terminal: "Listening is selecting and interpreting and acting and making decisions -Pauline Oliveros"
-}// 100 creat
-
-export const CatchyJingle = {
-    text1: "Catchy Jingle (45 creat, 4,500 ops)",
-    text2: "Double marketing effectiveness",
-    price: {
-        ops: 3,
-        creat: 3
-    },
-    action: 100,
-    next: 'catchyJingle',
-    valid: false,
-    id: "card18",
-    terminal: "Clip It Good! Marketing is now twice as effective"
-}
-
-export const HypnoHarmonics = {
-    text1: "Hypno Harmonics (7,500 ops, 1 Trust)",
-    text2: "Double marketing effectiveness",
-    price: {
-        ops: 3
-    },
-    action: 400,
-    next: 'hypnoHarmonics',
-    valid: false,
-    id: "card19",
-    terminal: "Marketing is now 5 times more effective"
-}
-
-export const HypnoDrones = {
-    text1: "Hypno Drones (70,000 ops)",
-    text2: "Autonomous aerial brand ambassadors",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'hypnoDrones',
-    valid: false,
-    id: "card20",
-    terminal: "HypnoDrone tech now available..."
-}
-export const ReleaseTheHypnoDrones = {
-    text1: "Release The HypnoDrones (100 Trust)",
-    text2: "A new era of trust",
-    price: {
-        trust: 3
-    },
-    action: 500,
-    next: 'releaseTheHypnoDrones',
-    valid: false,
-    id: "card21",
-    terminal: ""
-}
-
-
-
-
-
-
-
-
-
-
-
 export const TheHadwigerProblem = {
     text1: "The Hadwiger Problem (150 creat)",
     text2: "Cubes within cubes within cubes...(+1",
     text3: "Trust)",
     price: {
-        ops: 3
+        creat: 3
     },
     action: 1,
     next: 'theHadwigerProblem',
