@@ -73,21 +73,6 @@ class ComputationalResources extends Component {
                 
                 this.props.startCreativityCounter();
             }
-            if(this.props.creativity === 50){
-                this.props.addLexicalProcessing();
-            }
-            if(this.props.creativity === 100){
-                this.props.addCombinatoryHarmonics();
-            }
-            if(this.props.creativity === 150){
-                this.props.addTheHadwingerProblem();
-            }
-            if(this.props.creativity === 200){
-                this.props.addTheTothSausageConjecture();
-            }
-            if(this.props.creativity === 250){
-                this.props.addDonkeySpace();
-            }
         }, 1000);
 
         this.intervalCreativity = setInterval(()=>{
@@ -114,6 +99,24 @@ class ComputationalResources extends Component {
                     this.props.increaseOps()
                 }
             }, this.state.delayOperations);
+        }
+        if(this.props.creativity === 50){
+            this.props.addLexicalProcessing();
+        }
+        if(this.props.creativity === 100){
+            this.props.addCombinatoryHarmonics();
+        }
+        if(this.props.creativity === 100){
+            this.props.addCombinatoryHarmonics();
+        }
+        if(this.props.creativity === 150){
+            this.props.addTheHadwingerProblem();
+        }
+        if(this.props.creativity === 200){
+            this.props.addTheTothSausageConjecture();
+        }
+        if(this.props.creativity === 250){
+            this.props.addDonkeySpace();
         }
     }
 
