@@ -201,6 +201,10 @@ class Projects extends Component {
             case 'theTothSausageConjecture':
                 this.props.removePriceOfProjectCreat(price.creat);
                 break;
+            case 'donkeySpace':
+                this.props.addProject(projectsToAdd.StrategicModeling);
+                this.props.removePriceOfProjectCreat(price.creat);
+                break;
                    
         }
 

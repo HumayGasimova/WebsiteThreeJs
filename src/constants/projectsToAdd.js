@@ -325,7 +325,7 @@ export const DonkeySpace = {
     text2: "I think you think I think you think I think you",
     text3: "think I think...(+1 Trust)",
     price: {
-        ops: 3
+        creat: 3
     },
     action: 1,
     next: 'donkeySpace',
