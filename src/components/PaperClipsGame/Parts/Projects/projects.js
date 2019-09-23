@@ -205,6 +205,11 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.StrategicModeling);
                 this.props.removePriceOfProjectCreat(price.creat);
                 break;
+            case 'strategicModeling':
+                this.props.addProject(projectsToAdd.NewStrategyA100);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showStrategicModeling();
+                break;
                    
         }
 
@@ -299,6 +304,7 @@ export default connect(
             trustPlusOneFromProject: bindActionCreators(Actions.trustPlusOneFromProject, dispatch),
             improveMarketing: bindActionCreators(Actions.improveMarketing, dispatch),
             showInvestEngine: bindActionCreators(Actions.showInvestEngine, dispatch),
+            showStrategicModeling: bindActionCreators(Actions.showStrategicModeling, dispatch),
             
         };
     }

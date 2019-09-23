@@ -359,7 +359,11 @@ export function throwProject() {
     };
 };
 
-
+export function showStrategicModeling() {
+    return { 
+        type: actionTypes.SHOW_STRATEGIC_MODELING
+    };
+};
 
 
 

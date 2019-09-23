@@ -57,7 +57,7 @@ class Section3 extends Component {
             return(
                 <div>
                     {this.props.showInvestmentEngine ? <Investments/> : null}
-                    <StrategicModeling/>
+                    {this.props.showStrategicModeling ?  <StrategicModeling/> : null}
                 </div>
             )
         }
@@ -81,7 +81,7 @@ export default connect(
         return {
             paperClips: state.business.paperClips,
             showInvestmentEngine: state.business.showInvestmentEngine,
-            // funds: state.business.funds,
+            showStrategicModeling: state.business.showStrategicModeling,
             // paperclipPrice: state.business.paperclipPrice,
             // publicDemand: state.business.publicDemand,
             // marketingLevel: state.business.marketingLevel,

@@ -40,7 +40,8 @@ const initialState = {
     listInvestments: ["Low Risk","Med Risk","High Risk"],
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
-    showInvestmentEngine: false
+    showInvestmentEngine: false,
+    showStrategicModeling: false
 }
 
 const addPaperclip = (state) => {
@@ -341,6 +342,12 @@ const showInvestEngine = (state, action) => {
     });
 }
 
+const showStrategicModeling = (state, action) => {
+    return updateObject(state, {
+        showStrategicModeling: true
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -446,6 +453,8 @@ const businessReducer = (state = initialState, action) => {
             return improveMarketing(state, action);
         case actionTypes.SHOW_INVESTMENT_ENGINE:
             return showInvestEngine(state, action);
+        case actionTypes.SHOW_STRATEGIC_MODELING:
+                return showStrategicModeling(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
             return removePriceOfProjectTrust(state, action);
         case actionTypes.THROW_PROJECT:

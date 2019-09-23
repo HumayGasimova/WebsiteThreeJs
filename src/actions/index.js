@@ -51,5 +51,6 @@ export {
     addDonkeySpace,
     improveMarketing,
     showInvestEngine,
-    throwProject
+    throwProject,
+    showStrategicModeling
 } from './businessActions';
