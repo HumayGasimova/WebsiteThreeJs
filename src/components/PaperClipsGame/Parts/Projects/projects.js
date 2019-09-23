@@ -200,10 +200,12 @@ class Projects extends Component {
                 break;
             case 'theTothSausageConjecture':
                 this.props.removePriceOfProjectCreat(price.creat);
+                this.props.trustPlusOneFromProject();
                 break;
             case 'donkeySpace':
                 this.props.addProject(projectsToAdd.StrategicModeling);
                 this.props.removePriceOfProjectCreat(price.creat);
+                this.props.trustPlusOneFromProject();
                 break;
             case 'strategicModeling':
                 this.props.addProject(projectsToAdd.NewStrategyA100);
