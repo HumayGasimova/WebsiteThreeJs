@@ -49,6 +49,7 @@ class TerminalRight extends Component {
                             key={i}
                         >
                            {el}
+                          {i === this.props.comments.length-1 ? <div class="blinking-cursor">|</div>: null} 
                         </div>
                     )
                 })}
