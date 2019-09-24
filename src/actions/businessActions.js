@@ -365,6 +365,14 @@ export function showStrategicModeling() {
     };
 };
 
+export function sendCommentToTerminal(comment) {
+    return { 
+        type: actionTypes.SEND_COMMENT_TO_TERMINAL,
+        comment: comment
+    };
+};
+
+
 
 
 

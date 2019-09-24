@@ -48,8 +48,8 @@ class TerminalRight extends Component {
                             className={i !== this.props.comments.length-1 ? "terminal-right-comment" : "terminal-right-comment-focused"}
                             key={i}
                         >
-                           {el}
-                          {i === this.props.comments.length-1 ? <div class="blinking-cursor">|</div>: null} 
+                            {el}
+                            {i === this.props.comments.length-1 ? <div className="blinking-cursor">|</div>: null} 
                         </div>
                     )
                 })}

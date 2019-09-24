@@ -52,5 +52,6 @@ export {
     improveMarketing,
     showInvestEngine,
     throwProject,
-    showStrategicModeling
+    showStrategicModeling,
+    sendCommentToTerminal
 } from './businessActions';

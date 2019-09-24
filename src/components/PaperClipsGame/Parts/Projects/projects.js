@@ -91,11 +91,12 @@ class Projects extends Component {
         }
     }
 
-    handleOnClick = (id, next, price, action) => {
+    handleOnClick = (id, next, price, action, terminal) => {
         this.props.deleteCard(id);
         switch(next){
             case 'showRevTracker':
                 this.props.showRevTracker(price.ops);
+                this.props.sendCommentToTerminal(terminal);
                 break;
             case 'AutoClippers25':
                 this.props.addProject(projectsToAdd.AutoClippers50);
@@ -231,7 +232,7 @@ class Projects extends Component {
                         return(
                             <Card
                                 key={el.id}
-                                onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action)}
+                                onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action, el.terminal)}
                                 valid={el.valid}
                                 priceOps={el.price.ops}
                                 priceCreat={el.price.creat}
@@ -307,6 +308,7 @@ export default connect(
             improveMarketing: bindActionCreators(Actions.improveMarketing, dispatch),
             showInvestEngine: bindActionCreators(Actions.showInvestEngine, dispatch),
             showStrategicModeling: bindActionCreators(Actions.showStrategicModeling, dispatch),
+            sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             
         };
     }

@@ -42,7 +42,7 @@ const initialState = {
     noWire: false,
     showInvestmentEngine: false,
     showStrategicModeling: false,
-    comments: ['Welcome to Universal Paperclips','Welcome to Universal Paperclips','Welcome to Universal Paperclips','Welcome to Universal Paperclips',,'Welcome to Universal Paperclips']
+    comments: ['Welcome to Universal Paperclips']
 }
 
 const addPaperclip = (state) => {
@@ -349,6 +349,18 @@ const showStrategicModeling = (state, action) => {
     });
 }
 
+const sendCommentToTerminal = (state, action) => {
+    let updatedComments = [...state.cards];
+console.log(action.comment)
+    if(updatedComments.length >= 5){
+        updatedComments.push(action.comment).splice(0,1);
+    }else{
+        updatedComments.push(action.comment);
+    }
+    return updateObject(state, {
+        comments: updatedComments
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -455,11 +467,13 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.SHOW_INVESTMENT_ENGINE:
             return showInvestEngine(state, action);
         case actionTypes.SHOW_STRATEGIC_MODELING:
-                return showStrategicModeling(state, action);
+            return showStrategicModeling(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
             return removePriceOfProjectTrust(state, action);
         case actionTypes.THROW_PROJECT:
-                return state; 
+            return state; 
+        case actionTypes.SEND_COMMENT_TO_TERMINAL:
+            return sendCommentToTerminal(state, action);
         default: 
             return state;
     }
