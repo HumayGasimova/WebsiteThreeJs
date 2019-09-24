@@ -11,6 +11,9 @@ import React,{
 * Components
 */
 
+import TerminalLeft from './TerminalLeft/terminalLeft';
+import TerminalRight from './TerminalRight/terminalRight';
+
 /**
 * Styles
 */
@@ -38,7 +41,8 @@ class Terminal extends Component {
     render(){
         return(
             <div className="terminal">
-             
+                <TerminalLeft/>
+                <TerminalRight/>
             </div>
         );
     }
