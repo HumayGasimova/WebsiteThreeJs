@@ -42,7 +42,7 @@ const initialState = {
     noWire: false,
     showInvestmentEngine: false,
     showStrategicModeling: false,
-    comments: ['fdsfsd','gcdf','jhnjkn','hgfuy','ugyug']
+    comments: ['Welcome to Universal Paperclips','Welcome to Universal Paperclips','Welcome to Universal Paperclips','Welcome to Universal Paperclips',,'Welcome to Universal Paperclips']
 }
 
 const addPaperclip = (state) => {

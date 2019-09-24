@@ -1,11 +1,17 @@
-.terminal-right-comment-focused{
-    color: white;
-    font-size: 14px;
-    padding: 1px;
-}
-
-.terminal-right-comment{
-    color: rgb(146, 146, 146);
-    font-size: 14px;
-    padding: 1px;
+.terminal-right{
+    padding-bottom: 5px;
+    .terminal-right-comment-focused{
+        color: white;
+        font-size: 14px;
+        padding: 1px 0 1px 7px;
+        font-family: 'Oxygen Mono', monospace;
+        font-size: 15px;
+    }
+    .terminal-right-comment{
+        color: rgb(146, 146, 146);
+        font-size: 14px;
+        padding: 1px 0 1px 7px;
+        font-family: 'Oxygen Mono', monospace;
+        font-size: 15px;
+    }
 }
