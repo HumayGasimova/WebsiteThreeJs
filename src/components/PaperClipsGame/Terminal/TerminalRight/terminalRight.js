@@ -6,6 +6,13 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
 
 /**
 * Components
@@ -30,6 +37,24 @@ class TerminalRight extends Component {
     constructor (props){
         super(props);
     }
+
+
+    renderComments = () => {
+        return(
+            <div>
+                {this.props.comments.map((el,i)=>{
+                    return(
+                        <div 
+                            className={i !== this.props.comments.length-1 ? "terminal-right-comment" : "terminal-right-comment-focused"}
+                            key={i}
+                        >
+                           {el}
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
     
     /**
     * Markup
@@ -38,9 +63,29 @@ class TerminalRight extends Component {
     render(){
         return(
             <div className="terminal-right">
+                {this.renderComments()}
             </div>
         );
     }
 }
 
-export default TerminalRight;
+export default connect(
+    (state) => {
+        return {
+            comments: state.business.comments,
+            // paperclipPrice: state.business.paperclipPrice,
+            // wire: state.business.wire,
+            // delay: state.business.delay,
+            // delayAutoPaperClippers: state.business.delayAutoPaperClippers,
+            // ops: state.business.ops,
+            // opsMax: state.business.opsMax,
+            // autoClipperOn: state.business.autoClipperOn
+        };
+    },
+    (dispatch) => {
+        return {
+            // initProjects: bindActionCreators(Actions.initProjects, dispatch),
+    
+        };
+    }
+)(TerminalRight);

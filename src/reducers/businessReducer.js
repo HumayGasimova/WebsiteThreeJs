@@ -41,7 +41,8 @@ const initialState = {
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
     showInvestmentEngine: false,
-    showStrategicModeling: false
+    showStrategicModeling: false,
+    comments: ['fdsfsd','gcdf','jhnjkn','hgfuy','ugyug']
 }
 
 const addPaperclip = (state) => {
