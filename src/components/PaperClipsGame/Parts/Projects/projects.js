@@ -234,6 +234,12 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showStrategicModeling();
                 break;
+            case 'newStrategyA100':
+                this.props.addProject(projectsToAdd.NewStrategyB100);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addNewStrategy("A100");
+                break;
                    
         }
 
@@ -330,6 +336,7 @@ export default connect(
             showInvestEngine: bindActionCreators(Actions.showInvestEngine, dispatch),
             showStrategicModeling: bindActionCreators(Actions.showStrategicModeling, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
+            addNewStrategy: bindActionCreators(Actions.addNewStrategy, dispatch),
             
         };
     }

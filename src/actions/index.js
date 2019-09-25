@@ -53,5 +53,6 @@ export {
     showInvestEngine,
     throwProject,
     showStrategicModeling,
-    sendCommentToTerminal
+    sendCommentToTerminal,
+    addNewStrategy
 } from './businessActions';

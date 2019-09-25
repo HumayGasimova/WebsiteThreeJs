@@ -351,17 +351,28 @@ const showStrategicModeling = (state, action) => {
 
 const sendCommentToTerminal = (state, action) => {
     let updatedComments = [...state.comments];
-console.log(action.comment)
     if(updatedComments.length >= 5){
         updatedComments.push(action.comment)
         updatedComments.splice(0,1);
     }else{
         updatedComments.push(action.comment);
     }
+
     return updateObject(state, {
         comments: updatedComments
     });
 }
+
+const addNewStrategy = (state, action) => {
+    let updatedlistStrategicModeling = [...state.listStrategicModeling];
+    updatedlistStrategicModeling.push(action.strategy);
+    
+    return updateObject(state, {
+        listStrategicModeling: updatedlistStrategicModeling
+    });
+}
+
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -475,6 +486,8 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.SEND_COMMENT_TO_TERMINAL:
             return sendCommentToTerminal(state, action);
+        case actionTypes.ADD_NEW_STRATEGY:
+            return addNewStrategy(state, action);
         default: 
             return state;
     }

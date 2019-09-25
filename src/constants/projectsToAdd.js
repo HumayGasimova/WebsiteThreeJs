@@ -62,7 +62,7 @@ export const SpectralFrothAnnealment200 = {
     next: 'spectralFrothAnnealment200',
     valid: false,
     id: "card8",
-    terminal: "Using spectral froth annealment we now get 15,750 supply from every spool|"
+    terminal: "Using spectral froth annealment we now get 15,750 supply from every spool"
 }
 
 export const Creativity = {

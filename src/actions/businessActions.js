@@ -372,7 +372,12 @@ export function sendCommentToTerminal(comment) {
     };
 };
 
-
+export function addNewStrategy(strategy) {
+    return { 
+        type: actionTypes.ADD_NEW_STRATEGY,
+        strategy: strategy
+    };
+};
 
 
 
