@@ -100,6 +100,7 @@ class Projects extends Component {
                 break;
             case 'AutoClippers25':
                 this.props.addProject(projectsToAdd.AutoClippers50);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action); //change logic
                 if(this.props.autoClipperOn){
@@ -109,6 +110,7 @@ class Projects extends Component {
                 break;
             case 'autoClippers50':
                 this.props.addProject(projectsToAdd.OptimizedAutoClippers75);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);//change logic
                 if(this.props.autoClipperOn){
@@ -117,6 +119,7 @@ class Projects extends Component {
                 }
                 break;
             case 'autoClippers75':
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);//change logic
                 if(this.props.autoClipperOn){
@@ -126,72 +129,87 @@ class Projects extends Component {
                 break;
             case 'wireExtrusion50':
                 this.props.addProject(projectsToAdd.WireExtrusion75);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
             case 'wireExtrusion75':
                 this.props.addProject(projectsToAdd.MicrolatticeShapecasting100);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
             case 'microlatticeShapecasting100':
                 this.props.addProject(projectsToAdd.SpectralFrothAnnealment200);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
             case 'spectralFrothAnnealment200':
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);
                 break;
             case 'creativity':
                 this.props.addProject(projectsToAdd.Limerick);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.creativityTurnOn();
                 break;
             case 'lexicalProcessing':
                 this.props.addProject(projectsToAdd.NewSlogan);
                 this.props.addProject(projectsToAdd.AlgorithmicTrading);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.trustPlusOneFromProject();
                 break;
             case 'newSlogan':
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
                 this.props.improveMarketing(action);
                 break;
             case 'algorithmicTrading':
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showInvestEngine();
                 break;
             case 'combinatoryHarmonics':
                 this.props.addProject(projectsToAdd.CatchyJingle);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.trustPlusOneFromProject();
                 break;
             case 'catchyJingle':
                 this.props.addProject(projectsToAdd.HypnoHarmonics);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
                 this.props.improveMarketing(action)
                 break;
             case 'hypnoHarmonics':
                 this.props.addProject(projectsToAdd.HypnoDrones);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveMarketing(action)
                 break;
             case 'hypnoDrones':
                 this.props.addProject(projectsToAdd.ReleaseTheHypnoDrones);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveMarketing(action)
                 break;
             case 'releaseTheHypnoDrones':
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectTrust(price.trust);
                 this.props.improveMarketing(action)
                 break;
             case 'theHadwigerProblem':
                 this.props.addProject(projectsToAdd.HadwigerClipDiagrams);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.trustPlusOneFromProject();
                 break;
             case 'hadwigerClipDiagrams':
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
                 // if(this.props.autoClipperOn){
@@ -200,16 +218,19 @@ class Projects extends Component {
                 // } in progress //change logic
                 break;
             case 'theTothSausageConjecture':
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.trustPlusOneFromProject();
                 break;
             case 'donkeySpace':
                 this.props.addProject(projectsToAdd.StrategicModeling);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.trustPlusOneFromProject();
                 break;
             case 'strategicModeling':
                 this.props.addProject(projectsToAdd.NewStrategyA100);
+                this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showStrategicModeling();
                 break;

@@ -350,10 +350,11 @@ const showStrategicModeling = (state, action) => {
 }
 
 const sendCommentToTerminal = (state, action) => {
-    let updatedComments = [...state.cards];
+    let updatedComments = [...state.comments];
 console.log(action.comment)
     if(updatedComments.length >= 5){
-        updatedComments.push(action.comment).splice(0,1);
+        updatedComments.push(action.comment)
+        updatedComments.splice(0,1);
     }else{
         updatedComments.push(action.comment);
     }
