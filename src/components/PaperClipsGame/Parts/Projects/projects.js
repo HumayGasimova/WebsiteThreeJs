@@ -264,6 +264,23 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("MINIMAX");
                 break;
+            case 'newStrategyTitForTat':
+                this.props.addProject(projectsToAdd.NewStrategyBeatLast);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addNewStrategy("TIT FOR TAT");
+                break;
+            case 'newStrategyTitForTat':
+                this.props.addProject(projectsToAdd.TheoryOfMind);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addNewStrategy("BEAT LAST");
+                break;
+            case 'theoryOfMind':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                break;
+                
                 
         }
 

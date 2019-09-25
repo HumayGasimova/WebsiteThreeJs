@@ -420,7 +420,7 @@ export const NewStrategyTitForTat = {
     next: 'newStrategyTitForTat',
     valid: false,
     id: "card29",
-    terminal: ""
+    terminal: "TIT FOR TAT added to strategy pool"
 }
 export const NewStrategyBeatLast = {
     text1: "New Strategy: BEAT LAST (32,500 ops)",
@@ -434,7 +434,7 @@ export const NewStrategyBeatLast = {
     next: 'newStrategyBeatLast',
     valid: false,
     id: "card30",
-    terminal: "BEAT LAST added to strategy pool|"
+    terminal: "BEAT LAST added to strategy pool"
 }
 export const TheoryOfMind = {
     text1: "Theory Of Mind (25,000 ops)",
