@@ -6,6 +6,13 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
 
 /**
 * Components
@@ -19,6 +26,12 @@ import Game from './Game/game';
 */
 
 import './paperClipsGame.scss';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../actions';
 
 /**
 * PaperClipsGame component definition and export
@@ -35,6 +48,18 @@ class PaperClipsGame extends Component {
     }
     
     /**
+    * Methods
+    */
+
+    mouseScroll = () => {
+        this.props.closeDropdowns();
+    }
+
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.mouseScroll);
+    };
+
+    /**
     * Markup
     */
 
@@ -48,4 +73,15 @@ class PaperClipsGame extends Component {
     }
 }
 
-export default PaperClipsGame;
+export default connect(
+    (state) => {
+        return {
+            // listStrategicModeling: state.business.listStrategicModeling,
+        };
+    },
+    (dispatch) => {
+        return {
+            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
+        };
+    }
+)(PaperClipsGame);

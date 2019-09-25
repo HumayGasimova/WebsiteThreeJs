@@ -391,6 +391,14 @@ export function toggleDropdownStrategicModeling() {
     };
 };
 
+export function closeDropdowns() {
+    return { 
+        type: actionTypes.CLOSE_DROPDOWNS
+    };
+};
+
+
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 

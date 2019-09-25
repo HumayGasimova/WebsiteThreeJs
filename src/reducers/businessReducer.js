@@ -386,6 +386,12 @@ const toggleDropdownStrategicModeling = (state, action) => {
     });
 }
 
+const closeDropdowns = (state, action) => {
+    return updateObject(state, {
+        showDropdownInvestments: false,
+        showDropdownStrategicModeling: false
+    });
+}
 
 
 
@@ -507,6 +513,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleDropdownInvestments(state, action);
         case actionTypes.TOGGLE_DROPDOWN_STRATEGIC_MODELING:
             return toggleDropdownStrategicModeling(state, action);
+        case actionTypes.CLOSE_DROPDOWNS:
+            return closeDropdowns(state, action);
         default: 
             return state;
     }

@@ -56,5 +56,6 @@ export {
     sendCommentToTerminal,
     addNewStrategy,
     toggleDropdownInvestments,
-    toggleDropdownStrategicModeling
+    toggleDropdownStrategicModeling,
+    closeDropdowns
 } from './businessActions';
