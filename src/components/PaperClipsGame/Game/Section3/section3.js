@@ -20,6 +20,7 @@ import {
 
 import Investments from '../../Parts/Investments/investments';
 import StrategicModeling from '../../Parts/StrategicModeling/strategicModeling';
+import Backdrop from '../../SmallParts/Backdrop/backdrop';
 
 /**
 * Styles
@@ -71,6 +72,7 @@ class Section3 extends Component {
         return(
             <div className="section3">
                 {this.renderSection3()}
+                {this.props.showDropdownInvestments || this.props.showDropdownStrategicModeling ? <Backdrop closeDropdowns={this.props.closeDropdowns}/> : null}
             </div>
         );
     }
@@ -82,16 +84,17 @@ export default connect(
             paperClips: state.business.paperClips,
             showInvestmentEngine: state.business.showInvestmentEngine,
             showStrategicModeling: state.business.showStrategicModeling,
+            showDropdownInvestments: state.business.showDropdownInvestments,
+            showDropdownStrategicModeling: state.business.showDropdownStrategicModeling         
             // paperclipPrice: state.business.paperclipPrice,
             // publicDemand: state.business.publicDemand,
             // marketingLevel: state.business.marketingLevel,
-            // marketingCost: state.business.marketingCost,
-            // marketingButtonDisabled: state.business.marketingButtonDisabled
+  
         };
     },
     (dispatch) => {
         return {
-            // lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
+            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
             // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             // marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
         };

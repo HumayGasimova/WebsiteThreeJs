@@ -71,7 +71,6 @@ class ComputationalResources extends Component {
         this.intervalStartCreativity = setInterval(()=>{
             if(this.props.ops === this.props.opsMax){
                 this.props.startCreativityCounter();
-                
             }
         }, 1000);
 

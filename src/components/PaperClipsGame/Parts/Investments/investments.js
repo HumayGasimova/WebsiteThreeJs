@@ -21,6 +21,7 @@ import {
 import Button from '../../../../library/Button/button';
 import Grid from '../../SmallParts/Grid/grid';
 import Dropdown from '../../SmallParts/Dropdown/dropdown';
+import Backdrop from '../../SmallParts/Backdrop/backdrop';
 
 /**
 * Styles
@@ -176,6 +177,9 @@ class Investments extends Component {
                     </div>
                     <div>Cost: 1000 Yomi</div>
                 </div>
+                {/* {this.props.showDropdownInvestments ? <Backdrop 
+                                                        closeDropdowns={this.props.closeDropdowns}
+                                                        className="backdrop-investments"/> : null} */}
             </div>
         );
     }
@@ -196,7 +200,7 @@ export default connect(
     (dispatch) => {
         return {
             toggleDropdownInvestments: bindActionCreators(Actions.toggleDropdownInvestments, dispatch),
-            // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
+            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
         };
     }
 )(Investments);

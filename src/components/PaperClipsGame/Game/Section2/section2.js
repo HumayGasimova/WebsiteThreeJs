@@ -69,7 +69,10 @@ class Section2 extends Component {
 
     render(){
         return(
-            <div className="section2">
+            <div 
+                className="section2"
+                // onClick={this.props.closeDropdowns}
+            >
                 {this.renderSection2()}
             </div>
         );
@@ -91,7 +94,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
+            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
             // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             // marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
         };
