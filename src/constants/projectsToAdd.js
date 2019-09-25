@@ -242,6 +242,160 @@ export const TheTothSausageConjecture = {
     terminal: "You can't invent a design. You recognize it, in the fourth dimension. -D.H. Lawrence"
 }
 
+export const DonkeySpace = {
+    text1: "Donkey Space (250 creat)",
+    text2: "I think you think I think you think I think you",
+    text3: "think I think...(+1 Trust)",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'donkeySpace',
+    valid: false,
+    id: "card15",
+    terminal: "Every commercial transaction has within itself an element of trust. - Kenneth Arrow"
+}
+
+export const StrategicModeling = {
+    text1: "Strategic Modeling (12,000 ops)",
+    text2: "Analyze strategy tournaments to generate",
+    text3: "Yomi",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'strategicModeling',
+    valid: false,
+    id: "card23",
+    terminal: "Run tournament, pick strategy, earn Yomi based on that strategy's performance."
+}
+
+export const NewStrategyA100 = {
+    text1: "New Strategy: A100 (15,000 ops)",
+    text2: "Always choose A",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyA100',
+    valid: false,
+    id: "card24",
+    terminal: "A100 added to strategy pool"
+}
+
+export const NewStrategyB100 = {
+    text1: "New Strategy: B100 (17,500 ops)",
+    text2: "Always choose B",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyB100',
+    valid: false,
+    id: "card25",
+    terminal: "B100 added to strategy pool"
+}
+
+export const NewStrategyGreedy = {
+    text1: "New Strategy: GREEDY (20,000 ops)",
+    text2: "Choose the option with the largest potential payoff",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyGreedy',
+    valid: false,
+    id: "card26",
+    terminal: "GREEDY added to strategy pool"
+}
+
+export const NewStrategyGenerous = {
+    text1: "New Strategy: GENEROUS (22,500 ops)",
+    text2: "Choose the option that gives your opponent",
+    text3: "the largest potential payoff",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyGenerous',
+    valid: false,
+    id: "card27",
+    terminal: "GENEROUS added to strategy pool"
+}
+
+export const NewStrategyMinimax = {
+    text1: "New Strategy: MINIMAX (25,000 ops)",
+    text2: "Choose the option that gives your opponent",
+    text3: "the smallest potential payoff",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyMinimax',
+    valid: false,
+    id: "card28",
+    terminal: "MINIMAX added to strategy pool"
+}
+
+export const NewStrategyTitForTat = {
+    text1: "New Strategy: TIT FOR TAT (30,000 ops)",
+    text2: "Choose the option your opponent chose last",
+    text3: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyTitForTat',
+    valid: false,
+    id: "card29",
+    terminal: "TIT FOR TAT added to strategy pool"
+}
+
+export const NewStrategyBeatLast = {
+    text1: "New Strategy: BEAT LAST (32,500 ops)",
+    text2: "Choose the option that does the best",
+    text3: "against what your opponent chose last",
+    text4: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'newStrategyBeatLast',
+    valid: false,
+    id: "card30",
+    terminal: "BEAT LAST added to strategy pool"
+}
+
+export const TheoryOfMind = {
+    text1: "Theory Of Mind (25,000 ops)",
+    text2: "Double the cost of strategy modeling and",
+    text3: "the amount of Yomi generated",
+    text4: "round",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'theoryOfMind',
+    valid: false,
+    id: "card31",
+    terminal: ""
+}// in progress
+
+export const QuantumComputing = {
+    text1: "QuantumComputing (10,000 ops)",
+    text2: "Use probability amplitudes to generate",
+    text3: "bonus ops",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'quantumComputing',
+    valid: false,
+    id: "card32",
+    terminal: "Using quantum foam annealment we now get 173,250 supply from every spool"
+}
+
+
 
 // export const WireBuyer = {
 //     text1: "Spectral Froth Annealment (12,000 ops)",
@@ -319,137 +473,6 @@ export const TheTothSausageConjecture = {
 
 
 
-
-export const DonkeySpace = {
-    text1: "Donkey Space (250 creat)",
-    text2: "I think you think I think you think I think you",
-    text3: "think I think...(+1 Trust)",
-    price: {
-        creat: 3
-    },
-    action: 1,
-    next: 'donkeySpace',
-    valid: false,
-    id: "card15",
-    terminal: "Every commercial transaction has within itself an element of trust. - Kenneth Arrow"
-}//250 creat
-
-export const StrategicModeling = {
-    text1: "Strategic Modeling (12,000 ops)",
-    text2: "Analyze strategy tournaments to generate",
-    text3: "Yomi",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'strategicModeling',
-    valid: false,
-    id: "card23",
-    terminal: "Run tournament, pick strategy, earn Yomi based on that strategy's performance."
-}//NewComponent next
-export const NewStrategyA100 = {
-    text1: "New Strategy: A100 (15,000 ops)",
-    text2: "Always choose A",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyA100',
-    valid: false,
-    id: "card24",
-    terminal: "A100 added to strategy pool"
-}
-export const NewStrategyB100 = {
-    text1: "New Strategy: B100 (17,500 ops)",
-    text2: "Always choose B",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyB100',
-    valid: false,
-    id: "card25",
-    terminal: "B100 added to strategy pool"
-}
-export const NewStrategyGreedy = {
-    text1: "New Strategy: GREEDY (20,000 ops)",
-    text2: "Choose the option with the largest potential payoff",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyGreedy',
-    valid: false,
-    id: "card26",
-    terminal: "GREEDY added to strategy pool"
-}
-export const NewStrategyGenerous = {
-    text1: "New Strategy: GENEROUS (22,500 ops)",
-    text2: "Choose the option that gives your opponent",
-    text3: "the largest potential payoff",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyGenerous',
-    valid: false,
-    id: "card27",
-    terminal: "GENEROUS added to strategy pool"
-}
-export const NewStrategyMinimax = {
-    text1: "New Strategy: MINIMAX (25,000 ops)",
-    text2: "Choose the option that gives your opponent",
-    text3: "the smallest potential payoff",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyMinimax',
-    valid: false,
-    id: "card28",
-    terminal: "MINIMAX added to strategy pool"
-}
-export const NewStrategyTitForTat = {
-    text1: "New Strategy: TIT FOR TAT (30,000 ops)",
-    text2: "Choose the option your opponent chose last",
-    text3: "round",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyTitForTat',
-    valid: false,
-    id: "card29",
-    terminal: "TIT FOR TAT added to strategy pool"
-}
-export const NewStrategyBeatLast = {
-    text1: "New Strategy: BEAT LAST (32,500 ops)",
-    text2: "Choose the option that does the best",
-    text3: "against what your opponent chose last",
-    text4: "round",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'newStrategyBeatLast',
-    valid: false,
-    id: "card30",
-    terminal: "BEAT LAST added to strategy pool"
-}
-export const TheoryOfMind = {
-    text1: "Theory Of Mind (25,000 ops)",
-    text2: "Double the cost of strategy modeling and",
-    text3: "the amount of Yomi generated",
-    text4: "round",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'theoryOfMind',
-    valid: false,
-    id: "card31",
-    terminal: ""
-}
 
 
 

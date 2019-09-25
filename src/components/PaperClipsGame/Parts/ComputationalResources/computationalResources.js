@@ -41,6 +41,12 @@ import {
 } from '../../../../utility/commaSeparator';
 
 /**
+* Const
+*/
+
+import * as projectsToAdd from '../../../../constants/projectsToAdd';
+
+/**
 * ComputationalResources component definition and export
 */
 
@@ -117,6 +123,12 @@ class ComputationalResources extends Component {
         if(this.props.creativity === 250){
             this.props.addDonkeySpace();
         }
+        if(prevProps.processorsNumber !== this.props.processorsNumber){
+            if(this.props.processorsNumber === 5){
+                this.props.addProject(projectsToAdd.QuantumComputing);
+            }
+        }
+      
     }
 
     componentWillUnmount = () => {
@@ -196,6 +208,7 @@ export default connect(
             addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
             addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
             addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
+            addProject: bindActionCreators(Actions.addProject, dispatch),
         };
     }
 )(ComputationalResources);

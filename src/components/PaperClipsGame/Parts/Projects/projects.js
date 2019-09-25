@@ -319,10 +319,6 @@ class Projects extends Component {
     componentWillMount = () => {
         this.props.initProjects(this.state.card1, this.state.card2, this.state.card3)
     }
-
-    // componentWillMount = () => {
-    //     this.props.initProjects(this.state.card1, this.state.card2, this.state.card3)
-    // }
     
     /**
     * Markup
@@ -349,7 +345,8 @@ export default connect(
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
             ops: state.business.ops,
             opsMax: state.business.opsMax,
-            autoClipperOn: state.business.autoClipperOn
+            autoClipperOn: state.business.autoClipperOn,
+            processorsNumber: state.business.processorsNumber,
         };
     },
     (dispatch) => {
