@@ -345,7 +345,7 @@ export const StrategicModeling = {
     next: 'strategicModeling',
     valid: false,
     id: "card23",
-    terminal: "Run tournament, pick strategy, earn Yomi based on that strategy's performance.| "
+    terminal: "Run tournament, pick strategy, earn Yomi based on that strategy's performance."
 }//NewComponent next
 export const NewStrategyA100 = {
     text1: "New Strategy: A100 (15,000 ops)",

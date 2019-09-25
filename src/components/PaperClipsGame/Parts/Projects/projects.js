@@ -240,6 +240,19 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("A100");
                 break;
+            case 'newStrategyB100':
+                this.props.addProject(projectsToAdd.NewStrategyGreedy);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addNewStrategy("B100");
+                break;
+            case 'newStrategyGreedy':
+                this.props.addProject(projectsToAdd.NewStrategyGenerous);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addNewStrategy("GREEDY");
+                break;
+      
                    
         }
 
