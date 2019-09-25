@@ -252,8 +252,19 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("GREEDY");
                 break;
-      
-                   
+            case 'newStrategyGenerous':
+                this.props.addProject(projectsToAdd.NewStrategyMinimax);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addNewStrategy("GENEROUS");
+                break;
+            case 'newStrategyMinimax':
+                this.props.addProject(projectsToAdd.NewStrategyTitForTat);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addNewStrategy("MINIMAX");
+                break;
+                
         }
 
 
