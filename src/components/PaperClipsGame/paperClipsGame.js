@@ -6,6 +6,14 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
+
 /**
 * Components
 */
@@ -18,7 +26,12 @@ import Game from './Game/game';
 */
 
 import './paperClipsGame.scss';
-import backdrop from './SmallParts/Backdrop/backdrop';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../actions';
 
 /**
 * PaperClipsGame component definition and export
@@ -60,4 +73,16 @@ class PaperClipsGame extends Component {
     }
 }
 
-export default PaperClipsGame;
+export default connect(
+    (state) => {
+        return {
+            // paperClips: state.business.paperClips,
+
+        };
+    },
+    (dispatch) => {
+        return {
+            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
+        };
+    }
+)(PaperClipsGame);

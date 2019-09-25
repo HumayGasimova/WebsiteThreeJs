@@ -19,7 +19,7 @@ import {
 */
 
 import Button from '../../../../library/Button/button';
-
+import QuantumComputing from '../../Parts/QuantumComputing/quantumComputing';
 /**
 * Styles
 */
@@ -143,39 +143,44 @@ class ComputationalResources extends Component {
 
     render(){
         return(
-            <div className="computationalResources">
-                <div className="computationalResources-label">Computational Resources</div>
-                <div className="computationalResources-line"/>
-                <div className="computationalResources-section">
-                    <div className="computationalResources-text">Trust: {this.props.trust}</div>
-                    <div className="computationalResources-text">+1 Trust at: {commaSeparator(this.props.clipsToBuyTrust)}</div>
-                </div>
-
-                <div className="computationalResources-section">
-                    <div className="computationalResources-wrapper1">
-                        <Button
-                            className="computationalResources-button"
-                            onClick={this.increaseProcessors}
-                            text={"Processors"}
-                            // disabled={this.props.marketingButtonDisabled}
-                        />
-                        <div className="computationalResources-text">{this.props.processorsNumber}</div>
+            <div>
+                <div className="computationalResources">
+                    <div className="computationalResources-label">Computational Resources</div>
+                    <div className="computationalResources-line"/>
+                    <div className="computationalResources-section">
+                        <div className="computationalResources-text">Trust: {this.props.trust}</div>
+                        <div className="computationalResources-text">+1 Trust at: {commaSeparator(this.props.clipsToBuyTrust)}</div>
                     </div>
-                    <div className="computationalResources-wrapper1">
-                        <Button
-                            className="computationalResources-button"
-                            onClick={this.props.increaseProcessorsMemory}
-                            text={"Memory"}
-                            // disabled={this.props.marketingButtonDisabled}
-                        />
-                        <div className="computationalResources-text">{this.props.processorsMemory}</div>
-                    </div>
-                </div>
 
-                 <div className="computationalResources-section">
-                    <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div>
-                    <div className="computationalResources-text">Creativity: {this.props.creativity}</div>
+                    <div className="computationalResources-section">
+                        <div className="computationalResources-wrapper1">
+                            <Button
+                                className="computationalResources-button"
+                                onClick={this.increaseProcessors}
+                                text={"Processors"}
+                                // disabled={this.props.marketingButtonDisabled}
+                            />
+                            <div className="computationalResources-text">{this.props.processorsNumber}</div>
+                        </div>
+                        <div className="computationalResources-wrapper1">
+                            <Button
+                                className="computationalResources-button"
+                                onClick={this.props.increaseProcessorsMemory}
+                                text={"Memory"}
+                                // disabled={this.props.marketingButtonDisabled}
+                            />
+                            <div className="computationalResources-text">{this.props.processorsMemory}</div>
+                        </div>
+                    </div>
+
+                    <div className="computationalResources-section">
+                        <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div>
+                        <div className="computationalResources-text">Creativity: {this.props.creativity}</div>
+                    </div>
+                
+                    {/* {this.props.showQuanumComputing ? <QuantumComputing/> : null} */}
                 </div>
+                <QuantumComputing/>
             </div>
         );
     }

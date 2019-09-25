@@ -392,8 +392,21 @@ export const QuantumComputing = {
     next: 'quantumComputing',
     valid: false,
     id: "card32",
-    terminal: "Using quantum foam annealment we now get 173,250 supply from every spool"
+    terminal: "Quantum computing online"
 }
+export const PhotonicChip = {
+    text1: "Photonic Chip (10,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip',
+    valid: false,
+    id: "card32",
+    terminal: ""
+}//logic observe
 
 
 
