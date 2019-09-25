@@ -130,6 +130,8 @@ class Investments extends Component {
                             dropdownTopActiveClassName={"dropdown-top-active-investments"}
                             dropdownBottomClassName={"dropdown-bottom-investments"}
                             dropdownTopTextClassName={"dropdown-top-text-investments"}
+                            toggleDropdown={this.props.toggleDropdownInvestments}
+                            showDropdown={this.props.showDropdownInvestments}
                         />
                     </div>
                     <div className="investments-wrapper1">
@@ -183,7 +185,7 @@ export default connect(
     (state) => {
         return {
             listInvestments: state.business.listInvestments,
-            // funds: state.business.funds,
+            showDropdownInvestments: state.business.showDropdownInvestments,
             // unsoldInventory: state.business.unsoldInventory,
             // paperclipPrice: state.business.paperclipPrice,
             // delay: state.business.delay,
@@ -193,7 +195,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
+            toggleDropdownInvestments: bindActionCreators(Actions.toggleDropdownInvestments, dispatch),
             // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
         };
     }

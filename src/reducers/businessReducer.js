@@ -40,9 +40,11 @@ const initialState = {
     listInvestments: ["Low Risk","Med Risk","High Risk"],
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
-    showInvestmentEngine: false,
-    showStrategicModeling: false,
-    comments: ['Welcome to Universal Paperclips']
+    showInvestmentEngine: true,
+    showStrategicModeling: true,
+    comments: ['Welcome to Universal Paperclips'],
+    showDropdownStrategicModeling: false,
+    showDropdownInvestments: false
 }
 
 const addPaperclip = (state) => {
@@ -364,13 +366,26 @@ const sendCommentToTerminal = (state, action) => {
 }
 
 const addNewStrategy = (state, action) => {
-    let updatedlistStrategicModeling = [...state.listStrategicModeling];
-    updatedlistStrategicModeling.push(action.strategy);
+    let updatedListStrategicModeling = [...state.listStrategicModeling];
+    updatedListStrategicModeling.push(action.strategy);
     
     return updateObject(state, {
-        listStrategicModeling: updatedlistStrategicModeling
+        listStrategicModeling: updatedListStrategicModeling
     });
 }
+
+const toggleDropdownInvestments = (state, action) => {
+    return updateObject(state, {
+        showDropdownInvestments: !state.showDropdownInvestments
+    });
+}
+
+const toggleDropdownStrategicModeling = (state, action) => {
+    return updateObject(state, {
+        showDropdownStrategicModeling: !state.showDropdownStrategicModeling
+    });
+}
+
 
 
 
@@ -488,6 +503,10 @@ const businessReducer = (state = initialState, action) => {
             return sendCommentToTerminal(state, action);
         case actionTypes.ADD_NEW_STRATEGY:
             return addNewStrategy(state, action);
+        case actionTypes.TOGGLE_DROPDOWN_INVESTMENTS:
+            return toggleDropdownInvestments(state, action);
+        case actionTypes.TOGGLE_DROPDOWN_STRATEGIC_MODELING:
+            return toggleDropdownStrategicModeling(state, action);
         default: 
             return state;
     }

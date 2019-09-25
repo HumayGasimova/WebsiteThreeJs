@@ -49,9 +49,9 @@ class Dropdown extends Component {
 
     constructor (props){
         super(props);
-        this.state = {
-            showDropdown: false
-        }
+        // this.state = {
+        //     showDropdown: false
+        // }
     }
 
     /**
@@ -80,8 +80,8 @@ class Dropdown extends Component {
         return(
             <div className={this.props.dropdownClassName}>
                 <div 
-                    className={this.state.showDropdown ? this.props.dropdownTopActiveClassName : this.props.dropdownTopClassName}
-                    onClick={()=>{this.setState({showDropdown: !this.state.showDropdown})}}
+                    className={this.props.showDropdown ? this.props.dropdownTopActiveClassName : this.props.dropdownTopClassName}
+                    onClick={()=>{this.props.toggleDropdown()}}
                 >
                     <div className={this.props.dropdownTopTextClassName}> 
                         {this.props.list[0]}
@@ -90,7 +90,7 @@ class Dropdown extends Component {
                         <img src={Arrow} alt="arrow"/>
                     </div>
                 </div>
-                {this.state.showDropdown ? this.renderDropdown() : null}
+                {this.props.showDropdown ? this.renderDropdown() : null}
             </div>
         );
     }
@@ -99,7 +99,7 @@ class Dropdown extends Component {
 export default connect(
     (state) => {
         return {
-            // ops: state.business.ops,
+            // showDropdown: state.business.showDropdown,
             // creativity: state.business.creativity,
             // unsoldInventory: state.business.unsoldInventory,
             // paperclipPrice: state.business.paperclipPrice,
@@ -108,7 +108,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // checkCardValidity: bindActionCreators(Actions.checkCardValidity, dispatch),
+            // toggleDropdown: bindActionCreators(Actions.toggleDropdown, dispatch),
             // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
         };
     }

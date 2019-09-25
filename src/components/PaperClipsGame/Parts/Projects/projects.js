@@ -91,6 +91,10 @@ class Projects extends Component {
         }
     }
 
+    /**
+    * Methods
+    */
+
     handleOnClick = (id, next, price, action, terminal) => {
         this.props.deleteCard(id);
         switch(next){
@@ -279,18 +283,9 @@ class Projects extends Component {
             case 'theoryOfMind':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                break;
-                
-                
+                break;  
         }
-
-
-        
     }
-
-    /**
-    * Methods
-    */
 
     renderCards = () => {
         return(

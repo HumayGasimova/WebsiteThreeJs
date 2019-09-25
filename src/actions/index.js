@@ -54,5 +54,7 @@ export {
     throwProject,
     showStrategicModeling,
     sendCommentToTerminal,
-    addNewStrategy
+    addNewStrategy,
+    toggleDropdownInvestments,
+    toggleDropdownStrategicModeling
 } from './businessActions';

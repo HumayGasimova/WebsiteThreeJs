@@ -379,8 +379,17 @@ export function addNewStrategy(strategy) {
     };
 };
 
+export function toggleDropdownInvestments() {
+    return { 
+        type: actionTypes.TOGGLE_DROPDOWN_INVESTMENTS
+    };
+};
 
-
+export function toggleDropdownStrategicModeling() {
+    return { 
+        type: actionTypes.TOGGLE_DROPDOWN_STRATEGIC_MODELING
+    };
+};
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

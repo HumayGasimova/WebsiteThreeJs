@@ -93,6 +93,8 @@ class StrategicModeling extends Component {
                             dropdownTopActiveClassName={"dropdown-top-active-strategicModeling"}
                             dropdownBottomClassName={"dropdown-bottom-strategicModeling"}
                             dropdownTopTextClassName={"dropdown-top-text-strategicModeling"}
+                            toggleDropdown={this.props.toggleDropdownStrategicModeling}
+                            showDropdown={this.props.showDropdownStrategicModeling}
                         />
                         <Button
                             className="strategicModeling-button-run"
@@ -125,7 +127,7 @@ export default connect(
     (state) => {
         return {
             listStrategicModeling: state.business.listStrategicModeling,
-            // funds: state.business.funds,
+            showDropdownStrategicModeling: state.business.showDropdownStrategicModeling,
             // unsoldInventory: state.business.unsoldInventory,
             // paperclipPrice: state.business.paperclipPrice,
             // delay: state.business.delay,
@@ -135,7 +137,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
+            toggleDropdownStrategicModeling: bindActionCreators(Actions.toggleDropdownStrategicModeling, dispatch),
             // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
         };
     }
