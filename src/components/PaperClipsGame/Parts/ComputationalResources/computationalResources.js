@@ -70,8 +70,8 @@ class ComputationalResources extends Component {
 
         this.intervalStartCreativity = setInterval(()=>{
             if(this.props.ops === this.props.opsMax){
-                
                 this.props.startCreativityCounter();
+                
             }
         }, 1000);
 
@@ -181,7 +181,8 @@ export default connect(
             processorsNumber: state.business.processorsNumber,
             processorsMemory: state.business.processorsMemory,
             creativity: state.business.creativity,
-            creativityTurnOn: state.business.creativityTurnOn
+            creativityTurnOn: state.business.creativityTurnOn,
+            // clipsToBuyTrust: state.business.clipsToBuyTrust,
         };
     },
     (dispatch) => {
@@ -195,7 +196,7 @@ export default connect(
             addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
             addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
             addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
-            addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch)
+            addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
         };
     }
 )(ComputationalResources);
