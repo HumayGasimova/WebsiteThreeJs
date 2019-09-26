@@ -405,7 +405,7 @@ export const PhotonicChip = {
     next: 'photonicChip',
     valid: false,
     id: "card32",
-    terminal: "Photonic chip added|"
+    terminal: "Photonic chip added"
 }
 
 export const PhotonicChip2 = {
@@ -416,7 +416,7 @@ export const PhotonicChip2 = {
         ops: 3
     },
     action: 1,
-    next: 'photonicChip',
+    next: 'photonicChip2',
     valid: false,
     id: "card33",
     terminal: ""

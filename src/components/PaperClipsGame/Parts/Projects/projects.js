@@ -290,6 +290,12 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showQuantumComputing();
                 break; 
+            case 'photonicChip':
+                this.props.addProject(projectsToAdd.PhotonicChip2);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                // this.props.showQuantumComputing();
+                break; 
         }
     }
 
