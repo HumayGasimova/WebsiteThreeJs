@@ -180,7 +180,7 @@ class ComputationalResources extends Component {
                 
                     {/* {this.props.showQuanumComputing ? <QuantumComputing/> : null} */}
                 </div>
-                <QuantumComputing/>
+                {this.props.showQuantumComputing ? <QuantumComputing/> : null}
             </div>
         );
     }
@@ -198,6 +198,7 @@ export default connect(
             processorsMemory: state.business.processorsMemory,
             creativity: state.business.creativity,
             creativityTurnOn: state.business.creativityTurnOn,
+            showQuantumComputing: state.business.showQuantumComputing,
             // clipsToBuyTrust: state.business.clipsToBuyTrust,
         };
     },

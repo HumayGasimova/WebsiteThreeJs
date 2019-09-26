@@ -283,7 +283,13 @@ class Projects extends Component {
             case 'theoryOfMind':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                break;  
+                break; 
+            case 'quantumComputing':
+                this.props.addProject(projectsToAdd.PhotonicChip);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showQuantumComputing();
+                break; 
         }
     }
 
@@ -370,7 +376,7 @@ export default connect(
             showStrategicModeling: bindActionCreators(Actions.showStrategicModeling, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addNewStrategy: bindActionCreators(Actions.addNewStrategy, dispatch),
-            
+            showQuantumComputing: bindActionCreators(Actions.showQuantumComputing, dispatch)
         };
     }
 )(Projects);

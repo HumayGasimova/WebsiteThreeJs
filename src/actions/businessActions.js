@@ -397,6 +397,12 @@ export function closeDropdowns() {
     };
 };
 
+export function showQuantumComputing() {
+    return { 
+        type: actionTypes.SHOW_QUANTUM_COMPUTING
+    };
+};
+
 export function showQuantCompMessage() {
     return { 
         type: actionTypes.SHOW_QUANT_COMP_MESSAGE

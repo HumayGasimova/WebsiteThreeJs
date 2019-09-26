@@ -45,6 +45,7 @@ const initialState = {
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
+    showQuantumComputing: false,
     showQCompMessage: false
 }
 
@@ -394,6 +395,12 @@ const closeDropdowns = (state, action) => {
     });
 }
 
+const showQuantumComputing = (state, action) => {
+    return updateObject(state, {
+        showQuantumComputing: true
+    });
+}
+
 const showQuantCompMessage = (state, action) => {
     return updateObject(state, {
         showQCompMessage: true
@@ -528,6 +535,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleDropdownStrategicModeling(state, action);
         case actionTypes.CLOSE_DROPDOWNS:
             return closeDropdowns(state, action);
+        case actionTypes.SHOW_QUANTUM_COMPUTING:
+            return showQuantumComputing(state, action);
         case actionTypes.SHOW_QUANT_COMP_MESSAGE:
             return showQuantCompMessage(state, action);
         case actionTypes.HIDE_QUANT_COMP_MESSAGE:

@@ -59,5 +59,6 @@ export {
     toggleDropdownStrategicModeling,
     closeDropdowns,
     showQuantCompMessage,
-    hideQuantCompMessage
+    hideQuantCompMessage,
+    showQuantumComputing
 } from './businessActions';
