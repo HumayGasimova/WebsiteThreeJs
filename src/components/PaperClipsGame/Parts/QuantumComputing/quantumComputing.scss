@@ -28,8 +28,24 @@
     animation: fadein 2s;
 }
 
-
 @keyframes fadein {
     from { opacity: 1; }
     to   { opacity: 0; }
 }
+
+.quantumComputing-chip{
+    opacity: 0;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    animation: wave 60s;
+}
+
+@keyframes wave {
+    // 0%   {opacity: 0;}
+    25%  {opacity: 0;}
+    50%  {opacity: 1;}
+    75%  {opacity: 0;}
+    // 100% {opacity: 0;}
+}
+

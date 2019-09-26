@@ -180,6 +180,7 @@ class ComputationalResources extends Component {
                 
                     {/* {this.props.showQuanumComputing ? <QuantumComputing/> : null} */}
                 </div>
+                <QuantumComputing/> 
                 {this.props.showQuantumComputing ? <QuantumComputing/> : null}
             </div>
         );

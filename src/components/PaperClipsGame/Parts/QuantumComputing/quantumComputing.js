@@ -57,7 +57,7 @@ class QuantumComputing extends Component {
         return(
             <div className="quantumComputing">
                 <div className="quantumComputing-label">Quantum Computing</div>
-                <div/>
+                <div className="quantumComputing-chip"/>
                 <div className="quantumComputing-wrapper1">
                     <Button
                         className="quantumComputing-button"
