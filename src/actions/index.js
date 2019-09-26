@@ -60,5 +60,6 @@ export {
     closeDropdowns,
     showQuantCompMessage,
     hideQuantCompMessage,
-    showQuantumComputing
+    showQuantumComputing,
+    toggleChip
 } from './businessActions';

@@ -6,7 +6,7 @@ import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function ToggleQuantCompMessageEpic(action$) {
+function toggleQuantCompMessageEpic(action$) {
     return action$
         .ofType(actionTypes.SHOW_QUANT_COMP_MESSAGE)
         .mergeMap(action => {
@@ -17,4 +17,4 @@ function ToggleQuantCompMessageEpic(action$) {
         })       
 }
 
-export default ToggleQuantCompMessageEpic;
+export default toggleQuantCompMessageEpic;

@@ -294,7 +294,7 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.PhotonicChip2);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                // this.props.showQuantumComputing();
+                this.props.toggleChip(true);
                 break; 
         }
     }
@@ -382,7 +382,8 @@ export default connect(
             showStrategicModeling: bindActionCreators(Actions.showStrategicModeling, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addNewStrategy: bindActionCreators(Actions.addNewStrategy, dispatch),
-            showQuantumComputing: bindActionCreators(Actions.showQuantumComputing, dispatch)
+            showQuantumComputing: bindActionCreators(Actions.showQuantumComputing, dispatch),
+            toggleChip: bindActionCreators(Actions.toggleChip, dispatch),
         };
     }
 )(Projects);

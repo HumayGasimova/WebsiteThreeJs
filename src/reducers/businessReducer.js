@@ -46,7 +46,8 @@ const initialState = {
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
     showQuantumComputing: false,
-    showQCompMessage: false
+    showQCompMessage: false,
+    showChip: false
 }
 
 const addPaperclip = (state) => {
@@ -413,6 +414,11 @@ const hideQuantCompMessage = (state, action) => {
     });
 }
 
+const toggleChip = (state, action) => {
+    return updateObject(state, {
+        showChip: action.val
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -541,7 +547,8 @@ const businessReducer = (state = initialState, action) => {
             return showQuantCompMessage(state, action);
         case actionTypes.HIDE_QUANT_COMP_MESSAGE:
             return hideQuantCompMessage(state, action);
-            
+        case actionTypes.TOGGLE_CHIP:
+            return toggleChip(state, action);
         default: 
             return state;
     }

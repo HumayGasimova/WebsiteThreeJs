@@ -57,7 +57,7 @@ class QuantumComputing extends Component {
         return(
             <div className="quantumComputing">
                 <div className="quantumComputing-label">Quantum Computing</div>
-                <div className="quantumComputing-chip"/>
+                {this.props.showChip ? <div className="quantumComputing-chip"/> : null}
                 <div className="quantumComputing-wrapper1">
                     <Button
                         className="quantumComputing-button"
@@ -76,7 +76,7 @@ export default connect(
     (state) => {
         return {
             showQCompMessage: state.business.showQCompMessage,
-            // trust: state.business.trust,
+            showChip: state.business.showChip,
 
         };
     },

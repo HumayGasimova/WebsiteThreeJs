@@ -415,6 +415,13 @@ export function hideQuantCompMessage() {
     };
 };
 
+export function toggleChip(val) {
+    return { 
+        type: actionTypes.TOGGLE_CHIP,
+        val: val
+    };
+};
+
 
 
 export const checkAuthTimeout = (expirationTime) => {
