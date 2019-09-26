@@ -397,6 +397,18 @@ export function closeDropdowns() {
     };
 };
 
+export function showQuantCompMessage() {
+    return { 
+        type: actionTypes.SHOW_QUANT_COMP_MESSAGE
+    };
+};
+
+export function hideQuantCompMessage() {
+    return { 
+        type: actionTypes.HIDE_QUANT_COMP_MESSAGE
+    };
+};
+
 
 
 export const checkAuthTimeout = (expirationTime) => {

@@ -22,3 +22,14 @@
     width: 207px;
     // color: rgb(112, 112, 112);
 }
+
+.quantumComputing-text-with-effect {
+    opacity: 0;
+    animation: fadein 2s;
+}
+
+
+@keyframes fadein {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

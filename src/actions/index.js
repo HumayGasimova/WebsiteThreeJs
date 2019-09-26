@@ -57,5 +57,7 @@ export {
     addNewStrategy,
     toggleDropdownInvestments,
     toggleDropdownStrategicModeling,
-    closeDropdowns
+    closeDropdowns,
+    showQuantCompMessage,
+    hideQuantCompMessage
 } from './businessActions';

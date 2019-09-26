@@ -6,6 +6,13 @@ import React,{
     Component
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
 
 /**
 * Components
@@ -20,6 +27,12 @@ import Button from '../../../../library/Button/button';
 import './quantumComputing.scss';
 
 /**
+* Actions
+*/
+
+import * as Actions from '../../../../actions';
+
+/**
 * QuantumComputing component definition and export
 */
 
@@ -31,6 +44,9 @@ class QuantumComputing extends Component {
 
     constructor (props){
         super(props);
+        this.state={
+            show: false
+        }
     }
     
     /**
@@ -45,15 +61,31 @@ class QuantumComputing extends Component {
                 <div className="quantumComputing-wrapper1">
                     <Button
                         className="quantumComputing-button"
-                        // onClick={this.props.increaseProcessorsMemory}
+                        onClick={() => this.props.showQuantCompMessage()}
                         text={"Compute"}
                         // disabled={this.props.marketingButtonDisabled}
                     />
-                    <div>Need Photonic Chips</div>
+                    {this.props.showQCompMessage ? <div className='quantumComputing-text-with-effect'>Need Photonic Chips</div> : null}
                 </div>
             </div>
         );
     }
 }
 
-export default QuantumComputing;
+export default connect(
+    (state) => {
+        return {
+            showQCompMessage: state.business.showQCompMessage,
+            // trust: state.business.trust,
+
+        };
+    },
+    (dispatch) => {
+        return {
+            showQuantCompMessage: bindActionCreators(Actions.showQuantCompMessage, dispatch),
+            // increaseProcessors: bindActionCreators(Actions.increaseProcessors, dispatch),
+            // increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
+
+        };
+    }
+)(QuantumComputing);
