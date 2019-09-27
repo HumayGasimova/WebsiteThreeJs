@@ -48,7 +48,8 @@ const initialState = {
     showQuantumComputing: false,
     showQCompMessage: 0,
     showChip: false,
-    changedToQOps: false
+    changedToQOps: false,
+    qOps: -360
 }
 
 const addPaperclip = (state) => {
@@ -421,6 +422,14 @@ const changeToQOps = (state, action) => {
     });
 }
 
+const addQOps = (state, action) => {
+    return updateObject(state, {
+        qOps: state.qOps + 1
+    });
+}
+
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -549,7 +558,11 @@ const businessReducer = (state = initialState, action) => {
             return toggleChip(state, action);
         case actionTypes.CHANGE_TO_Q_OPS:
             return changeToQOps(state, action);
-        case actionTypes.START_COUNTING_Q_OPS:
+        case actionTypes.START_ADDING_Q_OPS:
+                return state;
+        case actionTypes.ADD_Q_OPS:
+            return addQOps(state, action);
+        case actionTypes.STOP_ADDING:
             return state;
         default: 
             return state;

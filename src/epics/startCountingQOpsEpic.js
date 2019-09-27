@@ -5,19 +5,20 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
+import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
+import { interval } from "rxjs"
 
 function startCountingQOpsEpic(action$, state$) {
     return action$
-        .ofType(actionTypes.START_COUNTING_Q_OPS)
+        .ofType(actionTypes.START_ADDING_Q_OPS)
         .mergeMap(action => {
-            return interval(1000).pipe(
+            return interval(84).pipe(
                 mergeMap(() => {
-                    // if(state$.values.business.qOps > -360 && state$.values.business.qOps < 360){
-                    //     Observable.of(
-                    //         // Actions.makePaperclip(action.priceOfPaperclip, action.delay, action.wire)
-                    //     )
-                    // }
-                })
+                   return Observable.of(
+                        Actions.addQOps()
+                    )
+                }),
+                takeUntil(action$.ofType(actionTypes.STOP_ADDING))
             )
         })       
 }

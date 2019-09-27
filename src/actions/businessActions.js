@@ -422,9 +422,22 @@ export function changeToQOps() {
     };
 };
 
-export function startCountingQOps() {
+export function startAddingQOps() {
     return { 
-        type: actionTypes.START_COUNTING_Q_OPS
+        type: actionTypes.START_ADDING_Q_OPS
+    };
+};
+
+
+export function addQOps() {
+    return { 
+        type: actionTypes.ADD_Q_OPS
+    };
+};
+
+export function stopAdding() {
+    return { 
+        type: actionTypes.STOP_ADDING
     };
 };
 

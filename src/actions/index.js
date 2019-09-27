@@ -62,5 +62,7 @@ export {
     showQuantumComputing,
     toggleChip,
     changeToQOps,
-    startCountingQOps
+    startAddingQOps,
+    addQOps,
+    stopAdding,
 } from './businessActions';

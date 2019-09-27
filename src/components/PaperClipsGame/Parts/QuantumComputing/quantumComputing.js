@@ -44,11 +44,20 @@ class QuantumComputing extends Component {
 
     constructor (props){
         super(props);
-        this.state={
-            show: false
-        }
     }
     
+    /**
+    * Methods
+    */
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.qOps !== this.props.qOps) {
+            if(this.props.qOps === 360){
+                this.props.stopAdding()
+            }
+        }      
+    }
+
     /**
     * Markup
     */
@@ -67,7 +76,7 @@ class QuantumComputing extends Component {
                     />
                     {this.props.changedToQOps ? 
                     <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
-                    qOps: 
+                        qOps: {this.props.qOps} 
                     </div> : 
                     <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
                         Need Photonic Chips
@@ -85,13 +94,13 @@ export default connect(
             showQCompMessage: state.business.showQCompMessage,
             showChip: state.business.showChip,
             changedToQOps: state.business.changedToQOps,
-
+            qOps: state.business.qOps,
         };
     },
     (dispatch) => {
         return {
             showQuantCompMessage: bindActionCreators(Actions.showQuantCompMessage, dispatch),
-            // increaseProcessors: bindActionCreators(Actions.increaseProcessors, dispatch),
+            stopAdding: bindActionCreators(Actions.stopAdding, dispatch),
             // increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
 
         };
