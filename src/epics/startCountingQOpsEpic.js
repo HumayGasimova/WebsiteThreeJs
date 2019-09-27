@@ -18,6 +18,7 @@ function startCountingQOpsEpic(action$, state$) {
                     //     )
                     // }
                 })
+            )
         })       
 }
 
