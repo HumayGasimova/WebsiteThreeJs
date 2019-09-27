@@ -58,7 +58,7 @@ class QuantumComputing extends Component {
             <div className="quantumComputing">
                 <div className="quantumComputing-label">Quantum Computing</div>
                 {this.props.showChip ? <div className="quantumComputing-chip"/> : null}
-                <div className="quantumComputing-wrapper1">
+                <div className={this.props.changedToQOps ? "quantumComputing-wrapper2" : "quantumComputing-wrapper1"}>
                     <Button
                         className="quantumComputing-button"
                         onClick={() => this.props.showQuantCompMessage()}
@@ -66,7 +66,9 @@ class QuantumComputing extends Component {
                         // disabled={this.props.marketingButtonDisabled}
                     />
                     {this.props.changedToQOps ? 
-                    <div>qOps: </div> : 
+                    <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
+                    qOps: 
+                    </div> : 
                     <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
                         Need Photonic Chips
                     </div>
