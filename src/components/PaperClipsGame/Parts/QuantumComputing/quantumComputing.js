@@ -19,6 +19,7 @@ import {
 */
 
 import Button from '../../../../library/Button/button';
+import Chip from '../../SmallParts/Chip/chip';
 
 /**
 * Styles
@@ -50,13 +51,17 @@ class QuantumComputing extends Component {
     * Methods
     */
 
-   computeOnClick = () => {
+    computeOnClick = () => {
         this.props.showQuantCompMessage();
         if(this.props.changedToQOps){
             let captureQOps = this.props.qOps;
             this.props.captureCurrentQOps(captureQOps)
         }
     }
+
+    // chip = () => {
+
+    // }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.qOps !== this.props.qOps) {
@@ -79,7 +84,8 @@ class QuantumComputing extends Component {
         return(
             <div className="quantumComputing">
                 <div className="quantumComputing-label">Quantum Computing</div>
-                {this.props.showChip ? <div className="quantumComputing-chip"/> : null}
+                {/* {this.renderChip()} */}
+                {this.props.showChip ? <Chip/> : null}
                 <div className={this.props.changedToQOps ? "quantumComputing-wrapper2" : "quantumComputing-wrapper1"}>
                     <Button
                         className="quantumComputing-button"
