@@ -65,7 +65,7 @@ class QuantumComputing extends Component {
                         text={"Compute"}
                         // disabled={this.props.marketingButtonDisabled}
                     />
-                    {this.props.showQCompMessage ? <div className='quantumComputing-text-with-effect'>Need Photonic Chips</div> : null}
+                    <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>Need Photonic Chips</div>
                 </div>
             </div>
         );

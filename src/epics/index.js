@@ -44,6 +44,6 @@ export const rootEpic = combineEpics(
     throwTheHadwingerProblemEpic,
     throwTheTothSausageConjectureEpic,
     throwDonkeySpaceEpic,
-    toggleQuantCompMessageEpic,
+    // toggleQuantCompMessageEpic,
     toggleChipEpic
 );

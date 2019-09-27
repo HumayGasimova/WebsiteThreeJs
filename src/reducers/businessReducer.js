@@ -46,7 +46,7 @@ const initialState = {
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
     showQuantumComputing: false,
-    showQCompMessage: false,
+    showQCompMessage: 0,
     showChip: false
 }
 
@@ -404,7 +404,7 @@ const showQuantumComputing = (state, action) => {
 
 const showQuantCompMessage = (state, action) => {
     return updateObject(state, {
-        showQCompMessage: true
+        showQCompMessage: state.showQCompMessage + 1
     });
 }
 
