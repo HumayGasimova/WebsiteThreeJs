@@ -435,9 +435,27 @@ export function addQOps() {
     };
 };
 
-export function stopAdding() {
+export function stopAddingQOps() {
     return { 
-        type: actionTypes.STOP_ADDING
+        type: actionTypes.STOP_ADDING_Q_OPS
+    };
+};
+
+export function startSubtractingQOps() {
+    return { 
+        type: actionTypes.START_SUBTRACTING_Q_OPS
+    };
+};
+
+export function subtractQOps() {
+    return { 
+        type: actionTypes.SUBTRACT_Q_OPS
+    };
+};
+
+export function stopSubtractingQOps() {
+    return { 
+        type: actionTypes.STOP_SUBTRACTING_Q_OPS
     };
 };
 

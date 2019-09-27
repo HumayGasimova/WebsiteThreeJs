@@ -25,8 +25,9 @@
 
 .quantumComputing-wrapper2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 143px;
+    // padding: 7px;
     // color: rgb(112, 112, 112);
 }
 
@@ -37,11 +38,13 @@
 .quantumComputing-text-with-effect1 {
     opacity: 0;
     animation: fadein1 7s;
+    padding-left: 5px;
 }
 
 .quantumComputing-text-with-effect2 {
     opacity: 0;
     animation: fadein2 7s;
+    padding-left: 5px;
 }
 
 

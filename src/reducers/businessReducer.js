@@ -428,7 +428,11 @@ const addQOps = (state, action) => {
     });
 }
 
-
+const subtractQOps = (state, action) => {
+    return updateObject(state, {
+        qOps: state.qOps - 1
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -562,7 +566,13 @@ const businessReducer = (state = initialState, action) => {
                 return state;
         case actionTypes.ADD_Q_OPS:
             return addQOps(state, action);
-        case actionTypes.STOP_ADDING:
+        case actionTypes.STOP_ADDING_Q_OPS:
+            return state;
+        case actionTypes.START_SUBTRACTING_Q_OPS:
+            return state;
+        case actionTypes.SUBTRACT_Q_OPS:
+            return subtractQOps(state, action);
+        case actionTypes.STOP_SUBTRACTING_Q_OPS:
             return state;
         default: 
             return state;

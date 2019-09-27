@@ -53,7 +53,12 @@ class QuantumComputing extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.qOps !== this.props.qOps) {
             if(this.props.qOps === 360){
-                this.props.stopAdding()
+                this.props.stopAddingQOps();
+                this.props.startSubtractingQOps();
+            }
+            if(this.props.qOps === -360){
+                this.props.stopSubtractingQOps();
+                this.props.startAddingQOps();
             }
         }      
     }
@@ -100,9 +105,10 @@ export default connect(
     (dispatch) => {
         return {
             showQuantCompMessage: bindActionCreators(Actions.showQuantCompMessage, dispatch),
-            stopAdding: bindActionCreators(Actions.stopAdding, dispatch),
-            // increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
-
+            stopAddingQOps: bindActionCreators(Actions.stopAddingQOps, dispatch),
+            startSubtractingQOps: bindActionCreators(Actions.startSubtractingQOps, dispatch),
+            stopSubtractingQOps: bindActionCreators(Actions.stopSubtractingQOps, dispatch),
+            startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
         };
     }
 )(QuantumComputing);

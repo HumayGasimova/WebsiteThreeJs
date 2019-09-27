@@ -8,19 +8,19 @@ import * as Actions from '../actions';
 import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
 import { interval } from "rxjs"
 
-function startCountingQOpsEpic(action$, state$) {
+function startSubtractingQOpsEpic(action$, state$) {
     return action$
-        .ofType(actionTypes.START_ADDING_Q_OPS)
+        .ofType(actionTypes.START_SUBTRACTING_Q_OPS)
         .mergeMap(action => {
             return interval(84).pipe(
                 mergeMap(() => {
                    return Observable.of(
-                        Actions.addQOps()
+                        Actions.subtractQOps()
                     )
                 }),
-                takeUntil(action$.ofType(actionTypes.STOP_ADDING))
+                takeUntil(action$.ofType(actionTypes.STOP_SUBTRACTING_Q_OPS))
             )
         })       
 }
 
-export default startCountingQOpsEpic;
+export default startSubtractingQOpsEpic;

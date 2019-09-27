@@ -64,5 +64,9 @@ export {
     changeToQOps,
     startAddingQOps,
     addQOps,
-    stopAdding,
+    stopAddingQOps,
+    startSubtractingQOps,
+    subtractQOps,
+    stopSubtractingQOps
+
 } from './businessActions';
