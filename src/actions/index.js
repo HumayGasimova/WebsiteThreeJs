@@ -59,7 +59,7 @@ export {
     toggleDropdownStrategicModeling,
     closeDropdowns,
     showQuantCompMessage,
-    hideQuantCompMessage,
     showQuantumComputing,
-    toggleChip
+    toggleChip,
+    changeToQOps
 } from './businessActions';

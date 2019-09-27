@@ -295,6 +295,7 @@ class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.toggleChip(true);
+                this.props.changeToQOps();
                 break; 
         }
     }
@@ -384,6 +385,7 @@ export default connect(
             addNewStrategy: bindActionCreators(Actions.addNewStrategy, dispatch),
             showQuantumComputing: bindActionCreators(Actions.showQuantumComputing, dispatch),
             toggleChip: bindActionCreators(Actions.toggleChip, dispatch),
+            changeToQOps: bindActionCreators(Actions.changeToQOps, dispatch),
         };
     }
 )(Projects);

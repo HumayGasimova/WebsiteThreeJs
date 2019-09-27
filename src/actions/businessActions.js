@@ -409,12 +409,6 @@ export function showQuantCompMessage() {
     };
 };
 
-export function hideQuantCompMessage() {
-    return { 
-        type: actionTypes.HIDE_QUANT_COMP_MESSAGE
-    };
-};
-
 export function toggleChip(val) {
     return { 
         type: actionTypes.TOGGLE_CHIP,
@@ -422,6 +416,11 @@ export function toggleChip(val) {
     };
 };
 
+export function changeToQOps() {
+    return { 
+        type: actionTypes.CHANGE_TO_Q_OPS
+    };
+};
 
 
 export const checkAuthTimeout = (expirationTime) => {

@@ -11,7 +11,7 @@ function toggleQuantCompMessageEpic(action$) {
         .ofType(actionTypes.SHOW_QUANT_COMP_MESSAGE)
         .mergeMap(action => {
             return Observable.of(
-                Actions.hideQuantCompMessage(false)
+                // Actions.hideQuantCompMessage(false)
             )
             .delay(1500)
         })       

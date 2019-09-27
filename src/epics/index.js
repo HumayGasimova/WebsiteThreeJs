@@ -23,9 +23,6 @@ import toggleChipEpic from './toggleChipEpic';
 
 
 
-
-
-
 export const rootEpic = combineEpics(
     checkButtonsEpic,
     checkWireEpic,

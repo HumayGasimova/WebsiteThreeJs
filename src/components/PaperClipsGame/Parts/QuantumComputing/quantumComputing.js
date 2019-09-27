@@ -65,7 +65,12 @@ class QuantumComputing extends Component {
                         text={"Compute"}
                         // disabled={this.props.marketingButtonDisabled}
                     />
-                    <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>Need Photonic Chips</div>
+                    {this.props.changedToQOps ? 
+                    <div>qOps: </div> : 
+                    <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
+                        Need Photonic Chips
+                    </div>
+                    }
                 </div>
             </div>
         );
@@ -77,6 +82,7 @@ export default connect(
         return {
             showQCompMessage: state.business.showQCompMessage,
             showChip: state.business.showChip,
+            changedToQOps: state.business.changedToQOps,
 
         };
     },
