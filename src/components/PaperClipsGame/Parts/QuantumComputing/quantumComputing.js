@@ -50,6 +50,14 @@ class QuantumComputing extends Component {
     * Methods
     */
 
+   computeOnClick = () => {
+        this.props.showQuantCompMessage();
+        if(this.props.changedToQOps){
+            let captureQOps = this.props.qOps;
+            this.props.captureCurrentQOps(captureQOps)
+        }
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.qOps !== this.props.qOps) {
             if(this.props.qOps === 360){
@@ -75,13 +83,13 @@ class QuantumComputing extends Component {
                 <div className={this.props.changedToQOps ? "quantumComputing-wrapper2" : "quantumComputing-wrapper1"}>
                     <Button
                         className="quantumComputing-button"
-                        onClick={() => this.props.showQuantCompMessage()}
+                        onClick={this.computeOnClick}
                         text={"Compute"}
                         // disabled={this.props.marketingButtonDisabled}
                     />
                     {this.props.changedToQOps ? 
                     <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
-                        qOps: {this.props.qOps} 
+                        qOps: {this.props.currentQOps}
                     </div> : 
                     <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
                         Need Photonic Chips
@@ -100,6 +108,7 @@ export default connect(
             showChip: state.business.showChip,
             changedToQOps: state.business.changedToQOps,
             qOps: state.business.qOps,
+            currentQOps: state.business.currentQOps,
         };
     },
     (dispatch) => {
@@ -109,6 +118,7 @@ export default connect(
             startSubtractingQOps: bindActionCreators(Actions.startSubtractingQOps, dispatch),
             stopSubtractingQOps: bindActionCreators(Actions.stopSubtractingQOps, dispatch),
             startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
+            captureCurrentQOps: bindActionCreators(Actions.captureCurrentQOps, dispatch),
         };
     }
 )(QuantumComputing);

@@ -49,7 +49,8 @@ const initialState = {
     showQCompMessage: 0,
     showChip: false,
     changedToQOps: false,
-    qOps: -360
+    qOps: -360,
+    currentQOps: -360
 }
 
 const addPaperclip = (state) => {
@@ -434,6 +435,13 @@ const subtractQOps = (state, action) => {
     });
 }
 
+const captureCurrentqOps = (state, action) => {
+    return updateObject(state, {
+        currentQOps: action.val
+    });
+}
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -574,6 +582,8 @@ const businessReducer = (state = initialState, action) => {
             return subtractQOps(state, action);
         case actionTypes.STOP_SUBTRACTING_Q_OPS:
             return state;
+        case actionTypes.CAPTURE_CURRENT_Q_OPS:
+            return captureCurrentqOps(state, action);
         default: 
             return state;
     }

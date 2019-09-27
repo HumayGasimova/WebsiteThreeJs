@@ -459,6 +459,13 @@ export function stopSubtractingQOps() {
     };
 };
 
+export function captureCurrentQOps(val) {
+    return { 
+        type: actionTypes.CAPTURE_CURRENT_Q_OPS,
+        val: val
+    };
+};
+
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
