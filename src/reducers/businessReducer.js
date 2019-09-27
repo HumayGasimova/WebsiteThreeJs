@@ -549,6 +549,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleChip(state, action);
         case actionTypes.CHANGE_TO_Q_OPS:
             return changeToQOps(state, action);
+        case actionTypes.START_COUNTING_Q_OPS:
+            return state;
         default: 
             return state;
     }

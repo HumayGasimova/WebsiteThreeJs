@@ -422,6 +422,12 @@ export function changeToQOps() {
     };
 };
 
+export function startCountingQOps() {
+    return { 
+        type: actionTypes.START_COUNTING_Q_OPS
+    };
+};
+
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
