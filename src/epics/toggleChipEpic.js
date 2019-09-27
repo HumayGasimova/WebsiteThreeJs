@@ -14,7 +14,7 @@ function toggleChipEpic(action$, state$) {
                 return Observable.of(
                     Actions.toggleChip(false)
                 )
-                .delay(60000)
+                .delay(120000)
             }else{
                 return Observable.of(
                     Actions.toggleChip(true)
