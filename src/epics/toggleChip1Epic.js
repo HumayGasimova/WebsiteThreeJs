@@ -6,22 +6,23 @@ import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function toggleChipEpic(action$, state$) {
+function toggleChip1Epic(action$, state$) {
     return action$
-        .ofType(actionTypes.TOGGLE_CHIP)
+        .ofType(actionTypes.TOGGLE_CHIP_1)
         .mergeMap(action => {
-            if(state$.value.business.showChip){
+            let chip = state$.value.business.chips.find(x => x.chipsNumber === "chip1");
+            if(chip.showChip){
                 return Observable.of(
-                    Actions.toggleChip(false)
+                    Actions.toggleChip1(false)
                 )
                 .delay(30000)
             }else{
                 return Observable.of(
-                    Actions.toggleChip(true)
+                    Actions.toggleChip1(true)
                 )
                 .delay(1000)
             }
         })       
 }
 
-export default toggleChipEpic;
+export default toggleChip1Epic;

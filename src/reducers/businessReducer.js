@@ -50,7 +50,8 @@ const initialState = {
     showChip: false,
     changedToQOps: false,
     qOps: -360,
-    currentQOps: -360
+    currentQOps: -360,
+    chips: []
 }
 
 const addPaperclip = (state) => {
@@ -411,9 +412,29 @@ const showQuantCompMessage = (state, action) => {
     });
 }
 
-const toggleChip = (state, action) => {
+const addChip = (state, action) => {
+    let updatedChips = [...state.chips]
+    updatedChips.push(action.obj)
+
     return updateObject(state, {
-        showChip: action.val
+        chips: updatedChips
+    });
+}
+
+const toggleChip1 = (state, action) => {
+    let oldChips = [...state.chips];
+    let chip = oldChips.find(x => x.chipsNumber === "chip1");
+    let chipsIndex = oldChips.findIndex(x=> x.chipsNumber === "chip1");
+    chip.showChip = action.val;
+    let updatedChips = oldChips.splice(chipsIndex, 1, chip)
+  
+ 
+    console.log(oldChips)
+
+console.log(chipsIndex)
+
+    return updateObject(state, {
+        chips: updatedChips
     });
 }
 
@@ -440,6 +461,10 @@ const captureCurrentqOps = (state, action) => {
         currentQOps: action.val
     });
 }
+
+
+
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -566,8 +591,8 @@ const businessReducer = (state = initialState, action) => {
             return showQuantumComputing(state, action);
         case actionTypes.SHOW_QUANT_COMP_MESSAGE:
             return showQuantCompMessage(state, action);
-        case actionTypes.TOGGLE_CHIP:
-            return toggleChip(state, action);
+        case actionTypes.TOGGLE_CHIP_1:
+            return toggleChip1(state, action);
         case actionTypes.CHANGE_TO_Q_OPS:
             return changeToQOps(state, action);
         case actionTypes.START_ADDING_Q_OPS:
@@ -584,6 +609,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.CAPTURE_CURRENT_Q_OPS:
             return captureCurrentqOps(state, action);
+        case actionTypes.ADD_CHIP:
+            return addChip(state, action);
         default: 
             return state;
     }

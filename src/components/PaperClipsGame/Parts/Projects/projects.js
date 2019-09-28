@@ -37,6 +37,7 @@ import * as Actions from '../../../../actions';
 */
 
 import * as projectsToAdd from '../../../../constants/projectsToAdd';
+import * as chipsToAdd from '../../../../constants/chipsToAdd';
 
 /**
 * Projects component definition and export
@@ -294,7 +295,8 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.PhotonicChip2);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.toggleChip(true);
+                this.props.addChip(chipsToAdd.Chip1)
+                this.props.toggleChip1(true);
                 this.props.changeToQOps();
                 this.props.startAddingQOps();
                 break; 
@@ -385,9 +387,10 @@ export default connect(
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addNewStrategy: bindActionCreators(Actions.addNewStrategy, dispatch),
             showQuantumComputing: bindActionCreators(Actions.showQuantumComputing, dispatch),
-            toggleChip: bindActionCreators(Actions.toggleChip, dispatch),
+            toggleChip1: bindActionCreators(Actions.toggleChip1, dispatch),
             changeToQOps: bindActionCreators(Actions.changeToQOps, dispatch),
             startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
+            addChip: bindActionCreators(Actions.addChip, dispatch),
         };
     }
 )(Projects);

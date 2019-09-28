@@ -409,9 +409,9 @@ export function showQuantCompMessage() {
     };
 };
 
-export function toggleChip(val) {
+export function toggleChip1(val) {
     return { 
-        type: actionTypes.TOGGLE_CHIP,
+        type: actionTypes.TOGGLE_CHIP_1,
         val: val
     };
 };
@@ -463,6 +463,13 @@ export function captureCurrentQOps(val) {
     return { 
         type: actionTypes.CAPTURE_CURRENT_Q_OPS,
         val: val
+    };
+};
+
+export function addChip(obj) {
+    return { 
+        type: actionTypes.ADD_CHIP,
+        obj: obj
     };
 };
 

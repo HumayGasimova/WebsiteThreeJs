@@ -1,23 +1,17 @@
 export const Chip1 = {
-    action: 50,
-    next: 'autoClippers50',
-    valid: false,
-    id: "card4",
-    terminal: "AutoClippper performance boosted by another 50%"
+    chipsNumber: 'chip1',
+    showChip: false,
+    id: "chip1"
 }
 
 export const Chip2 = {
-    action: 50,
-    next: 'autoClippers50',
-    valid: false,
-    id: "card4",
-    terminal: "AutoClippper performance boosted by another 50%"
+    chipsNumber: 'chip2',
+    showChip: false,
+    id: "chip2"
 }
 
 export const Chip3 = {
-    action: 50,
-    next: 'autoClippers50',
-    valid: false,
-    id: "card4",
-    terminal: "AutoClippper performance boosted by another 50%"
+    chipsNumber: 'chip3',
+    showChip: false,
+    id: "chip3"
 }

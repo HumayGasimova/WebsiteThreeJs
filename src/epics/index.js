@@ -18,9 +18,10 @@ import throwCombinatoryHarmonicsEpic from '../epicsProject/throwCombinatoryHarmo
 import throwTheHadwingerProblemEpic from '../epicsProject/throwTheHadwingerProblemEpic';
 import throwTheTothSausageConjectureEpic from '../epicsProject/throwTheTothSausageConjectureEpic';
 import throwDonkeySpaceEpic from '../epicsProject/throwDonkeySpaceEpic';
-import toggleChipEpic from './toggleChipEpic';
+import toggleChip1Epic from './toggleChip1Epic';
 import startAddingQOpsEpic from './startAddingQOpsEpic';
 import startSubtractingQOpsEpic from './startSubtractingQOpsEpic';
+// import addChipEpic from './addChipEpic';
 
 
 
@@ -42,7 +43,8 @@ export const rootEpic = combineEpics(
     throwTheHadwingerProblemEpic,
     throwTheTothSausageConjectureEpic,
     throwDonkeySpaceEpic,
-    toggleChipEpic,
+    toggleChip1Epic,
     startAddingQOpsEpic,
     startSubtractingQOpsEpic,
+    // addChipEpic
 );

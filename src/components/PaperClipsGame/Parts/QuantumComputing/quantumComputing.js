@@ -45,9 +45,9 @@ class QuantumComputing extends Component {
 
     constructor (props){
         super(props);
-        this.state = {
-            chips: ['','']
-        }
+        // this.state = {
+        //     chips: ['','']
+        // }
     }
     
     /**
@@ -65,12 +65,12 @@ class QuantumComputing extends Component {
     renderChip = () => {
         return(
             <div className="quantumComputing-wrapper3">
-                {this.state.chips.map((el,i)=>{
+                {this.props.chips.map((el,i)=>{
                     // if(el){
                         return(
                             <Chip
                                 key={i}
-                                showChip={this.props.showChip}
+                                showChip={el.showChip}
                                 // onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action, el.terminal)}
                                 // valid={el.valid}
                                 // priceOps={el.price.ops}
@@ -140,6 +140,7 @@ export default connect(
             changedToQOps: state.business.changedToQOps,
             qOps: state.business.qOps,
             currentQOps: state.business.currentQOps,
+            chips: state.business.chips,
         };
     },
     (dispatch) => {

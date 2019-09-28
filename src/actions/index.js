@@ -60,7 +60,7 @@ export {
     closeDropdowns,
     showQuantCompMessage,
     showQuantumComputing,
-    toggleChip,
+    toggleChip1,
     changeToQOps,
     startAddingQOps,
     addQOps,
@@ -68,6 +68,6 @@ export {
     startSubtractingQOps,
     subtractQOps,
     stopSubtractingQOps,
-    captureCurrentQOps
-
+    captureCurrentQOps,
+    addChip,
 } from './businessActions';
