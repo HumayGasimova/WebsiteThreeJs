@@ -56,7 +56,10 @@ class Chip extends Component {
 
     render(){
         return(
-            <div className="chip"/>
+            <div>
+                {this.props.showChip ? <div className="chip"/> : null}
+                {/* <div className="chip"/> */}
+            </div>
         );
     }
 }

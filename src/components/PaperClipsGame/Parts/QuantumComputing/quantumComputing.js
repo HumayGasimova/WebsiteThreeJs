@@ -45,6 +45,9 @@ class QuantumComputing extends Component {
 
     constructor (props){
         super(props);
+        this.state = {
+            chips: ['','']
+        }
     }
     
     /**
@@ -59,9 +62,31 @@ class QuantumComputing extends Component {
         }
     }
 
-    // chip = () => {
-
-    // }
+    renderChip = () => {
+        return(
+            <div className="quantumComputing-wrapper3">
+                {this.state.chips.map((el,i)=>{
+                    // if(el){
+                        return(
+                            <Chip
+                                key={i}
+                                showChip={this.props.showChip}
+                                // onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action, el.terminal)}
+                                // valid={el.valid}
+                                // priceOps={el.price.ops}
+                                // priceCreat={el.price.creat}
+                                // priceTrust={el.price.trust}
+                                // id={el.id}
+                                // action={el.action}
+                                // i={i}
+                            />
+                        )
+                    // }
+                   
+                })}
+            </div>
+        )        
+    }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.qOps !== this.props.qOps) {
@@ -84,8 +109,8 @@ class QuantumComputing extends Component {
         return(
             <div className="quantumComputing">
                 <div className="quantumComputing-label">Quantum Computing</div>
-                {/* {this.renderChip()} */}
-                {this.props.showChip ? <Chip/> : null}
+                {this.renderChip()}
+                {/* {this.props.showChip ? <Chip/> : null} */}
                 <div className={this.props.changedToQOps ? "quantumComputing-wrapper2" : "quantumComputing-wrapper1"}>
                     <Button
                         className="quantumComputing-button"
