@@ -191,6 +191,19 @@ export function increaseOps() {
     };
 };
 
+export function startDecreasingOps() {
+    return { 
+        type: actionTypes.START_DECREASING_OPERATIONS
+    };
+};
+
+export function decreaseOps() {
+    return { 
+        type: actionTypes.DECREASE_OPS
+    };
+};
+
+
 export function increaseProcessors() {
     return { 
         type: actionTypes.INCREASE_PROCESSORS

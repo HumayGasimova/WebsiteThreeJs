@@ -217,6 +217,12 @@ const increaseOps = (state) => {
     });
 }
 
+const decreaseOps = (state) => {
+    return updateObject(state, {
+        ops: state.ops - 1
+    });
+}
+
 const increaseProcessors = (state) => {
     return updateObject(state, {
         processorsNumber: state.processorsNumber + 1
@@ -521,6 +527,10 @@ const businessReducer = (state = initialState, action) => {
             return trustPlusOneFromProject(state, action); 
         case actionTypes.INCREASE_OPS:
             return increaseOps(state, action); 
+        case actionTypes.START_DECREASING_OPERATIONS:
+            return state; 
+        case actionTypes.DECREASE_OPS:
+            return decreaseOps(state, action); 
         case actionTypes.INCREASE_PROCESSORS:
             return increaseProcessors(state, action); 
         case actionTypes.INCREASE_PROCESSORS_MEMORY:

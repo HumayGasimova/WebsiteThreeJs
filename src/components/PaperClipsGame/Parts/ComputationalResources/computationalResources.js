@@ -85,7 +85,13 @@ class ComputationalResources extends Component {
                 this.props.increaseCreativity()
             }
         }, 300);
-
+      
+        this.intervalOperationsDecrease = setInterval(()=>{
+            if(this.props.ops > (this.props.opsMax+1)){
+                this.props.startDecreasingOps();
+            }
+        }, 1000);
+    
         // this.props.throwProject();
     }
 
@@ -98,8 +104,8 @@ class ComputationalResources extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.delayOperations !== this.state.delayOperations) {
-            clearInterval(this.intervalOperations);
-            this.intervalOperations = setInterval(()=>{
+            clearInterval(this.intervalOperationsIncrease);
+            this.intervalOperationsIncrease = setInterval(()=>{
                 if(this.props.ops < this.props.opsMax){
                     this.props.increaseOps()
                 }
@@ -129,10 +135,12 @@ class ComputationalResources extends Component {
             }
         }
       
+      
     }
 
     componentWillUnmount = () => {
-        clearInterval(this.intervalOperations);
+        clearInterval(this.intervalOperationsIncrease);
+        clearInterval(this.intervalOperationsDecrease);
         clearInterval(this.intervalStartCreativity);
         clearInterval(this.intervalCreativity);
     }
@@ -216,6 +224,7 @@ export default connect(
             addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
             addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
+            startDecreasingOps: bindActionCreators(Actions.startDecreasingOps, dispatch),
         };
     }
 )(ComputationalResources);

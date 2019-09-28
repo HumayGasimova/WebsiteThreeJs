@@ -25,6 +25,8 @@ export {
     trustPlusOne,
     repeatAutoPaperClippers,
     increaseOps,
+    startDecreasingOps,
+    decreaseOps,
     increaseProcessors,
     increaseProcessorsMemory,
     increaseCreativity,
@@ -70,5 +72,6 @@ export {
     captureCurrentQOps,
     addChip,
     toggleChip,
-    updateOps
+    updateOps,
+
 } from './businessActions';
