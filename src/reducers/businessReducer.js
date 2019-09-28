@@ -422,28 +422,15 @@ const addChip = (state, action) => {
 }
 
 const toggleChip = (state, action) => {
-    let oldChips = [...state.chips];
-    let chip = oldChips.find(x => x.chipsNumber === action.chipsNumber);
-    let chipsIndex = oldChips.findIndex(x=> x.chipsNumber === action.chipsNumber);
+    let updatedChips = [...state.chips];
+    let chip = updatedChips.find(x => x.chipsNumber === action.chipsNumber);
+    let chipsIndex = updatedChips.findIndex(x=> x.chipsNumber === action.chipsNumber);
     chip.showChip = action.val;
-    let updatedChips = oldChips.splice(chipsIndex, 1, chip)
-
+    updatedChips.splice(chipsIndex, 1, chip)
     return updateObject(state, {
         chips: updatedChips
     });
 }
-
-// const toggleChip1 = (state, action) => {
-//     let oldChips = [...state.chips];
-//     let chip = oldChips.find(x => x.chipsNumber === "chip1");
-//     let chipsIndex = oldChips.findIndex(x=> x.chipsNumber === "chip1");
-//     chip.showChip = action.val;
-//     let updatedChips = oldChips.splice(chipsIndex, 1, chip)
-
-//     return updateObject(state, {
-//         chips: updatedChips
-//     });
-// }
 
 const changeToQOps = (state, action) => {
     return updateObject(state, {
@@ -469,7 +456,11 @@ const captureCurrentqOps = (state, action) => {
     });
 }
 
-
+const updateOps = (state, action) => {
+    return updateObject(state, {
+        ops: state.ops + action.val
+    });
+}
 
 
 
@@ -600,8 +591,6 @@ const businessReducer = (state = initialState, action) => {
             return showQuantCompMessage(state, action);
         case actionTypes.TOGGLE_CHIP:
             return toggleChip(state, action);
-        // case actionTypes.TOGGLE_CHIP_1:
-        //     return toggleChip1(state, action);
         case actionTypes.CHANGE_TO_Q_OPS:
             return changeToQOps(state, action);
         case actionTypes.START_ADDING_Q_OPS:
@@ -620,6 +609,8 @@ const businessReducer = (state = initialState, action) => {
             return captureCurrentqOps(state, action);
         case actionTypes.ADD_CHIP:
             return addChip(state, action);
+        case actionTypes.UPDATE_OPS:
+            return updateOps(state, action);
         default: 
             return state;
     }

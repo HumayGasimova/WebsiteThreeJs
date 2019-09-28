@@ -424,13 +424,6 @@ export function toggleChip(val, chipsNumber) {
     };
 };
 
-// export function toggleChip1(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_CHIP_1,
-//         val: val
-//     };
-// };
-
 export function changeToQOps() {
     return { 
         type: actionTypes.CHANGE_TO_Q_OPS
@@ -476,6 +469,13 @@ export function stopSubtractingQOps() {
 export function captureCurrentQOps(val) {
     return { 
         type: actionTypes.CAPTURE_CURRENT_Q_OPS,
+        val: val
+    };
+};
+
+export function updateOps(val) {
+    return { 
+        type: actionTypes.UPDATE_OPS,
         val: val
     };
 };

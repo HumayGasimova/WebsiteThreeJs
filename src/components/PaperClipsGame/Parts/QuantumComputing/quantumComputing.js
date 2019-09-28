@@ -58,7 +58,13 @@ class QuantumComputing extends Component {
         this.props.showQuantCompMessage();
         if(this.props.changedToQOps){
             let captureQOps = this.props.qOps;
-            this.props.captureCurrentQOps(captureQOps)
+            this.props.captureCurrentQOps(captureQOps);
+            if(this.props.ops >= this.props.opsMax && captureQOps > 0){
+                this.props.updateOps(1);
+            }else{
+                this.props.updateOps(captureQOps);
+            }
+            
         }
     }
 
@@ -66,23 +72,12 @@ class QuantumComputing extends Component {
         return(
             <div className="quantumComputing-wrapper3">
                 {this.props.chips.map((el,i)=>{
-                    // if(el){
-                        return(
-                            <Chip
-                                key={i}
-                                showChip={el.showChip}
-                                // onClick={() => this.handleOnClick(el.id, el.next, el.price, el.action, el.terminal)}
-                                // valid={el.valid}
-                                // priceOps={el.price.ops}
-                                // priceCreat={el.price.creat}
-                                // priceTrust={el.price.trust}
-                                // id={el.id}
-                                // action={el.action}
-                                // i={i}
-                            />
-                        )
-                    // }
-                   
+                    return(
+                        <Chip
+                            key={el.id}
+                            showChip={el.showChip}
+                        />
+                    )
                 })}
             </div>
         )        
@@ -141,6 +136,8 @@ export default connect(
             qOps: state.business.qOps,
             currentQOps: state.business.currentQOps,
             chips: state.business.chips,
+            ops: state.business.ops,
+            opsMax: state.business.opsMax
         };
     },
     (dispatch) => {
@@ -151,6 +148,7 @@ export default connect(
             stopSubtractingQOps: bindActionCreators(Actions.stopSubtractingQOps, dispatch),
             startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
             captureCurrentQOps: bindActionCreators(Actions.captureCurrentQOps, dispatch),
+            updateOps: bindActionCreators(Actions.updateOps, dispatch),
         };
     }
 )(QuantumComputing);

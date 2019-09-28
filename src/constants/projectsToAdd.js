@@ -422,7 +422,7 @@ export const PhotonicChip2 = {
     terminal: "Photonic chip added"
 }
 export const PhotonicChip3 = {
-    text1: "Photonic Chip (15,000 ops)",
+    text1: "Photonic Chip (20,000 ops)",
     text2: "Converts electromagnetic waves into",
     text3: "quantum operations",
     price: {
@@ -447,7 +447,7 @@ export const PhotonicChip3 = {
 //     next: '',
 //     valid: false,
 //     id: "",
-//     terminal: "WireBuyer online| "
+//     terminal: "WireBuyer online"
 // }
 
 
