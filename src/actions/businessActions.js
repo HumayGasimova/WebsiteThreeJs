@@ -409,12 +409,27 @@ export function showQuantCompMessage() {
     };
 };
 
-export function toggleChip1(val) {
+export function addChip(obj) {
     return { 
-        type: actionTypes.TOGGLE_CHIP_1,
-        val: val
+        type: actionTypes.ADD_CHIP,
+        obj: obj
     };
 };
+
+export function toggleChip(val, chipsNumber) {
+    return { 
+        type: actionTypes.TOGGLE_CHIP,
+        val: val,
+        chipsNumber: chipsNumber
+    };
+};
+
+// export function toggleChip1(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_CHIP_1,
+//         val: val
+//     };
+// };
 
 export function changeToQOps() {
     return { 
@@ -427,7 +442,6 @@ export function startAddingQOps() {
         type: actionTypes.START_ADDING_Q_OPS
     };
 };
-
 
 export function addQOps() {
     return { 
@@ -463,13 +477,6 @@ export function captureCurrentQOps(val) {
     return { 
         type: actionTypes.CAPTURE_CURRENT_Q_OPS,
         val: val
-    };
-};
-
-export function addChip(obj) {
-    return { 
-        type: actionTypes.ADD_CHIP,
-        obj: obj
     };
 };
 

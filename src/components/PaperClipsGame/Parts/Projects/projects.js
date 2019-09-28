@@ -296,7 +296,7 @@ class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addChip(chipsToAdd.Chip1)
-                this.props.toggleChip1(true);
+                // this.props.toggleChip1(true);
                 this.props.changeToQOps();
                 this.props.startAddingQOps();
                 break; 
@@ -387,7 +387,7 @@ export default connect(
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addNewStrategy: bindActionCreators(Actions.addNewStrategy, dispatch),
             showQuantumComputing: bindActionCreators(Actions.showQuantumComputing, dispatch),
-            toggleChip1: bindActionCreators(Actions.toggleChip1, dispatch),
+            // toggleChip1: bindActionCreators(Actions.toggleChip1, dispatch),
             changeToQOps: bindActionCreators(Actions.changeToQOps, dispatch),
             startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
             addChip: bindActionCreators(Actions.addChip, dispatch),
