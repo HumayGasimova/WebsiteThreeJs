@@ -191,17 +191,15 @@ export function increaseOps() {
     };
 };
 
-export function startDecreasingOperations(val) {
+export function startDecreasingOperations() {
     return { 
-        type: actionTypes.START_DECREASING_OPERATIONS,
-        captureNumber: val
+        type: actionTypes.START_DECREASING_OPERATIONS
     };
 };
 
-export function startDecreasingOps(val) {
+export function startDecreasingOps() {
     return { 
-        type: actionTypes.START_DECREASING_OPS,
-        captureNumber: val
+        type: actionTypes.START_DECREASING_OPS
     };
 };
 
@@ -507,12 +505,12 @@ export function updateOps(val) {
     };
 };
 
-export function addCaptureVal(val) {
-    return { 
-        type: actionTypes.ADD_CAPTURE_VAL,
-        val: val
-    };
-};
+// export function addCaptureVal(val) {
+//     return { 
+//         type: actionTypes.ADD_CAPTURE_VAL,
+//         val: val
+//     };
+// };
 
 
 

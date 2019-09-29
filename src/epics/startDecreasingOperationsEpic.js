@@ -12,9 +12,9 @@ import { interval } from "rxjs"
 function startDecreasingOperationsEpic(action$, state$) { 
         return action$
             .ofType(actionTypes.START_DECREASING_OPERATIONS)
-            .mergeMap(action => {
+            .switchMap(action => {
                 return Observable.of(
-                            Actions.startDecreasingOps(action.captureNumber),
+                            Actions.startDecreasingOps(),
                             // Actions.addCaptureVal(-action.captureNumber),
                         )
             })

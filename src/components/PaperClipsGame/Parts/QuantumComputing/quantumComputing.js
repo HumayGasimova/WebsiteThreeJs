@@ -61,10 +61,8 @@ class QuantumComputing extends Component {
             this.props.captureCurrentQOps(captureQOps);
             if(this.props.ops >= this.props.opsMax && captureQOps > 0){
                 let randomNumber =  Math.floor(Math.random()*70);
-                this.props.addCaptureVal(randomNumber);
                 this.props.updateOps(randomNumber);
-                this.props.startDecreasingOperations(randomNumber);
-                // this.props.addCaptureVal(0);
+                this.props.startDecreasingOperations();
             }else{
                 this.props.updateOps(captureQOps);
             }
@@ -158,7 +156,7 @@ export default connect(
             updateOps: bindActionCreators(Actions.updateOps, dispatch),
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
             stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
-            addCaptureVal: bindActionCreators(Actions.addCaptureVal, dispatch),
+            // addCaptureVal: bindActionCreators(Actions.addCaptureVal, dispatch),
         };
     }
 )(QuantumComputing);

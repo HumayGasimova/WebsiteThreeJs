@@ -12,12 +12,12 @@ import { interval } from "rxjs"
 function decreaseOpsEpic(action$, state$) { 
         return action$
             .ofType(actionTypes.START_DECREASING_OPS)
-            .mergeMap(action => {
+            .switchMap(action => {
                 return Observable.of(
                             Actions.decreaseOps()
                         )
                     .delay(10)
-                    .repeat(action.captureNumber)               
+                    .repeat(state$.value.business.ops-state$.value.business.opsMax)               
             })
     }
 
