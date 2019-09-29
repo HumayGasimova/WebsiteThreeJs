@@ -470,10 +470,15 @@ const updateOps = (state, action) => {
 }
 
 const addCaptureVal = (state, action) => {
-
-    return updateObject(state, {
-        captureNumber: state.captureNumber + action.val
-    });
+    if(action.val === 0){
+        return updateObject(state, {
+            captureNumber: 0
+        });
+    }else{
+        return updateObject(state, {
+            captureNumber: state.captureNumber + action.val
+        });
+    }
 }
 
 
@@ -535,7 +540,7 @@ const businessReducer = (state = initialState, action) => {
             return trustPlusOneFromProject(state, action); 
         case actionTypes.INCREASE_OPS:
             return increaseOps(state, action); 
-        case actionTypes.START_DECREASING_OPERATIONS:
+        case actionTypes.START_DECREASING_OPS:
             return state; 
         case actionTypes.STOP_DECREASING_OPERATIONS:
             return state; 
@@ -633,6 +638,8 @@ const businessReducer = (state = initialState, action) => {
             return updateOps(state, action);
         case actionTypes.ADD_CAPTURE_VAL:
             return addCaptureVal(state, action);
+        case actionTypes.START_DECREASING_OPERATIONS:
+            return state;
         default: 
             return state;
     }

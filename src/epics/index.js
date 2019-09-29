@@ -22,7 +22,9 @@ import startAddingQOpsEpic from './startAddingQOpsEpic';
 import startSubtractingQOpsEpic from './startSubtractingQOpsEpic';
 import addChipEpic from './addChipEpic';
 import toggleChipEpic from './toggleChipEpic';
-import decreaseOperationsEpic from './decreaseOperationsEpic';
+import decreaseOpsEpic from './decreaseOpsEpic';
+import startDecreasingOperationsEpic from './startDecreasingOperationsEpic';
+
 
 
 export const rootEpic = combineEpics(
@@ -47,5 +49,6 @@ export const rootEpic = combineEpics(
     startSubtractingQOpsEpic,
     addChipEpic,
     toggleChipEpic,
-    decreaseOperationsEpic
+    decreaseOpsEpic,
+    startDecreasingOperationsEpic
 );

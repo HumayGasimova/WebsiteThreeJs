@@ -135,8 +135,8 @@ class ComputationalResources extends Component {
             }
         }
         // if(prevProps.ops !== this.props.ops){
-        //     if(this.props.ops === this.props.opsMax){
-        //         this.props.stopDecreasingOps();
+        //     if(this.props.ops >= this.props.opsMax){
+        //     this.props.startDecreasingOperations();
         //     }
         // }
     }
@@ -228,6 +228,7 @@ export default connect(
             addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
             stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
+            startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
         };
     }
 )(ComputationalResources);

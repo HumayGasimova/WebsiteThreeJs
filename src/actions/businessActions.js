@@ -191,9 +191,16 @@ export function increaseOps() {
     };
 };
 
-export function startDecreasingOps(val) {
+export function startDecreasingOperations(val) {
     return { 
         type: actionTypes.START_DECREASING_OPERATIONS,
+        captureNumber: val
+    };
+};
+
+export function startDecreasingOps(val) {
+    return { 
+        type: actionTypes.START_DECREASING_OPS,
         captureNumber: val
     };
 };
@@ -506,6 +513,8 @@ export function addCaptureVal(val) {
         val: val
     };
 };
+
+
 
 
 

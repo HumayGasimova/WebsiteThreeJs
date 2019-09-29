@@ -9,24 +9,21 @@ import * as Actions from '../actions';
 import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
 import { interval } from "rxjs"
 
-function decreaseOperationsEpic(action$, state$) { 
+function decreaseOpsEpic(action$, state$) { 
         return action$
-            .ofType(actionTypes.START_DECREASING_OPERATIONS)
-            .switchMap(action => {
+            .ofType(actionTypes.START_DECREASING_OPS)
+            .mergeMap(action => {
                 return Observable.of(
                             Actions.decreaseOps()
                         )
                     .delay(10)
-                    .repeat(state$.value.business.captureNumber)
-                
-                    // takeUntil(action$.ofType(actionTypes.STOP_DECREASING_OPERATIONS))
+                    .repeat(action.captureNumber)               
             })
-            .delay(4000)
     }
 
-// function decreaseOperationsEpic(action$, state$) { 
+// function decreaseOpsEpic(action$, state$) { 
 //     return action$
-//         .ofType(actionTypes.START_DECREASING_OPERATIONS)
+//         .ofType(actionTypes.START_DECREASING_OPS)
 //         // .take(1)
 //         .switchMap(action => {
 //             return interval(100).pipe(
@@ -35,10 +32,10 @@ function decreaseOperationsEpic(action$, state$) {
 //                         )
 //                  .repeat(action.captureNumber)
 //                 ),
-//                 // takeUntil(action$.ofType(actionTypes.STOP_DECREASING_OPERATIONS))
+//                 // takeUntil(action$.ofType(actionTypes.STOP_DECREASING_OPS))
 //             )
 //         })
 //          .delay(4000)
 // }
 
-export default decreaseOperationsEpic;
+export default decreaseOpsEpic;
