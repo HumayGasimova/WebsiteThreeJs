@@ -66,6 +66,9 @@ class QuantumComputing extends Component {
             }else{
                 this.props.updateOps(captureQOps);
             }
+            if(this.props.ops >= this.props.opsMax){
+                this.props.startDecreasingOps();
+            }
             
         }
     }
@@ -151,6 +154,7 @@ export default connect(
             startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
             captureCurrentQOps: bindActionCreators(Actions.captureCurrentQOps, dispatch),
             updateOps: bindActionCreators(Actions.updateOps, dispatch),
+            startDecreasingOps: bindActionCreators(Actions.startDecreasingOps, dispatch),
         };
     }
 )(QuantumComputing);

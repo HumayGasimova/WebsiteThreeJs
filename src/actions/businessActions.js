@@ -197,6 +197,12 @@ export function startDecreasingOps() {
     };
 };
 
+export function stopDecreasingOps() {
+    return { 
+        type: actionTypes.STOP_DECREASING_OPERATIONS
+    };
+};
+
 export function decreaseOps() {
     return { 
         type: actionTypes.DECREASE_OPS

@@ -86,11 +86,11 @@ class ComputationalResources extends Component {
             }
         }, 300);
       
-        this.intervalOperationsDecrease = setInterval(()=>{
-            if(this.props.ops > (this.props.opsMax+1)){
-                this.props.startDecreasingOps();
-            }
-        }, 1000);
+        // this.intervalOperationsDecrease = setInterval(()=>{
+        //     if(this.props.ops > (this.props.opsMax+1)){
+        //         this.props.startDecreasingOps();
+        //     }
+        // }, 1000);
     
         // this.props.throwProject();
     }
@@ -134,8 +134,11 @@ class ComputationalResources extends Component {
                 this.props.addProject(projectsToAdd.QuantumComputing);
             }
         }
-      
-      
+        if(prevProps.ops !== this.props.ops){
+            if(this.props.ops === this.props.opsMax){
+                this.props.stopDecreasingOps();
+            }
+        }
     }
 
     componentWillUnmount = () => {
@@ -224,7 +227,7 @@ export default connect(
             addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
             addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
-            startDecreasingOps: bindActionCreators(Actions.startDecreasingOps, dispatch),
+            stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
         };
     }
 )(ComputationalResources);

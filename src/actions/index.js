@@ -26,6 +26,7 @@ export {
     repeatAutoPaperClippers,
     increaseOps,
     startDecreasingOps,
+    stopDecreasingOps,
     decreaseOps,
     increaseProcessors,
     increaseProcessorsMemory,

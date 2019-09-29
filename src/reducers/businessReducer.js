@@ -529,6 +529,8 @@ const businessReducer = (state = initialState, action) => {
             return increaseOps(state, action); 
         case actionTypes.START_DECREASING_OPERATIONS:
             return state; 
+        case actionTypes.STOP_DECREASING_OPERATIONS:
+            return state; 
         case actionTypes.DECREASE_OPS:
             return decreaseOps(state, action); 
         case actionTypes.INCREASE_PROCESSORS:
