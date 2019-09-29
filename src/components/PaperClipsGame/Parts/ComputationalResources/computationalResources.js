@@ -86,12 +86,12 @@ class ComputationalResources extends Component {
             }
         }, 300);
       
-        // this.intervalOperationsDecrease = setInterval(()=>{
-        //     if(this.props.ops > (this.props.opsMax+1)){
-        //         this.props.startDecreasingOps();
-        //     }
-        // }, 1000);
-    
+        this.intervalOperationsDecrease = setInterval(()=>{
+            if(this.props.ops > this.props.opsMax){
+                this.props.startDecreasingOperations();
+            }
+        }, 1000);
+        
         // this.props.throwProject();
     }
 

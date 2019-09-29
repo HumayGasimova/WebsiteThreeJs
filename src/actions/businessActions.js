@@ -455,15 +455,17 @@ export function changeToQOps() {
     };
 };
 
-export function startAddingQOps() {
+export function startAddingQOps(chipsNumber) {
     return { 
-        type: actionTypes.START_ADDING_Q_OPS
+        type: actionTypes.START_ADDING_Q_OPS,
+        chipsNumber: chipsNumber
     };
 };
 
-export function addQOps() {
+export function addQOps(chipsNumber) {
     return { 
-        type: actionTypes.ADD_Q_OPS
+        type: actionTypes.ADD_Q_OPS,
+        chipsNumber: chipsNumber
     };
 };
 
@@ -473,15 +475,17 @@ export function stopAddingQOps() {
     };
 };
 
-export function startSubtractingQOps() {
+export function startSubtractingQOps(chipsNumber) {
     return { 
-        type: actionTypes.START_SUBTRACTING_Q_OPS
+        type: actionTypes.START_SUBTRACTING_Q_OPS,
+        chipsNumber: chipsNumber
     };
 };
 
-export function subtractQOps() {
+export function subtractQOps(chipsNumber) {
     return { 
-        type: actionTypes.SUBTRACT_Q_OPS
+        type: actionTypes.SUBTRACT_Q_OPS,
+        chipsNumber: chipsNumber
     };
 };
 

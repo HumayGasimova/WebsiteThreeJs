@@ -15,7 +15,7 @@ function startSubtractingQOpsEpic(action$, state$) {
             return interval(84).pipe(
                 mergeMap(() => {
                    return Observable.of(
-                        Actions.subtractQOps()
+                        Actions.subtractQOps(action.chipsNumber)
                     )
                 }),
                 takeUntil(action$.ofType(actionTypes.STOP_SUBTRACTING_Q_OPS))

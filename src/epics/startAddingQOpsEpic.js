@@ -15,7 +15,7 @@ function startAddingQOpsEpic(action$, state$) {
             return interval(84).pipe(
                 mergeMap(() => {
                    return Observable.of(
-                        Actions.addQOps()
+                        Actions.addQOps(action.chipsNumber)
                     )
                 }),
                 takeUntil(action$.ofType(actionTypes.STOP_ADDING_Q_OPS))

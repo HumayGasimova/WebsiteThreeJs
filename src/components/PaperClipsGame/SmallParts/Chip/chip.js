@@ -48,7 +48,18 @@ class Chip extends Component {
     * Methods
     */
 
-
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.qOps !== this.props.qOps) {
+            if(this.props.qOps === 360){
+                this.props.stopAddingQOps();
+                this.props.startSubtractingQOps(this.props.chipsNumber);
+            }
+            if(this.props.qOps === -360){
+                this.props.stopSubtractingQOps();
+                this.props.startAddingQOps(this.props.chipsNumber);
+            }
+        }      
+    }
     
     /**
     * Markup
@@ -75,8 +86,10 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // checkCardValidity: bindActionCreators(Actions.checkCardValidity, dispatch),
-            // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
+            stopAddingQOps: bindActionCreators(Actions.stopAddingQOps, dispatch),
+            startSubtractingQOps: bindActionCreators(Actions.startSubtractingQOps, dispatch),
+            stopSubtractingQOps: bindActionCreators(Actions.stopSubtractingQOps, dispatch),
+            startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
         };
     }
 )(Chip);

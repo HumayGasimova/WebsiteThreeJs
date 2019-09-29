@@ -49,7 +49,7 @@ const initialState = {
     showQCompMessage: 0,
     showChip: false,
     changedToQOps: false,
-    qOps: -360,
+    // qOps: -360,
     currentQOps: -360,
     chips: [],
     // captureNumber: 0
@@ -446,14 +446,26 @@ const changeToQOps = (state, action) => {
 }
 
 const addQOps = (state, action) => {
+    let updatedChips = [...state.chips];
+    let chip = updatedChips.find(x => x.chipsNumber === action.chipsNumber);
+    let chipsIndex = updatedChips.findIndex(x=> x.chipsNumber === action.chipsNumber);
+    chip.qOps = chip.qOps + 1;
+    updatedChips.splice(chipsIndex, 1, chip)
+
     return updateObject(state, {
-        qOps: state.qOps + 1
+        qOps: updatedChips
     });
 }
 
 const subtractQOps = (state, action) => {
+    let updatedChips = [...state.chips];
+    let chip = updatedChips.find(x => x.chipsNumber === action.chipsNumber);
+    let chipsIndex = updatedChips.findIndex(x=> x.chipsNumber === action.chipsNumber);
+    chip.qOps = chip.qOps - 1;
+    updatedChips.splice(chipsIndex, 1, chip)
+
     return updateObject(state, {
-        qOps: state.qOps - 1
+        qOps: updatedChips
     });
 }
 

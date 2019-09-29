@@ -57,19 +57,19 @@ class QuantumComputing extends Component {
     computeOnClick = () => {
         this.props.showQuantCompMessage();
         if(this.props.changedToQOps){
-            let captureQOps = this.props.qOps;
+            let chips = this.props.chips;
+            let captureQOps = chips.reduce((a,b) => +a + b.qOps, 0);
+            // console.log(captureVal)
+             
             this.props.captureCurrentQOps(captureQOps);
+
             if(this.props.ops >= this.props.opsMax && captureQOps > 0){
                 let randomNumber =  Math.floor(Math.random()*70);
                 this.props.updateOps(randomNumber);
-                this.props.startDecreasingOperations();
+                // this.props.startDecreasingOperations();
             }else{
                 this.props.updateOps(captureQOps);
-            }
-            // if(this.props.ops >= this.props.opsMax && captureQ){
-                
-            // }
-            
+            }            
         }
     }
 
@@ -81,6 +81,8 @@ class QuantumComputing extends Component {
                         <Chip
                             key={el.id}
                             showChip={el.showChip}
+                            chipsNumber={el.chipsNumber}
+                            qOps={el.qOps}
                         />
                     )
                 })}
@@ -88,18 +90,18 @@ class QuantumComputing extends Component {
         )        
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.qOps !== this.props.qOps) {
-            if(this.props.qOps === 360){
-                this.props.stopAddingQOps();
-                this.props.startSubtractingQOps();
-            }
-            if(this.props.qOps === -360){
-                this.props.stopSubtractingQOps();
-                this.props.startAddingQOps();
-            }
-        }      
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevProps.qOps !== this.props.qOps) {
+    //         if(this.props.qOps === 360){
+    //             this.props.stopAddingQOps();
+    //             this.props.startSubtractingQOps();
+    //         }
+    //         if(this.props.qOps === -360){
+    //             this.props.stopSubtractingQOps();
+    //             this.props.startAddingQOps();
+    //         }
+    //     }      
+    // }
 
     /**
     * Markup
@@ -142,16 +144,13 @@ export default connect(
             currentQOps: state.business.currentQOps,
             chips: state.business.chips,
             ops: state.business.ops,
-            opsMax: state.business.opsMax
+            opsMax: state.business.opsMax,
+            chips: state.business.chips,
         };
     },
     (dispatch) => {
         return {
             showQuantCompMessage: bindActionCreators(Actions.showQuantCompMessage, dispatch),
-            stopAddingQOps: bindActionCreators(Actions.stopAddingQOps, dispatch),
-            startSubtractingQOps: bindActionCreators(Actions.startSubtractingQOps, dispatch),
-            stopSubtractingQOps: bindActionCreators(Actions.stopSubtractingQOps, dispatch),
-            startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
             captureCurrentQOps: bindActionCreators(Actions.captureCurrentQOps, dispatch),
             updateOps: bindActionCreators(Actions.updateOps, dispatch),
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),

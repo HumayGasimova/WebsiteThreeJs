@@ -18,7 +18,7 @@ function startDecreasingOperationsEpic(action$, state$) {
                             // Actions.addCaptureVal(-action.captureNumber),
                         )
             })
-            .delay(4000)
+            .delay(15000)
     }
 
 export default startDecreasingOperationsEpic;
