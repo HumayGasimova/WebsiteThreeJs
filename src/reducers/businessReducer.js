@@ -51,7 +51,8 @@ const initialState = {
     changedToQOps: false,
     qOps: -360,
     currentQOps: -360,
-    chips: []
+    chips: [],
+    captureNumber: 0
 }
 
 const addPaperclip = (state) => {
@@ -456,7 +457,7 @@ const subtractQOps = (state, action) => {
     });
 }
 
-const captureCurrentqOps = (state, action) => {
+const captureCurrentQOps = (state, action) => {
     return updateObject(state, {
         currentQOps: action.val
     });
@@ -465,6 +466,13 @@ const captureCurrentqOps = (state, action) => {
 const updateOps = (state, action) => {
     return updateObject(state, {
         ops: state.ops + action.val
+    });
+}
+
+const addCaptureVal = (state, action) => {
+
+    return updateObject(state, {
+        captureNumber: state.captureNumber + action.val
     });
 }
 
@@ -618,11 +626,13 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.STOP_SUBTRACTING_Q_OPS:
             return state;
         case actionTypes.CAPTURE_CURRENT_Q_OPS:
-            return captureCurrentqOps(state, action);
+            return captureCurrentQOps(state, action);
         case actionTypes.ADD_CHIP:
             return addChip(state, action);
         case actionTypes.UPDATE_OPS:
             return updateOps(state, action);
+        case actionTypes.ADD_CAPTURE_VAL:
+            return addCaptureVal(state, action);
         default: 
             return state;
     }

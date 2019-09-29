@@ -191,9 +191,10 @@ export function increaseOps() {
     };
 };
 
-export function startDecreasingOps() {
+export function startDecreasingOps(val) {
     return { 
-        type: actionTypes.START_DECREASING_OPERATIONS
+        type: actionTypes.START_DECREASING_OPERATIONS,
+        captureNumber: val
     };
 };
 
@@ -498,6 +499,15 @@ export function updateOps(val) {
         val: val
     };
 };
+
+export function addCaptureVal(val) {
+    return { 
+        type: actionTypes.ADD_CAPTURE_VAL,
+        val: val
+    };
+};
+
+
 
 
 export const checkAuthTimeout = (expirationTime) => {

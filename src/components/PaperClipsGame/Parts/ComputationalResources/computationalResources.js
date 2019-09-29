@@ -134,11 +134,11 @@ class ComputationalResources extends Component {
                 this.props.addProject(projectsToAdd.QuantumComputing);
             }
         }
-        if(prevProps.ops !== this.props.ops){
-            if(this.props.ops === this.props.opsMax){
-                this.props.stopDecreasingOps();
-            }
-        }
+        // if(prevProps.ops !== this.props.ops){
+        //     if(this.props.ops === this.props.opsMax){
+        //         this.props.stopDecreasingOps();
+        //     }
+        // }
     }
 
     componentWillUnmount = () => {

@@ -74,5 +74,5 @@ export {
     addChip,
     toggleChip,
     updateOps,
-
+    addCaptureVal
 } from './businessActions';
