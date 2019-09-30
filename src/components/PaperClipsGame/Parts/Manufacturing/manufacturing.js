@@ -92,6 +92,7 @@ class Manufacturing extends Component {
         if(this.props.noWire===0){
             console.log("HHHH")
           }
+          this.props.sendCommentToTerminal("AutoClippers available for purchase");
     }
 
     componentWillUnmount = () => {
@@ -159,6 +160,7 @@ export default connect(
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
             checkExistenceOfWire: bindActionCreators(Actions.checkExistenceOfWire, dispatch),
+            sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
         };
     }
 )(Manufacturing);

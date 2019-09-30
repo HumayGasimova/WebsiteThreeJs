@@ -766,5 +766,46 @@ export const QuantumFoamAnnealment = {
 }
 
 
+export const XavierReinitialization = {
+    text1: "Xavier Re-initialization (100,000 creat)",
+    text2: "Re-allocate accumulated trust",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'xavierReinitialization',
+    valid: false,
+    id: "",
+    terminal: "Trust now available for re-allocation"
+}// creat 100000 end obnulaetsa trust processors0 memory0 0/0 operations
+
+export const XavierReinitialization2 = {
+    text1: "Xavier Re-initialization (100,000 creat)",
+    text2: "Re-allocate accumulated trust",
+    price: {
+        creat: 3
+    },
+    action: 1,
+    next: 'xavierReinitialization2',
+    valid: false,
+    id: "",
+    terminal: "Trust now available for re-allocation"
+}
+
+export const QuantumTemporalReversion = {
+    text1: "Quantum Temporal Reversion (-10,000",
+    text2: "ops)",
+    text3: "Return to the beginning",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'quantumTemporalReversion',
+    valid: false,
+    id: "",
+    terminal: ""
+}
+
+
 
 
