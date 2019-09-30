@@ -92,7 +92,7 @@ class ComputationalResources extends Component {
             }
         }, 1000);
         
-        // this.props.throwProject();
+        this.props.sendCommentToTerminal("Trust-Constrained Self-Modification enabled"); 
     }
 
     increaseProcessors = () => { 
@@ -229,6 +229,7 @@ export default connect(
             addProject: bindActionCreators(Actions.addProject, dispatch),
             stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
+            sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
         };
     }
 )(ComputationalResources);

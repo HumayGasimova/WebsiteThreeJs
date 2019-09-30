@@ -92,7 +92,7 @@ class Manufacturing extends Component {
         if(this.props.noWire===0){
             console.log("HHHH")
           }
-          this.props.sendCommentToTerminal("AutoClippers available for purchase");
+        this.props.sendCommentToTerminal("AutoClippers available for purchase");
     }
 
     componentWillUnmount = () => {
