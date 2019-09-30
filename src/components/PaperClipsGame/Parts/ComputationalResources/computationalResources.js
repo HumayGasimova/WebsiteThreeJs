@@ -67,6 +67,19 @@ class ComputationalResources extends Component {
     * Methods
     */
 
+    buttonsOnCLick = (arg) => {
+        switch(arg){
+            case 'processors': 
+             this.props.processorsNumber;
+             this.props.sendCommentToTerminal("Processor added, operations (or creativity) per sec increased");
+             break;
+            case 'memory': 
+            this.props.processorsMemory;
+            this.props.sendCommentToTerminal("Memory added, max operations increased");
+            break;
+        }
+    }
+
     componentDidMount () {
         this.intervalOperations = setInterval(()=>{
             if(this.props.ops < this.props.opsMax){
@@ -167,7 +180,7 @@ class ComputationalResources extends Component {
                         <div className="computationalResources-wrapper1">
                             <Button
                                 className="computationalResources-button"
-                                onClick={this.increaseProcessors}
+                                onClick={()=>this.buttonsOnCLick('processors')}
                                 text={"Processors"}
                                 // disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
                             />
@@ -176,7 +189,7 @@ class ComputationalResources extends Component {
                         <div className="computationalResources-wrapper1">
                             <Button
                                 className="computationalResources-button"
-                                onClick={this.props.increaseProcessorsMemory}
+                                onClick={()=>this.buttonsOnCLick('memory')}
                                 text={"Memory"}
                                 // disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
                             />
