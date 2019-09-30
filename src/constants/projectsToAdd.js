@@ -431,7 +431,20 @@ export const PhotonicChip3 = {
     action: 1,
     next: 'photonicChip3',
     valid: false,
-    id: "card33",
+    id: "card34",
+    terminal: "Photonic chip added"
+}
+export const PhotonicChip4 = {
+    text1: "Photonic Chip (25,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip4',
+    valid: false,
+    id: "card35",
     terminal: "Photonic chip added"
 }//logic neededs
 

@@ -18,3 +18,10 @@ export const Chip3 = {
     id: "chip3",
     qOps: -360
 }
+
+export const Chip4 = {
+    chipsNumber: 'chip4',
+    showChip: false,
+    id: "chip4",
+    qOps: -360
+}

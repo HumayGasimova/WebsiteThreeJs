@@ -37,6 +37,18 @@ function toggleChipEpic(action$, state$) {
                         )
                         .delay(1000)
                     }
+                case 'chip3':
+                    if(chip.showChip){
+                        return Observable.of(
+                            Actions.toggleChip(false, action.chipsNumber)
+                        )
+                        .delay(120000)
+                    }else{
+                        return Observable.of(
+                            Actions.toggleChip(true, action.chipsNumber)
+                        )
+                        .delay(1000)
+                    }
             }
         })       
 }

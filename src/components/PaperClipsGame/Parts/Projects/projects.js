@@ -306,6 +306,13 @@ class Projects extends Component {
                 this.props.addChip(chipsToAdd.Chip2);
                 this.props.startAddingQOps("chip2");
                 break; 
+            case 'photonicChip3':
+                this.props.addProject(projectsToAdd.PhotonicChip4);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip3);
+                this.props.startAddingQOps("chip3");
+                break; 
         }
     }
 

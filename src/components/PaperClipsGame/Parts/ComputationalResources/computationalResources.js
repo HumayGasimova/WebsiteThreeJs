@@ -169,7 +169,7 @@ class ComputationalResources extends Component {
                                 className="computationalResources-button"
                                 onClick={this.increaseProcessors}
                                 text={"Processors"}
-                                disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
+                                // disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
                             />
                             <div className="computationalResources-text">{this.props.processorsNumber}</div>
                         </div>
@@ -178,7 +178,7 @@ class ComputationalResources extends Component {
                                 className="computationalResources-button"
                                 onClick={this.props.increaseProcessorsMemory}
                                 text={"Memory"}
-                                disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
+                                // disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
                             />
                             <div className="computationalResources-text">{this.props.processorsMemory}</div>
                         </div>
