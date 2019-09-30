@@ -70,11 +70,11 @@ class ComputationalResources extends Component {
     buttonsOnCLick = (arg) => {
         switch(arg){
             case 'processors': 
-             this.props.processorsNumber;
+             this.props.increaseProcessors();
              this.props.sendCommentToTerminal("Processor added, operations (or creativity) per sec increased");
              break;
             case 'memory': 
-            this.props.processorsMemory;
+            this.props.increaseProcessorsMemory();
             this.props.sendCommentToTerminal("Memory added, max operations increased");
             break;
         }

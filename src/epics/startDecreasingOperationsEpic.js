@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
@@ -18,7 +18,8 @@ function startDecreasingOperationsEpic(action$, state$) {
                             // Actions.addCaptureVal(-action.captureNumber),
                         )
             })
-            .delay(15000)
+            // .delay(15000)
+            .debounceTime(900)
     }
 
 export default startDecreasingOperationsEpic;
