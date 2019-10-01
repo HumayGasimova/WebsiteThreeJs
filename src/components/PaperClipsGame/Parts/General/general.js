@@ -85,11 +85,33 @@ class General extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.paperClips !== this.props.paperClips){
-            let hour = this.props.time;
-            let min = +(this.props.time / 60).toFixed();
-            let sec = this.props.time - min*60;
+            let min;
+            let sec;
+            let comment;
+            if(this.props.time >= 3600 && this.props.time < 7200 ){
+                let hour = 1;
+                min = Math.floor((this.props.time-3600) / 60);
+                sec = this.props.time - (3600 + min*60);
+                comment = `clips created in ${hour} hour ${min} minutes ${sec} seconds`;
+            }
+            if(this.props.time >= 7200){
+                let hours = Math.floor(this.props.time/3600);
+                min = Math.floor((this.props.time - hours*3600)/60);
+                sec = this.props.time - hours*3600 - min*60;
+                comment = `clips created in ${hours} hours ${min} minutes ${sec} seconds`;
+            }
+            if(this.props.time <= 3600){
+                min = Math.floor(this.props.time / 60);
+                sec = this.props.time - min*60;
+                comment = `clips created in ${min} minutes ${sec} seconds`;
+            }
+            if(this.props.time <= 60){
+                sec = this.props.time;
+                comment = `clips created in ${sec} seconds`;
+            }
+        
             if(this.props.paperClips === 500){
-                this.props.sendCommentToTerminal(`500 clips created in ${min} minutes ${sec} seconds`);
+                this.props.sendCommentToTerminal(`500 ${comment}`);
             }
         }
     }
