@@ -59,7 +59,7 @@ const addPaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0  
 
     return updateObject(state, {
-       paperClips: state.paperClips + 1000,
+       paperClips: state.paperClips + 10,
        unsoldInventory: state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });

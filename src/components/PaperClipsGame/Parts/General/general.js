@@ -82,6 +82,17 @@ class General extends Component {
         }
        
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevProps.paperClips !== this.props.paperClips){
+            let hour = this.props.time;
+            let min = +(this.props.time / 60).toFixed();
+            let sec = this.props.time - min*60;
+            if(this.props.paperClips === 500){
+                this.props.sendCommentToTerminal(`500 clips created in ${min} minutes ${sec} seconds`);
+            }
+        }
+    }
     
     /**
     * Markup
@@ -117,13 +128,15 @@ export default connect(
             paperclipPrice: state.business.paperclipPrice,
             delay: state.business.delay,
             wire: state.business.wire,
-            makePaperclipDisabled: state.business.makePaperclipDisabled
+            makePaperclipDisabled: state.business.makePaperclipDisabled,
+            time: state.business.time,
         };
     },
     (dispatch) => {
         return {
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
-            sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
+            sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
+            sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
         };
     }
 )(General);
