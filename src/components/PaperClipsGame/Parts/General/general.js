@@ -85,21 +85,28 @@ class General extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.paperClips !== this.props.paperClips){
+            let hours
             let min;
             let sec;
             let comment;
-            if(this.props.time >= 7200){
-                let hours = Math.floor(this.props.time/3600);
+            if(this.props.time >= 86400){
+                let days = Math.floor(this.props.time/86400);
+                hours = Math.floor((this.props.time - days*86400)/3600);
+                min = Math.floor((this.props.time - days*86400 - hours*3600)/60);
+                sec = this.props.time - days*86400 - hours*3600 - min*60;
+                comment = `clips created in ${days} ${days === 1 ? "day": "days"} ${hours} ${hours === 1 ? "hour": "hours"} ${min} ${min === 1 ? "minute": "minutes"} ${sec} ${sec === 1 ? "second": "seconds"}`;
+            }
+            if(this.props.time < 86400){
+                hours = Math.floor(this.props.time/3600);
                 min = Math.floor((this.props.time - hours*3600)/60);
                 sec = this.props.time - hours*3600 - min*60;
                 comment = `clips created in ${hours} ${hours === 1 ? "hour": "hours"} ${min} ${min === 1 ? "minute": "minutes"} ${sec} ${sec === 1 ? "second": "seconds"}`;
             }
-            if(this.props.time <= 3600){
+            if(this.props.time < 3600){
                 min = Math.floor(this.props.time / 60);
                 sec = this.props.time - min*60;
                 comment = `clips created in ${min} ${min === 1 ? "minute": "minutes"} ${sec} ${sec === 1 ? "second": "seconds"}`;
             }
-
             if(this.props.time < 60){
                 sec = this.props.time;
                 comment = `clips created in ${sec} ${sec === 1 ? "second": "seconds"}`;
