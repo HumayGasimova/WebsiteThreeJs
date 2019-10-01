@@ -87,6 +87,12 @@ class General extends Component {
             let shortNumber = this.props.paperClips/denominator;
             return shortNumber.toFixed(1) + " thousand"; 
         }
+        // if(this.props.paperClips < 1000000){
+        //     let length = Utility.getlength(this.props.paperClips) - 1;
+        //     let denominator = Utility.getDenominator(length);
+        //     let shortNumber = this.props.paperClips/denominator;
+        //     return shortNumber.toFixed(1) + " thousand"; 
+        // }
     }
 
     renderHoverComponent = () => {
