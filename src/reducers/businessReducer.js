@@ -52,7 +52,7 @@ const initialState = {
     // qOps: -360,
     currentQOps: -360,
     chips: [],
-    time: 853893
+    time: 6878687
 }
 
 const addPaperclip = (state) => {

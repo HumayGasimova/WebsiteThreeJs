@@ -85,12 +85,22 @@ class General extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.paperClips !== this.props.paperClips){
+            let weeks;
+            let days;
             let hours
             let min;
             let sec;
             let comment;
-            if(this.props.time >= 86400){
-                let days = Math.floor(this.props.time/86400);
+            if(this.props.time >= 604800){
+                weeks =  Math.floor(this.props.time/604800);
+                days = Math.floor((this.props.time - weeks*604800)/86400);
+                hours = Math.floor((this.props.time - weeks*604800 - days*86400)/3600);
+                min = Math.floor((this.props.time - weeks*604800 - days*86400 - hours*3600)/60);
+                sec = this.props.time - weeks*604800 - days*86400 - hours*3600 - min*60;
+                comment = `clips created in ${weeks} ${weeks === 1 ? "week": "weeks"} ${days} ${days === 1 ? "day": "days"} ${hours} ${hours === 1 ? "hour": "hours"} ${min} ${min === 1 ? "minute": "minutes"} ${sec} ${sec === 1 ? "second": "seconds"}`;
+            }
+            if(this.props.time < 604800){
+                days = Math.floor(this.props.time/86400);
                 hours = Math.floor((this.props.time - days*86400)/3600);
                 min = Math.floor((this.props.time - days*86400 - hours*3600)/60);
                 sec = this.props.time - days*86400 - hours*3600 - min*60;
