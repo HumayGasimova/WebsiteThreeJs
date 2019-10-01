@@ -52,7 +52,7 @@ const initialState = {
     // qOps: -360,
     currentQOps: -360,
     chips: [],
-    // captureNumber: 0
+    time: 0
 }
 
 const addPaperclip = (state) => {
@@ -483,6 +483,11 @@ const updateOps = (state, action) => {
         ops: state.ops + action.val
     });
 }
+const startTimer = (state, action) => {
+    return updateObject(state, {
+        time: state.time + 1
+    });
+}
 
 // const addCaptureVal = (state, action) => {
 //     if(action.val === 0){
@@ -651,8 +656,8 @@ const businessReducer = (state = initialState, action) => {
             return addChip(state, action);
         case actionTypes.UPDATE_OPS:
             return updateOps(state, action);
-        // case actionTypes.ADD_CAPTURE_VAL:
-        //     return addCaptureVal(state, action);
+        case actionTypes.START_TIMER:
+            return startTimer(state, action);
         case actionTypes.START_DECREASING_OPERATIONS:
             return state;
         default: 

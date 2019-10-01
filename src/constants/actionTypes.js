@@ -1,3 +1,4 @@
+export const START_TIMER = 'START_TIMER';
 export const CHECK_BUTTONS = 'CHECK_BUTTONS';
 
 export const MAKE_PAPERCLIP = 'MAKE_PAPERCLIP';

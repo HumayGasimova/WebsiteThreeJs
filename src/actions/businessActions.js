@@ -509,6 +509,14 @@ export function updateOps(val) {
     };
 };
 
+export function startTimer() {
+    return { 
+        type: actionTypes.START_TIMER
+    };
+};
+
+
+
 // export function addCaptureVal(val) {
 //     return { 
 //         type: actionTypes.ADD_CAPTURE_VAL,

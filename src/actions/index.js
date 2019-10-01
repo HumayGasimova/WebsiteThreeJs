@@ -75,5 +75,6 @@ export {
     toggleChip,
     updateOps,
     // addCaptureVal,
-    startDecreasingOperations
+    startDecreasingOperations,
+    startTimer
 } from './businessActions';

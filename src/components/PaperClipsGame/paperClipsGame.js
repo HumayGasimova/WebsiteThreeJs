@@ -56,6 +56,9 @@ class PaperClipsGame extends Component {
     }
 
     componentDidMount = () => {
+        setInterval(()=>{
+            this.props.startTimer();
+        }, 1000);
         window.addEventListener('scroll', this.mouseScroll);
     };
 
@@ -82,7 +85,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
+            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch),
+            startTimer: bindActionCreators(Actions.startTimer, dispatch)
         };
     }
 )(PaperClipsGame);
