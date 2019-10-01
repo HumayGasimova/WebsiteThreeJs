@@ -34,6 +34,12 @@ import './general.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../../../../utility';
+
+/**
 * General component definition and export
 */
 
@@ -71,12 +77,23 @@ class General extends Component {
             isHovering: false
         })
     }
+    renderShortNumber = () => {
+        if(this.props.paperClips < 1000){
+            return (this.props.paperClips).toFixed(1);
+        }
+        if(this.props.paperClips < 1000000){
+            let length = Utility.getlength(this.props.paperClips) - 1;
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " thousand"; 
+        }
+    }
 
     renderHoverComponent = () => {
         if(this.state.isHovering){
             return(
                 <Hover>
-                    {this.props.paperClips}
+                    {this.renderShortNumber()}
                 </Hover>
             )
         }
@@ -126,14 +143,14 @@ class General extends Component {
                 this.props.sendCommentToTerminal(`500 ${comment}`);
             }
             if(this.props.paperClips === 1000){
-                this.props.sendCommentToTerminal(`1000 ${comment}`);
+                this.props.sendCommentToTerminal(`1,000 ${comment}`);
             }
-            if(this.props.paperClips === 1500){
-                this.props.sendCommentToTerminal(`1500 ${comment}`);
-            }
-            if(this.props.paperClips === 2000){
-                this.props.sendCommentToTerminal(`2000 ${comment}`);
-            }
+            // if(this.props.paperClips === 1500){
+            //     this.props.sendCommentToTerminal(`1,500 ${comment}`);
+            // }
+            // if(this.props.paperClips === 2000){
+            //     this.props.sendCommentToTerminal(`2,000 ${comment}`);
+            // }
         }
     }
     
@@ -148,7 +165,7 @@ class General extends Component {
                     onMouseEnter={this.handleMouseEnter} 
                     onMouseLeave={this.handleMouseLeave} 
                     className="general-text"> 
-                    Paperclips : {this.props.paperClips} 
+                    Paperclips : {Utility.commaSeparator(this.props.paperClips)}
                 </div>
                 {this.renderHoverComponent()}
                 <Button 

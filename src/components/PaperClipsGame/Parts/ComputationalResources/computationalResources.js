@@ -36,9 +36,7 @@ import * as Actions from '../../../../actions';
 * Utility
 */
 
-import {
-    commaSeparator
-} from '../../../../utility/commaSeparator';
+import * as Utility from '../../../../utility';
 
 /**
 * Const
@@ -173,7 +171,7 @@ class ComputationalResources extends Component {
                     <div className="computationalResources-line"/>
                     <div className="computationalResources-section">
                         <div className="computationalResources-text">Trust: {this.props.trust}</div>
-                        <div className="computationalResources-text">+1 Trust at: {commaSeparator(this.props.clipsToBuyTrust)}</div>
+                        <div className="computationalResources-text">+1 Trust at: {Utility.commaSeparator(this.props.clipsToBuyTrust)}</div>
                     </div>
 
                     <div className="computationalResources-section">

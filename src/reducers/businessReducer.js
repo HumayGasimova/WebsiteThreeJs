@@ -52,14 +52,14 @@ const initialState = {
     // qOps: -360,
     currentQOps: -360,
     chips: [],
-    time: 6878687
+    time: 0
 }
 
 const addPaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0  
 
     return updateObject(state, {
-       paperClips: state.paperClips + 100,
+       paperClips: state.paperClips + 1000,
        unsoldInventory: state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
