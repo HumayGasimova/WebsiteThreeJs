@@ -13,7 +13,7 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
+import { Observable } from 'rxjs';
 /**
 * Components
 */
@@ -36,6 +36,12 @@ import * as Actions from '../../../../actions';
 * Manufacturing component definition and export
 */
 
+// const clicks = new Observable(observer => {
+//     const handler = (e) => observer.next(e);
+//     button.addEventListener('click', handler);
+//     return () => button.removeEventListener('click', handler);
+// });
+
 class Manufacturing extends Component {
 
     /**
@@ -44,7 +50,19 @@ class Manufacturing extends Component {
 
     constructor (props){
         super(props);
+        // this.buttonRef = React.createRef();
     }
+
+    /**
+    * Methods
+    */
+
+    // componentDidMount() {
+    //     this.buttonRef.current.addEventListener("click", e => {
+    //         console.log("onClick", e);
+    //     });
+    // }
+   
 
     /**
     * Methods
@@ -59,6 +77,7 @@ class Manufacturing extends Component {
                             onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
                             text={"AutoClippers"}
                             disabled={this.props.autoClippersButtonDisabled}
+                            // buttonRef={this.buttonRef}
                         />
                         <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
                     </div>
@@ -100,11 +119,11 @@ class Manufacturing extends Component {
         clearInterval(this.intervalCheckButton)
     }
     
-    // checkWire = () => {
-    //     if(this.props.wire === 0){
-    //         this.props.stop()
-    //     }
-    // }
+    wireButtonToggle = () => {
+        this.props.startBuyingWire();
+
+    }
+
     /**
     * Markup
     */
@@ -120,7 +139,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-section">
                     <div className="manufacturing-wrapper1">
                         <Button
-                            onClick={this.props.startBuyingWire}
+                            onClick={this.wireButtonToggle}
                             text={"Wire"}
                             disabled={this.props.wireButtonDisabled}
                         />

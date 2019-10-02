@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     paperClips: 0,
-    funds: 0,
+    funds: 100000,
     paperclipPrice: 0.50,
     unsoldInventory: 0,
     maxPublicDemand: 800,
@@ -14,7 +14,7 @@ const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 100,
+    wire: 1000,
     wireToAdd: 50,
     wirePrice: 20,
     wireButtonDisabled: true,
@@ -59,7 +59,7 @@ const addPaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0  
 
     return updateObject(state, {
-       paperClips: state.paperClips + 10000000,
+       paperClips: state.paperClips + 100,
        unsoldInventory: state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
