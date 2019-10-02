@@ -13,8 +13,11 @@ import {
 import {
     bindActionCreators
 } from 'redux';
+
+import { Subject } from 'rxjs';
 import {  Observable } from 'rxjs';
 import 'rxjs/add/observable/fromEvent';
+
 
 /**
 * Components
@@ -43,8 +46,13 @@ import * as Actions from '../../../../actions';
 //     button.addEventListener('click', handler);
 //     return () => button.removeEventListener('click', handler);
 // });
-const button = document.querySelector('wireButton');
-const click$ = Observable.fromEvent(button, 'click');
+// const subject = new Subject();
+// const button = document.querySelector('wireButton');
+
+// button.addEventListener('click', () => subject.next('click'));
+// subject.subscribe(x => console.log(x))
+
+// const click$ = Observable.fromEvent(button, 'click');
 
 class Manufacturing extends Component {
 
@@ -62,11 +70,11 @@ class Manufacturing extends Component {
     */
 
     componentDidMount() {
-        click$
-        .bufferWhen(() => click$.delay(400))
-        .subscribe((res) => {
-            console.log(Math.random().toString(36).slice(2)) ;
-        });
+        // click$
+        // .bufferWhen(() => click$.delay(400))
+        // .subscribe((res) => {
+        //     console.log(Math.random().toString(36).slice(2)) ;
+        // });
     }
    
 
@@ -127,6 +135,7 @@ class Manufacturing extends Component {
     
     wireButtonToggle = () => {
         this.props.startBuyingWire();
+        this.props.clickWireButton();
 
     }
 
@@ -188,6 +197,7 @@ export default connect(
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
             checkExistenceOfWire: bindActionCreators(Actions.checkExistenceOfWire, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
+            clickWireButton: bindActionCreators(Actions.clickWireButton, dispatch),
         };
     }
 )(Manufacturing);

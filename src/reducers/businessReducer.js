@@ -660,6 +660,8 @@ const businessReducer = (state = initialState, action) => {
             return startTimer(state, action);
         case actionTypes.START_DECREASING_OPERATIONS:
             return state;
+        case actionTypes.CLICK_WIRE_BUTTON:
+            return state;
         default: 
             return state;
     }

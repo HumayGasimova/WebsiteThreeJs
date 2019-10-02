@@ -26,7 +26,7 @@ export const STOP = 'STOP';
 export const WIRE_EXISTS = 'WIRE_EXISTS';
 
 
-
+export const CLICK_WIRE_BUTTON = 'CLICK_WIRE_BUTTON';
 
 
 

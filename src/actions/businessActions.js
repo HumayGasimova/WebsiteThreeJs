@@ -515,7 +515,11 @@ export function startTimer() {
     };
 };
 
-
+export function clickWireButton() {
+    return { 
+        type: actionTypes.CLICK_WIRE_BUTTON
+    };
+};
 
 // export function addCaptureVal(val) {
 //     return { 

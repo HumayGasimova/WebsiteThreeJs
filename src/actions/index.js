@@ -76,5 +76,6 @@ export {
     updateOps,
     // addCaptureVal,
     startDecreasingOperations,
-    startTimer
+    startTimer,
+    clickWireButton
 } from './businessActions';

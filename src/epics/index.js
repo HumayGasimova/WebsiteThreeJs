@@ -24,7 +24,7 @@ import addChipEpic from './addChipEpic';
 import toggleChipEpic from './toggleChipEpic';
 import decreaseOpsEpic from './decreaseOpsEpic';
 import startDecreasingOperationsEpic from './startDecreasingOperationsEpic';
-
+import wireButtonBufferEpic from './wireButtonBufferEpic';
 
 
 export const rootEpic = combineEpics(
@@ -50,5 +50,6 @@ export const rootEpic = combineEpics(
     addChipEpic,
     toggleChipEpic,
     decreaseOpsEpic,
-    startDecreasingOperationsEpic
+    startDecreasingOperationsEpic,
+    wireButtonBufferEpic
 );
