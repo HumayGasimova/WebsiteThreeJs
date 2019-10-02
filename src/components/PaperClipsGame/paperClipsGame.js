@@ -20,6 +20,7 @@ import {
 
 import Terminal from './Terminal/terminal';
 import Game from './Game/game';
+import Paperclips from './Parts/Paperclips/paperclips';
 
 /**
 * Styles
@@ -70,6 +71,7 @@ class PaperClipsGame extends Component {
         return(
             <div className="paper-clips-game">
                 <Terminal/>
+                <Paperclips/>
                 <Game/>
             </div>
         );
