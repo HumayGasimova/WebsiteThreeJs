@@ -13,7 +13,9 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-import { Observable } from 'rxjs';
+import {  Observable } from 'rxjs';
+import 'rxjs/add/observable/fromEvent';
+
 /**
 * Components
 */
@@ -41,6 +43,8 @@ import * as Actions from '../../../../actions';
 //     button.addEventListener('click', handler);
 //     return () => button.removeEventListener('click', handler);
 // });
+const button = document.querySelector('wireButton');
+const click$ = Observable.fromEvent(button, 'click');
 
 class Manufacturing extends Component {
 
@@ -57,11 +61,13 @@ class Manufacturing extends Component {
     * Methods
     */
 
-    // componentDidMount() {
-    //     this.buttonRef.current.addEventListener("click", e => {
-    //         console.log("onClick", e);
-    //     });
-    // }
+    componentDidMount() {
+        click$
+        .bufferWhen(() => click$.delay(400))
+        .subscribe((res) => {
+            console.log(Math.random().toString(36).slice(2)) ;
+        });
+    }
    
 
     /**
@@ -77,7 +83,7 @@ class Manufacturing extends Component {
                             onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
                             text={"AutoClippers"}
                             disabled={this.props.autoClippersButtonDisabled}
-                            // buttonRef={this.buttonRef}
+                       
                         />
                         <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
                     </div>
@@ -142,6 +148,8 @@ class Manufacturing extends Component {
                             onClick={this.wireButtonToggle}
                             text={"Wire"}
                             disabled={this.props.wireButtonDisabled}
+                            id={"wireButton"}
+                                 // buttonRef={this.buttonRef}
                         />
                         <div className="manufacturing-text">{this.props.wire} inches </div>
                     </div>

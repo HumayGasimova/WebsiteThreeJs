@@ -30,18 +30,18 @@ class Button extends Component {
 
     constructor (props){
         super(props);
-        this.buttonRef = React.createRef();
+        // this.buttonRef = React.createRef();
     }
 
     /**
     * Methods
     */
 
-    componentDidMount() {
-        this.buttonRef.current.addEventListener("click", e => {
-        console.log("onClick", e);
-        });
-    }
+    // componentDidMount() {
+    //     this.buttonRef.current.addEventListener("click", e => {
+    //     console.log("onClick", e);
+    //     });
+    // }
     
     /**
     * Markup
@@ -55,7 +55,8 @@ class Button extends Component {
                     onClick={this.props.onClick}
                     type={this.props.type}
                     disabled={this.props.disabled}
-                    ref={this.buttonRef}
+                    // ref={this.buttonRef}
+                    id={this.props.id}
                     // style={{ width: `${this.props.width}`, height: `${this.props.height}`, borderRadius: `${this.props.borderRadius}`}}
                     >
                         {this.props.text}
