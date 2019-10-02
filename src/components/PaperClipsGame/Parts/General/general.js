@@ -82,17 +82,127 @@ class General extends Component {
             return (this.props.paperClips).toFixed(1);
         }
         if(this.props.paperClips < 1000000){
-            let length = Utility.getlength(this.props.paperClips) - 1;
+            let length = Utility.getlength(this.props.paperClips);
+            
+            if(length === 4){
+                length -= 1;
+            }
+            if(length === 5){
+                length -= 2;
+            }
+            if(length === 6){
+                length -= 3;
+            }
+            
             let denominator = Utility.getDenominator(length);
             let shortNumber = this.props.paperClips/denominator;
             return shortNumber.toFixed(1) + " thousand"; 
         }
-        // if(this.props.paperClips < 1000000){
-        //     let length = Utility.getlength(this.props.paperClips) - 1;
-        //     let denominator = Utility.getDenominator(length);
-        //     let shortNumber = this.props.paperClips/denominator;
-        //     return shortNumber.toFixed(1) + " thousand"; 
-        // }
+        if(this.props.paperClips < 1000000000){
+            let length = Utility.getlength(this.props.paperClips);
+            if(length === 7){
+                length -= 1;
+            }
+            if(length === 8){
+                length -= 2;
+            }
+            if(length === 9){
+                length -= 3;
+            }
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " million"; 
+        }
+        if(this.props.paperClips < 1000000000000){
+            let length = Utility.getlength(this.props.paperClips);
+            if(length === 10){
+                length -= 1;
+            }
+            if(length === 11){
+                length -= 2;
+            }
+            if(length === 12){
+                length -= 3;
+            }
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " milliard"; 
+        }
+        if(this.props.paperClips < 1000000000000000){
+            let length = Utility.getlength(this.props.paperClips);
+            if(length === 13){
+                length -= 1;
+            }
+            if(length === 14){
+                length -= 2;
+            }
+            if(length === 15){
+                length -= 3;
+            }
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " billion"; 
+        }
+        if(this.props.paperClips < 1000000000000000000){
+            let length = Utility.getlength(this.props.paperClips);
+            if(length === 16){
+                length -= 1;
+            }
+            if(length === 17){
+                length -= 2;
+            }
+            if(length === 18){
+                length -= 3;
+            }
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " billiard"; 
+        }
+        if(this.props.paperClips < 1000000000000000000000){
+            let length = Utility.getlength(this.props.paperClips);
+            if(length === 19){
+                length -= 1;
+            }
+            if(length === 20){
+                length -= 2;
+            }
+            if(length === 21){
+                length -= 3;
+            }
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " trillion"; 
+        }
+        if(this.props.paperClips < 1000000000000000000000000){
+            let length = Utility.getlength(this.props.paperClips);
+            if(length === 22){
+                length -= 1;
+            }
+            if(length === 23){
+                length -= 2;
+            }
+            if(length === 24){
+                length -= 3;
+            }
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " trilliard"; 
+        }
+        if(this.props.paperClips < 1000000000000000000000000000){
+            let length = Utility.getlength(this.props.paperClips);
+            if(length === 25){
+                length -= 1;
+            }
+            if(length === 26){
+                length -= 2;
+            }
+            if(length === 27){
+                length -= 3;
+            }
+            let denominator = Utility.getDenominator(length);
+            let shortNumber = this.props.paperClips/denominator;
+            return shortNumber.toFixed(1) + " quadrillion"; 
+        }
     }
 
     renderHoverComponent = () => {
