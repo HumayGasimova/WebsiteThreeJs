@@ -16,8 +16,7 @@ function wireButtonBufferEpic(action$, state$) {
         .bufferWhen(()=> Observable.interval(400))
         .filter(events => events.length >= 3)
         .mergeMap(action => {
-            if(state$.value.business.wireBuyerProjectIsShown === false){
-                debugger
+            if(state$.value.business.wireBuyerProjectIsShown === false && state$.value.business.wireToAdd === 1500){
                 return Observable.of(
                     Actions.addProject(projectsToAdd.WireBuyer),
                     Actions.toggleWireBuyerProject()

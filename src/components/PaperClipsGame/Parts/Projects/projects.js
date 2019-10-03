@@ -313,6 +313,11 @@ class Projects extends Component {
                 this.props.addChip(chipsToAdd.Chip3);
                 this.props.startAddingQOps("chip3");
                 break; 
+            case 'wireBuyer':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showAutoWireBuyer();
+                break; 
         }
     }
 
@@ -403,6 +408,7 @@ export default connect(
             changeToQOps: bindActionCreators(Actions.changeToQOps, dispatch),
             startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
             addChip: bindActionCreators(Actions.addChip, dispatch),
+            showAutoWireBuyer: bindActionCreators(Actions.showAutoWireBuyer, dispatch),
         };
     }
 )(Projects);
