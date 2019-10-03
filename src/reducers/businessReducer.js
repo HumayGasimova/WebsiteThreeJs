@@ -52,7 +52,8 @@ const initialState = {
     // qOps: -360,
     currentQOps: -360,
     chips: [],
-    time: 0
+    time: 0,
+    wireBuyerIsShown: true
 }
 
 const addPaperclip = (state) => {

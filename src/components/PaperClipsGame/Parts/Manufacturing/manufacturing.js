@@ -136,7 +136,23 @@ class Manufacturing extends Component {
     wireButtonToggle = () => {
         this.props.startBuyingWire();
         this.props.clickWireButton();
+    }
 
+    renderAutoWireBuyer = () => {
+        if(this.props.wireBuyerIsShown){
+            return(
+                <div className="manufacturing-wrapper3">
+                    <Button
+                        // onClick={this.wireButtonToggle}
+                        text={"WireBuyer"}
+                        // disabled={this.props.wireButtonDisabled}
+                        // id={"wireButton"}
+                            // buttonRef={this.buttonRef}
+                    />
+                    <div className="manufacturing-text"> ON </div>
+                </div>
+            )
+        }
     }
 
     /**
@@ -152,6 +168,7 @@ class Manufacturing extends Component {
                     <div className="manufacturing-text">Clips per Second: {this.props.autoClippersPerSec}</div>
                 </div>
                 <div className="manufacturing-section">
+                    {this.renderAutoWireBuyer()}
                     <div className="manufacturing-wrapper1">
                         <Button
                             onClick={this.wireButtonToggle}
@@ -186,6 +203,7 @@ export default connect(
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
             wire: state.business.wire,
             noWire: state.business.noWire,
+            wireBuyerIsShown: state.business.wireBuyerIsShown,
         };
     },
     (dispatch) => {
