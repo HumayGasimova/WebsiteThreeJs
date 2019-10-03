@@ -521,13 +521,17 @@ export function clickWireButton() {
     };
 };
 
-// export function addCaptureVal(val) {
-//     return { 
-//         type: actionTypes.ADD_CAPTURE_VAL,
-//         val: val
-//     };
-// };
+export function showAutoWireBuyer() {
+    return { 
+        type: actionTypes.SHOW_AUTO_WIRE_BUYER
+    };
+};
 
+export function toggleWireBuyerProject() {
+    return { 
+        type: actionTypes.TOGGLE_WIRE_BUYER_PROJECT
+    };
+};
 
 
 

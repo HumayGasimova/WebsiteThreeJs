@@ -74,8 +74,9 @@ export {
     addChip,
     toggleChip,
     updateOps,
-    // addCaptureVal,
     startDecreasingOperations,
     startTimer,
-    clickWireButton
+    clickWireButton,
+    showAutoWireBuyer,
+    toggleWireBuyerProject
 } from './businessActions';

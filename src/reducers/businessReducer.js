@@ -53,7 +53,8 @@ const initialState = {
     currentQOps: -360,
     chips: [],
     time: 0,
-    wireBuyerIsShown: true
+    wireBuyerIsShown: false,
+    wireBuyerProjectIsShown: false
 }
 
 const addPaperclip = (state) => {
@@ -484,11 +485,25 @@ const updateOps = (state, action) => {
         ops: state.ops + action.val
     });
 }
+
 const startTimer = (state, action) => {
     return updateObject(state, {
         time: state.time + 1
     });
 }
+
+const showAutoWireBuyer = (state, action) => {
+    return updateObject(state, {
+        wireBuyerIsShown: true
+    });
+}
+
+const toggleWireBuyerProject = (state, action) => {
+    return updateObject(state, {
+        wireBuyerProjectIsShown: true
+    });
+}
+
 
 // const addCaptureVal = (state, action) => {
 //     if(action.val === 0){
@@ -663,6 +678,11 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.CLICK_WIRE_BUTTON:
             return state;
+        case actionTypes.SHOW_AUTO_WIRE_BUYER:
+            return showAutoWireBuyer(state, action);
+        case actionTypes.TOGGLE_WIRE_BUYER_PROJECT:
+            return toggleWireBuyerProject(state, action);
+            
         default: 
             return state;
     }

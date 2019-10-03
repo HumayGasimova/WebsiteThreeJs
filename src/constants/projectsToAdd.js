@@ -450,18 +450,19 @@ export const PhotonicChip4 = {
 
 
 
-// export const WireBuyer = {
-//     text1: "Spectral Froth Annealment (12,000 ops)",
-//     text2: "200% more wire supply from every spool",
-//     price: {
-//         ops: 3
-//     },
-//     action: ,
-//     next: '',
-//     valid: false,
-//     id: "",
-//     terminal: "WireBuyer online"
-// }
+export const WireBuyer = {
+    text1: "WireBuyer (7,000 ops)",
+    text2: "Automatically purchases wire when you run",
+    text3: "out",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'wireBuyer',
+    valid: false,
+    id: "card36",
+    terminal: "WireBuyer online"
+}
 
 
 

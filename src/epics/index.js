@@ -24,7 +24,7 @@ import addChipEpic from './addChipEpic';
 import toggleChipEpic from './toggleChipEpic';
 import decreaseOpsEpic from './decreaseOpsEpic';
 import startDecreasingOperationsEpic from './startDecreasingOperationsEpic';
-import wireButtonBufferEpic from './wireButtonBufferEpic';
+import wireButtonBufferEpic from '../epicsProject/wireButtonBufferEpic';
 
 
 export const rootEpic = combineEpics(

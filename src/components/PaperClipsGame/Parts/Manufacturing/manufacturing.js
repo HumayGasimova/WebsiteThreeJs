@@ -146,8 +146,6 @@ class Manufacturing extends Component {
                         // onClick={this.wireButtonToggle}
                         text={"WireBuyer"}
                         // disabled={this.props.wireButtonDisabled}
-                        // id={"wireButton"}
-                            // buttonRef={this.buttonRef}
                     />
                     <div className="manufacturing-text"> ON </div>
                 </div>
@@ -177,7 +175,7 @@ class Manufacturing extends Component {
                             id={"wireButton"}
                                  // buttonRef={this.buttonRef}
                         />
-                        <div className="manufacturing-text">{this.props.wire} inches </div>
+                        <div className="manufacturing-text">{this.props.wire} inches</div>
                     </div>
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
