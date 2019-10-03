@@ -475,12 +475,12 @@ export const WireBuyer = {
                                                                                                                 text2: "500x more powerful than a standard",
                                                                                                                 text3: "AutoClipper",
                                                                                                                 price: {
-                                                                                                                    creat: 3
+                                                                                                                    ops: 3
                                                                                                                 },
                                                                                                                 action: 50,
                                                                                                                 next: 'megaClippers',
                                                                                                                 valid: false,
-                                                                                                                id: "",
+                                                                                                                id: "card37",
                                                                                                                 terminal: "MegaClipper technology online"
                                                                                                             } // new component next
                                                                                                             export const ImprovedMegaClippers = {

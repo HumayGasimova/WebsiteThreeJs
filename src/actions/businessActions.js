@@ -545,6 +545,11 @@ export function toggleAutoWireBuyer() {
     };
 };
 
+export function addMegaClippers() {
+    return { 
+        type: actionTypes.ADD_MEGA_CLIPPERS
+    };
+};
 
 
 export const checkAuthTimeout = (expirationTime) => {

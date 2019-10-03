@@ -26,6 +26,7 @@ import decreaseOpsEpic from './decreaseOpsEpic';
 import startDecreasingOperationsEpic from './startDecreasingOperationsEpic';
 import wireButtonBufferEpic from '../epicsProject/wireButtonBufferEpic';
 import autoWireBuyerEpic from './autoWireBuyerEpic';
+import throwMegaClippersEpic from '../epicsProject/throwMegaClippersEpic';
 
 
 export const rootEpic = combineEpics(
@@ -53,5 +54,6 @@ export const rootEpic = combineEpics(
     decreaseOpsEpic,
     startDecreasingOperationsEpic,
     wireButtonBufferEpic,
-    autoWireBuyerEpic
+    autoWireBuyerEpic,
+    throwMegaClippersEpic
 );

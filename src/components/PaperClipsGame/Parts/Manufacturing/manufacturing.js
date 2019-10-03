@@ -142,7 +142,9 @@ class Manufacturing extends Component {
                 }
             }, 1000);
         }
-        
+        if(this.props.paperClips === 500000){
+            this.props.addMegaClippers();
+        }
     }
     
     wireButtonToggle = () => {
@@ -215,6 +217,7 @@ export default connect(
             noWire: state.business.noWire,
             wireBuyerIsShown: state.business.wireBuyerIsShown,
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
+            paperClips: state.business.paperClips,
         };
     },
     (dispatch) => {
@@ -229,6 +232,7 @@ export default connect(
             clickWireButton: bindActionCreators(Actions.clickWireButton, dispatch),
             autoWireBuyer: bindActionCreators(Actions.autoWireBuyer, dispatch),
             toggleAutoWireBuyer: bindActionCreators(Actions.toggleAutoWireBuyer, dispatch),
+            addMegaClippers: bindActionCreators(Actions.addMegaClippers, dispatch),
         };
     }
 )(Manufacturing);

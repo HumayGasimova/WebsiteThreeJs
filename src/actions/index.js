@@ -80,5 +80,6 @@ export {
     showAutoWireBuyer,
     toggleWireBuyerProject,
     autoWireBuyer,
-    toggleAutoWireBuyer
+    toggleAutoWireBuyer,
+    addMegaClippers
 } from './businessActions';
