@@ -533,7 +533,11 @@ export function toggleWireBuyerProject() {
     };
 };
 
-
+export function autoWireBuyer() {
+    return { 
+        type: actionTypes.AUTO_WIRE_BUYER
+    };
+};
 
 
 

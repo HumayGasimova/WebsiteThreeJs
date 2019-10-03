@@ -54,11 +54,12 @@ const initialState = {
     chips: [],
     time: 0,
     wireBuyerIsShown: false,
-    wireBuyerProjectIsShown: false
+    wireBuyerProjectIsShown: false,
+    autoWireBuyerIsOn: true
 }
 
 const addPaperclip = (state) => {
-    let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0  
+    let updateWire = +state.wire >= 1 ? +state.wire - 500 : 0  
 
     return updateObject(state, {
        paperClips: state.paperClips + 100,
@@ -682,7 +683,8 @@ const businessReducer = (state = initialState, action) => {
             return showAutoWireBuyer(state, action);
         case actionTypes.TOGGLE_WIRE_BUYER_PROJECT:
             return toggleWireBuyerProject(state, action);
-            
+        case actionTypes.AUTO_WIRE_BUYER:
+            return state;
         default: 
             return state;
     }

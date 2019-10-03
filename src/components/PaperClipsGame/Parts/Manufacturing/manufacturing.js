@@ -129,8 +129,20 @@ class Manufacturing extends Component {
     }
 
     componentWillUnmount = () => {
-        clearInterval(this.interval)
-        clearInterval(this.intervalCheckButton)
+        clearInterval(this.interval);
+        clearInterval(this.intervalCheckButton);
+        clearInterval(this.intervalAutoWireBuyer);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.wireBuyerIsShown !== this.props.wireBuyerIsShown) {
+            this.intervalAutoWireBuyer = setInterval(()=>{
+                if(this.props.autoWireBuyerIsOn === true){
+                    this.props.autoWireBuyer();
+                }
+            }, 1000);
+        }
+        
     }
     
     wireButtonToggle = () => {
@@ -202,6 +214,7 @@ export default connect(
             wire: state.business.wire,
             noWire: state.business.noWire,
             wireBuyerIsShown: state.business.wireBuyerIsShown,
+            autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
         };
     },
     (dispatch) => {
@@ -214,6 +227,7 @@ export default connect(
             checkExistenceOfWire: bindActionCreators(Actions.checkExistenceOfWire, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             clickWireButton: bindActionCreators(Actions.clickWireButton, dispatch),
+            autoWireBuyer: bindActionCreators(Actions.autoWireBuyer, dispatch),
         };
     }
 )(Manufacturing);

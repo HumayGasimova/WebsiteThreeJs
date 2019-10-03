@@ -78,5 +78,6 @@ export {
     startTimer,
     clickWireButton,
     showAutoWireBuyer,
-    toggleWireBuyerProject
+    toggleWireBuyerProject,
+    autoWireBuyer
 } from './businessActions';
