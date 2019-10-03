@@ -172,6 +172,7 @@ class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
                 this.props.improveMarketing(action);
+                this.props.updatePublicDemand();
                 break;
             case 'algorithmicTrading':
                 this.props.sendCommentToTerminal(terminal);
@@ -188,24 +189,28 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.HypnoHarmonics);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
-                this.props.improveMarketing(action)
+                this.props.improveMarketing(action);
+                this.props.updatePublicDemand();
                 break;
             case 'hypnoHarmonics':
                 this.props.addProject(projectsToAdd.HypnoDrones);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveMarketing(action)
+                this.props.improveMarketing(action);
+                this.props.updatePublicDemand();
                 break;
             case 'hypnoDrones':
                 this.props.addProject(projectsToAdd.ReleaseTheHypnoDrones);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveMarketing(action)
+                this.props.improveMarketing(action);
+                this.props.updatePublicDemand();
                 break;
             case 'releaseTheHypnoDrones':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectTrust(price.trust);
-                this.props.improveMarketing(action)
+                this.props.improveMarketing(action);
+                this.props.updatePublicDemand();
                 break;
             case 'theHadwigerProblem':
                 this.props.addProject(projectsToAdd.HadwigerClipDiagrams);
@@ -409,6 +414,7 @@ export default connect(
             startAddingQOps: bindActionCreators(Actions.startAddingQOps, dispatch),
             addChip: bindActionCreators(Actions.addChip, dispatch),
             showAutoWireBuyer: bindActionCreators(Actions.showAutoWireBuyer, dispatch),
+            updatePublicDemand: bindActionCreators(Actions.updatePublicDemand, dispatch),
         };
     }
 )(Projects);

@@ -108,9 +108,9 @@ class General extends Component {
             if(this.props.paperClips === 1000){
                 this.props.sendCommentToTerminal(`1,000 ${comment}`);
             }
-            // if(this.props.paperClips === 1500){
-            //     this.props.sendCommentToTerminal(`1,500 ${comment}`);
-            // }
+            if(this.props.paperClips === 1000000){
+                this.props.sendCommentToTerminal(`100,000 ${comment}`);
+            }
             // if(this.props.paperClips === 2000){
             //     this.props.sendCommentToTerminal(`2,000 ${comment}`);
             // }

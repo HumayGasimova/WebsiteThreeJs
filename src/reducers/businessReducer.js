@@ -351,7 +351,7 @@ const wireExists = (state, action) => {
 const improveMarketing = (state, action) => {
     let updatedMaxPublicDemand = +state.maxPublicDemand + (+state.maxPublicDemand * action.val / 100);
     return updateObject(state, {
-        maxPublicDemand: updatedMaxPublicDemand
+        maxPublicDemand: +updatedMaxPublicDemand.toFixed()
     });
 }
 
