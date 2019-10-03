@@ -122,7 +122,7 @@ class Manufacturing extends Component {
             this.props.checkExistenceOfWire(this.props.wire);
         }, 1000);
 
-        if(this.props.noWire===0){
+        if(this.props.noWire === 0){
             console.log("HHHH")
           }
         this.props.sendCommentToTerminal("AutoClippers available for purchase");
@@ -155,11 +155,11 @@ class Manufacturing extends Component {
             return(
                 <div className="manufacturing-wrapper3">
                     <Button
-                        // onClick={this.wireButtonToggle}
+                        onClick={this.props.toggleAutoWireBuyer}
                         text={"WireBuyer"}
                         // disabled={this.props.wireButtonDisabled}
                     />
-                    <div className="manufacturing-text"> ON </div>
+                    <div className="manufacturing-text">{this.props.autoWireBuyerIsOn ? "ON" : "OFF"}</div>
                 </div>
             )
         }
@@ -228,6 +228,7 @@ export default connect(
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             clickWireButton: bindActionCreators(Actions.clickWireButton, dispatch),
             autoWireBuyer: bindActionCreators(Actions.autoWireBuyer, dispatch),
+            toggleAutoWireBuyer: bindActionCreators(Actions.toggleAutoWireBuyer, dispatch),
         };
     }
 )(Manufacturing);

@@ -539,6 +539,12 @@ export function autoWireBuyer() {
     };
 };
 
+export function toggleAutoWireBuyer() {
+    return { 
+        type: actionTypes.TOGGLE_AUTO_WIRE_BUYER
+    };
+};
+
 
 
 export const checkAuthTimeout = (expirationTime) => {

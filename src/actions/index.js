@@ -79,5 +79,6 @@ export {
     clickWireButton,
     showAutoWireBuyer,
     toggleWireBuyerProject,
-    autoWireBuyer
+    autoWireBuyer,
+    toggleAutoWireBuyer
 } from './businessActions';

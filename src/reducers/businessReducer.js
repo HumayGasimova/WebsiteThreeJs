@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     paperClips: 0,
-    funds: 100000,
+    funds: 100000, //pomenat na 0
     paperclipPrice: 0.50,
     unsoldInventory: 0,
     maxPublicDemand: 800,
@@ -53,16 +53,16 @@ const initialState = {
     currentQOps: -360,
     chips: [],
     time: 0,
-    wireBuyerIsShown: false,
     wireBuyerProjectIsShown: false,
+    wireBuyerIsShown: false,
     autoWireBuyerIsOn: true
 }
 
 const addPaperclip = (state) => {
-    let updateWire = +state.wire >= 1 ? +state.wire - 500 : 0  
+    let updateWire = +state.wire >= 1 ? +state.wire - 500 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
-       paperClips: state.paperClips + 100,
+       paperClips: state.paperClips + 100, //pomenat na 1
        unsoldInventory: state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
@@ -186,7 +186,6 @@ const toggleAutoClippersButton = (state) => {
        autoClippersButtonDisabled: isDisable
     });
 }
-
 
 const trustPlusOne = (state) => {
     let updatedPrevTrust = state.prevTrust;
@@ -505,6 +504,12 @@ const toggleWireBuyerProject = (state, action) => {
     });
 }
 
+const toggleAutoWireBuyer = (state, action) => {
+    return updateObject(state, {
+        autoWireBuyerIsOn: !state.autoWireBuyerIsOn
+    });
+}
+
 
 // const addCaptureVal = (state, action) => {
 //     if(action.val === 0){
@@ -685,6 +690,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleWireBuyerProject(state, action);
         case actionTypes.AUTO_WIRE_BUYER:
             return state;
+        case actionTypes.TOGGLE_AUTO_WIRE_BUYER:
+            return toggleAutoWireBuyer(state, action);
         default: 
             return state;
     }
