@@ -55,7 +55,8 @@ const initialState = {
     time: 0,
     wireBuyerProjectIsShown: false,
     wireBuyerIsShown: false,
-    autoWireBuyerIsOn: true
+    autoWireBuyerIsOn: true,
+    megaClippersIsShown: false
 }
 
 const addPaperclip = (state) => {
@@ -510,6 +511,12 @@ const toggleAutoWireBuyer = (state, action) => {
     });
 }
 
+const showMegaClippers = (state, action) => {
+    return updateObject(state, {
+        megaClippersIsShown: true
+    });
+}
+
 
 // const addCaptureVal = (state, action) => {
 //     if(action.val === 0){
@@ -694,6 +701,9 @@ const businessReducer = (state = initialState, action) => {
             return toggleAutoWireBuyer(state, action);
         case actionTypes.ADD_MEGA_CLIPPERS:
             return state;
+        case actionTypes.SHOW_MEGA_CLIPPERS:
+            return showMegaClippers(state, action);
+            
         default: 
             return state;
     }

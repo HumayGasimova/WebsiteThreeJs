@@ -101,6 +101,25 @@ class Manufacturing extends Component {
         }
     }
 
+    renderMegaClippers = () => {
+        if(this.props.megaClippersIsShown){
+            return(
+                <div className="manufacturing-section">
+                    <div className="manufacturing-wrapper2">
+                        <Button
+                            onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
+                            text={"MegaClippers"}
+                            disabled={this.props.autoClippersButtonDisabled}
+                       
+                        />
+                        <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
+                    </div>
+                    <div className="manufacturing-text">Cost: ${this.props.autoClippersPerSec === 0 ? this.props.autoClipperInitPrice : this.props.autoClipperPrice}</div>
+                </div>  
+            )
+        }
+    }
+
     getRandomDelay = () => {
         let a = Math.floor(Math.random()*15000) + 5000;
         console.log(a)
@@ -194,6 +213,7 @@ class Manufacturing extends Component {
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
                 {this.renderAutoClippers()}
+                {this.renderMegaClippers()}
             </div>
         );
     }
@@ -218,6 +238,7 @@ export default connect(
             wireBuyerIsShown: state.business.wireBuyerIsShown,
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
             paperClips: state.business.paperClips,
+            megaClippersIsShown: state.business.megaClippersIsShown,
         };
     },
     (dispatch) => {

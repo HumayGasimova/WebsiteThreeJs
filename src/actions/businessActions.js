@@ -551,6 +551,12 @@ export function addMegaClippers() {
     };
 };
 
+export function showMegaClippers() {
+    return { 
+        type: actionTypes.SHOW_MEGA_CLIPPERS
+    };
+};
+
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

@@ -322,6 +322,11 @@ class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showAutoWireBuyer();
+                break;
+            case 'megaClippers':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showMegaClippers()
                 break; 
         }
     }
@@ -415,6 +420,7 @@ export default connect(
             addChip: bindActionCreators(Actions.addChip, dispatch),
             showAutoWireBuyer: bindActionCreators(Actions.showAutoWireBuyer, dispatch),
             updatePublicDemand: bindActionCreators(Actions.updatePublicDemand, dispatch),
+            showMegaClippers: bindActionCreators(Actions.showMegaClippers, dispatch),
         };
     }
 )(Projects);
