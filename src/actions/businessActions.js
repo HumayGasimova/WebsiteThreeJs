@@ -6,12 +6,9 @@ export function checkButtons() {
     };
 };
 
-export function sellPaperclips(priceOfPaperclip, delay, wire) {
+export function sellPaperclips() {
     return { 
-        type: actionTypes.START_SELLING,
-        priceOfPaperclip: priceOfPaperclip,
-        delay: delay,
-        wire: wire
+        type: actionTypes.START_SELLING
     };
 };
 
