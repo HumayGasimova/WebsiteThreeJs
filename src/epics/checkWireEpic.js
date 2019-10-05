@@ -12,7 +12,7 @@ function checkWireEpic(action$, state$) {
     return action$
         .ofType(actionTypes.CHECK_EXISTENCE_OF_WIRE)
         .mergeMap(action => {
-            if(state$.value.business.wire === 1){
+            if(state$.value.business.wire === 0 ){
                 return Observable.of(
                     Actions.stop(),
                     Actions.wireExists(false)
