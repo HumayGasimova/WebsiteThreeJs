@@ -31,6 +31,12 @@ export function updateFunds(value) {
     };
 };
 
+export function startUpdatingUnsoldInventory() {
+    return { 
+        type: actionTypes.START_UPDATING_UNSOLD_INVENTORY
+    };
+};
+
 export function updateUnsoldInventory() {
     return { 
         type: actionTypes.UPDATE_UNSOLD_INVENTORY

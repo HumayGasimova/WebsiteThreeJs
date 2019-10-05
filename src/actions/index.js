@@ -3,6 +3,7 @@ export {
     makePaperclip,
     sellPaperclips,
     updateFunds,
+    startUpdatingUnsoldInventory,
     updateUnsoldInventory,
     lowerPrice,
     raisePrice,

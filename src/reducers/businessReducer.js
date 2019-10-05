@@ -64,7 +64,7 @@ const addPaperclip = (state) => {
 
     return updateObject(state, {
        paperClips: state.paperClips + 1, //pomenat na 1
-       unsoldInventory: state.unsoldInventory + 1,
+       unsoldInventory: +state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
 }
@@ -80,7 +80,7 @@ const updateUnsoldInventory = (state, action) => {
 //    let updatedInventory = state.unsoldInventory;
     // updatedInventory.splice(-1,1)
     return updateObject(state, {
-        unsoldInventory: state.unsoldInventory - 1
+        unsoldInventory: +state.unsoldInventory - 1
     });
 }
 
@@ -543,6 +543,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.UPDATE_FUNDS:
             return updateFunds(state, action);
+        case actionTypes.START_UPDATING_UNSOLD_INVENTORY:
+            return state;
         case actionTypes.UPDATE_UNSOLD_INVENTORY:
             return updateUnsoldInventory(state, action);
         case actionTypes.LOWER_PRICE:

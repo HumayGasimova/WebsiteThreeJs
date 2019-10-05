@@ -60,6 +60,10 @@ class Business extends Component {
             )
         }
     }
+
+    componentDidMount() {
+        this.props.startUpdatingUnsoldInventory();
+    }
     
     /**
     * Markup
@@ -122,6 +126,7 @@ export default connect(
             lowerPrice: bindActionCreators(Actions.lowerPrice, dispatch),
             raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
+            startUpdatingUnsoldInventory: bindActionCreators(Actions.startUpdatingUnsoldInventory, dispatch),
         };
     }
 )(Business);
