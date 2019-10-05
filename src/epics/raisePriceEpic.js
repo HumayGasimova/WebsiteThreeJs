@@ -10,7 +10,10 @@ function raisePriceEpic(action$) {
     return action$
         .ofType(actionTypes.RAISE_PRICE, actionTypes.LOWER_PRICE)
         .mergeMap(action => {
-            return Observable.of(Actions.updatePublicDemand())
+            return Observable.of(
+                Actions.updatePublicDemand(),
+                Actions.calcDelayUnsoldInventary()
+                )
         })       
 }
 

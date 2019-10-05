@@ -6,7 +6,7 @@ import {
 const initialState = {
     paperClips: 0,
     funds: 100, //pomenat na 0
-    paperclipPrice: 0.50,
+    paperclipPrice: 0.50, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
     publicDemand: 16,
@@ -56,7 +56,8 @@ const initialState = {
     wireBuyerProjectIsShown: false,
     wireBuyerIsShown: false,
     autoWireBuyerIsOn: true,
-    megaClippersIsShown: false
+    megaClippersIsShown: false,
+    delayUnsoldInventary: 2000
 }
 
 const makePaperclip = (state) => {
@@ -80,7 +81,7 @@ const updateUnsoldInventory = (state, action) => {
 //    let updatedInventory = state.unsoldInventory;
     // updatedInventory.splice(-1,1)
     return updateObject(state, {
-        unsoldInventory: +state.unsoldInventory - 1
+        unsoldInventory: +state.unsoldInventory - 1,
     });
 }
 
@@ -102,6 +103,13 @@ const updatePublicDemand = (state) => {
     let updatedPublicDemand = state.maxPublicDemand/(state.paperclipPrice*100);
     return updateObject(state, {
         publicDemand: +updatedPublicDemand.toFixed()
+    });
+}
+
+const calcDelayUnsoldInventary = (state) => {
+
+    return updateObject(state, {
+        delayUnsoldInventary: +state.publicDemand  * 30
     });
 }
 
@@ -316,7 +324,6 @@ const removePriceOfProjectTrust = (state, action) => {
         trust: state.trust - action.trust
     });
 }
-
 
 const improveAutoClippers = (state, action) => {
     let updatedAutoPaperClippers = state.delayAutoPaperClippers - (state.delayAutoPaperClippers * action.val / 100);
@@ -705,7 +712,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.SHOW_MEGA_CLIPPERS:
             return showMegaClippers(state, action);
-            
+        case actionTypes.CALC_DELAY_UNSOLD_INVENTARY:
+            return calcDelayUnsoldInventary(state, action);
         default: 
             return state;
     }

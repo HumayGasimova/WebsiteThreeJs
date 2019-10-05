@@ -83,5 +83,6 @@ export {
     autoWireBuyer,
     toggleAutoWireBuyer,
     addMegaClippers,
-    showMegaClippers
+    showMegaClippers,
+    calcDelayUnsoldInventary
 } from './businessActions';

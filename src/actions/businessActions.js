@@ -549,6 +549,12 @@ export function showMegaClippers() {
     };
 };
 
+export function calcDelayUnsoldInventary() {
+    return { 
+        type: actionTypes.CALC_DELAY_UNSOLD_INVENTARY
+    };
+};
+
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

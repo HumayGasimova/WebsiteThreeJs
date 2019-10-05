@@ -4,7 +4,7 @@ import { combineEpics } from 'redux-observable';
 import checkButtonsEpic from './checkButtonsEpic';
 import checkWireEpic from './checkWireEpic';
 import paperclipsGenerateEpic from './PaperclipsGenerateEpic';
-import updateUnsoldInventoryEpic from './updateUnsoldInventoryEpic';
+import makePaperClipEpic from './makePaperClipEpic';
 import raisePriceEpic from './raisePriceEpic';
 import marketingNextLevelEpic from './marketingNextLevelEpic';
 import buyWireEpic from './buyWireEpic';
@@ -24,7 +24,7 @@ import addChipEpic from './addChipEpic';
 import toggleChipEpic from './toggleChipEpic';
 import decreaseOpsEpic from './decreaseOpsEpic';
 import startDecreasingOperationsEpic from './startDecreasingOperationsEpic';
-import wireButtonBufferEpic from '../epicsProject/wireButtonBufferEpic';
+import wireButtonBufferEpic from './wireButtonBufferEpic';
 import autoWireBuyerEpic from './autoWireBuyerEpic';
 import throwMegaClippersEpic from '../epicsProject/throwMegaClippersEpic';
 import startUpdatingUnsoldInventoryEpic from './startUpdatingUnsoldInventoryEpic';
@@ -34,7 +34,7 @@ export const rootEpic = combineEpics(
     checkButtonsEpic,
     checkWireEpic,
     paperclipsGenerateEpic,
-    updateUnsoldInventoryEpic,
+    makePaperClipEpic,
     raisePriceEpic,
     marketingNextLevelEpic,
     buyWireEpic,

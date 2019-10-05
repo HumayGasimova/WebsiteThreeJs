@@ -6,7 +6,7 @@ import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function updateUnsoldInventoryEpic(action$, state$) { 
+function makePaperClipEpic(action$, state$) { 
     return action$
         .ofType(actionTypes.MAKE_PAPERCLIP)
         .mergeMap(action => {
@@ -47,4 +47,4 @@ function updateUnsoldInventoryEpic(action$, state$) {
         })
 }
 
-export default updateUnsoldInventoryEpic;
+export default makePaperClipEpic;

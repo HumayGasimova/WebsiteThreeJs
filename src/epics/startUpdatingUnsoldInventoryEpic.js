@@ -13,7 +13,7 @@ function startUpdatingUnsoldInventoryEpic(action$, state$) {
     return action$
         .ofType(actionTypes.START_UPDATING_UNSOLD_INVENTORY)
         .mergeMap(action => {
-            return interval(1000).pipe(
+            return interval(state$.value.business.delayUnsoldInventary).pipe(
                 mergeMap(() => {
                     if(state$.value.business.unsoldInventory > 0){
                         return Observable.of(
@@ -23,12 +23,11 @@ function startUpdatingUnsoldInventoryEpic(action$, state$) {
                         } else{
                             return Observable.empty()
                         }
-                }),
+                })
                 // takeUntil(action$.ofType(actionTypes.STOP_SUBTRACTING_Q_OPS))
-            )
-           
-        
-        })       
+            )    
+        })
+            
 }
 
 export default startUpdatingUnsoldInventoryEpic;
