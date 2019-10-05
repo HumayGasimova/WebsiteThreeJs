@@ -8,11 +8,11 @@ import 'rxjs/add/observable/of';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function checkWireEpic(action$) {
+function checkWireEpic(action$, state$) {
     return action$
         .ofType(actionTypes.CHECK_EXISTENCE_OF_WIRE)
         .mergeMap(action => {
-            if(action.wire === 0){
+            if(state$.value.business.wire === 1){
                 return Observable.of(
                     Actions.stop(),
                     Actions.wireExists(false)

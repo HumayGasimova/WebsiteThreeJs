@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     paperClips: 0,
-    funds: 0, //pomenat na 0
+    funds: 100, //pomenat na 0
     paperclipPrice: 0.50,
     unsoldInventory: 0,
     maxPublicDemand: 800,
@@ -14,7 +14,7 @@ const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 1000,
+    wire: 50, //1000
     wireToAdd: 1000,
     wirePrice: 20,
     wireButtonDisabled: true,
@@ -63,7 +63,7 @@ const addPaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
-       paperClips: state.paperClips + 100000, //pomenat na 1
+       paperClips: state.paperClips + 1, //pomenat na 1
        unsoldInventory: state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
