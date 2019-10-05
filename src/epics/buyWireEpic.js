@@ -16,7 +16,7 @@ function buyWireEpic (action$, state$) {
                     Actions.buyWire(),
                     Actions.toggleWireButton(),
                     Actions.toggleMakePaperclipButton(false),
-                    Actions.autoPaperclipsStart(state$.value.business.paperclipPrice, state$.value.business.delay, state$.value.business.delayAutoPaperClippers, state$.value.business.wire)
+                    Actions.autoPaperclipsStart()
                 )
             }else{
                 return Observable.of(

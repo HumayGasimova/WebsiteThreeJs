@@ -15,9 +15,9 @@ export const autoPaperclipsStartsEpic = (action$, state$) =>
     action$
     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
     .mergeMap(action => {
-        return interval(action.delayAutoPaperClippers).pipe(
+        return interval(state$.value.business.delayAutoPaperClippers).pipe(
             mergeMap(() => Observable.of(
-                        Actions.makePaperclip(action.priceOfPaperclip, action.delay, action.wire)
+                        Actions.makePaperclip(state$.value.business.paperclipPrice, state$.value.business.delay, state$.value.business.wire)
                     )   
                     // .delay(1000)
                     // .repeat(state$.value.business.autoClippersPerSec)

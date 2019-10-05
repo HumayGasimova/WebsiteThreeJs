@@ -136,13 +136,9 @@ export function autoPaperclips() {
     };
 };
 
-export function autoPaperclipsStart(priceOfPaperclip, delay, delay2, wire) {
+export function autoPaperclipsStart() {
     return { 
-        type: actionTypes.AUTO_PAPERCLIPS_START,
-        priceOfPaperclip: priceOfPaperclip,
-        delay: delay,
-        delayAutoPaperClippers: delay2,
-        wire: wire
+        type: actionTypes.AUTO_PAPERCLIPS_START
     };
 };
 

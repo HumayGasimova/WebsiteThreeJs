@@ -14,7 +14,7 @@ function autoPaperClippersAddOneEpic(action$, state$) {
         .mergeMap(action => {
             return Observable.of(
                 Actions.autoClippersAddOne(),
-                Actions.autoPaperclipsStart(state$.value.business.paperclipPrice, state$.value.business.delay, state$.value.business.delayAutoPaperClippers, state$.value.business.wire)
+                Actions.autoPaperclipsStart()
             )    
         }) 
 }

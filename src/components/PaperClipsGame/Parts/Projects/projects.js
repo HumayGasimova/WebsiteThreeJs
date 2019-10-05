@@ -110,7 +110,7 @@ class Projects extends Component {
                 this.props.improveAutoClippers(action); //change logic
                 if(this.props.autoClipperOn){
                     this.props.stop();
-                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                    this.props.autoPaperclipsStart();
                 }
                 break;
             case 'autoClippers50':
@@ -120,7 +120,7 @@ class Projects extends Component {
                 this.props.improveAutoClippers(action);//change logic
                 if(this.props.autoClipperOn){
                     this.props.stop();
-                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                    this.props.autoPaperclipsStart();
                 }
                 break;
             case 'autoClippers75':
@@ -129,7 +129,7 @@ class Projects extends Component {
                 this.props.improveAutoClippers(action);//change logic
                 if(this.props.autoClipperOn){
                     this.props.stop();
-                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                    this.props.autoPaperclipsStart();
                 }
                 break;
             case 'wireExtrusion50':
