@@ -15,12 +15,9 @@ export function sellPaperclips(priceOfPaperclip, delay, wire) {
     };
 };
 
-export function makePaperclip(priceOfPaperclip, delay, wire) {
+export function makePaperclip() {
     return {
-        type: actionTypes.MAKE_PAPERCLIP,
-        priceOfPaperclip: priceOfPaperclip,
-        delay: delay,
-        wire: wire
+        type: actionTypes.MAKE_PAPERCLIP
     }
 };
 

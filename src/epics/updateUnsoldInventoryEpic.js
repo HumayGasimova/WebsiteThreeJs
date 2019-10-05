@@ -20,7 +20,7 @@ function updateUnsoldInventoryEpic(action$, state$) {
                         Actions.trustPlusOne(),
                         Actions.sendCommentToTerminal('Production target met: TRUST INCREASED, additional processor/memory capacity granted')
                     ) 
-                    .delay(action.delay)
+                    .delay(state$.value.business.delay)
                 }else{
                     return Observable.of(
                         Actions.toggleMakePaperclipButton(true)
@@ -35,7 +35,7 @@ function updateUnsoldInventoryEpic(action$, state$) {
                         Actions.toggleAutoClippersButton(),
                         Actions.trustPlusOne()
                     ) 
-                    .delay(action.delay)
+                    .delay(state$.value.business.delay)
                 }else{
                     return Observable.of(
                         Actions.toggleMakePaperclipButton(true)

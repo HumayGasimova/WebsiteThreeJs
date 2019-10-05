@@ -59,7 +59,7 @@ const initialState = {
     megaClippersIsShown: false
 }
 
-const addPaperclip = (state) => {
+const makePaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
@@ -538,7 +538,7 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.CHECK_BUTTONS:
             return state;
         case actionTypes.MAKE_PAPERCLIP:
-            return addPaperclip(state, action);
+            return makePaperclip(state, action);
         case actionTypes.START_SELLING:
             return state;
         case actionTypes.UPDATE_FUNDS:
