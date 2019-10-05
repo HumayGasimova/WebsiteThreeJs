@@ -8,13 +8,13 @@ import 'rxjs/add/observable/of';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function autoPaperClippersAddOneEpic(action$) {
+function autoPaperClippersAddOneEpic(action$, state$) {
     return action$
         .ofType(actionTypes.AUTO_PAPERCLIPS)        
         .mergeMap(action => {
             return Observable.of(
-                Actions.autoClippersAddOne(action.priceOfPaperclip, action.delay),
-                Actions.autoPaperclipsStart(action.priceOfPaperclip, action.delay, action.delayAutoPaperClippers, action.wire)
+                Actions.autoClippersAddOne(),
+                Actions.autoPaperclipsStart(state$.value.business.paperclipPrice, state$.value.business.delay, state$.value.business.delayAutoPaperClippers, state$.value.business.wire)
             )    
         }) 
 }

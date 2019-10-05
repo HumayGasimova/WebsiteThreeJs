@@ -13,8 +13,6 @@ function updateUnsoldInventoryEpic(action$, state$) {
             if(state$.value.business.paperClips === state$.value.business.clipsToBuyTrust){
                 if(state$.value.business.wire >= 1){
                     return Observable.of(
-                        // Actions.updateUnsoldInventory(),
-                        // Actions.updateFunds(action.priceOfPaperclip),
                         Actions.setAutoClipperInitPrice(),
                         Actions.toggleMarketingButton(),
                         Actions.toggleWireButton(),
@@ -31,8 +29,6 @@ function updateUnsoldInventoryEpic(action$, state$) {
             }else{
                 if(state$.value.business.wire >= 1){
                     return Observable.of(
-                        // Actions.updateUnsoldInventory(),
-                        // Actions.updateFunds(action.priceOfPaperclip),
                         Actions.setAutoClipperInitPrice(),
                         Actions.toggleMarketingButton(),
                         Actions.toggleWireButton(),
