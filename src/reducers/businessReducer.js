@@ -362,8 +362,10 @@ const wireExists = (state, action) => {
 
 const improveMarketing = (state, action) => {
     let updatedMaxPublicDemand = +state.maxPublicDemand + (+state.maxPublicDemand * action.val / 100);
+    let updatedDelayUnsoldInventaryConst = +(state.delayUnsoldInventaryConst - (state.delayUnsoldInventaryConst * 0.03)).toFixed(2);
     return updateObject(state, {
-        maxPublicDemand: +updatedMaxPublicDemand.toFixed()
+        maxPublicDemand: +updatedMaxPublicDemand.toFixed(),
+        delayUnsoldInventaryConst: updatedDelayUnsoldInventaryConst
     });
 }
 
