@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     paperClips: 0,
-    funds: 100, //pomenat na 0
+    funds: 100000, //pomenat na 0
     paperclipPrice: 0.50, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
@@ -57,7 +57,8 @@ const initialState = {
     wireBuyerIsShown: false,
     autoWireBuyerIsOn: true,
     megaClippersIsShown: false,
-    delayUnsoldInventary: 2000
+    delayUnsoldInventary: 4375,
+    delayUnsoldInventaryConst: 700,
 }
 
 const makePaperclip = (state) => {
@@ -107,9 +108,10 @@ const updatePublicDemand = (state) => {
 }
 
 const calcDelayUnsoldInventary = (state) => {
+    let updatedDelayUnsoldInventary = (state.delayUnsoldInventaryConst *100)/state.publicDemand;
 
     return updateObject(state, {
-        delayUnsoldInventary: +state.publicDemand  * 30
+        delayUnsoldInventary: +updatedDelayUnsoldInventary 
     });
 }
 
@@ -122,10 +124,12 @@ const toggleMarketingButton = (state) => {
 
 const marketingNextLevel = (state) => {
     let updatedFunds = state.funds - state.marketingCost;
+    let updatedDelayUnsoldInventaryConst = +(state.delayUnsoldInventaryConst - (state.delayUnsoldInventaryConst * 0.018)).toFixed(2);
     return updateObject(state, {
         marketingLevel: +state.marketingLevel + 1,
         marketingCost: +state.marketingCost * 2,
-        funds: +updatedFunds
+        funds: +updatedFunds,
+        delayUnsoldInventaryConst: updatedDelayUnsoldInventaryConst
     });
 }
 
@@ -551,6 +555,8 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.UPDATE_FUNDS:
             return updateFunds(state, action);
         case actionTypes.START_UPDATING_UNSOLD_INVENTORY:
+            return state;
+        case actionTypes.STOP_UPDATING_UNSOLD_INVENTORY:
             return state;
         case actionTypes.UPDATE_UNSOLD_INVENTORY:
             return updateUnsoldInventory(state, action);

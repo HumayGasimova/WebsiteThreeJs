@@ -31,6 +31,12 @@ export function startUpdatingUnsoldInventory() {
     };
 };
 
+export function stopUpdatingUnsoldInventory() {
+    return { 
+        type: actionTypes.STOP_UPDATING_UNSOLD_INVENTORY
+    };
+};
+
 export function updateUnsoldInventory() {
     return { 
         type: actionTypes.UPDATE_UNSOLD_INVENTORY

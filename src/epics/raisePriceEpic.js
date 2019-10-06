@@ -12,8 +12,10 @@ function raisePriceEpic(action$) {
         .mergeMap(action => {
             return Observable.of(
                 Actions.updatePublicDemand(),
-                Actions.calcDelayUnsoldInventary()
-                )
+                Actions.calcDelayUnsoldInventary(),
+                Actions.stopUpdatingUnsoldInventory(),
+                Actions.startUpdatingUnsoldInventory(),
+            )
         })       
 }
 

@@ -14,7 +14,10 @@ function marketingNextLevelEpic (action$) {
                 Actions.marketingNextLevel(),
                 Actions.toggleMarketingButton(),
                 Actions.updateMaxPublicDemand(),
-                Actions.updatePublicDemand()
+                Actions.updatePublicDemand(),
+                Actions.calcDelayUnsoldInventary(),
+                Actions.stopUpdatingUnsoldInventory(),
+                Actions.startUpdatingUnsoldInventory()
             )
         })       
 }
