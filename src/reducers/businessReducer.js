@@ -530,7 +530,6 @@ const showMegaClippers = (state, action) => {
     });
 }
 
-
 // const addCaptureVal = (state, action) => {
 //     if(action.val === 0){
 //         return updateObject(state, {
@@ -655,6 +654,8 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
             return state;
         case actionTypes.ADD_DONKEY_SPACE:
+            return state;
+        case actionTypes.START_IMPROVING_MARKETING:
             return state;
         case actionTypes.IMPROVE_MARKETING:
             return improveMarketing(state, action);

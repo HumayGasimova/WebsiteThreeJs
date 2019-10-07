@@ -28,6 +28,7 @@ import wireButtonBufferEpic from './wireButtonBufferEpic';
 import autoWireBuyerEpic from './autoWireBuyerEpic';
 import throwMegaClippersEpic from '../epicsProject/throwMegaClippersEpic';
 import startUpdatingUnsoldInventoryEpic from './startUpdatingUnsoldInventoryEpic';
+import startImprovingMarketingEpic from './startImprovingMarketingEpic';
 
 
 export const rootEpic = combineEpics(
@@ -57,5 +58,6 @@ export const rootEpic = combineEpics(
     wireButtonBufferEpic,
     autoWireBuyerEpic,
     throwMegaClippersEpic,
-    startUpdatingUnsoldInventoryEpic
+    startUpdatingUnsoldInventoryEpic,
+    startImprovingMarketingEpic
 );

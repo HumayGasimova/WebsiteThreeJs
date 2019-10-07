@@ -363,6 +363,13 @@ export function addDonkeySpace() {
     };
 };
 
+export function startImprovingMarketing(action) {
+    return { 
+        type: actionTypes.START_IMPROVING_MARKETING,
+        act: action
+    };
+};
+
 export function improveMarketing(val) {
     return { 
         type: actionTypes.IMPROVE_MARKETING,

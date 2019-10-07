@@ -171,7 +171,7 @@ class Projects extends Component {
             case 'newSlogan':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
-                this.props.improveMarketing(action);
+                this.props.startImprovingMarketing(action);
                 this.props.updatePublicDemand();
                 break;
             case 'algorithmicTrading':
@@ -189,27 +189,27 @@ class Projects extends Component {
                 this.props.addProject(projectsToAdd.HypnoHarmonics);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsAndCreat(price.ops, price.creat);
-                this.props.improveMarketing(action);
+                this.props.startImprovingMarketing(action);
                 this.props.updatePublicDemand();
                 break;
             case 'hypnoHarmonics':
                 this.props.addProject(projectsToAdd.HypnoDrones);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveMarketing(action);
+                this.props.startImprovingMarketing(action);
                 this.props.updatePublicDemand();
                 break;
             case 'hypnoDrones':
                 this.props.addProject(projectsToAdd.ReleaseTheHypnoDrones);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveMarketing(action);
+                this.props.startImprovingMarketing(action);
                 this.props.updatePublicDemand();
                 break;
             case 'releaseTheHypnoDrones':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectTrust(price.trust);
-                this.props.improveMarketing(action);
+                this.props.startImprovingMarketing(action);
                 this.props.updatePublicDemand();
                 break;
             case 'theHadwigerProblem':
@@ -409,7 +409,7 @@ export default connect(
             improveWireExtrusion: bindActionCreators(Actions.improveWireExtrusion, dispatch),
             creativityTurnOn: bindActionCreators(Actions.creativityTurnOn, dispatch),
             trustPlusOneFromProject: bindActionCreators(Actions.trustPlusOneFromProject, dispatch),
-            improveMarketing: bindActionCreators(Actions.improveMarketing, dispatch),
+            startImprovingMarketing: bindActionCreators(Actions.startImprovingMarketing, dispatch),
             showInvestEngine: bindActionCreators(Actions.showInvestEngine, dispatch),
             showStrategicModeling: bindActionCreators(Actions.showStrategicModeling, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
@@ -420,7 +420,7 @@ export default connect(
             addChip: bindActionCreators(Actions.addChip, dispatch),
             showAutoWireBuyer: bindActionCreators(Actions.showAutoWireBuyer, dispatch),
             updatePublicDemand: bindActionCreators(Actions.updatePublicDemand, dispatch),
-            showMegaClippers: bindActionCreators(Actions.showMegaClippers, dispatch),
+            showMegaClippers: bindActionCreators(Actions.showMegaClippers, dispatch)
         };
     }
 )(Projects);
