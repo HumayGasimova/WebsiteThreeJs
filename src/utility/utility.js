@@ -12,3 +12,7 @@ export const getDenominator = (val) => {
     let denominator = one.concat(zeros).join('');
     return  parseInt(denominator, 10);
 }
+
+// export const getRandomNumber = () => {
+
+// } 

@@ -588,6 +588,12 @@ export function getDeposit(deposit) {
     };
 };
 
+export function startUpdatingScreen() {
+    return { 
+        type: actionTypes.START_UPDATING_SCREEN,
+        deposit: deposit
+    };
+};
 
 
 

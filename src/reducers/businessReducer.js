@@ -738,6 +738,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.GET_DEPOSIT:
             return getDeposit(state, action);
+        case actionTypes.START_UPDATING_SCREEN:
+            return state;
         default: 
             return state;
     }

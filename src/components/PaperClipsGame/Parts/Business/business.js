@@ -33,6 +33,12 @@ import './business.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../../../../utility';
+
+/**
 * Business component definition and export
 */
 
@@ -75,7 +81,7 @@ class Business extends Component {
                 <div className="business-label">Business</div>
                 <div className="business-line"/>
                 <div className="business-section">
-                    <div className="business-text">Available Funds: $ {this.props.funds}</div>
+                    <div className="business-text">Available Funds: $ {Utility.commaSeparator(this.props.funds)}</div>
                     {this.renderRevTracker()}
                     <div className="business-text">Unsold Inventory: {this.props.unsoldInventory}</div>
                     <div className="business-wrapper1">

@@ -89,5 +89,6 @@ export {
     startImprovingMarketing,
     updateClipsPerSec,
     startInvestments,
-    getDeposit
+    getDeposit,
+    startUpdatingScreen
 } from './businessActions';

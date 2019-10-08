@@ -36,6 +36,12 @@ import './investments.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../../../../utility';
+
+/**
 * Investments component definition and export
 */
 
@@ -164,7 +170,7 @@ class Investments extends Component {
                             />
                         </div>
                         <div className="investments-part2">
-                            <div>Cash: $ {this.props.cash}</div>
+                            <div>Cash: $ {Utility.commaSeparator(this.props.cash)}</div>
                             <div>Stocks: $0</div>
                             <div>Total: $0</div>
                         </div>
