@@ -10,7 +10,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 function throwMegaClippersEpic(action$) { 
     return action$
         .ofType(actionTypes.ADD_MEGA_CLIPPERS)
-        .take(1)
+        // .take(1)
         .mergeMap(action => {
             return Observable.of(
               Actions.addProject(projectsToAdd.MegaClippers)

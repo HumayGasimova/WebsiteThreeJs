@@ -140,11 +140,6 @@ class Manufacturing extends Component {
             this.props.checkButtons();
             this.props.checkExistenceOfWire(this.props.wire);
         }, 1000);
-
-        if(this.props.noWire === 0){
-            console.log("HHHH")
-          }
-        this.props.sendCommentToTerminal("AutoClippers available for purchase");
     }
 
     componentWillUnmount = () => {
@@ -161,9 +156,19 @@ class Manufacturing extends Component {
                 }
             }, 1000);
         }
-        if(this.props.paperClips === 500000){
-            this.props.addMegaClippers();
+        if (prevProps.paperClips !== this.props.paperClips) {
+            if(this.props.paperClips === 500000){
+                this.props.addMegaClippers();
+            }
         }
+      
+        if (prevProps.autoClipperInitPrice !== this.props.autoClipperInitPrice) {
+            if(this.props.autoClipperInitPrice === 5){
+                this.props.sendCommentToTerminal("AutoClippers available for purchase");
+            }
+        }
+       
+       
     }
     
     wireButtonToggle = () => {
