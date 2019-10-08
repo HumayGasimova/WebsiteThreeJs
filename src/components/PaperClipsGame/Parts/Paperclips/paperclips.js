@@ -76,7 +76,7 @@ class Paperclips extends Component {
             return (this.props.paperClips).toFixed(1);
         }
         if(this.props.paperClips < 1000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             
             if(length === 4){
                 length -= 1;
@@ -93,7 +93,7 @@ class Paperclips extends Component {
             return shortNumber.toFixed(1) + " thousand"; 
         }
         if(this.props.paperClips < 1000000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             if(length === 7){
                 length -= 1;
             }
@@ -108,7 +108,7 @@ class Paperclips extends Component {
             return shortNumber.toFixed(1) + " million"; 
         }
         if(this.props.paperClips < 1000000000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             if(length === 10){
                 length -= 1;
             }
@@ -123,7 +123,7 @@ class Paperclips extends Component {
             return shortNumber.toFixed(1) + " milliard"; 
         }
         if(this.props.paperClips < 1000000000000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             if(length === 13){
                 length -= 1;
             }
@@ -138,7 +138,7 @@ class Paperclips extends Component {
             return shortNumber.toFixed(1) + " billion"; 
         }
         if(this.props.paperClips < 1000000000000000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             if(length === 16){
                 length -= 1;
             }
@@ -153,7 +153,7 @@ class Paperclips extends Component {
             return shortNumber.toFixed(1) + " billiard"; 
         }
         if(this.props.paperClips < 1000000000000000000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             if(length === 19){
                 length -= 1;
             }
@@ -168,7 +168,7 @@ class Paperclips extends Component {
             return shortNumber.toFixed(1) + " trillion"; 
         }
         if(this.props.paperClips < 1000000000000000000000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             if(length === 22){
                 length -= 1;
             }
@@ -183,7 +183,7 @@ class Paperclips extends Component {
             return shortNumber.toFixed(1) + " trilliard"; 
         }
         if(this.props.paperClips < 1000000000000000000000000000){
-            let length = Utility.getlength(this.props.paperClips);
+            let length = Utility.getLength(this.props.paperClips);
             if(length === 25){
                 length -= 1;
             }

@@ -1,5 +1,6 @@
 export {
     commaSeparator,
-    getlength,
-    getDenominator
+    getLength,
+    getDenominator,
+    getRandomNumber
 } from './utility'

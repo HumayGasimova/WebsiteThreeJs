@@ -12,8 +12,8 @@ function startInvestmentsEpic(action$, state$) {
         .mergeMap(action => {
             let deposit = state$.value.business.funds
             return Observable.of(
-                Actions.getDeposit(deposit),
-                // Actions.startUpdatingScreen()
+                Actions.getDeposit(),
+                Actions.startUpdatingScreen()
             )
         })       
 }

@@ -9,7 +9,11 @@ import { interval } from "rxjs"
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
+/**
+* Utility
+*/
 
+import * as Utility from '../utility';
 
 export const startUpdatingScreenEpic = (action$, state$) => 
     action$
@@ -25,8 +29,8 @@ export const startUpdatingScreenEpic = (action$, state$) =>
                     profitLoss: 0
                 }
 
-                
-
+                let randomNum = Utility.getRandomNumber(state$.value.business.cash)
+console.log(randomNum)
                 return Observable.of(
                     Actions.makePaperclip()
                 )   

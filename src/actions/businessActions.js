@@ -581,17 +581,15 @@ export function startInvestments() {
     };
 };
 
-export function getDeposit(deposit) {
+export function getDeposit() {
     return { 
-        type: actionTypes.GET_DEPOSIT,
-        deposit: deposit
+        type: actionTypes.GET_DEPOSIT
     };
 };
 
 export function startUpdatingScreen() {
     return { 
-        type: actionTypes.START_UPDATING_SCREEN,
-        deposit: deposit
+        type: actionTypes.START_UPDATING_SCREEN
     };
 };
 

@@ -541,9 +541,9 @@ const showMegaClippers = (state, action) => {
 const getDeposit = (state, action) => {
     let updatedCash;
     if(state.cash === 0){
-        updatedCash = state.funds
+        updatedCash = +state.funds.toFixed()
     }else{
-        updatedCash = state.cash + state.funds
+        updatedCash = +state.cash + +state.funds.toFixed()
     }
     return updateObject(state, {
         funds: 0,

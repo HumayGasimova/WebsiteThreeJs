@@ -2,7 +2,7 @@ export const commaSeparator = (num) => {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-export const getlength = (number) => {
+export const getLength = (number) => {
     return number.toString().length;
 }
 
@@ -13,6 +13,9 @@ export const getDenominator = (val) => {
     return  parseInt(denominator, 10);
 }
 
-// export const getRandomNumber = () => {
+export const getRandomNumber = (val) => {
+    let length = getLength(val) - 2;
+    let subtract = getDenominator(length);
 
-// } 
+    return  Math.floor(Math.random()*val) + subtract;
+} 
