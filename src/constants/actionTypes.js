@@ -2,6 +2,8 @@ export const START_TIMER = 'START_TIMER';
 export const CHECK_BUTTONS = 'CHECK_BUTTONS';
 
 export const MAKE_PAPERCLIP = 'MAKE_PAPERCLIP';
+export const UPDATE_CLIPS_PER_SEC = 'UPDATE_CLIPS_PER_SEC';
+
 
 export const START_SELLING = 'START_SELLING';
 export const UPDATE_FUNDS = 'UPDATE_FUNDS';

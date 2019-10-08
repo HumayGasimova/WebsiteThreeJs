@@ -86,5 +86,6 @@ export {
     showMegaClippers,
     calcDelayUnsoldInventary,
     stopUpdatingUnsoldInventory,
-    startImprovingMarketing
+    startImprovingMarketing,
+    updateClipsPerSec
 } from './businessActions';

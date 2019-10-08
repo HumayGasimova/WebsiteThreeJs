@@ -829,6 +829,8 @@ export const AnotherTokenOfGoodwill7 = {
 
 
 
+
+
 export const QuantumFoamAnnealment = {
     text1: "Quantum Foam Annealment (15,000 ops)",
     text2: "1,000% more wire supply from every spool",

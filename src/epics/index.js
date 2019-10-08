@@ -29,7 +29,7 @@ import autoWireBuyerEpic from './autoWireBuyerEpic';
 import throwMegaClippersEpic from '../epicsProject/throwMegaClippersEpic';
 import startUpdatingUnsoldInventoryEpic from './startUpdatingUnsoldInventoryEpic';
 import startImprovingMarketingEpic from './startImprovingMarketingEpic';
-
+import catchPaperclipsEpic from './catchPaperclipsEpic';
 
 export const rootEpic = combineEpics(
     checkButtonsEpic,
@@ -59,5 +59,6 @@ export const rootEpic = combineEpics(
     autoWireBuyerEpic,
     throwMegaClippersEpic,
     startUpdatingUnsoldInventoryEpic,
-    startImprovingMarketingEpic
+    startImprovingMarketingEpic,
+    catchPaperclipsEpic
 );

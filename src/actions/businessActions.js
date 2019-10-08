@@ -568,6 +568,13 @@ export function calcDelayUnsoldInventary() {
     };
 };
 
+export function updateClipsPerSec(val) {
+    return { 
+        type: actionTypes.UPDATE_CLIPS_PER_SEC,
+        val: val
+    };
+};
+
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

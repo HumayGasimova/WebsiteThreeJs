@@ -5,6 +5,7 @@ import {
 
 const initialState = {
     paperClips: 0,
+    clipsPerSec: 0,
     funds: 100000, //pomenat na 0
     paperclipPrice: 0.50, // 0.5
     unsoldInventory: 0,
@@ -68,6 +69,12 @@ const makePaperclip = (state) => {
        paperClips: state.paperClips + 1, //pomenat na 1
        unsoldInventory: +state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
+    });
+}
+
+const updateClipsPerSec = (state, action) => {
+    return updateObject(state, {
+        clipsPerSec: action.val
     });
 }
 
@@ -551,6 +558,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.MAKE_PAPERCLIP:
             return makePaperclip(state, action);
+        case actionTypes.UPDATE_CLIPS_PER_SEC:
+            return updateClipsPerSec(state, action);
         case actionTypes.START_SELLING:
             return state;
         case actionTypes.UPDATE_FUNDS:

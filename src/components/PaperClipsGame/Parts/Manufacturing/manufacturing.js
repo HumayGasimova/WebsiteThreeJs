@@ -196,7 +196,7 @@ class Manufacturing extends Component {
                 <div className="manufacturing-label">Manufacturing</div>
                 <div className="manufacturing-line"/>
                 <div className="manufacturing-section">
-                    <div className="manufacturing-text">Clips per Second: {this.props.autoClippersPerSec}</div>
+                    <div className="manufacturing-text">Clips per Second: {this.props.clipsPerSec}</div>
                 </div>
                 <div className="manufacturing-section">
                     {this.renderAutoWireBuyer()}
@@ -239,6 +239,7 @@ export default connect(
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
             paperClips: state.business.paperClips,
             megaClippersIsShown: state.business.megaClippersIsShown,
+            clipsPerSec: state.business.clipsPerSec
         };
     },
     (dispatch) => {
