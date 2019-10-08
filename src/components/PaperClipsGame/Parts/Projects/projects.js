@@ -328,6 +328,54 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showMegaClippers()
                 break; 
+            case 'photonicChip4':
+                this.props.addProject(projectsToAdd.PhotonicChip5);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip4);
+                this.props.startAddingQOps("chip4");
+                break; 
+            case 'photonicChip5':
+                this.props.addProject(projectsToAdd.PhotonicChip6);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip5);
+                this.props.startAddingQOps("chip5");
+                break; 
+            case 'photonicChip6':
+                this.props.addProject(projectsToAdd.PhotonicChip7);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip6);
+                this.props.startAddingQOps("chip6");
+                break; 
+            case 'photonicChip7':
+                this.props.addProject(projectsToAdd.PhotonicChip8);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip7);
+                this.props.startAddingQOps("chip7");
+                break; 
+            case 'photonicChip8':
+                this.props.addProject(projectsToAdd.PhotonicChip9);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip8);
+                this.props.startAddingQOps("chip8");
+                break; 
+            case 'photonicChip9':
+                this.props.addProject(projectsToAdd.PhotonicChip10);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip9);
+                this.props.startAddingQOps("chip9");
+                break; 
+            case 'photonicChip10':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.addChip(chipsToAdd.Chip10);
+                this.props.startAddingQOps("chip10");
+                break; 
         }
     }
 

@@ -446,9 +446,85 @@ export const PhotonicChip4 = {
     valid: false,
     id: "card35",
     terminal: "Photonic chip added"
-}//logic neededs
-
-
+}
+export const PhotonicChip5 = {
+    text1: "Photonic Chip (30,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip5',
+    valid: false,
+    id: "card37",
+    terminal: "Photonic chip added"
+}
+export const PhotonicChip6 = {
+    text1: "Photonic Chip (35,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip6',
+    valid: false,
+    id: "card38",
+    terminal: "Photonic chip added"
+}
+export const PhotonicChip7 = {
+    text1: "Photonic Chip (40,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip7',
+    valid: false,
+    id: "card39",
+    terminal: "Photonic chip added"
+}
+export const PhotonicChip8 = {
+    text1: "Photonic Chip (45,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip8',
+    valid: false,
+    id: "card40",
+    terminal: "Photonic chip added"
+}
+export const PhotonicChip9 = {
+    text1: "Photonic Chip (50,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip9',
+    valid: false,
+    id: "card41",
+    terminal: "Photonic chip added"
+}
+export const PhotonicChip10 = {
+    text1: "Photonic Chip (55,000 ops)",
+    text2: "Converts electromagnetic waves into",
+    text3: "quantum operations",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'photonicChip10',
+    valid: false,
+    id: "card42",
+    terminal: "Photonic chip added"
+}
 
 export const WireBuyer = {
     text1: "WireBuyer (7,000 ops)",
