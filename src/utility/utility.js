@@ -13,7 +13,7 @@ export const getDenominator = (val) => {
     return  parseInt(denominator, 10);
 }
 
-export const getRandomNumber = (val) => {
+export const getRandomAmount = (val) => {
     let length = getLength(val) - 2;
     let subtract = getDenominator(length);
 
