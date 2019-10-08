@@ -122,24 +122,27 @@ class ComputationalResources extends Component {
                 }
             }, this.state.delayOperations);
         }
-        if(this.props.creativity === 50){
-            this.props.addLexicalProcessing();
+        if (prevProps.creativity !== this.props.creativity) {
+            if(this.props.creativity === 50){
+                this.props.addLexicalProcessing();
+            }
+            if(this.props.creativity === 100){
+                this.props.addCombinatoryHarmonics();
+            }
+            if(this.props.creativity === 100){
+                this.props.addCombinatoryHarmonics();
+            }
+            if(this.props.creativity === 150){
+                this.props.addTheHadwingerProblem();
+            }
+            if(this.props.creativity === 200){
+                this.props.addTheTothSausageConjecture();
+            }
+            if(this.props.creativity === 250){
+                this.props.addDonkeySpace();
+            }
         }
-        if(this.props.creativity === 100){
-            this.props.addCombinatoryHarmonics();
-        }
-        if(this.props.creativity === 100){
-            this.props.addCombinatoryHarmonics();
-        }
-        if(this.props.creativity === 150){
-            this.props.addTheHadwingerProblem();
-        }
-        if(this.props.creativity === 200){
-            this.props.addTheTothSausageConjecture();
-        }
-        if(this.props.creativity === 250){
-            this.props.addDonkeySpace();
-        }
+       
         if(prevProps.processorsNumber !== this.props.processorsNumber){
             if(this.props.processorsNumber === 5){
                 this.props.addProject(projectsToAdd.QuantumComputing);

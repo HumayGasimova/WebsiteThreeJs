@@ -161,6 +161,10 @@ class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.creativityTurnOn();
                 break;
+            case 'limerick':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectCreat(price.creat);
+                break;
             case 'lexicalProcessing':
                 this.props.addProject(projectsToAdd.NewSlogan);
                 this.props.addProject(projectsToAdd.AlgorithmicTrading);
