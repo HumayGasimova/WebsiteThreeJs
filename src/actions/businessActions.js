@@ -575,6 +575,21 @@ export function updateClipsPerSec(val) {
     };
 };
 
+export function startInvestments() {
+    return { 
+        type: actionTypes.START_INVESTMENTS
+    };
+};
+
+export function getDeposit(deposit) {
+    return { 
+        type: actionTypes.GET_DEPOSIT,
+        deposit: deposit
+    };
+};
+
+
+
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

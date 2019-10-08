@@ -84,13 +84,28 @@ class Investments extends Component {
                     total: 100,
                     pl: 100
                 }
-            ]
+            ],
+            line: {
+                stock: "",
+                amt: 0,
+                price: 0,
+                total: 0,
+                profitLoss: 0
+            }
         }
     }
 
     /**
      * Methods
      */
+
+    // componentDidMount = () => {
+    //     this.intervalOperations = setInterval(()=>{
+    //         if(this.props.ops < this.props.opsMax){
+    //             this.props.increaseOps()
+    //         }
+    //     }, this.state.delayOperations);
+    // }
 
     renderGrid = () => {
         if(true){
@@ -139,7 +154,7 @@ class Investments extends Component {
                         <div className="investments-part1">
                             <Button
                                 className="investments-button"
-                                // onClick={this.props.lowerPrice}
+                                onClick={this.props.startInvestments}
                                 text={"Deposit"}
                             />
                             <Button
@@ -149,7 +164,7 @@ class Investments extends Component {
                             />
                         </div>
                         <div className="investments-part2">
-                            <div>Cash: $0</div>
+                            <div>Cash: $ {this.props.cash}</div>
                             <div>Stocks: $0</div>
                             <div>Total: $0</div>
                         </div>
@@ -190,7 +205,7 @@ export default connect(
         return {
             listInvestments: state.business.listInvestments,
             showDropdownInvestments: state.business.showDropdownInvestments,
-            // unsoldInventory: state.business.unsoldInventory,
+            cash: state.business.cash,
             // paperclipPrice: state.business.paperclipPrice,
             // delay: state.business.delay,
             // wire: state.business.wire,
@@ -200,7 +215,8 @@ export default connect(
     (dispatch) => {
         return {
             toggleDropdownInvestments: bindActionCreators(Actions.toggleDropdownInvestments, dispatch),
-            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
+            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch),
+            startInvestments: bindActionCreators(Actions.startInvestments, dispatch),
         };
     }
 )(Investments);

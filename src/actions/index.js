@@ -87,5 +87,7 @@ export {
     calcDelayUnsoldInventary,
     stopUpdatingUnsoldInventory,
     startImprovingMarketing,
-    updateClipsPerSec
+    updateClipsPerSec,
+    startInvestments,
+    getDeposit
 } from './businessActions';

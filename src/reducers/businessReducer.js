@@ -60,6 +60,7 @@ const initialState = {
     megaClippersIsShown: false,
     delayUnsoldInventary: 4375,
     delayUnsoldInventaryConst: 700,
+    cash: 0
 }
 
 const makePaperclip = (state) => {
@@ -537,17 +538,18 @@ const showMegaClippers = (state, action) => {
     });
 }
 
-// const addCaptureVal = (state, action) => {
-//     if(action.val === 0){
-//         return updateObject(state, {
-//             captureNumber: 0
-//         });
-//     }else{
-//         return updateObject(state, {
-//             captureNumber: state.captureNumber + action.val
-//         });
-//     }
-// }
+const getDeposit = (state, action) => {
+    let updatedCash;
+    if(state.cash === 0){
+        updatedCash = state.funds
+    }else{
+        updatedCash = state.cash + state.funds
+    }
+    return updateObject(state, {
+        funds: 0,
+        cash: updatedCash
+    });
+}
 
 
 
@@ -732,6 +734,10 @@ const businessReducer = (state = initialState, action) => {
             return showMegaClippers(state, action);
         case actionTypes.CALC_DELAY_UNSOLD_INVENTARY:
             return calcDelayUnsoldInventary(state, action);
+        case actionTypes.START_INVESTMENTS:
+            return state;
+        case actionTypes.GET_DEPOSIT:
+            return getDeposit(state, action);
         default: 
             return state;
     }
