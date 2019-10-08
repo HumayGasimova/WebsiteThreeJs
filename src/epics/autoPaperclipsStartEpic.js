@@ -14,19 +14,31 @@ import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
 export const autoPaperclipsStartsEpic = (action$, state$) => 
     action$
     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
-    .mergeMap(action => {
-        if(state$.value.business.autoClippersPerSec > 60){
-            return interval(1000).pipe(
-                mergeMap(() => Observable.of(
-                            Actions.makePaperclip()
-                        )   
+    // .mergeMap(action => {
+    //     if(state$.value.business.autoClippersPerSec > 60){
+    //         return interval(1000).pipe(
+    //             mergeMap(() => Observable.of(
+    //                         Actions.makePaperclip()
+    //                     )   
                         
-                        .repeat(state$.value.business.autoClippersPerSec)
-                        // .delay(500)
-                ),
-                takeUntil(action$.ofType(actionTypes.STOP))
-            )
-        }else{
+    //                     .repeat(state$.value.business.autoClippersPerSec)
+    //                     // .delay(500)
+    //             ),
+    //             takeUntil(action$.ofType(actionTypes.STOP))
+    //         )
+    //     }else{
+    //         return interval(state$.value.business.delayAutoPaperClippers).pipe(
+    //             mergeMap(() => Observable.of(
+    //                         Actions.makePaperclip()
+    //                     )   
+    //                     // .delay(1000)
+    //                     // .repeat(state$.value.business.autoClippersPerSec)
+    //             ),
+    //             takeUntil(action$.ofType(actionTypes.STOP))
+    //         )
+    //     }
+    //  })
+        .mergeMap(action => {
             return interval(state$.value.business.delayAutoPaperClippers).pipe(
                 mergeMap(() => Observable.of(
                             Actions.makePaperclip()
@@ -36,23 +48,9 @@ export const autoPaperclipsStartsEpic = (action$, state$) =>
                 ),
                 takeUntil(action$.ofType(actionTypes.STOP))
             )
-        }
-       
-      
-    })
+       })
 
-    // .mergeMap(action => {
-    //     return interval(state$.value.business.delayAutoPaperClippers).pipe(
-    //         mergeMap(() => Observable.of(
-    //                     Actions.makePaperclip()
-    //                 )   
-    //                 // .delay(1000)
-    //                 // .repeat(state$.value.business.autoClippersPerSec)
-    //         ),
-    //         takeUntil(action$.ofType(actionTypes.STOP))
-    //     )
-      
-    // })
+
    
     // return action$
     //     .ofType(actionTypes.AUTO_PAPERCLIPS_START)
