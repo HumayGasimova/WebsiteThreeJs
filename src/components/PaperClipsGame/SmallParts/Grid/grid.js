@@ -59,7 +59,7 @@ class Grid extends Component {
                 <div className={this.props.className}>{this.props.amt}</div>
                 <div className={this.props.className}>{this.props.price}</div>
                 <div className={this.props.className}>{this.props.total}</div>
-                <div className={this.props.className}>{this.props.pl}</div>
+                <div className={this.props.className}>{this.props.profitLoss}</div>
             </div>
         );
     }

@@ -90,5 +90,6 @@ export {
     updateClipsPerSec,
     startInvestments,
     getDeposit,
-    startUpdatingScreen
+    startUpdatingScreen,
+    addInvestmentsLine
 } from './businessActions';

@@ -593,6 +593,14 @@ export function startUpdatingScreen() {
     };
 };
 
+export function addInvestmentsLine(obj) {
+    return { 
+        type: actionTypes.ADD_INVESTMENTS_LINE,
+        obj: obj
+    };
+};
+
+
 
 
 export const checkAuthTimeout = (expirationTime) => {

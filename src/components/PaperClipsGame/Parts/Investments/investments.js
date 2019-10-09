@@ -90,14 +90,7 @@ class Investments extends Component {
                     total: 100,
                     pl: 100
                 }
-            ],
-            line: {
-                stock: "",
-                amt: 0,
-                price: 0,
-                total: 0,
-                profitLoss: 0
-            }
+            ]
         }
     }
 
@@ -117,7 +110,7 @@ class Investments extends Component {
         if(true){
             return(
                 <div>
-                    {this.state.example.map((el,i) => {
+                    {this.props.investmentsLines.map((el,i) => {
                         return(
                             <Grid
                                 key={i}
@@ -126,7 +119,7 @@ class Investments extends Component {
                                 amt={el.amt}
                                 price={el.price}
                                 total={el.total}
-                                pl={el.pl}    
+                                profitLoss={el.profitLoss}    
                             />
                         )
                     })}
@@ -212,7 +205,7 @@ export default connect(
             listInvestments: state.business.listInvestments,
             showDropdownInvestments: state.business.showDropdownInvestments,
             cash: state.business.cash,
-            // paperclipPrice: state.business.paperclipPrice,
+            investmentsLines: state.business.investmentsLines,
             // delay: state.business.delay,
             // wire: state.business.wire,
             // makePaperclipDisabled: state.business.makePaperclipDisabled

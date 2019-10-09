@@ -60,7 +60,8 @@ const initialState = {
     megaClippersIsShown: false,
     delayUnsoldInventary: 4375,
     delayUnsoldInventaryConst: 700,
-    cash: 0
+    cash: 0,
+    investmentsLines: ['','','','','']
 }
 
 const makePaperclip = (state) => {
@@ -551,7 +552,17 @@ const getDeposit = (state, action) => {
     });
 }
 
+const addInvestmentsLine = (state, action) => {
+    let updatedInvestmentsLines = [...state.investmentsLines];
+    
+        updatedInvestmentsLines.push(action.obj)
+        updatedInvestmentsLines.splice(0,1);
+    console.log(updatedInvestmentsLines)
 
+    return updateObject(state, {
+        investmentsLines: updatedInvestmentsLines
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -740,6 +751,8 @@ const businessReducer = (state = initialState, action) => {
             return getDeposit(state, action);
         case actionTypes.START_UPDATING_SCREEN:
             return state;
+        case actionTypes.ADD_INVESTMENTS_LINE:
+            return addInvestmentsLine(state, action);
         default: 
             return state;
     }
