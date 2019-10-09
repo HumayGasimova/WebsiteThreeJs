@@ -2,5 +2,8 @@ export {
     commaSeparator,
     getLength,
     getDenominator,
-    getRandomAmount
+    getRandomAmount,
+    getRandomPrice,
+    getRandomProfitLost,
+    getRandomLetters
 } from './utility'

@@ -19,3 +19,18 @@ export const getRandomAmount = (val) => {
 
     return  Math.floor(Math.random()*val) + subtract;
 } 
+
+export const getRandomPrice = () => {
+    return  Math.floor(Math.random()*400);
+} 
+
+export const getRandomProfitLost = () => {
+    return  Math.floor(Math.random()*20) - 10;
+} 
+
+export const getRandomLetters = () => {
+    let Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let slots =  Math.floor(Math.random()*3) + 2;
+    let a = Array.apply(null, Array(slots)).map(()=>Letters.charAt(Math.floor(Math.random() * Letters.length))).join('')
+    return  a;
+} 

@@ -21,15 +21,18 @@ export const startUpdatingScreenEpic = (action$, state$) =>
     .mergeMap(action => {
         return interval(1000).pipe(
             mergeMap(() => {
-                // let randomNum = Utility.getRandomAmount(state$.value.business.cash);
+                let randomNum = Utility.getRandomAmount(state$.value.business.cash);
+                let randomPrice = Utility.getRandomPrice();
+                let randomProfitLost = Utility.getRandomProfitLost();
+                let randomLetters = Utility.getRandomLetters();
                 let obj = {
-                    stock: "",
-                    amt: Utility.getRandomAmount(state$.value.business.cash),
-                    price: 0,
-                    total: 0,
-                    profitLoss: 0
+                    stock: randomLetters,
+                    amt: randomNum,
+                    price: randomPrice,
+                    total: randomNum * randomPrice,
+                    profitLoss: randomNum * randomProfitLost
                 }
-console.log(Utility.getRandomAmount(state$.value.business.cash))
+console.log("obj", obj)
                 return Observable.of(
                     Actions.makePaperclip()
                 )   
