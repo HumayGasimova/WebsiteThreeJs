@@ -86,19 +86,6 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                         }
                     }
                 })
-                console.log("2",investmentsLines)
-                // let randomNum = Utility.getRandomAmount(state$.value.business.cash);
-                // let randomPrice = Utility.getRandomPrice();
-                // let randomProfitLost = Utility.getRandomProfitLost();
-                // let randomLetters = Utility.getRandomLetters();
-                // let obj = {
-                //     stock: randomLetters,
-                //     amt: randomNum,
-                //     price: randomPrice,
-                //     total: randomNum * randomPrice,
-                //     profitLoss: randomNum * randomProfitLost
-                // }
-                //     console.log("obj", obj)
                 return Observable.of(
                     Actions.updateInvestmentsLines(investmentsLines)
                 )   
