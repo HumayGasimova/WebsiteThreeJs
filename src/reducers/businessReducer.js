@@ -61,7 +61,7 @@ const initialState = {
     delayUnsoldInventary: 4375,
     delayUnsoldInventaryConst: 700,
     cash: 0,
-    investmentsLines: ['','','','','']
+    investmentsLines: ["","","","",""]
 }
 
 const makePaperclip = (state) => {
@@ -554,9 +554,35 @@ const getDeposit = (state, action) => {
 
 const addInvestmentsLine = (state, action) => {
     let updatedInvestmentsLines = [...state.investmentsLines];
-    
+    if(state.investmentsLines.includes("")){
+        if(state.investmentsLines[0] === ""){
+            updatedInvestmentsLines.splice(0,1,action.obj);
+        }
+        if(state.investmentsLines[0] !== "" && 
+            state.investmentsLines[1] === ""
+        ){
+            updatedInvestmentsLines.splice(1,1,action.obj);
+        }
+        if(state.investmentsLines[1] !== "" && 
+            state.investmentsLines[2] === ""
+        ){
+            updatedInvestmentsLines.splice(2,1,action.obj);
+        }
+        if(state.investmentsLines[2] !== "" && 
+            state.investmentsLines[3] === ""
+        ){
+            updatedInvestmentsLines.splice(3,1,action.obj);
+        }
+        if(state.investmentsLines[3] !== "" && 
+            state.investmentsLines[4] === ""
+        ){
+            updatedInvestmentsLines.splice(4,1,action.obj);
+        }
+    }else{
         updatedInvestmentsLines.push(action.obj)
         updatedInvestmentsLines.splice(0,1);
+    }
+ 
     console.log(updatedInvestmentsLines)
 
     return updateObject(state, {
