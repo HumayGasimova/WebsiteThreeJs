@@ -13,7 +13,8 @@ function startInvestmentsEpic(action$, state$) {
             let deposit = state$.value.business.funds
             return Observable.of(
                 Actions.getDeposit(),
-                Actions.startUpdatingScreen()
+                Actions.startUpdatingScreen(),
+                Actions.startUpdatingInvestmentLines()
             )
         })       
 }

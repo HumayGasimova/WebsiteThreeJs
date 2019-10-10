@@ -91,5 +91,7 @@ export {
     startInvestments,
     getDeposit,
     startUpdatingScreen,
-    addInvestmentsLine
+    addInvestmentsLine,
+    startUpdatingInvestmentLines,
+    updateInvestmentsLines
 } from './businessActions';

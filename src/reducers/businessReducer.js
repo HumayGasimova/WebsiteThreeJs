@@ -564,6 +564,11 @@ const addInvestmentsLine = (state, action) => {
     });
 }
 
+const updateInvestmentsLines = (state, action) => {
+    return updateObject(state, {
+        investmentsLines: action.obj
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -753,6 +758,9 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.ADD_INVESTMENTS_LINE:
             return addInvestmentsLine(state, action);
+        case actionTypes.UPDATE_INVESTMENTS_LINES:
+            return updateInvestmentsLines(state, action);
+           
         default: 
             return state;
     }

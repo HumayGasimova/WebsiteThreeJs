@@ -32,7 +32,7 @@ import startImprovingMarketingEpic from './startImprovingMarketingEpic';
 import catchPaperclipsEpic from './catchPaperclipsEpic';
 import startInvestmentsEpic from './startInvestmentsEpic';
 import startUpdatingScreenEpic from './startUpdatingScreenEpic';
-
+import startUpdatingInvestmentLinesEpic from './startUpdatingInvestmentLinesEpic';
 
 
 export const rootEpic = combineEpics(
@@ -66,5 +66,6 @@ export const rootEpic = combineEpics(
     startImprovingMarketingEpic,
     catchPaperclipsEpic,
     startInvestmentsEpic,
-    startUpdatingScreenEpic
+    startUpdatingScreenEpic,
+    startUpdatingInvestmentLinesEpic
 );

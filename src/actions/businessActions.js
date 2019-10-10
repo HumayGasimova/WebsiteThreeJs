@@ -600,8 +600,18 @@ export function addInvestmentsLine(obj) {
     };
 };
 
+export function startUpdatingInvestmentLines() {
+    return { 
+        type: actionTypes.START_UPDATING_INVESTMENTS_LINE
+    };
+};
 
-
+export function updateInvestmentsLines(obj) {
+    return { 
+        type: actionTypes.UPDATE_INVESTMENTS_LINES,
+        obj: obj
+    };
+};
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
