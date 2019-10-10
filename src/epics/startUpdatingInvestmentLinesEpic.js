@@ -29,8 +29,11 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                 let randomPrice3 = Utility.getRandomPrice();
                 let randomPrice4 = Utility.getRandomPrice();
                 let randomPrice5 = Utility.getRandomPrice();
-                let randomProfitLost = Utility.getRandomProfitLost();
-                let randomLetters = Utility.getRandomLetters();
+                let randomProfitLost1 = Utility.getRandomProfitLost();
+                let randomProfitLost2 = Utility.getRandomProfitLost();
+                let randomProfitLost3 = Utility.getRandomProfitLost();
+                let randomProfitLost4 = Utility.getRandomProfitLost();
+                let randomProfitLost5 = Utility.getRandomProfitLost();
                
                 investmentsLines.map((x,i)=>{
                     if(x !== ""){
@@ -41,7 +44,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                                     amt: investmentsLines[i].amt,
                                     price: randomPrice1,
                                     total: investmentsLines[i].amt * randomPrice1,
-                                    profitLoss: investmentsLines[i].amt * randomProfitLost
+                                    profitLoss: investmentsLines[i].amt * randomProfitLost1
                                 }
                                 break;
                             case 1: 
@@ -50,7 +53,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                                     amt: investmentsLines[i].amt,
                                     price: randomPrice2,
                                     total: investmentsLines[i].amt * randomPrice2,
-                                    profitLoss: investmentsLines[i].amt * randomProfitLost
+                                    profitLoss: investmentsLines[i].amt * randomProfitLost2
                                 }
                                 break;
                             case 2: 
@@ -59,7 +62,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                                     amt: investmentsLines[i].amt,
                                     price: randomPrice3,
                                     total: investmentsLines[i].amt * randomPrice3,
-                                    profitLoss: investmentsLines[i].amt * randomProfitLost
+                                    profitLoss: investmentsLines[i].amt * randomProfitLost3
                                 }
                                 break;
                             case 3: 
@@ -68,7 +71,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                                     amt: investmentsLines[i].amt,
                                     price: randomPrice4,
                                     total: investmentsLines[i].amt * randomPrice4,
-                                    profitLoss: investmentsLines[i].amt * randomProfitLost
+                                    profitLoss: investmentsLines[i].amt * randomProfitLost4
                                 }
                             break;
                             case 4: 
@@ -77,7 +80,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                                     amt: investmentsLines[i].amt,
                                     price: randomPrice5,
                                     total: investmentsLines[i].amt * randomPrice5,
-                                    profitLoss: investmentsLines[i].amt * randomProfitLost
+                                    profitLoss: investmentsLines[i].amt * randomProfitLost5
                                 }
                             break;
                         }
