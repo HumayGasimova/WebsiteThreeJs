@@ -14,7 +14,8 @@ function startInvestmentsEpic(action$, state$) {
             return Observable.of(
                 Actions.getDeposit(),
                 Actions.startUpdatingScreen(),
-                Actions.startUpdatingInvestmentLines()
+                Actions.startUpdatingInvestmentLines(),
+                Actions.startCountingRisk()
             )
         })       
 }

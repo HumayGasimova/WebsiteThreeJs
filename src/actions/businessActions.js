@@ -613,6 +613,12 @@ export function updateInvestmentsLines(obj) {
     };
 };
 
+export function startCountingRisk() {
+    return { 
+        type: actionTypes.START_COUNTING_RISK
+    };
+};
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 

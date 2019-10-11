@@ -93,5 +93,6 @@ export {
     startUpdatingScreen,
     addInvestmentsLine,
     startUpdatingInvestmentLines,
-    updateInvestmentsLines
+    updateInvestmentsLines,
+    startCountingRisk
 } from './businessActions';

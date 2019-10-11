@@ -6,8 +6,8 @@ import {
 const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
-    funds: 100000, //pomenat na 0
-    paperclipPrice: 0.50, // 0.5
+    funds: 100, //pomenat na 0
+    paperclipPrice: 10000, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
     publicDemand: 16,
@@ -68,7 +68,7 @@ const makePaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
-       paperClips: state.paperClips + 100000, //pomenat na 1
+       paperClips: state.paperClips + 1000, //pomenat na 1
        unsoldInventory: +state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
@@ -786,7 +786,8 @@ const businessReducer = (state = initialState, action) => {
             return addInvestmentsLine(state, action);
         case actionTypes.UPDATE_INVESTMENTS_LINES:
             return updateInvestmentsLines(state, action);
-           
+        case actionTypes.START_COUNTING_RISK:
+            return state;
         default: 
             return state;
     }
