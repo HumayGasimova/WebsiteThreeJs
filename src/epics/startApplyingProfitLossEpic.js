@@ -24,14 +24,20 @@ export const startApplyingProfitLossEpic = (action$, state$) =>
             mergeMap(() => {
                 let firstLine = state$.value.business.investmentsLines[0];
                 let profitLoss = firstLine.profitLoss;
+                let stocks;
 
-                let stocks = state$.value.business.investmentsStocks + profitLoss;
+                if(state$.value.business.investmentsStocks + profitLoss >= 0){
+                    stocks = state$.value.business.investmentsStocks + profitLoss;
+                }else{
+                    stocks = state$.value.business.investmentsStocks
+                }
+               
                 let cash = state$.value.business.investmentsCash
                 
                 let total = cash + stocks;
             
               
-                console.log("HEY", firstLine, profitLoss, total)
+                console.log("HEY", state$.value.business.investmentsStocks, profitLoss)
                 return Observable.of(
                     Actions.updateInvestmentsTotal(total),
                     Actions.updateInvestmentsCash(cash),
