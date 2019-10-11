@@ -616,6 +616,12 @@ const updateInvestmentsStocks = (state, action) => {
     });
 }
 
+const updateFakeInvestmentsCash = (state, action) => {
+    return updateObject(state, {
+        fakeInvestmentsCash: action.cash
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -815,6 +821,10 @@ const businessReducer = (state = initialState, action) => {
             return updateInvestmentsCash(state, action);
         case actionTypes.UPDATE_INVESTMENTS_STOCKS:
             return updateInvestmentsStocks(state, action);
+        case actionTypes.START_APPLYING_PROFIT_LOSS:
+            return state;
+        case actionTypes.UPDATE_FAKE_INVESTMENTS_CASH:
+            return updateFakeInvestmentsCash(state, action);
         default: 
             return state;
     }

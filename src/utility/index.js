@@ -4,7 +4,7 @@ export {
     getDenominator,
     getRandomAmount,
     getRandomPrice,
-    getRandomProfitLost,
+    getRandomProfitLoss,
     getRandomLetters,
     getRandomPercent
 } from './utility'

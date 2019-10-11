@@ -15,7 +15,8 @@ function startInvestmentsEpic(action$, state$) {
                 Actions.getDeposit(),
                 Actions.startUpdatingScreen(),
                 Actions.startUpdatingInvestmentLines(),
-                Actions.startCountingRisk()
+                Actions.startCountingRisk(),
+                Actions.startApplyingProfitLoss()
             )
         })       
 }

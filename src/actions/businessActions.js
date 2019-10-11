@@ -640,6 +640,19 @@ export function updateInvestmentsStocks(val) {
     };
 };
 
+export function startApplyingProfitLoss() {
+    return { 
+        type: actionTypes.START_APPLYING_PROFIT_LOSS
+    };
+};
+
+export function updateFakeInvestmentsCash(val) {
+    return { 
+        type: actionTypes.UPDATE_FAKE_INVESTMENTS_CASH,
+        cash: val
+    };
+};
+
 
 
 export const checkAuthTimeout = (expirationTime) => {

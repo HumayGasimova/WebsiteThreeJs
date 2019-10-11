@@ -23,14 +23,14 @@ export const startUpdatingScreenEpic = (action$, state$) =>
             mergeMap(() => {
                 let randomNum = Utility.getRandomAmount(state$.value.business.investmentsCash);
                 let randomPrice = Utility.getRandomPrice();
-                let randomProfitLost = Utility.getRandomProfitLost();
+                let randomProfitLoss = Utility.getRandomProfitLoss();
                 let randomLetters = Utility.getRandomLetters();
                 let obj = {
                     stock: randomLetters,
                     amt: randomNum,
                     price: randomPrice,
                     total: randomNum * randomPrice,
-                    profitLoss: randomNum * randomProfitLost
+                    profitLoss: randomNum * randomProfitLoss
                 }
                     // console.log("obj", obj)
                 return Observable.of(

@@ -16,46 +16,34 @@ import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
 
 import * as Utility from '../utility';
 
-export const startCountingRiskEpic = (action$, state$) => 
+export const startApplyingProfitLossEpic = (action$, state$) => 
     action$
-    .ofType(actionTypes.START_COUNTING_RISK)
+    .ofType(actionTypes.START_APPLYING_PROFIT_LOSS)
     .mergeMap(action => {
-        return interval(12000).pipe(
+        return interval(15000).pipe(
             mergeMap(() => {
-                let depositCash = +state$.value.business.fakeInvestmentsCash;
-                let half1 = Utility.getRandomPercent();
-                let half2 = 100 - half1;
-                let cash = +(depositCash * half1 /100).toFixed();
-                let stocks = +(depositCash * half2 /100).toFixed();
+                let firstLine = state$.value.business.investmentsLines[0];
+                let profitLoss = firstLine.profitLoss;
+
+                let stocks = state$.value.business.investmentsStocks + profitLoss;
+                let cash = state$.value.business.investmentsCash
+                
                 let total = cash + stocks;
             
-            
-
-            //    switch(state$.value.business.risk){
-            //        case "lowRisk":
-            //             if(half1 > half2){
-            //                 cash = 
-            //             }
-            //            return
-            //            break;
-            //         case "medRisk":
-            //            return
-            //            break;
-            //         case "highRisk":
-            //             return
-            //             break;
-            //    }
+              
+                console.log("HEY", firstLine, profitLoss, total)
                 return Observable.of(
                     Actions.updateInvestmentsTotal(total),
                     Actions.updateInvestmentsCash(cash),
                     Actions.updateInvestmentsStocks(stocks),
-                )   
+                    Actions.updateFakeInvestmentsCash(total)
+                )
             }
                     // .delay(1000)
                     // .repeat(state$.value.business.autoClippersPerSec)
             ),
             // takeUntil(action$.ofType(actionTypes.STOP))
         )
-})
+    })
 
-export default startCountingRiskEpic;
+export default startApplyingProfitLossEpic;

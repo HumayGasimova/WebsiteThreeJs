@@ -98,4 +98,6 @@ export {
     updateInvestmentsTotal,
     updateInvestmentsCash,
     updateInvestmentsStocks,
+    startApplyingProfitLoss,
+    updateFakeInvestmentsCash
 } from './businessActions';

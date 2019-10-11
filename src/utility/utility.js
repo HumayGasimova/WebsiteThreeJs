@@ -24,7 +24,7 @@ export const getRandomPrice = () => {
     return  Math.floor(Math.random()*400);
 } 
 
-export const getRandomProfitLost = () => {
+export const getRandomProfitLoss = () => {
     return  Math.floor(Math.random()*20) - 10;
 } 
 
