@@ -5,5 +5,6 @@ export {
     getRandomAmount,
     getRandomPrice,
     getRandomProfitLost,
-    getRandomLetters
+    getRandomLetters,
+    getRandomPercent
 } from './utility'

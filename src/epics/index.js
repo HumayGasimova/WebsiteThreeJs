@@ -33,7 +33,7 @@ import catchPaperclipsEpic from './catchPaperclipsEpic';
 import startInvestmentsEpic from './startInvestmentsEpic';
 import startUpdatingScreenEpic from './startUpdatingScreenEpic';
 import startUpdatingInvestmentLinesEpic from './startUpdatingInvestmentLinesEpic';
-
+import startCountingRiskEpic from './startCountingRiskEpic';
 
 export const rootEpic = combineEpics(
     checkButtonsEpic,
@@ -67,5 +67,6 @@ export const rootEpic = combineEpics(
     catchPaperclipsEpic,
     startInvestmentsEpic,
     startUpdatingScreenEpic,
-    startUpdatingInvestmentLinesEpic
+    startUpdatingInvestmentLinesEpic,
+    startCountingRiskEpic
 );

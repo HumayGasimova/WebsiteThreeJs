@@ -60,8 +60,11 @@ const initialState = {
     megaClippersIsShown: false,
     delayUnsoldInventary: 4375,
     delayUnsoldInventaryConst: 700,
-    cash: 0,
-    investmentsLines: ["","","","",""]
+    investmentsCash: 0,
+    investmentsTotal: 0,
+    investmentsStocks: 0,
+    investmentsLines: ["","","","",""],
+    risk: "lowRisk"
 }
 
 const makePaperclip = (state) => {
@@ -541,14 +544,14 @@ const showMegaClippers = (state, action) => {
 
 const getDeposit = (state, action) => {
     let updatedCash;
-    if(state.cash === 0){
+    if(state.investmentsCash === 0){
         updatedCash = +state.funds.toFixed()
     }else{
-        updatedCash = +state.cash + +state.funds.toFixed()
+        updatedCash = +state.investmentsCash + +state.funds.toFixed()
     }
     return updateObject(state, {
         funds: 0,
-        cash: updatedCash
+        investmentsCash: updatedCash
     });
 }
 
@@ -582,9 +585,6 @@ const addInvestmentsLine = (state, action) => {
         updatedInvestmentsLines.push(action.obj)
         updatedInvestmentsLines.splice(0,1);
     }
- 
-    console.log(updatedInvestmentsLines)
-
     return updateObject(state, {
         investmentsLines: updatedInvestmentsLines
     });
@@ -595,6 +595,25 @@ const updateInvestmentsLines = (state, action) => {
         investmentsLines: action.obj
     });
 }
+
+const updateInvestmentsTotal = (state, action) => {
+    return updateObject(state, {
+        investmentsTotal: action.total
+    });
+}
+
+const updateInvestmentsCash = (state, action) => {
+    return updateObject(state, {
+        investmentsCash: action.cash
+    });
+}
+
+const updateInvestmentsStocks = (state, action) => {
+    return updateObject(state, {
+        investmentsStocks: action.stocks
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -788,6 +807,12 @@ const businessReducer = (state = initialState, action) => {
             return updateInvestmentsLines(state, action);
         case actionTypes.START_COUNTING_RISK:
             return state;
+        case actionTypes.UPDATE_INVESTMENTS_TOTAL:
+            return updateInvestmentsTotal(state, action);
+        case actionTypes.UPDATE_INVESTMENTS_CASH:
+            return updateInvestmentsCash(state, action);
+        case actionTypes.UPDATE_INVESTMENTS_STOCKS:
+            return updateInvestmentsStocks(state, action);
         default: 
             return state;
     }

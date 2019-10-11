@@ -23,7 +23,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
             mergeMap(() => {
                 let investmentsLines = [...state$.value.business.investmentsLines];
 
-                let randomNum = Utility.getRandomAmount(state$.value.business.cash);
+                let randomNum = Utility.getRandomAmount(state$.value.business.investmentsCash);
                 let randomPrice1 = Utility.getRandomPrice();
                 let randomPrice2 = Utility.getRandomPrice();
                 let randomPrice3 = Utility.getRandomPrice();

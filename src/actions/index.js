@@ -94,5 +94,8 @@ export {
     addInvestmentsLine,
     startUpdatingInvestmentLines,
     updateInvestmentsLines,
-    startCountingRisk
+    startCountingRisk,
+    updateInvestmentsTotal,
+    updateInvestmentsCash,
+    updateInvestmentsStocks,
 } from './businessActions';

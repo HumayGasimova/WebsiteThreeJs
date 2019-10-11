@@ -21,7 +21,7 @@ export const startUpdatingScreenEpic = (action$, state$) =>
     .mergeMap(action => {
         return interval(5000).pipe(
             mergeMap(() => {
-                let randomNum = Utility.getRandomAmount(state$.value.business.cash);
+                let randomNum = Utility.getRandomAmount(state$.value.business.investmentsCash);
                 let randomPrice = Utility.getRandomPrice();
                 let randomProfitLost = Utility.getRandomProfitLost();
                 let randomLetters = Utility.getRandomLetters();

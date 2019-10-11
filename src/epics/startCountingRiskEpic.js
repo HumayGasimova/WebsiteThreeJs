@@ -18,13 +18,36 @@ import * as Utility from '../utility';
 
 export const startCountingRiskEpic = (action$, state$) => 
     action$
-    .ofType(actionTypes.START_UPDATING_INVESTMENTS_LINE)
+    .ofType(actionTypes.START_COUNTING_RISK)
     .mergeMap(action => {
-        return interval(3000).pipe(
+        return interval(12000).pipe(
             mergeMap(() => {
-               
+               let half1 = Utility.getRandomPercent();
+               let half2 = 100 - half1;
+               let total = +state$.value.business.investmentsCash;
+               let cash = +(total * half1 /100).toFixed();
+               let stocks = +(total * half2 /100).toFixed();
+              
+
+            //    switch(state$.value.business.risk){
+            //        case "lowRisk":
+            //             if(half1 > half2){
+            //                 cash = 
+            //             }
+            //            return
+            //            break;
+            //         case "medRisk":
+            //            return
+            //            break;
+            //         case "highRisk":
+            //             return
+            //             break;
+            //    }
+console.log("HEY", total, cash, stocks)
                 return Observable.of(
-                    // Actions.updateInvestmentsLines(investmentsLines)
+                    Actions.updateInvestmentsTotal(total),
+                    Actions.updateInvestmentsCash(cash),
+                    Actions.updateInvestmentsStocks(stocks),
                 )   
             }
                     // .delay(1000)

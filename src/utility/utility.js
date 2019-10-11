@@ -34,3 +34,7 @@ export const getRandomLetters = () => {
     let a = Array.apply(null, Array(slots)).map(()=>Letters.charAt(Math.floor(Math.random() * Letters.length))).join('')
     return  a;
 } 
+
+export const getRandomPercent = () => {
+    return  (Math.random()*100).toFixed(2);
+} 

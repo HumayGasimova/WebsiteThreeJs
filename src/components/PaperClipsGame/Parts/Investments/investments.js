@@ -163,9 +163,9 @@ class Investments extends Component {
                             />
                         </div>
                         <div className="investments-part2">
-                            <div>Cash: $ {Utility.commaSeparator(this.props.cash)}</div>
-                            <div>Stocks: $0</div>
-                            <div>Total: $0</div>
+                            <div>Cash: $ {Utility.commaSeparator(this.props.investmentsCash)}</div>
+                            <div>Stocks: $ {Utility.commaSeparator(this.props.investmentsStocks)}</div>
+                            <div>Total: $ {Utility.commaSeparator(this.props.investmentsTotal)}</div>
                         </div>
                     </div>
                     <div className="investments-wrapper2">
@@ -204,10 +204,10 @@ export default connect(
         return {
             listInvestments: state.business.listInvestments,
             showDropdownInvestments: state.business.showDropdownInvestments,
-            cash: state.business.cash,
+            investmentsCash: state.business.investmentsCash,
+            investmentsTotal: state.business.investmentsTotal,
+            investmentsStocks: state.business.investmentsStocks,
             investmentsLines: state.business.investmentsLines,
-            // delay: state.business.delay,
-            // wire: state.business.wire,
             // makePaperclipDisabled: state.business.makePaperclipDisabled
         };
     },

@@ -619,6 +619,29 @@ export function startCountingRisk() {
     };
 };
 
+export function updateInvestmentsTotal(val) {
+    return { 
+        type: actionTypes.UPDATE_INVESTMENTS_TOTAL,
+        total: val
+    };
+};
+
+export function updateInvestmentsCash(val) {
+    return { 
+        type: actionTypes.UPDATE_INVESTMENTS_CASH,
+        cash: val
+    };
+};
+
+export function updateInvestmentsStocks(val) {
+    return { 
+        type: actionTypes.UPDATE_INVESTMENTS_STOCKS,
+        stocks: val
+    };
+};
+
+
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
