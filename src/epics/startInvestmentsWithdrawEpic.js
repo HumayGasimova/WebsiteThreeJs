@@ -11,7 +11,12 @@ function startInvestmentsWithdrawEpic(action$, state$) {
         .ofType(actionTypes.START_INVESTMENTS_WITHDRAW)
         .mergeMap(action => {
             let withdraw = state$.value.business.investmentsCash;
-            let total = state$.value.business.investmentsTotal - withdraw;
+            let total;
+            if(state$.value.business.investmentsTotal === 0){
+                total = 0;
+            }else{
+                total = state$.value.business.investmentsTotal - withdraw;
+            }
             let cash = 0;
 
             return Observable.of(

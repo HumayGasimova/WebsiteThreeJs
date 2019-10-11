@@ -623,8 +623,15 @@ const updateFakeInvestmentsCash = (state, action) => {
 }
 
 const updateFundsWithdraw = (state, action) => {
+    let updatedFunds;
+    if(state.funds === 0){
+        updatedFunds = action.val;
+    }else{
+        updatedFunds = state.funds + action.val;
+    }
+
     return updateObject(state, {
-        funds: action.val
+        funds: updatedFunds
     });
 }
 
