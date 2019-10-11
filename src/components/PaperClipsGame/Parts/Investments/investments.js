@@ -153,12 +153,12 @@ class Investments extends Component {
                         <div className="investments-part1">
                             <Button
                                 className="investments-button"
-                                onClick={this.props.startInvestments}
+                                onClick={this.props.startInvestmentsDeposit}
                                 text={"Deposit"}
                             />
                             <Button
                                 className="investments-button"
-                                // onClick={this.props.raisePrice}
+                                onClick={this.props.startInvestmentsWithdraw}
                                 text={"Withdraw"}
                             />
                         </div>
@@ -215,7 +215,8 @@ export default connect(
         return {
             toggleDropdownInvestments: bindActionCreators(Actions.toggleDropdownInvestments, dispatch),
             closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch),
-            startInvestments: bindActionCreators(Actions.startInvestments, dispatch),
+            startInvestmentsDeposit: bindActionCreators(Actions.startInvestmentsDeposit, dispatch),
+            startInvestmentsWithdraw: bindActionCreators(Actions.startInvestmentsWithdraw, dispatch),
         };
     }
 )(Investments);

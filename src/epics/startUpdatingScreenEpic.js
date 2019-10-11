@@ -19,9 +19,9 @@ export const startUpdatingScreenEpic = (action$, state$) =>
     action$
     .ofType(actionTypes.START_UPDATING_SCREEN)
     .mergeMap(action => {
-        return interval(5000).pipe(
+        return interval(7000).pipe(
             mergeMap(() => {
-                let randomNum = Utility.getRandomAmount(state$.value.business.investmentsCash);
+                let randomNum = Utility.getRandomAmount(state$.value.business.fakeInvestmentsCash);
                 let randomPrice = Utility.getRandomPrice();
                 let randomProfitLoss = Utility.getRandomProfitLoss();
                 let randomLetters = Utility.getRandomLetters();
@@ -32,7 +32,7 @@ export const startUpdatingScreenEpic = (action$, state$) =>
                     total: randomNum * randomPrice,
                     profitLoss: randomNum * randomProfitLoss
                 }
-                    // console.log("obj", obj)
+                
                 return Observable.of(
                     Actions.addInvestmentsLine(obj)
                 )   

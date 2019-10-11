@@ -88,7 +88,7 @@ export {
     stopUpdatingUnsoldInventory,
     startImprovingMarketing,
     updateClipsPerSec,
-    startInvestments,
+    startInvestmentsDeposit,
     getDeposit,
     startUpdatingScreen,
     addInvestmentsLine,
@@ -99,5 +99,7 @@ export {
     updateInvestmentsCash,
     updateInvestmentsStocks,
     startApplyingProfitLoss,
-    updateFakeInvestmentsCash
+    updateFakeInvestmentsCash,
+    startInvestmentsWithdraw,
+    updateFundsWithdraw
 } from './businessActions';

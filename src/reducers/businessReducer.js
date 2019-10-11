@@ -622,6 +622,12 @@ const updateFakeInvestmentsCash = (state, action) => {
     });
 }
 
+const updateFundsWithdraw = (state, action) => {
+    return updateObject(state, {
+        funds: action.val
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -803,7 +809,7 @@ const businessReducer = (state = initialState, action) => {
             return showMegaClippers(state, action);
         case actionTypes.CALC_DELAY_UNSOLD_INVENTARY:
             return calcDelayUnsoldInventary(state, action);
-        case actionTypes.START_INVESTMENTS:
+        case actionTypes.START_INVESTMENTS_DEPOSIT:
             return state;
         case actionTypes.GET_DEPOSIT:
             return getDeposit(state, action);
@@ -825,6 +831,10 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.UPDATE_FAKE_INVESTMENTS_CASH:
             return updateFakeInvestmentsCash(state, action);
+        case actionTypes.START_INVESTMENTS_WITHDRAW:
+            return state;
+        case actionTypes.UPDATE_FUNDS_WITHDRAW:
+            return updateFundsWithdraw(state, action);
         default: 
             return state;
     }

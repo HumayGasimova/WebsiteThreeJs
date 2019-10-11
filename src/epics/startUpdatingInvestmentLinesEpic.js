@@ -23,7 +23,6 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
             mergeMap(() => {
                 let investmentsLines = [...state$.value.business.investmentsLines];
 
-                let randomNum = Utility.getRandomAmount(state$.value.business.investmentsCash);
                 let randomPrice1 = Utility.getRandomPrice();
                 let randomPrice2 = Utility.getRandomPrice();
                 let randomPrice3 = Utility.getRandomPrice();
@@ -86,10 +85,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                         }
                     }
                 })
-                console.log(Utility.getRandomAmount(10000000000))
-                console.log(Utility.getRandomAmount(1000000))
-                console.log(Utility.getRandomAmount(1000))
-                console.log(Utility.getRandomAmount(1000000000))
+               
                 return Observable.of(
                     Actions.updateInvestmentsLines(investmentsLines)
                 )   

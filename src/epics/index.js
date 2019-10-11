@@ -30,12 +30,12 @@ import throwMegaClippersEpic from '../epicsProject/throwMegaClippersEpic';
 import startUpdatingUnsoldInventoryEpic from './startUpdatingUnsoldInventoryEpic';
 import startImprovingMarketingEpic from './startImprovingMarketingEpic';
 import catchPaperclipsEpic from './catchPaperclipsEpic';
-import startInvestmentsEpic from './startInvestmentsEpic';
+import startInvestmentsDepositEpic from './startInvestmentsDepositEpic';
 import startUpdatingScreenEpic from './startUpdatingScreenEpic';
 import startUpdatingInvestmentLinesEpic from './startUpdatingInvestmentLinesEpic';
 import startCountingRiskEpic from './startCountingRiskEpic';
 import startApplyingProfitLossEpic from './startApplyingProfitLossEpic';
-
+import startInvestmentsWithdrawEpic from './startInvestmentsWithdrawEpic';
 
 export const rootEpic = combineEpics(
     checkButtonsEpic,
@@ -67,9 +67,10 @@ export const rootEpic = combineEpics(
     startUpdatingUnsoldInventoryEpic,
     startImprovingMarketingEpic,
     catchPaperclipsEpic,
-    startInvestmentsEpic,
+    startInvestmentsDepositEpic,
     startUpdatingScreenEpic,
     startUpdatingInvestmentLinesEpic,
     startCountingRiskEpic,
-    startApplyingProfitLossEpic
+    startApplyingProfitLossEpic,
+    startInvestmentsWithdrawEpic
 );

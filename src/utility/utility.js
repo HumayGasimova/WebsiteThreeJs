@@ -15,10 +15,15 @@ export const getDenominator = (val) => {
 
 export const getRandomAmount = (val) => {
     let randomNumber;
+  
     if(val <= 1000000){
-        let length = getLength(val) - 2;
-        let subtract = getDenominator(length);
-        randomNumber = Math.floor(Math.random()*val) + subtract;
+        if(val <= 100){
+            randomNumber = Math.floor(Math.random()*100) + 10;
+        }else{
+            let length = getLength(val) - 2;
+            let subtract = getDenominator(length);
+            randomNumber = Math.floor(Math.random()*val) + subtract;
+        }
     }else{
         randomNumber = Math.floor(Math.random()*1000000) + 100000;
     }

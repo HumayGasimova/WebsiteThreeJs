@@ -6,9 +6,9 @@ import 'rxjs/add/operator/delay';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function startInvestmentsEpic(action$, state$) { 
+function startInvestmentsDepositEpic(action$, state$) { 
     return action$
-        .ofType(actionTypes.START_INVESTMENTS)
+        .ofType(actionTypes.START_INVESTMENTS_DEPOSIT)
         .mergeMap(action => {
             let deposit = state$.value.business.funds
             return Observable.of(
@@ -21,4 +21,4 @@ function startInvestmentsEpic(action$, state$) {
         })       
 }
 
-export default startInvestmentsEpic;
+export default startInvestmentsDepositEpic;

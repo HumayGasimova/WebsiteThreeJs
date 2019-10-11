@@ -575,9 +575,9 @@ export function updateClipsPerSec(val) {
     };
 };
 
-export function startInvestments() {
+export function startInvestmentsDeposit() {
     return { 
-        type: actionTypes.START_INVESTMENTS
+        type: actionTypes.START_INVESTMENTS_DEPOSIT
     };
 };
 
@@ -650,6 +650,19 @@ export function updateFakeInvestmentsCash(val) {
     return { 
         type: actionTypes.UPDATE_FAKE_INVESTMENTS_CASH,
         cash: val
+    };
+};
+
+export function startInvestmentsWithdraw() {
+    return { 
+        type: actionTypes.START_INVESTMENTS_WITHDRAW
+    };
+};
+
+export function updateFundsWithdraw(val) {
+    return { 
+        type: actionTypes.UPDATE_FUNDS_WITHDRAW,
+        val: val
     };
 };
 
