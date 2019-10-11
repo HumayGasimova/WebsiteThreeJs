@@ -7,7 +7,7 @@ const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
     funds: 100, //pomenat na 0
-    paperclipPrice: 10000, // 0.5
+    paperclipPrice: 1000000000, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
     publicDemand: 16,

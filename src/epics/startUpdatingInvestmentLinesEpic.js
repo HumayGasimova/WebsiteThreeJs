@@ -86,6 +86,10 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                         }
                     }
                 })
+                console.log(Utility.getRandomAmount(10000000000))
+                console.log(Utility.getRandomAmount(1000000))
+                console.log(Utility.getRandomAmount(1000))
+                console.log(Utility.getRandomAmount(1000000000))
                 return Observable.of(
                     Actions.updateInvestmentsLines(investmentsLines)
                 )   
