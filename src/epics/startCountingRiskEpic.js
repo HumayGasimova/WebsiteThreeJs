@@ -22,7 +22,7 @@ export const startCountingRiskEpic = (action$, state$) =>
     .mergeMap(action => {
         return interval(12000).pipe(
             mergeMap(() => {
-                let depositCash = +state$.value.business.investmentsCash;
+                let depositCash = +state$.value.business.fakeInvestmentsCash;
                 let half1 = Utility.getRandomPercent();
                 let half2 = 100 - half1;
                 let cash = +(depositCash * half1 /100).toFixed();

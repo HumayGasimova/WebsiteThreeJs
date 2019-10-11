@@ -60,6 +60,7 @@ const initialState = {
     megaClippersIsShown: false,
     delayUnsoldInventary: 4375,
     delayUnsoldInventaryConst: 700,
+    fakeInvestmentsCash: 0,
     investmentsCash: 0,
     investmentsTotal: 0,
     investmentsStocks: 0,
@@ -551,7 +552,8 @@ const getDeposit = (state, action) => {
     }
     return updateObject(state, {
         funds: 0,
-        investmentsCash: updatedCash
+        investmentsCash: updatedCash,
+        fakeInvestmentsCash: updatedCash
     });
 }
 
