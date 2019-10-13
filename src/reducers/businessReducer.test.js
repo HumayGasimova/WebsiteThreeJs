@@ -72,7 +72,7 @@ describe('businessReducer', () => {
        expect(reducer(undefined, {})).toEqual(state);
     })
 
-    it("should return the initial state", () => {
+    it("should add 1 paperclips, add 1 to unsoldInventory and subtract 1 from wire", () => {
         expect(reducer(state, {type: actionTypes.MAKE_PAPERCLIP})).toEqual(
             {
                ...state,
