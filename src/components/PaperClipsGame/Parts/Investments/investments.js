@@ -45,7 +45,7 @@ import * as Utility from '../../../../utility';
 * Investments component definition and export
 */
 
-class Investments extends Component {
+export class Investments extends Component {
 
     /**
     * Constructor

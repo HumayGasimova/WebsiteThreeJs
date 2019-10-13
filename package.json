@@ -4,10 +4,19 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server",
-    "deploy:firebase": "npm run build && firebase deploy"
+    "deploy:firebase": "npm run build && firebase deploy",
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -19,6 +28,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.10.0",
     "file-loader": "^3.0.1",
     "history": "^4.9.0",
     "html-loader": "^0.5.5",
@@ -36,10 +46,14 @@
   "dependencies": {
     "axios": "^0.19.0",
     "connected-react-router": "^6.3.2",
+    "enzyme-adapter-react-16": "^1.15.1",
     "firebase-tools": "^7.2.1",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-spring": "^8.0.20",
+    "react-test-renderer": "^16.10.2",
     "redux-logger": "^3.0.6",
     "redux-observable": "^1.1.0",
     "redux-thunk": "^2.3.0",
