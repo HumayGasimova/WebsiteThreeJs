@@ -4,11 +4,6 @@ import { shallow } from 'enzyme';
 import { Investments } from './investments';
 import Button from '../../../../library/Button/button';
 
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
-
 describe('<Investments / >', () => {
     let wrapper;
 
