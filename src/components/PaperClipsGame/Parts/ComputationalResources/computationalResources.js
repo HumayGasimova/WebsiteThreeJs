@@ -48,7 +48,7 @@ import * as projectsToAdd from '../../../../constants/projectsToAdd';
 * ComputationalResources component definition and export
 */
 
-class ComputationalResources extends Component {
+export class ComputationalResources extends Component {
 
     /**
     * Constructor

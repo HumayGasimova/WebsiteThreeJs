@@ -43,7 +43,7 @@ import * as chipsToAdd from '../../../../constants/chipsToAdd';
 * Projects component definition and export
 */
 
-class Projects extends Component {
+export class Projects extends Component {
 
     /**
     * Constructor

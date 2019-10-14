@@ -10,7 +10,7 @@ describe('<Section1/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Section1 />);
+        wrapper = shallow(<Section1/>);
     });
 
     it("should render <General/>, <Business/>, <Manufacturing/>", () => {

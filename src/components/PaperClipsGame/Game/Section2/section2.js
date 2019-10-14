@@ -37,7 +37,7 @@ import * as Actions from '../../../../actions';
 * Section2 component definition and export
 */
 
-class Section2 extends Component {
+export class Section2 extends Component {
 
     /**
     * Constructor
@@ -52,8 +52,8 @@ class Section2 extends Component {
     */
 
     renderSection2 = () => {
-        // if(this.props.paperClips >= 2000){
-            if(this.props.paperClips){
+        if(this.props.paperClips >= 2000){
+        // if(this.props.paperClips){
             return(
                 <div>
                     <ComputationalResources/>
