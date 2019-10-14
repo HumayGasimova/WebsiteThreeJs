@@ -19,6 +19,7 @@ import {
 */
 
 import Button from '../../../../library/Button/button';
+import RevTracker from './RevTracker/revTracker';
 
 /**
 * Styles
@@ -56,17 +57,6 @@ export class Business extends Component {
     * Methods
     */
 
-    renderRevTracker = () => {
-        if(this.props.revTracker){
-            return(
-                <div>
-                    <div className="business-text">Avg. Rev. per sec: $ 0.00</div>
-                    <div className="business-text">Avg. Clips Sold per sec: $ </div>
-                </div>
-            )
-        }
-    }
-
     componentDidMount() {
         this.props.startUpdatingUnsoldInventory();
     }
@@ -82,7 +72,7 @@ export class Business extends Component {
                 <div className="business-line"/>
                 <div className="business-section">
                     <div className="business-text">Available Funds: $ {Utility.commaSeparator(this.props.funds)}</div>
-                    {this.renderRevTracker()}
+                    {this.props.revTracker ? <RevTracker/> : null}
                     <div className="business-text">Unsold Inventory: {this.props.unsoldInventory}</div>
                     <div className="business-wrapper1">
                         <Button

@@ -13,7 +13,7 @@ describe('<Investments/>', () => {
         wrapper = shallow(<Investments investmentsCash={1000} investmentsStocks={1000} investmentsTotal={1000} investmentsLines={['']} chosenListDropdown={['']}/>);
     });
 
-    it("should render three <Buttons/> and <Dropdown/>", () => {
+    it("should render three <Buttons/>, <Dropdown/> and <Grid/>", () => {
         // wrapper.setProps({})
        expect(wrapper.find(Button)).toHaveLength(3);
        expect(wrapper.find(Dropdown)).toHaveLength(1);
