@@ -38,7 +38,7 @@ import * as Actions from '../../../../actions';
 * Section3 component definition and export
 */
 
-class Section3 extends Component {
+export class Section3 extends Component {
 
     /**
     * Constructor
@@ -53,8 +53,8 @@ class Section3 extends Component {
     */
 
     renderSection3 = () => {
-        // if(this.props.paperClips >= 2000){
-            if(this.props.paperClips){
+        if(this.props.paperClips >= 2000){
+            // if(this.props.paperClips){
             return(
                 <div>
                     {this.props.showInvestmentEngine ? <Investments/> : null}
@@ -85,18 +85,13 @@ export default connect(
             showInvestmentEngine: state.business.showInvestmentEngine,
             showStrategicModeling: state.business.showStrategicModeling,
             showDropdownInvestments: state.business.showDropdownInvestments,
-            showDropdownStrategicModeling: state.business.showDropdownStrategicModeling         
-            // paperclipPrice: state.business.paperclipPrice,
-            // publicDemand: state.business.publicDemand,
-            // marketingLevel: state.business.marketingLevel,
+            showDropdownStrategicModeling: state.business.showDropdownStrategicModeling
   
         };
     },
     (dispatch) => {
         return {
             closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
-            // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
-            // marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
         };
     }
 )(Section3);
