@@ -39,7 +39,7 @@ import * as Actions from '../../../../actions';
 * StrategicModeling component definition and export
 */
 
-class StrategicModeling extends Component {
+export class StrategicModeling extends Component {
 
     /**
     * Constructor
@@ -132,10 +132,6 @@ export default connect(
             listStrategicModeling: state.business.listStrategicModeling,
             showDropdownStrategicModeling: state.business.showDropdownStrategicModeling,
             chosenListDropdown: state.business.chosenListDropdown,
-            // paperclipPrice: state.business.paperclipPrice,
-            // delay: state.business.delay,
-            // wire: state.business.wire,
-            // makePaperclipDisabled: state.business.makePaperclipDisabled
         };
     },
     (dispatch) => {

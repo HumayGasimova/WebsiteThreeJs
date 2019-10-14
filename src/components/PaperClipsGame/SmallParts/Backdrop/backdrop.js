@@ -26,7 +26,7 @@ import * as Actions from '../../../../actions';
 * Backdrop component definition and export
 */
 
-class Backdrop extends Component {
+export class Backdrop extends Component {
 
     /**
     * Constructor
