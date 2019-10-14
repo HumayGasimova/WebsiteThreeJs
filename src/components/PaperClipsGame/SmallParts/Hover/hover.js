@@ -34,7 +34,7 @@ import * as Actions from '../../../../actions';
 * Card component definition and export
 */
 
-class Hover extends Component {
+export class Hover extends Component {
 
     /**
     * Constructor

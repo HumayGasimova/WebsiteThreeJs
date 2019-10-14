@@ -41,19 +41,6 @@ import * as Actions from '../../../../actions';
 * Manufacturing component definition and export
 */
 
-// const clicks = new Observable(observer => {
-//     const handler = (e) => observer.next(e);
-//     button.addEventListener('click', handler);
-//     return () => button.removeEventListener('click', handler);
-// });
-// const subject = new Subject();
-// const button = document.querySelector('wireButton');
-
-// button.addEventListener('click', () => subject.next('click'));
-// subject.subscribe(x => console.log(x))
-
-// const click$ = Observable.fromEvent(button, 'click');
-
 export class Manufacturing extends Component {
 
     /**
@@ -62,21 +49,11 @@ export class Manufacturing extends Component {
 
     constructor (props){
         super(props);
-        // this.buttonRef = React.createRef();
     }
 
     /**
     * Methods
     */
-
-    componentDidMount() {
-        // click$
-        // .bufferWhen(() => click$.delay(400))
-        // .subscribe((res) => {
-        //     console.log(Math.random().toString(36).slice(2)) ;
-        // });
-    }
-   
 
     /**
     * Methods
