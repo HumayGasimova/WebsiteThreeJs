@@ -40,7 +40,7 @@ export const startUpdatingScreenEpic = (action$, state$) =>
                     // .delay(1000)
                     // .repeat(state$.value.business.autoClippersPerSec)
             ),
-            // takeUntil(action$.ofType(actionTypes.STOP))
+            takeUntil(action$.ofType(actionTypes.STOP_UPDATING_SCREEN))
         )
     })
 

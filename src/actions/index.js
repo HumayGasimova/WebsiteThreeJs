@@ -101,5 +101,6 @@ export {
     startApplyingProfitLoss,
     updateFakeInvestmentsCash,
     startInvestmentsWithdraw,
-    updateFundsWithdraw
+    updateFundsWithdraw,
+    stopUpdatingScreen
 } from './businessActions';

@@ -842,6 +842,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.UPDATE_FUNDS_WITHDRAW:
             return updateFundsWithdraw(state, action);
+        case actionTypes.STOP_UPDATING_SCREEN:
+            return state;
         default: 
             return state;
     }

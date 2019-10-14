@@ -666,7 +666,11 @@ export function updateFundsWithdraw(val) {
     };
 };
 
-
+export function stopUpdatingScreen() {
+    return { 
+        type: actionTypes.STOP_UPDATING_SCREEN
+    };
+};
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

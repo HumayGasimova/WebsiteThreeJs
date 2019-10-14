@@ -53,58 +53,19 @@ export class Investments extends Component {
 
     constructor (props){
         super(props);
-        this.state = {
-            example: [
-                {
-                    stock: 100,
-                    amt: 100,
-                    price: 100,
-                    total: 100,
-                    pl: 100
-                },
-                {
-                    stock: 100,
-                    amt: 100,
-                    price: 100,
-                    total: 100,
-                    pl: 100
-                },
-                {
-                    stock: 100,
-                    amt: 100,
-                    price: 100,
-                    total: 100,
-                    pl: 100
-                },
-                {
-                    stock: 100,
-                    amt: 100,
-                    price: 100,
-                    total: 100,
-                    pl: 100
-                },
-                {
-                    stock: 100,
-                    amt: 100,
-                    price: 100,
-                    total: 100,
-                    pl: 100
-                }
-            ]
-        }
     }
 
     /**
      * Methods
      */
 
-    // componentDidMount = () => {
-    //     this.intervalOperations = setInterval(()=>{
-    //         if(this.props.ops < this.props.opsMax){
-    //             this.props.increaseOps()
-    //         }
-    //     }, this.state.delayOperations);
-    // }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.investmentsCash !== this.props.investmentsCash || prevProps.investmentsStocks !== this.props.investmentsStocks) {
+            if(this.props.investmentsCash === 0 && this.props.investmentsTotal === 0 && this.props.investmentsStocks === 0){
+                this.props.stopUpdatingScreen();
+            }
+        }
+    }
 
     renderGrid = () => {
         if(true){
@@ -217,6 +178,7 @@ export default connect(
             closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch),
             startInvestmentsDeposit: bindActionCreators(Actions.startInvestmentsDeposit, dispatch),
             startInvestmentsWithdraw: bindActionCreators(Actions.startInvestmentsWithdraw, dispatch),
+            stopUpdatingScreen: bindActionCreators(Actions.stopUpdatingScreen, dispatch),
         };
     }
 )(Investments);
