@@ -25,7 +25,7 @@ import './game.scss';
 * Game component definition and export
 */
 
-class Game extends Component {
+export class Game extends Component {
 
     /**
     * Constructor
