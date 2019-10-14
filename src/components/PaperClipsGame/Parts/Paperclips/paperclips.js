@@ -42,7 +42,7 @@ import * as Utility from '../../../../utility';
 * Paperclips component definition and export
 */
 
-class Paperclips extends Component {
+export class Paperclips extends Component {
 
     /**
     * Constructor

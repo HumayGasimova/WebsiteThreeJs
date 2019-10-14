@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 
 import { Investments } from './investments';
 import Button from '../../../../library/Button/button';
+import Dropdown from '../../SmallParts/Dropdown/dropdown';
+import Grid from '../../SmallParts/Grid/grid';
 
 describe('<Investments/>', () => {
     let wrapper;
@@ -11,8 +13,10 @@ describe('<Investments/>', () => {
         wrapper = shallow(<Investments investmentsCash={1000} investmentsStocks={1000} investmentsTotal={1000} investmentsLines={['']} chosenListDropdown={['']}/>);
     });
 
-    it("should render three <Buttons/>", () => {
+    it("should render three <Buttons/> and <Dropdown/>", () => {
         // wrapper.setProps({})
        expect(wrapper.find(Button)).toHaveLength(3);
+       expect(wrapper.find(Dropdown)).toHaveLength(1);
+       expect(wrapper.find(Grid)).toHaveLength(1);
     })
 });

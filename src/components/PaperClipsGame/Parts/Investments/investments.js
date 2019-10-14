@@ -68,7 +68,7 @@ export class Investments extends Component {
     }
 
     renderGrid = () => {
-        if(true){
+        // if(true){
             return(
                 <div>
                     {this.props.investmentsLines.map((el,i) => {
@@ -86,7 +86,7 @@ export class Investments extends Component {
                     })}
                 </div>
             )
-        }
+        // }
     }
     
     /**
