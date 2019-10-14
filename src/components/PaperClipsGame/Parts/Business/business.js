@@ -42,7 +42,7 @@ import * as Utility from '../../../../utility';
 * Business component definition and export
 */
 
-class Business extends Component {
+export class Business extends Component {
 
     /**
     * Constructor

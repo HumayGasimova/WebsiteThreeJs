@@ -43,7 +43,7 @@ import * as Utility from '../../../../utility';
 * General component definition and export
 */
 
-class General extends Component {
+export class General extends Component {
 
     /**
     * Constructor

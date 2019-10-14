@@ -54,7 +54,7 @@ import * as Actions from '../../../../actions';
 
 // const click$ = Observable.fromEvent(button, 'click');
 
-class Manufacturing extends Component {
+export class Manufacturing extends Component {
 
     /**
     * Constructor

@@ -83,20 +83,11 @@ export default connect(
     (state) => {
         return {
             paperClips: state.business.paperClips,
-            // unsoldInventory: state.business.unsoldInventory,
-            // funds: state.business.funds,
-            // paperclipPrice: state.business.paperclipPrice,
-            // publicDemand: state.business.publicDemand,
-            // marketingLevel: state.business.marketingLevel,
-            // marketingCost: state.business.marketingCost,
-            // marketingButtonDisabled: state.business.marketingButtonDisabled
         };
     },
     (dispatch) => {
         return {
             closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
-            // raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
-            // marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
         };
     }
 )(Section2);

@@ -38,7 +38,7 @@ import * as Actions from '../../../../actions';
 * Section1 component definition and export
 */
 
-class Section1 extends Component {
+export class Section1 extends Component {
 
     /**
     * Constructor
