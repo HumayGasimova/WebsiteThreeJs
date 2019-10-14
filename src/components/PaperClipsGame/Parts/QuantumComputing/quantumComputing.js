@@ -37,7 +37,7 @@ import * as Actions from '../../../../actions';
 * QuantumComputing component definition and export
 */
 
-class QuantumComputing extends Component {
+export class QuantumComputing extends Component {
 
     /**
     * Constructor
