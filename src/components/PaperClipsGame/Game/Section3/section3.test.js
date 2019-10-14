@@ -35,8 +35,18 @@ describe('<Section2/>', () => {
         expect(wrapper.find(Backdrop)).toHaveLength(1);
     })
 
+    it("should not render <Backdrop/> if showDropdownInvestments set to false", () => {
+        wrapper.setProps({showDropdownInvestments: false})
+        expect(wrapper.find(Backdrop)).toHaveLength(0);
+    })
+
     it("should render <Backdrop/> if showDropdownStrategicModeling set to true", () => {
         wrapper.setProps({showDropdownStrategicModeling: true})
         expect(wrapper.find(Backdrop)).toHaveLength(1);
+    })
+
+    it("should not render <Backdrop/> if showDropdownStrategicModeling set to false", () => {
+        wrapper.setProps({showDropdownStrategicModeling: false})
+        expect(wrapper.find(Backdrop)).toHaveLength(0);
     })
 });
