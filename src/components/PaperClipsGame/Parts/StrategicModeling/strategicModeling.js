@@ -52,8 +52,8 @@ class StrategicModeling extends Component {
     }
 
     /**
-     * Methods
-     */
+    * Methods
+    */
 
     renderGrid = () => {
         // if(true){
@@ -96,6 +96,8 @@ class StrategicModeling extends Component {
                             dropdownTopTextClassName={"dropdown-top-text-strategicModeling"}
                             toggleDropdown={this.props.toggleDropdownStrategicModeling}
                             showDropdown={this.props.showDropdownStrategicModeling}
+                            chosenListDropdown={this.props.chosenListDropdown[1]}
+                            elementsIndexInArray={1}
                         />
                         <Button
                             className="strategicModeling-button-run"
@@ -129,7 +131,7 @@ export default connect(
         return {
             listStrategicModeling: state.business.listStrategicModeling,
             showDropdownStrategicModeling: state.business.showDropdownStrategicModeling,
-            // unsoldInventory: state.business.unsoldInventory,
+            chosenListDropdown: state.business.chosenListDropdown,
             // paperclipPrice: state.business.paperclipPrice,
             // delay: state.business.delay,
             // wire: state.business.wire,

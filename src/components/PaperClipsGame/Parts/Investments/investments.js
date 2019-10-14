@@ -108,6 +108,8 @@ export class Investments extends Component {
                             dropdownTopTextClassName={"dropdown-top-text-investments"}
                             toggleDropdown={this.props.toggleDropdownInvestments}
                             showDropdown={this.props.showDropdownInvestments}
+                            chosenListDropdown={this.props.chosenListDropdown[0]}
+                            elementsIndexInArray={0}
                         />
                     </div>
                     <div className="investments-wrapper1">
@@ -169,7 +171,7 @@ export default connect(
             investmentsTotal: state.business.investmentsTotal,
             investmentsStocks: state.business.investmentsStocks,
             investmentsLines: state.business.investmentsLines,
-            // makePaperclipDisabled: state.business.makePaperclipDisabled
+            chosenListDropdown: state.business.chosenListDropdown
         };
     },
     (dispatch) => {

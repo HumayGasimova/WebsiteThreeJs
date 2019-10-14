@@ -39,6 +39,7 @@ const initialState = {
     makePaperclipDisabled: false,
     creativityTurnOn: false,
     listInvestments: ["Low Risk","Med Risk","High Risk"],
+    chosenListDropdown: ["Low Risk","Pick a Start"],
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
     showInvestmentEngine: true,
@@ -419,13 +420,15 @@ const addNewStrategy = (state, action) => {
 
 const toggleDropdownInvestments = (state, action) => {
     return updateObject(state, {
-        showDropdownInvestments: !state.showDropdownInvestments
+        showDropdownInvestments: !state.showDropdownInvestments,
+        showDropdownStrategicModeling: false,
     });
 }
 
 const toggleDropdownStrategicModeling = (state, action) => {
     return updateObject(state, {
-        showDropdownStrategicModeling: !state.showDropdownStrategicModeling
+        showDropdownStrategicModeling: !state.showDropdownStrategicModeling,
+        showDropdownInvestments: false
     });
 }
 
@@ -635,6 +638,14 @@ const updateFundsWithdraw = (state, action) => {
     });
 }
 
+const addChosenFromDropdown = (state, action) => {
+    let updatedChosenListDropdown = [...state.chosenListDropdown];
+    updatedChosenListDropdown.splice(action.index, 1, action.chosen)
+    console.log(updatedChosenListDropdown)
+    return updateObject(state, {
+        chosenListDropdown: updatedChosenListDropdown
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -844,6 +855,11 @@ const businessReducer = (state = initialState, action) => {
             return updateFundsWithdraw(state, action);
         case actionTypes.STOP_UPDATING_SCREEN:
             return state;
+        case actionTypes.CHOOSE_FROM_DROPDOWN:
+            return state;
+        case actionTypes.ADD_CHOSEN_FROM_DROPDOWN:
+            return addChosenFromDropdown(state, action);
+            
         default: 
             return state;
     }

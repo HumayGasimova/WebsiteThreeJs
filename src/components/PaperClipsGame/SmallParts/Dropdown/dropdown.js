@@ -54,6 +54,16 @@ class Dropdown extends Component {
         // }
     }
 
+
+    /**
+    * Methods
+    */
+
+    handleOnClick = (i, el) => {
+        console.log(i,el,this.props.elementsIndexInArray)
+        this.props.chooseFromDropdown(el, this.props.elementsIndexInArray);
+    }
+
     /**
     * Methods
     */
@@ -63,7 +73,10 @@ class Dropdown extends Component {
            <div className={this.props.dropdownBottomClassName}>
                {this.props.list.map((el,i) => {
                    return(
-                        <div key={i}>
+                        <div 
+                            onClick={() =>this.handleOnClick(i, el)}
+                            key={i}
+                        >
                             {el}
                         </div>
                    )
@@ -84,7 +97,7 @@ class Dropdown extends Component {
                     onClick={()=>{this.props.toggleDropdown()}}
                 >
                     <div className={this.props.dropdownTopTextClassName}> 
-                        {this.props.list[0]}
+                        {this.props.chosenListDropdown}
                     </div>
                     <div>
                         <img src={Arrow} alt="arrow"/>
@@ -108,7 +121,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // toggleDropdown: bindActionCreators(Actions.toggleDropdown, dispatch),
+            chooseFromDropdown: bindActionCreators(Actions.chooseFromDropdown, dispatch),
             // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
         };
     }

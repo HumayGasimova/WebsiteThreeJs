@@ -102,5 +102,7 @@ export {
     updateFakeInvestmentsCash,
     startInvestmentsWithdraw,
     updateFundsWithdraw,
-    stopUpdatingScreen
+    stopUpdatingScreen,
+    chooseFromDropdown,
+    addChosenFromDropdown
 } from './businessActions';

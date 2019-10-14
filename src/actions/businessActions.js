@@ -672,6 +672,24 @@ export function stopUpdatingScreen() {
     };
 };
 
+export function chooseFromDropdown(chosen, index) {
+    return { 
+        type: actionTypes.CHOOSE_FROM_DROPDOWN,
+        chosen: chosen,
+        index: index
+    };
+};
+
+export function addChosenFromDropdown(chosen, index) {
+    return { 
+        type: actionTypes.ADD_CHOSEN_FROM_DROPDOWN,
+        chosen: chosen,
+        index: index
+    };
+};
+
+
+
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {
 
