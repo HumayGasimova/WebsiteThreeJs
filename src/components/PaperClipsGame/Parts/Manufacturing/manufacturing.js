@@ -24,6 +24,7 @@ import 'rxjs/add/observable/fromEvent';
 */
 
 import Button from '../../../../library/Button/button';
+import AutoClippers from './AutoClippers/autoClippers';
 
 /**
 * Styles
@@ -59,24 +60,24 @@ export class Manufacturing extends Component {
     * Methods
     */
 
-    renderAutoClippers = () => {
-        if(this.props.autoClipperInitPrice === 5){
-            return(
-                <div className="manufacturing-section">
-                    <div className="manufacturing-wrapper2">
-                        <Button
-                            onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
-                            text={"AutoClippers"}
-                            disabled={this.props.autoClippersButtonDisabled}
+    // renderAutoClippers = () => {
+    //     if(this.props.autoClipperInitPrice === 5){
+    //         return(
+    //             <div className="manufacturing-section">
+    //                 <div className="manufacturing-wrapper2">
+    //                     <Button
+    //                         onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
+    //                         text={"AutoClippers"}
+    //                         disabled={this.props.autoClippersButtonDisabled}
                        
-                        />
-                        <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
-                    </div>
-                    <div className="manufacturing-text">Cost: ${this.props.autoClippersPerSec === 0 ? this.props.autoClipperInitPrice : this.props.autoClipperPrice}</div>
-                </div>  
-            )
-        }
-    }
+    //                     />
+    //                     <div className="manufacturing-text">{this.props.autoClippersPerSec}</div>
+    //                 </div>
+    //                 <div className="manufacturing-text">Cost: ${this.props.autoClippersPerSec === 0 ? this.props.autoClipperInitPrice : this.props.autoClipperPrice}</div>
+    //             </div>  
+    //         )
+    //     }
+    // }
 
     renderMegaClippers = () => {
         if(this.props.megaClippersIsShown){
@@ -194,7 +195,7 @@ export class Manufacturing extends Component {
                     </div>
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
-                {this.renderAutoClippers()}
+                {this.props.autoClipperInitPrice === 5 ? <AutoClippers/> : null}
                 {this.renderMegaClippers()}
             </div>
         );
