@@ -26,6 +26,8 @@ import 'rxjs/add/observable/fromEvent';
 import Button from '../../../../library/Button/button';
 import AutoClippers from './AutoClippers/autoClippers';
 import MegaClippers from './MegaClippers/megaClippers';
+import AutoWireBuyer from './AutoWireBuyer/autoWireBuyer';
+
 
 /**
 * Styles
@@ -117,21 +119,6 @@ export class Manufacturing extends Component {
         this.props.clickWireButton();
     }
 
-    renderAutoWireBuyer = () => {
-        if(this.props.wireBuyerIsShown){
-            return(
-                <div className="manufacturing-wrapper3">
-                    <Button
-                        onClick={this.props.toggleAutoWireBuyer}
-                        text={"WireBuyer"}
-                        // disabled={this.props.wireButtonDisabled}
-                    />
-                    <div className="manufacturing-text">{this.props.autoWireBuyerIsOn ? "ON" : "OFF"}</div>
-                </div>
-            )
-        }
-    }
-
     /**
     * Markup
     */
@@ -145,7 +132,7 @@ export class Manufacturing extends Component {
                     <div className="manufacturing-text">Clips per Second: {this.props.clipsPerSec}</div>
                 </div>
                 <div className="manufacturing-section">
-                    {this.renderAutoWireBuyer()}
+                    {this.props.wireBuyerIsShown ? <AutoWireBuyer/> : null}
                     <div className="manufacturing-wrapper1">
                         <Button
                             onClick={this.wireButtonToggle}

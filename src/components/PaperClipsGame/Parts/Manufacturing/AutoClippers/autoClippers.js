@@ -62,7 +62,7 @@ export class AutoClippers extends Component {
     render(){
         return(
             <div className="autoClipper-section">
-                <div className="autoClipper-wrapper2">
+                <div className="autoClipper-wrapper1">
                     <Button
                         onClick={()=>this.props.autoPaperclips(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire)}
                         text={"AutoClippers"}
