@@ -28,7 +28,7 @@ import './terminalRight.scss';
 * TerminalRight component definition and export
 */
 
-class TerminalRight extends Component {
+export class TerminalRight extends Component {
 
     /**
     * Constructor

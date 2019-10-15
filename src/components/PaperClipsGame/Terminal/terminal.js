@@ -24,7 +24,7 @@ import './terminal.scss';
 * Terminal component definition and export
 */
 
-class Terminal extends Component {
+export class Terminal extends Component {
 
     /**
     * Constructor
