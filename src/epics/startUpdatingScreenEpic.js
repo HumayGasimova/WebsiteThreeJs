@@ -19,7 +19,7 @@ export const startUpdatingScreenEpic = (action$, state$) =>
     action$
     .ofType(actionTypes.START_UPDATING_SCREEN)
     .mergeMap(action => {
-        return interval(7000).pipe(
+        return interval(state$.value.business.delayUpdatingInvScreen).pipe(
             mergeMap(() => {
                 let randomNum = Utility.getRandomAmount(state$.value.business.fakeInvestmentsCash);
                 let randomPrice = Utility.getRandomPrice();

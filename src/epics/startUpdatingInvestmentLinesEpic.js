@@ -19,7 +19,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
     action$
     .ofType(actionTypes.START_UPDATING_INVESTMENTS_LINE)
     .mergeMap(action => {
-        return interval(3000).pipe(
+        return interval(state$.value.business.delayUpdatingInvLines).pipe(
             mergeMap(() => {
                 let investmentsLines = [...state$.value.business.investmentsLines];
 

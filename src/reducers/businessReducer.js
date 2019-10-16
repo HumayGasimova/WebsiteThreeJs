@@ -66,7 +66,9 @@ const initialState = {
     investmentsTotal: 0,
     investmentsStocks: 0,
     investmentsLines: ["","","","",""],
-    risk: "lowRisk"
+    risk: "lowRisk",
+    delayUpdatingInvScreen: 10000,
+    delayUpdatingInvLines: 5000 
 }
 
 const makePaperclip = (state) => {
