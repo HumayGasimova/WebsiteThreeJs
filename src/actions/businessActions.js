@@ -593,6 +593,12 @@ export function startUpdatingScreen() {
     };
 };
 
+export function stopUpdatingScreen() {
+    return { 
+        type: actionTypes.STOP_UPDATING_SCREEN
+    };
+};
+
 export function addInvestmentsLine(obj) {
     return { 
         type: actionTypes.ADD_INVESTMENTS_LINE,
@@ -603,6 +609,12 @@ export function addInvestmentsLine(obj) {
 export function startUpdatingInvestmentLines() {
     return { 
         type: actionTypes.START_UPDATING_INVESTMENTS_LINE
+    };
+};
+
+export function stopUpdatingInvestmentLines() {
+    return { 
+        type: actionTypes.STOP_UPDATING_INVESTMENTS_LINE
     };
 };
 
@@ -666,11 +678,6 @@ export function updateFundsWithdraw(val) {
     };
 };
 
-export function stopUpdatingScreen() {
-    return { 
-        type: actionTypes.STOP_UPDATING_SCREEN
-    };
-};
 
 export function chooseFromDropdown(chosen, index) {
     return { 
@@ -685,6 +692,14 @@ export function addChosenFromDropdown(chosen, index) {
         type: actionTypes.ADD_CHOSEN_FROM_DROPDOWN,
         chosen: chosen,
         index: index
+    };
+};
+
+export function updateInvestmentsDelay(delayScreen, delayLines) {
+    return { 
+        type: actionTypes.UPDATE_INVESTMENTS_DELAY,
+        delayScreen: delayScreen,
+        delayLines: delayLines
     };
 };
 
