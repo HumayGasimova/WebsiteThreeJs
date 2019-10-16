@@ -91,8 +91,10 @@ export {
     startInvestmentsDeposit,
     getDeposit,
     startUpdatingScreen,
+    stopUpdatingScreen,
     addInvestmentsLine,
     startUpdatingInvestmentLines,
+    stopUpdatingInvestmentLines,
     updateInvestmentsLines,
     startCountingRisk,
     updateInvestmentsTotal,
@@ -102,7 +104,7 @@ export {
     updateFakeInvestmentsCash,
     startInvestmentsWithdraw,
     updateFundsWithdraw,
-    stopUpdatingScreen,
     chooseFromDropdown,
-    addChosenFromDropdown
+    addChosenFromDropdown,
+    updateInvestmentsDelay
 } from './businessActions';

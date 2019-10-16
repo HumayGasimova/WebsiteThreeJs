@@ -643,11 +643,20 @@ const updateFundsWithdraw = (state, action) => {
 const addChosenFromDropdown = (state, action) => {
     let updatedChosenListDropdown = [...state.chosenListDropdown];
     updatedChosenListDropdown.splice(action.index, 1, action.chosen)
-    console.log(updatedChosenListDropdown)
     return updateObject(state, {
         chosenListDropdown: updatedChosenListDropdown
     });
 }
+
+const updateInvestmentsDelay = (state, action) => {
+    return updateObject(state, {
+        delayUpdatingInvScreen: action.delayScreen,
+        delayUpdatingInvLines: action.delayLines
+    });
+}
+
+
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -861,7 +870,10 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.ADD_CHOSEN_FROM_DROPDOWN:
             return addChosenFromDropdown(state, action);
-            
+        case actionTypes.UPDATE_INVESTMENTS_DELAY:
+            return updateInvestmentsDelay(state, action);
+        case actionTypes.STOP_UPDATING_INVESTMENTS_LINE:
+            return state;
         default: 
             return state;
     }
