@@ -12,7 +12,7 @@ function startAddingEmptyInvestmentsLineEpic(action$, state$) {
     return action$
         .ofType(actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE)
         .mergeMap(action => {
-            let randomNum = Math.floor(Math.random()*7)+2;
+            let randomNum = Math.floor(Math.random()*9)+2;
             console.log(randomNum)
             return interval(randomNum*1000).pipe(
                 mergeMap(() => {
