@@ -37,6 +37,7 @@ import startCountingRiskEpic from './startCountingRiskEpic';
 import startApplyingProfitLossEpic from './startApplyingProfitLossEpic';
 import startInvestmentsWithdrawEpic from './startInvestmentsWithdrawEpic';
 import chooseFromDropdownEpic from './chooseFromDropdownEpic';
+import startAddingEmptyInvestmentsLineEpic from './startAddingEmptyInvestmentsLineEpic';
 
 
 export const rootEpic = combineEpics(
@@ -75,5 +76,6 @@ export const rootEpic = combineEpics(
     startCountingRiskEpic,
     startApplyingProfitLossEpic,
     startInvestmentsWithdrawEpic,
-    chooseFromDropdownEpic
+    chooseFromDropdownEpic,
+    startAddingEmptyInvestmentsLineEpic
 );
