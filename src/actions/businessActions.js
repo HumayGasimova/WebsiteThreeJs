@@ -710,6 +710,12 @@ export function startAddingEmptyInvestmentsLine() {
     };
 };
 
+export function stopAddingEmptyInvestmentsLine() {
+    return { 
+        type: actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE
+    };
+};
+
 
 export const checkAuthTimeout = (expirationTime) => {
     return dispatch => {

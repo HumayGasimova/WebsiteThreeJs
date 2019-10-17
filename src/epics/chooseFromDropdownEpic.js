@@ -21,6 +21,7 @@ function chooseFromDropdownEpic(action$, state$) {
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
                         Actions.startUpdatingInvestmentLines(),
+                        Actions.stopUpdatingInvestmentLines(),
                     ) 
                 break;
                 case 'Med Risk':
@@ -32,6 +33,7 @@ function chooseFromDropdownEpic(action$, state$) {
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
                         Actions.startUpdatingInvestmentLines(),
+                        Actions.stopUpdatingInvestmentLines(),
                     ) 
                 break;
                 case 'High Risk':

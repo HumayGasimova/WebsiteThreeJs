@@ -876,6 +876,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
             return state;
+        case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
+            return state;
         default: 
             return state;
     }
