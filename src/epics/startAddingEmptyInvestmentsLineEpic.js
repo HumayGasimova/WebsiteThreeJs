@@ -12,13 +12,26 @@ function startAddingEmptyInvestmentsLineEpic(action$, state$) {
     return action$
         .ofType(actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE)
         .mergeMap(action => {
-            return interval(random).pipe(
+            return interval(2000).pipe(
+                // mergeMap(() => {
+                   
+                //     return Observable.of(
+                //          Actions.stopUpdatingScreen()
+                //      )
+                // }),
                 mergeMap(() => {
+           
                    return Observable.of(
-                        // Actions.addQOps(action.chipsNumber)
+                        // Actions.addInvestmentsLine('', false)
                     ) 
-                    .repeat(random)
+                //     .repeat(3)
                 }),
+                // mergeMap(() => {
+      
+                //     return Observable.of(
+                //          Actions.startUpdatingScreen()
+                //      )
+                // }),
                 takeUntil(action$.ofType(actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE))
             )
         })            
