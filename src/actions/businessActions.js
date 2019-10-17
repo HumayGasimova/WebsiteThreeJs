@@ -704,6 +704,11 @@ export function updateInvestmentsDelay(delayScreen, delayLines) {
     };
 };
 
+export function startAddingEmptyInvestmentsLine() {
+    return { 
+        type: actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE
+    };
+};
 
 
 export const checkAuthTimeout = (expirationTime) => {

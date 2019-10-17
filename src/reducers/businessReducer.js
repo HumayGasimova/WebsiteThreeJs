@@ -874,6 +874,8 @@ const businessReducer = (state = initialState, action) => {
             return updateInvestmentsDelay(state, action);
         case actionTypes.STOP_UPDATING_INVESTMENTS_LINE:
             return state;
+        case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
+            return state;
         default: 
             return state;
     }

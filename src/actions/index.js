@@ -106,5 +106,6 @@ export {
     updateFundsWithdraw,
     chooseFromDropdown,
     addChosenFromDropdown,
-    updateInvestmentsDelay
+    updateInvestmentsDelay,
+    startAddingEmptyInvestmentsLine
 } from './businessActions';

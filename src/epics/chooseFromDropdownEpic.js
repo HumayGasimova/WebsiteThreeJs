@@ -43,6 +43,7 @@ function chooseFromDropdownEpic(action$, state$) {
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
                         Actions.startUpdatingInvestmentLines(),
+                        Actions.startAddingEmptyInvestmentsLine()
                     ) 
                 break;
                 case 'Pick a Start':
