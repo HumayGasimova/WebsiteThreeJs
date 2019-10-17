@@ -34,7 +34,7 @@ export const startUpdatingScreenEpic = (action$, state$) =>
                 }
                 
                 return Observable.of(
-                    Actions.addInvestmentsLine(obj)
+                    Actions.addInvestmentsLine(obj, true)
                 )   
             }
                     // .delay(1000)

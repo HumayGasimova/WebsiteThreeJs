@@ -564,7 +564,7 @@ const getDeposit = (state, action) => {
 
 const addInvestmentsLine = (state, action) => {
     let updatedInvestmentsLines = [...state.investmentsLines];
-    if(state.investmentsLines.includes("")){
+    if(state.investmentsLines.includes("") && action.notEmpty){
         if(state.investmentsLines[0] === ""){
             updatedInvestmentsLines.splice(0,1,action.obj);
         }

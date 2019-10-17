@@ -599,10 +599,11 @@ export function stopUpdatingScreen() {
     };
 };
 
-export function addInvestmentsLine(obj) {
+export function addInvestmentsLine(obj, val) {
     return { 
         type: actionTypes.ADD_INVESTMENTS_LINE,
-        obj: obj
+        obj: obj,
+        notEmpty: val
     };
 };
 
