@@ -21,7 +21,8 @@ function chooseFromDropdownEpic(action$, state$) {
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
                         Actions.startUpdatingInvestmentLines(),
-                        Actions.stopUpdatingInvestmentLines(),
+                        Actions.stopAddingEmptyInvestmentsLine(),
+
                     ) 
                 break;
                 case 'Med Risk':
@@ -33,14 +34,14 @@ function chooseFromDropdownEpic(action$, state$) {
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
                         Actions.startUpdatingInvestmentLines(),
-                        Actions.stopUpdatingInvestmentLines(),
+                        Actions.stopAddingEmptyInvestmentsLine(),
                     ) 
                 break;
                 case 'High Risk':
                     return Observable.of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns(),
-                        Actions.updateInvestmentsDelay(4000,2000),
+                        Actions.updateInvestmentsDelay(5000,2000),
                         Actions.stopUpdatingScreen(),
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
