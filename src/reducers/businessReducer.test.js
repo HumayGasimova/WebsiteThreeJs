@@ -169,6 +169,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update maxPublicDemand using formula", () => {
+        const action = { 
+            type: actionTypes.UPDATE_MAX_PUBLIC_DEMAND
+        }
+        const initState = {
+            ...initialState, 
+            maxPublicDemand: 300
+        }
+        const state = {
+            ...initialState, 
+            maxPublicDemand: 330
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     
 
