@@ -1,8 +1,6 @@
 case actionTypes.CHECK_BUTTONS:
     return state;
 
-case actionTypes.UPDATE_CLIPS_PER_SEC:
-    return updateClipsPerSec(state, action);
 case actionTypes.START_SELLING:
     return state;
 case actionTypes.UPDATE_FUNDS:

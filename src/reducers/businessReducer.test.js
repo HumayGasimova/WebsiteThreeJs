@@ -34,6 +34,18 @@ describe('businessReducer', () => {
         }
         expect(reducer(undefined, action)).toEqual(state);
     })
+
+    it("should update funds with the value passed through actions", () => {
+        const action = { 
+            type: actionTypes.UPDATE_FUNDS,
+            value: 0.5
+        }
+        const state = {
+            ...initialState, 
+            funds: 0.5
+        }
+        expect(reducer(undefined, action)).toEqual(state);
+    })
     
 
     // it("should return the initial state", () => {

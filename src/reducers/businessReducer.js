@@ -6,7 +6,7 @@ import {
 export const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
-    funds: 100, //pomenat na 0
+    funds: 0, //pomenat na 0
     paperclipPrice: 1000000000, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
