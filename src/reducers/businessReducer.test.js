@@ -488,6 +488,23 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update processorsMemory by adding 1 and opsMax by adding 1000", () => {
+        const action = { 
+            type: actionTypes.INCREASE_PROCESSORS_MEMORY
+        }
+        const initState = {
+            ...initialState, 
+            processorsMemory: 7,
+            opsMax: 100
+        }
+        const state = {
+            ...initialState, 
+            processorsMemory: 8,
+            opsMax: 1100
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
