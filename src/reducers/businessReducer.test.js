@@ -110,6 +110,44 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should disable Marketing Button if funds are less than marketingCost", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_MARKETING_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 40,
+            marketingCost: 50,
+            marketingButtonDisabled: false
+        }
+        const state = {
+            ...initialState, 
+            funds: 40,
+            marketingCost: 50,
+            marketingButtonDisabled: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should enable Marketing Button if funds are more than marketingCost", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_MARKETING_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 40,
+            marketingCost: 30,
+            marketingButtonDisabled: true
+        }
+        const state = {
+            ...initialState, 
+            funds: 40,
+            marketingCost: 30,
+            marketingButtonDisabled: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     
 

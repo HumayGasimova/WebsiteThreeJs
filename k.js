@@ -6,19 +6,14 @@ case actionTypes.START_UPDATING_UNSOLD_INVENTORY:
     return state;
 case actionTypes.STOP_UPDATING_UNSOLD_INVENTORY:
     return state;
-
-
-
-case actionTypes.LOWER_PRICE:
-    return lowerPrice(state, action);
-case actionTypes.RAISE_PRICE:
-    return raisePrice(state, action);
 case actionTypes.MARKETING:
     return state;
-case actionTypes.UPDATE_PUBLIC_DEMAND:
-    return updatePublicDemand(state, action);
-case actionTypes.TOGGLE_MARKETING_BUTTON:
-    return toggleMarketingButton(state, action);
+
+    reducer test updated(UPDATE_UNSOLD_INVENTORY)
+
+
+
+
 case actionTypes.MARKETING_NEXT_LEVEL:
     return marketingNextLevel(state, action);
 case actionTypes.UPDATE_MAX_PUBLIC_DEMAND:
