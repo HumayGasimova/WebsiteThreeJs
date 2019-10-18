@@ -76,6 +76,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should add 0.01 to paperclipPrice", () => {
+        const action = { 
+            type: actionTypes.RAISE_PRICE
+        }
+        const initState = {
+            ...initialState, 
+            paperclipPrice: 7.01
+        }
+        const state = {
+            ...initialState, 
+            paperclipPrice: 7.02
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     
 
