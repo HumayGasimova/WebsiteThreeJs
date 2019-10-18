@@ -20,7 +20,7 @@ describe('businessReducer', () => {
             unsoldInventory: 1, 
             wire: 49
         }
-        expect(reducer(undefined, action)).toEqual(state);
+        expect(reducer(initialState, action)).toEqual(state);
     })
 
     it("should update clipsPerSec with the value passed through actions", () => {
@@ -32,7 +32,7 @@ describe('businessReducer', () => {
             ...initialState, 
             clipsPerSec: 3
         }
-        expect(reducer(undefined, action)).toEqual(state);
+        expect(reducer(initialState, action)).toEqual(state);
     })
 
     it("should update funds with the value passed through actions", () => {
@@ -44,7 +44,7 @@ describe('businessReducer', () => {
             ...initialState, 
             funds: 0.5
         }
-        expect(reducer(undefined, action)).toEqual(state);
+        expect(reducer(initialState, action)).toEqual(state);
     })
     
 
