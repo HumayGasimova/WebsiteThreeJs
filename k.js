@@ -8,20 +8,16 @@ case actionTypes.STOP_UPDATING_UNSOLD_INVENTORY:
     return state;
 case actionTypes.MARKETING:
     return state;
+case actionTypes.START_BUYING_WIRE:
+    return state;
 
     reducer test updated(UPDATE_UNSOLD_INVENTORY)
 
 
 
 
-case actionTypes.MARKETING_NEXT_LEVEL:
-    return marketingNextLevel(state, action);
-case actionTypes.UPDATE_MAX_PUBLIC_DEMAND:
-    return updateMaxPublicDemand(state, action);
-case actionTypes.START_BUYING_WIRE:
-    return state;
-case actionTypes.BUY_WIRE:
-    return buyWire(state, action);
+
+
 case actionTypes.RANDOM_WIRE_PRICE:
     return randomWirePrice(state, action);
 case actionTypes.TOGGLE_WIRE_BUTTON:

@@ -184,6 +184,27 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update wire by adding wireToAdd and funds by subtracting the wirePrice", () => {
+        const action = { 
+            type: actionTypes.BUY_WIRE
+        }
+        const initState = {
+            ...initialState, 
+            wirePrice: 20,
+            wireToAdd: 500,
+            wire: 700,
+            funds: 50
+        }
+        const state = {
+            ...initialState, 
+            wirePrice: 20,
+            wireToAdd: 500,
+            wire: 1200,
+            funds: 30
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     
 
