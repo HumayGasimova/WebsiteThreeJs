@@ -26,4 +26,9 @@ describe('<Business/>', () => {
         wrapper.setProps({revTracker: false})
         expect(wrapper.find(RevTracker)).toHaveLength(0);
     })
+
+    it("<Button> should contain className = `revTracker-text`", () => {
+        wrapper.setProps({revTracker: true})
+        expect(wrapper.find(RevTracker).dive().find('.revTracker-text')).toHaveLength(2);
+    })
 });
