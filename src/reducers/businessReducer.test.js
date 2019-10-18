@@ -46,6 +46,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initialState, action)).toEqual(state);
     })
+
+    it("should subtrack one from unsoldInventory", () => {
+        const action = { 
+            type: actionTypes.UPDATE_UNSOLD_INVENTORY
+        }
+        const initState = {
+            ...initialState, 
+            unsoldInventory: 7
+        }
+        const state = {
+            ...initialState, 
+            unsoldInventory: 5
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+    
     
 
     // it("should return the initial state", () => {

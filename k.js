@@ -1,16 +1,14 @@
 case actionTypes.CHECK_BUTTONS:
     return state;
-
 case actionTypes.START_SELLING:
     return state;
-case actionTypes.UPDATE_FUNDS:
-    return updateFunds(state, action);
 case actionTypes.START_UPDATING_UNSOLD_INVENTORY:
     return state;
 case actionTypes.STOP_UPDATING_UNSOLD_INVENTORY:
     return state;
-case actionTypes.UPDATE_UNSOLD_INVENTORY:
-    return updateUnsoldInventory(state, action);
+
+
+
 case actionTypes.LOWER_PRICE:
     return lowerPrice(state, action);
 case actionTypes.RAISE_PRICE:
