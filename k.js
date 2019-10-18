@@ -24,6 +24,58 @@ case actionTypes.START_DECREASING_OPS:
     return state; 
 case actionTypes.STOP_DECREASING_OPERATIONS:
     return state; 
+case actionTypes.START_CREATIVITY_COUNTER:
+    return state;  
+case actionTypes.ADD_LEXICAL_PROCESSING:
+    return state;  
+case actionTypes.ADD_COMBINATORY_HARMONICS:
+    return state;
+case actionTypes.ADD_THE_HADWINGER_PROBLEM:
+    return state;  
+case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
+    return state;
+case actionTypes.ADD_DONKEY_SPACE:
+    return state;
+case actionTypes.START_IMPROVING_MARKETING:
+    return state;
+case actionTypes.THROW_PROJECT:
+    return state; 
+case actionTypes.START_ADDING_Q_OPS:
+    return state;
+case actionTypes.STOP_ADDING_Q_OPS:
+    return state;
+case actionTypes.START_SUBTRACTING_Q_OPS:
+    return state;
+case actionTypes.STOP_SUBTRACTING_Q_OPS:
+    return state;
+case actionTypes.START_DECREASING_OPERATIONS:
+    return state;
+case actionTypes.CLICK_WIRE_BUTTON:
+    return state;
+case actionTypes.START_UPDATING_SCREEN:
+    return state;
+case actionTypes.AUTO_WIRE_BUYER:
+    return state;
+case actionTypes.START_INVESTMENTS_DEPOSIT:
+    return state;
+case actionTypes.START_APPLYING_PROFIT_LOSS:
+    return state;
+case actionTypes.STOP_UPDATING_SCREEN:
+    return state;
+case actionTypes.CHOOSE_FROM_DROPDOWN:
+    return state;
+case actionTypes.ADD_MEGA_CLIPPERS:
+    return state;
+case actionTypes.START_COUNTING_RISK:
+    return state;
+case actionTypes.STOP_UPDATING_INVESTMENTS_LINE:
+    return state;
+case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
+    return state;
+case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
+    return state;
+case actionTypes.START_INVESTMENTS_WITHDRAW:
+    return state;
 
     reducer test updated(UPDATE_UNSOLD_INVENTORY)
 
@@ -54,24 +106,12 @@ case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
     return toggleMakePaperclipButton(state, action);  
 case actionTypes.IMPROVE_WIRE_EXTRUSION:
     return improveWireExtrusion(state, action);  
-case actionTypes.START_CREATIVITY_COUNTER:
-    return state;  
+
 case actionTypes.CREATIVITY_TURN_ON:
     return creativityTurnOn(state, action);  
 case actionTypes.WIRE_EXISTS:
     return wireExists(state, action);
-case actionTypes.ADD_LEXICAL_PROCESSING:
-    return state;  
-case actionTypes.ADD_COMBINATORY_HARMONICS:
-    return state;
-case actionTypes.ADD_THE_HADWINGER_PROBLEM:
-    return state;  
-case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
-    return state;
-case actionTypes.ADD_DONKEY_SPACE:
-    return state;
-case actionTypes.START_IMPROVING_MARKETING:
-    return state;
+
 case actionTypes.IMPROVE_MARKETING:
     return improveMarketing(state, action);
 case actionTypes.SHOW_INVESTMENT_ENGINE:
@@ -80,8 +120,7 @@ case actionTypes.SHOW_STRATEGIC_MODELING:
     return showStrategicModeling(state, action);
 case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
     return removePriceOfProjectTrust(state, action);
-case actionTypes.THROW_PROJECT:
-    return state; 
+
 case actionTypes.SEND_COMMENT_TO_TERMINAL:
     return sendCommentToTerminal(state, action);
 case actionTypes.ADD_NEW_STRATEGY:
@@ -100,18 +139,13 @@ case actionTypes.TOGGLE_CHIP:
     return toggleChip(state, action);
 case actionTypes.CHANGE_TO_Q_OPS:
     return changeToQOps(state, action);
-case actionTypes.START_ADDING_Q_OPS:
-        return state;
+
 case actionTypes.ADD_Q_OPS:
     return addQOps(state, action);
-case actionTypes.STOP_ADDING_Q_OPS:
-    return state;
-case actionTypes.START_SUBTRACTING_Q_OPS:
-    return state;
+
 case actionTypes.SUBTRACT_Q_OPS:
     return subtractQOps(state, action);
-case actionTypes.STOP_SUBTRACTING_Q_OPS:
-    return state;
+
 case actionTypes.CAPTURE_CURRENT_Q_OPS:
     return captureCurrentQOps(state, action);
 case actionTypes.ADD_CHIP:
@@ -120,61 +154,43 @@ case actionTypes.UPDATE_OPS:
     return updateOps(state, action);
 case actionTypes.START_TIMER:
     return startTimer(state, action);
-case actionTypes.START_DECREASING_OPERATIONS:
-    return state;
-case actionTypes.CLICK_WIRE_BUTTON:
-    return state;
+
 case actionTypes.SHOW_AUTO_WIRE_BUYER:
     return showAutoWireBuyer(state, action);
 case actionTypes.TOGGLE_WIRE_BUYER_PROJECT:
     return toggleWireBuyerProject(state, action);
-case actionTypes.AUTO_WIRE_BUYER:
-    return state;
+
 case actionTypes.TOGGLE_AUTO_WIRE_BUYER:
     return toggleAutoWireBuyer(state, action);
-case actionTypes.ADD_MEGA_CLIPPERS:
-    return state;
+
+    
 case actionTypes.SHOW_MEGA_CLIPPERS:
     return showMegaClippers(state, action);
 case actionTypes.CALC_DELAY_UNSOLD_INVENTARY:
     return calcDelayUnsoldInventary(state, action);
-case actionTypes.START_INVESTMENTS_DEPOSIT:
-    return state;
+
 case actionTypes.GET_DEPOSIT:
     return getDeposit(state, action);
-case actionTypes.START_UPDATING_SCREEN:
-    return state;
+
 case actionTypes.ADD_INVESTMENTS_LINE:
     return addInvestmentsLine(state, action);
 case actionTypes.UPDATE_INVESTMENTS_LINES:
     return updateInvestmentsLines(state, action);
-case actionTypes.START_COUNTING_RISK:
-    return state;
+
 case actionTypes.UPDATE_INVESTMENTS_TOTAL:
     return updateInvestmentsTotal(state, action);
 case actionTypes.UPDATE_INVESTMENTS_CASH:
     return updateInvestmentsCash(state, action);
 case actionTypes.UPDATE_INVESTMENTS_STOCKS:
     return updateInvestmentsStocks(state, action);
-case actionTypes.START_APPLYING_PROFIT_LOSS:
-    return state;
+
 case actionTypes.UPDATE_FAKE_INVESTMENTS_CASH:
     return updateFakeInvestmentsCash(state, action);
-case actionTypes.START_INVESTMENTS_WITHDRAW:
-    return state;
+
 case actionTypes.UPDATE_FUNDS_WITHDRAW:
     return updateFundsWithdraw(state, action);
-case actionTypes.STOP_UPDATING_SCREEN:
-    return state;
-case actionTypes.CHOOSE_FROM_DROPDOWN:
-    return state;
+
 case actionTypes.ADD_CHOSEN_FROM_DROPDOWN:
     return addChosenFromDropdown(state, action);
 case actionTypes.UPDATE_INVESTMENTS_DELAY:
     return updateInvestmentsDelay(state, action);
-case actionTypes.STOP_UPDATING_INVESTMENTS_LINE:
-    return state;
-case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
-    return state;
-case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
-    return state;
