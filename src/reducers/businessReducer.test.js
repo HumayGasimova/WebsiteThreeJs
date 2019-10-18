@@ -23,7 +23,7 @@ describe('businessReducer', () => {
         expect(reducer(initialState, action)).toEqual(state);
     })
 
-    it("should update clipsPerSec with the value passed through actions", () => {
+    it("should update clipsPerSec with the value passed through action", () => {
         const action = { 
             type: actionTypes.UPDATE_CLIPS_PER_SEC,
             val: 3
@@ -35,7 +35,7 @@ describe('businessReducer', () => {
         expect(reducer(initialState, action)).toEqual(state);
     })
 
-    it("should update funds with the value passed through actions", () => {
+    it("should update funds with the value passed through action", () => {
         const action = { 
             type: actionTypes.UPDATE_FUNDS,
             value: 0.5
@@ -206,7 +206,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update wirePrice with the value passed through actions", () => {
+    it("should update wirePrice with the value passed through action", () => {
         const action = { 
             type: actionTypes.RANDOM_WIRE_PRICE,
             value: 469
@@ -218,6 +218,44 @@ describe('businessReducer', () => {
         const state = {
             ...initialState, 
             wirePrice: 469
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+    
+    it("should disable Wire Button if funds are less than wirePrice", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_WIRE_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 40,
+            wirePrice: 50,
+            wireButtonDisabled: false
+        }
+        const state = {
+            ...initialState, 
+            funds: 40,
+            wirePrice: 50,
+            wireButtonDisabled: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should enable Wire Button if funds are more than wirePrice", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_WIRE_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 40,
+            wirePrice: 30,
+            wireButtonDisabled: true
+        }
+        const state = {
+            ...initialState, 
+            funds: 40,
+            wirePrice: 30,
+            wireButtonDisabled: false
         }
         expect(reducer(initState, action)).toEqual(state);
     })
