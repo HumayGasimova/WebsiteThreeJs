@@ -3,7 +3,7 @@ import {
     updateObject
   } from './utility';
 
-const initialState = {
+export const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
     funds: 100, //pomenat na 0
