@@ -334,17 +334,99 @@ describe('businessReducer', () => {
         const initState = {
             ...initialState,
             funds: 3, 
-            autoClipperInitPrice: 0
+            autoClippersPerSec: 0
         }
         const state = {
             ...initialState,
             funds: 3, 
-            autoClipperInitPrice: 0
+            autoClippersPerSec: 0
         }
         expect(reducer(initState, action)).toEqual(state);
     })
     
-    
+    it("should (if autoClippersPerSec is 0) disable AutoClipper Button if funds are less than autoClipperInitPrice", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 40,
+            autoClippersPerSec: 0,
+            autoClipperInitPrice: 50,
+            autoClippersButtonDisabled: false
+        }
+        const state = {
+            ...initialState, 
+            funds: 40,
+            autoClippersPerSec: 0,
+            autoClipperInitPrice: 50,
+            autoClippersButtonDisabled: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if autoClippersPerSec is 0) enable AutoClipper Button if funds are more than autoClipperInitPrice", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 70,
+            autoClippersPerSec: 0,
+            autoClipperInitPrice: 50,
+            autoClippersButtonDisabled: true
+        }
+        const state = {
+            ...initialState, 
+            funds: 70,
+            autoClippersPerSec: 0,
+            autoClipperInitPrice: 50,
+            autoClippersButtonDisabled: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if autoClippersPerSec isn't 0) disable AutoClipper Button if funds are less than autoClipperPrice", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 40,
+            autoClippersPerSec: 3,
+            autoClipperPrice: 55,
+            autoClippersButtonDisabled: false
+        }
+        const state = {
+            ...initialState, 
+            funds: 40,
+            autoClippersPerSec: 3,
+            autoClipperPrice: 55,
+            autoClippersButtonDisabled: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if autoClippersPerSec isn't 0) enable AutoClipper Button if funds are more than autoClipperPrice", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            funds: 70,
+            autoClippersPerSec: 3,
+            autoClipperPrice: 55,
+            autoClippersButtonDisabled: true
+        }
+        const state = {
+            ...initialState, 
+            funds: 70,
+            autoClippersPerSec: 3,
+            autoClipperPrice: 55,
+            autoClippersButtonDisabled: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
 
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);

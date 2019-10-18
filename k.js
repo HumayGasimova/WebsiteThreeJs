@@ -25,9 +25,6 @@ case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
 
 
 
-
-case actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON:
-    return toggleAutoClippersButton(state, action); 
 case actionTypes.TRUST_PLUS_ONE:
     return trustPlusOne(state, action); 
 case actionTypes.TRUST_PLUS_ONE_FROM_PROJECT:
