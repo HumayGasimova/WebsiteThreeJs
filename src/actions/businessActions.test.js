@@ -11,7 +11,7 @@ describe('businessActions', () => {
       store.clearActions();
     });
   
-    it('Dispatches the correct action and payload', () => {
+    it('Dispatches the correct action and payload (makePaperclip)', () => {
         const expectedActions = [
             {
                 type: actionTypes.MAKE_PAPERCLIP
@@ -20,5 +20,6 @@ describe('businessActions', () => {
 
         store.dispatch(Actions.makePaperclip());
         expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
     })
   });
