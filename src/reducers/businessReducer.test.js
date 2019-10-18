@@ -91,6 +91,25 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update publicDemand using formula", () => {
+        const action = { 
+            type: actionTypes.UPDATE_PUBLIC_DEMAND
+        }
+        const initState = {
+            ...initialState, 
+            publicDemand: 16,
+            maxPublicDemand: 800,
+            paperclipPrice: 0.67
+        }
+        const state = {
+            ...initialState, 
+            publicDemand: 12,
+            maxPublicDemand: 800,
+            paperclipPrice: 0.67
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     
 
