@@ -33,18 +33,13 @@ case actionTypes.TRUST_PLUS_ONE:
     return trustPlusOne(state, action); 
 
 
-case actionTypes.INCREASE_PROCESSORS_MEMORY:
-    return increaseProcessorsMemory(state, action); 
-case actionTypes.INCREASE_CREATIVITY:
-    return increaseCreativity(state, action); 
 case actionTypes.INIT_PROJECTS:
     return initProjects(state, action); 
 case actionTypes.CHECK_CARD_VALIDITY:
     return checkCardValidity(state, action); 
 case actionTypes.DELETE_CARD:
     return deleteCard(state, action); 
-case actionTypes.SHOW_REV_TRACKER:
-    return showRevTracker(state, action); 
+
 case actionTypes.ADD_PROJECT:
     return addProject(state, action);
 case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS:

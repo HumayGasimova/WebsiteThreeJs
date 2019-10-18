@@ -520,6 +520,24 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update ops by subtracting the price passed through action and set revTracker to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_REV_TRACKER,
+            price: 10
+        }
+        const initState = {
+            ...initialState, 
+            revTracker: false,
+            ops: 100
+        }
+        const state = {
+            ...initialState, 
+            revTracker: true,
+            ops: 90
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
