@@ -205,6 +205,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update wirePrice with the value passed through actions", () => {
+        const action = { 
+            type: actionTypes.RANDOM_WIRE_PRICE,
+            value: 469
+        }
+        const initState = {
+            ...initialState, 
+            wirePrice: 87
+        }
+        const state = {
+            ...initialState, 
+            wirePrice: 469
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     
 
