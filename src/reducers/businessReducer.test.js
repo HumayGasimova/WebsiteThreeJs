@@ -260,6 +260,56 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
     
+    it("should (if autoClippersPerSec is 0) update funds b", () => {
+        const action = { 
+            type: actionTypes.AUTO_CLIPPERS_ADD_ONE
+        }
+        const initState = {
+            ...initialState, 
+            autoClipperInitPrice: 10,
+            autoClippersPerSec: 0,
+            autoClipperPrice: 7,
+            funds: 40,
+            delayAutoPaperClippers: 500,
+            autoClipperOn: false
+        }
+        const state = {
+            ...initialState, 
+            autoClipperInitPrice: 10,
+            autoClippersPerSec: 1,
+            autoClipperPrice: 7,
+            funds: 30,
+            delayAutoPaperClippers: 495.049504950495,
+            autoClipperOn: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if autoClippersPerSec isn't 0)enable Wire Button if funds are more than wirePrice", () => {
+        const action = { 
+            type: actionTypes.AUTO_CLIPPERS_ADD_ONE
+        }
+        const initState = {
+            ...initialState, 
+            autoClipperInitPrice: 10,
+            autoClippersPerSec: 3,
+            autoClipperPrice: 7,
+            funds: 40,
+            delayAutoPaperClippers: 500,
+            autoClipperOn: false
+        }
+        const state = {
+            ...initialState, 
+            autoClipperInitPrice: 10,
+            autoClippersPerSec: 4,
+            autoClipperPrice: 7.13,
+            funds: 33,
+            delayAutoPaperClippers: 495.049504950495,
+            autoClipperOn: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+    
     
 
     // it("should return the initial state", () => {
