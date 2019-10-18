@@ -458,6 +458,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update ops by subtracting 1", () => {
+        const action = { 
+            type: actionTypes.DECREASE_OPS
+        }
+        const initState = {
+            ...initialState, 
+            ops: 7
+        }
+        const state = {
+            ...initialState, 
+            ops: 6
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
