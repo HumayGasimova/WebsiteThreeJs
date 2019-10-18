@@ -428,6 +428,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update trust by adding 1", () => {
+        const action = { 
+            type: actionTypes.TRUST_PLUS_ONE_FROM_PROJECT
+        }
+        const initState = {
+            ...initialState, 
+            trust: 4
+        }
+        const state = {
+            ...initialState, 
+            trust: 5
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
