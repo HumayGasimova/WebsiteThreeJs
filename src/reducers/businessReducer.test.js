@@ -148,6 +148,27 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should add 1 to marketingLevel, update funds by subtracting marketingCost, multiply marketingCost by 2, update delayUnsoldInventaryConst using formula", () => {
+        const action = { 
+            type: actionTypes.MARKETING_NEXT_LEVEL
+        }
+        const initState = {
+            ...initialState, 
+            funds: 50,
+            marketingCost: 20,
+            marketingLevel: 2,
+            delayUnsoldInventaryConst: 50
+        }
+        const state = {
+            ...initialState, 
+            funds: 30,
+            marketingCost: 40,
+            marketingLevel: 3,
+            delayUnsoldInventaryConst: 49.1
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     
 
