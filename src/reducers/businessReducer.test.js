@@ -505,6 +505,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update creativity by adding 1", () => {
+        const action = { 
+            type: actionTypes.INCREASE_CREATIVITY
+        }
+        const initState = {
+            ...initialState, 
+            creativity: 7
+        }
+        const state = {
+            ...initialState, 
+            creativity: 8
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
