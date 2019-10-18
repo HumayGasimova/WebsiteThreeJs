@@ -20,6 +20,10 @@ case actionTypes.AUTO_PAPERCLIPS_START:
     return state;  
 case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
     return state;
+case actionTypes.START_DECREASING_OPS:
+    return state; 
+case actionTypes.STOP_DECREASING_OPERATIONS:
+    return state; 
 
     reducer test updated(UPDATE_UNSOLD_INVENTORY)
 
@@ -27,18 +31,8 @@ case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
 
 case actionTypes.TRUST_PLUS_ONE:
     return trustPlusOne(state, action); 
-case actionTypes.TRUST_PLUS_ONE_FROM_PROJECT:
-    return trustPlusOneFromProject(state, action); 
-case actionTypes.INCREASE_OPS:
-    return increaseOps(state, action); 
-case actionTypes.START_DECREASING_OPS:
-    return state; 
-case actionTypes.STOP_DECREASING_OPERATIONS:
-    return state; 
-case actionTypes.DECREASE_OPS:
-    return decreaseOps(state, action); 
-case actionTypes.INCREASE_PROCESSORS:
-    return increaseProcessors(state, action); 
+
+
 case actionTypes.INCREASE_PROCESSORS_MEMORY:
     return increaseProcessorsMemory(state, action); 
 case actionTypes.INCREASE_CREATIVITY:
