@@ -10,32 +10,22 @@ case actionTypes.MARKETING:
     return state;
 case actionTypes.START_BUYING_WIRE:
     return state;
-
-    reducer test updated(UPDATE_UNSOLD_INVENTORY)
-
-
-
-
-
-
-case actionTypes.RANDOM_WIRE_PRICE:
-    return randomWirePrice(state, action);
-case actionTypes.TOGGLE_WIRE_BUTTON:
-    return toggleWireButton(state, action); 
 case actionTypes.CHECK_EXISTENCE_OF_WIRE:
     return state; 
 case actionTypes.STOP:
     return state; 
 case actionTypes.AUTO_PAPERCLIPS:
     return state;
-case actionTypes.AUTO_CLIPPERS_ADD_ONE:
-    return autoClippersAddOne(state, action); 
 case actionTypes.AUTO_PAPERCLIPS_START:
     return state;  
 case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
     return state;
-case actionTypes.SET_AUTO_CLIPPER_INIT_PRICE:
-    return setAutoClipperInitPrice(state, action); 
+
+    reducer test updated(UPDATE_UNSOLD_INVENTORY)
+
+
+
+
 case actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON:
     return toggleAutoClippersButton(state, action); 
 case actionTypes.TRUST_PLUS_ONE:

@@ -260,7 +260,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
     
-    it("should (if autoClippersPerSec is 0) update funds b", () => {
+    it("should (if autoClippersPerSec is 0) update funds by subtracting autoClipperInitPrice, autoClippersPerSec by adding 1, delayAutoPaperClippers by dividing by 1.01, set autoClipperOn to true", () => {
         const action = { 
             type: actionTypes.AUTO_CLIPPERS_ADD_ONE
         }
@@ -285,7 +285,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should (if autoClippersPerSec isn't 0)enable Wire Button if funds are more than wirePrice", () => {
+    it("should (if autoClippersPerSec isn't 0) update funds by subtracting autoClipperPrice, autoClippersPerSec by adding 1, delayAutoPaperClippers by dividing by 1.01, set autoClipperOn to true", () => {
         const action = { 
             type: actionTypes.AUTO_CLIPPERS_ADD_ONE
         }
@@ -306,6 +306,40 @@ describe('businessReducer', () => {
             funds: 33,
             delayAutoPaperClippers: 495.049504950495,
             autoClipperOn: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if funds is greater than or equal to 5) set autoClipperInitPrice to 5", () => {
+        const action = { 
+            type: actionTypes.SET_AUTO_CLIPPER_INIT_PRICE
+        }
+        const initState = {
+            ...initialState, 
+            funds: 7,
+            autoClipperInitPrice: 0
+        }
+        const state = {
+            ...initialState,
+            funds: 7, 
+            autoClipperInitPrice: 5
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if autoClipperInitPrice is less than 5) set autoClipperInitPrice to 0", () => {
+        const action = { 
+            type: actionTypes.SET_AUTO_CLIPPER_INIT_PRICE
+        }
+        const initState = {
+            ...initialState,
+            funds: 3, 
+            autoClipperInitPrice: 0
+        }
+        const state = {
+            ...initialState,
+            funds: 3, 
+            autoClipperInitPrice: 0
         }
         expect(reducer(initState, action)).toEqual(state);
     })
