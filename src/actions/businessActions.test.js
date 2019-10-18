@@ -22,4 +22,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (updateFunds)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_FUNDS,
+                value: 5
+            }
+        ];
+
+        store.dispatch(Actions.updateFunds(5));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

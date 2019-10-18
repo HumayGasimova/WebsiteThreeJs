@@ -7,3 +7,12 @@ Array [
   },
 ]
 `;
+
+exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_FUNDS",
+    "value": 5,
+  },
+]
+`;
