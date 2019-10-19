@@ -4,7 +4,7 @@ import {
   } from './utility';
 
 export const initialState = {
-    paperClips: 0,
+    paperClips: 1999,
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
     paperclipPrice: 1000000000, // 0.5
@@ -490,7 +490,7 @@ const addQOps = (state, action) => {
     updatedChips.splice(chipsIndex, 1, chip)
 
     return updateObject(state, {
-        qOps: updatedChips
+        chips: updatedChips
     });
 }
 
@@ -502,7 +502,7 @@ const subtractQOps = (state, action) => {
     updatedChips.splice(chipsIndex, 1, chip)
 
     return updateObject(state, {
-        qOps: updatedChips
+        chips: updatedChips
     });
 }
 

@@ -51,6 +51,7 @@ class Chip extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.qOps !== this.props.qOps) {
             if(this.props.qOps === 360){
+                // debugger
                 this.props.stopAddingQOps();
                 this.props.startSubtractingQOps(this.props.chipsNumber);
             }
