@@ -77,11 +77,9 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(UPDATE_INVESTMENTS_STOCKS)
+    reducer test updated(UPDATE_FAKE_INVESTMENTS_CASH)
 
 
-case actionTypes.UPDATE_FAKE_INVESTMENTS_CASH:
-    return updateFakeInvestmentsCash(state, action);
 case actionTypes.UPDATE_FUNDS_WITHDRAW:
     return updateFundsWithdraw(state, action);
 case actionTypes.ADD_CHOSEN_FROM_DROPDOWN:
