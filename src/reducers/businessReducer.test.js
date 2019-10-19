@@ -1367,6 +1367,38 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should (if funds is equal to 0) update funds with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_FUNDS_WITHDRAW,
+            val: 63
+        }
+        const initState = {
+            ...initialState, 
+            funds: 0
+        }
+        const state = {
+            ...initialState, 
+            funds: 63
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if funds isn't equal to 0) update funds with the sum of funds and the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_FUNDS_WITHDRAW,
+            val: 63
+        }
+        const initState = {
+            ...initialState, 
+            funds: 25
+        }
+        const state = {
+            ...initialState, 
+            funds: 88
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
