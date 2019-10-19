@@ -768,6 +768,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set creativityTurnOn to true", () => {
+        const action = { 
+            type: actionTypes.CREATIVITY_TURN_ON
+        }
+        const initState = {
+            ...initialState, 
+            creativityTurnOn: false
+        }
+        const state = {
+            ...initialState, 
+            creativityTurnOn: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
 
     // it("should return the initial state", () => {
