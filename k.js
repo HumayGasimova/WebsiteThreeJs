@@ -77,12 +77,10 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(SEND_COMMENT_TO_TERMINAL)
+    reducer test updated(ADD_NEW_STRATEGY)
 
 
 
-case actionTypes.ADD_NEW_STRATEGY:
-    return addNewStrategy(state, action);
 case actionTypes.TOGGLE_DROPDOWN_INVESTMENTS:
     return toggleDropdownInvestments(state, action);
 case actionTypes.TOGGLE_DROPDOWN_STRATEGIC_MODELING:

@@ -896,6 +896,22 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should add new strategy to listStrategicModeling", () => {
+        const action = { 
+            type: actionTypes.ADD_NEW_STRATEGY,
+            strategy: "New Strategy3"
+        }
+        const initState = {
+            ...initialState, 
+            listStrategicModeling: ["New Strategy", "New Strategy1"]
+        }
+        const state = {
+            ...initialState, 
+            listStrategicModeling: ["New Strategy", "New Strategy1", "New Strategy3"]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
