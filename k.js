@@ -89,13 +89,10 @@ case actionTypes.INIT_PROJECTS:
     return initProjects(state, action); 
 case actionTypes.CHECK_CARD_VALIDITY:
     return checkCardValidity(state, action); 
-case actionTypes.DELETE_CARD:
-    return deleteCard(state, action); 
 
-case actionTypes.ADD_PROJECT:
-    return addProject(state, action);
-case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS:
-    return removePriceOfProjectOps(state, action);  
+
+
+ 
 case actionTypes.REMOVE_PRICE_OF_PROJECT_CREAT:
     return removePriceOfProjectCreat(state, action);  
 case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT:

@@ -570,6 +570,22 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update cards by deleting card with id passed through action", () => {
+        const action = { 
+            type: actionTypes.DELETE_CARD,
+            cardId: 12
+        }
+        const initState = {
+            ...initialState, 
+            cards:  [{ id:10 },{ id:11 },{ id:12 },{ id:13 }]
+        }
+        const state = {
+            ...initialState, 
+            cards: [{ id:10 },{ id:11 },{ id:13 }]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
