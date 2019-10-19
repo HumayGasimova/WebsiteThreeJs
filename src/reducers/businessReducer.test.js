@@ -1073,7 +1073,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should set currentQOps to the value passed throught the action", () => {
+    it("should add one chip that is passed throught the action to chipsArray", () => {
         const action = { 
             type: actionTypes.ADD_CHIP,
             obj: {chipsNumber: 'chip3', showChip: true, qOps: 183}
@@ -1089,6 +1089,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update ops by adding value passed throught th action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_OPS,
+            val: 40
+        }
+        const initState = {
+            ...initialState, 
+            ops: 300
+        }
+        const state = {
+            ...initialState, 
+            ops: 340
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

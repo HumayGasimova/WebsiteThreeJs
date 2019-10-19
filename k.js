@@ -77,14 +77,11 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(ADD_CHIP)
+    reducer test updated(UPDATE_OPS)
 
 
 
 
-
-case actionTypes.UPDATE_OPS:
-    return updateOps(state, action);
 case actionTypes.START_TIMER:
     return startTimer(state, action);
 case actionTypes.SHOW_AUTO_WIRE_BUYER:
