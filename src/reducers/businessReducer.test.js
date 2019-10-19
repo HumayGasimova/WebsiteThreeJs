@@ -1057,6 +1057,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should set currentQOps to the value passed throught the action", () => {
+        const action = { 
+            type: actionTypes.CAPTURE_CURRENT_Q_OPS,
+            val: 375
+        }
+        const initState = {
+            ...initialState, 
+            currentQOps: 283
+        }
+        const state = {
+            ...initialState, 
+            currentQOps: 375
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
 
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
