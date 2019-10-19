@@ -77,12 +77,11 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(CLOSE_DROPDOWNS)
+    reducer test updated(SHOW_QUANTUM_COMPUTING)
 
 
 
-case actionTypes.SHOW_QUANTUM_COMPUTING:
-    return showQuantumComputing(state, action);
+
 case actionTypes.SHOW_QUANT_COMP_MESSAGE:
     return showQuantCompMessage(state, action);
 case actionTypes.TOGGLE_CHIP:

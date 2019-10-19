@@ -963,6 +963,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should set showQuantumComputing to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_QUANTUM_COMPUTING
+        }
+        const initState = {
+            ...initialState, 
+            showQuantumComputing: false
+        }
+        const state = {
+            ...initialState, 
+            showQuantumComputing: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
