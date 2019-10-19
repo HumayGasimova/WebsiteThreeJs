@@ -1149,6 +1149,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set autoWireBuyerIsOn to true", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_AUTO_WIRE_BUYER
+        }
+        const initState = {
+            ...initialState, 
+            autoWireBuyerIsOn: false
+        }
+        const state = {
+            ...initialState, 
+            autoWireBuyerIsOn: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
