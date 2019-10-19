@@ -1073,6 +1073,22 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should set currentQOps to the value passed throught the action", () => {
+        const action = { 
+            type: actionTypes.ADD_CHIP,
+            obj: {chipsNumber: 'chip3', showChip: true, qOps: 183}
+        }
+        const initState = {
+            ...initialState, 
+            chips: [{chipsNumber: 'chip1', showChip: true, qOps: 150}, {chipsNumber: 'chip2', showChip: true, qOps: 51}]
+        }
+        const state = {
+            ...initialState, 
+            chips: [{chipsNumber: 'chip1', showChip: true, qOps: 150}, {chipsNumber: 'chip2', showChip: true, qOps: 51}, {chipsNumber: 'chip3', showChip: true, qOps: 183}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
