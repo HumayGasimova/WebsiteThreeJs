@@ -468,9 +468,9 @@ const toggleChip = (state, action) => {
     let chipsIndex = updatedChips.findIndex(x=> x.chipsNumber === action.chipsNumber);
     chip.showChip = action.val;
     updatedChips.splice(chipsIndex, 1, chip)
-    console.log(state.chips)
-    console.log(chip)
-    console.log(updatedChips)
+    // console.log(state.chips)
+    // console.log(chip)
+    // console.log(updatedChips)
     return updateObject(state, {
         chips: updatedChips
     });

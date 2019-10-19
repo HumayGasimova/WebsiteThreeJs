@@ -993,6 +993,23 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should find chip in chipsArray using chipsNumber passed through the action and set it property - showChip to true", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_CHIP,
+            val: true,
+            chipsNumber: 'chip2'
+        }
+        const initState = {
+            ...initialState, 
+            chips: [{chipsNumber: 'chip1', showChip: false}, {chipsNumber: 'chip2', showChip: false}]
+        }
+        const state = {
+            ...initialState, 
+            chips: [{chipsNumber: 'chip1', showChip: false}, {chipsNumber: 'chip2', showChip: true}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
