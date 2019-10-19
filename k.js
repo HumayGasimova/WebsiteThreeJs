@@ -77,14 +77,12 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(TOGGLE_CHIP)
+    reducer test updated(CHANGE_TO_Q_OPS)
 
 
 
 
 
-case actionTypes.CHANGE_TO_Q_OPS:
-    return changeToQOps(state, action);
 case actionTypes.ADD_Q_OPS:
     return addQOps(state, action);
 case actionTypes.SUBTRACT_Q_OPS:

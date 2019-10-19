@@ -1010,6 +1010,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should set changedToQOps to true", () => {
+        const action = { 
+            type: actionTypes.CHANGE_TO_Q_OPS
+        }
+        const initState = {
+            ...initialState, 
+            changedToQOps: false
+        }
+        const state = {
+            ...initialState, 
+            changedToQOps: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
