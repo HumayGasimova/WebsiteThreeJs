@@ -736,6 +736,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should enable AutoPaperClipper Button", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON,
+            val: false
+        }
+        const initState = {
+            ...initialState, 
+            makePaperclipDisabled: true
+        }
+        const state = {
+            ...initialState, 
+            makePaperclipDisabled: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
 
     // it("should return the initial state", () => {

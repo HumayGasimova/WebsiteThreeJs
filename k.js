@@ -77,15 +77,12 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT)
+    reducer test updated(TOGGLE_MAKE_PAPERCLIP_BUTTON)
 
 
 
 
-case actionTypes.IMPROVE_AUTO_PAPER_CLIPPER:
-    return improveAutoClippers(state, action);  
-case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
-    return toggleMakePaperclipButton(state, action);  
+
 case actionTypes.IMPROVE_WIRE_EXTRUSION:
     return improveWireExtrusion(state, action);  
 case actionTypes.CREATIVITY_TURN_ON:
