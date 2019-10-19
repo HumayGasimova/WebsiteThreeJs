@@ -112,11 +112,14 @@ export class Manufacturing extends Component {
         }
        
        
+       
     }
     
     wireButtonToggle = () => {
         this.props.startBuyingWire();
         this.props.clickWireButton();
+        this.props.autoPaperclipsStart();
+        
     }
 
     /**
@@ -188,6 +191,7 @@ export default connect(
             autoWireBuyer: bindActionCreators(Actions.autoWireBuyer, dispatch),
             toggleAutoWireBuyer: bindActionCreators(Actions.toggleAutoWireBuyer, dispatch),
             addMegaClippers: bindActionCreators(Actions.addMegaClippers, dispatch),
+            autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
         };
     }
 )(Manufacturing);

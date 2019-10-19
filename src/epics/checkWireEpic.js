@@ -20,7 +20,8 @@ function checkWireEpic(action$, state$) {
             }else{
                 return Observable.of(
                     // Actions.toggleWireButton(),
-                    Actions.wireExists(true)
+                    Actions.wireExists(true),
+                    // Actions.autoPaperclipsStart()
                 ) 
             }
                   
