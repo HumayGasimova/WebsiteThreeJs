@@ -77,12 +77,10 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(CALC_DELAY_UNSOLD_INVENTARY)
+    reducer test updated(GET_DEPOSIT)
 
 
 
-case actionTypes.GET_DEPOSIT:
-    return getDeposit(state, action);
 case actionTypes.ADD_INVESTMENTS_LINE:
     return addInvestmentsLine(state, action);
 case actionTypes.UPDATE_INVESTMENTS_LINES:

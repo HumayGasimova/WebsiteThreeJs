@@ -1198,6 +1198,44 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should (if investmentsCash is equal to 0) set funds to 0, update investmentsCash and fakeInvestmentsCash with the value of funds", () => {
+        const action = { 
+            type: actionTypes.GET_DEPOSIT
+        }
+        const initState = {
+            ...initialState, 
+            funds: 59,
+            investmentsCash: 0,
+            fakeInvestmentsCash: 33
+        }
+        const state = {
+            ...initialState, 
+            funds: 0,
+            investmentsCash: 59,
+            fakeInvestmentsCash: 59
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if investmentsCash isn't equal to 0) set funds to 0, update investmentsCash and fakeInvestmentsCash with the value of sum of funds and investmentsCash", () => {
+        const action = { 
+            type: actionTypes.GET_DEPOSIT
+        }
+        const initState = {
+            ...initialState, 
+            funds: 59,
+            investmentsCash: 48,
+            fakeInvestmentsCash: 37
+        }
+        const state = {
+            ...initialState, 
+            funds: 0,
+            investmentsCash: 107,
+            fakeInvestmentsCash: 107
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
