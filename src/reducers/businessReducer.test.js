@@ -1399,6 +1399,23 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update the element in chosenListDropdownArray with index, with value passed through the action ", () => {
+        const action = { 
+            type: actionTypes.ADD_CHOSEN_FROM_DROPDOWN,
+            chosen: 'three',
+            index: 0
+        }
+        const initState = {
+            ...initialState, 
+            chosenListDropdown: ['one','two']
+        }
+        const state = {
+            ...initialState, 
+            chosenListDropdown: ['three','two']
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

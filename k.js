@@ -77,10 +77,8 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(UPDATE_FUNDS_WITHDRAW)
+    reducer test updated(ADD_CHOSEN_FROM_DROPDOWN)
 
 
-case actionTypes.ADD_CHOSEN_FROM_DROPDOWN:
-    return addChosenFromDropdown(state, action);
 case actionTypes.UPDATE_INVESTMENTS_DELAY:
     return updateInvestmentsDelay(state, action);
