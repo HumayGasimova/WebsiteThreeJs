@@ -83,14 +83,8 @@ case actionTypes.START_INVESTMENTS_WITHDRAW:
 
 
 
-case actionTypes.INIT_PROJECTS:
-    return initProjects(state, action); 
 case actionTypes.CHECK_CARD_VALIDITY:
     return checkCardValidity(state, action); 
-
-
-
- 
 case actionTypes.REMOVE_PRICE_OF_PROJECT_CREAT:
     return removePriceOfProjectCreat(state, action);  
 case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT:
@@ -101,12 +95,10 @@ case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
     return toggleMakePaperclipButton(state, action);  
 case actionTypes.IMPROVE_WIRE_EXTRUSION:
     return improveWireExtrusion(state, action);  
-
 case actionTypes.CREATIVITY_TURN_ON:
     return creativityTurnOn(state, action);  
 case actionTypes.WIRE_EXISTS:
     return wireExists(state, action);
-
 case actionTypes.IMPROVE_MARKETING:
     return improveMarketing(state, action);
 case actionTypes.SHOW_INVESTMENT_ENGINE:
@@ -115,7 +107,6 @@ case actionTypes.SHOW_STRATEGIC_MODELING:
     return showStrategicModeling(state, action);
 case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
     return removePriceOfProjectTrust(state, action);
-
 case actionTypes.SEND_COMMENT_TO_TERMINAL:
     return sendCommentToTerminal(state, action);
 case actionTypes.ADD_NEW_STRATEGY:
@@ -134,13 +125,10 @@ case actionTypes.TOGGLE_CHIP:
     return toggleChip(state, action);
 case actionTypes.CHANGE_TO_Q_OPS:
     return changeToQOps(state, action);
-
 case actionTypes.ADD_Q_OPS:
     return addQOps(state, action);
-
 case actionTypes.SUBTRACT_Q_OPS:
     return subtractQOps(state, action);
-
 case actionTypes.CAPTURE_CURRENT_Q_OPS:
     return captureCurrentQOps(state, action);
 case actionTypes.ADD_CHIP:
@@ -149,42 +137,32 @@ case actionTypes.UPDATE_OPS:
     return updateOps(state, action);
 case actionTypes.START_TIMER:
     return startTimer(state, action);
-
 case actionTypes.SHOW_AUTO_WIRE_BUYER:
     return showAutoWireBuyer(state, action);
 case actionTypes.TOGGLE_WIRE_BUYER_PROJECT:
     return toggleWireBuyerProject(state, action);
-
 case actionTypes.TOGGLE_AUTO_WIRE_BUYER:
     return toggleAutoWireBuyer(state, action);
-
-    
 case actionTypes.SHOW_MEGA_CLIPPERS:
     return showMegaClippers(state, action);
 case actionTypes.CALC_DELAY_UNSOLD_INVENTARY:
     return calcDelayUnsoldInventary(state, action);
-
 case actionTypes.GET_DEPOSIT:
     return getDeposit(state, action);
-
 case actionTypes.ADD_INVESTMENTS_LINE:
     return addInvestmentsLine(state, action);
 case actionTypes.UPDATE_INVESTMENTS_LINES:
     return updateInvestmentsLines(state, action);
-
 case actionTypes.UPDATE_INVESTMENTS_TOTAL:
     return updateInvestmentsTotal(state, action);
 case actionTypes.UPDATE_INVESTMENTS_CASH:
     return updateInvestmentsCash(state, action);
 case actionTypes.UPDATE_INVESTMENTS_STOCKS:
     return updateInvestmentsStocks(state, action);
-
 case actionTypes.UPDATE_FAKE_INVESTMENTS_CASH:
     return updateFakeInvestmentsCash(state, action);
-
 case actionTypes.UPDATE_FUNDS_WITHDRAW:
     return updateFundsWithdraw(state, action);
-
 case actionTypes.ADD_CHOSEN_FROM_DROPDOWN:
     return addChosenFromDropdown(state, action);
 case actionTypes.UPDATE_INVESTMENTS_DELAY:

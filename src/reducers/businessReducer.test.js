@@ -650,6 +650,25 @@ describe('businessReducer', () => {
     })
 
     
+    it("should update card with 3 new card passed through the action", () => {
+        const action = { 
+            type: actionTypes.INIT_PROJECTS,
+            card1: {a: 1},
+            card2: {a: 2},
+            card3: {a: 3}
+        }
+        const initState = {
+            ...initialState, 
+            cards: []
+        }
+        const state = {
+            ...initialState, 
+            cards: [{a: 1},{a: 2},{a: 3}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    
 
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
