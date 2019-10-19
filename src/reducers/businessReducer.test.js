@@ -538,6 +538,22 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update cards by adding 1 project", () => {
+        const action = { 
+            type: actionTypes.ADD_PROJECT,
+            project: { a:12 }
+        }
+        const initState = {
+            ...initialState, 
+            cards: [{ a:10 }]
+        }
+        const state = {
+            ...initialState, 
+            cards: [{ a:10 },{ a:12 }]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
