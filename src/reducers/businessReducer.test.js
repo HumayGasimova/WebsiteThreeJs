@@ -1164,6 +1164,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set megaClippersIsShown to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_MEGA_CLIPPERS
+        }
+        const initState = {
+            ...initialState, 
+            megaClippersIsShown: false
+        }
+        const state = {
+            ...initialState, 
+            megaClippersIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
