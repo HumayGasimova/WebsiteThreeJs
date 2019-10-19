@@ -77,14 +77,10 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(TOGGLE_MAKE_PAPERCLIP_BUTTON)
+    reducer test updated(IMPROVE_WIRE_EXTRUSION)
 
 
 
-
-
-case actionTypes.IMPROVE_WIRE_EXTRUSION:
-    return improveWireExtrusion(state, action);  
 case actionTypes.CREATIVITY_TURN_ON:
     return creativityTurnOn(state, action);  
 case actionTypes.WIRE_EXISTS:

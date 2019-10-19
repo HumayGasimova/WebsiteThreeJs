@@ -721,7 +721,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update delayAutoPaperClippers using formula", () => {
+    it("should update delayAutoPaperClippers using formula and value passed through the action", () => {
         const action = { 
             type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
             val: 25
@@ -749,6 +749,22 @@ describe('businessReducer', () => {
         const state = {
             ...initialState, 
             makePaperclipDisabled: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update wireToAdd using formula and value passed through the action", () => {
+        const action = { 
+            type: actionTypes.IMPROVE_WIRE_EXTRUSION,
+            val: 25
+        }
+        const initState = {
+            ...initialState, 
+            wireToAdd: 1600
+        }
+        const state = {
+            ...initialState, 
+            wireToAdd: 2000
         }
         expect(reducer(initState, action)).toEqual(state);
     })
