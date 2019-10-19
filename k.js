@@ -77,14 +77,12 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(ADD_Q_OPS)
+    reducer test updated(SUBTRACT_Q_OPS)
 
 
 
 
 
-case actionTypes.SUBTRACT_Q_OPS:
-    return subtractQOps(state, action);
 case actionTypes.CAPTURE_CURRENT_Q_OPS:
     return captureCurrentQOps(state, action);
 case actionTypes.ADD_CHIP:

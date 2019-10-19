@@ -1041,6 +1041,22 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should find chip in chipsArray using chipsNumber passed through the action and update its property qOps by subtracting 1", () => {
+        const action = { 
+            type: actionTypes.SUBTRACT_Q_OPS,
+            chipsNumber: 'chip1'
+        }
+        const initState = {
+            ...initialState, 
+            chips: [{chipsNumber: 'chip1', showChip: true, qOps: 150}, {chipsNumber: 'chip2', showChip: true, qOps: 50}]
+        }
+        const state = {
+            ...initialState, 
+            chips: [{chipsNumber: 'chip1', showChip: true, qOps: 149}, {chipsNumber: 'chip2', showChip: true, qOps: 50}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
 
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
