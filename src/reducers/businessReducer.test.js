@@ -1304,7 +1304,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should (if investmentsLines does not include '' && notEmpty is true) add one investmentsLine and remove investmentsLine[0] ", () => {
+    it("should set investmentsTotal to the value passed through the action", () => {
         const action = { 
             type: actionTypes.UPDATE_INVESTMENTS_TOTAL,
             total: 500
@@ -1316,6 +1316,22 @@ describe('businessReducer', () => {
         const state = {
             ...initialState, 
             investmentsTotal: 500
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should set investmentsCash to the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_INVESTMENTS_CASH,
+            cash: 700
+        }
+        const initState = {
+            ...initialState, 
+            investmentsCash: 200
+        }
+        const state = {
+            ...initialState, 
+            investmentsCash: 700
         }
         expect(reducer(initState, action)).toEqual(state);
     })
