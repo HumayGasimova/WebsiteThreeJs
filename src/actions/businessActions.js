@@ -619,10 +619,10 @@ export function stopUpdatingInvestmentLines() {
     };
 };
 
-export function updateInvestmentsLines(obj) {
+export function updateInvestmentsLines(arr) {
     return { 
         type: actionTypes.UPDATE_INVESTMENTS_LINES,
-        obj: obj
+        array: arr
     };
 };
 

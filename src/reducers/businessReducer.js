@@ -599,7 +599,7 @@ const addInvestmentsLine = (state, action) => {
 
 const updateInvestmentsLines = (state, action) => {
     return updateObject(state, {
-        investmentsLines: action.obj
+        investmentsLines: action.array
     });
 }
 
