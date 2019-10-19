@@ -1335,6 +1335,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set investmentsCash to the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_INVESTMENTS_STOCKS,
+            stocks: 900
+        }
+        const initState = {
+            ...initialState, 
+            investmentsStocks: 300
+        }
+        const state = {
+            ...initialState, 
+            investmentsStocks: 900
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
