@@ -77,13 +77,11 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(SHOW_AUTO_WIRE_BUYER)
+    reducer test updated(TOGGLE_WIRE_BUYER_PROJECT)
 
 
 
 
-case actionTypes.TOGGLE_WIRE_BUYER_PROJECT:
-    return toggleWireBuyerProject(state, action);
 case actionTypes.TOGGLE_AUTO_WIRE_BUYER:
     return toggleAutoWireBuyer(state, action);
 case actionTypes.SHOW_MEGA_CLIPPERS:

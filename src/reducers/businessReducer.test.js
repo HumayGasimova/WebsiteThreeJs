@@ -1134,6 +1134,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set wireBuyerProjectIsShown to true", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_WIRE_BUYER_PROJECT
+        }
+        const initState = {
+            ...initialState, 
+            wireBuyerProjectIsShown: false
+        }
+        const state = {
+            ...initialState, 
+            wireBuyerProjectIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
