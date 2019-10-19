@@ -1179,6 +1179,25 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update delayUnsoldInventary using formula", () => {
+        const action = { 
+            type: actionTypes.CALC_DELAY_UNSOLD_INVENTARY
+        }
+        const initState = {
+            ...initialState, 
+            publicDemand: 32,
+            delayUnsoldInventaryConst: 500,
+            delayUnsoldInventary: 7000
+        }
+        const state = {
+            ...initialState, 
+            publicDemand: 32,
+            delayUnsoldInventaryConst: 500,
+            delayUnsoldInventary: 1562.5
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
