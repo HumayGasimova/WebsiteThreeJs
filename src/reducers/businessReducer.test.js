@@ -1236,6 +1236,40 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should (if investmentsLines includes '' && notEmpty is true) add one investmentsLine ", () => {
+        const action = { 
+            type: actionTypes.ADD_INVESTMENTS_LINE,
+            obj: {a:5},
+            notEmpty: true
+        }
+        const initState = {
+            ...initialState, 
+            investmentsLines: [{a:4},'','','','']
+        }
+        const state = {
+            ...initialState, 
+            investmentsLines: [{a:4},{a:5},'','','']
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if investmentsLines does not include '' && notEmpty is false) add one investmentsLine and remove investmentsLine[0] ", () => {
+        const action = { 
+            type: actionTypes.ADD_INVESTMENTS_LINE,
+            obj: {a:6},
+            notEmpty: true
+        }
+        const initState = {
+            ...initialState, 
+            investmentsLines: [{a:1},{a:2},{a:3},{a:4},{a:5}]
+        }
+        const state = {
+            ...initialState, 
+            investmentsLines: [{a:2},{a:3},{a:4},{a:5},{a:6}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
