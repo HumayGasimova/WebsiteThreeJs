@@ -77,14 +77,11 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(CREATIVITY_TURN_ON)
+    reducer test updated(WIRE_EXISTS)
 
 
 
-case actionTypes.CREATIVITY_TURN_ON:
-    return creativityTurnOn(state, action);  
-case actionTypes.WIRE_EXISTS:
-    return wireExists(state, action);
+
 case actionTypes.IMPROVE_MARKETING:
     return improveMarketing(state, action);
 case actionTypes.SHOW_INVESTMENT_ENGINE:

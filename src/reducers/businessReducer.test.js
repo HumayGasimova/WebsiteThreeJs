@@ -783,6 +783,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set noWire to true", () => {
+        const action = { 
+            type: actionTypes.WIRE_EXISTS,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            noWire: false
+        }
+        const state = {
+            ...initialState, 
+            noWire: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
 
     // it("should return the initial state", () => {
