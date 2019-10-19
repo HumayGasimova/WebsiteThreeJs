@@ -77,14 +77,10 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(ADD_INVESTMENTS_LINE)
+    reducer test updated(UPDATE_INVESTMENTS_TOTAL)
 
 
  
-case actionTypes.UPDATE_INVESTMENTS_LINES:
-    return updateInvestmentsLines(state, action);
-case actionTypes.UPDATE_INVESTMENTS_TOTAL:
-    return updateInvestmentsTotal(state, action);
 case actionTypes.UPDATE_INVESTMENTS_CASH:
     return updateInvestmentsCash(state, action);
 case actionTypes.UPDATE_INVESTMENTS_STOCKS:
