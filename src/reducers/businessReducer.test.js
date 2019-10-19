@@ -721,6 +721,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update delayAutoPaperClippers using formula", () => {
+        const action = { 
+            type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
+            val: 25
+        }
+        const initState = {
+            ...initialState, 
+            delayAutoPaperClippers: 9000
+        }
+        const state = {
+            ...initialState, 
+            delayAutoPaperClippers: 6750
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
 
     // it("should return the initial state", () => {
