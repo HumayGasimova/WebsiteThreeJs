@@ -7,7 +7,7 @@ export const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
-    paperclipPrice: 1000000000, // 0.5
+    paperclipPrice: 0.5, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
     publicDemand: 16,
@@ -59,6 +59,7 @@ export const initialState = {
     wireBuyerIsShown: false,
     autoWireBuyerIsOn: true,
     megaClippersIsShown: false,
+    autoClippersIsShown: false,
     delayUnsoldInventary: 4375,
     delayUnsoldInventaryConst: 700,
     fakeInvestmentsCash: 0,
@@ -548,6 +549,12 @@ const showMegaClippers = (state, action) => {
     });
 }
 
+const showAutoClippers = (state, action) => {
+    return updateObject(state, {
+        autoClippersIsShown: true
+    });
+}
+
 const getDeposit = (state, action) => {
     let updatedCash;
     if(state.investmentsCash === 0){
@@ -836,6 +843,8 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.SHOW_MEGA_CLIPPERS:
             return showMegaClippers(state, action);
+        case actionTypes.SHOW_AUTO_CLIPPERS:
+            return showAutoClippers(state, action);
         case actionTypes.CALC_DELAY_UNSOLD_INVENTARY:
             return calcDelayUnsoldInventary(state, action);
         case actionTypes.START_INVESTMENTS_DEPOSIT:

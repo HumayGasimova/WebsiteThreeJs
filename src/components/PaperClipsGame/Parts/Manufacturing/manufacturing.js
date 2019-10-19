@@ -108,6 +108,7 @@ export class Manufacturing extends Component {
         if (prevProps.autoClipperInitPrice !== this.props.autoClipperInitPrice) {
             if(this.props.autoClipperInitPrice === 5){
                 this.props.sendCommentToTerminal("AutoClippers available for purchase");
+                this.props.showAutoClippers();
             }
         }
        
@@ -148,7 +149,7 @@ export class Manufacturing extends Component {
                     </div>
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
-                {this.props.autoClipperInitPrice === 5 ? <AutoClippers/> : null}
+                {this.props.autoClippersIsShown ? <AutoClippers/> : null}
                 {this.props.megaClippersIsShown ? <MegaClippers/> : null}
             </div>
         );
@@ -175,7 +176,8 @@ export default connect(
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
             paperClips: state.business.paperClips,
             megaClippersIsShown: state.business.megaClippersIsShown,
-            clipsPerSec: state.business.clipsPerSec
+            clipsPerSec: state.business.clipsPerSec,
+            autoClippersIsShown: state.business.autoClippersIsShown,
         };
     },
     (dispatch) => {
@@ -192,6 +194,7 @@ export default connect(
             toggleAutoWireBuyer: bindActionCreators(Actions.toggleAutoWireBuyer, dispatch),
             addMegaClippers: bindActionCreators(Actions.addMegaClippers, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
+            showAutoClippers: bindActionCreators(Actions.showAutoClippers, dispatch),
         };
     }
 )(Manufacturing);

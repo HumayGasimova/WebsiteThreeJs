@@ -562,6 +562,12 @@ export function showMegaClippers() {
     };
 };
 
+export function showAutoClippers() {
+    return { 
+        type: actionTypes.SHOW_AUTO_CLIPPERS
+    };
+};
+
 export function calcDelayUnsoldInventary() {
     return { 
         type: actionTypes.CALC_DELAY_UNSOLD_INVENTARY

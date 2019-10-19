@@ -80,3 +80,5 @@ case actionTypes.START_INVESTMENTS_WITHDRAW:
     reducer test updated(UPDATE_INVESTMENTS_DELAY)
 
 
+    case actionTypes.SHOW_AUTO_CLIPPERS:
+            return showAutoClippers(state, action);
