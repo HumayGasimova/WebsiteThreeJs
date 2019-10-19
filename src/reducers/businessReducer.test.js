@@ -1416,6 +1416,25 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update delayUpdatingInvScreen and delayUpdatingInvLines with the values passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_INVESTMENTS_DELAY,
+            delayScreen: 10000,
+            delayLines: 4000
+        }
+        const initState = {
+            ...initialState, 
+            delayUpdatingInvScreen: 7000,
+            delayUpdatingInvLines: 3000
+        }
+        const state = {
+            ...initialState, 
+            delayUpdatingInvScreen: 10000,
+            delayUpdatingInvLines: 4000
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
