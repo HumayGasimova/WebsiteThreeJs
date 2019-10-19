@@ -978,6 +978,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update showQCompMessage by adding 1", () => {
+        const action = { 
+            type: actionTypes.SHOW_QUANT_COMP_MESSAGE
+        }
+        const initState = {
+            ...initialState, 
+            showQCompMessage: 2
+        }
+        const state = {
+            ...initialState, 
+            showQCompMessage: 3
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
