@@ -83,8 +83,6 @@ case actionTypes.START_INVESTMENTS_WITHDRAW:
 
 
 
-case actionTypes.CHECK_CARD_VALIDITY:
-    return checkCardValidity(state, action); 
 case actionTypes.REMOVE_PRICE_OF_PROJECT_CREAT:
     return removePriceOfProjectCreat(state, action);  
 case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT:

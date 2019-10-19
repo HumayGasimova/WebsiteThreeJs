@@ -668,6 +668,24 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update card with 3 new card passed through the action", () => {
+        const action = { 
+            type: actionTypes.CHECK_CARD_VALIDITY,
+            cardId: 2,
+            valid: true,
+            i: 1
+        }
+        const initState = {
+            ...initialState, 
+            cards: [{id: 1, valid: false},{id: 2, valid: false},{id: 3, valid: true}]
+        }
+        const state = {
+            ...initialState, 
+            cards: [{id: 1, valid: false},{id: 2, valid: true},{id: 3, valid: true}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     
 
     // it("should return the initial state", () => {
