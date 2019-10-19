@@ -15,7 +15,7 @@ export const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 50, //1000
+    wire: 1000, //1000
     wireToAdd: 1000,
     wirePrice: 20,
     wireButtonDisabled: true,
@@ -30,7 +30,7 @@ export const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 10,
+    opsMax: 10,//1000
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
