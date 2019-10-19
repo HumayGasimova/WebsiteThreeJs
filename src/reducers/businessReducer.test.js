@@ -586,6 +586,71 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should (if paperClips are less than clipsToBuyTrust) do nothing", () => {
+        const action = { 
+            type: actionTypes.TRUST_PLUS_ONE
+        }
+        const initState = {
+            ...initialState, 
+            paperClips: 2000,
+            clipsToBuyTrust: 3000,
+            prevTrust: 1000,
+            trust: 4
+        }
+        const state = {
+            ...initialState, 
+            paperClips: 2000,
+            clipsToBuyTrust: 3000,
+            prevTrust: 1000,
+            trust: 4
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if paperClips are more than and equal to clipsToBuyTrust && trust is equal to 2) update clipsToBuyTrust with the value 5000 and trust by adding 1", () => {
+        const action = { 
+            type: actionTypes.TRUST_PLUS_ONE
+        }
+        const initState = {
+            ...initialState, 
+            paperClips: 4000,
+            clipsToBuyTrust: 3000,
+            prevTrust: 1000,
+            trust: 2
+        }
+        const state = {
+            ...initialState, 
+            paperClips: 4000,
+            clipsToBuyTrust: 5000,
+            prevTrust: 1000,
+            trust: 3
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if paperClips are more than and equal to clipsToBuyTrust && trust isn't equal to 2) update clipsToBuyTrust with the value of sum prevTrust and clipsToBuyTrust,prevTrust with the value of clipsToBuyTrust and trust by adding 1", () => {
+        const action = { 
+            type: actionTypes.TRUST_PLUS_ONE
+        }
+        const initState = {
+            ...initialState, 
+            paperClips: 10000,
+            clipsToBuyTrust: 6000,
+            prevTrust: 1000,
+            trust: 5
+        }
+        const state = {
+            ...initialState, 
+            paperClips: 10000,
+            clipsToBuyTrust: 7000,
+            prevTrust: 6000,
+            trust: 6
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

@@ -81,8 +81,6 @@ case actionTypes.START_INVESTMENTS_WITHDRAW:
 
 
 
-case actionTypes.TRUST_PLUS_ONE:
-    return trustPlusOne(state, action); 
 
 
 case actionTypes.INIT_PROJECTS:
