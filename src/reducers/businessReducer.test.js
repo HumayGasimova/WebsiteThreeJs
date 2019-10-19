@@ -799,6 +799,24 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update maxPublicDemand using formula and value passed through the action and delayUnsoldInventaryConst using formula", () => {
+        const action = { 
+            type: actionTypes.IMPROVE_MARKETING,
+            val: 40
+        }
+        const initState = {
+            ...initialState, 
+            maxPublicDemand: 32,
+            delayUnsoldInventaryConst: 6000
+        }
+        const state = {
+            ...initialState, 
+            maxPublicDemand: 45,
+            delayUnsoldInventaryConst: 5820
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
 
     // it("should return the initial state", () => {
