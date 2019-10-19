@@ -864,6 +864,38 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should (if length of comments is less than 5) add new comment to commentArray in state", () => {
+        const action = { 
+            type: actionTypes.SEND_COMMENT_TO_TERMINAL,
+            comment: "Hey!"
+        }
+        const initState = {
+            ...initialState, 
+            comments: []
+        }
+        const state = {
+            ...initialState, 
+            comments: ["Hey!"]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if length of comments is greater than or equal to 5) add new comment to commentArray in state, and remove the first comment in commentsArray", () => {
+        const action = { 
+            type: actionTypes.SEND_COMMENT_TO_TERMINAL,
+            comment: "!"
+        }
+        const initState = {
+            ...initialState, 
+            comments: ["Hey", "Paperclips","Game","Is","Over"]
+        }
+        const state = {
+            ...initialState, 
+            comments: ["Paperclips","Game","Is","Over","!"]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
