@@ -1104,6 +1104,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update time by adding 1", () => {
+        const action = { 
+            type: actionTypes.START_TIMER
+        }
+        const initState = {
+            ...initialState, 
+            time: 4
+        }
+        const state = {
+            ...initialState, 
+            time: 5
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
