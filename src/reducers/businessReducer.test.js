@@ -833,6 +833,20 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
     
+    it("should set showStrategicModeling to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_STRATEGIC_MODELING
+        }
+        const initState = {
+            ...initialState, 
+            showStrategicModeling: false
+        }
+        const state = {
+            ...initialState, 
+            showStrategicModeling: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
 
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
