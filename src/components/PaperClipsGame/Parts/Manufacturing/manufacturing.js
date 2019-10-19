@@ -105,8 +105,8 @@ export class Manufacturing extends Component {
             }
         }
       
-        if (prevProps.autoClipperInitPrice !== this.props.autoClipperInitPrice) {
-            if(this.props.autoClipperInitPrice === 5){
+        if (prevProps.funds !== this.props.funds) {
+            if(this.props.funds === 5){
                 this.props.sendCommentToTerminal("AutoClippers available for purchase");
                 this.props.showAutoClippers();
             }
