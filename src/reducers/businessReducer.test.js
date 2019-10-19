@@ -912,6 +912,23 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should set showDropdownInvestments to true, showDropdownStrategicModeling to false", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_DROPDOWN_INVESTMENTS
+        }
+        const initState = {
+            ...initialState, 
+            showDropdownInvestments: false,
+            showDropdownStrategicModeling: true,
+        }
+        const state = {
+            ...initialState, 
+            showDropdownInvestments: true,
+            showDropdownStrategicModeling: false,
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
