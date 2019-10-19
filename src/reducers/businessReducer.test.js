@@ -23,7 +23,7 @@ describe('businessReducer', () => {
         expect(reducer(initialState, action)).toEqual(state);
     })
 
-    it("should update clipsPerSec with the value passed through action", () => {
+    it("should update clipsPerSec with the value passed through the action", () => {
         const action = { 
             type: actionTypes.UPDATE_CLIPS_PER_SEC,
             val: 3
@@ -35,7 +35,7 @@ describe('businessReducer', () => {
         expect(reducer(initialState, action)).toEqual(state);
     })
 
-    it("should update funds with the value passed through action", () => {
+    it("should update funds with the value passed through the action", () => {
         const action = { 
             type: actionTypes.UPDATE_FUNDS,
             value: 0.5
@@ -206,7 +206,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update wirePrice with the value passed through action", () => {
+    it("should update wirePrice with the value passed through the action", () => {
         const action = { 
             type: actionTypes.RANDOM_WIRE_PRICE,
             value: 469
@@ -520,7 +520,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update ops by subtracting the price passed through action and set revTracker to true", () => {
+    it("should update ops by subtracting the price passed through the action and set revTracker to true", () => {
         const action = { 
             type: actionTypes.SHOW_REV_TRACKER,
             price: 10
@@ -570,7 +570,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update cards by deleting card with id passed through action", () => {
+    it("should update cards by deleting card with id passed through the action", () => {
         const action = { 
             type: actionTypes.DELETE_CARD,
             cardId: 12
@@ -682,6 +682,22 @@ describe('businessReducer', () => {
         const state = {
             ...initialState, 
             cards: [{id: 1, valid: false},{id: 2, valid: true},{id: 3, valid: true}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update creativity by removing the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.REMOVE_PRICE_OF_PROJECT_CREAT,
+            creativity: 30
+        }
+        const initState = {
+            ...initialState, 
+            creativity: 50
+        }
+        const state = {
+            ...initialState, 
+            creativity: 20
         }
         expect(reducer(initState, action)).toEqual(state);
     })
