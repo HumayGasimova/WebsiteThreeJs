@@ -702,6 +702,25 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
+    it("should update creativity and ops by removing the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT,
+            ops: 10,
+            creativity: 30
+        }
+        const initState = {
+            ...initialState, 
+            ops: 60,
+            creativity: 50
+        }
+        const state = {
+            ...initialState, 
+            ops: 50,
+            creativity: 20
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
     
 
     // it("should return the initial state", () => {

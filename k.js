@@ -77,14 +77,11 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(UPDATE_UNSOLD_INVENTORY)
+    reducer test updated(REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT)
 
 
 
 
-
-case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT:
-    return removePriceOfProjectOpsAndCreat(state, action);  
 case actionTypes.IMPROVE_AUTO_PAPER_CLIPPER:
     return improveAutoClippers(state, action);  
 case actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON:
