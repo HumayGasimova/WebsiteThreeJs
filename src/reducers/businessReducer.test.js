@@ -817,6 +817,21 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set showInvestmentEngine to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_INVESTMENT_ENGINE
+        }
+        const initState = {
+            ...initialState, 
+            showInvestmentEngine: false
+        }
+        const state = {
+            ...initialState, 
+            showInvestmentEngine: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
 
     // it("should return the initial state", () => {

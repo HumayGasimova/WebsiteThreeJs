@@ -77,13 +77,11 @@ case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
 case actionTypes.START_INVESTMENTS_WITHDRAW:
     return state;
 
-    reducer test updated(IMPROVE_MARKETING)
+    reducer test updated(SHOW_INVESTMENT_ENGINE)
 
 
 
 
-case actionTypes.SHOW_INVESTMENT_ENGINE:
-    return showInvestEngine(state, action);
 case actionTypes.SHOW_STRATEGIC_MODELING:
     return showStrategicModeling(state, action);
 case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
