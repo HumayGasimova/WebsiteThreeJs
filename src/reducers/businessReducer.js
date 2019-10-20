@@ -7,7 +7,7 @@ export const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
-    paperclipPrice: 0.5, // 0.5
+    paperclipPrice: 100, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
     publicDemand: 16,
@@ -21,9 +21,12 @@ export const initialState = {
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
     autoPaperclips: 0,
-    autoClipperInitPrice: 0,
+    autoClipperInitPrice: 5,
     autoClipperPrice: 6.1,
+    megaClipperInitPrice: 500,
+    megaClipperPrice: 1070,
     autoClippersButtonDisabled: true,
+    megaClippersButtonDisabled: true,
     autoClipperOn: false,
     prevTrust: 3000,
     trust: 2,
@@ -218,6 +221,18 @@ const toggleAutoClippersButton = (state) => {
     }
     return updateObject(state, {
        autoClippersButtonDisabled: isDisable
+    });
+}
+
+const toggleMegaClippersButton = (state) => {
+    let isDisable
+    if(state.megaClippersPerSec === 0){
+        isDisable = state.funds < state.megaClipperInitPrice;
+    }else{
+        isDisable = state.funds < state.megaClipperPrice;
+    }
+    return updateObject(state, {
+       megaClippersButtonDisabled: isDisable
     });
 }
 
@@ -679,13 +694,23 @@ const updateAvgClipsSoldPerSec = (state, action) => {
 }
 
 const megaClippersButtonPressed = (state, action) => {
+    let updatedMegaClippersPrice;
+    let updatedFunds;
+
+    if(state.megaClippersPerSec === 0){
+        updatedMegaClippersPrice = state.megaClipperPrice;
+        updatedFunds = state.funds - state.megaClipperInitPrice;
+    }else{
+        updatedMegaClippersPrice = +(state.megaClipperPrice + (state.megaClipperPrice * 0.07)).toFixed(2);
+        updatedFunds = +state.funds - +state.megaClipperPrice;
+    }
     return updateObject(state, {
-        megaClippersPerSec: state.megaClippersPerSec + 1
+        megaClippersPerSec: +state.megaClippersPerSec + 1,
+        megaClipperPrice: +updatedMegaClippersPrice,
+        funds: +updatedFunds,
+        megaClippersToAdd: state.megaClippersToAdd + 500
     });
 }
-
-
-
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -743,6 +768,8 @@ const businessReducer = (state = initialState, action) => {
             return setAutoClipperInitPrice(state, action); 
         case actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON:
             return toggleAutoClippersButton(state, action); 
+        case actionTypes.TOGGLE_MEGA_CLIPPERS_BUTTON:
+            return toggleMegaClippersButton(state, action); 
         case actionTypes.TRUST_PLUS_ONE:
             return trustPlusOne(state, action); 
         case actionTypes.TRUST_PLUS_ONE_FROM_PROJECT:

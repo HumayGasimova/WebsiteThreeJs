@@ -23,6 +23,7 @@ export {
     autoClippersAddOne,
     setAutoClipperInitPrice,
     toggleAutoClippersButton,
+    toggleMegaClippersButton,
     trustPlusOne,
     repeatAutoPaperClippers,
     increaseOps,

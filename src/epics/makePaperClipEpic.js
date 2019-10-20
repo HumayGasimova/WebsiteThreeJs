@@ -17,6 +17,7 @@ function makePaperClipEpic(action$, state$) {
                         Actions.toggleMarketingButton(),
                         Actions.toggleWireButton(),
                         Actions.toggleAutoClippersButton(),
+                        Actions.toggleMegaClippersButton(),
                         Actions.trustPlusOne(),
                         Actions.sendCommentToTerminal('Production target met: TRUST INCREASED, additional processor/memory capacity granted')
                     ) 
@@ -33,6 +34,7 @@ function makePaperClipEpic(action$, state$) {
                         Actions.toggleMarketingButton(),
                         Actions.toggleWireButton(),
                         Actions.toggleAutoClippersButton(),
+                        Actions.toggleMegaClippersButton(),
                         Actions.trustPlusOne()
                     ) 
                     .delay(state$.value.business.delay)

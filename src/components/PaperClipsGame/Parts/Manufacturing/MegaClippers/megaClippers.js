@@ -71,12 +71,12 @@ export class MegaClippers extends Component {
                     <Button
                         onClick={this.megaClippersOnClick}
                         text={"MegaClippers"}
-                        // disabled={this.props.autoClippersButtonDisabled}
+                        disabled={this.props.megaClippersButtonDisabled}
                 
                     />
                     <div className="megaClippers-text">{this.props.megaClippersPerSec}</div>
                 </div>
-                <div className="megaClippers-text">Cost: $ 0</div>
+                <div className="megaClippers-text">Cost: $ {this.props.megaClippersPerSec === 0 ? this.props.megaClipperInitPrice : this.props.megaClipperPrice}</div>
             </div> 
         );
     }
@@ -88,7 +88,10 @@ export default connect(
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
             megaClippersPerSec: state.business.megaClippersPerSec,
             autoClipperInitPrice: state.business.autoClipperInitPrice,
-            autoClipperPrice: state.business.autoClipperPrice
+            autoClipperPrice: state.business.autoClipperPrice,
+            megaClipperPrice: state.business.megaClipperPrice,
+            megaClipperInitPrice: state.business.megaClipperInitPrice,
+            megaClippersButtonDisabled: state.business.megaClippersButtonDisabled,
         };
     },
     (dispatch) => {

@@ -160,6 +160,12 @@ export function toggleAutoClippersButton() {
     };
 };
 
+export function toggleMegaClippersButton() {
+    return { 
+        type: actionTypes.TOGGLE_MEGA_CLIPPERS_BUTTON
+    };
+};
+
 export function trustPlusOne() {
     return { 
         type: actionTypes.TRUST_PLUS_ONE,

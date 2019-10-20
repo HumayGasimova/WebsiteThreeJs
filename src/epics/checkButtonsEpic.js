@@ -15,7 +15,8 @@ function checkButtonsEpic(action$) {
             return Observable.of(
                 Actions.toggleWireButton(),
                 Actions.toggleMarketingButton(),
-                Actions.toggleAutoClippersButton()
+                Actions.toggleAutoClippersButton(),
+                Actions.toggleMegaClippersButton(),
             )        
         })
         
