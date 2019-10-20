@@ -754,4 +754,13 @@ export function startMegaCluppers() {
     };
 };
 
+export function improveMegaClippers(val) {
+    return { 
+        type: actionTypes.IMPROVE_MEGA_CLIPPERS,
+        val: val
+    };
+};
+
+
+
 

@@ -569,7 +569,7 @@ export const WireBuyer = {
                                                                                                                 action: 25,
                                                                                                                 next: 'improvedMegaClippers',
                                                                                                                 valid: false,
-                                                                                                                id: "",
+                                                                                                                id: "card43",
                                                                                                                 terminal: "MegaClipper performance increased by 25%"
                                                                                                             }
                                                                                                             export const EvenBetterMegaClippers = {
@@ -582,7 +582,7 @@ export const WireBuyer = {
                                                                                                                 action: 50,
                                                                                                                 next: 'EevenBetterMegaClippers',
                                                                                                                 valid: false,
-                                                                                                                id: "",
+                                                                                                                id: "card44",
                                                                                                                 terminal: "MegaClipper performance increased by 50%"
                                                                                                             }
                                                                                                             export const OptimizedMegaClippers = {
@@ -595,7 +595,7 @@ export const WireBuyer = {
                                                                                                                 action: 50,
                                                                                                                 next: 'optimizedMegaClippers',
                                                                                                                 valid: false,
-                                                                                                                id: "",
+                                                                                                                id: "card45",
                                                                                                                 terminal: "MegaClipper performance increased by 100%| "
                                                                                                             }//stop
 

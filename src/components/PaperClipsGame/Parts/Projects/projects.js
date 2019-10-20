@@ -328,9 +328,16 @@ export class Projects extends Component {
                 this.props.showAutoWireBuyer();
                 break;
             case 'megaClippers':
+                this.props.addProject(projectsToAdd.ImprovedMegaClippers);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showMegaClippers()
+                break; 
+            case 'improvedMegaClippers':
+                this.props.addProject(projectsToAdd.EvenBetterMegaClippers);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectCreat(price.creat);
+                this.props.improveMegaClippers(action);
                 break; 
             case 'photonicChip4':
                 this.props.addProject(projectsToAdd.PhotonicChip5);
@@ -472,7 +479,8 @@ export default connect(
             addChip: bindActionCreators(Actions.addChip, dispatch),
             showAutoWireBuyer: bindActionCreators(Actions.showAutoWireBuyer, dispatch),
             updatePublicDemand: bindActionCreators(Actions.updatePublicDemand, dispatch),
-            showMegaClippers: bindActionCreators(Actions.showMegaClippers, dispatch)
+            showMegaClippers: bindActionCreators(Actions.showMegaClippers, dispatch),
+            improveMegaClippers: bindActionCreators(Actions.improveMegaClippers, dispatch),
         };
     }
 )(Projects);

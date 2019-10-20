@@ -6,8 +6,8 @@ import {
 export const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
-    funds: 0, //pomenat na 0
-    paperclipPrice: 100, // 0.5
+    funds: 50000, //pomenat na 0
+    paperclipPrice: 0.5, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
     publicDemand: 16,
@@ -83,7 +83,7 @@ const makePaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
-       paperClips: state.paperClips + 1, //pomenat na 1
+       paperClips: state.paperClips + 100000, //pomenat na 1
        unsoldInventory: +state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
@@ -696,21 +696,33 @@ const updateAvgClipsSoldPerSec = (state, action) => {
 const megaClippersButtonPressed = (state, action) => {
     let updatedMegaClippersPrice;
     let updatedFunds;
+    let updatedMegaClippersToAdd;
 
     if(state.megaClippersPerSec === 0){
         updatedMegaClippersPrice = state.megaClipperPrice;
         updatedFunds = state.funds - state.megaClipperInitPrice;
+        updatedMegaClippersToAdd = state.megaClippersToAdd
     }else{
         updatedMegaClippersPrice = +(state.megaClipperPrice + (state.megaClipperPrice * 0.07)).toFixed(2);
         updatedFunds = +state.funds - +state.megaClipperPrice;
+        updatedMegaClippersToAdd = state.megaClippersToAdd + 500;
     }
     return updateObject(state, {
         megaClippersPerSec: +state.megaClippersPerSec + 1,
         megaClipperPrice: +updatedMegaClippersPrice,
         funds: +updatedFunds,
-        megaClippersToAdd: state.megaClippersToAdd + 500
+        megaClippersToAdd: updatedMegaClippersToAdd
     });
 }
+
+const improveMegaClippers = (state, action) => {
+    let updateMegaClippersToAdd = +(state.megaClippersToAdd + (state.megaClippersToAdd * action.val)/100).toFixed()
+    console.log(updateMegaClippersToAdd)
+    return updateObject(state, {
+        megaClippersToAdd: updateMegaClippersToAdd
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -945,7 +957,8 @@ const businessReducer = (state = initialState, action) => {
             return megaClippersButtonPressed(state, action);  
         case actionTypes.START_MEGACLIPPERS:
             return state;     
-
+        case actionTypes.IMPROVE_MEGA_CLIPPERS:
+            return improveMegaClippers(state, action);  
         default: 
             return state;
     }
