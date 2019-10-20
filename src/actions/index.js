@@ -109,5 +109,7 @@ export {
     addChosenFromDropdown,
     updateInvestmentsDelay,
     startAddingEmptyInvestmentsLine,
-    stopAddingEmptyInvestmentsLine
+    stopAddingEmptyInvestmentsLine,
+    updateAvgRevPerSec,
+    updateAvgClipsSoldPerSec
 } from './businessActions';

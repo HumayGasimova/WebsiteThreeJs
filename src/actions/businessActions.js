@@ -722,12 +722,18 @@ export function stopAddingEmptyInvestmentsLine() {
     };
 };
 
-
-export const checkAuthTimeout = (expirationTime) => {
-    return dispatch => {
-
-        setTimeout(() => {
-            dispatch(logout());
-        }, expirationTime * 1000)
+export function updateAvgRevPerSec(val) {
+    return { 
+        type: actionTypes.UPDATE_AVG_REV_PER_SEC,
+        val: val
     };
-}
+};
+
+export function updateAvgClipsSoldPerSec(val) {
+    return { 
+        type: actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC,
+        val: val
+    };
+};
+
+

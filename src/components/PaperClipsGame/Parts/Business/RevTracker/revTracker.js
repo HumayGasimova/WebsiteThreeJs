@@ -37,8 +37,8 @@ export class RevTracker extends Component {
     render(){
         return(
             <div>
-                <div className="revTracker-text">Avg. Rev. per sec: $ 0.00</div>
-                <div className="revTracker-text">Avg. Clips Sold per sec: $ </div>
+                <div className="revTracker-text">Avg. Rev. per sec: $ {this.props.avgRevPerSec}</div>
+                <div className="revTracker-text">Avg. Clips Sold per sec: {this.props.avgClipsSoldPerSec} </div>
             </div>
         );
     }

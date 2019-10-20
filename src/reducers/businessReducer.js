@@ -69,7 +69,9 @@ export const initialState = {
     investmentsLines: ["","","","",""],
     risk: "lowRisk",
     delayUpdatingInvScreen: 10000,
-    delayUpdatingInvLines: 5000 
+    delayUpdatingInvLines: 5000,
+    avgRevPerSec: 0,
+    avgClipsSoldPerSec: 0
 }
 
 const makePaperclip = (state) => {
@@ -662,6 +664,19 @@ const updateInvestmentsDelay = (state, action) => {
     });
 }
 
+const updateAvgRevPerSec = (state, action) => {
+    return updateObject(state, {
+        avgRevPerSec: action.val
+    });
+}
+
+const updateAvgClipsSoldPerSec = (state, action) => {
+    return updateObject(state, {
+        avgClipsSoldPerSec: action.val
+    });
+}
+
+
 
 
 
@@ -887,6 +902,11 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
             return state;
+
+        case actionTypes.UPDATE_AVG_REV_PER_SEC:
+            return updateAvgRevPerSec(state, action);   
+        case actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC:
+            return updateAvgClipsSoldPerSec(state, action);  
         default: 
             return state;
     }

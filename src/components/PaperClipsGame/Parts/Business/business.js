@@ -72,7 +72,8 @@ export class Business extends Component {
                 <div className="business-line"/>
                 <div className="business-section">
                     <div className="business-text">Available Funds: $ {Utility.commaSeparator(this.props.funds)}</div>
-                    {this.props.revTracker ? <RevTracker/> : null}
+                    {/* {this.props.revTracker ? <RevTracker avgRevPerSec={this.props.avgRevPerSec}/> : null} */}
+                    <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/>
                     <div className="business-text">Unsold Inventory: {this.props.unsoldInventory}</div>
                     <div className="business-wrapper1">
                         <Button
@@ -114,7 +115,9 @@ export default connect(
             marketingLevel: state.business.marketingLevel,
             marketingCost: state.business.marketingCost,
             marketingButtonDisabled: state.business.marketingButtonDisabled,
-            revTracker: state.business.revTracker
+            revTracker: state.business.revTracker,
+            avgRevPerSec: state.business.avgRevPerSec,
+            avgClipsSoldPerSec: state.business.avgClipsSoldPerSec,
         };
     },
     (dispatch) => {
