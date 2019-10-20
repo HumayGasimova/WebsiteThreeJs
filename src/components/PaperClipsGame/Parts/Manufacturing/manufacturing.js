@@ -133,7 +133,7 @@ export class Manufacturing extends Component {
                 <div className="manufacturing-label">Manufacturing</div>
                 <div className="manufacturing-line"/>
                 <div className="manufacturing-section">
-                    <div className="manufacturing-text">Clips per Second: {this.props.clipsPerSec}</div>
+                    <div className="manufacturing-text">Clips per Second: {this.props.megaClippersIsShown ? this.props.clipsPerSec + (this.props.megaClippersPerSec * this.props.megaClippersToAdd) : this.props.clipsPerSec}</div>
                 </div>
                 <div className="manufacturing-section">
                     {this.props.wireBuyerIsShown ? <AutoWireBuyer/> : null}
@@ -149,7 +149,8 @@ export class Manufacturing extends Component {
                     </div>
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
-                {this.props.autoClippersIsShown ? <AutoClippers/> : null}
+                {/* {this.props.autoClippersIsShown ? <AutoClippers/> : null} */}
+                <AutoClippers/> 
                 {/* {this.props.megaClippersIsShown ? <MegaClippers/> : null} */}
                 <MegaClippers/>
             </div>
@@ -179,6 +180,8 @@ export default connect(
             megaClippersIsShown: state.business.megaClippersIsShown,
             clipsPerSec: state.business.clipsPerSec,
             autoClippersIsShown: state.business.autoClippersIsShown,
+            megaClippersPerSec: state.business.megaClippersPerSec,
+            megaClippersToAdd: state.business.megaClippersToAdd,
         };
     },
     (dispatch) => {
