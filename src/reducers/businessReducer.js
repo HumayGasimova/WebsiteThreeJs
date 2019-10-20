@@ -61,7 +61,7 @@ export const initialState = {
     megaClippersIsShown: false,
     autoClippersIsShown: false,
     delayUnsoldInventary: 4375,
-    delayUnsoldInventaryConst: 700,
+    delayUnsoldInventaryConst: 500,
     fakeInvestmentsCash: 0,
     investmentsCash: 0,
     investmentsTotal: 0,
@@ -915,7 +915,10 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC:
             return updateAvgClipsSoldPerSec(state, action);
         case actionTypes.MEGA_CLIPPERS_BUTTON_PRESSED:
-            return megaClippersButtonPressed(state, action);    
+            return megaClippersButtonPressed(state, action);  
+        case actionTypes.START_MEGACLIPPERS:
+            return state;     
+
         default: 
             return state;
     }

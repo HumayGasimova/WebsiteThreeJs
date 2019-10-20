@@ -742,7 +742,10 @@ export function megaClippersButtonPressed() {
     };
 };
 
-
-
+export function startMegaCluppers() {
+    return { 
+        type: actionTypes.START_MEGACLIPPERS
+    };
+};
 
 

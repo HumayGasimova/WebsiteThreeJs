@@ -57,7 +57,7 @@ export class MegaClippers extends Component {
 
    megaClippersOnClick = () => {
        this.props.megaClippersButtonPressed();
-    //    this.props.startMegaCluppers();
+       this.props.startMegaCluppers();
    }
 
     /**
@@ -95,6 +95,7 @@ export default connect(
         return {
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
             megaClippersButtonPressed: bindActionCreators(Actions.megaClippersButtonPressed, dispatch),
+            startMegaCluppers: bindActionCreators(Actions.startMegaCluppers, dispatch),
         };
     }
 )(MegaClippers);

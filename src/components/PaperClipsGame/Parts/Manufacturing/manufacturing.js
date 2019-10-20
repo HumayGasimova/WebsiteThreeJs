@@ -120,6 +120,7 @@ export class Manufacturing extends Component {
         this.props.startBuyingWire();
         this.props.clickWireButton();
         this.props.autoPaperclipsStart();
+        this.props.startMegaCluppers();
         
     }
 
@@ -199,6 +200,7 @@ export default connect(
             addMegaClippers: bindActionCreators(Actions.addMegaClippers, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
             showAutoClippers: bindActionCreators(Actions.showAutoClippers, dispatch),
+            startMegaCluppers: bindActionCreators(Actions.startMegaCluppers, dispatch),
         };
     }
 )(Manufacturing);

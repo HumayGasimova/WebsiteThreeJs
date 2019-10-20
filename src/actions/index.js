@@ -112,5 +112,6 @@ export {
     stopAddingEmptyInvestmentsLine,
     updateAvgRevPerSec,
     updateAvgClipsSoldPerSec,
-    megaClippersButtonPressed
+    megaClippersButtonPressed,
+    startMegaCluppers
 } from './businessActions';

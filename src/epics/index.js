@@ -39,6 +39,7 @@ import startInvestmentsWithdrawEpic from './startInvestmentsWithdrawEpic';
 import chooseFromDropdownEpic from './chooseFromDropdownEpic';
 import startAddingEmptyInvestmentsLineEpic from './startAddingEmptyInvestmentsLineEpic';
 import catchUnsoldInventoryEpic from './catchUnsoldInventoryEpic';
+import startMegaClippersEpic from './startMegaClippersEpic';
 
 
 export const rootEpic = combineEpics(
@@ -79,5 +80,6 @@ export const rootEpic = combineEpics(
     startInvestmentsWithdrawEpic,
     chooseFromDropdownEpic,
     startAddingEmptyInvestmentsLineEpic,
-    catchUnsoldInventoryEpic
+    catchUnsoldInventoryEpic,
+    startMegaClippersEpic
 );
