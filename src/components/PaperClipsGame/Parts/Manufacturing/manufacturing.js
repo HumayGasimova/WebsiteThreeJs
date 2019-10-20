@@ -150,7 +150,8 @@ export class Manufacturing extends Component {
                     <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
                 </div> 
                 {this.props.autoClippersIsShown ? <AutoClippers/> : null}
-                {this.props.megaClippersIsShown ? <MegaClippers/> : null}
+                {/* {this.props.megaClippersIsShown ? <MegaClippers/> : null} */}
+                <MegaClippers/>
             </div>
         );
     }

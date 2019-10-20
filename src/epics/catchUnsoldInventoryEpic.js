@@ -18,7 +18,6 @@ function catchUnsoldInventoryEpic(action$, state$) {
             let currentPaperclipPrice = state$.value.business.paperclipPrice;
             let avgRevPerSec = unsoldInventoryEvents * currentPaperclipPrice;
 
-            console.log(avgRevPerSec)
             return Observable.of(
                 Actions.updateAvgRevPerSec(avgRevPerSec),
                 Actions.updateAvgClipsSoldPerSec(unsoldInventoryEvents),

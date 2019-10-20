@@ -72,8 +72,8 @@ export class Business extends Component {
                 <div className="business-line"/>
                 <div className="business-section">
                     <div className="business-text">Available Funds: $ {Utility.commaSeparator(this.props.funds)}</div>
-                    {/* {this.props.revTracker ? <RevTracker avgRevPerSec={this.props.avgRevPerSec}/> : null} */}
-                    <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/>
+                    {this.props.revTracker ? <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/> : null}
+                    {/* <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/> */}
                     <div className="business-text">Unsold Inventory: {this.props.unsoldInventory}</div>
                     <div className="business-wrapper1">
                         <Button

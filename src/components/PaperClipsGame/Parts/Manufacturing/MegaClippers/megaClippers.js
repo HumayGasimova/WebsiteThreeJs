@@ -55,6 +55,11 @@ export class MegaClippers extends Component {
     * Methods
     */
 
+   megaClippersOnClick = () => {
+       this.props.megaClippersButtonPressed();
+    //    this.props.startMegaCluppers();
+   }
+
     /**
     * Markup
     */
@@ -64,14 +69,14 @@ export class MegaClippers extends Component {
             <div className="megaClippers-section">
                 <div className="megaClippers-wrapper2">
                     <Button
-                        // onClick={()=>this.props.autoPaperclips()}
+                        onClick={this.megaClippersOnClick}
                         text={"MegaClippers"}
                         disabled={this.props.autoClippersButtonDisabled}
                 
                     />
-                    <div className="megaClippers-text">{this.props.autoClippersPerSec}</div>
+                    <div className="megaClippers-text">{this.props.megaClippersPerSec}</div>
                 </div>
-                <div className="megaClippers-text">Cost: ${this.props.autoClippersPerSec === 0 ? this.props.autoClipperInitPrice : this.props.autoClipperPrice}</div>
+                <div className="megaClippers-text">Cost: $ 0</div>
             </div> 
         );
     }
@@ -81,7 +86,7 @@ export default connect(
     (state) => {
         return {
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
-            autoClippersPerSec: state.business.autoClippersPerSec,
+            megaClippersPerSec: state.business.megaClippersPerSec,
             autoClipperInitPrice: state.business.autoClipperInitPrice,
             autoClipperPrice: state.business.autoClipperPrice
         };
@@ -89,6 +94,7 @@ export default connect(
     (dispatch) => {
         return {
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
+            megaClippersButtonPressed: bindActionCreators(Actions.megaClippersButtonPressed, dispatch),
         };
     }
 )(MegaClippers);

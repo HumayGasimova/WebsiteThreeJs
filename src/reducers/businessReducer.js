@@ -71,7 +71,9 @@ export const initialState = {
     delayUpdatingInvScreen: 10000,
     delayUpdatingInvLines: 5000,
     avgRevPerSec: 0,
-    avgClipsSoldPerSec: 0
+    avgClipsSoldPerSec: 0,
+    megaClippersToAdd: 500,
+    megaClippersPerSec: 0
 }
 
 const makePaperclip = (state) => {
@@ -676,6 +678,11 @@ const updateAvgClipsSoldPerSec = (state, action) => {
     });
 }
 
+const megaClippersButtonPressed = (state, action) => {
+    return updateObject(state, {
+        megaClippersPerSec: state.megaClippersPerSec + 1
+    });
+}
 
 
 
@@ -906,7 +913,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.UPDATE_AVG_REV_PER_SEC:
             return updateAvgRevPerSec(state, action);   
         case actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC:
-            return updateAvgClipsSoldPerSec(state, action);  
+            return updateAvgClipsSoldPerSec(state, action);
+        case actionTypes.MEGA_CLIPPERS_BUTTON_PRESSED:
+            return megaClippersButtonPressed(state, action);    
         default: 
             return state;
     }

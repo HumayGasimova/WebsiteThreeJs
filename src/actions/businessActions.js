@@ -736,4 +736,13 @@ export function updateAvgClipsSoldPerSec(val) {
     };
 };
 
+export function megaClippersButtonPressed() {
+    return { 
+        type: actionTypes.MEGA_CLIPPERS_BUTTON_PRESSED
+    };
+};
+
+
+
+
 
