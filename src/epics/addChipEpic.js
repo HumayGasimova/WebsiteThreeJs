@@ -1,4 +1,4 @@
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
