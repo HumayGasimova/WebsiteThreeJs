@@ -49,7 +49,5 @@ export const makePaperClipEpic = (action$, state$) =>
             }
         })
     )
-        
-
-
+    
 export default makePaperClipEpic;
