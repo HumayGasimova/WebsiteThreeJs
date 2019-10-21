@@ -1,17 +1,20 @@
-import { Observable, Rx } from 'rxjs';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+import { ofType } from 'redux-observable';
+// import { Observable, Rx } from 'rxjs';
+// import 'rxjs/add/operator/mergeMap';
+// import 'rxjs/add/operator/switchMap';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/observable/of';
 // import 'rxjs/add/operator/repeat';
 // .timeInterval(2000)
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function checkButtonsEpic(action$) {
-    return action$
-        .ofType(actionTypes.CHECK_BUTTONS)
-        .mergeMap(action => {
+export const checkButtonsEpic = (action$, state$) => 
+    action$.pipe(
+        ofType(actionTypes.CHECK_BUTTONS),
+        mergeMap(action => {
             return Observable.of(
                 Actions.toggleWireButton(),
                 Actions.toggleMarketingButton(),
@@ -19,7 +22,6 @@ function checkButtonsEpic(action$) {
                 Actions.toggleMegaClippersButton(),
             )        
         })
+    )
         
-}
-
 export default checkButtonsEpic;
