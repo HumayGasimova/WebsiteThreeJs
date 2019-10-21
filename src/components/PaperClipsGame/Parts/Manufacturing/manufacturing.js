@@ -100,7 +100,7 @@ export class Manufacturing extends Component {
                         this.props.autoPaperclipsStart();
                     }
                     if(this.props.megaClippersIsShown && this.props.autoAndMegaClippersWorks){
-                        this.props.startMegaCluppers();
+                        this.props.startMegaClippers();
                     }
                 }
             }, 1000);
@@ -129,7 +129,7 @@ export class Manufacturing extends Component {
             this.props.autoPaperclipsStart();
         }
         if(this.props.megaClippersIsShown && this.props.autoAndMegaClippersWorks){
-            this.props.startMegaCluppers();
+            this.props.startMegaClippers();
         }
     }
 
@@ -210,7 +210,7 @@ export default connect(
             addMegaClippers: bindActionCreators(Actions.addMegaClippers, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
             showAutoClippers: bindActionCreators(Actions.showAutoClippers, dispatch),
-            startMegaCluppers: bindActionCreators(Actions.startMegaCluppers, dispatch),
+            startMegaClippers: bindActionCreators(Actions.startMegaClippers, dispatch),
         };
     }
 )(Manufacturing);

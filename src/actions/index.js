@@ -114,7 +114,7 @@ export {
     updateAvgRevPerSec,
     updateAvgClipsSoldPerSec,
     megaClippersButtonPressed,
-    startMegaCluppers,
+    startMegaClippers,
     improveMegaClippers,
     switchOffOrOnAutoAndMegaClippers
 } from './businessActions';

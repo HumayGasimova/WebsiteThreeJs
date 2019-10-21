@@ -57,7 +57,8 @@ export class MegaClippers extends Component {
 
    megaClippersOnClick = () => {
        this.props.megaClippersButtonPressed();
-       this.props.startMegaCluppers();
+       this.props.startMegaClippers();
+       this.props.switchOffOrOnAutoAndMegaClippers(true);
    }
 
     /**
@@ -98,7 +99,8 @@ export default connect(
         return {
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
             megaClippersButtonPressed: bindActionCreators(Actions.megaClippersButtonPressed, dispatch),
-            startMegaCluppers: bindActionCreators(Actions.startMegaCluppers, dispatch),
+            startMegaClippers: bindActionCreators(Actions.startMegaClippers, dispatch),
+            switchOffOrOnAutoAndMegaClippers: bindActionCreators(Actions.switchOffOrOnAutoAndMegaClippers, dispatch),
         };
     }
 )(MegaClippers);
