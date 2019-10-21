@@ -84,7 +84,7 @@ const makePaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
-       paperClips: state.paperClips + 100000, //pomenat na 1
+       paperClips: state.paperClips + 1000, //pomenat na 1
        unsoldInventory: +state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
