@@ -15,7 +15,7 @@ export const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 1000, //1000
+    wire: 20, //1000
     wireToAdd: 1000,
     wirePrice: 20,
     wireButtonDisabled: true,
@@ -76,7 +76,8 @@ export const initialState = {
     avgRevPerSec: 0,
     avgClipsSoldPerSec: 0,
     megaClippersToAdd: 500,
-    megaClippersPerSec: 0
+    megaClippersPerSec: 0,
+    autoAndMegaClippersWorks: false
 }
 
 const makePaperclip = (state) => {
@@ -716,12 +717,18 @@ const megaClippersButtonPressed = (state, action) => {
 }
 
 const improveMegaClippers = (state, action) => {
-    let updateMegaClippersToAdd = +(state.megaClippersToAdd + (state.megaClippersToAdd * action.val)/100).toFixed()
-    console.log(updateMegaClippersToAdd)
+    let updateMegaClippersToAdd = +(state.megaClippersToAdd + (state.megaClippersToAdd * action.val)/100).toFixed();
     return updateObject(state, {
         megaClippersToAdd: updateMegaClippersToAdd
     });
 }
+
+const switchOffOrOnAutoAndMegaClippers = (state, action) => {
+    return updateObject(state, {
+        autoAndMegaClippersWorks: action.val
+    });
+}
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -959,6 +966,9 @@ const businessReducer = (state = initialState, action) => {
             return state;     
         case actionTypes.IMPROVE_MEGA_CLIPPERS:
             return improveMegaClippers(state, action);  
+        case actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS:
+            return switchOffOrOnAutoAndMegaClippers(state, action);  
+            
         default: 
             return state;
     }

@@ -119,9 +119,12 @@ export class Manufacturing extends Component {
     wireButtonToggle = () => {
         this.props.startBuyingWire();
         this.props.clickWireButton();
-        this.props.autoPaperclipsStart();
-        this.props.startMegaCluppers();
-        
+        if(this.props.autoClippersIsShown && this.props.autoAndMegaClippersWorks){
+            this.props.autoPaperclipsStart();
+        }
+        if(this.props.megaClippersIsShown && this.props.autoAndMegaClippersWorks){
+            this.props.startMegaCluppers();
+        }
     }
 
     /**
@@ -183,6 +186,7 @@ export default connect(
             autoClippersIsShown: state.business.autoClippersIsShown,
             megaClippersPerSec: state.business.megaClippersPerSec,
             megaClippersToAdd: state.business.megaClippersToAdd,
+            autoAndMegaClippersWorks: state.business.autoAndMegaClippersWorks,
         };
     },
     (dispatch) => {

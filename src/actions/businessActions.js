@@ -761,6 +761,12 @@ export function improveMegaClippers(val) {
     };
 };
 
+export function switchOffOrOnAutoAndMegaClippers(val) {
+    return { 
+        type: actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS,
+        val: val
+    };
+};
 
 
 

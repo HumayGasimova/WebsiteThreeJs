@@ -111,6 +111,7 @@ export class Projects extends Component {
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart();
+                    this.props.switchOffOrOnAutoAndMegaClippers(true);
                 }
                 break;
             case 'autoClippers50':
@@ -121,6 +122,7 @@ export class Projects extends Component {
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart();
+                    this.props.switchOffOrOnAutoAndMegaClippers(true);
                 }
                 break;
             case 'autoClippers75':
@@ -130,6 +132,7 @@ export class Projects extends Component {
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart();
+                    this.props.switchOffOrOnAutoAndMegaClippers(true);
                 }
                 break;
             case 'wireExtrusion50':
@@ -229,6 +232,7 @@ export class Projects extends Component {
                 // if(this.props.autoClipperOn){
                 //     this.props.stop();
                 //     this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                //     this.props.switchOffOrOnAutoAndMegaClippers(true);
                 // } in progress //change logic
                 break;
             case 'theTothSausageConjecture':
@@ -481,6 +485,7 @@ export default connect(
             updatePublicDemand: bindActionCreators(Actions.updatePublicDemand, dispatch),
             showMegaClippers: bindActionCreators(Actions.showMegaClippers, dispatch),
             improveMegaClippers: bindActionCreators(Actions.improveMegaClippers, dispatch),
+            switchOffOrOnAutoAndMegaClippers: bindActionCreators(Actions.switchOffOrOnAutoAndMegaClippers, dispatch),
         };
     }
 )(Projects);

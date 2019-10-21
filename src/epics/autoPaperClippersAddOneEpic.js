@@ -1,5 +1,5 @@
-import { Observable, interval } from 'rxjs';
-import { mergeMap, takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 
 // import { Observable, Rx } from 'rxjs';
@@ -18,7 +18,8 @@ export const autoPaperClippersAddOneEpic = (action$, state$) =>
         mergeMap(action => {
             return Observable.of(
                 Actions.autoClippersAddOne(),
-                Actions.autoPaperclipsStart()
+                Actions.autoPaperclipsStart(),
+                Actions.switchOffOrOnAutoAndMegaClippers(true)
             )    
         }) 
     )

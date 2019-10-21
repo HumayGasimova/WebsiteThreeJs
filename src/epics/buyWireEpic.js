@@ -11,20 +11,20 @@ function buyWireEpic (action$, state$) {
         .ofType(actionTypes.START_BUYING_WIRE)
         // .withLatestFrom(state$)
         .mergeMap((action) => {
-            if(state$.value.business.autoClipperOn){
+            // if(state$.value.business.autoClipperOn){
                 return Observable.of(
                     Actions.buyWire(),
                     Actions.toggleWireButton(),
                     Actions.toggleMakePaperclipButton(false),
-                    Actions.autoPaperclipsStart()
+                    // Actions.autoPaperclipsStart()
                 )
-            }else{
-                return Observable.of(
-                    Actions.buyWire(),
-                    Actions.toggleWireButton(),
-                    Actions.toggleMakePaperclipButton(false)
-                )
-            }
+            // }else{
+            //     return Observable.of(
+            //         Actions.buyWire(),
+            //         Actions.toggleWireButton(),
+            //         Actions.toggleMakePaperclipButton(false)
+            //     )
+            // }
            
         })       
 }
