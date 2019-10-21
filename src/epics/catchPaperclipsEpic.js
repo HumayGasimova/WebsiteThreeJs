@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, interval } from 'rxjs';
 // import { interval } from 'rxjs/observable';
 import { mergeMap, bufferWhen } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
@@ -9,14 +9,14 @@ import { ofType } from 'redux-observable';
 // import 'rxjs/add/operator/filter';
 // import 'rxjs/add/observable/of';
 // import 'rxjs/add/observable/interval';
-// import 'rxjs/add/observable/empty';
+import 'rxjs/add/observable/empty';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 export const catchPaperclipsEpic = (action$, state$) => 
     action$.pipe(
         ofType(actionTypes.MAKE_PAPERCLIP),
-        bufferWhen(()=> Observable.interval(1000)),
+        bufferWhen(()=> interval(1000)),
         mergeMap(events => {
             let paperclipsPerSec = events.length
             return Observable.of(
