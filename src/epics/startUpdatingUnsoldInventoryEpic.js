@@ -25,7 +25,6 @@ export const startUpdatingUnsoldInventoryEpic = (action$, state$) =>
                                 Actions.updateFunds(state$.value.business.paperclipPrice)
                             )
                         } else{
-                            
                             return Observable.empty()
                         }
                 }),

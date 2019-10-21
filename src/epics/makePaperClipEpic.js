@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, delay } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
 // import 'rxjs/add/operator/mergeMap';
@@ -23,8 +23,9 @@ export const makePaperClipEpic = (action$, state$) =>
                         Actions.toggleMegaClippersButton(),
                         Actions.trustPlusOne(),
                         Actions.sendCommentToTerminal('Production target met: TRUST INCREASED, additional processor/memory capacity granted')
-                    ) 
-                    .delay(state$.value.business.delay)
+                    ).pipe(
+                        delay(state$.value.business.delay)
+                    )
                 }else{
                     return Observable.of(
                         Actions.toggleMakePaperclipButton(true)
@@ -39,8 +40,9 @@ export const makePaperClipEpic = (action$, state$) =>
                         Actions.toggleAutoClippersButton(),
                         Actions.toggleMegaClippersButton(),
                         Actions.trustPlusOne()
-                    ) 
-                    .delay(state$.value.business.delay)
+                    ).pipe(
+                        delay(state$.value.business.delay)
+                    )
                 }else{
                     return Observable.of(
                         Actions.toggleMakePaperclipButton(true)

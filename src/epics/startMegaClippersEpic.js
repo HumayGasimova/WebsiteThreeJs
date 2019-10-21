@@ -1,5 +1,5 @@
 import { Observable, interval } from 'rxjs';
-import { mergeMap, takeUntil } from 'rxjs/operators';
+import { mergeMap, takeUntil, repeat } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
 // import 'rxjs/add/operator/mergeMap';
@@ -25,11 +25,15 @@ export const startMegaClippersEpic = (action$, state$) =>
                     if(wire >= state$.value.business.megaClippersToAdd){
                         return Observable.of(
                             Actions.makePaperclip()
-                        ).repeat(state$.value.business.megaClippersToAdd)
+                        ).pipe(
+                            repeat(state$.value.business.megaClippersToAdd)
+                        )
                     }else{
                         return Observable.of(
                             Actions.makePaperclip()
-                        ).repeat(wire)
+                        ).pipe(
+                            repeat(wire)
+                        )
                     }
                 }),
                 takeUntil(action$.ofType(actionTypes.STOP))
