@@ -96,6 +96,12 @@ export class Manufacturing extends Component {
             this.intervalAutoWireBuyer = setInterval(()=>{
                 if(this.props.autoWireBuyerIsOn === true){
                     this.props.autoWireBuyer();
+                    if(this.props.autoClippersIsShown && this.props.autoAndMegaClippersWorks){
+                        this.props.autoPaperclipsStart();
+                    }
+                    if(this.props.megaClippersIsShown && this.props.autoAndMegaClippersWorks){
+                        this.props.startMegaCluppers();
+                    }
                 }
             }, 1000);
         }
