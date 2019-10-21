@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap, takeUntil } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import 'rxjs/add/operator/mergeMap';
@@ -17,7 +17,7 @@ export const autoPaperclipsStartsEpic = (action$, state$) =>
         ofType(actionTypes.AUTO_PAPERCLIPS_START),
         mergeMap(action => {
             return interval(state$.value.business.delayAutoPaperClippers).pipe(
-                mergeMap(() => Observable.of(
+                mergeMap(() => of(
                             Actions.makePaperclip()
                         )   
                         // .delay(1000)

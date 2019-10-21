@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -48,7 +48,7 @@ export const startCountingRiskEpic = (action$, state$) =>
                 //             return
                 //             break;
                 //    }
-                    return Observable.of(
+                    return of(
                         Actions.updateInvestmentsTotal(total),
                         Actions.updateInvestmentsCash(cash),
                         Actions.updateInvestmentsStocks(stocks),

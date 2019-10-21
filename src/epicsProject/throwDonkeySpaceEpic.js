@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ export const throwDonkeySpaceEpic = (action$, state$) =>
     ofType(actionTypes.ADD_DONKEY_SPACE),
     take(1),
     mergeMap(action => {
-        return Observable.of(
+        return of(
           Actions.addProject(projectsToAdd.DonkeySpace)
         ) 
     })

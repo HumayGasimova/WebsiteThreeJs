@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap, delay } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -18,13 +18,13 @@ export const toggleChipEpic = (action$, state$) =>
             switch(action.chipsNumber){
                 case 'chip1':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -32,13 +32,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip2':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -46,13 +46,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip3':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -60,13 +60,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip4':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -74,13 +74,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip5':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -88,13 +88,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip6':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -102,13 +102,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip7':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -116,13 +116,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip8':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -130,13 +130,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip9':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)
@@ -144,13 +144,13 @@ export const toggleChipEpic = (action$, state$) =>
                     }
                 case 'chip10':
                     if(chip.showChip){
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(false, action.chipsNumber)
                         ).pipe(
                             delay(120000)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.toggleChip(true, action.chipsNumber)
                         ).pipe(
                             delay(1000)

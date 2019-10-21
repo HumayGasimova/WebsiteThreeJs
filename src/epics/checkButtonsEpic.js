@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable, Rx } from 'rxjs';
@@ -15,7 +15,7 @@ export const checkButtonsEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.CHECK_BUTTONS),
         mergeMap(action => {
-            return Observable.of(
+            return of(
                 Actions.toggleWireButton(),
                 Actions.toggleMarketingButton(),
                 Actions.toggleAutoClippersButton(),

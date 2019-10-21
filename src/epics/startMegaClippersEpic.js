@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap, takeUntil, repeat } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -23,13 +23,13 @@ export const startMegaClippersEpic = (action$, state$) =>
                     let wire = state$.value.business.wire;
 
                     if(wire >= state$.value.business.megaClippersToAdd){
-                        return Observable.of(
+                        return of(
                             Actions.makePaperclip()
                         ).pipe(
                             repeat(state$.value.business.megaClippersToAdd)
                         )
                     }else{
-                        return Observable.of(
+                        return of(
                             Actions.makePaperclip()
                         ).pipe(
                             repeat(wire)

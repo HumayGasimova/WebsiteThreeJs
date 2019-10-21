@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap, delay } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ export const makePaperClipEpic = (action$, state$) =>
         mergeMap(action => {
             if(state$.value.business.paperClips === state$.value.business.clipsToBuyTrust){
                 if(state$.value.business.wire >= 1){
-                    return Observable.of(
+                    return of(
                         Actions.setAutoClipperInitPrice(),
                         Actions.toggleMarketingButton(),
                         Actions.toggleWireButton(),
@@ -27,13 +27,13 @@ export const makePaperClipEpic = (action$, state$) =>
                         delay(state$.value.business.delay)
                     )
                 }else{
-                    return Observable.of(
+                    return of(
                         Actions.toggleMakePaperclipButton(true)
                     ) 
                 }
             }else{
                 if(state$.value.business.wire >= 1){
-                    return Observable.of(
+                    return of(
                         Actions.setAutoClipperInitPrice(),
                         Actions.toggleMarketingButton(),
                         Actions.toggleWireButton(),
@@ -44,7 +44,7 @@ export const makePaperClipEpic = (action$, state$) =>
                         delay(state$.value.business.delay)
                     )
                 }else{
-                    return Observable.of(
+                    return of(
                         Actions.toggleMakePaperclipButton(true)
                     ) 
                 }

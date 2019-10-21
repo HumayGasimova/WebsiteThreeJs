@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable, Rx } from 'rxjs';
@@ -16,7 +16,7 @@ export const chooseFromDropdownEpic = (action$, state$) =>
 
             switch(action.chosen){
                 case 'Low Risk':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns(),
                         Actions.updateInvestmentsDelay(10000,5000),
@@ -29,7 +29,7 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                     ) 
                 break;
                 case 'Med Risk':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns(),
                         Actions.updateInvestmentsDelay(6000,3000),
@@ -41,7 +41,7 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                     ) 
                 break;
                 case 'High Risk':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns(),
                         Actions.updateInvestmentsDelay(5000,2000),
@@ -53,55 +53,55 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                     ) 
                 break;
                 case 'Pick a Start':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'RANDOM':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'A100':
-                return Observable.of(
+                return of(
                          Actions.addChosenFromDropdown(action.chosen, action),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'B100':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'GREEDY':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'GENEROUS':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'MINIMAX':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'TIT FOR TAT':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
                 case 'BEAT LAST':
-                    return Observable.of(
+                    return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 

@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap, bufferWhen } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable, Rx, empty } from 'rxjs';
@@ -21,11 +21,11 @@ export const catchUnsoldInventoryEpic = (action$, state$) =>
             let currentPaperclipPrice = state$.value.business.paperclipPrice;
             let avgRevPerSec = unsoldInventoryEvents * currentPaperclipPrice;
 
-            return Observable.of(
+            return of(
                 Actions.updateAvgRevPerSec(avgRevPerSec),
                 Actions.updateAvgClipsSoldPerSec(unsoldInventoryEvents),
             ) 
         })
     )
-    
+
 export default catchUnsoldInventoryEpic;

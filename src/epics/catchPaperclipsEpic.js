@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 // import { interval } from 'rxjs/observable';
 import { mergeMap, bufferWhen } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
@@ -19,7 +19,7 @@ export const catchPaperclipsEpic = (action$, state$) =>
         bufferWhen(()=> interval(1000)),
         mergeMap(events => {
             let paperclipsPerSec = events.length
-            return Observable.of(
+            return of(
                 Actions.updateClipsPerSec(paperclipsPerSec)
             ) 
         })

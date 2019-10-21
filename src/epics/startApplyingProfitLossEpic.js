@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -41,7 +41,7 @@ export const startApplyingProfitLossEpic = (action$, state$) =>
                 
                   
                     console.log("HEY", state$.value.business.investmentsStocks, profitLoss)
-                    return Observable.of(
+                    return of(
                         Actions.updateInvestmentsTotal(total),
                         Actions.updateInvestmentsCash(cash),
                         Actions.updateInvestmentsStocks(stocks),

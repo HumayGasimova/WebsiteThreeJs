@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ export const addChipEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.ADD_CHIP),
         mergeMap(action => {
-           return Observable.of(
+           return of(
                 Actions.toggleChip(true, action.obj.chipsNumber)
            ) 
         })    

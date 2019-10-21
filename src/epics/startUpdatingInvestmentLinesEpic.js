@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap, takeUntil } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -89,7 +89,7 @@ export const startUpdatingInvestmentLinesEpic = (action$, state$) =>
                         }
                     })
                    
-                    return Observable.of(
+                    return of(
                         Actions.updateInvestmentsLines(investmentsLines)
                     )   
                 }

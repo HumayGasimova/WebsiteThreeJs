@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable, Rx } from 'rxjs';
@@ -16,12 +16,12 @@ export const checkWireEpic = (action$, state$) =>
         ofType(actionTypes.CHECK_EXISTENCE_OF_WIRE),
         mergeMap(action => {
             if(state$.value.business.wire === 0 ){
-                return Observable.of(
+                return of(
                     Actions.stop(),
                     Actions.wireExists(false)
                 ) 
             }else{
-                return Observable.of(
+                return of(
                     // Actions.toggleWireButton(),
                     Actions.wireExists(true),
                     // Actions.autoPaperclipsStart()

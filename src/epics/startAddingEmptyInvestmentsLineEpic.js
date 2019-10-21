@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap, takeUntil } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -19,7 +19,7 @@ export const startAddingEmptyInvestmentsLineEpic = (action$, state$) =>
             // console.log(randomNum)
             return interval(randomNum*1000).pipe(
                 mergeMap(() => {
-                   return Observable.of(
+                   return of(
                         Actions.addInvestmentsLine('', false)
                     ) 
                 }),

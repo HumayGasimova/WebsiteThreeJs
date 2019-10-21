@@ -1,4 +1,4 @@
-import { Observable, interval, empty } from 'rxjs';
+import { of, interval, empty } from 'rxjs';
 import { mergeMap, takeUntil } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -20,7 +20,7 @@ export const startUpdatingUnsoldInventoryEpic = (action$, state$) =>
                 mergeMap(() => {
                     if(state$.value.business.unsoldInventory > 0){
                         // debugger
-                        return Observable.of(
+                        return of(
                                 Actions.updateUnsoldInventory(),
                                 Actions.updateFunds(state$.value.business.paperclipPrice)
                             )

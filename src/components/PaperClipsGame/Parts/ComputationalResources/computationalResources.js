@@ -129,9 +129,6 @@ export class ComputationalResources extends Component {
             if(this.props.creativity === 100){
                 this.props.addCombinatoryHarmonics();
             }
-            if(this.props.creativity === 100){
-                this.props.addCombinatoryHarmonics();
-            }
             if(this.props.creativity === 150){
                 this.props.addTheHadwingerProblem();
             }

@@ -1,4 +1,4 @@
-import { Observable, empty } from 'rxjs';
+import { of, empty } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable, Rx, empty } from 'rxjs';
@@ -17,7 +17,7 @@ export const autoWireBuyerEpic = (action$, state$) =>
         ofType(actionTypes.AUTO_WIRE_BUYER),
         mergeMap((action) => {
             if(state$.value.business.autoWireBuyerIsOn && state$.value.business.wire === 0){
-                return Observable.of(
+                return of(
                     Actions.startBuyingWire()
                 )
             }else{

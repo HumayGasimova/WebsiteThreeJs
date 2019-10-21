@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -14,14 +14,14 @@ export const buyWireEpic = (action$, state$) =>
         ofType(actionTypes.START_BUYING_WIRE),
         mergeMap((action) => {
             // if(state$.value.business.autoClipperOn){
-                return Observable.of(
+                return of(
                     Actions.buyWire(),
                     Actions.toggleWireButton(),
                     Actions.toggleMakePaperclipButton(false),
                     // Actions.autoPaperclipsStart()
                 )
             // }else{
-            //     return Observable.of(
+            //     return of(
             //         Actions.buyWire(),
             //         Actions.toggleWireButton(),
             //         Actions.toggleMakePaperclipButton(false)

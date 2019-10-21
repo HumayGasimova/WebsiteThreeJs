@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -15,7 +15,7 @@ export const startCreativityEpic = (action$, state$) =>
     ofType(actionTypes.START_CREATIVITY_COUNTER),
     take(1),
     mergeMap(action => {
-        return Observable.of(
+        return of(
           Actions.addProject(projectsToAdd.Creativity)
         ) 
     })

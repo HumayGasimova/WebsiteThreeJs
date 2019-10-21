@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { switchMap, delay, repeat } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -16,7 +16,7 @@ export const decreaseOpsEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_DECREASING_OPS),
         switchMap(action => {
-            return Observable.of(
+            return of(
                         Actions.decreaseOps()
                     ).pipe(
                         delay(10),

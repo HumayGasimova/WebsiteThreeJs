@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { of, interval } from 'rxjs';
 import { mergeMap, takeUntil } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -36,7 +36,7 @@ export const startUpdatingScreenEpic = (action$, state$) =>
                         profitLoss: randomNum * randomProfitLoss
                     }
                     
-                    return Observable.of(
+                    return of(
                         Actions.addInvestmentsLine(obj, true)
                     )   
                 }

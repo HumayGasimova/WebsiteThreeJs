@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -22,7 +22,7 @@ export const startInvestmentsWithdrawEpic = (action$, state$) =>
             }
             let cash = 0;
 
-            return Observable.of(
+            return of(
                 Actions.updateInvestmentsTotal(total),
                 Actions.updateInvestmentsCash(cash),
                 Actions.updateFakeInvestmentsCash(total),

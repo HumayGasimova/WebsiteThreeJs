@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
 import { ofType } from 'redux-observable';// import { Observable } from 'rxjs';
 // import 'rxjs/add/operator/mergeMap';
@@ -14,7 +14,7 @@ export const throwCombinatoryHarmonicsEpic = (action$, state$) =>
     ofType(actionTypes.ADD_COMBINATORY_HARMONICS),
     take(1),
     mergeMap(action => {
-        return Observable.of(
+        return of(
           Actions.addProject(projectsToAdd.CombinatoryHarmonics)
         ) 
     })
