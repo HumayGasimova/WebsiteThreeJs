@@ -1,15 +1,18 @@
-import { Observable, Rx } from 'rxjs';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+import { ofType } from 'redux-observable';
+// import { Observable, Rx } from 'rxjs';
+// import 'rxjs/add/operator/mergeMap';
+// import 'rxjs/add/operator/switchMap';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/observable/of';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-function chooseFromDropdownEpic(action$, state$) {
-    return action$
-        .ofType(actionTypes.CHOOSE_FROM_DROPDOWN)
-        .mergeMap(action => {
+export const chooseFromDropdownEpic = (action$, state$) => 
+    action$.pipe(
+        ofType(actionTypes.CHOOSE_FROM_DROPDOWN),
+        mergeMap(action => {
 
             switch(action.chosen){
                 case 'Low Risk':
@@ -105,7 +108,9 @@ function chooseFromDropdownEpic(action$, state$) {
                 break;
             } 
         })
+    )
+       
         
-}
+
 
 export default chooseFromDropdownEpic;
