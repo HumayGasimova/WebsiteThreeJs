@@ -27,6 +27,5 @@ export const catchUnsoldInventoryEpic = (action$, state$) =>
             ) 
         })
     )
-        
-
+    
 export default catchUnsoldInventoryEpic;

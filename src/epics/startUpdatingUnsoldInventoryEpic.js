@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { Observable, interval, empty } from 'rxjs';
 import { mergeMap, takeUntil } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable } from 'rxjs';
@@ -25,7 +25,7 @@ export const startUpdatingUnsoldInventoryEpic = (action$, state$) =>
                                 Actions.updateFunds(state$.value.business.paperclipPrice)
                             )
                         } else{
-                            return Observable.empty()
+                            return empty()
                         }
                 }),
                 takeUntil(action$.ofType(actionTypes.STOP_UPDATING_UNSOLD_INVENTORY))

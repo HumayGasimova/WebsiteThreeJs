@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, empty } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable, Rx, empty } from 'rxjs';
@@ -21,7 +21,7 @@ export const autoWireBuyerEpic = (action$, state$) =>
                     Actions.startBuyingWire()
                 )
             }else{
-                return Observable.empty()
+                return empty()
             }
         })
     )

@@ -1,4 +1,4 @@
-import { Observable, interval } from 'rxjs';
+import { Observable, interval, empty } from 'rxjs';
 import { mergeMap, bufferWhen, filter } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 // import { Observable, Rx, empty } from 'rxjs';
@@ -26,7 +26,7 @@ export const wireButtonBufferEpic = (action$, state$) =>
                     Actions.toggleWireBuyerProject()
                 )  
             }else{
-                return Observable.empty();
+                return empty();
             }
                   
         })
