@@ -19,7 +19,6 @@ export const startCreativityEpic = (action$, state$) =>
           Actions.addProject(projectsToAdd.Creativity)
         ) 
     })
-  )
-        
+  ) 
 
 export default startCreativityEpic;
