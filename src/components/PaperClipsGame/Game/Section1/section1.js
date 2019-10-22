@@ -69,7 +69,7 @@ export class Section1 extends Component {
 export default connect(
     (state) => {
         return {
-            // listStrategicModeling: state.business.listStrategicModeling,
+            // Selectors.getListStrategicModelingState(state),
         };
     },
     (dispatch) => {

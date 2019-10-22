@@ -135,7 +135,7 @@ export class StrategicModeling extends Component {
 export default connect(
     (state) => {
         return {
-            listStrategicModeling: state.business.listStrategicModeling,
+            listStrategicModeling: Selectors.getListStrategicModelingState(state),
             showDropdownStrategicModeling: state.business.showDropdownStrategicModeling,
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
         };

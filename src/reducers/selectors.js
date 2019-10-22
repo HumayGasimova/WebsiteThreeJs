@@ -244,7 +244,14 @@ export const getChosenListDropdownState = createSelector(
     [getChosenListDropdown],
     (x) => x
 );
-// state.business.chosenListDropdown
+
+const getListStrategicModeling = (state) => state.business.listStrategicModeling;
+
+export const getListStrategicModelingState = createSelector(
+    [getListStrategicModeling],
+    (x) => x
+);
+// state.business.listStrategicModeling
 // Selectors.getChosenListDropdownState(state),
 /**
 * Selectors
