@@ -198,7 +198,7 @@ export default connect(
             autoClippersIsShown: Selectors.getAutoClippersIsShownState(state),
             megaClippersPerSec: Selectors.getMegaClippersPerSecState(state),
             megaClippersToAdd: Selectors.getMegaClippersToAddState(state),
-            autoAndMegaClippersWorks: state.business.autoAndMegaClippersWorks,
+            autoAndMegaClippersWorks: Selectors.getAutoAndMegaClippersWorksState(state),
         };
     },
     (dispatch) => {

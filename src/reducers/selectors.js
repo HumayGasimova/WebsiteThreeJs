@@ -419,8 +419,15 @@ export const getMegaClippersPerSecState = createSelector(
     [getMegaClippersPerSec],
     (x) => x
 );
-// state.business.megaClippersToAdd
-// Selectors.getMegaClippersToAddState(state),
+
+const getAutoAndMegaClippersWorks = (state) => state.business.autoAndMegaClippersWorks;
+
+export const getAutoAndMegaClippersWorksState = createSelector(
+    [getAutoAndMegaClippersWorks],
+    (x) => x
+);
+// state.business.autoAndMegaClippersWorks
+// Selectors.getAutoAndMegaClippersWorksState(state),
 /**
 * Selectors
 */
