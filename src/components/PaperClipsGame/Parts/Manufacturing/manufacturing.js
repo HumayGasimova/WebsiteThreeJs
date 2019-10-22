@@ -190,7 +190,7 @@ export default connect(
             delay: Selectors.getDelayState(state),
             delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
             noWire: Selectors.getNoWireState(state),
-            wireBuyerIsShown: state.business.wireBuyerIsShown,
+            wireBuyerIsShown: Selectors.getWireBuyerIsShownState(state),
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
             paperClips: Selectors.getPaperclipsState(state),
             megaClippersIsShown: state.business.megaClippersIsShown,

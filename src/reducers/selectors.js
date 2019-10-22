@@ -336,8 +336,15 @@ export const getChipsState = createSelector(
     (x) => x
 );
 
-// state.business.chips
-// Selectors.getChipsState(state),
+const getWireBuyerIsShown = (state) => state.business.wireBuyerIsShown;
+
+export const getWireBuyerIsShownState = createSelector(
+    [getWireBuyerIsShown],
+    (x) => x
+);
+
+// state.business.wireBuyerIsShown
+// Selectors.getWireBuyerIsShownState(state),
 /**
 * Selectors
 */
