@@ -83,7 +83,14 @@ export const getWirePriceState = createSelector(
     [getWirePrice],
     (x) => x
 );
-// state.business.wirePrice
+
+const getWireButtonDisabled = (state) => state.business.wireButtonDisabled;
+
+export const getWireButtonDisabledState = createSelector(
+    [getWireButtonDisabled],
+    (x) => x
+);
+// state.business.wireButtonDisabled
 
 /**
 * Selectors
