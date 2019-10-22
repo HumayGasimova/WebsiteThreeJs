@@ -122,7 +122,7 @@ export default connect(
             marketingCost: Selectors.getMarketingCostState(state),
             marketingButtonDisabled: Selectors.getMarketingButtonDisabledState(state),
             revTracker: Selectors.getRevTrackerState(state),
-            avgRevPerSec: state.business.avgRevPerSec,
+            avgRevPerSec: Selectors.getAvgRevPerSecState(state),
             avgClipsSoldPerSec: state.business.avgClipsSoldPerSec,
         };
     },

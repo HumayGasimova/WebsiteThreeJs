@@ -391,8 +391,15 @@ export const getInvestmentsLinesState = createSelector(
     [getInvestmentsLines],
     (x) => x
 );
-// state.business.investmentsLines
-// Selectors.getInvestmentsLinesState(state),
+
+const getAvgRevPerSec = (state) => state.business.avgRevPerSec;
+
+export const getAvgRevPerSecState = createSelector(
+    [getAvgRevPerSec],
+    (x) => x
+);
+// state.business.avgRevPerSec
+// Selectors.getRiskState(state),
 /**
 * Selectors
 */
