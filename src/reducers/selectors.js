@@ -230,8 +230,15 @@ export const getCreativityTurnOnState = createSelector(
     [getCreativityTurnOn],
     (x) => x
 );
-// state.business.creativityTurnOn
 
+const getListInvestments = (state) => state.business.listInvestments;
+
+export const getListInvestmentsState = createSelector(
+    [getListInvestments],
+    (x) => x
+);
+// state.business.listInvestments
+// Selectors.getCreativityTurnOnState(state),
 /**
 * Selectors
 */

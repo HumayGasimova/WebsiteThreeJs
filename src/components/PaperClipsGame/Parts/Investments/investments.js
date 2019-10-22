@@ -36,6 +36,12 @@ import './investments.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * Utility
 */
 
@@ -165,7 +171,7 @@ export class Investments extends Component {
 export default connect(
     (state) => {
         return {
-            listInvestments: state.business.listInvestments,
+            listInvestments: Selectors.getListInvestmentsState(state),
             showDropdownInvestments: state.business.showDropdownInvestments,
             investmentsCash: state.business.investmentsCash,
             investmentsTotal: state.business.investmentsTotal,
