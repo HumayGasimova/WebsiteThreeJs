@@ -92,7 +92,7 @@ export class MegaClippers extends Component {
 export default connect(
     (state) => {
         return {
-            autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
+            autoClippersButtonDisabled: Selectors.getAutoClippersButtonDisabledState(state),
             megaClippersPerSec: state.business.megaClippersPerSec,
             autoClipperInitPrice: Selectors.getAutoClipperInitPriceState(state),
             autoClipperPrice: Selectors.getAutoClipperPriceState(state),
