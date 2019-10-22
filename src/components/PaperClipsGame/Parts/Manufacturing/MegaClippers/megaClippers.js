@@ -34,6 +34,12 @@ import './megaClippers.scss';
 import * as Actions from '../../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../../reducers/selectors';
+
+/**
 * MegaClippers component definition and export
 */
 
@@ -91,7 +97,7 @@ export default connect(
             autoClipperInitPrice: Selectors.getAutoClipperInitPriceState(state),
             autoClipperPrice: Selectors.getAutoClipperPriceState(state),
             megaClipperPrice: state.business.megaClipperPrice,
-            megaClipperInitPrice: state.business.megaClipperInitPrice,
+            megaClipperInitPrice: Selectors.getMegaClipperInitPriceState(state),
             megaClippersButtonDisabled: state.business.megaClippersButtonDisabled,
         };
     },

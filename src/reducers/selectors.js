@@ -104,6 +104,7 @@ export const getAutoClipperInitPriceState = createSelector(
     [getAutoClipperInitPrice],
     (x) => x
 );
+
 const getAutoClipperPrice = (state) => state.business.autoClipperPrice;
 
 export const getAutoClipperPriceState = createSelector(
@@ -111,7 +112,13 @@ export const getAutoClipperPriceState = createSelector(
     (x) => x
 );
 
-// state.business.autoClipperPrice
+const getMegaClipperInitPrice = (state) => state.business.megaClipperInitPrice;
+
+export const getMegaClipperInitPriceState = createSelector(
+    [getMegaClipperInitPrice],
+    (x) => x
+);
+// state.business.megaClipperInitPrice
 
 /**
 * Selectors
