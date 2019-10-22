@@ -458,7 +458,7 @@ export default connect(
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
             ops: state.business.ops,
             opsMax: state.business.opsMax,
-            autoClipperOn: state.business.autoClipperOn,
+            autoClipperOn: Selectors.getAutoClipperOnState(state),
             processorsNumber: state.business.processorsNumber,
         };
     },
