@@ -315,8 +315,15 @@ export const getShowChipState = createSelector(
     (x) => x
 );
 
-// state.business.showChip
-// Selectors.getShowChipeState(state),
+const getChangedToQOps = (state) => state.business.changedToQOps;
+
+export const getChangedToQOpsState = createSelector(
+    [getChangedToQOps],
+    (x) => x
+);
+
+// state.business.changedToQOps
+// Selectors.getChangedToQOpsState(state),
 /**
 * Selectors
 */
