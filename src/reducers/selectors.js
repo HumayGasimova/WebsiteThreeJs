@@ -216,7 +216,14 @@ export const getRevTrackerState = createSelector(
     [getRevTracker],
     (x) => x
 );
-// state.business.revTracker
+
+const getMakePaperclipDisabled = (state) => state.business.makePaperclipDisabled;
+
+export const getMakePaperclipDisabledState = createSelector(
+    [getMakePaperclipDisabled],
+    (x) => x
+);
+// state.business.makePaperclipDisabled
 
 /**
 * Selectors

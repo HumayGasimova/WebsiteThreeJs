@@ -244,7 +244,7 @@ export default connect(
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             delay: Selectors.getDelayState(state),
             wire: Selectors.getWireState(state),
-            makePaperclipDisabled: state.business.makePaperclipDisabled,
+            makePaperclipDisabled: Selectors.getMakePaperclipDisabledState(state),
             time: state.business.time,
         };
     },
