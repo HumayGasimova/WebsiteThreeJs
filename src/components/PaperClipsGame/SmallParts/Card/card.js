@@ -31,6 +31,12 @@ import './card.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * Card component definition and export
 */
 
@@ -87,7 +93,7 @@ export default connect(
         return {
             ops: state.business.ops,
             creativity: state.business.creativity,
-            trust: state.business.trust,
+            trust: Selectors.getTrustState(state),
             // unsoldInventory: Selectors.getUnsoldInventoryState(state),
             // paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: Selectors.getDelayState(state),

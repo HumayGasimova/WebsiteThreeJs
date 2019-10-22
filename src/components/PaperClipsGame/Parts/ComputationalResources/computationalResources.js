@@ -219,7 +219,7 @@ export default connect(
     (state) => {
         return {
             paperClips: Selectors.getPaperclipsState(state),
-            trust: state.business.trust,
+            trust: Selectors.getTrustState(state),
             clipsToBuyTrust: state.business.clipsToBuyTrust,
             ops: state.business.ops,
             opsMax: state.business.opsMax,

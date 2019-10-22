@@ -81,7 +81,7 @@ export default connect(
         return {
             // ops: state.business.ops,
             // creativity: state.business.creativity,
-            // trust: state.business.trust,
+            // trust: Selectors.getTrustState(state),
             
         };
     },

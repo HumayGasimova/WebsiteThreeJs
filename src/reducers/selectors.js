@@ -146,7 +146,14 @@ export const getAutoClipperOnState = createSelector(
     [getAutoClipperOn],
     (x) => x
 );
-// state.business.autoClipperOn
+
+const getTrust = (state) => state.business.trust;
+
+export const getTrustState = createSelector(
+    [getTrust],
+    (x) => x
+);
+// state.business.trust
 
 /**
 * Selectors
