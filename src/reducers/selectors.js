@@ -343,8 +343,15 @@ export const getWireBuyerIsShownState = createSelector(
     (x) => x
 );
 
-// state.business.wireBuyerIsShown
-// Selectors.getWireBuyerIsShownState(state),
+const getAutoWireBuyerIsOn = (state) => state.business.autoWireBuyerIsOn;
+
+export const getAutoWireBuyerIsOnState = createSelector(
+    [getAutoWireBuyerIsOn],
+    (x) => x
+);
+
+// state.business.autoWireBuyerIsOn
+// Selectors.getAutoWireBuyerIsOnState(state),
 /**
 * Selectors
 */

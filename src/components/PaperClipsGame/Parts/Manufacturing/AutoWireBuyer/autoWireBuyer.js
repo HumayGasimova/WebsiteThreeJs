@@ -34,6 +34,12 @@ import './autoWireBuyer.scss';
 import * as Actions from '../../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../../reducers/selectors';
+
+/**
 * AutoWireBuyer component definition and export
 */
 
@@ -76,7 +82,7 @@ export class AutoWireBuyer extends Component {
 export default connect(
     (state) => {
         return {
-            autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
+            autoWireBuyerIsOn: Selectors.getAutoWireBuyerIsOnState(state),
         };
     },
     (dispatch) => {
