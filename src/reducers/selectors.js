@@ -364,8 +364,14 @@ export const getAutoClippersIsShownState = createSelector(
     (x) => x
 );
 
-// state.business.autoClippersIsShown
-// Selectors.getAutoClippersIsShownState(state),
+const getInvestmentsCash = (state) => state.business.investmentsCash;
+
+export const getInvestmentsCashState = createSelector(
+    [getInvestmentsCash],
+    (x) => x
+);
+// state.business.investmentsCash
+// Selectors.getInvestmentsCashState(state),
 /**
 * Selectors
 */
