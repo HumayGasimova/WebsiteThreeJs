@@ -240,7 +240,7 @@ export default connect(
         return {
             paperClips: Selectors.getPaperclipsState(state),
             funds: Selectors.getFundsState(state),
-            unsoldInventory: state.business.unsoldInventory,
+            unsoldInventory: Selectors.getUnsoldInventoryState(state),
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             delay: state.business.delay,
             wire: state.business.wire,

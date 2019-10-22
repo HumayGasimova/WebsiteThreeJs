@@ -88,7 +88,7 @@ export default connect(
             ops: state.business.ops,
             creativity: state.business.creativity,
             trust: state.business.trust,
-            // unsoldInventory: state.business.unsoldInventory,
+            // unsoldInventory: Selectors.getUnsoldInventoryState(state),
             //    paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: state.business.delay
         };

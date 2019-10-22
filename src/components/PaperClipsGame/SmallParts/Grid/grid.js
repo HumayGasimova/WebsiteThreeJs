@@ -70,8 +70,8 @@ export default connect(
         return {
             // ops: state.business.ops,
             // creativity: state.business.creativity,
-            // unsoldInventory: state.business.unsoldInventory,
-            //    paperclipPrice: Selectors.getPaperclipPriceState(state),
+            // unsoldInventory: Selectors.getUnsoldInventoryState(state),
+            // paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: state.business.delay
         };
     },

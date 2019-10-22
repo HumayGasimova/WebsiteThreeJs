@@ -28,7 +28,14 @@ export const getPaperclipPriceState = createSelector(
     (x) => x
 );
 
-// state.business.paperclipPrice
+const getUnsoldInventory = (state) => state.business.unsoldInventory;
+
+export const getUnsoldInventoryState = createSelector(
+    [getUnsoldInventory],
+    (x) => x
+);
+
+// state.business.unsoldInventory
 
 /**
 * Selectors
