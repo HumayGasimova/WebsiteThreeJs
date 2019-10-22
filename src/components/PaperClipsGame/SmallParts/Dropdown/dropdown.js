@@ -115,7 +115,7 @@ export default connect(
             // showDropdown: state.business.showDropdown,
             // creativity: state.business.creativity,
             // unsoldInventory: state.business.unsoldInventory,
-            // paperclipPrice: state.business.paperclipPrice,
+            //    paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: state.business.delay
         };
     },

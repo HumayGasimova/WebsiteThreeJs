@@ -74,7 +74,7 @@ export default connect(
     (state) => {
         return {
             comments: state.business.comments,
-            // paperclipPrice: state.business.paperclipPrice,
+            //    paperclipPrice: Selectors.getPaperclipPriceState(state),
             // wire: state.business.wire,
             // delay: state.business.delay,
             // delayAutoPaperClippers: state.business.delayAutoPaperClippers,

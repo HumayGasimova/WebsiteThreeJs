@@ -67,7 +67,7 @@ export default connect(
             // cards: state.business.cards,
             // funds: state.business.funds,
             // unsoldInventory: state.business.unsoldInventory,
-            // paperclipPrice: state.business.paperclipPrice,
+            //    paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: state.business.delay
         };
     },

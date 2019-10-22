@@ -80,7 +80,7 @@ export class AutoClippers extends Component {
 export default connect(
     (state) => {
         return {
-            paperclipPrice: state.business.paperclipPrice,
+            paperclipPrice: Selectors.getPaperclipPriceState(state),
             delay: state.business.delay,
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
             wire: state.business.wire,

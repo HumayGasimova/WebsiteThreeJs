@@ -21,7 +21,14 @@ export const getFundsState = createSelector(
     (x) => x
 );
 
-// state.business.clipsPerSec
+const getPaperclipPrice = (state) => state.business.paperclipPrice;
+
+export const getPaperclipPriceState = createSelector(
+    [getPaperclipPrice],
+    (x) => x
+);
+
+// state.business.paperclipPrice
 
 /**
 * Selectors

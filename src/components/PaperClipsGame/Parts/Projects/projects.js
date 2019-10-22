@@ -446,7 +446,7 @@ export default connect(
     (state) => {
         return {
             cards: state.business.cards,
-            paperclipPrice: state.business.paperclipPrice,
+            paperclipPrice: Selectors.getPaperclipPriceState(state),
             wire: state.business.wire,
             delay: state.business.delay,
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,

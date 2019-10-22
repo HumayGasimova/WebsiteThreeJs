@@ -89,7 +89,7 @@ export default connect(
             creativity: state.business.creativity,
             trust: state.business.trust,
             // unsoldInventory: state.business.unsoldInventory,
-            // paperclipPrice: state.business.paperclipPrice,
+            //    paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: state.business.delay
         };
     },
