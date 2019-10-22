@@ -144,7 +144,7 @@ export class QuantumComputing extends Component {
 export default connect(
     (state) => {
         return {
-            showQCompMessage: state.business.showQCompMessage,
+            showQCompMessage: Selectors.getShowQCompMessageState(state),
             showChip: state.business.showChip,
             changedToQOps: state.business.changedToQOps,
             qOps: state.business.qOps,

@@ -301,9 +301,16 @@ export const getShowQuantumComputingState = createSelector(
     (x) => x
 );
 
+const getShowQCompMessage = (state) => state.business.showQCompMessage;
 
-// state.business.showQuantumComputing
-// Selectors.getShowQuantumComputing(state),
+export const getShowQCompMessageState = createSelector(
+    [getShowQCompMessage],
+    (x) => x
+);
+
+
+// state.business.showQCompMessage
+// Selectors.getShowQCompMessageState(state),
 /**
 * Selectors
 */
