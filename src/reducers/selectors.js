@@ -42,8 +42,13 @@ export const getPublicDemandState = createSelector(
     (x) => x
 );
 
+const getMarketingLevel = (state) => state.business.marketingLevel;
 
-// state.business.publicDemand
+export const getMarketingLevelState = createSelector(
+    [getMarketingLevel],
+    (x) => x
+);
+// state.business.marketingLevel
 
 /**
 * Selectors
