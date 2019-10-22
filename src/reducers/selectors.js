@@ -406,14 +406,21 @@ export const getAvgClipsSoldPerSecState = createSelector(
     (x) => x
 );
 
+const getMegaClippersToAdd = (state) => state.business.megaClippersToAdd;
+
+export const getMegaClippersToAddState = createSelector(
+    [getMegaClippersToAdd],
+    (x) => x
+);
+
 const getMegaClippersPerSec = (state) => state.business.megaClippersPerSec;
 
 export const getMegaClippersPerSecState = createSelector(
     [getMegaClippersPerSec],
     (x) => x
 );
-// state.business.megaClippersPerSec
-// Selectors.getMegaClippersPerSecState(state),
+// state.business.megaClippersToAdd
+// Selectors.getMegaClippersToAddState(state),
 /**
 * Selectors
 */
