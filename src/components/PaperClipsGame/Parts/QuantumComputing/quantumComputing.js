@@ -148,7 +148,7 @@ export default connect(
             showChip: Selectors.getShowChipState(state),
             changedToQOps: Selectors.getChangedToQOpsState(state),
             qOps: state.business.qOps,
-            currentQOps: state.business.currentQOps,
+            currentQOps: Selectors.getCurrentQOpsState(state),
             chips: state.business.chips,
             ops: Selectors.getOpsState(state),
             opsMax: Selectors.getOpsMaxState(state),

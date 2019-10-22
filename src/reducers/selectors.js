@@ -322,8 +322,15 @@ export const getChangedToQOpsState = createSelector(
     (x) => x
 );
 
-// state.business.changedToQOps
-// Selectors.getChangedToQOpsState(state),
+const getCurrentQOps = (state) => state.business.currentQOps;
+
+export const getCurrentQOpsState = createSelector(
+    [getCurrentQOps],
+    (x) => x
+);
+
+// state.business.currentQOps
+// Selectors.getCurrentQOpsState(state),
 /**
 * Selectors
 */
