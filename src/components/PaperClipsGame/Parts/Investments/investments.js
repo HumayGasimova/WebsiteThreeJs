@@ -172,7 +172,7 @@ export default connect(
     (state) => {
         return {
             listInvestments: Selectors.getListInvestmentsState(state),
-            showDropdownInvestments: state.business.showDropdownInvestments,
+            showDropdownInvestments: Selectors.getShowDropdownInvestmentsState(state),
             investmentsCash: state.business.investmentsCash,
             investmentsTotal: state.business.investmentsTotal,
             investmentsStocks: state.business.investmentsStocks,

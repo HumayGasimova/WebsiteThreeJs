@@ -90,7 +90,7 @@ export default connect(
             paperClips: Selectors.getPaperclipsState(state),
             showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
             showStrategicModeling: Selectors.getShowStrategicModelingState(state),
-            showDropdownInvestments: state.business.showDropdownInvestments,
+            showDropdownInvestments: Selectors.getShowDropdownInvestmentsState(state),
             showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
   
         };

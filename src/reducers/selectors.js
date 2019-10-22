@@ -286,8 +286,17 @@ export const getShowDropdownStrategicModelingState = createSelector(
     [getShowDropdownStrategicModeling],
     (x) => x
 );
-// state.business.showDropdownStrategicModeling
-// Selectors.getCommentsState(state),
+
+const getShowDropdownInvestments = (state) => state.business.showDropdownInvestments;
+
+export const getShowDropdownInvestmentsState = createSelector(
+    [getShowDropdownInvestments],
+    (x) => x
+);
+
+
+// state.business.showDropdownInvestments
+// Selectors.getShowDropdownInvestmentsState(state),
 /**
 * Selectors
 */
