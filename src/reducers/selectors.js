@@ -62,7 +62,14 @@ export const getMarketingButtonDisabledState = createSelector(
     [getMarketingButtonDisabled],
     (x) => x
 );
-// state.business.marketingButtonDisabled
+
+const getDelay = (state) => state.business.delay;
+
+export const getDelayState = createSelector(
+    [getDelay],
+    (x) => x
+);
+// state.business.delay
 
 /**
 * Selectors

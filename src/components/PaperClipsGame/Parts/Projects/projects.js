@@ -454,7 +454,7 @@ export default connect(
             cards: state.business.cards,
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             wire: state.business.wire,
-            delay: state.business.delay,
+            delay: Selectors.getDelayState(state),
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
             ops: state.business.ops,
             opsMax: state.business.opsMax,

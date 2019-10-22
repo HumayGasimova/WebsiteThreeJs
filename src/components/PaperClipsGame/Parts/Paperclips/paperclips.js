@@ -242,7 +242,7 @@ export default connect(
             funds: Selectors.getFundsState(state),
             unsoldInventory: Selectors.getUnsoldInventoryState(state),
             paperclipPrice: Selectors.getPaperclipPriceState(state),
-            delay: state.business.delay,
+            delay: Selectors.getDelayState(state),
             wire: state.business.wire,
             makePaperclipDisabled: state.business.makePaperclipDisabled,
             time: state.business.time,

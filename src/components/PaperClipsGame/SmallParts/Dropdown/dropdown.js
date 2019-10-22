@@ -116,7 +116,7 @@ export default connect(
             // creativity: state.business.creativity,
             // unsoldInventory: Selectors.getUnsoldInventoryState(state),
             // paperclipPrice: Selectors.getPaperclipPriceState(state),
-            // delay: state.business.delay
+            // delay: Selectors.getDelayState(state),
         };
     },
     (dispatch) => {
