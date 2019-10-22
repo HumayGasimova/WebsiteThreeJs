@@ -151,7 +151,7 @@ export default connect(
             delay: Selectors.getDelayState(state),
             wire: Selectors.getWireState(state),
             makePaperclipDisabled: Selectors.getMakePaperclipDisabledState(state),
-            time: state.business.time,
+            time: Selectors.getTimeState(state)
         };
     },
     (dispatch) => {

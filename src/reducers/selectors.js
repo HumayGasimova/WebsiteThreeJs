@@ -426,10 +426,10 @@ export const getAutoAndMegaClippersWorksState = createSelector(
     [getAutoAndMegaClippersWorks],
     (x) => x
 );
-// state.business.autoAndMegaClippersWorks
-// Selectors.getAutoAndMegaClippersWorksState(state),
-/**
-* Selectors
-*/
 
-// import * as Selectors from '../../../../reducers/selectors';
+const getTime = (state) => state.business.time;
+
+export const getTimeState = createSelector(
+    [getTime],
+    (x) => x
+);
