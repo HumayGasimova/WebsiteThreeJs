@@ -89,7 +89,7 @@ export default connect(
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
             megaClippersPerSec: state.business.megaClippersPerSec,
             autoClipperInitPrice: Selectors.getAutoClipperInitPriceState(state),
-            autoClipperPrice: state.business.autoClipperPrice,
+            autoClipperPrice: Selectors.getAutoClipperPriceState(state),
             megaClipperPrice: state.business.megaClipperPrice,
             megaClipperInitPrice: state.business.megaClipperInitPrice,
             megaClippersButtonDisabled: state.business.megaClippersButtonDisabled,

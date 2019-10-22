@@ -93,7 +93,7 @@ export default connect(
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
             autoClippersPerSec: Selectors.getAutoClippersPerSecState(state),
             autoClipperInitPrice: Selectors.getAutoClipperInitPriceState(state),
-            autoClipperPrice: state.business.autoClipperPrice
+            autoClipperPrice: Selectors.getAutoClipperPriceState(state) 
         };
     },
     (dispatch) => {
