@@ -160,7 +160,14 @@ export const getClipsToBuyTrustState = createSelector(
     [getClipsToBuyTrust],
     (x) => x
 );
-// state.business.clipsToBuyTrust
+
+const getDelayAutoPaperClippers = (state) => state.business.delayAutoPaperClippers;
+
+export const getDelayAutoPaperClippersState = createSelector(
+    [getDelayAutoPaperClippers],
+    (x) => x
+);
+// state.business.delayAutoPaperClippers
 
 /**
 * Selectors

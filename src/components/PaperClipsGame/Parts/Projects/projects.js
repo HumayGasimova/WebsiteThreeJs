@@ -455,7 +455,7 @@ export default connect(
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             wire: Selectors.getWireState(state),
             delay: Selectors.getDelayState(state),
-            delayAutoPaperClippers: state.business.delayAutoPaperClippers,
+            delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
             ops: state.business.ops,
             opsMax: state.business.opsMax,
             autoClipperOn: Selectors.getAutoClipperOnState(state),

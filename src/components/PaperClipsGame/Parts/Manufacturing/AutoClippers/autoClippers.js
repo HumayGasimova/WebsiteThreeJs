@@ -88,7 +88,7 @@ export default connect(
         return {
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             delay: Selectors.getDelayState(state),
-            delayAutoPaperClippers: state.business.delayAutoPaperClippers,
+            delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
             wire: Selectors.getWireState(state),
             autoClippersButtonDisabled: Selectors.getAutoClippersButtonDisabledState(state),
             autoClippersPerSec: Selectors.getAutoClippersPerSecState(state),
