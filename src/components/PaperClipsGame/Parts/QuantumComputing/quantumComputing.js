@@ -34,6 +34,13 @@ import './quantumComputing.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+
+/**
 * QuantumComputing component definition and export
 */
 

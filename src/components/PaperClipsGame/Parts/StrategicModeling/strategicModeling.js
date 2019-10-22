@@ -36,6 +36,12 @@ import './strategicModeling.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * StrategicModeling component definition and export
 */
 
@@ -131,7 +137,7 @@ export default connect(
         return {
             listStrategicModeling: state.business.listStrategicModeling,
             showDropdownStrategicModeling: state.business.showDropdownStrategicModeling,
-            chosenListDropdown: state.business.chosenListDropdown,
+            chosenListDropdown: Selectors.getChosenListDropdownState(state),
         };
     },
     (dispatch) => {

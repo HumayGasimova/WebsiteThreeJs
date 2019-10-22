@@ -237,8 +237,15 @@ export const getListInvestmentsState = createSelector(
     [getListInvestments],
     (x) => x
 );
-// state.business.listInvestments
-// Selectors.getCreativityTurnOnState(state),
+
+const getChosenListDropdown = (state) => state.business.chosenListDropdown;
+
+export const getChosenListDropdownState = createSelector(
+    [getChosenListDropdown],
+    (x) => x
+);
+// state.business.chosenListDropdown
+// Selectors.getChosenListDropdownState(state),
 /**
 * Selectors
 */

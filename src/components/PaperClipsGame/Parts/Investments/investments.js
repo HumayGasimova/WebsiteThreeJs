@@ -177,7 +177,7 @@ export default connect(
             investmentsTotal: state.business.investmentsTotal,
             investmentsStocks: state.business.investmentsStocks,
             investmentsLines: state.business.investmentsLines,
-            chosenListDropdown: state.business.chosenListDropdown
+            chosenListDropdown: Selectors.getChosenListDropdownState(state),
         };
     },
     (dispatch) => {
