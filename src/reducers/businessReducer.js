@@ -20,7 +20,7 @@ export const initialState = {
     wirePrice: 20,
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
-    autoPaperclips: 0,
+    // autoPaperclips: 0,
     autoClipperInitPrice: 5,
     autoClipperPrice: 6.1,
     megaClipperInitPrice: 500,

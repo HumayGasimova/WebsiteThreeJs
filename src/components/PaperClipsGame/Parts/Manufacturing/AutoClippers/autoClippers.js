@@ -92,7 +92,7 @@ export default connect(
             wire: Selectors.getWireState(state),
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,
             autoClippersPerSec: Selectors.getAutoClippersPerSecState(state),
-            autoClipperInitPrice: state.business.autoClipperInitPrice,
+            autoClipperInitPrice: Selectors.getAutoClipperInitPriceState(state),
             autoClipperPrice: state.business.autoClipperPrice
         };
     },
