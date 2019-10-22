@@ -195,7 +195,7 @@ export default connect(
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
             paperClips: Selectors.getPaperclipsState(state),
             megaClippersIsShown: state.business.megaClippersIsShown,
-            clipsPerSec: state.business.clipsPerSec,
+            clipsPerSec: Selectors.getClipsPerSecState(state),
             autoClippersIsShown: state.business.autoClippersIsShown,
             megaClippersPerSec: state.business.megaClippersPerSec,
             megaClippersToAdd: state.business.megaClippersToAdd,
