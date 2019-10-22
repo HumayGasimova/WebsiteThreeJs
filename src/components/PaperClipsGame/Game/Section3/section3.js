@@ -89,7 +89,7 @@ export default connect(
         return {
             paperClips: Selectors.getPaperclipsState(state),
             showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
-            showStrategicModeling: state.business.showStrategicModeling,
+            showStrategicModeling: Selectors.getShowStrategicModelingState(state),
             showDropdownInvestments: state.business.showDropdownInvestments,
             showDropdownStrategicModeling: state.business.showDropdownStrategicModeling
   

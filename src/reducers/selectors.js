@@ -265,8 +265,15 @@ export const getShowInvestmentEngineState = createSelector(
     [getShowInvestmentEngine],
     (x) => x
 );
-// state.business.showInvestmentEngine
-// Selectors.getShowInvestmentEngineState(state),
+
+const getShowStrategicModeling = (state) => state.business.showStrategicModeling;
+
+export const getShowStrategicModelingState = createSelector(
+    [getShowStrategicModeling],
+    (x) => x
+);
+// state.business.showStrategicModeling
+// Selectors.getShowStrategicModelingState(state),
 /**
 * Selectors
 */
