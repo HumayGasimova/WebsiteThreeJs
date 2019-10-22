@@ -251,8 +251,15 @@ export const getListStrategicModelingState = createSelector(
     [getListStrategicModeling],
     (x) => x
 );
-// state.business.listStrategicModeling
-// Selectors.getChosenListDropdownState(state),
+
+const getNoWire = (state) => state.business.noWire;
+
+export const getNoWireState = createSelector(
+    [getNoWire],
+    (x) => x
+);
+// state.business.noWire
+// Selectors.getNoWireState(state),
 /**
 * Selectors
 */
