@@ -357,8 +357,15 @@ export const getMegaClippersIsShownState = createSelector(
     (x) => x
 );
 
-// state.business.megaClippersIsShown
-// Selectors.getMegaClippersIsShownState(state),
+const getAutoClippersIsShown = (state) => state.business.autoClippersIsShown;
+
+export const getAutoClippersIsShownState = createSelector(
+    [getAutoClippersIsShown],
+    (x) => x
+);
+
+// state.business.autoClippersIsShown
+// Selectors.getAutoClippersIsShownState(state),
 /**
 * Selectors
 */
