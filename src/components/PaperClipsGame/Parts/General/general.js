@@ -34,6 +34,12 @@ import './general.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * Utility
 */
 
@@ -138,7 +144,7 @@ export class General extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: state.business.paperClips,
+            paperClips: Selectors.getPaperclipsState(state),
             funds: state.business.funds,
             unsoldInventory: state.business.unsoldInventory,
             paperclipPrice: state.business.paperclipPrice,

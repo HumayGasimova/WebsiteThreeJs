@@ -33,6 +33,12 @@ import './computationalResources.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * Utility
 */
 
@@ -212,7 +218,7 @@ export class ComputationalResources extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: state.business.paperClips,
+            paperClips: Selectors.getPaperclipsState(state),
             trust: state.business.trust,
             clipsToBuyTrust: state.business.clipsToBuyTrust,
             ops: state.business.ops,

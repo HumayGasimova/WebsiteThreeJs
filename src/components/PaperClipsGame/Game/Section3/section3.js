@@ -35,6 +35,12 @@ import './section3.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * Section3 component definition and export
 */
 
@@ -81,7 +87,7 @@ export class Section3 extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: state.business.paperClips,
+            paperClips: Selectors.getPaperclipsState(state),
             showInvestmentEngine: state.business.showInvestmentEngine,
             showStrategicModeling: state.business.showStrategicModeling,
             showDropdownInvestments: state.business.showDropdownInvestments,

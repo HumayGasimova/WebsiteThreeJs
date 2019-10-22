@@ -34,6 +34,12 @@ import './section2.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * Section2 component definition and export
 */
 
@@ -82,7 +88,7 @@ export class Section2 extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: state.business.paperClips,
+            paperClips: Selectors.getPaperclipsState(state),
         };
     },
     (dispatch) => {

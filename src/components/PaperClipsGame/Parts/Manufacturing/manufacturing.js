@@ -42,6 +42,12 @@ import './manufacturing.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * Manufacturing component definition and export
 */
 
@@ -187,7 +193,7 @@ export default connect(
             noWire: state.business.noWire,
             wireBuyerIsShown: state.business.wireBuyerIsShown,
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
-            paperClips: state.business.paperClips,
+            paperClips: Selectors.getPaperclipsState(state),
             megaClippersIsShown: state.business.megaClippersIsShown,
             clipsPerSec: state.business.clipsPerSec,
             autoClippersIsShown: state.business.autoClippersIsShown,
