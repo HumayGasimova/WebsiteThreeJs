@@ -182,7 +182,7 @@ export default connect(
             funds: Selectors.getFundsState(state),
             wirePrice: Selectors.getWirePriceState(state),
             wireButtonDisabled: Selectors.getWireButtonDisabledState(state),
-            autoClippersPerSec: state.business.autoClippersPerSec,
+            autoClippersPerSec: Selectors.getAutoClippersPerSecState(state),
             autoClipperInitPrice: state.business.autoClipperInitPrice,
             autoClipperPrice: state.business.autoClipperPrice,
             autoClippersButtonDisabled: state.business.autoClippersButtonDisabled,

@@ -90,7 +90,14 @@ export const getWireButtonDisabledState = createSelector(
     [getWireButtonDisabled],
     (x) => x
 );
-// state.business.wireButtonDisabled
+
+const getAutoClippersPerSec = (state) => state.business.autoClippersPerSec;
+
+export const getAutoClippersPerSecState = createSelector(
+    [getAutoClippersPerSec],
+    (x) => x
+);
+// state.business.autoClippersPerSec
 
 /**
 * Selectors
