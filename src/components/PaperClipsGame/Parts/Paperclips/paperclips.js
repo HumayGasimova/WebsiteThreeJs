@@ -243,7 +243,7 @@ export default connect(
             unsoldInventory: Selectors.getUnsoldInventoryState(state),
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             delay: Selectors.getDelayState(state),
-            wire: state.business.wire,
+            wire: Selectors.getWireState(state),
             makePaperclipDisabled: state.business.makePaperclipDisabled,
             time: state.business.time,
         };

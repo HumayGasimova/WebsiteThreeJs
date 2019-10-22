@@ -69,7 +69,14 @@ export const getDelayState = createSelector(
     [getDelay],
     (x) => x
 );
-// state.business.delay
+
+const getWire = (state) => state.business.wire;
+
+export const getWireState = createSelector(
+    [getWire],
+    (x) => x
+);
+// state.business.wire
 
 /**
 * Selectors

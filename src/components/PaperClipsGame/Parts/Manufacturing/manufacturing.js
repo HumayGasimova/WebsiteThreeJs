@@ -178,7 +178,7 @@ export class Manufacturing extends Component {
 export default connect(
     (state) => {
         return {
-            wire: state.business.wire,
+            wire: Selectors.getWireState(state),
             funds: Selectors.getFundsState(state),
             wirePrice: state.business.wirePrice,
             wireButtonDisabled: state.business.wireButtonDisabled,
@@ -189,7 +189,6 @@ export default connect(
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             delay: Selectors.getDelayState(state),
             delayAutoPaperClippers: state.business.delayAutoPaperClippers,
-            wire: state.business.wire,
             noWire: state.business.noWire,
             wireBuyerIsShown: state.business.wireBuyerIsShown,
             autoWireBuyerIsOn: state.business.autoWireBuyerIsOn,
