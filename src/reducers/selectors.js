@@ -370,8 +370,15 @@ export const getInvestmentsCashState = createSelector(
     [getInvestmentsCash],
     (x) => x
 );
-// state.business.investmentsCash
-// Selectors.getInvestmentsCashState(state),
+
+const getInvestmentsTotal = (state) => state.business.investmentsTotal;
+
+export const getInvestmentsTotalState = createSelector(
+    [getInvestmentsTotal],
+    (x) => x
+);
+// state.business.investmentsTotal
+// Selectors.getInvestmentsTotalState(state),
 /**
 * Selectors
 */

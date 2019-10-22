@@ -174,7 +174,7 @@ export default connect(
             listInvestments: Selectors.getListInvestmentsState(state),
             showDropdownInvestments: Selectors.getShowDropdownInvestmentsState(state),
             investmentsCash: Selectors.getInvestmentsCashState(state),
-            investmentsTotal: state.business.investmentsTotal,
+            investmentsTotal: Selectors.getInvestmentsTotalState(state),
             investmentsStocks: state.business.investmentsStocks,
             investmentsLines: state.business.investmentsLines,
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
