@@ -118,7 +118,14 @@ export const getMegaClipperInitPriceState = createSelector(
     [getMegaClipperInitPrice],
     (x) => x
 );
-// state.business.megaClipperInitPrice
+
+const getMegaClipperPrice = (state) => state.business.megaClipperPrice;
+
+export const getMegaClipperPriceState = createSelector(
+    [getMegaClipperPrice],
+    (x) => x
+);
+// state.business.megaClipperPrice
 
 /**
 * Selectors
