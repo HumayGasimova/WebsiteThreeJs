@@ -132,7 +132,14 @@ export const getAutoClippersButtonDisabledState = createSelector(
     [getAutoClippersButtonDisabled],
     (x) => x
 );
-// state.business.autoClippersButtonDisabled
+
+const getMegaClippersButtonDisabled = (state) => state.business.megaClippersButtonDisabled;
+
+export const getMegaClippersButtonDisabledState = createSelector(
+    [getMegaClippersButtonDisabled],
+    (x) => x
+);
+// state.business.megaClippersButtonDisabled
 
 /**
 * Selectors
