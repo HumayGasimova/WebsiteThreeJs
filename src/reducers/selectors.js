@@ -196,7 +196,13 @@ export const getProcessorsMemoryState = createSelector(
     (x) => x
 );
 
-// state.business.processorsNumber
+const getCreativity = (state) => state.business.creativity;
+
+export const getCreativityState = createSelector(
+    [getCreativity],
+    (x) => x
+);
+// state.business.creativity
 
 /**
 * Selectors

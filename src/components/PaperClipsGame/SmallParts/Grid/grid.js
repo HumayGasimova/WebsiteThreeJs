@@ -69,7 +69,7 @@ export default connect(
     (state) => {
         return {
             // ops: Selectors.getOpsState(state),
-            // creativity: state.business.creativity,
+            // creativity: Selectors.getCreativityState(state),
             // unsoldInventory: Selectors.getUnsoldInventoryState(state),
             // paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: Selectors.getDelayState(state),
