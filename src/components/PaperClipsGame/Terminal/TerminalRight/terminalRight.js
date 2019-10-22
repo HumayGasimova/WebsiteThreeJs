@@ -25,6 +25,12 @@ import {
 import './terminalRight.scss';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
 * TerminalRight component definition and export
 */
 
@@ -73,7 +79,7 @@ export class TerminalRight extends Component {
 export default connect(
     (state) => {
         return {
-            comments: state.business.comments,
+            comments: Selectors.getCommentsState(state),
             // paperclipPrice: Selectors.getPaperclipPriceState(state),
             // wire: Selectors.getWireState(state),
             // delay: Selectors.getDelayState(state),

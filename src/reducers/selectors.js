@@ -272,8 +272,15 @@ export const getShowStrategicModelingState = createSelector(
     [getShowStrategicModeling],
     (x) => x
 );
-// state.business.showStrategicModeling
-// Selectors.getShowStrategicModelingState(state),
+
+const getComments = (state) => state.business.comments;
+
+export const getCommentsState = createSelector(
+    [getComments],
+    (x) => x
+);
+// state.business.comments
+// Selectors.getCommentsState(state),
 /**
 * Selectors
 */
