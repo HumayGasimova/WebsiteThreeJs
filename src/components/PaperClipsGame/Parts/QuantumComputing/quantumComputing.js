@@ -145,7 +145,7 @@ export default connect(
     (state) => {
         return {
             showQCompMessage: Selectors.getShowQCompMessageState(state),
-            showChip: state.business.showChip,
+            showChip: Selectors.getShowChipState(state),
             changedToQOps: state.business.changedToQOps,
             qOps: state.business.qOps,
             currentQOps: state.business.currentQOps,

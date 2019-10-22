@@ -308,9 +308,15 @@ export const getShowQCompMessageState = createSelector(
     (x) => x
 );
 
+const getShowChip = (state) => state.business.showChip;
 
-// state.business.showQCompMessage
-// Selectors.getShowQCompMessageState(state),
+export const getShowChipState = createSelector(
+    [getShowChip],
+    (x) => x
+);
+
+// state.business.showChip
+// Selectors.getShowChipeState(state),
 /**
 * Selectors
 */
