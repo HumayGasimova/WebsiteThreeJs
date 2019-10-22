@@ -258,8 +258,15 @@ export const getNoWireState = createSelector(
     [getNoWire],
     (x) => x
 );
-// state.business.noWire
-// Selectors.getNoWireState(state),
+
+const getShowInvestmentEngine = (state) => state.business.showInvestmentEngine;
+
+export const getShowInvestmentEngineState = createSelector(
+    [getShowInvestmentEngine],
+    (x) => x
+);
+// state.business.showInvestmentEngine
+// Selectors.getShowInvestmentEngineState(state),
 /**
 * Selectors
 */

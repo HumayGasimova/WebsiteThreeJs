@@ -88,7 +88,7 @@ export default connect(
     (state) => {
         return {
             paperClips: Selectors.getPaperclipsState(state),
-            showInvestmentEngine: state.business.showInvestmentEngine,
+            showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
             showStrategicModeling: state.business.showStrategicModeling,
             showDropdownInvestments: state.business.showDropdownInvestments,
             showDropdownStrategicModeling: state.business.showDropdownStrategicModeling
