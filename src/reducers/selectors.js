@@ -209,7 +209,14 @@ export const getCardsState = createSelector(
     [getCards],
     (x) => x
 );
-// state.business.cards
+
+const getRevTracker = (state) => state.business.revTracker;
+
+export const getRevTrackerState = createSelector(
+    [getRevTracker],
+    (x) => x
+);
+// state.business.revTracker
 
 /**
 * Selectors
