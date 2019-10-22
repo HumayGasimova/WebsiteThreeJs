@@ -115,7 +115,7 @@ export default connect(
         return {
             paperClips: Selectors.getPaperclipsState(state),
             unsoldInventory: state.business.unsoldInventory,
-            funds: state.business.funds,
+            funds: Selectors.getFundsState(state),
             paperclipPrice: state.business.paperclipPrice,
             publicDemand: state.business.publicDemand,
             marketingLevel: state.business.marketingLevel,

@@ -179,7 +179,7 @@ export default connect(
     (state) => {
         return {
             wire: state.business.wire,
-            funds: state.business.funds,
+            funds: Selectors.getFundsState(state),
             wirePrice: state.business.wirePrice,
             wireButtonDisabled: state.business.wireButtonDisabled,
             autoClippersPerSec: state.business.autoClippersPerSec,

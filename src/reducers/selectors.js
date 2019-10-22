@@ -14,6 +14,13 @@ export const getClipsPerSecState = createSelector(
     (x) => x
 );
 
+const getFunds = (state) => state.business.funds;
+
+export const getFundsState = createSelector(
+    [getFunds],
+    (x) => x
+);
+
 // state.business.clipsPerSec
 
 /**
