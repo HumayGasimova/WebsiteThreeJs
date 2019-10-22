@@ -180,7 +180,7 @@ export default connect(
         return {
             wire: Selectors.getWireState(state),
             funds: Selectors.getFundsState(state),
-            wirePrice: state.business.wirePrice,
+            wirePrice: Selectors.getWirePriceState(state),
             wireButtonDisabled: state.business.wireButtonDisabled,
             autoClippersPerSec: state.business.autoClippersPerSec,
             autoClipperInitPrice: state.business.autoClipperInitPrice,
