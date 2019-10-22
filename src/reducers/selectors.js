@@ -189,6 +189,13 @@ export const getProcessorsNumberState = createSelector(
     (x) => x
 );
 
+const getProcessorsMemory = (state) => state.business.processorsMemory;
+
+export const getProcessorsMemoryState = createSelector(
+    [getProcessorsMemory],
+    (x) => x
+);
+
 // state.business.processorsNumber
 
 /**

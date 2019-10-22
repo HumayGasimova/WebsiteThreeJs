@@ -224,7 +224,7 @@ export default connect(
             ops: Selectors.getOpsState(state),
             opsMax: Selectors.getOpsMaxState(state),
             processorsNumber: Selectors.getProcessorsNumberState(state),
-            processorsMemory: state.business.processorsMemory,
+            processorsMemory: Selectors.getProcessorsMemoryState(state),
             creativity: state.business.creativity,
             creativityTurnOn: state.business.creativityTurnOn,
             showQuantumComputing: state.business.showQuantumComputing
