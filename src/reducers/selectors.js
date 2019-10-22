@@ -48,6 +48,13 @@ export const getMarketingLevelState = createSelector(
     [getMarketingLevel],
     (x) => x
 );
+
+const getMarketingCost = (state) => state.business.marketingCost;
+
+export const getMarketingCostState = createSelector(
+    [getMarketingCost],
+    (x) => x
+);
 // state.business.marketingLevel
 
 /**

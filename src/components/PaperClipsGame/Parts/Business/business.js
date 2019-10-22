@@ -119,7 +119,7 @@ export default connect(
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             publicDemand: Selectors.getPublicDemandState(state),
             marketingLevel: Selectors.getMarketingLevelState(state),
-            marketingCost: state.business.marketingCost,
+            marketingCost: Selectors.getMarketingCostState(state),
             marketingButtonDisabled: state.business.marketingButtonDisabled,
             revTracker: state.business.revTracker,
             avgRevPerSec: state.business.avgRevPerSec,
