@@ -176,7 +176,7 @@ export default connect(
             investmentsCash: Selectors.getInvestmentsCashState(state),
             investmentsTotal: Selectors.getInvestmentsTotalState(state),
             investmentsStocks: Selectors.getInvestmentsStocksState(state),
-            investmentsLines: state.business.investmentsLines,
+            investmentsLines: Selectors.getInvestmentsLinesState(state),
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
         };
     },

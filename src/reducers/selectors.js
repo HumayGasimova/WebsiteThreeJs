@@ -384,8 +384,15 @@ export const getInvestmentsStocksState = createSelector(
     [getInvestmentsStocks],
     (x) => x
 );
-// state.business.investmentsStocks
-// Selectors.getInvestmentsStocksState(state),
+
+const getInvestmentsLines = (state) => state.business.investmentsLines;
+
+export const getInvestmentsLinesState = createSelector(
+    [getInvestmentsLines],
+    (x) => x
+);
+// state.business.investmentsLines
+// Selectors.getInvestmentsLinesState(state),
 /**
 * Selectors
 */
