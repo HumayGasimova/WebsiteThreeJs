@@ -220,15 +220,14 @@ export default connect(
         return {
             paperClips: Selectors.getPaperclipsState(state),
             trust: Selectors.getTrustState(state),
-            clipsToBuyTrust: state.business.clipsToBuyTrust,
+            clipsToBuyTrust: Selectors.getClipsToBuyTrustState(state),
             ops: state.business.ops,
             opsMax: state.business.opsMax,
             processorsNumber: state.business.processorsNumber,
             processorsMemory: state.business.processorsMemory,
             creativity: state.business.creativity,
             creativityTurnOn: state.business.creativityTurnOn,
-            showQuantumComputing: state.business.showQuantumComputing,
-            // clipsToBuyTrust: state.business.clipsToBuyTrust,
+            showQuantumComputing: state.business.showQuantumComputing
         };
     },
     (dispatch) => {

@@ -153,7 +153,14 @@ export const getTrustState = createSelector(
     [getTrust],
     (x) => x
 );
-// state.business.trust
+
+const getClipsToBuyTrust = (state) => state.business.clipsToBuyTrust;
+
+export const getClipsToBuyTrustState = createSelector(
+    [getClipsToBuyTrust],
+    (x) => x
+);
+// state.business.clipsToBuyTrust
 
 /**
 * Selectors
