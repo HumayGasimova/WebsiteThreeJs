@@ -294,9 +294,16 @@ export const getShowDropdownInvestmentsState = createSelector(
     (x) => x
 );
 
+const getShowQuantumComputing = (state) => state.business.showQuantumComputing;
 
-// state.business.showDropdownInvestments
-// Selectors.getShowDropdownInvestmentsState(state),
+export const getShowQuantumComputingState = createSelector(
+    [getShowQuantumComputing],
+    (x) => x
+);
+
+
+// state.business.showQuantumComputing
+// Selectors.getShowQuantumComputing(state),
 /**
 * Selectors
 */

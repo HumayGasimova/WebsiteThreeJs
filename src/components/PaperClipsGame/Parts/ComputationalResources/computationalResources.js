@@ -227,7 +227,7 @@ export default connect(
             processorsMemory: Selectors.getProcessorsMemoryState(state),
             creativity: Selectors.getCreativityState(state),
             creativityTurnOn: Selectors.getCreativityTurnOnState(state),
-            showQuantumComputing: state.business.showQuantumComputing
+            showQuantumComputing: Selectors.getShowQuantumComputingState(state)
         };
     },
     (dispatch) => {
