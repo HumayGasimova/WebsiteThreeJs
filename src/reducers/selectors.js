@@ -223,7 +223,14 @@ export const getMakePaperclipDisabledState = createSelector(
     [getMakePaperclipDisabled],
     (x) => x
 );
-// state.business.makePaperclipDisabled
+
+const getCreativityTurnOn = (state) => state.business.creativityTurnOn;
+
+export const getCreativityTurnOnState = createSelector(
+    [getCreativityTurnOn],
+    (x) => x
+);
+// state.business.creativityTurnOn
 
 /**
 * Selectors
