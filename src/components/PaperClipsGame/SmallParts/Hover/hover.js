@@ -64,7 +64,7 @@ export class Hover extends Component {
 export default connect(
     (state) => {
         return {
-            // cards: state.business.cards,
+            // cards: Selectors.getCardsState(state),
             // funds: state.business.funds,
             // unsoldInventory: Selectors.getUnsoldInventoryState(state),
             // paperclipPrice: Selectors.getPaperclipPriceState(state),

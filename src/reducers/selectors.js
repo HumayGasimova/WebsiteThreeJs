@@ -202,7 +202,14 @@ export const getCreativityState = createSelector(
     [getCreativity],
     (x) => x
 );
-// state.business.creativity
+
+const getCards = (state) => state.business.cards;
+
+export const getCardsState = createSelector(
+    [getCards],
+    (x) => x
+);
+// state.business.cards
 
 /**
 * Selectors

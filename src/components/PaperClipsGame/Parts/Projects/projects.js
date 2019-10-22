@@ -451,7 +451,7 @@ export class Projects extends Component {
 export default connect(
     (state) => {
         return {
-            cards: state.business.cards,
+            cards: Selectors.getCardsState(state),
             paperclipPrice: Selectors.getPaperclipPriceState(state),
             wire: Selectors.getWireState(state),
             delay: Selectors.getDelayState(state),
