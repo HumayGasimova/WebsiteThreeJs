@@ -123,7 +123,7 @@ export default connect(
             marketingButtonDisabled: Selectors.getMarketingButtonDisabledState(state),
             revTracker: Selectors.getRevTrackerState(state),
             avgRevPerSec: Selectors.getAvgRevPerSecState(state),
-            avgClipsSoldPerSec: state.business.avgClipsSoldPerSec,
+            avgClipsSoldPerSec: Selectors.getAvgClipsSoldPerSecState(state)
         };
     },
     (dispatch) => {

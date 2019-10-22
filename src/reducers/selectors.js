@@ -398,6 +398,13 @@ export const getAvgRevPerSecState = createSelector(
     [getAvgRevPerSec],
     (x) => x
 );
+
+const getAvgClipsSoldPerSec = (state) => state.business.avgClipsSoldPerSec;
+
+export const getAvgClipsSoldPerSecState = createSelector(
+    [getAvgClipsSoldPerSec],
+    (x) => x
+);
 // state.business.avgRevPerSec
 // Selectors.getRiskState(state),
 /**

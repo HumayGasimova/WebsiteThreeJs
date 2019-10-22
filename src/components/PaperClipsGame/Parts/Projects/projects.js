@@ -83,7 +83,7 @@ export class Projects extends Component {
                 terminal: "Wire extrusion technique improved, 1,500 supply from every spool"
             },
             card3: {
-                text1: "RecTracker (500 ops)",
+                text1: "RevTracker (500 ops)",
                 text2 : "Automatically calculates average revenue",
                 text3 : "per second",
                 price: {
