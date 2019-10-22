@@ -222,7 +222,7 @@ export default connect(
             trust: Selectors.getTrustState(state),
             clipsToBuyTrust: Selectors.getClipsToBuyTrustState(state),
             ops: Selectors.getOpsState(state),
-            opsMax: state.business.opsMax,
+            opsMax: Selectors.getOpsMaxState(state),
             processorsNumber: state.business.processorsNumber,
             processorsMemory: state.business.processorsMemory,
             creativity: state.business.creativity,

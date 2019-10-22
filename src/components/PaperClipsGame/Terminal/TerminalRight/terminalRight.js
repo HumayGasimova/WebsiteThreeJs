@@ -79,7 +79,7 @@ export default connect(
             // delay: Selectors.getDelayState(state),
             // delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
             // ops: Selectors.getOpsState(state),
-            // opsMax: state.business.opsMax,
+            // opsMax: Selectors.getOpsMaxState(state),
             // autoClipperOn: Selectors.getAutoClipperOnState(state),
         };
     },

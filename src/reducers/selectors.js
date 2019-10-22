@@ -174,7 +174,14 @@ export const getOpsState = createSelector(
     [getOps],
     (x) => x
 );
-// state.business.ops
+
+const getOpsMax = (state) => state.business.opsMax;
+
+export const getOpsMaxState = createSelector(
+    [getOpsMax],
+    (x) => x
+);
+// state.business.
 
 /**
 * Selectors
