@@ -459,7 +459,7 @@ export default connect(
             ops: Selectors.getOpsState(state),
             opsMax: Selectors.getOpsMaxState(state),
             autoClipperOn: Selectors.getAutoClipperOnState(state),
-            processorsNumber: state.business.processorsNumber,
+            processorsNumber: Selectors.getProcessorsNumberState(state),
         };
     },
     (dispatch) => {

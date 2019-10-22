@@ -223,7 +223,7 @@ export default connect(
             clipsToBuyTrust: Selectors.getClipsToBuyTrustState(state),
             ops: Selectors.getOpsState(state),
             opsMax: Selectors.getOpsMaxState(state),
-            processorsNumber: state.business.processorsNumber,
+            processorsNumber: Selectors.getProcessorsNumberState(state),
             processorsMemory: state.business.processorsMemory,
             creativity: state.business.creativity,
             creativityTurnOn: state.business.creativityTurnOn,

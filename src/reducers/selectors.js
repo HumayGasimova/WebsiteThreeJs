@@ -181,7 +181,15 @@ export const getOpsMaxState = createSelector(
     [getOpsMax],
     (x) => x
 );
-// state.business.
+
+const getProcessorsNumber = (state) => state.business.processorsNumber;
+
+export const getProcessorsNumberState = createSelector(
+    [getProcessorsNumber],
+    (x) => x
+);
+
+// state.business.processorsNumber
 
 /**
 * Selectors
