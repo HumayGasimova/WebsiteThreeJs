@@ -167,7 +167,14 @@ export const getDelayAutoPaperClippersState = createSelector(
     [getDelayAutoPaperClippers],
     (x) => x
 );
-// state.business.delayAutoPaperClippers
+
+const getOps = (state) => state.business.ops;
+
+export const getOpsState = createSelector(
+    [getOps],
+    (x) => x
+);
+// state.business.ops
 
 /**
 * Selectors

@@ -78,7 +78,7 @@ export default connect(
             // wire: Selectors.getWireState(state),
             // delay: Selectors.getDelayState(state),
             // delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
-            // ops: state.business.ops,
+            // ops: Selectors.getOpsState(state),
             // opsMax: state.business.opsMax,
             // autoClipperOn: Selectors.getAutoClipperOnState(state),
         };

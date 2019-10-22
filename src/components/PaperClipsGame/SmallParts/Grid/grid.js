@@ -68,7 +68,7 @@ class Grid extends Component {
 export default connect(
     (state) => {
         return {
-            // ops: state.business.ops,
+            // ops: Selectors.getOpsState(state),
             // creativity: state.business.creativity,
             // unsoldInventory: Selectors.getUnsoldInventoryState(state),
             // paperclipPrice: Selectors.getPaperclipPriceState(state),

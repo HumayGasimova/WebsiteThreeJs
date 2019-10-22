@@ -79,7 +79,7 @@ class Chip extends Component {
 export default connect(
     (state) => {
         return {
-            // ops: state.business.ops,
+            // ops: Selectors.getOpsState(state),
             // creativity: state.business.creativity,
             // trust: Selectors.getTrustState(state),
             

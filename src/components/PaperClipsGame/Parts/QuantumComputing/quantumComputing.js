@@ -143,7 +143,7 @@ export default connect(
             qOps: state.business.qOps,
             currentQOps: state.business.currentQOps,
             chips: state.business.chips,
-            ops: state.business.ops,
+            ops: Selectors.getOpsState(state),
             opsMax: state.business.opsMax,
             chips: state.business.chips,
         };

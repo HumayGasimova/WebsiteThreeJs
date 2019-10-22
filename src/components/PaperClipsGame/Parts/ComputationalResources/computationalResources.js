@@ -221,7 +221,7 @@ export default connect(
             paperClips: Selectors.getPaperclipsState(state),
             trust: Selectors.getTrustState(state),
             clipsToBuyTrust: Selectors.getClipsToBuyTrustState(state),
-            ops: state.business.ops,
+            ops: Selectors.getOpsState(state),
             opsMax: state.business.opsMax,
             processorsNumber: state.business.processorsNumber,
             processorsMemory: state.business.processorsMemory,
