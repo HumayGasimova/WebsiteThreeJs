@@ -706,13 +706,13 @@ const megaClippersButtonPressed = (state, action) => {
     }else{
         updatedMegaClippersPrice = +(state.megaClipperPrice + (state.megaClipperPrice * 0.07)).toFixed(2);
         updatedFunds = +state.funds - +state.megaClipperPrice;
-        updatedMegaClippersToAdd = state.megaClippersToAdd + 500;
+        // updatedMegaClippersToAdd = state.megaClippersToAdd + 500;
     }
     return updateObject(state, {
         megaClippersPerSec: +state.megaClippersPerSec + 1,
         megaClipperPrice: +updatedMegaClippersPrice,
         funds: +updatedFunds,
-        megaClippersToAdd: updatedMegaClippersToAdd
+        // megaClippersToAdd: updatedMegaClippersToAdd
     });
 }
 

@@ -405,8 +405,15 @@ export const getAvgClipsSoldPerSecState = createSelector(
     [getAvgClipsSoldPerSec],
     (x) => x
 );
-// state.business.avgRevPerSec
-// Selectors.getRiskState(state),
+
+const getMegaClippersPerSec = (state) => state.business.megaClippersPerSec;
+
+export const getMegaClippersPerSecState = createSelector(
+    [getMegaClippersPerSec],
+    (x) => x
+);
+// state.business.megaClippersPerSec
+// Selectors.getMegaClippersPerSecState(state),
 /**
 * Selectors
 */
