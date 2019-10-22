@@ -35,7 +35,15 @@ export const getUnsoldInventoryState = createSelector(
     (x) => x
 );
 
-// state.business.unsoldInventory
+const getPublicDemand = (state) => state.business.publicDemand;
+
+export const getPublicDemandState = createSelector(
+    [getPublicDemand],
+    (x) => x
+);
+
+
+// state.business.publicDemand
 
 /**
 * Selectors

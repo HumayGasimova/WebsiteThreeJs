@@ -117,7 +117,7 @@ export default connect(
             unsoldInventory: Selectors.getUnsoldInventoryState(state),
             funds: Selectors.getFundsState(state),
             paperclipPrice: Selectors.getPaperclipPriceState(state),
-            publicDemand: state.business.publicDemand,
+            publicDemand: Selectors.getPublicDemandState(state),
             marketingLevel: state.business.marketingLevel,
             marketingCost: state.business.marketingCost,
             marketingButtonDisabled: state.business.marketingButtonDisabled,

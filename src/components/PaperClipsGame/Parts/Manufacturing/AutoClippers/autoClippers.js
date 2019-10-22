@@ -34,6 +34,12 @@ import './autoClippers.scss';
 import * as Actions from '../../../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../../../reducers/selectors';
+
+/**
 * AutoClippers component definition and export
 */
 
