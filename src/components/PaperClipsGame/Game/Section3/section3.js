@@ -91,7 +91,7 @@ export default connect(
             showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
             showStrategicModeling: Selectors.getShowStrategicModelingState(state),
             showDropdownInvestments: state.business.showDropdownInvestments,
-            showDropdownStrategicModeling: state.business.showDropdownStrategicModeling
+            showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
   
         };
     },

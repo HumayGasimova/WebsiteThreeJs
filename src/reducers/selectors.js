@@ -279,7 +279,14 @@ export const getCommentsState = createSelector(
     [getComments],
     (x) => x
 );
-// state.business.comments
+
+const getShowDropdownStrategicModeling = (state) => state.business.showDropdownStrategicModeling;
+
+export const getShowDropdownStrategicModelingState = createSelector(
+    [getShowDropdownStrategicModeling],
+    (x) => x
+);
+// state.business.showDropdownStrategicModeling
 // Selectors.getCommentsState(state),
 /**
 * Selectors

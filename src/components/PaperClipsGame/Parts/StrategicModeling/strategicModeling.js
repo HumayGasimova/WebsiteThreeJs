@@ -136,7 +136,7 @@ export default connect(
     (state) => {
         return {
             listStrategicModeling: Selectors.getListStrategicModelingState(state),
-            showDropdownStrategicModeling: state.business.showDropdownStrategicModeling,
+            showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
         };
     },
