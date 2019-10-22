@@ -55,7 +55,14 @@ export const getMarketingCostState = createSelector(
     [getMarketingCost],
     (x) => x
 );
-// state.business.marketingLevel
+
+const getMarketingButtonDisabled = (state) => state.business.marketingButtonDisabled;
+
+export const getMarketingButtonDisabledState = createSelector(
+    [getMarketingButtonDisabled],
+    (x) => x
+);
+// state.business.marketingButtonDisabled
 
 /**
 * Selectors

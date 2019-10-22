@@ -120,7 +120,7 @@ export default connect(
             publicDemand: Selectors.getPublicDemandState(state),
             marketingLevel: Selectors.getMarketingLevelState(state),
             marketingCost: Selectors.getMarketingCostState(state),
-            marketingButtonDisabled: state.business.marketingButtonDisabled,
+            marketingButtonDisabled: Selectors.getMarketingButtonDisabledState(state),
             revTracker: state.business.revTracker,
             avgRevPerSec: state.business.avgRevPerSec,
             avgClipsSoldPerSec: state.business.avgClipsSoldPerSec,
