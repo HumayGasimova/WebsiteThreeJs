@@ -350,8 +350,15 @@ export const getAutoWireBuyerIsOnState = createSelector(
     (x) => x
 );
 
-// state.business.autoWireBuyerIsOn
-// Selectors.getAutoWireBuyerIsOnState(state),
+const getMegaClippersIsShown = (state) => state.business.megaClippersIsShown;
+
+export const getMegaClippersIsShownState = createSelector(
+    [getMegaClippersIsShown],
+    (x) => x
+);
+
+// state.business.megaClippersIsShown
+// Selectors.getMegaClippersIsShownState(state),
 /**
 * Selectors
 */

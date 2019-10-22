@@ -193,7 +193,7 @@ export default connect(
             wireBuyerIsShown: Selectors.getWireBuyerIsShownState(state),
             autoWireBuyerIsOn: Selectors.getAutoWireBuyerIsOnState(state),
             paperClips: Selectors.getPaperclipsState(state),
-            megaClippersIsShown: state.business.megaClippersIsShown,
+            megaClippersIsShown: Selectors.getMegaClippersIsShownState(state),
             clipsPerSec: Selectors.getClipsPerSecState(state),
             autoClippersIsShown: state.business.autoClippersIsShown,
             megaClippersPerSec: state.business.megaClippersPerSec,
