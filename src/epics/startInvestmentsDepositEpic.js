@@ -13,7 +13,7 @@ export const startInvestmentsDepositEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_INVESTMENTS_DEPOSIT),
         mergeMap(action => {
-            let deposit = state$.value.business.funds
+            // let deposit = state$.value.business.funds
             return of(
                 Actions.getDeposit(),
                 Actions.startUpdatingScreen(),
