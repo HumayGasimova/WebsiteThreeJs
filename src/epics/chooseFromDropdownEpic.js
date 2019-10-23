@@ -66,7 +66,7 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                 break;
                 case 'A100':
                 return of(
-                         Actions.addChosenFromDropdown(action.chosen, action.index),
+                        Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
                 break;
