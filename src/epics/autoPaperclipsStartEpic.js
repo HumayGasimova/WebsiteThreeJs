@@ -10,9 +10,7 @@ import { ofType } from 'redux-observable';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-
-
-export const autoPaperclipsStartsEpic = (action$, state$) => 
+export const autoPaperclipsStartEpic = (action$, state$) => 
     action$.pipe(
         ofType(actionTypes.AUTO_PAPERCLIPS_START),
         mergeMap(action => {
@@ -76,4 +74,4 @@ export const autoPaperclipsStartsEpic = (action$, state$) =>
 
     //     })
 
-export default autoPaperclipsStartsEpic;
+export default autoPaperclipsStartEpic;
