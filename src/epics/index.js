@@ -12,7 +12,7 @@ export { chooseFromDropdownEpic } from './chooseFromDropdownEpic';
 export { decreaseOpsEpic } from './decreaseOpsEpic';
 export { makePaperClipEpic } from './makePaperClipEpic';
 export { marketingNextLevelEpic } from './marketingNextLevelEpic';
-export { PaperclipsGenerateEpic } from './PaperclipsGenerateEpic';
+export { paperclipsGenerateEpic } from './PaperclipsGenerateEpic';
 export { raisePriceEpic } from './raisePriceEpic';
 export { startAddingEmptyInvestmentsLineEpic } from './startAddingEmptyInvestmentsLineEpic';
 export { startAddingQOpsEpic } from './startAddingQOpsEpic';

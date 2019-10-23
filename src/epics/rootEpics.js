@@ -3,7 +3,7 @@ import { combineEpics } from 'redux-observable';
 
 import checkButtonsEpic from './checkButtonsEpic';
 import checkWireEpic from './checkWireEpic';
-import paperclipsGenerateEpic from './PaperclipsGenerateEpic';
+import paperclipsGenerateEpic from './paperclipsGenerateEpic';
 import makePaperClipEpic from './makePaperClipEpic';
 import raisePriceEpic from './raisePriceEpic';
 import marketingNextLevelEpic from './marketingNextLevelEpic';
