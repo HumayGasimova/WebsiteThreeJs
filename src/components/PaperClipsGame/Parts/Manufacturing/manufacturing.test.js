@@ -29,13 +29,13 @@ describe('<Manufacturing/>', () => {
         expect(wrapper.find(AutoWireBuyer)).toHaveLength(0);
     });
 
-    it("should render <AutoClippers/> if autoClipperInitPrice set to true", () => {
-        wrapper.setProps({autoClipperInitPrice: 5})
+    it("should render <AutoClippers/> if autoClippersIsShown set to true", () => {
+        wrapper.setProps({autoClippersIsShown: true})
         expect(wrapper.find(AutoClippers)).toHaveLength(1);
     });
 
-    it("should not render <AutoClippers/> if autoClipperInitPrice set to a value other than 5", () => {
-        wrapper.setProps({autoClipperInitPrice: 7})
+    it("should not render <AutoClippers/> if autoClippersIsShown set to false", () => {
+        wrapper.setProps({autoClippersIsShown: false})
         expect(wrapper.find(AutoClippers)).toHaveLength(0);
     });
 

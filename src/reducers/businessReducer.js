@@ -6,7 +6,7 @@ import {
 export const initialState = {
     paperClips: 0,
     clipsPerSec: 0,
-    funds: 50000, //pomenat na 0
+    funds: 0, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
     unsoldInventory: 0,
     maxPublicDemand: 800,
@@ -15,7 +15,7 @@ export const initialState = {
     marketingCost: 100,
     marketingButtonDisabled: true,
     delay: 1000,
-    wire: 20, //1000
+    wire: 1000, //1000
     wireToAdd: 1000,
     wirePrice: 20,
     wireButtonDisabled: true,
@@ -33,7 +33,7 @@ export const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 10,//1000
+    opsMax: 1000,//1000
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
@@ -84,7 +84,7 @@ const makePaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
-       paperClips: state.paperClips + 100000, //pomenat na 1
+       paperClips: state.paperClips + 1, //pomenat na 1
        unsoldInventory: +state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });

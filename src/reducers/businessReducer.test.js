@@ -18,7 +18,7 @@ describe('businessReducer', () => {
             ...initialState, 
             paperClips: 1, 
             unsoldInventory: 1, 
-            wire: 49
+            wire: 999
         }
         expect(reducer(initialState, action)).toEqual(state);
     })
