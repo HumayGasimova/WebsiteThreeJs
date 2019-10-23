@@ -110,10 +110,9 @@ export function toggleWireButton() {
     };
 };
 
-export function checkExistenceOfWire(wire) {
+export function checkExistenceOfWire() {
     return { 
-        type: actionTypes.CHECK_EXISTENCE_OF_WIRE,
-        wire: wire
+        type: actionTypes.CHECK_EXISTENCE_OF_WIRE
     };
 };
 

@@ -87,7 +87,7 @@ export class Manufacturing extends Component {
 
         this.intervalCheckButton = setInterval(()=>{
             this.props.checkButtons();
-            this.props.checkExistenceOfWire(this.props.wire);
+            this.props.checkExistenceOfWire();
         }, 1000);
     }
 
