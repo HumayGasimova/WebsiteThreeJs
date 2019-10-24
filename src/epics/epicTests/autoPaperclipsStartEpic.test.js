@@ -1,5 +1,5 @@
 import { ActionsObservable } from 'redux-observable';
-import { toArray,  map } from 'rxjs/operators';
+import { toArray, take } from 'rxjs/operators';
 import * as Epic from '../index'
 import * as Actions from "../../actions";
 import * as actionTypes from "../../constants/actionTypes";
@@ -11,16 +11,31 @@ describe('autoPaperclipsStartEpic', () => {
 
   it('should return a MAKE_PAPERCLIP after each second',
     () => {
-
         const scheduler = new TestScheduler((actual, expected) => {
           expect(actual).toEqual(expected);
         });
 
+        const action$ = ActionsObservable.of({
+          type: actionTypes.AUTO_PAPERCLIPS_START
+        });
+
+        const state$ = {
+            value: {
+                business: {
+                  delayAutoPaperClippers: 1000
+                }
+            }
+        }
+
         scheduler.run(helpers => {
           const {expectObservable} = helpers;
-          const expectedMarble = '1s a 999ms b 999ms c 999ms (d|)';
-          const expectedValues = {a: 'Batman', b: 'Spiderman', c: 'Superman', d: 'Ironman'};
-          expectObservable(callHeroes()).toBe(expectedMarble, expectedValues)
+          const expectedMarble = '1s a 999ms b 999ms (c|)';
+          const expectedValues = {
+            a: { type: actionTypes.MAKE_PAPERCLIP }, 
+            b: { type: actionTypes.MAKE_PAPERCLIP }, 
+            c: { type: actionTypes.MAKE_PAPERCLIP }
+          };
+          expectObservable(Epic.autoPaperclipsStartEpic(action$, state$).pipe(take(3))).toBe(expectedMarble, expectedValues)
         })
 
 
