@@ -40,7 +40,7 @@ export const startApplyingProfitLossEpic = (action$, state$) =>
                     let total = cash + stocks;
                 
                   
-                    console.log("HEY", state$.value.business.investmentsStocks, profitLoss)
+                    // console.log("HEY", state$.value.business.investmentsStocks, profitLoss)
                     return of(
                         Actions.updateInvestmentsTotal(total),
                         Actions.updateInvestmentsCash(cash),
@@ -50,7 +50,7 @@ export const startApplyingProfitLossEpic = (action$, state$) =>
                 }
                         // .delay(1000)
                         // .repeat(state$.value.business.autoClippersPerSec)
-                ),
+                )
                 // takeUntil(action$.ofType(actionTypes.STOP))
             )
         })
