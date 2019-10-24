@@ -8,7 +8,7 @@ import { TestScheduler } from 'rxjs/testing';
 
 describe('startSubtractingQOpsEpic', () => {
 
-  it('should return a ADD_Q_OPS after each 84 ms',
+  it('should return a SUBTRACT_Q_OPS after each 84 ms',
     () => {
         const scheduler = new TestScheduler((actual, expected) => {
           expect(actual).toEqual(expected);
