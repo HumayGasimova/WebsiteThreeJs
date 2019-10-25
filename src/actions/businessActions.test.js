@@ -1063,4 +1063,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (showMegaClippers)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_MEGA_CLIPPERS
+            }
+        ];
+
+        store.dispatch(Actions.showMegaClippers());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
