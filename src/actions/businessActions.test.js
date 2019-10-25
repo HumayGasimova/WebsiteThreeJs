@@ -790,4 +790,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (toggleDropdownStrategicModeling)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_DROPDOWN_STRATEGIC_MODELING
+            }
+        ];
+
+        store.dispatch(Actions.toggleDropdownStrategicModeling());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

@@ -447,6 +447,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleDropdownStrategicModeling) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_DROPDOWN_STRATEGIC_MODELING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleMakePaperclipButton) 1`] = `
 Array [
   Object {
