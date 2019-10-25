@@ -35,6 +35,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addMegaClippers) 1`] = `
+Array [
+  Object {
+    "type": "ADD_MEGA_CLIPPERS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addNewStrategy) 1`] = `
 Array [
   Object {
