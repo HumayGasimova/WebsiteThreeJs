@@ -330,6 +330,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showStrategicModeling) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_STRATEGIC_MODELING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startBuyingWire) 1`] = `
 Array [
   Object {

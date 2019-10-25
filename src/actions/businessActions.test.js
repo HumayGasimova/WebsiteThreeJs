@@ -740,4 +740,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (showStrategicModeling)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_STRATEGIC_MODELING
+            }
+        ];
+
+        store.dispatch(Actions.showStrategicModeling(46));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
