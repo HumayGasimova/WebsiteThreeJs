@@ -119,6 +119,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (closeDropdowns) 1`] = `
+Array [
+  Object {
+    "type": "CLOSE_DROPDOWNS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (creativityTurnOn) 1`] = `
 Array [
   Object {

@@ -802,4 +802,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (closeDropdowns)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CLOSE_DROPDOWNS
+            }
+        ];
+
+        store.dispatch(Actions.closeDropdowns());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
