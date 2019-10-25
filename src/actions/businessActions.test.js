@@ -765,4 +765,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (addNewStrategy)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ADD_NEW_STRATEGY,
+                strategy: "New Strategy"
+            }
+        ];
+
+        store.dispatch(Actions.addNewStrategy("New Strategy"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

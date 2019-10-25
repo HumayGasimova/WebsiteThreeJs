@@ -24,6 +24,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addNewStrategy) 1`] = `
+Array [
+  Object {
+    "strategy": "New Strategy",
+    "type": "ADD_NEW_STRATEGY",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addProject) 1`] = `
 Array [
   Object {
