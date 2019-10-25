@@ -949,7 +949,6 @@ const businessReducer = (state = initialState, action) => {
             return state;
         case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
             return state;
-
         case actionTypes.UPDATE_AVG_REV_PER_SEC:
             return updateAvgRevPerSec(state, action);   
         case actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC:
@@ -962,7 +961,6 @@ const businessReducer = (state = initialState, action) => {
             return improveMegaClippers(state, action);  
         case actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS:
             return switchOffOrOnAutoAndMegaClippers(state, action);  
-            
         default: 
             return state;
     }

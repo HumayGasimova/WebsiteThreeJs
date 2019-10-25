@@ -35,4 +35,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (checkButtons)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CHECK_BUTTONS
+            }
+        ];
+
+        store.dispatch(Actions.checkButtons());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
