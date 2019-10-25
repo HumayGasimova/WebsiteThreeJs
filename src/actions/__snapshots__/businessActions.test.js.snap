@@ -305,6 +305,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (sendCommentToTerminal) 1`] = `
+Array [
+  Object {
+    "comment": "Testing actions",
+    "type": "SEND_COMMENT_TO_TERMINAL",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (setAutoClipperInitPrice) 1`] = `
 Array [
   Object {

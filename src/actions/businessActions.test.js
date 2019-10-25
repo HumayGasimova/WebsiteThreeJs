@@ -752,4 +752,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (sendCommentToTerminal)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SEND_COMMENT_TO_TERMINAL,
+                comment: "Testing actions"
+            }
+        ];
+
+        store.dispatch(Actions.sendCommentToTerminal("Testing actions"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
