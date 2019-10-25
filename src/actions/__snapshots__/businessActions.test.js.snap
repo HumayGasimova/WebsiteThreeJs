@@ -56,6 +56,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (increaseCreativity) 1`] = `
+Array [
+  Object {
+    "type": "INCREASE_CREATIVITY",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (increaseOps) 1`] = `
 Array [
   Object {
