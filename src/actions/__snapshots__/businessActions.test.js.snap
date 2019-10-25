@@ -56,6 +56,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (randomWirePrice) 1`] = `
+Array [
+  Object {
+    "type": "RANDOM_WIRE_PRICE",
+    "value": 15,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (sellPaperclips) 1`] = `
 Array [
   Object {

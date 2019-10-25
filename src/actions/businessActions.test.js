@@ -203,4 +203,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (randomWirePrice)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.RANDOM_WIRE_PRICE,
+                value: 15
+            }
+        ];
+
+        store.dispatch(Actions.randomWirePrice(15));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
