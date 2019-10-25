@@ -167,4 +167,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (updateMaxPublicDemand)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_MAX_PUBLIC_DEMAND
+            }
+        ];
+
+        store.dispatch(Actions.updateMaxPublicDemand());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
