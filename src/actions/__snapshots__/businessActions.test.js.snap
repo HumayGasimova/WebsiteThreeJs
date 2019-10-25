@@ -161,6 +161,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleMegaClippersButton) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_MEGA_CLIPPERS_BUTTON",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleWireButton) 1`] = `
 Array [
   Object {
