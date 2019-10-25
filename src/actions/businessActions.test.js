@@ -457,4 +457,19 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (initProjects)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.INIT_PROJECTS,
+                card1: {a:1},
+                card2: {a:2},
+                card3: {a:3}
+            }
+        ];
+
+        store.dispatch(Actions.initProjects({a:1},{a:2},{a:3}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

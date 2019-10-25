@@ -88,6 +88,23 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (initProjects) 1`] = `
+Array [
+  Object {
+    "card1": Object {
+      "a": 1,
+    },
+    "card2": Object {
+      "a": 2,
+    },
+    "card3": Object {
+      "a": 3,
+    },
+    "type": "INIT_PROJECTS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (lowerPrice) 1`] = `
 Array [
   Object {
