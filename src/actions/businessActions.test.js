@@ -47,4 +47,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (sellPaperclips)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_SELLING
+            }
+        ];
+
+        store.dispatch(Actions.sellPaperclips());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

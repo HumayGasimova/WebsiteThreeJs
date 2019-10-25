@@ -16,6 +16,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (sellPaperclips) 1`] = `
+Array [
+  Object {
+    "type": "START_SELLING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
 Array [
   Object {
