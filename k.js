@@ -18,62 +18,7 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
     import * as actionTypes from '../constants/actionTypes';
 
 
-
-
- 
-
-
-
-export function marketing() {
-
-
-export function marketingNextLevel() {
-
-
-export function updateMaxPublicDemand() {
- 
-
-export function startBuyingWire() {
-
-
-export function buyWire() {
-
-
-export function randomWirePrice(value) {
- 
-
-export function toggleWireButton() {
   
-export function checkExistenceOfWire() {
-  
-
-export function stop() {
- 
-
-export function wireExists(val) {
-
-
-export function autoPaperclips() {
-
-
-export function autoPaperclipsStart() {
-
-export function autoClippersAddOne() {
- 
-
-export function setAutoClipperInitPrice() {
- 
-
-export function toggleAutoClippersButton() {
- 
-
-export function toggleMegaClippersButton() {
- 
-
-export function trustPlusOne() {
- 
-
-export function trustPlusOneFromProject() {
   
 
 export function increaseOps() {

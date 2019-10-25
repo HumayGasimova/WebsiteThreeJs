@@ -349,4 +349,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (trustPlusOneFromProject)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TRUST_PLUS_ONE_FROM_PROJECT
+            }
+        ];
+
+        store.dispatch(Actions.trustPlusOneFromProject());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
