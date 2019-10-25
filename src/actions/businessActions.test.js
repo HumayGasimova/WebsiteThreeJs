@@ -728,4 +728,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (showInvestEngine)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_INVESTMENT_ENGINE
+            }
+        ];
+
+        store.dispatch(Actions.showInvestEngine(46));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
