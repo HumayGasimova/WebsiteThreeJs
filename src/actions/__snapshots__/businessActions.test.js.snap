@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`businessActions Dispatches the correct action and payload (addProject) 1`] = `
+Array [
+  Object {
+    "project": Object {
+      "b": 7,
+    },
+    "type": "ADD_PROJECT",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (autoClippersAddOne) 1`] = `
 Array [
   Object {
