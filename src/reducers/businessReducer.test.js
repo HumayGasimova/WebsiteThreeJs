@@ -1523,6 +1523,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update autoAndMegaClippersWorks with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            autoAndMegaClippersWorks: false
+        }
+        const state = {
+            ...initialState, 
+            autoAndMegaClippersWorks: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
