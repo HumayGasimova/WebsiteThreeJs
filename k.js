@@ -1,84 +1,61 @@
-case actionTypes.CHECK_BUTTONS:
-    return state;
-case actionTypes.START_SELLING:
-    return state;
 case actionTypes.START_UPDATING_UNSOLD_INVENTORY:
-    return state;
+    
 case actionTypes.STOP_UPDATING_UNSOLD_INVENTORY:
-    return state;
-case actionTypes.MARKETING:
-    return state;
-case actionTypes.START_BUYING_WIRE:
-    return state;
-case actionTypes.CHECK_EXISTENCE_OF_WIRE:
-    return state; 
-case actionTypes.STOP:
-    return state; 
-case actionTypes.AUTO_PAPERCLIPS:
-    return state;
-case actionTypes.AUTO_PAPERCLIPS_START:
-    return state;  
+      
 case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
-    return state;
-case actionTypes.START_DECREASING_OPS:
-    return state; 
+     
 case actionTypes.STOP_DECREASING_OPERATIONS:
-    return state; 
+     
 case actionTypes.START_CREATIVITY_COUNTER:
-    return state;  
+      
 case actionTypes.ADD_LEXICAL_PROCESSING:
-    return state;  
+      
 case actionTypes.ADD_COMBINATORY_HARMONICS:
-    return state;
+    
 case actionTypes.ADD_THE_HADWINGER_PROBLEM:
-    return state;  
+      
 case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
-    return state;
+    
 case actionTypes.ADD_DONKEY_SPACE:
-    return state;
-case actionTypes.START_IMPROVING_MARKETING:
-    return state;
+    
 case actionTypes.THROW_PROJECT:
-    return state; 
-case actionTypes.START_ADDING_Q_OPS:
-    return state;
+     
 case actionTypes.STOP_ADDING_Q_OPS:
-    return state;
+    
 case actionTypes.START_SUBTRACTING_Q_OPS:
-    return state;
+    
 case actionTypes.STOP_SUBTRACTING_Q_OPS:
-    return state;
-case actionTypes.START_DECREASING_OPERATIONS:
-    return state;
-case actionTypes.CLICK_WIRE_BUTTON:
-    return state;
+    
 case actionTypes.START_UPDATING_SCREEN:
-    return state;
-case actionTypes.AUTO_WIRE_BUYER:
-    return state;
-case actionTypes.START_INVESTMENTS_DEPOSIT:
-    return state;
+   
 case actionTypes.START_APPLYING_PROFIT_LOSS:
-    return state;
-case actionTypes.STOP_UPDATING_SCREEN:
-    return state;
-case actionTypes.CHOOSE_FROM_DROPDOWN:
-    return state;
+    
+case actionTypes.STOP_UPDATING_SCREEN: 
+    
 case actionTypes.ADD_MEGA_CLIPPERS:
-    return state;
+    
 case actionTypes.START_COUNTING_RISK:
-    return state;
+    
 case actionTypes.STOP_UPDATING_INVESTMENTS_LINE:
-    return state;
+    
 case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
-    return state;
+    
 case actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE:
-    return state;
-case actionTypes.START_INVESTMENTS_WITHDRAW:
-    return state;
+     
 
     reducer test updated(UPDATE_INVESTMENTS_DELAY)
 
 
-    case actionTypes.SHOW_AUTO_CLIPPERS:
-            return showAutoClippers(state, action);
+
+case actionTypes.SHOW_AUTO_CLIPPERS:
+        return showAutoClippers(state, action);
+case actionTypes.UPDATE_AVG_REV_PER_SEC:
+    return updateAvgRevPerSec(state, action);   
+case actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC:
+    return updateAvgClipsSoldPerSec(state, action);
+case actionTypes.MEGA_CLIPPERS_BUTTON_PRESSED:
+    return megaClippersButtonPressed(state, action);     
+case actionTypes.IMPROVE_MEGA_CLIPPERS:
+    return improveMegaClippers(state, action);  
+case actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS:
+    return switchOffOrOnAutoAndMegaClippers(state, action);  
