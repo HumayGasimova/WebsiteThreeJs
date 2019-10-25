@@ -1015,4 +1015,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (toggleWireBuyerProject)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_WIRE_BUYER_PROJECT
+            }
+        ];
+
+        store.dispatch(Actions.toggleWireBuyerProject());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

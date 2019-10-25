@@ -626,6 +626,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleWireBuyerProject) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_WIRE_BUYER_PROJECT",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (trustPlusOne) 1`] = `
 Array [
   Object {
