@@ -592,4 +592,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (toggleMakePaperclipButton)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_MAKE_PAPERCLIP_BUTTON,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleMakePaperclipButton(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
