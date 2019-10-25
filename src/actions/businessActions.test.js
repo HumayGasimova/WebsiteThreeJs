@@ -1003,4 +1003,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (showAutoWireBuyer)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_AUTO_WIRE_BUYER
+            }
+        ];
+
+        store.dispatch(Actions.showAutoWireBuyer());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
