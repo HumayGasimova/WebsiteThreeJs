@@ -539,4 +539,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (removePriceOfProjectCreat)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.REMOVE_PRICE_OF_PROJECT_CREAT,
+                creativity: 73
+            }
+        ];
+
+        store.dispatch(Actions.removePriceOfProjectCreat(73));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
