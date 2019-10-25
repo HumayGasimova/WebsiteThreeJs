@@ -24,6 +24,22 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startUpdatingUnsoldInventory) 1`] = `
+Array [
+  Object {
+    "type": "START_UPDATING_UNSOLD_INVENTORY",
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (stopUpdatingUnsoldInventory) 1`] = `
+Array [
+  Object {
+    "type": "STOP_UPDATING_UNSOLD_INVENTORY",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
 Array [
   Object {

@@ -71,4 +71,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (stopUpdatingUnsoldInventory)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STOP_UPDATING_UNSOLD_INVENTORY
+            }
+        ];
+
+        store.dispatch(Actions.stopUpdatingUnsoldInventory());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
