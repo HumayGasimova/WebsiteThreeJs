@@ -55,6 +55,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addQOps) 1`] = `
+Array [
+  Object {
+    "chipsNumber": "chipX",
+    "type": "ADD_Q_OPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addTheHadwingerProblem) 1`] = `
 Array [
   Object {
