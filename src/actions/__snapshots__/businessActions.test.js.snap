@@ -399,6 +399,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startAddingQOps) 1`] = `
+Array [
+  Object {
+    "chipsNumber": "chipX",
+    "type": "START_ADDING_Q_OPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startBuyingWire) 1`] = `
 Array [
   Object {
