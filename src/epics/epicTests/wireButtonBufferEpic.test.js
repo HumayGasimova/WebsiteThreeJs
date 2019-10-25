@@ -1,6 +1,6 @@
 import { ActionsObservable } from 'redux-observable';
 import * as Epic from '../index'
-import * as Actions from "../../actions";
+import * as projectsToAdd from '../../constants/projectsToAdd';
 import * as actionTypes from "../../constants/actionTypes";
 
 describe('wireButtonBufferEpic', () => {
@@ -36,19 +36,7 @@ describe('wireButtonBufferEpic', () => {
         expect(array).toEqual([
             { 
                 type: actionTypes.ADD_PROJECT,
-                project: {
-                    text1: "WireBuyer (7,000 ops)",
-                    text2: "Automatically purchases wire when you run",
-                    text3: "out",
-                    price: {
-                        ops: 3
-                    },
-                    action: 1,
-                    next: 'wireBuyer',
-                    valid: false,
-                    id: "card36",
-                    terminal: "WireBuyer online"
-                }
+                project: projectsToAdd.WireBuyer
             },
             { 
                 type: actionTypes.TOGGLE_WIRE_BUYER_PROJECT
