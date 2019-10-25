@@ -579,4 +579,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (improveAutoClippers)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
+                val: 17
+            }
+        ];
+
+        store.dispatch(Actions.improveAutoClippers(17));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

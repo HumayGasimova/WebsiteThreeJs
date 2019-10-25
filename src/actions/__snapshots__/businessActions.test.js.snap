@@ -87,6 +87,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (improveAutoClippers) 1`] = `
+Array [
+  Object {
+    "type": "IMPROVE_AUTO_PAPER_CLIPPER",
+    "val": 17,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (increaseCreativity) 1`] = `
 Array [
   Object {
