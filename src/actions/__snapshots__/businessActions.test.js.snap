@@ -474,6 +474,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleChip) 1`] = `
+Array [
+  Object {
+    "chipsNumber": "chipX",
+    "type": "TOGGLE_CHIP",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleDropdownInvestments) 1`] = `
 Array [
   Object {

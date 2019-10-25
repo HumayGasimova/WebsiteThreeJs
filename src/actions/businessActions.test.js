@@ -851,4 +851,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (toggleChip)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_CHIP,
+                val: true,
+                chipsNumber: "chipX"
+            }
+        ];
+
+        store.dispatch(Actions.toggleChip(true, "chipX"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
