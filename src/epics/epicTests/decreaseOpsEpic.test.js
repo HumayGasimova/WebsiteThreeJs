@@ -22,7 +22,7 @@ describe('decreaseOpsEpic', () => {
           value: {
               business: {
                 ops: 7,
-                opsMax: 6
+                opsMax: 4
               }
           }
       }
@@ -33,6 +33,7 @@ describe('decreaseOpsEpic', () => {
       expect(spy).toHaveBeenCalledWith(
         { type: actionTypes.DECREASE_OPS }
       );  
+      expect(spy).toHaveBeenCalledTimes(3);  
     }
   )
 });
