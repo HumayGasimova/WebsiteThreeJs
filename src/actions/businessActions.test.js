@@ -216,4 +216,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (toggleWireButton)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_WIRE_BUTTON
+            }
+        ];
+
+        store.dispatch(Actions.toggleWireButton());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

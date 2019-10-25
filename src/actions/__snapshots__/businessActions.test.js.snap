@@ -105,6 +105,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleWireButton) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_WIRE_BUTTON",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
 Array [
   Object {
