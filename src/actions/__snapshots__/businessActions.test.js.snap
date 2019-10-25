@@ -96,6 +96,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (improveWireExtrusion) 1`] = `
+Array [
+  Object {
+    "type": "IMPROVE_WIRE_EXTRUSION",
+    "val": 36,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (increaseCreativity) 1`] = `
 Array [
   Object {

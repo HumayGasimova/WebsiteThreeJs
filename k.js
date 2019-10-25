@@ -18,25 +18,6 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
 
 
 
-
-export function removePriceOfProjectCreat(price) {
-
-
-export function removePriceOfProjectOpsAndCreat(ops, creat) {
-
-
-export function removePriceOfProjectTrust(price) {
-
-
-export function improveAutoClippers(val) {
-
-
-export function toggleMakePaperclipButton(val) {
-  
-
-export function improveWireExtrusion(val) {
-
-
 export function startCreativityCounter() {
 
 
