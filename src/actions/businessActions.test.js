@@ -155,4 +155,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (marketingNextLevel)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.MARKETING_NEXT_LEVEL
+            }
+        ];
+
+        store.dispatch(Actions.marketingNextLevel());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

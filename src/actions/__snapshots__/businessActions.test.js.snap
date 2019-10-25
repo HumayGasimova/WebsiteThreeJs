@@ -32,6 +32,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (marketingNextLevel) 1`] = `
+Array [
+  Object {
+    "type": "MARKETING_NEXT_LEVEL",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (raisePrice) 1`] = `
 Array [
   Object {
