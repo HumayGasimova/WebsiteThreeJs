@@ -347,6 +347,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showQuantumComputing) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_QUANTUM_COMPUTING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (showRevTracker) 1`] = `
 Array [
   Object {

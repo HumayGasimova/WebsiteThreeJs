@@ -814,4 +814,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (showQuantumComputing)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_QUANTUM_COMPUTING
+            }
+        ];
+
+        store.dispatch(Actions.showQuantumComputing());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
