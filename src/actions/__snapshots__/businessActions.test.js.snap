@@ -8,6 +8,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (autoPaperclipsStart) 1`] = `
+Array [
+  Object {
+    "type": "AUTO_PAPERCLIPS_START",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (buyWire) 1`] = `
 Array [
   Object {
