@@ -487,4 +487,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (deleteCard)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.DELETE_CARD,
+                cardId: "card3"
+            }
+        ];
+
+        store.dispatch(Actions.deleteCard("card3"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

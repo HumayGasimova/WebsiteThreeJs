@@ -67,6 +67,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (deleteCard) 1`] = `
+Array [
+  Object {
+    "cardId": "card3",
+    "type": "DELETE_CARD",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (increaseCreativity) 1`] = `
 Array [
   Object {
