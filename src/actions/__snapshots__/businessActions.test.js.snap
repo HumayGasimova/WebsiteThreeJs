@@ -104,6 +104,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (autoWireBuyer) 1`] = `
+Array [
+  Object {
+    "type": "AUTO_WIRE_BUYER",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (buyWire) 1`] = `
 Array [
   Object {
