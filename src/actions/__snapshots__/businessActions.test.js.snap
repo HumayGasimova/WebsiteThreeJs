@@ -144,6 +144,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (improveMarketing) 1`] = `
+Array [
+  Object {
+    "type": "IMPROVE_MARKETING",
+    "val": 46,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (improveWireExtrusion) 1`] = `
 Array [
   Object {

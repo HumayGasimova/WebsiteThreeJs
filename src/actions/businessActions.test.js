@@ -716,16 +716,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     })
     
-    // it('Dispatches the correct action and payload (improveMarketing)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.IMPROVE_MARKETING,
-    //             val: val
-    //         }
-    //     ];
+    it('Dispatches the correct action and payload (improveMarketing)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.IMPROVE_MARKETING,
+                val: 46
+            }
+        ];
 
-    //     store.dispatch(Actions.improveMarketing(65));
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // })
+        store.dispatch(Actions.improveMarketing(46));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
