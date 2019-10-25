@@ -16,6 +16,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (checkExistenceOfWire) 1`] = `
+Array [
+  Object {
+    "type": "CHECK_EXISTENCE_OF_WIRE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (lowerPrice) 1`] = `
 Array [
   Object {

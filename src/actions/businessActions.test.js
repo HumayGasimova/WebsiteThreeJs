@@ -228,4 +228,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (checkExistenceOfWire)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CHECK_EXISTENCE_OF_WIRE
+            }
+        ];
+
+        store.dispatch(Actions.checkExistenceOfWire());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
