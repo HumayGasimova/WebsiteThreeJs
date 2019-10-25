@@ -476,6 +476,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopAddingQOps) 1`] = `
+Array [
+  Object {
+    "type": "STOP_ADDING_Q_OPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopDecreasingOps) 1`] = `
 Array [
   Object {

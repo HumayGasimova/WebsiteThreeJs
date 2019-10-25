@@ -903,4 +903,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (stopAddingQOps)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STOP_ADDING_Q_OPS
+            }
+        ];
+
+        store.dispatch(Actions.stopAddingQOps());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
