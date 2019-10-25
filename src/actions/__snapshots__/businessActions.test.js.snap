@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`businessActions Dispatches the correct action and payload (buyWire) 1`] = `
+Array [
+  Object {
+    "type": "BUY_WIRE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (checkButtons) 1`] = `
 Array [
   Object {
