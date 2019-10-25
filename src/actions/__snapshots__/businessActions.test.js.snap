@@ -273,6 +273,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startCreativityCounter) 1`] = `
+Array [
+  Object {
+    "type": "START_CREATIVITY_COUNTER",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startDecreasingOperations) 1`] = `
 Array [
   Object {
