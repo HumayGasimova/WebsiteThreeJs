@@ -8,6 +8,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (lowerPrice) 1`] = `
+Array [
+  Object {
+    "type": "LOWER_PRICE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (makePaperclip) 1`] = `
 Array [
   Object {
