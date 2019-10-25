@@ -179,4 +179,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (startBuyingWire)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_BUYING_WIRE
+            }
+        ];
+
+        store.dispatch(Actions.startBuyingWire());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

@@ -56,6 +56,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startBuyingWire) 1`] = `
+Array [
+  Object {
+    "type": "START_BUYING_WIRE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {
