@@ -15,41 +15,8 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
     actions test updated(UPDATE_INVESTMENTS_DELAY)
 
 
-    import * as actionTypes from '../constants/actionTypes';
 
 
-  
-  
-
-export function increaseOps() {
-  
-
-export function startDecreasingOperations() {
- 
-
-export function startDecreasingOps() {
-
-
-export function stopDecreasingOps() {
- 
-
-export function decreaseOps() {
- 
-
-
-export function increaseProcessors() {
- 
-
-export function increaseProcessorsMemory() {
-  
-
-export function increaseCreativity() {
-
-
-export function initProjects(x, y, z) {
-
-
-export function checkCardValidity(id, val, i) {
 
 
 export function deleteCard(id) {

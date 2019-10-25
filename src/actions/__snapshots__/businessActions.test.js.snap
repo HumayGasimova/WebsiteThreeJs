@@ -40,6 +40,17 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (checkCardValidity) 1`] = `
+Array [
+  Object {
+    "cardId": "card1",
+    "i": 0,
+    "type": "CHECK_CARD_VALIDITY",
+    "valid": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (checkExistenceOfWire) 1`] = `
 Array [
   Object {
