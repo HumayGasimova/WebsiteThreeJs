@@ -213,6 +213,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectTrust) 1`] = `
+Array [
+  Object {
+    "trust": 67,
+    "type": "REMOVE_PRICE_OF_PROJECT_TRUST",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (sellPaperclips) 1`] = `
 Array [
   Object {
