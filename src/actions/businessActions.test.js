@@ -953,4 +953,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (captureCurrentQOps)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CAPTURE_CURRENT_Q_OPS,
+                val: 276
+            }
+        ];
+
+        store.dispatch(Actions.captureCurrentQOps(276));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

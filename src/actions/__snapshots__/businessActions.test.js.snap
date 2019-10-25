@@ -112,6 +112,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (captureCurrentQOps) 1`] = `
+Array [
+  Object {
+    "type": "CAPTURE_CURRENT_Q_OPS",
+    "val": 276,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (changeToQOps) 1`] = `
 Array [
   Object {
