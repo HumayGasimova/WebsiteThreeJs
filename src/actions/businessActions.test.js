@@ -313,4 +313,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (toggleAutoClippersButton)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON
+            }
+        ];
+
+        store.dispatch(Actions.toggleAutoClippersButton());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

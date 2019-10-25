@@ -145,6 +145,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleAutoClippersButton) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_AUTO_CLIPPERS_BUTTON",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleMarketingButton) 1`] = `
 Array [
   Object {
