@@ -1467,6 +1467,46 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should (megaClippersPerSec is equal to 0) update megaClippersPerSec by adding 1, funds by subtracting the megaClipperInitPrice", () => {
+        const action = { 
+            type: actionTypes.MEGA_CLIPPERS_BUTTON_PRESSED,
+        }
+        const initState = {
+            ...initialState, 
+            megaClippersPerSec: 0,
+            megaClipperPrice: 5,
+            megaClipperInitPrice: 7,
+            funds: 20
+        }
+        const state = {
+            ...initialState, 
+            megaClippersPerSec: 1,
+            megaClipperPrice: 5,
+            megaClipperInitPrice: 7,
+            funds: 13
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (megaClippersPerSec is not equal to 0) update megaClippersPerSec by adding 1,megaClipperPrice using the formula and funds by subtracting the megaClipperPrice", () => {
+        const action = { 
+            type: actionTypes.MEGA_CLIPPERS_BUTTON_PRESSED,
+        }
+        const initState = {
+            ...initialState, 
+            megaClippersPerSec: 3,
+            megaClipperPrice: 8,
+            funds: 20
+        }
+        const state = {
+            ...initialState, 
+            megaClippersPerSec: 4,
+            megaClipperPrice: 8.56,
+            funds: 12
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

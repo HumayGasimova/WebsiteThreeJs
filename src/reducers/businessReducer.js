@@ -697,12 +697,12 @@ const updateAvgClipsSoldPerSec = (state, action) => {
 const megaClippersButtonPressed = (state, action) => {
     let updatedMegaClippersPrice;
     let updatedFunds;
-    let updatedMegaClippersToAdd;
+    // let updatedMegaClippersToAdd;
 
     if(state.megaClippersPerSec === 0){
         updatedMegaClippersPrice = state.megaClipperPrice;
         updatedFunds = state.funds - state.megaClipperInitPrice;
-        updatedMegaClippersToAdd = state.megaClippersToAdd
+        // updatedMegaClippersToAdd = state.megaClippersToAdd
     }else{
         updatedMegaClippersPrice = +(state.megaClipperPrice + (state.megaClipperPrice * 0.07)).toFixed(2);
         updatedFunds = +state.funds - +state.megaClipperPrice;
