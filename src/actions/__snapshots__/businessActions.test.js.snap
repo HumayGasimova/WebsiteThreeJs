@@ -161,6 +161,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopDecreasingOps) 1`] = `
+Array [
+  Object {
+    "type": "STOP_DECREASING_OPERATIONS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {
