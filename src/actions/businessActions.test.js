@@ -301,4 +301,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (setAutoClipperInitPrice)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SET_AUTO_CLIPPER_INIT_PRICE
+            }
+        ];
+
+        store.dispatch(Actions.setAutoClipperInitPrice());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
