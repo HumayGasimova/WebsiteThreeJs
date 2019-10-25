@@ -865,4 +865,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (changeToQOps)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CHANGE_TO_Q_OPS
+            }
+        ];
+
+        store.dispatch(Actions.changeToQOps());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

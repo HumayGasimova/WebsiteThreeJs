@@ -103,6 +103,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (changeToQOps) 1`] = `
+Array [
+  Object {
+    "type": "CHANGE_TO_Q_OPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (checkButtons) 1`] = `
 Array [
   Object {
