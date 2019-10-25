@@ -24,6 +24,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (marketing) 1`] = `
+Array [
+  Object {
+    "type": "MARKETING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (raisePrice) 1`] = `
 Array [
   Object {

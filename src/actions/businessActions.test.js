@@ -143,4 +143,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+    
+    it('Dispatches the correct action and payload (marketing)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.MARKETING
+            }
+        ];
+
+        store.dispatch(Actions.marketing());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
