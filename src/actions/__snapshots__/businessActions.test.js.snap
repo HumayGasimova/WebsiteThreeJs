@@ -97,6 +97,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stop) 1`] = `
+Array [
+  Object {
+    "type": "STOP",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {

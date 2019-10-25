@@ -240,4 +240,29 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (stop)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STOP
+            }
+        ];
+
+        store.dispatch(Actions.stop());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
+
+    // it('Dispatches the correct action and payload (wireExists)', () => {
+    //     const expectedActions = [
+    //         {
+    //             type: actionTypes.RANDOM_WIRE_PRICE,
+    //             val: 35
+    //         }
+    //     ];
+
+    //     store.dispatch(Actions.wireExists(35));
+    //     expect(store.getActions()).toEqual(expectedActions);
+    //     expect(store.getActions()).toMatchSnapshot();
+    // })
   });
