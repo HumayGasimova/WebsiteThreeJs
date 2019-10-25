@@ -702,4 +702,30 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (startImprovingMarketing)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_IMPROVING_MARKETING,
+                act: {a:5}
+            }
+        ];
+
+        store.dispatch(Actions.startImprovingMarketing({a:5}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
+    
+    // it('Dispatches the correct action and payload (improveMarketing)', () => {
+    //     const expectedActions = [
+    //         {
+    //             type: actionTypes.IMPROVE_MARKETING,
+    //             val: val
+    //         }
+    //     ];
+
+    //     store.dispatch(Actions.improveMarketing(65));
+    //     expect(store.getActions()).toEqual(expectedActions);
+    //     expect(store.getActions()).toMatchSnapshot();
+    // })
   });

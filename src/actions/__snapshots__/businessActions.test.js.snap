@@ -345,6 +345,17 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startImprovingMarketing) 1`] = `
+Array [
+  Object {
+    "act": Object {
+      "a": 5,
+    },
+    "type": "START_IMPROVING_MARKETING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {
