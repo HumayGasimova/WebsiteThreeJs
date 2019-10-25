@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`businessActions Dispatches the correct action and payload (addLexicalProcessing) 1`] = `
+Array [
+  Object {
+    "type": "ADD_LEXICAL_PROCESSING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addProject) 1`] = `
 Array [
   Object {

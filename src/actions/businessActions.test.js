@@ -638,7 +638,19 @@ describe('businessActions', () => {
             }
         ];
 
-        store.dispatch(Actions.creativityTurnOn(36));
+        store.dispatch(Actions.creativityTurnOn());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
+
+    it('Dispatches the correct action and payload (addLexicalProcessing)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ADD_LEXICAL_PROCESSING
+            }
+        ];
+
+        store.dispatch(Actions.addLexicalProcessing());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
