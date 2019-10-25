@@ -203,6 +203,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectOpsAndCreat) 1`] = `
+Array [
+  Object {
+    "creativity": 25,
+    "ops": 74,
+    "type": "REMOVE_PRICE_OF_PROJECT_OPS_AND_CREAT",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (sellPaperclips) 1`] = `
 Array [
   Object {
