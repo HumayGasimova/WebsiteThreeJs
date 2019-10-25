@@ -156,6 +156,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (clickWireButton) 1`] = `
+Array [
+  Object {
+    "type": "CLICK_WIRE_BUTTON",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (closeDropdowns) 1`] = `
 Array [
   Object {
