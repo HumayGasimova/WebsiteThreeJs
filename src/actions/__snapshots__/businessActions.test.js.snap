@@ -27,6 +27,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addTheHadwingerProblem) 1`] = `
+Array [
+  Object {
+    "type": "ADD_THE_HADWINGER_PROBLEM",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (autoClippersAddOne) 1`] = `
 Array [
   Object {

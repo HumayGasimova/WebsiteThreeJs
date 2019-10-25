@@ -666,4 +666,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (addTheHadwingerProblem)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ADD_THE_HADWINGER_PROBLEM
+            }
+        ];
+
+        store.dispatch(Actions.addTheHadwingerProblem());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
