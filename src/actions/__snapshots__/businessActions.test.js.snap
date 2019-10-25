@@ -8,6 +8,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addDonkeySpace) 1`] = `
+Array [
+  Object {
+    "type": "ADD_DONKEY_SPACE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addLexicalProcessing) 1`] = `
 Array [
   Object {
