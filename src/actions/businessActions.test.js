@@ -1087,4 +1087,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (calcDelayUnsoldInventary)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CALC_DELAY_UNSOLD_INVENTARY
+            }
+        ];
+
+        store.dispatch(Actions.calcDelayUnsoldInventary());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

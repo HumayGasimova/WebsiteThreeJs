@@ -17,26 +17,6 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
 
 
 
-export function toggleWireBuyerProject() {
-
-
-export function autoWireBuyer() {
-
-
-export function toggleAutoWireBuyer() {
-
-
-export function addMegaClippers() {
-
-
-export function showMegaClippers() {
-
-
-export function showAutoClippers() {
-
-
-export function calcDelayUnsoldInventary() {
-
 
 export function updateClipsPerSec(val) {
 
