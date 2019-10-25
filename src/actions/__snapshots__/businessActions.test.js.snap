@@ -501,6 +501,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopSubtractingQOps) 1`] = `
+Array [
+  Object {
+    "type": "STOP_SUBTRACTING_Q_OPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {
