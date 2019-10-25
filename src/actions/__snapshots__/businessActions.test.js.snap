@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`businessActions Dispatches the correct action and payload (addChip) 1`] = `
+Array [
+  Object {
+    "obj": Object {
+      "c": 8,
+    },
+    "type": "ADD_CHIP",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addCombinatoryHarmonics) 1`] = `
 Array [
   Object {

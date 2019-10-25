@@ -838,4 +838,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (addChip)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ADD_CHIP,
+                obj: {c: 8}
+            }
+        ];
+
+        store.dispatch(Actions.addChip({c: 8}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
