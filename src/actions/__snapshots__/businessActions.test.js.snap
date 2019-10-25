@@ -129,6 +129,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startDecreasingOperations) 1`] = `
+Array [
+  Object {
+    "type": "START_DECREASING_OPERATIONS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {
