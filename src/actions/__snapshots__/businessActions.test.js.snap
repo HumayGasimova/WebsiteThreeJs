@@ -190,6 +190,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showRevTracker) 1`] = `
+Array [
+  Object {
+    "price": 45,
+    "type": "SHOW_REV_TRACKER",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startBuyingWire) 1`] = `
 Array [
   Object {

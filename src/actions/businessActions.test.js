@@ -500,4 +500,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (showRevTracker)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_REV_TRACKER,
+                price: 45
+            }
+        ];
+
+        store.dispatch(Actions.showRevTracker(45));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
