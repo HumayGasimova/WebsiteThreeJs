@@ -177,6 +177,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (trustPlusOne) 1`] = `
+Array [
+  Object {
+    "type": "TRUST_PLUS_ONE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
 Array [
   Object {
