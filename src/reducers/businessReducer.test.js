@@ -1435,6 +1435,38 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update avgRevPerSec with the values passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_AVG_REV_PER_SEC,
+            val: 3
+        }
+        const initState = {
+            ...initialState, 
+            avgRevPerSec: 7
+        }
+        const state = {
+            ...initialState, 
+            avgRevPerSec: 3
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update avgClipsSoldPerSec with the values passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC,
+            val: 4
+        }
+        const initState = {
+            ...initialState, 
+            avgClipsSoldPerSec: 6
+        }
+        const state = {
+            ...initialState, 
+            avgClipsSoldPerSec: 4
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

@@ -177,17 +177,6 @@ export function trustPlusOneFromProject() {
     };
 };
 
-
-export function repeatAutoPaperClippers(priceOfPaperclip, delay, delay2, wire) {
-    return { 
-        type: actionTypes.REPEAT_AUTO_PAPER_CLIPPERS,
-        priceOfPaperclip: priceOfPaperclip,
-        delay: delay,
-        delayAutoPaperClippers: delay2,
-        wire: wire
-    };
-};
-
 export function increaseOps() {
     return { 
         type: actionTypes.INCREASE_OPS
@@ -385,12 +374,6 @@ export function improveMarketing(val) {
 export function showInvestEngine() {
     return { 
         type: actionTypes.SHOW_INVESTMENT_ENGINE
-    };
-};
-
-export function throwProject() {
-    return { 
-        type: actionTypes.THROW_PROJECT
     };
 };
 

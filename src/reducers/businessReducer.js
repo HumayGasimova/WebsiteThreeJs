@@ -781,8 +781,6 @@ const businessReducer = (state = initialState, action) => {
             return autoClippersAddOne(state, action); 
         case actionTypes.AUTO_PAPERCLIPS_START:
             return state;  
-        case actionTypes.REPEAT_AUTO_PAPER_CLIPPERS:
-            return state;
         case actionTypes.SET_AUTO_CLIPPER_INIT_PRICE:
             return setAutoClipperInitPrice(state, action); 
         case actionTypes.TOGGLE_AUTO_CLIPPERS_BUTTON:
@@ -855,8 +853,6 @@ const businessReducer = (state = initialState, action) => {
             return showStrategicModeling(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST:
             return removePriceOfProjectTrust(state, action);
-        case actionTypes.THROW_PROJECT:
-            return state; 
         case actionTypes.SEND_COMMENT_TO_TERMINAL:
             return sendCommentToTerminal(state, action);
         case actionTypes.ADD_NEW_STRATEGY:

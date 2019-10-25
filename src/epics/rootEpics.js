@@ -40,8 +40,6 @@ import * as Epic from './index'
 // import startMegaClippersEpic from './startMegaClippersEpic';
 
 // import fetchWhiskiesEpic from '../epics/exEpic1'
-// import throwProjectEpic from '../epicsProject/throwProjectEpic';
-// import repeatAutoPaperClippersEpic from '../epics/repeatAutoPaperClippersEpic';
 
 export const rootEpic = combineEpics(
     Epic.checkButtonsEpic,
@@ -52,10 +50,8 @@ export const rootEpic = combineEpics(
     Epic.marketingNextLevelEpic,
     Epic.buyWireEpic,
     Epic.autoPaperclipsStartEpic,
-    // repeatAutoPaperClippersEpic,
     Epic.autoPaperClippersAddOneEpic,
     Epic.startCreativityEpic,
-    // throwProjectEpic,
     Epic.throwLexicalProcessingEpic,
     Epic.throwCombinatoryHarmonicsEpic,
     Epic.throwTheHadwingerProblemEpic,
