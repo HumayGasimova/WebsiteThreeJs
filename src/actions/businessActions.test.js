@@ -361,4 +361,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (increaseOps)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.INCREASE_OPS
+            }
+        ];
+
+        store.dispatch(Actions.increaseOps());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

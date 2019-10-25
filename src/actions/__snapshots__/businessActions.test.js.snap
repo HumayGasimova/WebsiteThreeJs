@@ -48,6 +48,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (increaseOps) 1`] = `
+Array [
+  Object {
+    "type": "INCREASE_OPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (lowerPrice) 1`] = `
 Array [
   Object {
