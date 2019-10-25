@@ -185,6 +185,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectOps) 1`] = `
+Array [
+  Object {
+    "ops": 47,
+    "type": "REMOVE_PRICE_OF_PROJECT_OPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (sellPaperclips) 1`] = `
 Array [
   Object {

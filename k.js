@@ -19,17 +19,6 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
 
 
 
-export function deleteCard(id) {
- 
-
-export function showRevTracker(price) {
-
-export function addProject(obj) {
-
-
-export function removePriceOfProjectOps(price) {
-
-
 export function removePriceOfProjectCreat(price) {
 
 

@@ -526,4 +526,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (removePriceOfProjectOps)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS,
+                ops: 47
+            }
+        ];
+
+        store.dispatch(Actions.removePriceOfProjectOps(47));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
