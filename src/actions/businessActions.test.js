@@ -826,4 +826,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (showQuantCompMessage)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_QUANT_COMP_MESSAGE
+            }
+        ];
+
+        store.dispatch(Actions.showQuantCompMessage());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
