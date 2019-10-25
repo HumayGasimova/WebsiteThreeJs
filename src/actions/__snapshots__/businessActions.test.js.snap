@@ -35,6 +35,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addTheTothSausageConjecture) 1`] = `
+Array [
+  Object {
+    "type": "ADD_THE_TOTH_SAUSAGE_CONJECTURE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (autoClippersAddOne) 1`] = `
 Array [
   Object {

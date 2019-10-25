@@ -678,4 +678,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (addTheTothSausageConjecture)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE
+            }
+        ];
+
+        store.dispatch(Actions.addTheTothSausageConjecture());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
