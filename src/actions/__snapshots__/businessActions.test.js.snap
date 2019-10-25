@@ -70,6 +70,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (creativityTurnOn) 1`] = `
+Array [
+  Object {
+    "type": "CREATIVITY_TURN_ON",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (decreaseOps) 1`] = `
 Array [
   Object {

@@ -626,7 +626,19 @@ describe('businessActions', () => {
             }
         ];
 
-        store.dispatch(Actions.startCreativityCounter(36));
+        store.dispatch(Actions.startCreativityCounter());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
+
+    it('Dispatches the correct action and payload (creativityTurnOn)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CREATIVITY_TURN_ON
+            }
+        ];
+
+        store.dispatch(Actions.creativityTurnOn(36));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
