@@ -65,6 +65,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updatePublicDemand) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_PUBLIC_DEMAND",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateUnsoldInventory) 1`] = `
 Array [
   Object {
