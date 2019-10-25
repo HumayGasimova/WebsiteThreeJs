@@ -575,6 +575,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleAutoWireBuyer) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_AUTO_WIRE_BUYER",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleChip) 1`] = `
 Array [
   Object {
