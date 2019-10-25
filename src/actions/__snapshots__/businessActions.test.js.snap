@@ -72,6 +72,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (increaseProcessorsMemory) 1`] = `
+Array [
+  Object {
+    "type": "INCREASE_PROCESSORS_MEMORY",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (lowerPrice) 1`] = `
 Array [
   Object {

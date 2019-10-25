@@ -433,4 +433,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (increaseProcessorsMemory)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.INCREASE_PROCESSORS_MEMORY
+            }
+        ];
+
+        store.dispatch(Actions.increaseProcessorsMemory());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
