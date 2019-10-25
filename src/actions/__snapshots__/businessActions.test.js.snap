@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`businessActions Dispatches the correct action and payload (autoPaperclips) 1`] = `
+Array [
+  Object {
+    "type": "AUTO_PAPERCLIPS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (buyWire) 1`] = `
 Array [
   Object {

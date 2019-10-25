@@ -265,4 +265,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (autoPaperclips)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.AUTO_PAPERCLIPS
+            }
+        ];
+
+        store.dispatch(Actions.autoPaperclips());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
