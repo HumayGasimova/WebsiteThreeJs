@@ -635,6 +635,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateOps) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_OPS",
+    "val": 34,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updatePublicDemand) 1`] = `
 Array [
   Object {

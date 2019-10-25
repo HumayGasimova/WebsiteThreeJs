@@ -966,4 +966,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (updateOps)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_OPS,
+                val: 34
+            }
+        ];
+
+        store.dispatch(Actions.updateOps(34));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
