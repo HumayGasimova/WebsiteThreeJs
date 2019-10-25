@@ -92,7 +92,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update publicDemand using formula", () => {
+    it("should update publicDemand using the formula", () => {
         const action = { 
             type: actionTypes.UPDATE_PUBLIC_DEMAND
         }
@@ -149,7 +149,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should add 1 to marketingLevel, update funds by subtracting marketingCost, multiply marketingCost by 2, update delayUnsoldInventaryConst using formula", () => {
+    it("should add 1 to marketingLevel, update funds by subtracting marketingCost, multiply marketingCost by 2, update delayUnsoldInventaryConst using the formula", () => {
         const action = { 
             type: actionTypes.MARKETING_NEXT_LEVEL
         }
@@ -170,7 +170,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update maxPublicDemand using formula", () => {
+    it("should update maxPublicDemand using the formula", () => {
         const action = { 
             type: actionTypes.UPDATE_MAX_PUBLIC_DEMAND
         }
@@ -721,7 +721,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update delayAutoPaperClippers using formula and value passed through the action", () => {
+    it("should update delayAutoPaperClippers using the formula and value passed through the action", () => {
         const action = { 
             type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
             val: 25
@@ -753,7 +753,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update wireToAdd using formula and value passed through the action", () => {
+    it("should update wireToAdd using the formula and value passed through the action", () => {
         const action = { 
             type: actionTypes.IMPROVE_WIRE_EXTRUSION,
             val: 25
@@ -800,7 +800,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update maxPublicDemand using formula and value passed through the action and delayUnsoldInventaryConst using formula", () => {
+    it("should update maxPublicDemand using the formula and value passed through the action and delayUnsoldInventaryConst using the formula", () => {
         const action = { 
             type: actionTypes.IMPROVE_MARKETING,
             val: 40
@@ -1180,7 +1180,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update delayUnsoldInventary using formula", () => {
+    it("should update delayUnsoldInventary using the formula", () => {
         const action = { 
             type: actionTypes.CALC_DELAY_UNSOLD_INVENTARY
         }
@@ -1489,7 +1489,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should (megaClippersPerSec is not equal to 0) update megaClippersPerSec by adding 1,megaClipperPrice using the formula and funds by subtracting the megaClipperPrice", () => {
+    it("should (megaClippersPerSec is not equal to 0) update megaClippersPerSec by adding 1, megaClipperPrice using the formula and funds by subtracting the megaClipperPrice", () => {
         const action = { 
             type: actionTypes.MEGA_CLIPPERS_BUTTON_PRESSED,
         }
@@ -1504,6 +1504,22 @@ describe('businessReducer', () => {
             megaClippersPerSec: 4,
             megaClipperPrice: 8.56,
             funds: 12
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update megaClippersToAdd using the formula and value passed through the action", () => {
+        const action = { 
+            type: actionTypes.IMPROVE_MEGA_CLIPPERS,
+            val: 37
+        }
+        const initState = {
+            ...initialState, 
+            megaClippersToAdd: 300
+        }
+        const state = {
+            ...initialState, 
+            megaClippersToAdd: 411
         }
         expect(reducer(initState, action)).toEqual(state);
     })

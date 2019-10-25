@@ -729,8 +729,6 @@ const switchOffOrOnAutoAndMegaClippers = (state, action) => {
     });
 }
 
-
-
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
