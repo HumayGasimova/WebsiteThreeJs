@@ -478,6 +478,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startTimer) 1`] = `
+Array [
+  Object {
+    "type": "START_TIMER",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {
