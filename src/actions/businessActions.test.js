@@ -289,4 +289,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (autoClippersAddOne)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.AUTO_CLIPPERS_ADD_ONE
+            }
+        ];
+
+        store.dispatch(Actions.autoClippersAddOne());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
