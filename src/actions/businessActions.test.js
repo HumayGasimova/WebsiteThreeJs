@@ -131,4 +131,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (toggleMarketingButton)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_MARKETING_BUTTON
+            }
+        ];
+
+        store.dispatch(Actions.toggleMarketingButton());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });

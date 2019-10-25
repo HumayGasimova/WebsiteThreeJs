@@ -56,6 +56,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleMarketingButton) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_MARKETING_BUTTON",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
 Array [
   Object {

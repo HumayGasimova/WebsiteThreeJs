@@ -12,40 +12,16 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
     
      
 
-    reducer test updated(UPDATE_INVESTMENTS_DELAY)
+    actions test updated(UPDATE_INVESTMENTS_DELAY)
 
 
     import * as actionTypes from '../constants/actionTypes';
 
 
-export function sellPaperclips() {
 
 
-export function makePaperclip() {
-
-
-export function updateFunds(value) {
-
-
-export function startUpdatingUnsoldInventory() {
  
 
-export function stopUpdatingUnsoldInventory() {
-
-
-export function updateUnsoldInventory() {
- 
-
-export function lowerPrice() {
-
-
-export function raisePrice() {
-
-
-export function updatePublicDemand() {
- 
-
-export function toggleMarketingButton() {
 
 
 export function marketing() {
