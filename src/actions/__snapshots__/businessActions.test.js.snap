@@ -48,3 +48,11 @@ Array [
   },
 ]
 `;
+
+exports[`businessActions Dispatches the correct action and payload (updateUnsoldInventory) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_UNSOLD_INVENTORY",
+  },
+]
+`;
