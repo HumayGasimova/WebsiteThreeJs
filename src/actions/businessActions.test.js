@@ -915,4 +915,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (startSubtractingQOps)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_SUBTRACTING_Q_OPS,
+                chipsNumber: "chipX"
+            }
+        ];
+
+        store.dispatch(Actions.startSubtractingQOps("chipX"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
