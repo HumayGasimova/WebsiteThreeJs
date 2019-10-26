@@ -1124,4 +1124,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (getDeposit)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.GET_DEPOSIT
+            }
+        ];
+
+        store.dispatch(Actions.getDeposit());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
