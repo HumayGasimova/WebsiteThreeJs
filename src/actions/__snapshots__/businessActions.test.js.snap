@@ -774,6 +774,22 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateInvestmentsLines) 1`] = `
+Array [
+  Object {
+    "array": Array [
+      Object {
+        "a": 4,
+      },
+      Object {
+        "a": 7,
+      },
+    ],
+    "type": "UPDATE_INVESTMENTS_LINES",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateMaxPublicDemand) 1`] = `
 Array [
   Object {
