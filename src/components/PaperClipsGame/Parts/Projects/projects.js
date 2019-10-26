@@ -160,6 +160,12 @@ export class Projects extends Component {
                 this.props.improveWireExtrusion(action);
                 break;
             case 'spectralFrothAnnealment200':
+                this.props.addProject(projectsToAdd.QuantumFoamAnnealment);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.improveWireExtrusion(action);
+                break;
+            case 'quantumFoamAnnealment':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveWireExtrusion(action);

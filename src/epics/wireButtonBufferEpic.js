@@ -20,7 +20,7 @@ export const wireButtonBufferEpic = (action$, state$) =>
         bufferWhen(()=> interval(400)),
         filter(events => events.length >= 3),
         mergeMap(action => {
-            if(state$.value.business.wireBuyerProjectIsShown === false && state$.value.business.wireToAdd === 1500){
+            if(state$.value.business.wireBuyerProjectIsShown === false && state$.value.business.wireToAdd >= 1500){
                 return of(
                     Actions.addProject(projectsToAdd.WireBuyer),
                     Actions.toggleWireBuyerProject()

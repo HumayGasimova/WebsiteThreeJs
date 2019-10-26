@@ -540,64 +540,74 @@ export const WireBuyer = {
     terminal: "WireBuyer online"
 }
 
+export const MegaClippers = {
+    text1: "Mega Clippers (12,000 ops)",
+    text2: "500x more powerful than a standard",
+    text3: "AutoClipper",
+    price: {
+        ops: 3
+    },
+    action: 50,
+    next: 'megaClippers',
+    valid: false,
+    id: "card37",
+    terminal: "MegaClipper technology online"
+}
 
+export const ImprovedMegaClippers = {
+    text1: "Improved Mega Clippers (14,000 ops)",
+    text2: "Increases MegaClipper performance 25%",
+    text3: "AutoClipper",
+    price: {
+        creat: 3
+    },
+    action: 25,
+    next: 'improvedMegaClippers',
+    valid: false,
+    id: "card43",
+    terminal: "MegaClipper performance increased by 25%"
+}
 
+export const EvenBetterMegaClippers = {
+    text1: "Even Better MegaClippers (17,000 ops)",
+    text2: "Increases MegaClipper performance by an",
+    text3: "additional 50%",
+    price: {
+        creat: 3
+    },
+    action: 50,
+    next: 'evenBetterMegaClippers',
+    valid: false,
+    id: "card44",
+    terminal: "MegaClipper performance increased by 50%"
+}
 
+export const OptimizedMegaClippers = {
+    text1: "Optimized MegaClippers (19,500 ops)",
+    text2: "Increases MegaClipper performance by an",
+    text3: "additional 100%",
+    price: {
+        creat: 3
+    },
+    action: 100,
+    next: 'optimizedMegaClippers',
+    valid: false,
+    id: "card45",
+    terminal: "MegaClipper performance increased by 100%| "
+}
 
-
-
-                                                                                                            export const MegaClippers = {
-                                                                                                                text1: "Mega Clippers (12,000 ops)",
-                                                                                                                text2: "500x more powerful than a standard",
-                                                                                                                text3: "AutoClipper",
-                                                                                                                price: {
-                                                                                                                    ops: 3
-                                                                                                                },
-                                                                                                                action: 50,
-                                                                                                                next: 'megaClippers',
-                                                                                                                valid: false,
-                                                                                                                id: "card37",
-                                                                                                                terminal: "MegaClipper technology online"
-                                                                                                            } // new component next
-                                                                                                            export const ImprovedMegaClippers = {
-                                                                                                                text1: "Improved Mega Clippers (14,000 ops)",
-                                                                                                                text2: "Increases MegaClipper performance 25%",
-                                                                                                                text3: "AutoClipper",
-                                                                                                                price: {
-                                                                                                                    creat: 3
-                                                                                                                },
-                                                                                                                action: 25,
-                                                                                                                next: 'improvedMegaClippers',
-                                                                                                                valid: false,
-                                                                                                                id: "card43",
-                                                                                                                terminal: "MegaClipper performance increased by 25%"
-                                                                                                            }
-                                                                                                            export const EvenBetterMegaClippers = {
-                                                                                                                text1: "Even Better MegaClippers (17,000 ops)",
-                                                                                                                text2: "Increases MegaClipper performance by an",
-                                                                                                                text3: "additional 50%",
-                                                                                                                price: {
-                                                                                                                    creat: 3
-                                                                                                                },
-                                                                                                                action: 50,
-                                                                                                                next: 'evenBetterMegaClippers',
-                                                                                                                valid: false,
-                                                                                                                id: "card44",
-                                                                                                                terminal: "MegaClipper performance increased by 50%"
-                                                                                                            }
-                                                                                                            export const OptimizedMegaClippers = {
-                                                                                                                text1: "Optimized MegaClippers (19,500 ops)",
-                                                                                                                text2: "Increases MegaClipper performance by an",
-                                                                                                                text3: "additional 100%",
-                                                                                                                price: {
-                                                                                                                    creat: 3
-                                                                                                                },
-                                                                                                                action: 100,
-                                                                                                                next: 'optimizedMegaClippers',
-                                                                                                                valid: false,
-                                                                                                                id: "card45",
-                                                                                                                terminal: "MegaClipper performance increased by 100%| "
-                                                                                                            }//stop
+export const QuantumFoamAnnealment = {
+    text1: "Quantum Foam Annealment (15,000 ops)",
+    text2: "1,000% more wire supply from every spool",
+    price: {
+        ops: 3
+    },
+    action: 1000,
+    next: 'quantumFoamAnnealment',
+    valid: false,
+    id: "card46",
+    terminal: "Using quantum foam annealment we now get 173,250 supply from every spool"
+}
 
 
 
@@ -831,18 +841,10 @@ export const AnotherTokenOfGoodwill7 = {
 
 
 
-export const QuantumFoamAnnealment = {
-    text1: "Quantum Foam Annealment (15,000 ops)",
-    text2: "1,000% more wire supply from every spool",
-    price: {
-        ops: 3
-    },
-    action: 1,
-    next: 'quantumFoamAnnealment',
-    valid: false,
-    id: "",
-    terminal: "Using quantum foam annealment we now get 173,250 supply from every spool"
-}
+
+
+
+
 
 
 export const XavierReinitialization = {
