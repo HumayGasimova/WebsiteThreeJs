@@ -1312,5 +1312,19 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (chooseFromDropdown)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CHOOSE_FROM_DROPDOWN,
+                chosen: "I am chosen",
+                index: 1
+            }
+        ];
+
+        store.dispatch(Actions.chooseFromDropdown("I am chosen", 1));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });

@@ -190,6 +190,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (chooseFromDropdown) 1`] = `
+Array [
+  Object {
+    "chosen": "I am chosen",
+    "index": 1,
+    "type": "CHOOSE_FROM_DROPDOWN",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (clickWireButton) 1`] = `
 Array [
   Object {
