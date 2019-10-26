@@ -508,6 +508,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startCountingRisk) 1`] = `
+Array [
+  Object {
+    "type": "START_COUNTING_RISK",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startCreativityCounter) 1`] = `
 Array [
   Object {
