@@ -500,6 +500,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startApplyingProfitLoss) 1`] = `
+Array [
+  Object {
+    "type": "START_APPLYING_PROFIT_LOSS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startBuyingWire) 1`] = `
 Array [
   Object {

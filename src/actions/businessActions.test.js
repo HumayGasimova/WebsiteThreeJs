@@ -1262,5 +1262,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (startApplyingProfitLoss)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_APPLYING_PROFIT_LOSS
+            }
+        ];
+
+        store.dispatch(Actions.startApplyingProfitLoss());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
     
   });
