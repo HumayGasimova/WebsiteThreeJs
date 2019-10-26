@@ -807,6 +807,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateFundsWithdraw) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_FUNDS_WITHDRAW",
+    "val": 3534,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateInvestmentsCash) 1`] = `
 Array [
   Object {

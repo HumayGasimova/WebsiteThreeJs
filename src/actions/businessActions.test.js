@@ -1298,6 +1298,19 @@ describe('businessActions', () => {
         store.dispatch(Actions.startInvestmentsWithdraw());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
+
+    it('Dispatches the correct action and payload (updateFundsWithdraw)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_FUNDS_WITHDRAW,
+                val: 3534
+            }
+        ];
+
+        store.dispatch(Actions.updateFundsWithdraw(3534));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
