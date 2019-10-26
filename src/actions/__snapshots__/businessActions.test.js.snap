@@ -606,6 +606,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopUpdatingScreen) 1`] = `
+Array [
+  Object {
+    "type": "STOP_UPDATING_SCREEN",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopUpdatingUnsoldInventory) 1`] = `
 Array [
   Object {
