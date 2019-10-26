@@ -21,7 +21,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.makePaperclip());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateFunds)', () => {
         const expectedActions = [
@@ -34,7 +34,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateFunds(5));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (checkButtons)', () => {
         const expectedActions = [
@@ -46,7 +46,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.checkButtons());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (sellPaperclips)', () => {
         const expectedActions = [
@@ -58,7 +58,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.sellPaperclips());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startUpdatingUnsoldInventory)', () => {
         const expectedActions = [
@@ -70,7 +70,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startUpdatingUnsoldInventory());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (stopUpdatingUnsoldInventory)', () => {
         const expectedActions = [
@@ -82,7 +82,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.stopUpdatingUnsoldInventory());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateUnsoldInventory)', () => {
         const expectedActions = [
@@ -94,7 +94,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateUnsoldInventory());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (lowerPrice)', () => {
         const expectedActions = [
@@ -106,7 +106,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.lowerPrice());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (raisePrice)', () => {
         const expectedActions = [
@@ -118,7 +118,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.raisePrice());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updatePublicDemand)', () => {
         const expectedActions = [
@@ -130,7 +130,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updatePublicDemand());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleMarketingButton)', () => {
         const expectedActions = [
@@ -142,7 +142,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleMarketingButton());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
     
     it('Dispatches the correct action and payload (marketing)', () => {
         const expectedActions = [
@@ -154,7 +154,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.marketing());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (marketingNextLevel)', () => {
         const expectedActions = [
@@ -166,7 +166,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.marketingNextLevel());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateMaxPublicDemand)', () => {
         const expectedActions = [
@@ -178,7 +178,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateMaxPublicDemand());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startBuyingWire)', () => {
         const expectedActions = [
@@ -190,7 +190,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startBuyingWire());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (buyWire)', () => {
         const expectedActions = [
@@ -202,7 +202,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.buyWire());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (randomWirePrice)', () => {
         const expectedActions = [
@@ -215,7 +215,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.randomWirePrice(15));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleWireButton)', () => {
         const expectedActions = [
@@ -227,7 +227,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleWireButton());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (checkExistenceOfWire)', () => {
         const expectedActions = [
@@ -239,7 +239,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.checkExistenceOfWire());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (stop)', () => {
         const expectedActions = [
@@ -251,7 +251,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.stop());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (wireExists)', () => {
         const expectedActions = [
@@ -264,7 +264,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.wireExists(true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (autoPaperclips)', () => {
         const expectedActions = [
@@ -276,7 +276,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.autoPaperclips());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (autoPaperclipsStart)', () => {
         const expectedActions = [
@@ -288,7 +288,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.autoPaperclipsStart());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (autoClippersAddOne)', () => {
         const expectedActions = [
@@ -300,7 +300,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.autoClippersAddOne());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (setAutoClipperInitPrice)', () => {
         const expectedActions = [
@@ -312,7 +312,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.setAutoClipperInitPrice());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleAutoClippersButton)', () => {
         const expectedActions = [
@@ -324,7 +324,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleAutoClippersButton());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleMegaClippersButton)', () => {
         const expectedActions = [
@@ -336,7 +336,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleMegaClippersButton());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (trustPlusOne)', () => {
         const expectedActions = [
@@ -348,7 +348,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.trustPlusOne());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (trustPlusOneFromProject)', () => {
         const expectedActions = [
@@ -360,7 +360,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.trustPlusOneFromProject());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (increaseOps)', () => {
         const expectedActions = [
@@ -372,7 +372,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.increaseOps());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startDecreasingOperations)', () => {
         const expectedActions = [
@@ -384,7 +384,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startDecreasingOperations());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startDecreasingOps)', () => {
         const expectedActions = [
@@ -396,7 +396,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startDecreasingOps());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (stopDecreasingOps)', () => {
         const expectedActions = [
@@ -408,7 +408,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.stopDecreasingOps());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (decreaseOps)', () => {
         const expectedActions = [
@@ -420,7 +420,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.decreaseOps());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (increaseProcessors)', () => {
         const expectedActions = [
@@ -432,7 +432,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.increaseProcessors());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (increaseProcessorsMemory)', () => {
         const expectedActions = [
@@ -444,7 +444,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.increaseProcessorsMemory());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (increaseCreativity)', () => {
         const expectedActions = [
@@ -456,7 +456,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.increaseCreativity());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (initProjects)', () => {
         const expectedActions = [
@@ -471,7 +471,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.initProjects({a:1},{a:2},{a:3}));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (checkCardValidity)', () => {
         const expectedActions = [
@@ -486,7 +486,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.checkCardValidity("card1",true,0));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (deleteCard)', () => {
         const expectedActions = [
@@ -499,7 +499,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.deleteCard("card3"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showRevTracker)', () => {
         const expectedActions = [
@@ -512,7 +512,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showRevTracker(45));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addProject)', () => {
         const expectedActions = [
@@ -525,7 +525,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addProject({b: 7}));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (removePriceOfProjectOps)', () => {
         const expectedActions = [
@@ -538,7 +538,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.removePriceOfProjectOps(47));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (removePriceOfProjectCreat)', () => {
         const expectedActions = [
@@ -551,7 +551,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.removePriceOfProjectCreat(73));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (removePriceOfProjectOpsAndCreat)', () => {
         const expectedActions = [
@@ -565,7 +565,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.removePriceOfProjectOpsAndCreat(74, 25));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (removePriceOfProjectTrust)', () => {
         const expectedActions = [
@@ -578,7 +578,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.removePriceOfProjectTrust(67));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (improveAutoClippers)', () => {
         const expectedActions = [
@@ -591,7 +591,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.improveAutoClippers(17));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleMakePaperclipButton)', () => {
         const expectedActions = [
@@ -604,7 +604,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleMakePaperclipButton(true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (improveWireExtrusion)', () => {
         const expectedActions = [
@@ -617,7 +617,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.improveWireExtrusion(36));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startCreativityCounter)', () => {
         const expectedActions = [
@@ -629,7 +629,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startCreativityCounter());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (creativityTurnOn)', () => {
         const expectedActions = [
@@ -641,7 +641,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.creativityTurnOn());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addLexicalProcessing)', () => {
         const expectedActions = [
@@ -653,7 +653,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addLexicalProcessing());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addCombinatoryHarmonics)', () => {
         const expectedActions = [
@@ -665,7 +665,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addCombinatoryHarmonics());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addTheHadwingerProblem)', () => {
         const expectedActions = [
@@ -677,7 +677,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addTheHadwingerProblem());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addTheTothSausageConjecture)', () => {
         const expectedActions = [
@@ -689,7 +689,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addTheTothSausageConjecture());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addDonkeySpace)', () => {
         const expectedActions = [
@@ -701,7 +701,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addDonkeySpace());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startImprovingMarketing)', () => {
         const expectedActions = [
@@ -714,7 +714,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startImprovingMarketing({a:5}));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
     
     it('Dispatches the correct action and payload (improveMarketing)', () => {
         const expectedActions = [
@@ -727,7 +727,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.improveMarketing(46));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showInvestEngine)', () => {
         const expectedActions = [
@@ -739,7 +739,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showInvestEngine(46));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showStrategicModeling)', () => {
         const expectedActions = [
@@ -751,7 +751,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showStrategicModeling(46));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (sendCommentToTerminal)', () => {
         const expectedActions = [
@@ -764,7 +764,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.sendCommentToTerminal("Testing actions"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addNewStrategy)', () => {
         const expectedActions = [
@@ -777,7 +777,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addNewStrategy("New Strategy"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleDropdownInvestments)', () => {
         const expectedActions = [
@@ -789,7 +789,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleDropdownInvestments());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleDropdownStrategicModeling)', () => {
         const expectedActions = [
@@ -801,7 +801,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleDropdownStrategicModeling());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (closeDropdowns)', () => {
         const expectedActions = [
@@ -813,7 +813,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.closeDropdowns());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showQuantumComputing)', () => {
         const expectedActions = [
@@ -825,7 +825,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showQuantumComputing());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showQuantCompMessage)', () => {
         const expectedActions = [
@@ -837,7 +837,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showQuantCompMessage());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addChip)', () => {
         const expectedActions = [
@@ -850,7 +850,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addChip({c: 8}));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleChip)', () => {
         const expectedActions = [
@@ -864,7 +864,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleChip(true, "chipX"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (changeToQOps)', () => {
         const expectedActions = [
@@ -876,7 +876,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.changeToQOps());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startAddingQOps)', () => {
         const expectedActions = [
@@ -889,7 +889,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startAddingQOps("chipX"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addQOps)', () => {
         const expectedActions = [
@@ -902,7 +902,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addQOps("chipX"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (stopAddingQOps)', () => {
         const expectedActions = [
@@ -914,7 +914,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.stopAddingQOps());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startSubtractingQOps)', () => {
         const expectedActions = [
@@ -927,7 +927,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startSubtractingQOps("chipX"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (subtractQOps)', () => {
         const expectedActions = [
@@ -940,7 +940,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.subtractQOps("chipX"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (stopSubtractingQOps)', () => {
         const expectedActions = [
@@ -952,7 +952,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.stopSubtractingQOps("chipX"));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (captureCurrentQOps)', () => {
         const expectedActions = [
@@ -965,7 +965,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.captureCurrentQOps(276));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateOps)', () => {
         const expectedActions = [
@@ -978,7 +978,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateOps(34));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startTimer)', () => {
         const expectedActions = [
@@ -990,7 +990,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startTimer());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (clickWireButton)', () => {
         const expectedActions = [
@@ -1002,7 +1002,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.clickWireButton());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showAutoWireBuyer)', () => {
         const expectedActions = [
@@ -1014,7 +1014,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showAutoWireBuyer());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (toggleWireBuyerProject)', () => {
         const expectedActions = [
@@ -1026,7 +1026,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleWireBuyerProject());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (autoWireBuyer)', () => {
         const expectedActions = [
@@ -1038,7 +1038,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.autoWireBuyer());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
     
     it('Dispatches the correct action and payload (toggleAutoWireBuyer)', () => {
         const expectedActions = [
@@ -1050,7 +1050,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.toggleAutoWireBuyer());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addMegaClippers)', () => {
         const expectedActions = [
@@ -1062,7 +1062,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addMegaClippers());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showMegaClippers)', () => {
         const expectedActions = [
@@ -1074,7 +1074,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showMegaClippers());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (showAutoClippers)', () => {
         const expectedActions = [
@@ -1086,7 +1086,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.showAutoClippers());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (calcDelayUnsoldInventary)', () => {
         const expectedActions = [
@@ -1098,7 +1098,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.calcDelayUnsoldInventary());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateClipsPerSec)', () => {
         const expectedActions = [
@@ -1111,7 +1111,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateClipsPerSec(7));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startInvestmentsDeposit)', () => {
         const expectedActions = [
@@ -1123,7 +1123,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startInvestmentsDeposit());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (getDeposit)', () => {
         const expectedActions = [
@@ -1135,7 +1135,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.getDeposit());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startUpdatingScreen)', () => {
         const expectedActions = [
@@ -1147,7 +1147,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startUpdatingScreen());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (stopUpdatingScreen)', () => {
         const expectedActions = [
@@ -1159,7 +1159,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.stopUpdatingScreen());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (addInvestmentsLine)', () => {
         const expectedActions = [
@@ -1173,7 +1173,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.addInvestmentsLine('', false));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startUpdatingInvestmentLines)', () => {
         const expectedActions = [
@@ -1185,7 +1185,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startUpdatingInvestmentLines('', false));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (stopUpdatingInvestmentLines)', () => {
         const expectedActions = [
@@ -1197,7 +1197,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.stopUpdatingInvestmentLines());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateInvestmentsLines)', () => {
         const expectedActions = [
@@ -1210,7 +1210,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateInvestmentsLines([{a: 4}, {a:7}]));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startCountingRisk)', () => {
         const expectedActions = [
@@ -1222,7 +1222,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startCountingRisk());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateInvestmentsTotal)', () => {
         const expectedActions = [
@@ -1235,7 +1235,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateInvestmentsTotal(543));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateInvestmentsCash)', () => {
         const expectedActions = [
@@ -1248,7 +1248,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateInvestmentsCash(644));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateInvestmentsStocks)', () => {
         const expectedActions = [
@@ -1261,7 +1261,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateInvestmentsStocks(745));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startApplyingProfitLoss)', () => {
         const expectedActions = [
@@ -1273,7 +1273,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.startApplyingProfitLoss());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (updateFakeInvestmentsCash)', () => {
         const expectedActions = [
@@ -1286,7 +1286,7 @@ describe('businessActions', () => {
         store.dispatch(Actions.updateFakeInvestmentsCash(552));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
-    })
+    });
 
     it('Dispatches the correct action and payload (startInvestmentsWithdraw)', () => {
         const expectedActions = [
