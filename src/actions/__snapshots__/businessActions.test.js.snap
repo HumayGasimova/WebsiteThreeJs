@@ -11,6 +11,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addChosenFromDropdown) 1`] = `
+Array [
+  Object {
+    "chosen": "I am chosen",
+    "index": 0,
+    "type": "ADD_CHOSEN_FROM_DROPDOWN",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addCombinatoryHarmonics) 1`] = `
 Array [
   Object {
