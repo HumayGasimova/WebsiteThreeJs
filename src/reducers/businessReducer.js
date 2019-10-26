@@ -4,7 +4,7 @@ import {
   } from './utility';
 
 export const initialState = {
-    paperClips: 0,
+    paperClips: 1990, //0
     clipsPerSec: 0,
     funds: 1200, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
@@ -33,7 +33,7 @@ export const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 1000,//1000
+    opsMax: 10,//1000
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
@@ -367,7 +367,13 @@ const removePriceOfProjectTrust = (state, action) => {
 }
 
 const improveAutoClippers = (state, action) => {
-    let updatedAutoPaperClippers = state.delayAutoPaperClippers - (state.delayAutoPaperClippers * action.val / 100);
+    let updatedAutoPaperClippers
+    if(action.val !== 500){
+        updatedAutoPaperClippers = state.delayAutoPaperClippers - (state.delayAutoPaperClippers * action.val / 100);
+    }else{
+        updatedAutoPaperClippers = state.delayAutoPaperClippers / action.val;
+    }
+   
     return updateObject(state, {
        delayAutoPaperClippers: updatedAutoPaperClippers
     });

@@ -235,11 +235,11 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.improveAutoClippers(action);
-                // if(this.props.autoClipperOn){
-                //     this.props.stop();
-                //     this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
-                //     this.props.switchOffOrOnAutoAndMegaClippers(true);
-                // } in progress //change logic
+                if(this.props.autoClipperOn){
+                    this.props.stop();
+                    this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
+                    this.props.switchOffOrOnAutoAndMegaClippers(true);
+                } //in progress //change logic
                 break;
             case 'theTothSausageConjecture':
                 this.props.sendCommentToTerminal(terminal);
