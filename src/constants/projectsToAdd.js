@@ -580,7 +580,7 @@ export const WireBuyer = {
                                                                                                                     creat: 3
                                                                                                                 },
                                                                                                                 action: 50,
-                                                                                                                next: 'EevenBetterMegaClippers',
+                                                                                                                next: 'evenBetterMegaClippers',
                                                                                                                 valid: false,
                                                                                                                 id: "card44",
                                                                                                                 terminal: "MegaClipper performance increased by 50%"
@@ -592,7 +592,7 @@ export const WireBuyer = {
                                                                                                                 price: {
                                                                                                                     creat: 3
                                                                                                                 },
-                                                                                                                action: 50,
+                                                                                                                action: 100,
                                                                                                                 next: 'optimizedMegaClippers',
                                                                                                                 valid: false,
                                                                                                                 id: "card45",

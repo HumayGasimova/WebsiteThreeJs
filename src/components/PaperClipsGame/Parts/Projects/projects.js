@@ -349,6 +349,12 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.improveMegaClippers(action);
                 break; 
+            case 'evenBetterMegaClippers':
+                this.props.addProject(projectsToAdd.OptimizedMegaClippers);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectCreat(price.creat);
+                this.props.improveMegaClippers(action);
+                break; 
             case 'photonicChip4':
                 this.props.addProject(projectsToAdd.PhotonicChip5);
                 this.props.sendCommentToTerminal(terminal);

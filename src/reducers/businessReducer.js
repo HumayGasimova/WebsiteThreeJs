@@ -4,7 +4,7 @@ import {
   } from './utility';
 
 export const initialState = {
-    paperClips: 1990, //0
+    paperClips: 0, //0
     clipsPerSec: 0,
     funds: 1200, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
@@ -84,7 +84,7 @@ const makePaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
 
     return updateObject(state, {
-       paperClips: state.paperClips + 1, //pomenat na 1
+       paperClips: state.paperClips + 100000, //pomenat na 1
        unsoldInventory: +state.unsoldInventory + 1,
        wire: +updateWire.toFixed(2)
     });
