@@ -816,6 +816,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateAvgClipsSoldPerSec) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_AVG_CLIPS_SOLD_PER_SEC",
+    "val": 7,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateAvgRevPerSec) 1`] = `
 Array [
   Object {

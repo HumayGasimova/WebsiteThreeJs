@@ -1391,5 +1391,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updateAvgClipsSoldPerSec)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_AVG_CLIPS_SOLD_PER_SEC,
+                val: 7
+            }
+        ];
+
+        store.dispatch(Actions.updateAvgClipsSoldPerSec(7));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
