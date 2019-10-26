@@ -1354,5 +1354,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (startAddingEmptyInvestmentsLine)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE
+            }
+        ];
+
+        store.dispatch(Actions.startAddingEmptyInvestmentsLine(4000, 3000));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });

@@ -511,6 +511,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startAddingEmptyInvestmentsLine) 1`] = `
+Array [
+  Object {
+    "type": "START_ADDING_EMPTY_INVESTMENTS_LINE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startAddingQOps) 1`] = `
 Array [
   Object {
