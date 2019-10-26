@@ -698,6 +698,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateClipsPerSec) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_CLIPS_PER_SEC",
+    "val": 7,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
 Array [
   Object {

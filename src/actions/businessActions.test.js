@@ -1099,4 +1099,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (updateClipsPerSec)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_CLIPS_PER_SEC,
+                val: 7
+            }
+        ];
+
+        store.dispatch(Actions.updateClipsPerSec(7));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
   });
