@@ -1136,4 +1136,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (startUpdatingScreen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_UPDATING_SCREEN
+            }
+        ];
+
+        store.dispatch(Actions.startUpdatingScreen());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
+
+    
   });
