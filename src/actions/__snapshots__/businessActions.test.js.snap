@@ -367,6 +367,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (megaClippersButtonPressed) 1`] = `
+Array [
+  Object {
+    "type": "MEGA_CLIPPERS_BUTTON_PRESSED",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (raisePrice) 1`] = `
 Array [
   Object {
