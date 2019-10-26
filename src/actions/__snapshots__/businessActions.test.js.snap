@@ -742,6 +742,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (switchOffOrOnAutoAndMegaClippers) 1`] = `
+Array [
+  Object {
+    "type": "SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleAutoClippersButton) 1`] = `
 Array [
   Object {

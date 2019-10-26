@@ -1441,5 +1441,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (switchOffOrOnAutoAndMegaClippers)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.switchOffOrOnAutoAndMegaClippers(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
