@@ -568,6 +568,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startUpdatingInvestmentLines) 1`] = `
+Array [
+  Object {
+    "type": "START_UPDATING_INVESTMENTS_LINE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startUpdatingScreen) 1`] = `
 Array [
   Object {
