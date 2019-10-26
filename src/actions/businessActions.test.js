@@ -1219,7 +1219,20 @@ describe('businessActions', () => {
             }
         ];
 
-        store.dispatch(Actions.startCountingRisk([{a: 4}, {a:7}]));
+        store.dispatch(Actions.startCountingRisk());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
+
+    it('Dispatches the correct action and payload (updateInvestmentsTotal)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_INVESTMENTS_TOTAL,
+                total: 543
+            }
+        ];
+
+        store.dispatch(Actions.updateInvestmentsTotal(543));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })

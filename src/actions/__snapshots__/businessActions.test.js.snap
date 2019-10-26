@@ -798,6 +798,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateInvestmentsTotal) 1`] = `
+Array [
+  Object {
+    "total": 543,
+    "type": "UPDATE_INVESTMENTS_TOTAL",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateMaxPublicDemand) 1`] = `
 Array [
   Object {
