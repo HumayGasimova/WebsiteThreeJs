@@ -1249,5 +1249,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (updateInvestmentsStocks)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_INVESTMENTS_STOCKS,
+                stocks: 745
+            }
+        ];
+
+        store.dispatch(Actions.updateInvestmentsStocks(745));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
     
   });

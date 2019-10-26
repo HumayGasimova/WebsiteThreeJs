@@ -807,6 +807,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateInvestmentsStocks) 1`] = `
+Array [
+  Object {
+    "stocks": 745,
+    "type": "UPDATE_INVESTMENTS_STOCKS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateInvestmentsTotal) 1`] = `
 Array [
   Object {
