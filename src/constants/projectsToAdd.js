@@ -593,7 +593,7 @@ export const OptimizedMegaClippers = {
     next: 'optimizedMegaClippers',
     valid: false,
     id: "card45",
-    terminal: "MegaClipper performance increased by 100%| "
+    terminal: "MegaClipper performance increased by 100% "
 }
 
 export const QuantumFoamAnnealment = {
