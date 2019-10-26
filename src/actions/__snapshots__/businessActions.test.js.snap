@@ -781,6 +781,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateFakeInvestmentsCash) 1`] = `
+Array [
+  Object {
+    "cash": 552,
+    "type": "UPDATE_FAKE_INVESTMENTS_CASH",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateFunds) 1`] = `
 Array [
   Object {
