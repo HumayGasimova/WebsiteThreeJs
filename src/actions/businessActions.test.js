@@ -1362,7 +1362,19 @@ describe('businessActions', () => {
             }
         ];
 
-        store.dispatch(Actions.startAddingEmptyInvestmentsLine(4000, 3000));
+        store.dispatch(Actions.startAddingEmptyInvestmentsLine());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (stopAddingEmptyInvestmentsLine)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STOP_ADDING_EMPTY_INVESTMENTS_LINE
+            }
+        ];
+
+        store.dispatch(Actions.stopAddingEmptyInvestmentsLine());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
