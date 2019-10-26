@@ -1161,6 +1161,20 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     })
 
+    it('Dispatches the correct action and payload (addInvestmentsLine)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ADD_INVESTMENTS_LINE,
+                obj: '',
+                notEmpty: false
+            }
+        ];
+
+        store.dispatch(Actions.addInvestmentsLine('', false));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
+
 
     
   });

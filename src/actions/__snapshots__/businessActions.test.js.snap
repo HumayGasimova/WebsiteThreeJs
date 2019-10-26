@@ -27,6 +27,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (addInvestmentsLine) 1`] = `
+Array [
+  Object {
+    "notEmpty": false,
+    "obj": "",
+    "type": "ADD_INVESTMENTS_LINE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (addLexicalProcessing) 1`] = `
 Array [
   Object {
