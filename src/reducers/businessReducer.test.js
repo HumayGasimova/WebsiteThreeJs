@@ -721,7 +721,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update delayAutoPaperClippers using the formula and value passed through the action", () => {
+    it("should(if the value that is passed through the action is not equal to 500) update delayAutoPaperClippers using the formula and the value passed through the action", () => {
         const action = { 
             type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
             val: 25
@@ -733,6 +733,22 @@ describe('businessReducer', () => {
         const state = {
             ...initialState, 
             delayAutoPaperClippers: 6750
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should(if the value that is passed through the action is equal to 500) update delayAutoPaperClippers using the formula and the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.IMPROVE_AUTO_PAPER_CLIPPER,
+            val: 500
+        }
+        const initState = {
+            ...initialState, 
+            delayAutoPaperClippers: 9000
+        }
+        const state = {
+            ...initialState, 
+            delayAutoPaperClippers: 18
         }
         expect(reducer(initState, action)).toEqual(state);
     })
@@ -753,7 +769,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update wireToAdd using the formula and value passed through the action", () => {
+    it("should update wireToAdd using the formula and the value passed through the action", () => {
         const action = { 
             type: actionTypes.IMPROVE_WIRE_EXTRUSION,
             val: 25
@@ -800,7 +816,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update maxPublicDemand using the formula and value passed through the action and delayUnsoldInventaryConst using the formula", () => {
+    it("should update maxPublicDemand using the formula and the value passed through the action and delayUnsoldInventaryConst using the formula", () => {
         const action = { 
             type: actionTypes.IMPROVE_MARKETING,
             val: 40
@@ -848,7 +864,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update trust by removing value passed through the action", () => {
+    it("should update trust by removing the value passed through the action", () => {
         const action = { 
             type: actionTypes.REMOVE_PRICE_OF_PROJECT_TRUST,
             trust: 50
@@ -1089,7 +1105,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update ops by adding value passed throught th action", () => {
+    it("should update ops by adding the value passed throught the action", () => {
         const action = { 
             type: actionTypes.UPDATE_OPS,
             val: 40
@@ -1400,7 +1416,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update the element in chosenListDropdownArray with index, with value passed through the action ", () => {
+    it("should update the element in chosenListDropdownArray with index, with the value passed through the action ", () => {
         const action = { 
             type: actionTypes.ADD_CHOSEN_FROM_DROPDOWN,
             chosen: 'three',
@@ -1508,7 +1524,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update megaClippersToAdd using the formula and value passed through the action", () => {
+    it("should update megaClippersToAdd using the formula and the value passed through the action", () => {
         const action = { 
             type: actionTypes.IMPROVE_MEGA_CLIPPERS,
             val: 37
