@@ -624,6 +624,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopUpdatingInvestmentLines) 1`] = `
+Array [
+  Object {
+    "type": "STOP_UPDATING_INVESTMENTS_LINE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopUpdatingScreen) 1`] = `
 Array [
   Object {

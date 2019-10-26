@@ -1186,5 +1186,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     })
+
+    it('Dispatches the correct action and payload (stopUpdatingInvestmentLines)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STOP_UPDATING_INVESTMENTS_LINE
+            }
+        ];
+
+        store.dispatch(Actions.stopUpdatingInvestmentLines());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    })
     
   });
