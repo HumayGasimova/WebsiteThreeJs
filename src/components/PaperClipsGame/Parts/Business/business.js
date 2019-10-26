@@ -85,6 +85,7 @@ export class Business extends Component {
                         <Button
                             onClick={this.props.lowerPrice}
                             text={"lower"}
+                            disabled={this.props.paperclipPrice <= 0.01}
                         />
                         <Button
                             onClick={this.props.raisePrice}
@@ -123,7 +124,7 @@ export default connect(
             marketingButtonDisabled: Selectors.getMarketingButtonDisabledState(state),
             revTracker: Selectors.getRevTrackerState(state),
             avgRevPerSec: Selectors.getAvgRevPerSecState(state),
-            avgClipsSoldPerSec: Selectors.getAvgClipsSoldPerSecState(state)
+            avgClipsSoldPerSec: Selectors.getAvgClipsSoldPerSecState(state),
         };
     },
     (dispatch) => {
