@@ -845,6 +845,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateInvestmentsDelay) 1`] = `
+Array [
+  Object {
+    "delayLines": 3000,
+    "delayScreen": 4000,
+    "type": "UPDATE_INVESTMENTS_DELAY",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateInvestmentsLines) 1`] = `
 Array [
   Object {

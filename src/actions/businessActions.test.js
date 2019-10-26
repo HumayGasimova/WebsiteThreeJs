@@ -1340,5 +1340,19 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updateInvestmentsDelay)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_INVESTMENTS_DELAY,
+                delayScreen: 4000,
+                delayLines: 3000
+            }
+        ];
+
+        store.dispatch(Actions.updateInvestmentsDelay(4000, 3000));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
