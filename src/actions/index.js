@@ -116,5 +116,6 @@ export {
     improveMegaClippers,
     switchOffOrOnAutoAndMegaClippers,
     startNewTournament,
-    tournamentState
+    tournamentState,
+    updateNewTournamentCost
 } from './businessActions';

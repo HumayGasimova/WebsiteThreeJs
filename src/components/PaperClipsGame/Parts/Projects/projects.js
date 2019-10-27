@@ -269,42 +269,49 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("A100");
+                this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyB100':
                 this.props.addProject(projectsToAdd.NewStrategyGreedy);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("B100");
+                this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyGreedy':
                 this.props.addProject(projectsToAdd.NewStrategyGenerous);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("GREEDY");
+                this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyGenerous':
                 this.props.addProject(projectsToAdd.NewStrategyMinimax);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("GENEROUS");
+                this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyMinimax':
                 this.props.addProject(projectsToAdd.NewStrategyTitForTat);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("MINIMAX");
+                this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyTitForTat':
                 this.props.addProject(projectsToAdd.NewStrategyBeatLast);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("TIT FOR TAT");
+                this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyTitForTat':
                 this.props.addProject(projectsToAdd.TheoryOfMind);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("BEAT LAST");
+                this.props.updateNewTournamentCost();
                 break;
             case 'theoryOfMind':
                 this.props.sendCommentToTerminal(terminal);
@@ -509,6 +516,7 @@ export default connect(
             showMegaClippers: bindActionCreators(Actions.showMegaClippers, dispatch),
             improveMegaClippers: bindActionCreators(Actions.improveMegaClippers, dispatch),
             switchOffOrOnAutoAndMegaClippers: bindActionCreators(Actions.switchOffOrOnAutoAndMegaClippers, dispatch),
+            updateNewTournamentCost: bindActionCreators(Actions.updateNewTournamentCost, dispatch),
         };
     }
 )(Projects);

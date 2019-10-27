@@ -766,3 +766,11 @@ export function tournamentState(val) {
     };
 };
 
+export function updateNewTournamentCost() {
+    return { 
+        type: actionTypes.UPDATE_NEW_TOURNAMENT_COST
+    };
+};
+
+
+

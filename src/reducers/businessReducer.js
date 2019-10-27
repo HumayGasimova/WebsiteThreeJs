@@ -78,7 +78,8 @@ export const initialState = {
     megaClippersToAdd: 500,
     megaClippersPerSec: 0,
     autoAndMegaClippersWorks: false,
-    tournamentContinues: false
+    tournamentContinues: false,
+    newTournamentCost: 1000
 }
 
 const makePaperclip = (state) => {
@@ -742,6 +743,11 @@ const tournamentState = (state, action) => {
     });
 }
 
+const updateNewTournamentCost = (state, action) => {
+    return updateObject(state, {
+        newTournamentCost: state.newTournamentCost + 1000
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -980,6 +986,9 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.TOURNAMENT_STATE:
             return tournamentState(state, action); 
+        case actionTypes.UPDATE_NEW_TOURNAMENT_COST:
+            return updateNewTournamentCost(state, action); 
+            
             
         default: 
             return state;
