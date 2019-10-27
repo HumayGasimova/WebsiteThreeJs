@@ -78,7 +78,7 @@ export class StrategicModeling extends Component {
     }
 
     renderStrategicModelingLeft = () => {
-        if(!this.state.isHovering){
+        if(this.state.isHovering){
             return(
                 <StrategicModelingLeft/>
             )
@@ -86,7 +86,7 @@ export class StrategicModeling extends Component {
     }
 
     renderStrategicModelingRight = () => {
-        if(this.state.isHovering){
+        if(!this.state.isHovering){
             return(
                 <StrategicModelingRight/>
             )
@@ -158,7 +158,7 @@ export class StrategicModeling extends Component {
                     <div className="strategicModeling-wrapper3">
                         <Button
                             className="strategicModeling-button"
-                            // onClick={this.props.raisePrice}
+                            onClick={this.props.startNewTournament}
                             text={"New Tournament"}
                         />
                         <div>Cost: 1000 Yomi</div>
@@ -180,6 +180,7 @@ export default connect(
     (dispatch) => {
         return {
             toggleDropdownStrategicModeling: bindActionCreators(Actions.toggleDropdownStrategicModeling, dispatch),
+            startNewTournament: bindActionCreators(Actions.startNewTournament, dispatch),
         };
     }
 )(StrategicModeling);

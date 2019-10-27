@@ -966,7 +966,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.IMPROVE_MEGA_CLIPPERS:
             return improveMegaClippers(state, action);  
         case actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS:
-            return switchOffOrOnAutoAndMegaClippers(state, action);  
+            return switchOffOrOnAutoAndMegaClippers(state, action); 
+        case actionTypes.START_NEW_TOURNAMENT:
+            return state; 
         default: 
             return state;
     }

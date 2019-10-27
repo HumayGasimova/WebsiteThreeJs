@@ -36,3 +36,5 @@ export { throwLexicalProcessingEpic } from './throwLexicalProcessingEpic';
 export { throwMegaClippersEpic } from './throwMegaClippersEpic';
 export { throwTheHadwingerProblemEpic } from './throwTheHadwingerProblemEpic';
 export { throwTheTothSausageConjectureEpic } from './throwTheTothSausageConjectureEpic';
+
+export { startNewTournamentEpic } from './startNewTournamentEpic';
