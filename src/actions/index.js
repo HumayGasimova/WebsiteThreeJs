@@ -118,5 +118,6 @@ export {
     startNewTournament,
     tournamentState,
     updateNewTournamentCost,
-    toggleNewTournamentButton
+    toggleNewTournamentButton,
+    startRunningStrategicModeling
 } from './businessActions';

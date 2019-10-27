@@ -46,7 +46,7 @@ export const initialState = {
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
     showInvestmentEngine: false, //false
-    showStrategicModeling: false, //false
+    showStrategicModeling: true, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
@@ -1008,7 +1008,8 @@ const businessReducer = (state = initialState, action) => {
             return updateNewTournamentCost(state, action); 
         case actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON:
             return toggleNewTournamentButton(state, action); 
-                     
+        case actionTypes.START_RUNNING_STRATEGIC_MODELING :
+            return state;             
             
         default: 
             return state;

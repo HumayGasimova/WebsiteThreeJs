@@ -152,7 +152,7 @@ export class StrategicModeling extends Component {
                         />
                         <Button
                             className="strategicModeling-button-run"
-                            // onClick={this.props.lowerPrice}
+                            onClick={this.props.startRunningStrategicModeling}
                             text={"Run"}
                             disabled={!this.props.tournamentContinues}
                         />
@@ -201,6 +201,7 @@ export default connect(
         return {
             toggleDropdownStrategicModeling: bindActionCreators(Actions.toggleDropdownStrategicModeling, dispatch),
             startNewTournament: bindActionCreators(Actions.startNewTournament, dispatch),
+            startRunningStrategicModeling: bindActionCreators(Actions.startRunningStrategicModeling, dispatch),
         };
     }
 )(StrategicModeling);

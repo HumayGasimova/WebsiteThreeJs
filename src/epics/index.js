@@ -38,3 +38,5 @@ export { throwTheHadwingerProblemEpic } from './throwTheHadwingerProblemEpic';
 export { throwTheTothSausageConjectureEpic } from './throwTheTothSausageConjectureEpic';
 
 export { startNewTournamentEpic } from './startNewTournamentEpic';
+export { startRunningStrategicModelingEpic } from './startRunningStrategicModelingEpic';
+

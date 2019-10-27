@@ -778,5 +778,11 @@ export function toggleNewTournamentButton() {
     };
 };
 
+export function startRunningStrategicModeling() {
+    return { 
+        type: actionTypes.START_RUNNING_STRATEGIC_MODELING
+    };
+};
+
 
 

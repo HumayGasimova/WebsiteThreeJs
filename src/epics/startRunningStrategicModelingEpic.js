@@ -14,16 +14,16 @@ import * as Actions from '../actions';
 // import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
 
 
-export const startNewTournamentEpic = (action$, state$) => 
-action$.pipe(
-    ofType(actionTypes.START_NEW_TOURNAMENT),
-    mergeMap(action => {
+export const startRunningStrategicModelingEpic = (action$, state$) => 
+    action$.pipe(
+        ofType(actionTypes.START_RUNNING_STRATEGIC_MODELING),
+        mergeMap(action => {
 
-        return of(
-          Actions.tournamentState(true),
-          Actions.toggleNewTournamentButton(),
-        ) 
-    })
-  ) 
+            return of(
+            Actions.tournamentState(false),
+            Actions.toggleNewTournamentButton(),
+            ) 
+        })
+    ) 
     
-export default startNewTournamentEpic;
+export default startRunningStrategicModelingEpic;
