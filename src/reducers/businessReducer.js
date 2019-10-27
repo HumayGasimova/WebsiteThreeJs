@@ -46,7 +46,7 @@ export const initialState = {
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
     showInvestmentEngine: false, //false
-    showStrategicModeling: false, //false
+    showStrategicModeling: true, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
