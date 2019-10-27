@@ -1,7 +1,11 @@
 .strategicModelingLeft {
     border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
     .strategicModelingLeft-list {
-        font-size: 13px;
-        font-weight: 100;
+        width: 150px;
+        padding-top: 3px;
+        font-size: 15px;
+        font-weight: bold;
     }
 }
