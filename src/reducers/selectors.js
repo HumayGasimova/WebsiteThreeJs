@@ -440,3 +440,10 @@ export const getTournamentContinuesState = createSelector(
     [getTournamentContinues],
     (x) => x
 );
+
+const getNewTournamentCost = (state) => state.business.newTournamentCost;
+
+export const getNewTournamentCostState = createSelector(
+    [getNewTournamentCost],
+    (x) => x
+);

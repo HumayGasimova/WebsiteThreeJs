@@ -163,7 +163,7 @@ export class StrategicModeling extends Component {
                             text={"New Tournament"}
                             disabled={this.props.tournamentContinues}
                         />
-                        <div>Cost: 1000 ops</div>
+                        <div>Cost: {this.props.newTournamentCost} ops</div>
                     </div>
                 </div>
             </div>
@@ -178,6 +178,8 @@ export default connect(
             showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
             tournamentContinues: Selectors.getTournamentContinuesState(state),
+            newTournamentCost: Selectors.getNewTournamentCostState(state),
+            
         };
     },
     (dispatch) => {
