@@ -57,7 +57,8 @@ export class StrategicModeling extends Component {
     constructor (props){
         super(props);
         this.state = {
-            isHovering: false
+            isHovering: false,
+            newTournamentButtonDisabled: false
         }
     }
 
@@ -114,7 +115,19 @@ export class StrategicModeling extends Component {
         //     )
         // }
     }
-    
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevState.ops !== this.props.ops) {
+    //         if(!this.props.newTournamentCost <= this.props.ops && !this.props.tournamentContinues){
+    //             this.setState({
+    //                 newTournamentButtonDisabled:
+    //             })
+    //         }
+   
+    //     }
+      
+    // }
+
     /**
     * Markup
     */
@@ -161,7 +174,7 @@ export class StrategicModeling extends Component {
                             className="strategicModeling-button"
                             onClick={this.props.startNewTournament}
                             text={"New Tournament"}
-                            disabled={this.props.tournamentContinues}
+                            disabled={this.props.newTournamentButtonDisabled}
                         />
                         <div>Cost: {this.props.newTournamentCost} ops</div>
                     </div>
@@ -179,6 +192,8 @@ export default connect(
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
             tournamentContinues: Selectors.getTournamentContinuesState(state),
             newTournamentCost: Selectors.getNewTournamentCostState(state),
+            ops: Selectors.getOpsState(state),
+            newTournamentButtonDisabled: Selectors.getNewTournamentButtonDisabledState(state),
             
         };
     },

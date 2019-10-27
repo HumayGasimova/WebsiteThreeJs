@@ -43,7 +43,7 @@ export class Game extends Component {
         return(
             <div className="game">
               <Section1/>
-              {/* <Section2/> */}
+              <Section2/>
               <Section3/>
             </div>
         );

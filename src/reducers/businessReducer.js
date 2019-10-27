@@ -46,7 +46,7 @@ export const initialState = {
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
     showInvestmentEngine: false, //false
-    showStrategicModeling: true, //false
+    showStrategicModeling: false, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
@@ -79,7 +79,8 @@ export const initialState = {
     megaClippersPerSec: 0,
     autoAndMegaClippersWorks: false,
     tournamentContinues: false,
-    newTournamentCost: 1000
+    newTournamentCost: 10,
+    newTournamentButtonDisabled: false
 }
 
 const makePaperclip = (state) => {
@@ -749,6 +750,23 @@ const updateNewTournamentCost = (state, action) => {
     });
 }
 
+const toggleNewTournamentButton = (state) => {
+    let opsCheck = state.ops < state.newTournamentCost;
+    let tournamentCheck = state.tournamentContinues;
+    let isDisable;
+
+    if( opsCheck && !tournamentCheck || opsCheck && tournamentCheck || !opsCheck && tournamentCheck){
+        isDisable = true
+    }
+  
+    if( !opsCheck && !tournamentCheck ){
+        isDisable = false
+    }
+    console.log("GF", opsCheck, tournamentCheck)
+    return updateObject(state, {
+        newTournamentButtonDisabled: isDisable
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -988,7 +1006,9 @@ const businessReducer = (state = initialState, action) => {
             return tournamentState(state, action); 
         case actionTypes.UPDATE_NEW_TOURNAMENT_COST:
             return updateNewTournamentCost(state, action); 
-            
+        case actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON:
+            return toggleNewTournamentButton(state, action); 
+                     
             
         default: 
             return state;

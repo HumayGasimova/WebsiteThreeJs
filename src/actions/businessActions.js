@@ -772,5 +772,11 @@ export function updateNewTournamentCost() {
     };
 };
 
+export function toggleNewTournamentButton() {
+    return { 
+        type: actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON
+    };
+};
+
 
 

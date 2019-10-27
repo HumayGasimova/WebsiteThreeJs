@@ -21,7 +21,8 @@ action$.pipe(
 
 
         return of(
-          Actions.tournamentState(true)
+          Actions.tournamentState(true),
+          Actions.toggleNewTournamentButton(),
         ) 
     })
   ) 

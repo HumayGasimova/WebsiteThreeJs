@@ -447,3 +447,10 @@ export const getNewTournamentCostState = createSelector(
     [getNewTournamentCost],
     (x) => x
 );
+
+const getNewTournamentButtonDisabled = (state) => state.business.newTournamentButtonDisabled;
+
+export const getNewTournamentButtonDisabledState = createSelector(
+    [getNewTournamentButtonDisabled],
+    (x) => x
+);

@@ -263,6 +263,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showStrategicModeling();
+                this.props.toggleNewTournamentButton();
                 break;
             case 'newStrategyA100':
                 this.props.addProject(projectsToAdd.NewStrategyB100);
@@ -517,6 +518,7 @@ export default connect(
             improveMegaClippers: bindActionCreators(Actions.improveMegaClippers, dispatch),
             switchOffOrOnAutoAndMegaClippers: bindActionCreators(Actions.switchOffOrOnAutoAndMegaClippers, dispatch),
             updateNewTournamentCost: bindActionCreators(Actions.updateNewTournamentCost, dispatch),
+            toggleNewTournamentButton: bindActionCreators(Actions.toggleNewTournamentButton, dispatch)
         };
     }
 )(Projects);

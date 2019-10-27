@@ -20,6 +20,7 @@ export const checkButtonsEpic = (action$, state$) =>
                 Actions.toggleMarketingButton(),
                 Actions.toggleAutoClippersButton(),
                 Actions.toggleMegaClippersButton(),
+                Actions.toggleNewTournamentButton(),
             )        
         })
     )
