@@ -887,6 +887,31 @@ export const QuantumTemporalReversion = {
     terminal: ""
 }
 
-
-
+//$1000000
+export const HostileTakeover = {
+    text1: "Hostile Takeover ($1,000,000)",
+    text2: "Acquire a controlling interest in Global",
+    text3: "Fasteners, our biggest rival. (+1 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'quantumTemporalReversion',
+    valid: false,
+    id: "",
+    terminal: "Global Fasteners acquired, public demand increased x5"
+}
+export const FullMonopoly = {
+    text1: "Full Monopoly (3,000 yomi, $10,000,000)",
+    text2: "Establish full control over the world-wide",
+    text3: "paperclip market. (+1 Trust)",
+    price: {
+        ops: 3
+    },
+    action: 1,
+    next: 'quantumTemporalReversion',
+    valid: false,
+    id: "",
+    terminal: "Global Fasteners acquired, public demand increased x5"
+}
 
