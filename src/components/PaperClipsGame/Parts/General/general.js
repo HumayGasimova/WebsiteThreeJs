@@ -19,7 +19,6 @@ import {
 */
 
 import Button from '../../../../library/Button/button';
-import Hover from '../../SmallParts/Hover/hover';
 
 /**
 * Styles

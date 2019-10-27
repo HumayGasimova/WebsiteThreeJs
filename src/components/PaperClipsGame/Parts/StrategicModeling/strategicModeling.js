@@ -56,13 +56,42 @@ export class StrategicModeling extends Component {
 
     constructor (props){
         super(props);
-        this.state = {}
-        
+        this.state = {
+            isHovering: false
+        }
     }
 
     /**
     * Methods
     */
+
+    handleMouseEnter = () => {
+        this.setState({
+            isHovering: true
+        })
+    }
+
+    handleMouseLeave = () => {
+        this.setState({
+            isHovering: false
+        })
+    }
+
+    renderStrategicModelingLeft = () => {
+        if(!this.state.isHovering){
+            return(
+                <StrategicModelingLeft/>
+            )
+        }
+    }
+
+    renderStrategicModelingRight = () => {
+        if(this.state.isHovering){
+            return(
+                <StrategicModelingRight/>
+            )
+        }
+    }
 
     renderGrid = () => {
         // if(true){
@@ -115,9 +144,13 @@ export class StrategicModeling extends Component {
                         />
                     </div>
                     <div>Pick strategy, run tournament, gain yomi</div>
-                    <div className="strategicModeling-wrapper2">
-                        {/* <StrategicModelingLeft/> */}
-                        <StrategicModelingRight/>
+                    <div 
+                        onMouseEnter={this.handleMouseEnter} 
+                        onMouseLeave={this.handleMouseLeave} 
+                        className="strategicModeling-wrapper2"
+                    >
+                        {this.renderStrategicModelingLeft()}
+                        {this.renderStrategicModelingRight()}
                     </div>
                    
                 </div>

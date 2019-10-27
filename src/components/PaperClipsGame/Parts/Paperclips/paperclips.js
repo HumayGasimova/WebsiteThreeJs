@@ -213,7 +213,6 @@ export class Paperclips extends Component {
                 </Hover>
             )
         }
-       
     }
     
     /**

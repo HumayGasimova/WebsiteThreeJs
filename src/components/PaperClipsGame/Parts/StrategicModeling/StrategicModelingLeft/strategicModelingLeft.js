@@ -65,6 +65,7 @@ export class StrategicModelingLeft extends Component {
     render(){
         return(
             <div className="strategicModelingLeft">
+                <div className="strategicModelingLeft-list">1:Random: 888</div>
                
             </div>
         );
