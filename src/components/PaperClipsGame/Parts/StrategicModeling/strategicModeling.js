@@ -141,6 +141,7 @@ export class StrategicModeling extends Component {
                             className="strategicModeling-button-run"
                             // onClick={this.props.lowerPrice}
                             text={"Run"}
+                            disabled={!this.props.tournamentContinues}
                         />
                     </div>
                     <div>Pick strategy, run tournament, gain yomi</div>
@@ -160,8 +161,9 @@ export class StrategicModeling extends Component {
                             className="strategicModeling-button"
                             onClick={this.props.startNewTournament}
                             text={"New Tournament"}
+                            disabled={this.props.tournamentContinues}
                         />
-                        <div>Cost: 1000 Yomi</div>
+                        <div>Cost: 1000 ops</div>
                     </div>
                 </div>
             </div>
@@ -175,6 +177,7 @@ export default connect(
             listStrategicModeling: Selectors.getListStrategicModelingState(state),
             showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
+            tournamentContinues: Selectors.getTournamentContinuesState(state),
         };
     },
     (dispatch) => {

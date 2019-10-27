@@ -18,8 +18,10 @@ export const startNewTournamentEpic = (action$, state$) =>
 action$.pipe(
     ofType(actionTypes.START_NEW_TOURNAMENT),
     mergeMap(action => {
+
+
         return of(
-          Actions.addProject(projectsToAdd.Creativity)
+          Actions.tournamentState(true)
         ) 
     })
   ) 

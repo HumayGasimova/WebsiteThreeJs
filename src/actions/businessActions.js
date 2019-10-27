@@ -750,10 +750,19 @@ export function switchOffOrOnAutoAndMegaClippers(val) {
     };
 };
 
+
+
+
 export function startNewTournament() {
     return { 
         type: actionTypes.START_NEW_TOURNAMENT
     };
 };
 
+export function tournamentState(val) {
+    return { 
+        type: actionTypes.TOURNAMENT_STATE,
+        val: val
+    };
+};
 

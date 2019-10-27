@@ -77,7 +77,8 @@ export const initialState = {
     avgClipsSoldPerSec: 0,
     megaClippersToAdd: 500,
     megaClippersPerSec: 0,
-    autoAndMegaClippersWorks: false
+    autoAndMegaClippersWorks: false,
+    tournamentContinues: false
 }
 
 const makePaperclip = (state) => {
@@ -735,6 +736,14 @@ const switchOffOrOnAutoAndMegaClippers = (state, action) => {
     });
 }
 
+const tournamentState = (state, action) => {
+    return updateObject(state, {
+        tournamentContinues: action.val
+    });
+}
+
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -969,6 +978,9 @@ const businessReducer = (state = initialState, action) => {
             return switchOffOrOnAutoAndMegaClippers(state, action); 
         case actionTypes.START_NEW_TOURNAMENT:
             return state; 
+        case actionTypes.TOURNAMENT_STATE:
+            return tournamentState(state, action); 
+            
         default: 
             return state;
     }

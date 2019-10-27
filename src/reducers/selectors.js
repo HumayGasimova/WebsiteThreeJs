@@ -433,3 +433,10 @@ export const getTimeState = createSelector(
     [getTime],
     (x) => x
 );
+
+const getTournamentContinues = (state) => state.business.tournamentContinues;
+
+export const getTournamentContinuesState = createSelector(
+    [getTournamentContinues],
+    (x) => x
+);
