@@ -23,6 +23,9 @@ import Grid from '../../SmallParts/Grid/grid';
 import Dropdown from '../../SmallParts/Dropdown/dropdown';
 import Backdrop from '../../SmallParts/Backdrop/backdrop';
 
+import StrategicModelingLeft from './StrategicModelingLeft/strategicModelingLeft';
+import StrategicModelingRight from './StrategicModelingRight/strategicModelingRight';
+
 /**
 * Styles
 */
@@ -112,8 +115,9 @@ export class StrategicModeling extends Component {
                         />
                     </div>
                     <div>Pick strategy, run tournament, gain yomi</div>
-                    <div className="strategicModeling-wrapper1">
-                        
+                    <div className="strategicModeling-wrapper2">
+                        {/* <StrategicModelingLeft/> */}
+                        <StrategicModelingRight/>
                     </div>
                    
                 </div>

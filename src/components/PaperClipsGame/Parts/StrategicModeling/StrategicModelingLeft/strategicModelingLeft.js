@@ -18,11 +18,6 @@ import {
 * Components
 */
 
-import Button from '../../../../library/Button/button';
-import Grid from '../../SmallParts/Grid/grid';
-import Dropdown from '../../SmallParts/Dropdown/dropdown';
-import Backdrop from '../../SmallParts/Backdrop/backdrop';
-
 /**
 * Styles
 */

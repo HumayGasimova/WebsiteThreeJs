@@ -18,10 +18,6 @@ import {
 * Components
 */
 
-import Button from '../../../../library/Button/button';
-import Grid from '../../SmallParts/Grid/grid';
-import Dropdown from '../../SmallParts/Dropdown/dropdown';
-import Backdrop from '../../SmallParts/Backdrop/backdrop';
 
 /**
 * Styles
@@ -69,8 +65,23 @@ export class StrategicModelingRight extends Component {
 
     render(){
         return(
-            <div className="strategicModelingLeft">
-               
+            <div className="strategicModelingRight">
+                <div className="strategicModelingRight-row">
+                    <div className="strategicModelingRight-column-header"></div>
+                    <div className="strategicModelingRight-column-header">Move A</div>
+                    <div className="strategicModelingRight-column-header">Move B</div>
+                </div>
+                <div className="strategicModelingRight-row">
+                    <div className="strategicModelingRight-column-header">Move A</div>
+                    <div className="strategicModelingRight-column-1">34</div>
+                    <div className="strategicModelingRight-column-2">5</div>
+                </div>
+                <div className="strategicModelingRight-row">
+                    <div className="strategicModelingRight-column-header">Move B</div>
+                    <div className="strategicModelingRight-column-3">5</div>
+                    <div className="strategicModelingRight-column-4">34</div>
+                </div>
+              
             </div>
         );
     }

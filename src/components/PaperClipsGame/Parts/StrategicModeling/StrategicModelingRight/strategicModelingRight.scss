@@ -1,0 +1,52 @@
+.strategicModelingRight {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    left: 55px;
+    bottom: -20px;
+    padding: 13px 10px 13px 10px;
+    .strategicModelingRight-row{
+        height: 20px;
+        display: flex;
+        text-align: center;
+        font-size: 13px;
+        font-family: 'Oxygen Mono', monospace;
+
+        .strategicModelingRight-column-header{
+            width: 100px;
+            height: 18px;
+            padding-top: 2px;
+        }
+        .strategicModelingRight-column-1 {
+            border: 1px solid black;
+            width: 100px;
+            height: 18px;
+            padding-top: 2px;
+        }
+        .strategicModelingRight-column-2 {
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            width: 100px;
+            height: 18px;
+            padding-top: 2px;
+        }
+        .strategicModelingRight-column-3 {
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            width: 100px;
+            height: 18px;
+            padding-top: 2px;
+        }
+        .strategicModelingRight-column-4 {
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            width: 100px;
+            height: 18px;
+            padding-top: 2px;
+        }
+    }
+   
+}
+

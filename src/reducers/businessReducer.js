@@ -4,7 +4,7 @@ import {
   } from './utility';
 
 export const initialState = {
-    paperClips: 0, //0
+    paperClips: 2000, //0
     clipsPerSec: 0,
     funds: 1200, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
