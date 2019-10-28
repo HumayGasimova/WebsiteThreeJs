@@ -842,6 +842,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (tournamentState) 1`] = `
+Array [
+  Object {
+    "type": "TOURNAMENT_STATE",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (trustPlusOne) 1`] = `
 Array [
   Object {
