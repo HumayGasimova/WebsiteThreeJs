@@ -778,7 +778,7 @@ const updateStrategicModelingData = (state, action) => {
 
 const updateStrategicModelingCurrentList = (state, action) => {
     let updatedStrategicModelingCurrentList = [...state.strategicModelingCurrentList];
-    updatedStrategicModelingCurrentList.push(action.obj)
+    updatedStrategicModelingCurrentList.unshift(action.obj)
     return updateObject(state, {
         strategicModelingCurrentList: updatedStrategicModelingCurrentList
     });

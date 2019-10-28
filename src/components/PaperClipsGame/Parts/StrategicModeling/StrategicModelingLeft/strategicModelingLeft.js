@@ -58,7 +58,7 @@ export class StrategicModelingLeft extends Component {
 
     renderList = () => {
         return(
-            <div>
+            <div className="strategicModelingLeft">
                 {this.props.strategicModelingCurrentList.map((el, i)=>{
                     return(
                         <div key={i} className={el.chosen ? "strategicModelingLeft-list-bold" : "strategicModelingLeft-list"}>
@@ -76,7 +76,7 @@ export class StrategicModelingLeft extends Component {
 
     render(){
         return(
-            <div className="strategicModelingLeft">
+            <div>
                 {this.renderList()}
             </div>
         );

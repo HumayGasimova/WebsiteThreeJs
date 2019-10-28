@@ -1,6 +1,9 @@
 .strategicModelingLeft {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 103px;
     .strategicModelingLeft-list {
         width: 150px;
         padding-top: 3px;
