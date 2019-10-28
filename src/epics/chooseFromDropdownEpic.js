@@ -61,7 +61,7 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                 case 'RANDOM':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
-                        Actions.closeDropdowns()
+                        Actions.closeDropdowns(),
                     ) 
                 break;
                 case 'A100':

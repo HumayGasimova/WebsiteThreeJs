@@ -17,27 +17,66 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_RUNNING_STRATEGIC_MODELING),
         mergeMap(action => {
-           switch(state$.value.business.listStrategicModeling){
+            console.log(state$.value.business.chosenListDropdown[1])
+           switch(state$.value.business.chosenListDropdown[1]){
+                case "RANDOM":
+                    return of(
+                        // Actions.strategyChosen("RANDOM", true),
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("RANDOM", true),
+
+                    ) 
+                break;
                 case "A100":
-                    return
+                    return of(
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("A100", true)
+
+                    ) 
                     break;
                 case "B100":
-                    return
+                    return of(
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("B100", true)
+                    ) 
                     break;
                 case "GREEDY":
-                    return
+                    return of(
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("GREEDY", true)
+                    ) 
                     break;
                 case "GENEROUS":
-                    return
+                    return of(
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("GENEROUS", true)
+                    ) 
                     break;
                 case "MINIMAX":
-                    return
+                    return of(
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("MINIMAX", true)
+                    ) 
                     break;
                 case "TIT FOR TAT":
-                    return
+                    return of(
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("TIT FOR TAT", true)
+                    ) 
                     break;
                 case "BEAT LAST":
-                    return
+                    return of(
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.strategyChosen("BEAT LAST", true)
+                    ) 
                     break;
            }
             return of(

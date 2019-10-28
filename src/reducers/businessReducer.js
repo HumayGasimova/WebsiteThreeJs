@@ -748,7 +748,7 @@ const tournamentState = (state, action) => {
 
 const updateNewTournamentCost = (state, action) => {
     return updateObject(state, {
-        newTournamentCost: state.newTournamentCost + 1000
+        newTournamentCost: state.newTournamentCost + 10//+1000
     });
 }
 
@@ -783,6 +783,20 @@ const updateStrategicModelingCurrentList = (state, action) => {
         strategicModelingCurrentList: updatedStrategicModelingCurrentList
     });
 }
+
+const strategyChosen = (state, action) => {
+    let updatedStrategicModelingCurrentList = [...state.strategicModelingCurrentList];
+    let strategyType = updatedStrategicModelingCurrentList.find(str => str.strategy === action.strategy);
+    let strategyTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === action.strategy);
+    strategyType.chosen = action.val;
+    updatedStrategicModelingCurrentList.splice(strategyTypeIndex, 1, strategyType);
+
+    console.log("RESalt",strategyType, updatedStrategicModelingCurrentList)
+    return updateObject(state, {
+        strategicModelingCurrentList: updatedStrategicModelingCurrentList
+    });
+}
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1033,7 +1047,8 @@ const businessReducer = (state = initialState, action) => {
             return updateStrategicModelingData(state, action);  
         case actionTypes.UPDATE_STRATEGIC_MODELING_CURRENT_LIST:
             return updateStrategicModelingCurrentList(state, action);  
-            
+        case actionTypes.STRATEGY_CHOSEN:
+            return strategyChosen(state, action);    
         default: 
             return state;
     }

@@ -798,3 +798,10 @@ export function updateStrategicModelingCurrentList(obj) {
     };
 };
 
+export function strategyChosen(strategy, val) {
+    return { 
+        type: actionTypes.STRATEGY_CHOSEN,
+        strategy: strategy, 
+        val: val
+    };
+};

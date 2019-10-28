@@ -121,5 +121,6 @@ export {
     toggleNewTournamentButton,
     startRunningStrategicModeling,
     updateStrategicModelingData,
-    updateStrategicModelingCurrentList
+    updateStrategicModelingCurrentList,
+    strategyChosen
 } from './businessActions';
