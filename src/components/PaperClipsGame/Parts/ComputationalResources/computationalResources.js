@@ -141,7 +141,7 @@ export class ComputationalResources extends Component {
             if(this.props.creativity === 200){
                 this.props.addTheTothSausageConjecture();
             }
-            if(this.props.creativity === 250){
+            if(this.props.creativity === 10){
                 this.props.addDonkeySpace();
             }
         }

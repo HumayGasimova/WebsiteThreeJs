@@ -62,7 +62,7 @@ export class StrategicModelingLeft extends Component {
                 {this.props.strategicModelingCurrentList.map((el, i)=>{
                     return(
                         <div key={i} className={el.chosen ? "strategicModelingLeft-list-bold" : "strategicModelingLeft-list"}>
-                            {el.id}. {el.strategy}: {el.val}
+                            {i+1}. {el.strategy}: {el.val}
                         </div>
                     )})
                 }
