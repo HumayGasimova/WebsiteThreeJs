@@ -636,6 +636,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startRunningStrategicModeling) 1`] = `
+Array [
+  Object {
+    "type": "START_RUNNING_STRATEGIC_MODELING",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startSubtractingQOps) 1`] = `
 Array [
   Object {

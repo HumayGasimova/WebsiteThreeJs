@@ -1503,5 +1503,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (startRunningStrategicModeling)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_RUNNING_STRATEGIC_MODELING
+            }
+        ];
+
+        store.dispatch(Actions.startRunningStrategicModeling());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
