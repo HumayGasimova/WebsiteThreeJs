@@ -157,7 +157,7 @@ export class StrategicModeling extends Component {
                             disabled={!this.props.tournamentContinues}
                         />
                     </div>
-                    <div>Pick strategy, run tournament, gain yomi</div>
+                    <div className="strategicModeling-text">Pick strategy, run tournament, gain yomi</div>
                     <div 
                         onMouseEnter={this.handleMouseEnter} 
                         onMouseLeave={this.handleMouseLeave} 
@@ -166,7 +166,7 @@ export class StrategicModeling extends Component {
                         {this.renderStrategicModelingLeft()}
                         {this.renderStrategicModelingRight()}
                     </div>
-                   
+                    <div className="strategicModeling-section">Yomi: 0</div>
                 </div>
                 <div>
                     <div className="strategicModeling-wrapper3">

@@ -37,15 +37,15 @@ action$.pipe(
               break;
           case 4:
               moveA = 'fight';
-              moveB = 'back down';
+              moveB = 'back_down';
               break;
           case 5:
               moveA = 'bet';
               moveB = 'fold';
               break;
           case 6:
-              moveA = 'raise price';
-              moveB = 'lower price';
+              moveA = 'raise_price';
+              moveB = 'lower_price';
               break;
           case 7:
               moveA = 'opera';

@@ -1,12 +1,12 @@
 .strategicModelingRight {
-    width: 285px;
+    width: 225px;
     height: 60px;
     position: relative;
-    left: 25px;
+    left: 88px;
     bottom: -20px;
     padding: 13px 10px 13px 10px;
     .strategicModelingRight-row{
-        height: 23px;
+        height: 18px;
         display: flex;
         text-align: center;
         font-size: 13px;
@@ -14,37 +14,39 @@
 
         .strategicModelingRight-column-header{
             width: 100px;
-            height: 20px;
-            padding-top: 3px;
+            height: 16px;
+            padding-top: 2px;
+            font-weight: bold;
+            font-size: 14px;
         }
-        .strategicModelingRight-column-1 {
+        .strategicModelingRight-cell-1 {
             border: 1px solid black;
             width: 100px;
-            height: 20px;
-            padding-top: 3px;
+            height: 16px;
+            // padding-top: 2px;
         }
-        .strategicModelingRight-column-2 {
+        .strategicModelingRight-cell-2 {
             border-top: 1px solid black;
             border-right: 1px solid black;
             border-bottom: 1px solid black;
             width: 100px;
-            height: 20px;
-            padding-top: 3px;
+            height: 16px;
+            // padding-top: 2px;
         }
-        .strategicModelingRight-column-3 {
+        .strategicModelingRight-cell-3 {
             border-left: 1px solid black;
             border-bottom: 1px solid black;
             border-right: 1px solid black;
             width: 100px;
-            height: 20px;
-            padding-top: 3px;
+            height: 17px;
+            // padding-top: 2px;
         }
-        .strategicModelingRight-column-4 {
+        .strategicModelingRight-cell-4 {
             border-bottom: 1px solid black;
             border-right: 1px solid black;
             width: 100px;
-            height: 20px;
-            padding-top: 3px;
+            height: 17px;
+            // padding-top: 2px;
         }
     }
    
