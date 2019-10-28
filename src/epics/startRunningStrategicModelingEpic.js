@@ -26,8 +26,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.toggleNewTournamentButton(),
                         Actions.clearChosenFromStrategicModelingDropdownList()
 
-                    ) 
-                break;
+                    )
                 case "RANDOM":
                     return of(
                         // Actions.strategyChosen("RANDOM", true),
@@ -36,8 +35,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("RANDOM", true),
 
-                    ) 
-                break;
+                    )
                 case "A100":
                     return of(
                         Actions.tournamentState(false),
@@ -45,56 +43,49 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("A100", true)
 
-                    ) 
-                    break;
+                    )
                 case "B100":
                     return of(
                         Actions.tournamentState(false),
                         Actions.toggleNewTournamentButton(),
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("B100", true)
-                    ) 
-                    break;
+                    )
                 case "GREEDY":
                     return of(
                         Actions.tournamentState(false),
                         Actions.toggleNewTournamentButton(),
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("GREEDY", true)
-                    ) 
-                    break;
+                    )
                 case "GENEROUS":
                     return of(
                         Actions.tournamentState(false),
                         Actions.toggleNewTournamentButton(),
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("GENEROUS", true)
-                    ) 
-                    break;
+                    )
                 case "MINIMAX":
                     return of(
                         Actions.tournamentState(false),
                         Actions.toggleNewTournamentButton(),
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("MINIMAX", true)
-                    ) 
-                    break;
+                    )
                 case "TIT FOR TAT":
                     return of(
                         Actions.tournamentState(false),
                         Actions.toggleNewTournamentButton(),
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("TIT FOR TAT", true)
-                    ) 
-                    break;
+                    )
                 case "BEAT LAST":
                     return of(
                         Actions.tournamentState(false),
                         Actions.toggleNewTournamentButton(),
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.strategyChosen("BEAT LAST", true)
-                    ) 
-                    break;
+                    )
            }
             return of(
                 Actions.tournamentState(false),
