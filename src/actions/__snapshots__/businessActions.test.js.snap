@@ -982,6 +982,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateNewTournamentCost) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_NEW_TOURNAMENT_COST",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateOps) 1`] = `
 Array [
   Object {
