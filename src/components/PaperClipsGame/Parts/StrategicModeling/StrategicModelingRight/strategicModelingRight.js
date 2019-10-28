@@ -72,12 +72,20 @@ export class StrategicModelingRight extends Component {
                     <div className="strategicModelingRight-column-header">{this.props.strategicModelingData.moveB}</div>
                 </div>
                 <div className="strategicModelingRight-row">
-                    <div className="strategicModelingRight-column-header">{this.props.strategicModelingData.moveA}</div>
+                    <div className="strategicModelingRight-column-header">
+                        <div className="strategicModelingRight-column-header-left">
+                            {this.props.strategicModelingData.moveA}
+                        </div>
+                    </div>
                     <div className="strategicModelingRight-cell-1">{this.props.strategicModelingData.cell1}</div>
                     <div className="strategicModelingRight-cell-2">{this.props.strategicModelingData.cell2}</div>
                 </div>
                 <div className="strategicModelingRight-row">
-                    <div className="strategicModelingRight-column-header">{this.props.strategicModelingData.moveB}</div>
+                    <div className="strategicModelingRight-column-header">
+                        <div className="strategicModelingRight-column-header-left">
+                            {this.props.strategicModelingData.moveB}
+                        </div>
+                    </div>
                     <div className="strategicModelingRight-cell-3">{this.props.strategicModelingData.cell3}</div>
                     <div className="strategicModelingRight-cell-4">{this.props.strategicModelingData.cell4}</div>
                 </div>

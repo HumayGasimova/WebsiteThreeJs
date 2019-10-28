@@ -1,8 +1,8 @@
 .strategicModelingRight {
-    width: 225px;
+    width: 285px;
     height: 60px;
     position: relative;
-    left: 88px;
+    left: 35px;
     bottom: -20px;
     padding: 13px 10px 13px 10px;
     .strategicModelingRight-row{
@@ -17,7 +17,12 @@
             height: 16px;
             padding-top: 2px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 12px;
+            .strategicModelingRight-column-header-left {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 3px;
+            }
         }
         .strategicModelingRight-cell-1 {
             border: 1px solid black;
