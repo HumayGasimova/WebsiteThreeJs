@@ -44,6 +44,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import * as projectsToAdd from '../../../../constants/projectsToAdd';
 import * as chipsToAdd from '../../../../constants/chipsToAdd';
+import * as strategyTypes from '../../../../constants/strategyTypes';
 
 /**
 * Projects component definition and export
@@ -270,6 +271,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("A100");
+                this.props.updateStrategicModelingCurrentList(strategyTypes.a100);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyB100':
@@ -277,6 +279,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("B100");
+                this.props.updateStrategicModelingCurrentList(strategyTypes.b100);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyGreedy':
@@ -284,6 +287,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("GREEDY");
+                this.props.updateStrategicModelingCurrentList(strategyTypes.greedy);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyGenerous':
@@ -291,6 +295,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("GENEROUS");
+                this.props.updateStrategicModelingCurrentList(strategyTypes.generous);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyMinimax':
@@ -298,6 +303,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("MINIMAX");
+                this.props.updateStrategicModelingCurrentList(strategyTypes.minimax);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyTitForTat':
@@ -305,6 +311,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("TIT FOR TAT");
+                this.props.updateStrategicModelingCurrentList(strategyTypes.titForTat);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyTitForTat':
@@ -312,6 +319,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("BEAT LAST");
+                this.props.updateStrategicModelingCurrentList(strategyTypes.beatLast);
                 this.props.updateNewTournamentCost();
                 break;
             case 'theoryOfMind':
@@ -518,7 +526,8 @@ export default connect(
             improveMegaClippers: bindActionCreators(Actions.improveMegaClippers, dispatch),
             switchOffOrOnAutoAndMegaClippers: bindActionCreators(Actions.switchOffOrOnAutoAndMegaClippers, dispatch),
             updateNewTournamentCost: bindActionCreators(Actions.updateNewTournamentCost, dispatch),
-            toggleNewTournamentButton: bindActionCreators(Actions.toggleNewTournamentButton, dispatch)
+            toggleNewTournamentButton: bindActionCreators(Actions.toggleNewTournamentButton, dispatch),
+            updateStrategicModelingCurrentList: bindActionCreators(Actions.updateStrategicModelingCurrentList, dispatch),
         };
     }
 )(Projects);

@@ -120,5 +120,6 @@ export {
     updateNewTournamentCost,
     toggleNewTournamentButton,
     startRunningStrategicModeling,
-    updateStrategicModelingData
+    updateStrategicModelingData,
+    updateStrategicModelingCurrentList
 } from './businessActions';

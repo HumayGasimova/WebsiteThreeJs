@@ -56,7 +56,19 @@ export class StrategicModelingLeft extends Component {
     * Methods
     */
 
-
+    renderList = () => {
+        return(
+            <div>
+                {this.props.strategicModelingCurrentList.map((el, i)=>{
+                    return(
+                        <div key={i} className={el.chosen ? "strategicModelingLeft-list-bold" : "strategicModelingLeft-list"}>
+                            {el.id}. {el.strategy}: {el.val}
+                        </div>
+                    )})
+                }
+            </div>  
+        )
+    }
     
     /**
     * Markup
@@ -65,18 +77,7 @@ export class StrategicModelingLeft extends Component {
     render(){
         return(
             <div className="strategicModelingLeft">
-                <div>
-                    <div className="strategicModelingLeft-list">1:Random: 88</div>
-                    <div className="strategicModelingLeft-list">2:Random: 88</div>
-                    <div className="strategicModelingLeft-list">3:Random: 88hdft8</div>
-                    <div className="strategicModelingLeft-list">4:Random: 888</div>
-                </div>
-                <div>
-                    <div className="strategicModelingLeft-list">5:Random: 888</div>
-                    <div className="strategicModelingLeft-list">6:Random: 88ht8rtr</div>
-                    <div className="strategicModelingLeft-list">7:Random: 8</div>
-                    <div className="strategicModelingLeft-list">8:Random: 888</div>
-                </div>
+                {this.renderList()}
             </div>
         );
     }
@@ -85,7 +86,7 @@ export class StrategicModelingLeft extends Component {
 export default connect(
     (state) => {
         return {
-            // listStrategicModeling: Selectors.getListStrategicModelingState(state),
+            strategicModelingCurrentList: Selectors.getStrategicModelingCurrentListState(state),
             // showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
             // chosenListDropdown: Selectors.getChosenListDropdownState(state),
         };

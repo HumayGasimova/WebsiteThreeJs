@@ -17,7 +17,29 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_RUNNING_STRATEGIC_MODELING),
         mergeMap(action => {
-           
+           switch(state$.value.business.listStrategicModeling){
+                case "A100":
+                    return
+                    break;
+                case "B100":
+                    return
+                    break;
+                case "GREEDY":
+                    return
+                    break;
+                case "GENEROUS":
+                    return
+                    break;
+                case "MINIMAX":
+                    return
+                    break;
+                case "TIT FOR TAT":
+                    return
+                    break;
+                case "BEAT LAST":
+                    return
+                    break;
+           }
             return of(
                 Actions.tournamentState(false),
                 Actions.toggleNewTournamentButton()

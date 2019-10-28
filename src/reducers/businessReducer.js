@@ -81,7 +81,8 @@ export const initialState = {
     tournamentContinues: false,
     newTournamentCost: 10,
     newTournamentButtonDisabled: false,
-    strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"}
+    strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
+    strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}]
 }
 
 const makePaperclip = (state) => {
@@ -775,6 +776,15 @@ const updateStrategicModelingData = (state, action) => {
     });
 }
 
+const updateStrategicModelingCurrentList = (state, action) => {
+    let updatedStrategicModelingCurrentList = [...state.strategicModelingCurrentList];
+    updatedStrategicModelingCurrentList.push(action.obj)
+    return updateObject(state, {
+        strategicModelingCurrentList: updatedStrategicModelingCurrentList
+    });
+}
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1021,6 +1031,9 @@ const businessReducer = (state = initialState, action) => {
             return state;             
         case actionTypes.UPDATE_STRATEGIC_MODELING_DATA:
             return updateStrategicModelingData(state, action);  
+        case actionTypes.UPDATE_STRATEGIC_MODELING_CURRENT_LIST:
+            return updateStrategicModelingCurrentList(state, action);  
+            
         default: 
             return state;
     }

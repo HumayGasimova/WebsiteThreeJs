@@ -791,3 +791,10 @@ export function updateStrategicModelingData(obj) {
     };
 };
 
+export function updateStrategicModelingCurrentList(obj) {
+    return { 
+        type: actionTypes.UPDATE_STRATEGIC_MODELING_CURRENT_LIST,
+        obj: obj
+    };
+};
+

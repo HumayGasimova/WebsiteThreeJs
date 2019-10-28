@@ -462,4 +462,11 @@ export const getStrategicModelingDataState = createSelector(
     (x) => x
 );
 
+const getStrategicModelingCurrentList = (state) => state.business.strategicModelingCurrentList;
+
+export const getStrategicModelingCurrentListState = createSelector(
+    [getStrategicModelingCurrentList],
+    (x) => x
+);
+
 
