@@ -826,6 +826,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleNewTournamentButton) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_NEW_TOURNAMENT_BUTTON",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleWireButton) 1`] = `
 Array [
   Object {

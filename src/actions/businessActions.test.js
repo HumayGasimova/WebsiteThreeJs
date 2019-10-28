@@ -1492,6 +1492,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
     
-  
+    it('Dispatches the correct action and payload (toggleNewTournamentButton)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON
+            }
+        ];
+
+        store.dispatch(Actions.toggleNewTournamentButton());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
