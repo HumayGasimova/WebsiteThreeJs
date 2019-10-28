@@ -19,6 +19,15 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
         mergeMap(action => {
             console.log(state$.value.business.chosenListDropdown[1])
            switch(state$.value.business.chosenListDropdown[1]){
+                case "Pick a Start":
+                    return of(
+                        // Actions.strategyChosen("RANDOM", true),
+                        Actions.tournamentState(false),
+                        Actions.toggleNewTournamentButton(),
+                        Actions.clearChosenFromStrategicModelingDropdownList()
+
+                    ) 
+                break;
                 case "RANDOM":
                     return of(
                         // Actions.strategyChosen("RANDOM", true),
