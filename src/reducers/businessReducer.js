@@ -791,7 +791,18 @@ const strategyChosen = (state, action) => {
     strategyType.chosen = action.val;
     updatedStrategicModelingCurrentList.splice(strategyTypeIndex, 1, strategyType);
 
-    console.log("RESalt",strategyType, updatedStrategicModelingCurrentList)
+    return updateObject(state, {
+        strategicModelingCurrentList: updatedStrategicModelingCurrentList
+    });
+}
+
+const clearChosenFromStrategicModelingDropdownList = (state, action) => {
+    let updatedStrategicModelingCurrentList = [...state.strategicModelingCurrentList];
+    updatedStrategicModelingCurrentList.map((el,i) => {
+        updatedStrategicModelingCurrentList[i].chosen = false
+    })
+
+    console.log("RESalt",updatedStrategicModelingCurrentList)
     return updateObject(state, {
         strategicModelingCurrentList: updatedStrategicModelingCurrentList
     });
@@ -1048,7 +1059,10 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.UPDATE_STRATEGIC_MODELING_CURRENT_LIST:
             return updateStrategicModelingCurrentList(state, action);  
         case actionTypes.STRATEGY_CHOSEN:
-            return strategyChosen(state, action);    
+            return strategyChosen(state, action);   
+        case actionTypes.CLEAR_CHOSEN_FROM_STRATEGIC_MODELING_DROPDOWN_LIST:
+            return clearChosenFromStrategicModelingDropdownList(state, action);      
+            
         default: 
             return state;
     }

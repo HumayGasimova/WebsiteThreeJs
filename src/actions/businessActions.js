@@ -805,3 +805,10 @@ export function strategyChosen(strategy, val) {
         val: val
     };
 };
+
+export function clearChosenFromStrategicModelingDropdownList() {
+    return { 
+        type: actionTypes.CLEAR_CHOSEN_FROM_STRATEGIC_MODELING_DROPDOWN_LIST
+    };
+};
+
