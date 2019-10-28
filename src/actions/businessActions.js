@@ -750,9 +750,6 @@ export function switchOffOrOnAutoAndMegaClippers(val) {
     };
 };
 
-
-
-
 export function startNewTournament() {
     return { 
         type: actionTypes.START_NEW_TOURNAMENT
@@ -785,4 +782,12 @@ export function startRunningStrategicModeling() {
 };
 
 
+
+
+export function updateStrategicModelingData(obj) {
+    return { 
+        type: actionTypes.UPDATE_STRATEGIC_MODELING_DATA,
+        obj: obj
+    };
+};
 

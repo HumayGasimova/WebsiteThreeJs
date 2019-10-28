@@ -48,3 +48,11 @@ export const getRandomLetters = () => {
 export const getRandomPercent = () => {
     return  (Math.random()*100).toFixed(2);
 } 
+
+export const getRandomMove = () => {
+    return  +(Math.random()*16).toFixed() + 1;
+} 
+
+export const getRandomCellValue = () => {
+    return  +(Math.random()*9).toFixed(1) + 1;
+} 

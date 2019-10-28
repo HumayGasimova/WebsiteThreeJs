@@ -13,15 +13,14 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 // import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
 
-
 export const startRunningStrategicModelingEpic = (action$, state$) => 
     action$.pipe(
         ofType(actionTypes.START_RUNNING_STRATEGIC_MODELING),
         mergeMap(action => {
-
+           
             return of(
-            Actions.tournamentState(false),
-            Actions.toggleNewTournamentButton(),
+                Actions.tournamentState(false),
+                Actions.toggleNewTournamentButton()
             ) 
         })
     ) 

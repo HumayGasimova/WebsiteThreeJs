@@ -80,7 +80,8 @@ export const initialState = {
     autoAndMegaClippersWorks: false,
     tournamentContinues: false,
     newTournamentCost: 10,
-    newTournamentButtonDisabled: false
+    newTournamentButtonDisabled: false,
+    strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"}
 }
 
 const makePaperclip = (state) => {
@@ -768,6 +769,12 @@ const toggleNewTournamentButton = (state) => {
     });
 }
 
+const updateStrategicModelingData = (state, action) => {
+    return updateObject(state, {
+        strategicModelingData: action.obj
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1000,6 +1007,8 @@ const businessReducer = (state = initialState, action) => {
             return improveMegaClippers(state, action);  
         case actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS:
             return switchOffOrOnAutoAndMegaClippers(state, action); 
+
+            
         case actionTypes.START_NEW_TOURNAMENT:
             return state; 
         case actionTypes.TOURNAMENT_STATE:
@@ -1010,7 +1019,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleNewTournamentButton(state, action); 
         case actionTypes.START_RUNNING_STRATEGIC_MODELING :
             return state;             
-            
+        case actionTypes.UPDATE_STRATEGIC_MODELING_DATA:
+            return updateStrategicModelingData(state, action);  
         default: 
             return state;
     }

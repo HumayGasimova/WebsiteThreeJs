@@ -454,3 +454,12 @@ export const getNewTournamentButtonDisabledState = createSelector(
     [getNewTournamentButtonDisabled],
     (x) => x
 );
+
+const getStrategicModelingData = (state) => state.business.strategicModelingData;
+
+export const getStrategicModelingDataState = createSelector(
+    [getStrategicModelingData],
+    (x) => x
+);
+
+
