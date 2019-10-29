@@ -1,59 +1,85 @@
 .strategicModelingRight {
-    width: 285px;
-    height: 60px;
-    position: relative;
-    left: 35px;
-    bottom: -20px;
-    padding: 13px 10px 13px 10px;
-    .strategicModelingRight-row{
-        height: 18px;
+    .strategicModelingRight-first-line-player-1 {
+        border: 2px solid pink;
+    }
+    .strategicModelingRight-second-line {
+        border: 2px solid lightblue;
         display: flex;
-        text-align: center;
-        font-size: 13px;
-        font-family: 'Oxygen Mono', monospace;
-
-        .strategicModelingRight-column-header{
-            width: 100px;
-            height: 16px;
-            padding-top: 2px;
-            font-weight: bold;
-            font-size: 12px;
-            .strategicModelingRight-column-header-left {
-                display: flex;
-                justify-content: flex-end;
-                padding-right: 3px;
+        .strategicModelingRight-player-2 {
+            border: 2px solid green;
+        }
+        .strategicModelingRight-table {
+            border: 2px solid red;
+            display: flex;
+            .strategicModelingRight-column {
+                border: 2px solid blue;
+                .strategicModelingRight-row {
+                    
+                }
             }
         }
-        .strategicModelingRight-cell-1 {
-            border: 1px solid black;
-            width: 100px;
-            height: 16px;
-            // padding-top: 2px;
-        }
-        .strategicModelingRight-cell-2 {
-            border-top: 1px solid black;
-            border-right: 1px solid black;
-            border-bottom: 1px solid black;
-            width: 100px;
-            height: 16px;
-            // padding-top: 2px;
-        }
-        .strategicModelingRight-cell-3 {
-            border-left: 1px solid black;
-            border-bottom: 1px solid black;
-            border-right: 1px solid black;
-            width: 100px;
-            height: 17px;
-            // padding-top: 2px;
-        }
-        .strategicModelingRight-cell-4 {
-            border-bottom: 1px solid black;
-            border-right: 1px solid black;
-            width: 100px;
-            height: 17px;
-            // padding-top: 2px;
-        }
+       
     }
-   
+    
 }
+
+
+// .strategicModelingRight {
+//     width: 285px;
+//     height: 60px;
+//     position: relative;
+//     left: 35px;
+//     bottom: -20px;
+//     padding: 13px 10px 13px 10px;
+//     .strategicModelingRight-row{
+//         height: 18px;
+//         display: flex;
+//         text-align: center;
+//         font-size: 13px;
+//         font-family: 'Oxygen Mono', monospace;
+
+//         .strategicModelingRight-column-header{
+//             width: 100px;
+//             height: 16px;
+//             padding-top: 2px;
+//             font-weight: bold;
+//             font-size: 12px;
+//             .strategicModelingRight-column-header-left {
+//                 display: flex;
+//                 justify-content: flex-end;
+//                 padding-right: 3px;
+//             }
+//         }
+//         .strategicModelingRight-cell-1 {
+//             border: 1px solid black;
+//             width: 100px;
+//             height: 16px;
+//             // padding-top: 2px;
+//         }
+//         .strategicModelingRight-cell-2 {
+//             border-top: 1px solid black;
+//             border-right: 1px solid black;
+//             border-bottom: 1px solid black;
+//             width: 100px;
+//             height: 16px;
+//             // padding-top: 2px;
+//         }
+//         .strategicModelingRight-cell-3 {
+//             border-left: 1px solid black;
+//             border-bottom: 1px solid black;
+//             border-right: 1px solid black;
+//             width: 100px;
+//             height: 17px;
+//             // padding-top: 2px;
+//         }
+//         .strategicModelingRight-cell-4 {
+//             border-bottom: 1px solid black;
+//             border-right: 1px solid black;
+//             width: 100px;
+//             height: 17px;
+//             // padding-top: 2px;
+//         }
+//     }
+   
+// }
 
