@@ -15,7 +15,8 @@ export const tournamentDurationEpic = (action$, state$) =>
     mergeMap(action => {
         console.log("stop")
         return of(
-          Actions.stopTournament()
+          Actions.stopTournament(),
+          Actions.showRoundAndPlayers(false),
         ).pipe(
             delay(state$.value.business.strategicModelingRaund * 1000)
         )

@@ -86,7 +86,8 @@ export const initialState = {
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
     strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}],
     strategicModelingRaund: 1,
-    roundsArray: [1]
+    roundsArray: [1],
+    roundAndPlayersIsShown: false
 }
 
 const makePaperclip = (state) => {
@@ -826,6 +827,12 @@ const updateNumberOfRounds = (state, action) => {
     });
 }
 
+const showRoundAndPlayers = (state, action) => {
+    return updateObject(state, {
+        roundAndPlayersIsShown: action.val
+    });
+}
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1090,6 +1097,8 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.UPDATE_NUMBER_OF_ROUND:
             return updateNumberOfRounds(state, action);      
+        case actionTypes.SHOW_ROUND_AND_PLAYERS:
+            return showRoundAndPlayers(state, action);  
         default: 
             return state;
     }

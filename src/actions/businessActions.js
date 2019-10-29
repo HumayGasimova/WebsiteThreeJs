@@ -844,3 +844,11 @@ export function updateNumberOfRounds(val) {
         val: val
     };
 };
+
+export function showRoundAndPlayers(val) {
+    return { 
+        type: actionTypes.SHOW_ROUND_AND_PLAYERS,
+        val: val
+    };
+};
+
