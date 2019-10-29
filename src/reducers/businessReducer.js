@@ -87,7 +87,8 @@ export const initialState = {
     strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}],
     strategicModelingRaund: 1,
     roundsArray: [1],
-    roundAndPlayersIsShown: false
+    roundAndPlayersIsShown: false,
+    playerStrategyList: ['RANDOM']
 }
 
 const makePaperclip = (state) => {
@@ -450,10 +451,16 @@ const sendCommentToTerminal = (state, action) => {
 
 const addNewStrategy = (state, action) => {
     let updatedListStrategicModeling = [...state.listStrategicModeling];
+    let updtaedPlayerStrategyList = [...state.playerStrategyList];
+    if(action.strategy !== 'RANDOM'){
+        updatedListStrategicModeling.push(action.strategy);
+        updtaedPlayerStrategyList.push(action.strategy);
+    }
     updatedListStrategicModeling.push(action.strategy);
     
     return updateObject(state, {
-        listStrategicModeling: updatedListStrategicModeling
+        listStrategicModeling: updatedListStrategicModeling,
+        playerStrategyList: updtaedPlayerStrategyList
     });
 }
 
