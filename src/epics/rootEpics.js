@@ -81,5 +81,7 @@ export const rootEpic = combineEpics(
     Epic.startMegaClippersEpic,
     Epic.startNewTournamentEpic,
     Epic.startRunningStrategicModelingEpic,
-    Epic.updateStrategicModelingCurrentListEpic
+    Epic.updateStrategicModelingCurrentListEpic,
+    Epic.tournamentStartedEpic,
+    Epic.tournamentDurationEpic
 );
