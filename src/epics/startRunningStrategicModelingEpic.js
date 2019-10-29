@@ -27,6 +27,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.clearChosenFromStrategicModelingDropdownList(),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
 
                     )
@@ -39,6 +40,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("RANDOM", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
                 case "A100":
@@ -49,6 +51,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("A100", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
                 case "B100":
@@ -59,6 +62,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("B100", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
                 case "GREEDY":
@@ -69,6 +73,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("GREEDY", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
                 case "GENEROUS":
@@ -79,6 +84,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("GENEROUS", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
                 case "MINIMAX":
@@ -89,6 +95,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("MINIMAX", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
                 case "TIT FOR TAT":
@@ -99,6 +106,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("TIT FOR TAT", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
                 case "BEAT LAST":
@@ -109,6 +117,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.strategyChosen("BEAT LAST", true),
                         Actions.tournamentStarted(),
                         Actions.showRoundAndPlayers(true),
+                        Actions.startUpdatingRoundsOnScreen(),
                         Actions.tournamentDuration(),
                     )
            }

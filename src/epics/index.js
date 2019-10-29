@@ -42,6 +42,8 @@ export { startRunningStrategicModelingEpic } from './startRunningStrategicModeli
 export { updateStrategicModelingCurrentListEpic } from './updateStrategicModelingCurrentListEpic';
 export { tournamentStartedEpic } from './tournamentStartedEpic';
 export { tournamentDurationEpic } from './tournamentDurationEpic';
+export { startUpdatingRoundsOnScreenEpic } from './startUpdatingRoundsOnScreenEpic';
+
 
 
 

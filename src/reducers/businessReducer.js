@@ -833,6 +833,16 @@ const showRoundAndPlayers = (state, action) => {
     });
 }
 
+const updateRoundsOnScreen = (state, action) => {
+    let updatedRoundsArray = [...state.roundsArray]
+    if(updatedRoundsArray.length > 1){
+        updatedRoundsArray.shift()
+    }
+    
+    return updateObject(state, {
+        roundsArray: updatedRoundsArray
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1099,6 +1109,11 @@ const businessReducer = (state = initialState, action) => {
             return updateNumberOfRounds(state, action);      
         case actionTypes.SHOW_ROUND_AND_PLAYERS:
             return showRoundAndPlayers(state, action);  
+        case actionTypes.START_UPDATING_ROUNDS_ON_SCREEN:
+            return state; 
+        case actionTypes.UPDATE_ROUNDS_ON_SCREEN:
+            return updateRoundsOnScreen(state, action);  
+            
         default: 
             return state;
     }

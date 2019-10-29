@@ -131,7 +131,7 @@ export class StrategicModeling extends Component {
     renderSubHeader = () => {
         if(this.props.roundAndPlayersIsShown){
             return(
-                <div className="strategicModeling-text">Round 1</div>
+                <div className="strategicModeling-text">Round {this.props.roundsArray[0]}</div>
             )
         }else{
             return(
@@ -207,6 +207,8 @@ export default connect(
             ops: Selectors.getOpsState(state),
             newTournamentButtonDisabled: Selectors.getNewTournamentButtonDisabledState(state),
             roundAndPlayersIsShown: Selectors.getRoundAndPlayersIsShownState(state),
+            roundsArray: Selectors.getRoundsArrayState(state),
+            
             
         };
     },

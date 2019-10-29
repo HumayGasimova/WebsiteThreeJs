@@ -852,3 +852,16 @@ export function showRoundAndPlayers(val) {
     };
 };
 
+export function startUpdatingRoundsOnScreen() {
+    return { 
+        type: actionTypes.START_UPDATING_ROUNDS_ON_SCREEN
+    };
+};
+
+export function updateRoundsOnScreen() {
+    return { 
+        type: actionTypes.UPDATE_ROUNDS_ON_SCREEN
+    };
+};
+
+

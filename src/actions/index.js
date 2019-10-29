@@ -129,5 +129,7 @@ export {
     stopTournament,
     tournamentDuration,
     updateNumberOfRounds,
-    showRoundAndPlayers
+    showRoundAndPlayers,
+    startUpdatingRoundsOnScreen,
+    updateRoundsOnScreen
 } from './businessActions';
