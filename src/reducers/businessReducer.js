@@ -453,7 +453,6 @@ const addNewStrategy = (state, action) => {
     let updatedListStrategicModeling = [...state.listStrategicModeling];
     let updtaedPlayerStrategyList = [...state.playerStrategyList];
     if(action.strategy !== 'RANDOM'){
-        updatedListStrategicModeling.push(action.strategy);
         updtaedPlayerStrategyList.push(action.strategy);
     }
     updatedListStrategicModeling.push(action.strategy);

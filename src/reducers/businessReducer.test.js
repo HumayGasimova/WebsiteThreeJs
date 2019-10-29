@@ -912,18 +912,38 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should add new strategy to listStrategicModeling", () => {
+    it("should add new strategy to listStrategicModeling and playerStrategyList", () => {
         const action = { 
             type: actionTypes.ADD_NEW_STRATEGY,
             strategy: "New Strategy3"
         }
         const initState = {
             ...initialState, 
-            listStrategicModeling: ["New Strategy", "New Strategy1"]
+            listStrategicModeling: ["New Strategy", "New Strategy1"],
+            playerStrategyList: ["New Strategy"]
         }
         const state = {
             ...initialState, 
-            listStrategicModeling: ["New Strategy", "New Strategy1", "New Strategy3"]
+            listStrategicModeling: ["New Strategy", "New Strategy1", "New Strategy3"],
+            playerStrategyList: ["New Strategy", "New Strategy3"]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should add new strategy to listStrategicModeling and if the value passed through the action is equal to 'RANDOM'should not update playerStrategyList", () => {
+        const action = { 
+            type: actionTypes.ADD_NEW_STRATEGY,
+            strategy: "RANDOM"
+        }
+        const initState = {
+            ...initialState, 
+            listStrategicModeling: ["New Strategy", "New Strategy1"],
+            playerStrategyList: ["New Strategy", "New Strategy1"]
+        }
+        const state = {
+            ...initialState, 
+            listStrategicModeling: ["New Strategy", "New Strategy1", "RANDOM"],
+            playerStrategyList: ["New Strategy", "New Strategy1"]
         }
         expect(reducer(initState, action)).toEqual(state);
     })
