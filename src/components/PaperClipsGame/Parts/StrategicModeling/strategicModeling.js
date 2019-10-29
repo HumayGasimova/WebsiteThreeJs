@@ -128,6 +128,18 @@ export class StrategicModeling extends Component {
       
     // }
 
+    renderSubHeader = () => {
+        if(this.props.roundAndPlayersIsShown){
+            return(
+                <div className="strategicModeling-text">Round 1</div>
+            )
+        }else{
+            return(
+                <div className="strategicModeling-text">Pick strategy, run tournament, gain yomi</div>
+            )
+        }
+    }
+
     /**
     * Markup
     */
@@ -157,7 +169,7 @@ export class StrategicModeling extends Component {
                             disabled={!this.props.tournamentContinues}
                         />
                     </div>
-                    <div className="strategicModeling-text">Pick strategy, run tournament, gain yomi</div>
+                    {this.renderSubHeader()}
                     <div 
                         onMouseEnter={this.handleMouseEnter} 
                         onMouseLeave={this.handleMouseLeave} 
@@ -194,6 +206,7 @@ export default connect(
             newTournamentCost: Selectors.getNewTournamentCostState(state),
             ops: Selectors.getOpsState(state),
             newTournamentButtonDisabled: Selectors.getNewTournamentButtonDisabledState(state),
+            roundAndPlayersIsShown: Selectors.getRoundAndPlayersIsShownState(state),
             
         };
     },
