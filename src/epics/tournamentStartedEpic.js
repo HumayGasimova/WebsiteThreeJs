@@ -25,6 +25,7 @@ export const tournamentStartedEpic = (action$, state$) =>
             return interval(1000).pipe(
                 mergeMap(() => {
                     console.log("started")
+                    
                     return of(
                         // Actions.addInvestmentsLine(obj, true)
                     )   

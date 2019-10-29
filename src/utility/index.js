@@ -8,5 +8,6 @@ export {
     getRandomLetters,
     getRandomPercent,
     getRandomMove,
-    getRandomCellValue
+    getRandomCellValue,
+    getArrayOfRounds
 } from './utility'

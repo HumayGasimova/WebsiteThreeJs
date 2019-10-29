@@ -3,6 +3,8 @@ import {
     updateObject
   } from './utility';
 
+  import * as Utility from '../utility'
+
 export const initialState = {
     paperClips: 2000, //0
     clipsPerSec: 0,
@@ -83,7 +85,8 @@ export const initialState = {
     newTournamentButtonDisabled: false,
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
     strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}],
-    strategicModelingRaund: 1
+    strategicModelingRaund: 1,
+    roundsArray: [1]
 }
 
 const makePaperclip = (state) => {
@@ -815,6 +818,14 @@ const updateStrategicModelingRound = (state, action) => {
     });
 }
 
+const updateNumberOfRounds = (state, action) => {
+    let updatedRoundsArray = Utility.getArrayOfRounds(action.val);
+    console.log(updatedRoundsArray)
+    return updateObject(state, {
+        roundsArray: updatedRoundsArray
+    });
+}
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1076,7 +1087,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.STOP_TOURNAMENT:
             return state;    
         case actionTypes.TOURNAMENT_DURATION:
-                return state; 
+            return state; 
+        case actionTypes.UPDATE_NUMBER_OF_ROUND:
+            return updateNumberOfRounds(state, action);      
         default: 
             return state;
     }

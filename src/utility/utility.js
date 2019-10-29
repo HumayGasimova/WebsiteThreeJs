@@ -56,3 +56,9 @@ export const getRandomMove = () => {
 export const getRandomCellValue = () => {
     return  +(Math.random()*9).toFixed(1) + 1;
 } 
+
+export const getArrayOfRounds = (val) => {
+    let array = new Array(val).fill(0);
+    array.map((el,i) => array[i] = i+1)
+    return array;
+} 

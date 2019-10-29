@@ -838,3 +838,9 @@ export function tournamentDuration() {
     };
 };
 
+export function updateNumberOfRounds(val) {
+    return { 
+        type: actionTypes.UPDATE_NUMBER_OF_ROUND,
+        val: val
+    };
+};

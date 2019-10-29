@@ -127,5 +127,6 @@ export {
     updateStrategicModelingRound,
     tournamentStarted,
     stopTournament,
-    tournamentDuration
+    tournamentDuration,
+    updateNumberOfRounds
 } from './businessActions';
