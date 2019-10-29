@@ -82,7 +82,8 @@ export const initialState = {
     newTournamentCost: 10,
     newTournamentButtonDisabled: false,
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
-    strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}]
+    strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}],
+    strategicModelingRaund: 1
 }
 
 const makePaperclip = (state) => {
@@ -808,6 +809,12 @@ const clearChosenFromStrategicModelingDropdownList = (state, action) => {
     });
 }
 
+const updateStrategicModelingRound = (state, action) => {
+    return updateObject(state, {
+        strategicModelingRaund: action.round
+    });
+}
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1062,6 +1069,8 @@ const businessReducer = (state = initialState, action) => {
             return strategyChosen(state, action);   
         case actionTypes.CLEAR_CHOSEN_FROM_STRATEGIC_MODELING_DROPDOWN_LIST:
             return clearChosenFromStrategicModelingDropdownList(state, action);      
+        case actionTypes.UPDATE_STRATEGIC_MODELING_ROUND:
+            return updateStrategicModelingRound(state, action);      
             
         default: 
             return state;

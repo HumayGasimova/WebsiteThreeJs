@@ -791,10 +791,11 @@ export function updateStrategicModelingData(obj) {
     };
 };
 
-export function updateStrategicModelingCurrentList(obj) {
+export function updateStrategicModelingCurrentList(obj, round) {
     return { 
         type: actionTypes.UPDATE_STRATEGIC_MODELING_CURRENT_LIST,
-        obj: obj
+        obj: obj,
+        round: round
     };
 };
 
@@ -809,6 +810,13 @@ export function strategyChosen(strategy, val) {
 export function clearChosenFromStrategicModelingDropdownList() {
     return { 
         type: actionTypes.CLEAR_CHOSEN_FROM_STRATEGIC_MODELING_DROPDOWN_LIST
+    };
+};
+
+export function updateStrategicModelingRound(round) {
+    return { 
+        type: actionTypes.UPDATE_STRATEGIC_MODELING_ROUND,
+        round: round
     };
 };
 

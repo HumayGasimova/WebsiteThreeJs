@@ -39,4 +39,6 @@ export { throwTheTothSausageConjectureEpic } from './throwTheTothSausageConjectu
 
 export { startNewTournamentEpic } from './startNewTournamentEpic';
 export { startRunningStrategicModelingEpic } from './startRunningStrategicModelingEpic';
+export { updateStrategicModelingCurrentListEpic } from './updateStrategicModelingCurrentListEpic';
+
 

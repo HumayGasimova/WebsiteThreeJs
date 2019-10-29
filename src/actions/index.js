@@ -123,5 +123,6 @@ export {
     updateStrategicModelingData,
     updateStrategicModelingCurrentList,
     strategyChosen,
-    clearChosenFromStrategicModelingDropdownList
+    clearChosenFromStrategicModelingDropdownList,
+    updateStrategicModelingRound
 } from './businessActions';

@@ -267,11 +267,12 @@ export class Projects extends Component {
                 this.props.toggleNewTournamentButton();
                 break;
             case 'newStrategyA100':
+
                 this.props.addProject(projectsToAdd.NewStrategyB100);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("A100");
-                this.props.updateStrategicModelingCurrentList(strategyTypes.a100);
+                this.props.updateStrategicModelingCurrentList(strategyTypes.a100, strategyTypes.a100.round);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyB100':
@@ -279,7 +280,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("B100");
-                this.props.updateStrategicModelingCurrentList(strategyTypes.b100);
+                this.props.updateStrategicModelingCurrentList(strategyTypes.b100, strategyTypes.b100.round);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyGreedy':
@@ -287,7 +288,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("GREEDY");
-                this.props.updateStrategicModelingCurrentList(strategyTypes.greedy);
+                this.props.updateStrategicModelingCurrentList(strategyTypes.greedy, strategyTypes.greedy.round);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyGenerous':
@@ -295,7 +296,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("GENEROUS");
-                this.props.updateStrategicModelingCurrentList(strategyTypes.generous);
+                this.props.updateStrategicModelingCurrentList(strategyTypes.generous, strategyTypes.generous.round);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyMinimax':
@@ -303,7 +304,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("MINIMAX");
-                this.props.updateStrategicModelingCurrentList(strategyTypes.minimax);
+                this.props.updateStrategicModelingCurrentList(strategyTypes.minimax, strategyTypes.minimax.round);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyTitForTat':
@@ -311,7 +312,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("TIT FOR TAT");
-                this.props.updateStrategicModelingCurrentList(strategyTypes.titForTat);
+                this.props.updateStrategicModelingCurrentList(strategyTypes.titForTat, strategyTypes.titForTat.round);
                 this.props.updateNewTournamentCost();
                 break;
             case 'newStrategyTitForTat':
@@ -319,7 +320,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.addNewStrategy("BEAT LAST");
-                this.props.updateStrategicModelingCurrentList(strategyTypes.beatLast);
+                this.props.updateStrategicModelingCurrentList(strategyTypes.beatLast, strategyTypes.beatLast.round);
                 this.props.updateNewTournamentCost();
                 break;
             case 'theoryOfMind':
