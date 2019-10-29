@@ -74,20 +74,19 @@ export class StrategicModelingRight extends Component {
                         player 2 
                     </div>
                     <div className="strategicModelingRight-table">
-                        <div className="strategicModelingRight-column">
-                            <div className="strategicModelingRight-row"></div>
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.moveA}</div>
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.moveB}</div>
+                        <div className="strategicModelingRight-column left">
+                            <div className="strategicModelingRight-row-header">{this.props.strategicModelingData.moveA}</div>
+                            <div className="strategicModelingRight-row-header">{this.props.strategicModelingData.moveB}</div>
                         </div>
                         <div className="strategicModelingRight-column">
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.moveA}</div>
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.cell1}</div>
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.cell2}</div>
+                            <div className="strategicModelingRight-row-header">{this.props.strategicModelingData.moveA}</div>
+                            <div className="strategicModelingRight-row-cell-1">{this.props.strategicModelingData.cell1}</div>
+                            <div className="strategicModelingRight-row-cell-2">{this.props.strategicModelingData.cell2}</div>
                         </div>
                         <div className="strategicModelingRight-column">
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.moveB}</div>
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.cell3}</div>
-                            <div className="strategicModelingRight-row">{this.props.strategicModelingData.cell4}</div>
+                            <div className="strategicModelingRight-row-header">{this.props.strategicModelingData.moveB}</div>
+                            <div className="strategicModelingRight-row-cell-3">{this.props.strategicModelingData.cell3}</div>
+                            <div className="strategicModelingRight-row-cell-4">{this.props.strategicModelingData.cell4}</div>
                         </div>
                     </div>
                 </div>
