@@ -43,6 +43,8 @@ export { updateStrategicModelingCurrentListEpic } from './updateStrategicModelin
 export { tournamentStartedEpic } from './tournamentStartedEpic';
 export { tournamentDurationEpic } from './tournamentDurationEpic';
 export { startUpdatingRoundsOnScreenEpic } from './startUpdatingRoundsOnScreenEpic';
+export { startUpdatingPlayerLeftOnScreenEpic } from './startUpdatingPlayerLeftOnScreenEpic';
+
 
 
 

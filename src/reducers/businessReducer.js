@@ -850,6 +850,16 @@ const updateRoundsOnScreen = (state, action) => {
     });
 }
 
+const updatePlayerLeftOnScreen = (state, action) => {
+    let updatedPlayerStrategyList = [...state.playerStrategyList]
+    if(updatedPlayerStrategyList.length > 1){
+        updatedPlayerStrategyList.shift()
+    }
+    
+    return updateObject(state, {
+        playerStrategyList: updatedPlayerStrategyList
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1119,7 +1129,10 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.UPDATE_ROUNDS_ON_SCREEN:
             return updateRoundsOnScreen(state, action);  
-            
+        case actionTypes.START_UPDATING_PLAYER_LEFT_ON_SCREEN:
+            return state;    
+        case actionTypes.UPDATE_PLAYER_LEFT_ON_SCREEN:
+                return updatePlayerLeftOnScreen(state, action);  
         default: 
             return state;
     }

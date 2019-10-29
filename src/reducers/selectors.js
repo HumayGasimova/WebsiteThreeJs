@@ -483,4 +483,9 @@ export const getRoundAndPlayersIsShownState = createSelector(
     (x) => x
 );
 
+const getPlayerStrategyList = (state) => state.business.playerStrategyList;
 
+export const getPlayerStrategyListState = createSelector(
+    [getPlayerStrategyList],
+    (x) => x
+);

@@ -864,4 +864,16 @@ export function updateRoundsOnScreen() {
     };
 };
 
+export function startUpdatingPlayerLeftOnScreen() {
+    return { 
+        type: actionTypes.START_UPDATING_PLAYER_LEFT_ON_SCREEN
+    };
+};
+
+export function updatePlayerLeftOnScreen() {
+    return { 
+        type: actionTypes.UPDATE_PLAYER_LEFT_ON_SCREEN
+    };
+};
+
 

@@ -66,9 +66,13 @@ export class StrategicModelingRight extends Component {
     render(){
         return(
             <div className="strategicModelingRight">
-                <div className={this.props.roundAndPlayersIsShown ? "strategicModelingRight-first-line-player-1" : "strategicModelingRight-first-line-player-1 white"}>player 1</div>
+                <div className={this.props.roundAndPlayersIsShown ? "strategicModelingRight-first-line-player-1" : "strategicModelingRight-first-line-player-1 white"}>
+                    player 1
+                </div>
                 <div className="strategicModelingRight-second-line">
-                    <div className={this.props.roundAndPlayersIsShown ? "strategicModelingRight-player-2" : "strategicModelingRight-player-2 white"}>player 2</div>
+                    <div className={this.props.roundAndPlayersIsShown ? "strategicModelingRight-player-2" : "strategicModelingRight-player-2 white"}>
+                    {this.props.playerStrategyList[0]}
+                    </div>
                     <div className="strategicModelingRight-table">
                         <div className="strategicModelingRight-column left">
                             <div className="strategicModelingRight-row-header">{this.props.strategicModelingData.moveA}</div>
@@ -125,7 +129,7 @@ export default connect(
         return {
             strategicModelingData: Selectors.getStrategicModelingDataState(state),
             roundAndPlayersIsShown: Selectors.getRoundAndPlayersIsShownState(state),
-            // chosenListDropdown: Selectors.getChosenListDropdownState(state),
+            playerStrategyList: Selectors.getPlayerStrategyListState(state),
         };
     },
     (dispatch) => {

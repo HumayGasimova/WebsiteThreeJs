@@ -131,5 +131,7 @@ export {
     updateNumberOfRounds,
     showRoundAndPlayers,
     startUpdatingRoundsOnScreen,
-    updateRoundsOnScreen
+    updateRoundsOnScreen,
+    startUpdatingPlayerLeftOnScreen,
+    updatePlayerLeftOnScreen
 } from './businessActions';
