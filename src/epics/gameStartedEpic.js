@@ -46,7 +46,7 @@ export const gameStartedEpic = (action$, state$) =>
                             break;
                         case "MINIMAX":
                             if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "MINIMAX"){
-                                plLeftVal = allRes[lastElement].playerTop.val
+                                plLeftVal = allRes[lastElement].playerTop.val === 1 ? 2 : 1; 
                             }else{
                                 plLeftVal = Utility.getRandomStrategyVal();
                             }
@@ -94,7 +94,7 @@ export const gameStartedEpic = (action$, state$) =>
                             break;
                         case "MINIMAX":
                             if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "MINIMAX"){
-                                plTopVal = allRes[lastElement].playerLeft.val;
+                                plTopVal = allRes[lastElement].playerLeft.val === 1 ? 2 : 1;
                             }else{
                                 plTopVal = Utility.getRandomStrategyVal();
                             }
