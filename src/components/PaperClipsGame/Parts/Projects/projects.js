@@ -315,7 +315,7 @@ export class Projects extends Component {
                 this.props.updateStrategicModelingCurrentList(strategyTypes.titForTat, strategyTypes.titForTat.round);
                 this.props.updateNewTournamentCost();
                 break;
-            case 'newStrategyTitForTat':
+            case 'newStrategyBeatLast':
                 this.props.addProject(projectsToAdd.TheoryOfMind);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);

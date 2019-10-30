@@ -33,10 +33,10 @@ export const gameStartedEpic = (action$, state$) =>
                             plLeftVal = Utility.getRandomStrategyVal();
                             break;
                         case "A100":
-                            plLeftVal = Utility.getRandomStrategyVal();
+                            plLeftVal = 1;
                             break;
                         case "B100":
-                            plLeftVal = Utility.getRandomStrategyVal();
+                            plLeftVal = 2;
                             break;
                         case "GREEDY":
                             plLeftVal = 2;
@@ -47,7 +47,6 @@ export const gameStartedEpic = (action$, state$) =>
                         case "MINIMAX":
                             if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "MINIMAX"){
                                 plLeftVal = allRes[lastElement].playerTop.val
-                                console.log("Left MINIMAX", plLeftVal, lastElement)
                             }else{
                                 plLeftVal = Utility.getRandomStrategyVal();
                             }
@@ -55,13 +54,25 @@ export const gameStartedEpic = (action$, state$) =>
                         case "TIT FOR TAT":
                             if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "TIT FOR TAT"){
                                 plLeftVal = allRes[lastElement].playerTop.val === 1 ? 2 : 1; 
-                                console.log("Left TIT FOR TAT", plLeftVal, lastElement)
                             }else{
                                 plLeftVal = Utility.getRandomStrategyVal();
                             }
                             break;
                         case "BEAT LAST":
-                            plLeftVal = Utility.getRandomStrategyVal();
+                            // if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "BEAT LAST"){
+                               
+                            //     if(allRes[lastElement-8].playerLeft.strategy !== "BEAT LAST" && allRes[lastElement-7].playerLeft.strategy === "BEAT LAST"){
+                            //         plLeftVal = allRes[lastStep].playerTop.val === 1 ? 2 : 1; 
+                            //         console.log("LAST LEFT", plLeftVal,lastStep)
+                            //         debugger
+                            //     }else{
+                            //         plLeftVal = allRes[lastElement].playerTop.val
+                            //         debugger
+                            //     }
+                            // }else{
+                                plLeftVal = Utility.getRandomStrategyVal();
+                                console.log("BBB")
+                            // }
                             break;
                    }
 
@@ -70,10 +81,10 @@ export const gameStartedEpic = (action$, state$) =>
                             plTopVal = Utility.getRandomStrategyVal();
                             break;
                         case "A100":
-                            plTopVal = Utility.getRandomStrategyVal();
+                            plTopVal = 1;
                             break;
                         case "B100":
-                            plTopVal = Utility.getRandomStrategyVal();
+                            plTopVal = 2;
                             break;
                         case "GREEDY":
                             plTopVal = 2;
@@ -84,7 +95,6 @@ export const gameStartedEpic = (action$, state$) =>
                         case "MINIMAX":
                             if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "MINIMAX"){
                                 plTopVal = allRes[lastElement].playerLeft.val;
-                                console.log("Top MINIMAX", plTopVal, lastElement)
                             }else{
                                 plTopVal = Utility.getRandomStrategyVal();
                             }
@@ -92,13 +102,25 @@ export const gameStartedEpic = (action$, state$) =>
                         case "TIT FOR TAT":
                             if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "TIT FOR TAT"){
                                 plTopVal = allRes[lastElement].playerLeft.val === 1 ? 2 : 1;
-                                console.log("Top TIT FOR TAT", plTopVal, lastElement)
                             }else{
                                 plTopVal = Utility.getRandomStrategyVal();
                             }
                             break;
                         case "BEAT LAST":
-                            plTopVal = Utility.getRandomStrategyVal();
+                            
+                            // if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "BEAT LAST"){
+                                
+                            //     if(allRes[lastElement-8].playerTop.strategy !== "BEAT LAST" && allRes[lastElement-7].playerTop.strategy === "BEAT LAST"){
+                            //         plTopVal = allRes[lastStep].playerLeft.val === 1 ? 2 : 1; 
+                            //         console.log("LAST TOP", plTopVal,lastStep)
+                            //         debugger
+                            //     }else{
+                            //         plTopVal = allRes[lastElement].playerLeft.val
+                            //         debugger
+                            //     }
+                            // }else{
+                                plTopVal = Utility.getRandomStrategyVal();
+                            // }
                             break;
                    }
 

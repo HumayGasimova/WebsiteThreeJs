@@ -876,7 +876,9 @@ const setPlayersArrays = (state, action) => {
     updatedListStrategicModeling.shift();
     return updateObject(state, {
         playerLeftStrategyList: updatedListStrategicModeling,
-        playerTopStrategyList: updatedListStrategicModeling
+        playerTopStrategyList: updatedListStrategicModeling,
+        allRoundsRes: [],
+        roundsArray: [1]
     });
 }
 
