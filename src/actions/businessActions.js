@@ -876,4 +876,15 @@ export function updatePlayerLeftOnScreen() {
     };
 };
 
+export function startUpdatingPlayerTopOnScreen() {
+    return { 
+        type: actionTypes.START_UPDATING_PLAYER_TOP_ON_SCREEN
+    };
+};
+
+export function updatePlayerTopOnScreen() {
+    return { 
+        type: actionTypes.UPDATE_PLAYER_TOP_ON_SCREEN
+    };
+};
 

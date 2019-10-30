@@ -44,7 +44,7 @@ export { tournamentStartedEpic } from './tournamentStartedEpic';
 export { tournamentDurationEpic } from './tournamentDurationEpic';
 export { startUpdatingRoundsOnScreenEpic } from './startUpdatingRoundsOnScreenEpic';
 export { startUpdatingPlayerLeftOnScreenEpic } from './startUpdatingPlayerLeftOnScreenEpic';
-
+export { startUpdatingPlayerTopOnScreenEpic } from './startUpdatingPlayerTopOnScreenEpic';
 
 
 

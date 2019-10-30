@@ -88,7 +88,8 @@ export const initialState = {
     strategicModelingRaund: 1,
     roundsArray: [1],
     roundAndPlayersIsShown: false,
-    playerStrategyList: ['RANDOM']
+    playerLeftStrategyList: ['RANDOM'],
+    playerTopStrategyList: ['RANDOM']
 }
 
 const makePaperclip = (state) => {
@@ -451,15 +452,18 @@ const sendCommentToTerminal = (state, action) => {
 
 const addNewStrategy = (state, action) => {
     let updatedListStrategicModeling = [...state.listStrategicModeling];
-    let updtaedPlayerStrategyList = [...state.playerStrategyList];
+    let updatedPlayerLeftStrategyList = [...state.playerLeftStrategyList];
+    let updatedPlayerTopStrategyList = [...state.playerTopStrategyList];
     if(action.strategy !== 'RANDOM'){
-        updtaedPlayerStrategyList.push(action.strategy);
+        updatedPlayerLeftStrategyList.push(action.strategy);
+        updatedPlayerTopStrategyList.push(action.strategy);
     }
     updatedListStrategicModeling.push(action.strategy);
     
     return updateObject(state, {
         listStrategicModeling: updatedListStrategicModeling,
-        playerStrategyList: updtaedPlayerStrategyList
+        playerLeftStrategyList: updatedPlayerLeftStrategyList,
+        playerTopStrategyList: updatedPlayerTopStrategyList
     });
 }
 
@@ -851,13 +855,26 @@ const updateRoundsOnScreen = (state, action) => {
 }
 
 const updatePlayerLeftOnScreen = (state, action) => {
-    let updatedPlayerStrategyList = [...state.playerStrategyList]
-    if(updatedPlayerStrategyList.length > 1){
-        updatedPlayerStrategyList.shift()
+    let updatedPlayerLeftStrategyList = [...state.playerLeftStrategyList]
+    if(updatedPlayerLeftStrategyList.length > 1){
+        updatedPlayerLeftStrategyList.shift()
     }
     
     return updateObject(state, {
-        playerStrategyList: updatedPlayerStrategyList
+        playerLeftStrategyList: updatedPlayerLeftStrategyList
+    });
+}
+
+const updatePlayerTopOnScreen = (state, action) => {
+    let updatedPlayerTopStrategyList = [...state.playerTopStrategyList]
+    if(updatedPlayerTopStrategyList.length > 1){
+        let firstElement = updatedPlayerTopStrategyList[0]
+        updatedPlayerTopStrategyList.shift();
+        updatedPlayerTopStrategyList.push(firstElement);
+    }
+    
+    return updateObject(state, {
+        playerTopStrategyList: updatedPlayerTopStrategyList
     });
 }
 
@@ -1132,7 +1149,13 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.START_UPDATING_PLAYER_LEFT_ON_SCREEN:
             return state;    
         case actionTypes.UPDATE_PLAYER_LEFT_ON_SCREEN:
-                return updatePlayerLeftOnScreen(state, action);  
+            return updatePlayerLeftOnScreen(state, action);  
+        case actionTypes.START_UPDATING_PLAYER_TOP_ON_SCREEN:
+            return state;    
+        case actionTypes.UPDATE_PLAYER_TOP_ON_SCREEN:
+            return updatePlayerTopOnScreen(state, action);
+
+            
         default: 
             return state;
     }

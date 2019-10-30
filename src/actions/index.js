@@ -133,5 +133,7 @@ export {
     startUpdatingRoundsOnScreen,
     updateRoundsOnScreen,
     startUpdatingPlayerLeftOnScreen,
-    updatePlayerLeftOnScreen
+    updatePlayerLeftOnScreen,
+    startUpdatingPlayerTopOnScreen,
+    updatePlayerTopOnScreen
 } from './businessActions';

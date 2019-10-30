@@ -67,11 +67,11 @@ export class StrategicModelingRight extends Component {
         return(
             <div className="strategicModelingRight">
                 <div className={this.props.roundAndPlayersIsShown ? "strategicModelingRight-first-line-player-1" : "strategicModelingRight-first-line-player-1 white"}>
-                    player 1
+                    {this.props.playerTopStrategyList[0]}
                 </div>
                 <div className="strategicModelingRight-second-line">
                     <div className={this.props.roundAndPlayersIsShown ? "strategicModelingRight-player-2" : "strategicModelingRight-player-2 white"}>
-                    {this.props.playerStrategyList[0]}
+                    {this.props.playerLeftStrategyList[0]}
                     </div>
                     <div className="strategicModelingRight-table">
                         <div className="strategicModelingRight-column left">
@@ -129,7 +129,9 @@ export default connect(
         return {
             strategicModelingData: Selectors.getStrategicModelingDataState(state),
             roundAndPlayersIsShown: Selectors.getRoundAndPlayersIsShownState(state),
-            playerStrategyList: Selectors.getPlayerStrategyListState(state),
+            playerLeftStrategyList: Selectors.getPlayerLeftStrategyListState(state),
+            playerTopStrategyList: Selectors.getPlayerTopStrategyListState(state)
+            
         };
     },
     (dispatch) => {
