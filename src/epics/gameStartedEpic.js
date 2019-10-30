@@ -26,6 +26,8 @@ export const gameStartedEpic = (action$, state$) =>
                 mergeMap(() => {
                    let plLeftVal;
                    let plTopVal;
+                   let allRes = state$.value.business.allRoundsRes;
+                   let lastElement = allRes.length-1;
                     switch(state$.value.business.playerLeftStrategyList[0]){
                         case "RANDOM":
                             plLeftVal = Utility.getRandomStrategyVal();
@@ -43,17 +45,20 @@ export const gameStartedEpic = (action$, state$) =>
                             plLeftVal = 1;
                             break;
                         case "MINIMAX":
-                            let allRes = state$.value.business.allRoundsRes;
-                            let lastElement = allRes.length-1;
                             if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "MINIMAX"){
                                 plLeftVal = allRes[lastElement].playerTop.val
-                                console.log("PPP", plLeftVal, lastElement)
+                                console.log("Left MINIMAX", plLeftVal, lastElement)
                             }else{
                                 plLeftVal = Utility.getRandomStrategyVal();
                             }
                             break;
                         case "TIT FOR TAT":
-                            plLeftVal = Utility.getRandomStrategyVal();
+                            if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "TIT FOR TAT"){
+                                plLeftVal = allRes[lastElement].playerTop.val === 1 ? 2 : 1; 
+                                console.log("Left TIT FOR TAT", plLeftVal, lastElement)
+                            }else{
+                                plLeftVal = Utility.getRandomStrategyVal();
+                            }
                             break;
                         case "BEAT LAST":
                             plLeftVal = Utility.getRandomStrategyVal();
@@ -77,17 +82,20 @@ export const gameStartedEpic = (action$, state$) =>
                             plTopVal = 1;
                             break;
                         case "MINIMAX":
-                            let allRes = state$.value.business.allRoundsRes;
-                            let lastElement = allRes.length-1;
                             if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "MINIMAX"){
-                                plTopVal = allRes[lastElement].playerLeft.val
-                                console.log("PPPTOP", plTopVal, lastElement)
+                                plTopVal = allRes[lastElement].playerLeft.val;
+                                console.log("Top MINIMAX", plTopVal, lastElement)
                             }else{
                                 plTopVal = Utility.getRandomStrategyVal();
                             }
                             break;
                         case "TIT FOR TAT":
-                            plTopVal = Utility.getRandomStrategyVal();
+                            if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "TIT FOR TAT"){
+                                plTopVal = allRes[lastElement].playerLeft.val === 1 ? 2 : 1;
+                                console.log("Top TIT FOR TAT", plTopVal, lastElement)
+                            }else{
+                                plTopVal = Utility.getRandomStrategyVal();
+                            }
                             break;
                         case "BEAT LAST":
                             plTopVal = Utility.getRandomStrategyVal();
