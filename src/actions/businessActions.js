@@ -893,3 +893,16 @@ export function setPlayersArrays() {
         type: actionTypes.SET_PLAYERS_ARRAY
     };
 };
+
+export function gameStarted() {
+    return { 
+        type: actionTypes.GAME_STARTED
+    };
+};
+
+export function allRoundsResult(obj) {
+    return { 
+        type: actionTypes.ALL_ROUNDS_RESULT,
+        obj: obj
+    };
+};

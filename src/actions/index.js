@@ -136,5 +136,7 @@ export {
     updatePlayerLeftOnScreen,
     startUpdatingPlayerTopOnScreen,
     updatePlayerTopOnScreen,
-    setPlayersArrays
+    setPlayersArrays,
+    gameStarted,
+    allRoundsResult
 } from './businessActions';

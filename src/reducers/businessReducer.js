@@ -89,7 +89,8 @@ export const initialState = {
     roundsArray: [1],
     roundAndPlayersIsShown: false,
     playerLeftStrategyList: [],
-    playerTopStrategyList: []
+    playerTopStrategyList: [],
+    allRoundsRes: []
 }
 
 const makePaperclip = (state) => {
@@ -873,12 +874,22 @@ const updatePlayerTopOnScreen = (state, action) => {
 const setPlayersArrays = (state, action) => {
     let updatedListStrategicModeling = [...state.listStrategicModeling];
     updatedListStrategicModeling.shift();
-    console.log(updatedListStrategicModeling)
     return updateObject(state, {
         playerLeftStrategyList: updatedListStrategicModeling,
         playerTopStrategyList: updatedListStrategicModeling
     });
 }
+
+const allRoundsResult = (state, action) => {
+    let updatedAllRoundsRes = [...state.allRoundsRes];
+    updatedAllRoundsRes.push(action.obj);
+    console.log(updatedAllRoundsRes)
+    return updateObject(state, {
+        allRoundsRes: updatedAllRoundsRes
+    });
+}
+
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1158,7 +1169,10 @@ const businessReducer = (state = initialState, action) => {
             return updatePlayerTopOnScreen(state, action);
         case actionTypes.SET_PLAYERS_ARRAY:
             return setPlayersArrays(state, action);
-            
+        case actionTypes.GAME_STARTED:
+            return state;     
+        case actionTypes.ALL_ROUNDS_RESULT:
+            return allRoundsResult(state, action);
         default: 
             return state;
     }

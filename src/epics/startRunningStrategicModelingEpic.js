@@ -30,6 +30,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
 
                     )
@@ -44,6 +45,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
                 case "A100":
@@ -57,6 +59,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
                 case "B100":
@@ -70,6 +73,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
                 case "GREEDY":
@@ -83,6 +87,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
                 case "GENEROUS":
@@ -96,6 +101,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
                 case "MINIMAX":
@@ -109,6 +115,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
                 case "TIT FOR TAT":
@@ -122,6 +129,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
                 case "BEAT LAST":
@@ -135,6 +143,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingRoundsOnScreen(),
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
+                        Actions.gameStarted(),
                         Actions.tournamentDuration(),
                     )
            }

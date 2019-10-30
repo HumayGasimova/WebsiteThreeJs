@@ -62,3 +62,7 @@ export const getArrayOfRounds = (val) => {
     array.map((el,i) => array[i] = i+1)
     return array;
 } 
+
+export const getRandomStrategyVal = () => {
+    return  +(Math.random()*1).toFixed() + 1;
+} 

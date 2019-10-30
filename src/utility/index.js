@@ -9,5 +9,6 @@ export {
     getRandomPercent,
     getRandomMove,
     getRandomCellValue,
-    getArrayOfRounds
+    getArrayOfRounds,
+    getRandomStrategyVal
 } from './utility'
