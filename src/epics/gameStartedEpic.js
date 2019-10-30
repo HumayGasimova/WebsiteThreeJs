@@ -42,11 +42,7 @@ export const gameStartedEpic = (action$, state$) =>
                             plLeftVal = 1; //vseqda odin tak viqodno emu
                             break;
                         case "GENEROUS":
-                            if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "GENEROUS"){
-                                plLeftVal = allRes[lastElement].playerTop.val === 1 ? 2 : 1; 
-                            }else{
-                                plLeftVal = Utility.getRandomStrategyVal();
-                            } //dobrak
+                            plLeftVal = 2; //dobrak
                             break;
                         case "MINIMAX":
                             if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "MINIMAX"){
@@ -91,14 +87,10 @@ export const gameStartedEpic = (action$, state$) =>
                             plTopVal = 2;
                             break;
                         case "GREEDY":
-                            plLeftVal = 1;
+                            plTopVal = 1;
                             break;
                         case "GENEROUS":
-                            if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "GENEROUS"){
-                                plTopVal = allRes[lastElement].playerLeft.val === 1 ? 2 : 1;
-                            }else{
-                                plTopVal = Utility.getRandomStrategyVal();
-                            }
+                            plTopVal = 2;
                             break;
                         case "MINIMAX":
                             if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "MINIMAX"){
