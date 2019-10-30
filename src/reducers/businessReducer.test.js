@@ -920,12 +920,14 @@ describe('businessReducer', () => {
         const initState = {
             ...initialState, 
             listStrategicModeling: ["New Strategy", "New Strategy1"],
-            playerStrategyList: ["New Strategy"]
+            playerLeftStrategyList: ["New Strategy"],
+            playerTopStrategyList: ["New Strategy"]
         }
         const state = {
             ...initialState, 
             listStrategicModeling: ["New Strategy", "New Strategy1", "New Strategy3"],
-            playerStrategyList: ["New Strategy", "New Strategy3"]
+            playerLeftStrategyList: ["New Strategy", "New Strategy3"],
+            playerTopStrategyList: ["New Strategy", "New Strategy3"]
         }
         expect(reducer(initState, action)).toEqual(state);
     })
@@ -938,12 +940,15 @@ describe('businessReducer', () => {
         const initState = {
             ...initialState, 
             listStrategicModeling: ["New Strategy", "New Strategy1"],
-            playerStrategyList: ["New Strategy", "New Strategy1"]
+            playerLeftStrategyList: ["New Strategy", "New Strategy1"],
+            playerTopStrategyList: ["New Strategy", "New Strategy1"]
         }
         const state = {
             ...initialState, 
             listStrategicModeling: ["New Strategy", "New Strategy1", "RANDOM"],
-            playerStrategyList: ["New Strategy", "New Strategy1"]
+            playerLeftStrategyList: ["New Strategy", "New Strategy1"],
+            playerTopStrategyList: ["New Strategy", "New Strategy1"]
+
         }
         expect(reducer(initState, action)).toEqual(state);
     })
