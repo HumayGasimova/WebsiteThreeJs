@@ -43,7 +43,14 @@ export const gameStartedEpic = (action$, state$) =>
                             plLeftVal = 1;
                             break;
                         case "MINIMAX":
-                            plLeftVal = Utility.getRandomStrategyVal();
+                            let allRes = state$.value.business.allRoundsRes;
+                            let lastElement = allRes.length-1;
+                            if(allRes.length !== 0 && allRes[lastElement].playerLeft.strategy === "MINIMAX"){
+                                plLeftVal = allRes[lastElement].playerTop.val
+                                console.log("PPP", plLeftVal, lastElement)
+                            }else{
+                                plLeftVal = Utility.getRandomStrategyVal();
+                            }
                             break;
                         case "TIT FOR TAT":
                             plLeftVal = Utility.getRandomStrategyVal();
@@ -70,7 +77,14 @@ export const gameStartedEpic = (action$, state$) =>
                             plTopVal = 1;
                             break;
                         case "MINIMAX":
-                            plTopVal = Utility.getRandomStrategyVal();
+                            let allRes = state$.value.business.allRoundsRes;
+                            let lastElement = allRes.length-1;
+                            if(allRes.length !== 0 && allRes[lastElement].playerTop.strategy === "MINIMAX"){
+                                plTopVal = allRes[lastElement].playerLeft.val
+                                console.log("PPPTOP", plTopVal, lastElement)
+                            }else{
+                                plTopVal = Utility.getRandomStrategyVal();
+                            }
                             break;
                         case "TIT FOR TAT":
                             plTopVal = Utility.getRandomStrategyVal();
