@@ -135,5 +135,6 @@ export {
     startUpdatingPlayerLeftOnScreen,
     updatePlayerLeftOnScreen,
     startUpdatingPlayerTopOnScreen,
-    updatePlayerTopOnScreen
+    updatePlayerTopOnScreen,
+    setPlayersArrays
 } from './businessActions';

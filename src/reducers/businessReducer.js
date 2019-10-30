@@ -88,8 +88,8 @@ export const initialState = {
     strategicModelingRaund: 1,
     roundsArray: [1],
     roundAndPlayersIsShown: false,
-    playerLeftStrategyList: ['RANDOM'],
-    playerTopStrategyList: ['RANDOM']
+    playerLeftStrategyList: [],
+    playerTopStrategyList: []
 }
 
 const makePaperclip = (state) => {
@@ -452,18 +452,10 @@ const sendCommentToTerminal = (state, action) => {
 
 const addNewStrategy = (state, action) => {
     let updatedListStrategicModeling = [...state.listStrategicModeling];
-    let updatedPlayerLeftStrategyList = [...state.playerLeftStrategyList];
-    let updatedPlayerTopStrategyList = [...state.playerTopStrategyList];
-    if(action.strategy !== 'RANDOM'){
-        updatedPlayerLeftStrategyList.push(action.strategy);
-        updatedPlayerTopStrategyList.push(action.strategy);
-    }
     updatedListStrategicModeling.push(action.strategy);
     
     return updateObject(state, {
         listStrategicModeling: updatedListStrategicModeling,
-        playerLeftStrategyList: updatedPlayerLeftStrategyList,
-        playerTopStrategyList: updatedPlayerTopStrategyList
     });
 }
 
@@ -878,6 +870,16 @@ const updatePlayerTopOnScreen = (state, action) => {
     });
 }
 
+const setPlayersArrays = (state, action) => {
+    let updatedListStrategicModeling = [...state.listStrategicModeling];
+    updatedListStrategicModeling.shift();
+    console.log(updatedListStrategicModeling)
+    return updateObject(state, {
+        playerLeftStrategyList: updatedListStrategicModeling,
+        playerTopStrategyList: updatedListStrategicModeling
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1154,7 +1156,8 @@ const businessReducer = (state = initialState, action) => {
             return state;    
         case actionTypes.UPDATE_PLAYER_TOP_ON_SCREEN:
             return updatePlayerTopOnScreen(state, action);
-
+        case actionTypes.SET_PLAYERS_ARRAY:
+            return setPlayersArrays(state, action);
             
         default: 
             return state;

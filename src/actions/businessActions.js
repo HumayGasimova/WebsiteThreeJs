@@ -888,3 +888,8 @@ export function updatePlayerTopOnScreen() {
     };
 };
 
+export function setPlayersArrays() {
+    return { 
+        type: actionTypes.SET_PLAYERS_ARRAY
+    };
+};
