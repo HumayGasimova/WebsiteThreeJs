@@ -17,6 +17,7 @@ export const tournamentDurationEpic = (action$, state$) =>
         return of(
           Actions.stopTournament(),
           Actions.showRoundAndPlayers(false),
+          Actions.tournamentState(false),
         ).pipe(
             delay(state$.value.business.strategicModelingRaund * 1000)
         )
