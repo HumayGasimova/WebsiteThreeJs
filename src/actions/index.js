@@ -138,5 +138,6 @@ export {
     updatePlayerTopOnScreen,
     setPlayersArrays,
     gameStarted,
-    allRoundsResult
+    allRoundsResult,
+    startCountingResult
 } from './businessActions';

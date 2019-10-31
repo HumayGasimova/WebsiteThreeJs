@@ -906,3 +906,9 @@ export function allRoundsResult(obj) {
         obj: obj
     };
 };
+
+export function startCountingResult() {
+    return { 
+        type: actionTypes.START_COUNTING_RESULT
+    };
+};

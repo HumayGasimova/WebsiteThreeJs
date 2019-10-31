@@ -87,5 +87,6 @@ export const rootEpic = combineEpics(
     Epic.startUpdatingRoundsOnScreenEpic,
     Epic.startUpdatingPlayerLeftOnScreenEpic,
     Epic.startUpdatingPlayerTopOnScreenEpic,
-    Epic.gameStartedEpic
+    Epic.gameStartedEpic,
+    Epic.startCountingResultEpic
 );

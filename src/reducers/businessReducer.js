@@ -1175,6 +1175,8 @@ const businessReducer = (state = initialState, action) => {
             return state;     
         case actionTypes.ALL_ROUNDS_RESULT:
             return allRoundsResult(state, action);
+        case actionTypes.START_COUNTING_RESULT:
+            return state;  
         default: 
             return state;
     }

@@ -46,6 +46,8 @@ export { startUpdatingRoundsOnScreenEpic } from './startUpdatingRoundsOnScreenEp
 export { startUpdatingPlayerLeftOnScreenEpic } from './startUpdatingPlayerLeftOnScreenEpic';
 export { startUpdatingPlayerTopOnScreenEpic } from './startUpdatingPlayerTopOnScreenEpic';
 export { gameStartedEpic } from './gameStartedEpic';
+export { startCountingResultEpic } from './startCountingResultEpic';
+
 
 
 
