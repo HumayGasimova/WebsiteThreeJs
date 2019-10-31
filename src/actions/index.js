@@ -128,7 +128,7 @@ export {
     tournamentStarted,
     stopTournament,
     tournamentDuration,
-    updateNumberOfRounds,
+    // updateNumberOfRounds,
     showRoundAndPlayers,
     startUpdatingRoundsOnScreen,
     updateRoundsOnScreen,

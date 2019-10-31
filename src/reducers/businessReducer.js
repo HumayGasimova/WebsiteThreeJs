@@ -824,13 +824,13 @@ const updateStrategicModelingRound = (state, action) => {
     });
 }
 
-const updateNumberOfRounds = (state, action) => {
-    let updatedRoundsArray = Utility.getArrayOfRounds(action.val);
-    console.log(updatedRoundsArray)
-    return updateObject(state, {
-        roundsArray: updatedRoundsArray
-    });
-}
+// const updateNumberOfRounds = (state, action) => {
+//     let updatedRoundsArray = Utility.getArrayOfRounds(action.val);
+//     console.log(updatedRoundsArray)
+//     return updateObject(state, {
+//         roundsArray: updatedRoundsArray
+//     });
+// }
 
 const showRoundAndPlayers = (state, action) => {
     return updateObject(state, {
@@ -875,12 +875,14 @@ const updatePlayerTopOnScreen = (state, action) => {
 
 const setPlayersArrays = (state, action) => {
     let updatedListStrategicModeling = [...state.listStrategicModeling];
+    let updatedRoundsArray = Utility.getArrayOfRounds(state.strategicModelingRound);
     updatedListStrategicModeling.shift();
+
     return updateObject(state, {
         playerLeftStrategyList: updatedListStrategicModeling,
         playerTopStrategyList: updatedListStrategicModeling,
         allRoundsRes: [],
-        roundsArray: [1],
+        roundsArray: updatedRoundsArray,
         allRoundsResWithValues: [],
         listOfFinalResult: []
     });
@@ -1230,8 +1232,8 @@ const businessReducer = (state = initialState, action) => {
             return state;    
         case actionTypes.TOURNAMENT_DURATION:
             return state; 
-        case actionTypes.UPDATE_NUMBER_OF_ROUND:
-            return updateNumberOfRounds(state, action);      
+        // case actionTypes.UPDATE_NUMBER_OF_ROUND:
+        //     return updateNumberOfRounds(state, action);      
         case actionTypes.SHOW_ROUND_AND_PLAYERS:
             return showRoundAndPlayers(state, action);  
         case actionTypes.START_UPDATING_ROUNDS_ON_SCREEN:

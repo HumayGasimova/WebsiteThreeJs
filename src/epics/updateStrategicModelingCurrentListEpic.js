@@ -16,7 +16,7 @@ export const updateStrategicModelingCurrentListEpic = (action$, state$) =>
     mergeMap(action => {
         return of(
           Actions.updateStrategicModelingRound(action.round),
-          Actions.updateNumberOfRounds(action.round),
+          // Actions.updateNumberOfRounds(action.round),
         ) 
     })
   )
