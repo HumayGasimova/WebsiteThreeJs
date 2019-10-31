@@ -175,7 +175,7 @@ export class StrategicModeling extends Component {
                         onMouseLeave={this.handleMouseLeave} 
                         className="strategicModeling-wrapper2"
                     >
-                        {this.renderStrategicModelingLeft()}
+                        {this.props.stratedicModelingLeftPartIsShown ? this.renderStrategicModelingLeft() : null}
                         {this.renderStrategicModelingRight()}
                     </div>
                     <div className="strategicModeling-section">Yomi: 0</div>
@@ -208,6 +208,7 @@ export default connect(
             newTournamentButtonDisabled: Selectors.getNewTournamentButtonDisabledState(state),
             roundAndPlayersIsShown: Selectors.getRoundAndPlayersIsShownState(state),
             roundsArray: Selectors.getRoundsArrayState(state),
+            stratedicModelingLeftPartIsShown:  Selectors.getStratedicModelingLeftPartIsShownState(state),
             
             
         };

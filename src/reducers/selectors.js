@@ -497,3 +497,10 @@ export const getPlayerTopStrategyListState = createSelector(
     (x) => x
 );
 
+const getStratedicModelingLeftPartIsShown = (state) => state.business.stratedicModelingLeftPartIsShown;
+
+export const getStratedicModelingLeftPartIsShownState = createSelector(
+    [getStratedicModelingLeftPartIsShown],
+    (x) => x
+);
+

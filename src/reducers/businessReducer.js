@@ -92,7 +92,8 @@ export const initialState = {
     playerTopStrategyList: [],
     allRoundsRes: [],
     allRoundsResWithValues: [],
-    listOfFinalResult: []
+    listOfFinalResult: [],
+    stratedicModelingLeftPartIsShown: false
 }
 
 const makePaperclip = (state) => {
@@ -972,6 +973,12 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
 }
 
 
+const toggleStrategicModelingLeftPart = (state, action) => {
+    return updateObject(state, {
+        stratedicModelingLeftPartIsShown: action.val
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1266,7 +1273,8 @@ const businessReducer = (state = initialState, action) => {
             return updateListOfFinalResult(state, action);  
         case actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST:
             return fillWithValuesStrategicModelingCurrentList(state, action);  
-            
+        case actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART:
+            return toggleStrategicModelingLeftPart(state, action);   
         default: 
             return state;
     }

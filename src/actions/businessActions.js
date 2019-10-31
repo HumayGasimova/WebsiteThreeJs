@@ -945,4 +945,9 @@ export function fillWithValuesStrategicModelingCurrentList() {
     };
 };
 
-
+export function toggleStrategicModelingLeftPart(val) {
+    return { 
+        type: actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART,
+        val: val
+    };
+};

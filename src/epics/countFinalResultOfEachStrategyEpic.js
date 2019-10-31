@@ -54,6 +54,7 @@ export const countFinalResultOfEachStrategyEpic = (action$, state$) =>
             return of(
                 Actions.updateListOfFinalResult(allResults),
                 Actions.fillWithValuesStrategicModelingCurrentList(),
+                Actions.toggleStrategicModelingLeftPart(true),
             )
         }) 
     )
