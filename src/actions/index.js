@@ -139,5 +139,7 @@ export {
     setPlayersArrays,
     gameStarted,
     allRoundsResult,
-    startCountingResult
+    startCountingResult,
+    updatedAllRoundsRes,
+    strategicModelingResult
 } from './businessActions';

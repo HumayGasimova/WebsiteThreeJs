@@ -907,8 +907,21 @@ export function allRoundsResult(obj) {
     };
 };
 
+export function strategicModelingResult() {
+    return { 
+        type: actionTypes.STRATEGIC_MODELING_RESULT
+    };
+};
+
 export function startCountingResult() {
     return { 
         type: actionTypes.START_COUNTING_RESULT
+    };
+};
+
+export function updatedAllRoundsRes(obj) {
+    return { 
+        type: actionTypes.UPDATED_ALL_ROUNDS_RES,
+        obj: obj
     };
 };

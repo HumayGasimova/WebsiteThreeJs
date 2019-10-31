@@ -112,7 +112,7 @@ export const gameStartedEpic = (action$, state$) =>
                             val: plTopVal
                         }
                     }
-                    console.log(obj)
+                    // console.log(obj)
                     return of(
                         Actions.allRoundsResult(obj)
                     )   
