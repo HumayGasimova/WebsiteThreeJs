@@ -91,7 +91,8 @@ export const initialState = {
     playerLeftStrategyList: [],
     playerTopStrategyList: [],
     allRoundsRes: [],
-    allRoundsResWithValues:[]
+    allRoundsResWithValues: [],
+    listOfFinalResult: []
 }
 
 const makePaperclip = (state) => {
@@ -880,7 +881,8 @@ const setPlayersArrays = (state, action) => {
         playerTopStrategyList: updatedListStrategicModeling,
         allRoundsRes: [],
         roundsArray: [1],
-        allRoundsResWithValues: []
+        allRoundsResWithValues: [],
+        listOfFinalResult: []
     });
 }
 
@@ -899,6 +901,11 @@ const updatedAllRoundsRes = (state, action) => {
     });
 }
 
+const updateListOfFinalResult = (state, action) => {
+    return updateObject(state, {
+        listOfFinalResult: action.obj
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1191,7 +1198,8 @@ const businessReducer = (state = initialState, action) => {
             return updatedAllRoundsRes(state, action);
         case actionTypes.COUNT_FINAL_RESULT_OF_EACH_STRATEGY:
             return state; 
-            
+        case actionTypes.UPDATE_LIST_OF_FINAL_RESULT:
+            return updateListOfFinalResult(state, action);  
         default: 
             return state;
     }

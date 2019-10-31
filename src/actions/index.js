@@ -142,5 +142,6 @@ export {
     startCountingResult,
     updatedAllRoundsRes,
     strategicModelingResult,
-    countFinalResultOfEachStrategy
+    countFinalResultOfEachStrategy,
+    updateListOfFinalResult
 } from './businessActions';

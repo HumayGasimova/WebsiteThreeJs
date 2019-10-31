@@ -932,3 +932,10 @@ export function countFinalResultOfEachStrategy() {
     };
 };
 
+export function updateListOfFinalResult(obj) {
+    return { 
+        type: actionTypes.UPDATE_LIST_OF_FINAL_RESULT,
+        obj: obj
+    };
+};
+

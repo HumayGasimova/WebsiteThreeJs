@@ -38,7 +38,7 @@ export const countFinalResultOfEachStrategyEpic = (action$, state$) =>
 
             let plLeftBeatLast = results.filter(x => x.playerLeft.strategy === "BEAT LAST");
             let plTopBeatLast = results.filter(x => x.playerLeft.strategy === "BEAT LAST");
-console.log(plTopBeatLast)
+
             let allResults = {
                 random: plLeftRandom.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftRandom, plTopRandom),
                 a100: plLeftA100.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftA100, plTopA100),
@@ -52,8 +52,7 @@ console.log(plTopBeatLast)
 
             console.log("RANDOM", allResults)
             return of(
-                // Actions.updatedAllRoundsRes(updatedObj),
-                // Actions.countFinalResultOfEachStrategy(),
+                Actions.updateListOfFinalResult(allResults),
             )
         }) 
     )
