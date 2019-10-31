@@ -967,8 +967,10 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
         updatedStrategicModelingCurrentList.splice(strategyBEATLASTTypeIndex, 1, strategyBEATLAST);
     }
 
-    console.log(updatedStrategicModelingCurrentList)
+    let getArrayOfValues = Utility.getAllValuesOfAStrategicModelingCurrentList(updatedStrategicModelingCurrentList);
 
+    console.log(getArrayOfValues)
+    
     return updateObject(state, {
         listOfFinalResult: updatedStrategicModelingCurrentList
     });

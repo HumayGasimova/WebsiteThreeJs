@@ -81,9 +81,7 @@ const getAllValuesOfAPlayer = (playerResult, option) => {
             })
             return arrayOfValues.reduce((a,b)=>a+b);
     }
-    
 } 
-
 
 export const getStrategyModelingResult = (plLeft, plTop) => {
     let plLeftSumOfValues = getAllValuesOfAPlayer(plLeft, "playerLeft");
@@ -92,3 +90,11 @@ export const getStrategyModelingResult = (plLeft, plTop) => {
     let sum = +(plLeftSumOfValues + plTopSumOfValues).toFixed();
     return sum;
 }
+
+export const getAllValuesOfAStrategicModelingCurrentList = (list) => {
+    let arrayOfValues = [];
+    list.map(el => {
+        arrayOfValues.push(el.val)
+    })
+    return arrayOfValues;
+} 
