@@ -48,6 +48,8 @@ export { startUpdatingPlayerTopOnScreenEpic } from './startUpdatingPlayerTopOnSc
 export { gameStartedEpic } from './gameStartedEpic';
 export { strategicModelingResultEpic } from './strategicModelingResultEpic';
 export { startCountingResultEpic } from './startCountingResultEpic';
+export { countFinalResultOfEachStrategyEpic } from './countFinalResultOfEachStrategyEpic';
+
 
 
 

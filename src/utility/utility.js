@@ -66,3 +66,45 @@ export const getArrayOfRounds = (val) => {
 export const getRandomStrategyVal = () => {
     return  +(Math.random()*1).toFixed() + 1;
 } 
+
+const getAllValuesOfAPlayer = (playerResult, option) => {
+    let arrayOfValues = [];
+    switch(option) {
+        case "playerLeft":
+            playerResult.map(el => {
+                arrayOfValues.push(el.playerLeft.value)
+            })
+            return arrayOfValues.reduce((a,b)=>a+b);
+        case "playerTop":
+            playerResult.map(el => {
+                arrayOfValues.push(el.playerTop.value)
+            })
+            return arrayOfValues.reduce((a,b)=>a+b);
+    }
+    
+} 
+
+
+export const getStrategyModelingResult = (plLeft, plTop, strategy) => {
+    switch(strategy){
+        case 'RANDOM':
+            let plLeftSumOfValues = getAllValuesOfAPlayer(plLeft, "playerLeft");
+            let plTopSumOfValues = getAllValuesOfAPlayer(plTop, "playerTop");
+            console.log("OOP", plLeftSumOfValues, plTopSumOfValues)
+            return plLeftSumOfValues + plTopSumOfValues;
+        case 'A100':
+            return
+        case 'B100':
+            return
+        case 'GREEDY':
+            return
+        case 'GENEROUS':
+            return
+        case 'MINIMAX':
+            return
+        case 'TIT FOR TAT':
+            return
+        case 'BEAT LAST':
+            return
+    }
+}

@@ -925,3 +925,10 @@ export function updatedAllRoundsRes(obj) {
         obj: obj
     };
 };
+
+export function countFinalResultOfEachStrategy() {
+    return { 
+        type: actionTypes.COUNT_FINAL_RESULT_OF_EACH_STRATEGY
+    };
+};
+

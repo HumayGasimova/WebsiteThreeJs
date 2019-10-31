@@ -10,5 +10,6 @@ export {
     getRandomMove,
     getRandomCellValue,
     getArrayOfRounds,
-    getRandomStrategyVal
+    getRandomStrategyVal,
+    getStrategyModelingResult
 } from './utility'

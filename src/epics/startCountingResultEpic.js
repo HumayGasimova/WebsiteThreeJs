@@ -53,6 +53,7 @@ export const startCountingResultEpic = (action$, state$) =>
              console.log("YYY", updatedObj)
             return of(
                 Actions.updatedAllRoundsRes(updatedObj),
+                Actions.countFinalResultOfEachStrategy(),
             )
         }) 
     )

@@ -84,7 +84,7 @@ export const initialState = {
     newTournamentCost: 10,
     newTournamentButtonDisabled: false,
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
-    strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}],
+    strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 0, chosen: false}],
     strategicModelingRound: 1,
     roundsArray: [1],
     roundAndPlayersIsShown: false,
@@ -1189,6 +1189,9 @@ const businessReducer = (state = initialState, action) => {
             return state;  
         case actionTypes.UPDATED_ALL_ROUNDS_RES:
             return updatedAllRoundsRes(state, action);
+        case actionTypes.COUNT_FINAL_RESULT_OF_EACH_STRATEGY:
+            return state; 
+            
         default: 
             return state;
     }
