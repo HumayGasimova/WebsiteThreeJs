@@ -879,7 +879,8 @@ const setPlayersArrays = (state, action) => {
         playerLeftStrategyList: updatedListStrategicModeling,
         playerTopStrategyList: updatedListStrategicModeling,
         allRoundsRes: [],
-        roundsArray: [1]
+        roundsArray: [1],
+        allRoundsResWithValues: []
     });
 }
 
@@ -893,11 +894,8 @@ const allRoundsResult = (state, action) => {
 }
 
 const updatedAllRoundsRes = (state, action) => {
-    let updatedAllRoundsResWithValues = [...state.allRoundsResWithValues];
-    updatedAllRoundsResWithValues.push(action.obj);
-    console.log(updatedAllRoundsResWithValues)
     return updateObject(state, {
-        allRoundsRes: updatedAllRoundsResWithValues
+        allRoundsResWithValues: action.obj
     });
 }
 

@@ -14,29 +14,45 @@ export const startCountingResultEpic = (action$, state$) =>
         ofType(actionTypes.START_COUNTING_RESULT),
         mergeMap(action => {
             let allRoundsRes = [...state$.value.business.allRoundsRes];
+            let updatedObj = []
             allRoundsRes.map((el,i) => {
                 let plLeftValue = el.playerLeft.val;
                 let plTopValue = el.playerTop.val;
+                let newValuePlLeft;
+                let newValuePlTop;
+                
                 if(plLeftValue === 1 && plTopValue === 1){
-                    allRoundsRes[i].playerLeft.val = el.cell1 / 2;
-                    allRoundsRes[i].playerTop.val = el.cell1 / 2;
+                    newValuePlLeft = el.cell1 / 2;
+                    newValuePlTop = el.cell1 / 2;
                 }
                 if(plLeftValue === 2 && plTopValue === 2){
-                    allRoundsRes[i].playerLeft.val = el.cell4 * 2;
-                    allRoundsRes[i].playerTop.val = el.cell4 * 2;
+                    newValuePlLeft = el.cell4 * 2;
+                    newValuePlTop = el.cell4 * 2;
                 }
                 if(plLeftValue === 1 && plTopValue === 2){
-                    allRoundsRes[i].playerLeft.val = el.cell3;
-                    allRoundsRes[i].playerTop.val = 0;
+                    newValuePlLeft = el.cell3;
+                    newValuePlTop = 0;
                 }
                 if(plLeftValue === 2 && plTopValue === 1){
-                    allRoundsRes[i].playerLeft.val = 0;
-                    allRoundsRes[i].playerTop.val = el.cell2;
+                    newValuePlLeft = 0;
+                    newValuePlTop = el.cell2;
                 }
+
+                updatedObj.push({
+                    playerLeft: {
+                        strategy: el.playerLeft.strategy,
+                        value: newValuePlLeft
+                    },
+                    playerTop: {
+                        strategy: el.playerTop.strategy,
+                        value: newValuePlTop
+                    },
+
+                })
             })
-             console.log("YYY", allRoundsRes)
+             console.log("YYY", updatedObj)
             return of(
-                Actions.updatedAllRoundsRes(allRoundsRes),
+                Actions.updatedAllRoundsRes(updatedObj),
             )
         }) 
     )
