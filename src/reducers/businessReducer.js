@@ -84,7 +84,7 @@ export const initialState = {
     newTournamentCost: 10,
     newTournamentButtonDisabled: false,
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
-    strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 0, chosen: false}],
+    strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 0, chosen: false, round: 1}],
     strategicModelingRound: 1,
     roundsArray: [1],
     roundAndPlayersIsShown: false,
@@ -775,7 +775,7 @@ const toggleNewTournamentButton = (state) => {
     if( !opsCheck && !tournamentCheck ){
         isDisable = false
     }
-    console.log("GF", opsCheck, tournamentCheck)
+    // console.log("GF", opsCheck, tournamentCheck)
     return updateObject(state, {
         newTournamentButtonDisabled: isDisable
     });
@@ -892,7 +892,7 @@ const setPlayersArrays = (state, action) => {
 const allRoundsResult = (state, action) => {
     let updatedAllRoundsRes = [...state.allRoundsRes];
     updatedAllRoundsRes.push(action.obj);
-    console.log(updatedAllRoundsRes)
+    // console.log(updatedAllRoundsRes)
     return updateObject(state, {
         allRoundsRes: updatedAllRoundsRes
     });
@@ -966,6 +966,8 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
         strategyBEATLAST.val = state.listOfFinalResult.beatLast;
         updatedStrategicModelingCurrentList.splice(strategyBEATLASTTypeIndex, 1, strategyBEATLAST);
     }
+
+    console.log(updatedStrategicModelingCurrentList)
 
     return updateObject(state, {
         listOfFinalResult: updatedStrategicModelingCurrentList
