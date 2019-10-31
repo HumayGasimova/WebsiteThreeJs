@@ -907,6 +907,68 @@ const updateListOfFinalResult = (state, action) => {
     });
 }
 
+const fillWithValuesStrategicModelingCurrentList = (state, action) => {
+    let updatedStrategicModelingCurrentList = [...state.strategicModelingCurrentList];
+
+    let strategyRANDOM = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'RANDOM');
+    let strategyRANDOMTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'RANDOM');
+    strategyRANDOM.val = state.listOfFinalResult.random;
+    updatedStrategicModelingCurrentList.splice(strategyRANDOMTypeIndex, 1, strategyRANDOM);
+
+    if(state.strategicModelingCurrentList.length > 1){
+        let strategyA100 = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'A100');
+        let strategyA100TypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'A100');
+        strategyA100.val = state.listOfFinalResult.a100;
+        updatedStrategicModelingCurrentList.splice(strategyA100TypeIndex, 1, strategyA100);
+    }
+
+    if(state.strategicModelingCurrentList.length > 2){
+        let strategyB100 = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'B100');
+        let strategyB100TypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'B100');
+        strategyB100.val = state.listOfFinalResult.b100;
+        updatedStrategicModelingCurrentList.splice(strategyB100TypeIndex, 1, strategyB100);
+    }
+
+    if(state.strategicModelingCurrentList.length > 3){
+        let strategyGREEDY = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'GREEDY');
+        let strategyGREEDYTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'GREEDY');
+        strategyGREEDY.val = state.listOfFinalResult.greedy;
+        updatedStrategicModelingCurrentList.splice(strategyGREEDYTypeIndex, 1, strategyGREEDY);
+    }
+
+    if(state.strategicModelingCurrentList.length > 4){
+        let strategyGENEROUS = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'GENEROUS');
+        let strategyGENEROUSTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'GENEROUS');
+        strategGENEROUS.val = state.listOfFinalResult.generouse;
+        updatedStrategicModelingCurrentList.splice(strategyGENEROUSTypeIndex, 1, strategyGENEROUS);
+    }
+
+    if(state.strategicModelingCurrentList.length > 5){
+        let strategyMINIMAX = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'MINIMAX');
+        let strategyMINIMAXTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'MINIMAX');
+        strategyMINIMAX.val = state.listOfFinalResult.miniMax;
+        updatedStrategicModelingCurrentList.splice(strategyMINIMAXTypeIndex, 1, strategyMINIMAX);
+    }
+
+    if(state.strategicModelingCurrentList.length > 6){
+        let strategyTITFORTAT = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'TIT FOR TAT');
+        let strategyTITFORTATTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'TIT FOR TAT');
+        strategyTITFORTAT.val = state.listOfFinalResult.titForTat;
+        updatedStrategicModelingCurrentList.splice(strategyTITFORTATTypeIndex, 1, strategyTITFORTAT);
+    }
+
+    if(state.strategicModelingCurrentList.length > 7){
+        let strategyBEATLAST = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'BEAT LAST');
+        let strategyBEATLASTTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'BEAT LAST');
+        strategyBEATLAST.val = state.listOfFinalResult.beatLast;
+        updatedStrategicModelingCurrentList.splice(strategyBEATLASTTypeIndex, 1, strategyBEATLAST);
+    }
+
+    return updateObject(state, {
+        listOfFinalResult: updatedStrategicModelingCurrentList
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1200,6 +1262,9 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.UPDATE_LIST_OF_FINAL_RESULT:
             return updateListOfFinalResult(state, action);  
+        case actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST:
+            return fillWithValuesStrategicModelingCurrentList(state, action);  
+            
         default: 
             return state;
     }

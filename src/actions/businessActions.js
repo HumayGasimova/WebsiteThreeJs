@@ -939,3 +939,10 @@ export function updateListOfFinalResult(obj) {
     };
 };
 
+export function fillWithValuesStrategicModelingCurrentList() {
+    return { 
+        type: actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST
+    };
+};
+
+

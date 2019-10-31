@@ -53,6 +53,7 @@ export const countFinalResultOfEachStrategyEpic = (action$, state$) =>
             console.log("RANDOM", allResults)
             return of(
                 Actions.updateListOfFinalResult(allResults),
+                Actions.fillWithValuesStrategicModelingCurrentList(),
             )
         }) 
     )

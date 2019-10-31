@@ -143,5 +143,6 @@ export {
     updatedAllRoundsRes,
     strategicModelingResult,
     countFinalResultOfEachStrategy,
-    updateListOfFinalResult
+    updateListOfFinalResult,
+    fillWithValuesStrategicModelingCurrentList
 } from './businessActions';
