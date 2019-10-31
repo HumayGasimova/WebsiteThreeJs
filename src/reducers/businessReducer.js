@@ -85,7 +85,7 @@ export const initialState = {
     newTournamentButtonDisabled: false,
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
     strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 100, chosen: false}],
-    strategicModelingRaund: 1,
+    strategicModelingRound: 1,
     roundsArray: [1],
     roundAndPlayersIsShown: false,
     playerLeftStrategyList: [],
@@ -818,7 +818,7 @@ const clearChosenFromStrategicModelingDropdownList = (state, action) => {
 
 const updateStrategicModelingRound = (state, action) => {
     return updateObject(state, {
-        strategicModelingRaund: action.round
+        strategicModelingRound: action.round
     });
 }
 

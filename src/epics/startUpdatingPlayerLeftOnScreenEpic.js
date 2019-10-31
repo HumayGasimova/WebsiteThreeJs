@@ -22,7 +22,7 @@ export const startUpdatingPlayerLeftOnScreenEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_UPDATING_PLAYER_LEFT_ON_SCREEN),
         mergeMap(action => {
-            return interval(+Math.sqrt(state$.value.business.strategicModelingRaund)* 1000).pipe(
+            return interval((+Math.sqrt(state$.value.business.strategicModelingRound) * 1000) + 1).pipe(
                 mergeMap(() => {
                     return of(
                         Actions.updatePlayerLeftOnScreen()

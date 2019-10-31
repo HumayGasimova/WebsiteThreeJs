@@ -39,7 +39,7 @@ export const gameStartedEpic = (action$, state$) =>
                             plLeftVal = 2;
                             break;
                         case "GREEDY":
-                            plLeftVal = 1; //vseqda odin tak viqodno emu
+                            plLeftVal = 1; //vseqda ka viqodno emu
                             break;
                         case "GENEROUS":
                             plLeftVal = 2; //dobrak

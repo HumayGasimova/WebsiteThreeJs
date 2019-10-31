@@ -19,7 +19,7 @@ export const tournamentDurationEpic = (action$, state$) =>
           Actions.showRoundAndPlayers(false),
           Actions.tournamentState(false),
         ).pipe(
-            delay(state$.value.business.strategicModelingRaund * 1000)
+            delay(state$.value.business.strategicModelingRound * 1000)
         )
     })
   )

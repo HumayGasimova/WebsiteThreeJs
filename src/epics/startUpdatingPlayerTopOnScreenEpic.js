@@ -22,7 +22,7 @@ export const startUpdatingPlayerTopOnScreenEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_UPDATING_PLAYER_TOP_ON_SCREEN),
         mergeMap(action => {
-            return interval(1000).pipe(
+            return interval(1001).pipe(
                 mergeMap(() => {
                     return of(
                         Actions.updatePlayerTopOnScreen()
