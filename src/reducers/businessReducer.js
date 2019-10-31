@@ -93,7 +93,7 @@ export const initialState = {
     allRoundsRes: [],
     allRoundsResWithValues: [],
     listOfFinalResult: [],
-    stratedicModelingLeftPartIsShown: false
+    stratedicModelingLeftPartIsShown: true
 }
 
 const makePaperclip = (state) => {
@@ -942,7 +942,7 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
     if(state.strategicModelingCurrentList.length > 4){
         let strategyGENEROUS = updatedStrategicModelingCurrentList.find(x=>x.strategy === 'GENEROUS');
         let strategyGENEROUSTypeIndex = updatedStrategicModelingCurrentList.findIndex(str => str.strategy === 'GENEROUS');
-        strategGENEROUS.val = state.listOfFinalResult.generouse;
+        strategyGENEROUS.val = state.listOfFinalResult.generouse;
         updatedStrategicModelingCurrentList.splice(strategyGENEROUSTypeIndex, 1, strategyGENEROUS);
     }
 
@@ -972,7 +972,7 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
     console.log(getArrayOfValues)
     
     return updateObject(state, {
-        listOfFinalResult: updatedStrategicModelingCurrentList
+        strategicModelingCurrentList: updatedStrategicModelingCurrentList
     });
 }
 
