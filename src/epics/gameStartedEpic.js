@@ -99,6 +99,10 @@ export const gameStartedEpic = (action$, state$) =>
                    }
 
                    let obj = {
+                        cell1: state$.value.business.strategicModelingData.cell1,
+                        cell2: state$.value.business.strategicModelingData.cell2,
+                        cell3: state$.value.business.strategicModelingData.cell3,
+                        cell4: state$.value.business.strategicModelingData.cell4,
                         playerLeft: {
                             strategy: state$.value.business.playerLeftStrategyList[0],
                             val: plLeftVal

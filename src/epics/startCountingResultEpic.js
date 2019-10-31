@@ -11,8 +11,9 @@ import * as Actions from '../actions';
 
 export const startCountingResultEpic = (action$, state$) => 
     action$.pipe(
-        ofType(actionTypes.START_COUNTING_RESUL),
+        ofType(actionTypes.START_COUNTING_RESULT),
         mergeMap(action => {
+            
             return of(
                 Actions.improveMarketing(action.act),
             )
