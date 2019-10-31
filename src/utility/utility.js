@@ -85,26 +85,10 @@ const getAllValuesOfAPlayer = (playerResult, option) => {
 } 
 
 
-export const getStrategyModelingResult = (plLeft, plTop, strategy) => {
-    switch(strategy){
-        case 'RANDOM':
-            let plLeftSumOfValues = getAllValuesOfAPlayer(plLeft, "playerLeft");
-            let plTopSumOfValues = getAllValuesOfAPlayer(plTop, "playerTop");
-            console.log("OOP", plLeftSumOfValues, plTopSumOfValues)
-            return plLeftSumOfValues + plTopSumOfValues;
-        case 'A100':
-            return
-        case 'B100':
-            return
-        case 'GREEDY':
-            return
-        case 'GENEROUS':
-            return
-        case 'MINIMAX':
-            return
-        case 'TIT FOR TAT':
-            return
-        case 'BEAT LAST':
-            return
-    }
+export const getStrategyModelingResult = (plLeft, plTop) => {
+    let plLeftSumOfValues = getAllValuesOfAPlayer(plLeft, "playerLeft");
+    let plTopSumOfValues = getAllValuesOfAPlayer(plTop, "playerTop");
+    console.log("OOP", plLeftSumOfValues, plTopSumOfValues)
+    let sum = +(plLeftSumOfValues + plTopSumOfValues).toFixed();
+    return sum;
 }

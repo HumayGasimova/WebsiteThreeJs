@@ -38,16 +38,16 @@ export const countFinalResultOfEachStrategyEpic = (action$, state$) =>
 
             let plLeftBeatLast = results.filter(x => x.playerLeft.strategy === "BEAT LAST");
             let plTopBeatLast = results.filter(x => x.playerLeft.strategy === "BEAT LAST");
-
+console.log(plTopBeatLast)
             let allResults = {
-                random: plLeftRandom !== [] ? Utility.getStrategyModelingResult(plLeftRandom, plTopRandom, "RANDOM") : 0,
-                a100: plLeftA100 !== [] ? Utility.getStrategyModelingResult(plLeftA100, plTopA100, "A100") : 0,
-                b100: plLeftB100 !== [] ? Utility.getStrategyModelingResult(plLeftB100, plTopB100, "B100") : 0,
-                greedy: plLeftGreedy !== [] ? Utility.getStrategyModelingResult(plLeftGreedy, plTopGreedy, "GREEDY") : 0,
-                generouse: plLeftGenerous !== [] ? Utility.getStrategyModelingResult(plLeftGenerous, plTopGenerous, "GENEROUS") : 0,
-                miniMax: plLeftMiniMax !== [] ? Utility.getStrategyModelingResult(plLeftMiniMax, plTopMiniMax, "MINIMAX") : 0,
-                titForTat: plLeftTitForTat !== [] ? Utility.getStrategyModelingResult(plLeftTitForTat, plTopTitForTat, "TIT FOR TAT") : 0,
-                beatLast: plLeftBeatLast !== [] ? Utility.getStrategyModelingResult(plLeftBeatLast, plTopBeatLast, "BEAT LAST") : 0       
+                random: plLeftRandom.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftRandom, plTopRandom),
+                a100: plLeftA100.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftA100, plTopA100),
+                b100: plLeftB100.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftB100, plTopB100),
+                greedy: plLeftGreedy.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftGreedy, plTopGreedy),
+                generouse: plLeftGenerous.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftGenerous, plTopGenerous),
+                miniMax: plLeftMiniMax.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftMiniMax, plTopMiniMax),
+                titForTat: plLeftTitForTat.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftTitForTat, plTopTitForTat),
+                beatLast: plLeftBeatLast.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftBeatLast, plTopBeatLast)      
             }
 
             console.log("RANDOM", allResults)
