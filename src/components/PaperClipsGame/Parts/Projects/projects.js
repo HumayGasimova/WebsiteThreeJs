@@ -519,6 +519,11 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectMoney(price.money);
                 this.props.trustPlusOneFromProject(1);
                 break;
+            case 'anotherTokenOfGoodwill7':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectMoney(price.money);
+                this.props.trustPlusOneFromProject(1);
+                break;
 
                
         }
