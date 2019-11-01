@@ -151,5 +151,6 @@ export {
     updateYomi,
     addCoherentExtrapolatedVolition,
     removePriceOfProjectOpsCreatAndYomi,
-    removePriceOfProjectOpsAndYomi
+    removePriceOfProjectOpsAndYomi,
+    removePriceOfProjectYomiAndMoney
 } from './businessActions';

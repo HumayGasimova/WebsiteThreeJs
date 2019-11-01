@@ -817,7 +817,7 @@ export const CoherentExtrapolatedVolition = {
     valid: false,
     id: "card47",
     terminal: "Coherent Extrapolated Volition complete, TRUST INCREASED"
-}// next 4
+}// next 4 sdelali
 export const CureForCancer1 = {
     text1: "Cure for Cancer(25,000 ops)",
     text2: "The trick is tricking cancer into curing itself",
@@ -834,7 +834,7 @@ export const CureForCancer1 = {
     valid: false,
     id: "card48",
     terminal: "Cancer is cured, +10 TRUST, global stock prices trending upward"
-}//stop
+}//stop sdelali
 
 
 export const WorldPeace2 = {
@@ -853,7 +853,7 @@ export const WorldPeace2 = {
     valid: false,
     id: "card49",
     terminal: ""
-}
+} //sdelali
 export const GlobalWarming3 = {
     text1: "Global Warming(4,500 yomi, 50,000 ops)",
     text2: "A robust solution to man-made climate",
@@ -908,12 +908,12 @@ export const FullMonopoly = {
         yomi: 3,
         money: 3
     },
-    action: 1,
+    action: 900,
     next: 'fullMonopoly',
     valid: false,
     id: "card52",
     terminal: "Full market monopoly achieved, public demand increased x10"
-}// stop
+}// stop 
 
 
 

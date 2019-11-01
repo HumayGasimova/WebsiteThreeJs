@@ -463,6 +463,15 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectOpsAndYomi(price.ops, price.yomi);
                 this.props.trustPlusOneFromProject(12);
                 break;
+            case 'fullMonopoly':
+                this.props.addProject(projectsToAdd.FullMonopoly);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectYomiAndMoney(price.yomi, price.money);
+                this.props.trustPlusOneFromProject(1);
+                this.props.startImprovingMarketing(action);
+                break;
+
+               
         }
     }
 
@@ -565,6 +574,7 @@ export default connect(
             updateStrategicModelingCurrentList: bindActionCreators(Actions.updateStrategicModelingCurrentList, dispatch),
             removePriceOfProjectOpsCreatAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsCreatAndYomi, dispatch),
             removePriceOfProjectOpsAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsAndYomi, dispatch),
+            removePriceOfProjectYomiAndMoney: bindActionCreators(Actions.removePriceOfProjectYomiAndMoney, dispatch),
         };
     }
 )(Projects);

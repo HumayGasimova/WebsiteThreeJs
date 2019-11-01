@@ -995,3 +995,12 @@ export function removePriceOfProjectOpsAndYomi(ops, yomi) {
         yomi: yomi
     };
 };
+
+export function removePriceOfProjectYomiAndMoney(yomi, money) {
+    return { 
+        type: actionTypes.REMOVE_PRICE_OF_PROJECT_YOMI_AND_MONEY,
+        yomi: yomi,
+        money: money,
+    };
+};
+
