@@ -476,6 +476,12 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectOpsAndYomi(price.ops, price.yomi);
                 this.props.trustPlusOneFromProject(15);
                 break;
+            case 'aTokenOfGoodwill':
+                this.props.addProject(projectsToAdd.AnotherTokenOfGoodwill1);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectMoney(price.money);
+                this.props.trustPlusOneFromProject(1);
+                break;
 
                
         }
@@ -581,6 +587,7 @@ export default connect(
             removePriceOfProjectOpsCreatAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsCreatAndYomi, dispatch),
             removePriceOfProjectOpsAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsAndYomi, dispatch),
             removePriceOfProjectYomiAndMoney: bindActionCreators(Actions.removePriceOfProjectYomiAndMoney, dispatch),
+            removePriceOfProjectMoney: bindActionCreators(Actions.removePriceOfProjectMoney, dispatch),
         };
     }
 )(Projects);

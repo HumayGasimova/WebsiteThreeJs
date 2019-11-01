@@ -1004,3 +1004,9 @@ export function removePriceOfProjectYomiAndMoney(yomi, money) {
     };
 };
 
+export function removePriceOfProjectMoney(money) {
+    return { 
+        type: actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY,
+        money: money,
+    };
+};

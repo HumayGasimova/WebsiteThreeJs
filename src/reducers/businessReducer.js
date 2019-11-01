@@ -405,6 +405,12 @@ const removePriceOfProjectYomiAndMoney = (state, action) => {
     });
 }
 
+const removePriceOfProjectMoney = (state, action) => {
+    return updateObject(state, {
+        funds: state.funds - action.money
+    });
+}
+
 const removePriceOfProjectTrust = (state, action) => {
     return updateObject(state, {
         trust: state.trust - action.trust
@@ -1417,6 +1423,8 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectOpsAndYomi(state, action);   
         case actionTypes.REMOVE_PRICE_OF_PROJECT_YOMI_AND_MONEY:
             return removePriceOfProjectYomiAndMoney(state, action);   
+        case actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY:
+            return removePriceOfProjectMoney(state, action);   
             
         default: 
             return state;
