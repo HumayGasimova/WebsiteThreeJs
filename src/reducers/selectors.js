@@ -469,6 +469,13 @@ export const getStrategicModelingCurrentListState = createSelector(
     (x) => x
 );
 
+const getShowStrategicModelingCurrentList = (state) => state.business.showStrategicModelingCurrentList;
+
+export const getShowStrategicModelingCurrentListState = createSelector(
+    [getShowStrategicModelingCurrentList],
+    (x) => x
+);
+
 const getRoundsArray = (state) => state.business.roundsArray;
 
 export const getRoundsArrayState = createSelector(

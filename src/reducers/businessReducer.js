@@ -85,6 +85,7 @@ export const initialState = {
     newTournamentButtonDisabled: false,
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
     strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 0, chosen: false, round: 1}],
+    showStrategicModelingCurrentList: [],
     strategicModelingRound: 1,
     roundsArray: [1],
     roundAndPlayersIsShown: false,
@@ -1000,7 +1001,8 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
     console.log(updatedStrategicModelingCurrentList)
     
     return updateObject(state, {
-        strategicModelingCurrentList: updatedStrategicModelingCurrentList
+        strategicModelingCurrentList: updatedStrategicModelingCurrentList,
+        showStrategicModelingCurrentList: updatedStrategicModelingCurrentList
     });
 }
 

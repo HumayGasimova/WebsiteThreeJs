@@ -59,7 +59,7 @@ export class StrategicModelingLeft extends Component {
     renderList = () => {
         return(
             <div className="strategicModelingLeft">
-                {this.props.strategicModelingCurrentList.map((el, i)=>{
+                {this.props.showStrategicModelingCurrentList.map((el, i)=>{
                     return(
                         <div key={i} className={el.chosen ? "strategicModelingLeft-list-bold" : "strategicModelingLeft-list"}>
                             {i+1}. {el.strategy}: {el.val}
@@ -86,7 +86,7 @@ export class StrategicModelingLeft extends Component {
 export default connect(
     (state) => {
         return {
-            strategicModelingCurrentList: Selectors.getStrategicModelingCurrentListState(state),
+            showStrategicModelingCurrentList: Selectors.getShowStrategicModelingCurrentListState(state),
             // showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
             // chosenListDropdown: Selectors.getChosenListDropdownState(state),
         };
