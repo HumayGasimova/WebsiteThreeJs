@@ -971,3 +971,9 @@ export function updateYomi() {
         type: actionTypes.UPDATE_YOMI
     };
 };
+
+export function addCoherentExtrapolatedVolition() {
+    return { 
+        type: actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION
+    };
+};

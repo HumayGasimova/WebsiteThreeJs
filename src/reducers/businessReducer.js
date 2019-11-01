@@ -1388,7 +1388,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleCells(state, action);   
         case actionTypes.UPDATE_YOMI:
             return updateYomi(state, action);   
-            
+        case actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION:
+            return state; 
         default: 
             return state;
     }

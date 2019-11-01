@@ -148,5 +148,6 @@ export {
     toggleStrategicModelingLeftPart,
     toggleStrategicModelingHover,
     toggleCells,
-    updateYomi
+    updateYomi,
+    addCoherentExtrapolatedVolition
 } from './businessActions';
