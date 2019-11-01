@@ -95,7 +95,8 @@ export const initialState = {
     listOfFinalResult: [],
     stratedicModelingLeftPartIsShown: false,
     stratedicModelingRightPartIsShown: true,
-    strategicModelingPartsHover: false
+    strategicModelingPartsHover: false,
+    cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
 }
 
 const makePaperclip = (state) => {

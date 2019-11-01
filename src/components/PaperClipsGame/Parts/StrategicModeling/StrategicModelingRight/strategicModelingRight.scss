@@ -38,6 +38,9 @@
                     border: 1px solid black;
                     width: 70px;
                     padding-left: 7px;
+                    &.dark {
+                        background: rgba(black, 0.2)
+                    }
                 }
                 .strategicModelingRight-row-cell-2 {
                     border-left: 1px solid black;
@@ -45,6 +48,9 @@
                     border-right: 1px solid black;
                     width: 70px;
                     padding-left: 7px;
+                    &.dark {
+                        background: rgba(black, 0.2)
+                    }
                 }
                 .strategicModelingRight-row-cell-3 {
                     border-top: 1px solid black;
@@ -52,12 +58,18 @@
                     border-bottom: 1px solid black;
                     width: 70px;
                     padding-left: 7px;
+                    &.dark {
+                        background: rgba(black, 0.2)
+                    }
                 }
                 .strategicModelingRight-row-cell-4 {
                     border-right: 1px solid black;
                     border-bottom: 1px solid black;
                     width: 70px;
                     padding-left: 7px;
+                    &.dark {
+                        background: rgba(black, 0.2)
+                    }
                 }
             }
         }

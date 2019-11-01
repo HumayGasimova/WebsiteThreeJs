@@ -518,3 +518,9 @@ export const getStrategicModelingPartsHoverState = createSelector(
     (x) => x
 );
 
+const getCellIsDark = (state) => state.business.cellIsDark;
+
+export const getCellIsDarkState = createSelector(
+    [getCellIsDark],
+    (x) => x
+);
