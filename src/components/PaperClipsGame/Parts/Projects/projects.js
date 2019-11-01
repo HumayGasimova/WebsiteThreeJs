@@ -63,7 +63,11 @@ export class Projects extends Component {
                 text1: "Improved AutoClippers (750 ops)",
                 text2 : "Increases AutoClipper performance 25%",
                 price: {
-                    ops: 5
+                    ops: 3,
+                    creat: 1,
+                    trust: 1,
+                    yomi: 1,
+                    money: 1
                 },
                 action: 25,
                 next: 'AutoClippers25',
@@ -75,7 +79,11 @@ export class Projects extends Component {
                 text1: "Improved Wire Extrusion (1,750 ops)",
                 text2 : "50% more wire supply from every spool",
                 price: {
-                    ops: 5
+                    ops: 3,
+                    creat: 1,
+                    trust: 1,
+                    yomi: 1,
+                    money: 1
                 },
                 action: 50,
                 next: 'wireExtrusion50',
@@ -88,7 +96,11 @@ export class Projects extends Component {
                 text2 : "Automatically calculates average revenue",
                 text3 : "per second",
                 price: {
-                    ops: 5
+                    ops: 3,
+                    creat: 1,
+                    trust: 1,
+                    yomi: 1,
+                    money: 1
                 },
                 action: null,
                 next: 'showRevTracker',
@@ -468,6 +480,7 @@ export class Projects extends Component {
                                 priceCreat={el.price.creat}
                                 priceTrust={el.price.trust}
                                 priceYomi={el.price.yomi}
+                                priceMoney={el.price.money}
                                 id={el.id}
                                 action={el.action}
                                 i={i}

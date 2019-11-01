@@ -6,7 +6,8 @@ export const AutoClippers50 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 50,
     next: 'autoClippers50',
@@ -23,7 +24,8 @@ export const OptimizedAutoClippers75 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 75,
     next: 'autoClippers75',
@@ -39,7 +41,8 @@ export const WireExtrusion75 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 75,
     next: 'wireExtrusion75',
@@ -55,7 +58,8 @@ export const MicrolatticeShapecasting100 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 100,
     next: 'microlatticeShapecasting100',
@@ -71,7 +75,8 @@ export const SpectralFrothAnnealment200 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 200,
     next: 'spectralFrothAnnealment200',
@@ -88,7 +93,8 @@ export const Creativity = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: null,
     next: 'creativity',
@@ -104,7 +110,8 @@ export const Limerick = {
         ops: 1,
         creat: 10,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'limerick',
@@ -121,7 +128,8 @@ export const LexicalProcessing = {
         ops: 1,
         creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'lexicalProcessing',
@@ -137,7 +145,8 @@ export const NewSlogan = {
         ops: 3,
         creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 50,
     next: 'newSlogan',
@@ -154,7 +163,8 @@ export const AlgorithmicTrading = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: null,
     next: 'algorithmicTrading',
@@ -171,7 +181,8 @@ export const CombinatoryHarmonics = {
         ops: 1,
         creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'combinatoryHarmonics',
@@ -187,7 +198,8 @@ export const CatchyJingle = {
         ops: 3,
         creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 100,
     next: 'catchyJingle',
@@ -202,8 +214,9 @@ export const HypnoHarmonics = {
     price: {
         ops: 3,
         creat: 1,
-        trust: 1,
-        yomi: 1
+        trust: 3,
+        yomi: 1,
+        money: 1
     },
     action: 400,
     next: 'hypnoHarmonics',
@@ -219,7 +232,8 @@ export const HypnoDrones = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'hypnoDrones',
@@ -235,7 +249,8 @@ export const ReleaseTheHypnoDrones = {
         ops: 1,
         creat: 1,
         trust: 3,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 500,
     next: 'releaseTheHypnoDrones',
@@ -252,7 +267,8 @@ export const TheHadwigerProblem = {
         ops: 1,
         creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'theHadwigerProblem',
@@ -269,7 +285,8 @@ export const HadwigerClipDiagrams = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 500,
     next: 'hadwigerClipDiagrams',
@@ -285,7 +302,8 @@ export const TheTothSausageConjecture = {
         ops: 1,
         creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'theTothSausageConjecture',
@@ -302,7 +320,8 @@ export const DonkeySpace = {
         ops: 1,
         creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'donkeySpace',
@@ -319,7 +338,8 @@ export const StrategicModeling = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'strategicModeling',
@@ -335,7 +355,8 @@ export const NewStrategyA100 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'newStrategyA100',
@@ -351,7 +372,8 @@ export const NewStrategyB100 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'newStrategyB100',
@@ -367,7 +389,8 @@ export const NewStrategyGreedy = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'newStrategyGreedy',
@@ -384,7 +407,8 @@ export const NewStrategyGenerous = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'newStrategyGenerous',
@@ -401,7 +425,8 @@ export const NewStrategyMinimax = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'newStrategyMinimax',
@@ -418,7 +443,8 @@ export const NewStrategyTitForTat = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'newStrategyTitForTat',
@@ -436,7 +462,8 @@ export const NewStrategyBeatLast = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'newStrategyBeatLast',
@@ -454,7 +481,8 @@ export const TheoryOfMind = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'theoryOfMind',
@@ -471,7 +499,8 @@ export const QuantumComputing = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'quantumComputing',
@@ -487,7 +516,8 @@ export const PhotonicChip = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip',
@@ -504,7 +534,8 @@ export const PhotonicChip2 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip2',
@@ -520,7 +551,8 @@ export const PhotonicChip3 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip3',
@@ -536,7 +568,8 @@ export const PhotonicChip4 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip4',
@@ -552,7 +585,8 @@ export const PhotonicChip5 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip5',
@@ -568,7 +602,8 @@ export const PhotonicChip6 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip6',
@@ -584,7 +619,8 @@ export const PhotonicChip7 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip7',
@@ -600,7 +636,8 @@ export const PhotonicChip8 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip8',
@@ -616,7 +653,8 @@ export const PhotonicChip9 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip9',
@@ -632,7 +670,8 @@ export const PhotonicChip10 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'photonicChip10',
@@ -649,7 +688,8 @@ export const WireBuyer = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'wireBuyer',
@@ -666,7 +706,8 @@ export const MegaClippers = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 50,
     next: 'megaClippers',
@@ -683,7 +724,8 @@ export const ImprovedMegaClippers = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 25,
     next: 'improvedMegaClippers',
@@ -700,7 +742,8 @@ export const EvenBetterMegaClippers = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 50,
     next: 'evenBetterMegaClippers',
@@ -717,7 +760,8 @@ export const OptimizedMegaClippers = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 100,
     next: 'optimizedMegaClippers',
@@ -733,7 +777,8 @@ export const QuantumFoamAnnealment = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1000,
     next: 'quantumFoamAnnealment',
@@ -764,7 +809,8 @@ export const CoherentExtrapolatedVolition = {
         ops: 3,
         creat: 3,
         trust: 1,
-        yomi: 3
+        yomi: 3,
+        money: 1
     },
     action: 1,
     next: 'coherentExtrapolatedVolition',
@@ -780,7 +826,8 @@ export const CureForCancer1 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'cureForCancer',
@@ -798,7 +845,8 @@ export const WorldPeace2 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 3
+        yomi: 3,
+        money: 1
     },
     action: 1,
     next: 'worldPeace',
@@ -814,7 +862,8 @@ export const GlobalWarming3 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 3,
+        money: 1
     },
     action: 1,
     next: 'globalWarming',
@@ -830,7 +879,8 @@ export const MalePatternBaldness4 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'MalePatternBaldness',
@@ -852,10 +902,11 @@ export const FullMonopoly = {
     text2: "Establish full control over the world-wide",
     text3: "paperclip market. (+1 Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 3,
+        money: 3
     },
     action: 1,
     next: 'fullMonopoly',
@@ -873,10 +924,11 @@ export const ATokenOfGoodwill = {
     text1: "A Token Of Goodwill ($500,000)",
     text2: "A small gift to the supervisors. (+1 Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'aTokenOfGoodwill',
@@ -889,10 +941,11 @@ export const AnotherTokenOfGoodwill1 = {
     text2: "Another small gift to the supervisors. (+1",
     text3: "Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'anotherTokenOfGoodwill1',
@@ -905,10 +958,11 @@ export const AnotherTokenOfGoodwill2 = {
     text2: "Another small gift to the supervisors. (+1",
     text3: "Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'anotherTokenOfGoodwill2',
@@ -921,10 +975,11 @@ export const AnotherTokenOfGoodwill3 = {
     text2: "Another small gift to the supervisors. (+1",
     text3: "Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'anotherTokenOfGoodwill3',
@@ -937,10 +992,11 @@ export const AnotherTokenOfGoodwill4 = {
     text2: "Another small gift to the supervisors. (+1",
     text3: "Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'anotherTokenOfGoodwill4',
@@ -954,10 +1010,11 @@ export const AnotherTokenOfGoodwill5 = {
     text3: "Another small gift to the supervisors. (+1",
     text4: "Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'anotherTokenOfGoodwill5',
@@ -970,10 +1027,11 @@ export const AutoTourney = {
     text2: "Automatically start a new tournament when",
     text2: "the previous one has finished",
     price: {
-        ops: 3,
-        creat: 1,
+        ops: 1,
+        creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'autoTourney',
@@ -987,10 +1045,11 @@ export const AnotherTokenOfGoodwill6 = {
     text3: "Another small gift to the supervisors. (+1",
     text4: "Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'anotherTokenOfGoodwill6',
@@ -1004,10 +1063,11 @@ export const AnotherTokenOfGoodwill7 = {
     text3: "Another small gift to the supervisors. (+1",
     text4: "Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'anotherTokenOfGoodwill7',
@@ -1031,10 +1091,11 @@ export const XavierReinitialization = {
     text1: "Xavier Re-initialization (100,000 creat)",
     text2: "Re-allocate accumulated trust",
     price: {
-        ops: 3,
-        creat: 1,
+        ops: 1,
+        creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'xavierReinitialization',
@@ -1047,10 +1108,11 @@ export const XavierReinitialization2 = {
     text1: "Xavier Re-initialization (100,000 creat)",
     text2: "Re-allocate accumulated trust",
     price: {
-        ops: 3,
-        creat: 1,
+        ops: 1,
+        creat: 3,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'xavierReinitialization2',
@@ -1067,7 +1129,8 @@ export const QuantumTemporalReversion = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 1
     },
     action: 1,
     next: 'quantumTemporalReversion',
@@ -1082,10 +1145,11 @@ export const HostileTakeover = {
     text2: "Acquire a controlling interest in Global",
     text3: "Fasteners, our biggest rival. (+1 Trust)",
     price: {
-        ops: 3,
+        ops: 1,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 1,
+        money: 3
     },
     action: 1,
     next: 'quantumTemporalReversion',
