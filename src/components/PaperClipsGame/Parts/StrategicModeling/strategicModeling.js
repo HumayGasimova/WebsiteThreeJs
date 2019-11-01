@@ -143,6 +143,11 @@ export class StrategicModeling extends Component {
                 <div className="strategicModeling-text">Round {this.props.roundsArray[0]}</div>
             )
         }else{
+            if(this.props.stratedicModelingLeftPartIsShown){
+                return(
+                    <div className="strategicModeling-text">TOURNAMENT RESULTS (roll over for grid)</div>
+                )
+            }
             return(
                 <div className="strategicModeling-text">Pick strategy, run tournament, gain yomi</div>
             )
