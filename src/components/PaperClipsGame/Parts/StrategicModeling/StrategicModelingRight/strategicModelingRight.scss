@@ -25,7 +25,7 @@
                 flex-direction: column;
                 justify-content: flex-end;
                 text-align: center;
-                font-size: 13px;
+                font-size: 12px;
                 font-family: 'Oxygen Mono', monospace;
                 &.left {
                     padding-right: 7px;
@@ -37,23 +37,27 @@
                 .strategicModelingRight-row-cell-1 {
                     border: 1px solid black;
                     width: 70px;
+                    padding-left: 7px;
                 }
                 .strategicModelingRight-row-cell-2 {
                     border-left: 1px solid black;
                     border-bottom: 1px solid black;
                     border-right: 1px solid black;
                     width: 70px;
+                    padding-left: 7px;
                 }
                 .strategicModelingRight-row-cell-3 {
                     border-top: 1px solid black;
                     border-right: 1px solid black;
                     border-bottom: 1px solid black;
                     width: 70px;
+                    padding-left: 7px;
                 }
                 .strategicModelingRight-row-cell-4 {
                     border-right: 1px solid black;
                     border-bottom: 1px solid black;
                     width: 70px;
+                    padding-left: 7px;
                 }
             }
         }
