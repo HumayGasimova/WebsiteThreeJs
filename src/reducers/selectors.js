@@ -504,3 +504,17 @@ export const getStratedicModelingLeftPartIsShownState = createSelector(
     (x) => x
 );
 
+const getStratedicModelingRightPartIsShown = (state) => state.business.stratedicModelingRightPartIsShown;
+
+export const getStratedicModelingRightPartIsShownState = createSelector(
+    [getStratedicModelingRightPartIsShown],
+    (x) => x
+);
+
+const getStrategicModelingPartsHover = (state) => state.business.strategicModelingPartsHover;
+
+export const getStrategicModelingPartsHoverState = createSelector(
+    [getStrategicModelingPartsHover],
+    (x) => x
+);
+

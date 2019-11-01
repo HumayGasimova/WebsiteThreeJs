@@ -57,7 +57,7 @@ export class StrategicModeling extends Component {
     constructor (props){
         super(props);
         this.state = {
-            isHovering: false,
+            // isHovering: false,
             newTournamentButtonDisabled: false
         }
     }
@@ -67,19 +67,21 @@ export class StrategicModeling extends Component {
     */
 
     handleMouseEnter = () => {
-        this.setState({
-            isHovering: true
-        })
+        this.props.toggleStrategicModelingHover(false);
+        // this.setState({
+        //     isHovering: false
+        // })
     }
 
     handleMouseLeave = () => {
-        this.setState({
-            isHovering: false
-        })
+        this.props.toggleStrategicModelingHover(true);
+        // this.setState({
+        //     isHovering: true
+        // })
     }
 
     renderStrategicModelingLeft = () => {
-        if(this.state.isHovering){
+        if(this.props.strategicModelingPartsHover){
             return(
                 <StrategicModelingLeft/>
             )
@@ -87,7 +89,7 @@ export class StrategicModeling extends Component {
     }
 
     renderStrategicModelingRight = () => {
-        if(!this.state.isHovering){
+        if(!this.props.strategicModelingPartsHover){
             return(
                 <StrategicModelingRight/>
             )
@@ -176,7 +178,7 @@ export class StrategicModeling extends Component {
                         className="strategicModeling-wrapper2"
                     >
                         {this.props.stratedicModelingLeftPartIsShown ? this.renderStrategicModelingLeft() : null}
-                        {this.renderStrategicModelingRight()}
+                        {this.props.stratedicModelingRightPartIsShown ? this.renderStrategicModelingRight() : null}
                     </div>
                     <div className="strategicModeling-section">Yomi: 0</div>
                 </div>
@@ -208,8 +210,9 @@ export default connect(
             newTournamentButtonDisabled: Selectors.getNewTournamentButtonDisabledState(state),
             roundAndPlayersIsShown: Selectors.getRoundAndPlayersIsShownState(state),
             roundsArray: Selectors.getRoundsArrayState(state),
-            stratedicModelingLeftPartIsShown:  Selectors.getStratedicModelingLeftPartIsShownState(state),
-            
+            stratedicModelingLeftPartIsShown: Selectors.getStratedicModelingLeftPartIsShownState(state),
+            stratedicModelingRightPartIsShown: Selectors.getStratedicModelingRightPartIsShownState(state),
+            strategicModelingPartsHover: Selectors.getStrategicModelingPartsHoverState(state), 
             
         };
     },
@@ -218,6 +221,7 @@ export default connect(
             toggleDropdownStrategicModeling: bindActionCreators(Actions.toggleDropdownStrategicModeling, dispatch),
             startNewTournament: bindActionCreators(Actions.startNewTournament, dispatch),
             startRunningStrategicModeling: bindActionCreators(Actions.startRunningStrategicModeling, dispatch),
+            toggleStrategicModelingHover: bindActionCreators(Actions.toggleStrategicModelingHover, dispatch),
         };
     }
 )(StrategicModeling);

@@ -951,3 +951,10 @@ export function toggleStrategicModelingLeftPart(val) {
         val: val
     };
 };
+
+export function toggleStrategicModelingHover(val) {
+    return { 
+        type: actionTypes.TOGGLE_STRATEGIC_MODELING_HOVER,
+        val: val
+    };
+};

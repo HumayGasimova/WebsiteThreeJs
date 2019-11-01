@@ -104,7 +104,8 @@ action$.pipe(
         return of(
           Actions.tournamentState(true),
           Actions.toggleNewTournamentButton(),
-          Actions.updateStrategicModelingData(obj)
+          Actions.updateStrategicModelingData(obj),
+          Actions.toggleStrategicModelingLeftPart(false),
         ) 
     })
   ) 

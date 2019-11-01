@@ -93,7 +93,9 @@ export const initialState = {
     allRoundsRes: [],
     allRoundsResWithValues: [],
     listOfFinalResult: [],
-    stratedicModelingLeftPartIsShown: true
+    stratedicModelingLeftPartIsShown: false,
+    stratedicModelingRightPartIsShown: true,
+    strategicModelingPartsHover: false
 }
 
 const makePaperclip = (state) => {
@@ -976,12 +978,18 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
     });
 }
 
-
 const toggleStrategicModelingLeftPart = (state, action) => {
     return updateObject(state, {
         stratedicModelingLeftPartIsShown: action.val
     });
 }
+
+const toggleStrategicModelingHover = (state, action) => {
+    return updateObject(state, {
+        strategicModelingPartsHover: action.val
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1279,6 +1287,9 @@ const businessReducer = (state = initialState, action) => {
             return fillWithValuesStrategicModelingCurrentList(state, action);  
         case actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART:
             return toggleStrategicModelingLeftPart(state, action);   
+        case actionTypes.TOGGLE_STRATEGIC_MODELING_HOVER:
+            return toggleStrategicModelingHover(state, action);   
+            
         default: 
             return state;
     }

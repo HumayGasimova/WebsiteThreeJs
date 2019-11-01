@@ -145,5 +145,6 @@ export {
     countFinalResultOfEachStrategy,
     updateListOfFinalResult,
     fillWithValuesStrategicModelingCurrentList,
-    toggleStrategicModelingLeftPart
+    toggleStrategicModelingLeftPart,
+    toggleStrategicModelingHover
 } from './businessActions';
