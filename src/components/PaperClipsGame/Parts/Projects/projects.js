@@ -431,6 +431,15 @@ export class Projects extends Component {
                 this.props.addChip(chipsToAdd.Chip10);
                 this.props.startAddingQOps("chip10");
                 break; 
+            case 'coherentExtrapolatedVolition':
+                this.props.addProject(projectsToAdd.CureForCancer1);
+                this.props.addProject(projectsToAdd.WorldPeace2);
+                this.props.addProject(projectsToAdd.GlobalWarming3);
+                this.props.addProject(projectsToAdd.MalePatternBaldness4);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOpsCreatAndYomi(price.ops, price.creat, price.yomi);
+                this.props.trustPlusOneFromProject();
+                break; 
         }
     }
 
@@ -529,6 +538,7 @@ export default connect(
             updateNewTournamentCost: bindActionCreators(Actions.updateNewTournamentCost, dispatch),
             toggleNewTournamentButton: bindActionCreators(Actions.toggleNewTournamentButton, dispatch),
             updateStrategicModelingCurrentList: bindActionCreators(Actions.updateStrategicModelingCurrentList, dispatch),
+            removePriceOfProjectOpsCreatAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsCreatAndYomi, dispatch),
         };
     }
 )(Projects);

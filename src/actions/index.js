@@ -149,5 +149,6 @@ export {
     toggleStrategicModelingHover,
     toggleCells,
     updateYomi,
-    addCoherentExtrapolatedVolition
+    addCoherentExtrapolatedVolition,
+    removePriceOfProjectOpsCreatAndYomi
 } from './businessActions';

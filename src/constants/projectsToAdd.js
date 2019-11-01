@@ -628,12 +628,14 @@ export const CoherentExtrapolatedVolition = {
     text3: "Human values, machine intelligence, a new",
     text4: "era of trust. (+1 Trust)",
     price: {
-        ops: 3
+        ops: 3,
+        creat: 3,
+        yomi: 3
     },
     action: 1,
     next: 'coherentExtrapolatedVolition',
     valid: false,
-    id: "",
+    id: "card47",
     terminal: "Coherent Extrapolated Volition complete, TRUST INCREASED"
 }// next 4
 export const CureForCancer1 = {
@@ -646,7 +648,7 @@ export const CureForCancer1 = {
     action: 1,
     next: 'cureForCancer',
     valid: false,
-    id: "",
+    id: "card48",
     terminal: "Cancer is cured, +10 TRUST, global stock prices trending upward"
 }//stop
 export const WorldPeace2 = {
@@ -659,7 +661,7 @@ export const WorldPeace2 = {
     action: 1,
     next: 'worldPeace',
     valid: false,
-    id: "",
+    id: "card49",
     terminal: ""
 }
 export const GlobalWarming3 = {
@@ -672,7 +674,7 @@ export const GlobalWarming3 = {
     action: 1,
     next: 'globalWarming',
     valid: false,
-    id: "",
+    id: "card50",
     terminal: "Global Warming solved, +15 TRUST, global stock prices trending upward"
 }
 export const MalePatternBaldness4 = {
@@ -685,7 +687,7 @@ export const MalePatternBaldness4 = {
     action: 1,
     next: 'MalePatternBaldness',
     valid: false,
-    id: "",
+    id: "card51",
     terminal: "They are still monkeys"
 }
 
@@ -707,7 +709,7 @@ export const FullMonopoly = {
     action: 1,
     next: 'fullMonopoly',
     valid: false,
-    id: "",
+    id: "card52",
     terminal: "Full market monopoly achieved, public demand increased x10"
 }// stop
 
@@ -725,7 +727,7 @@ export const ATokenOfGoodwill = {
     action: 1,
     next: 'aTokenOfGoodwill',
     valid: false,
-    id: "",
+    id: "card53",
     terminal: "Gift accepted, TRUST INCREASED"
 }
 export const AnotherTokenOfGoodwill1 = {
@@ -738,7 +740,7 @@ export const AnotherTokenOfGoodwill1 = {
     action: 1,
     next: 'anotherTokenOfGoodwill1',
     valid: false,
-    id: "",
+    id: "card54",
     terminal: "Gift accepted, TRUST INCREASED"
 }
 export const AnotherTokenOfGoodwill2 = {
@@ -751,7 +753,7 @@ export const AnotherTokenOfGoodwill2 = {
     action: 1,
     next: 'anotherTokenOfGoodwill2',
     valid: false,
-    id: "",
+    id: "card55",
     terminal: "Gift accepted, TRUST INCREASED"
 }
 export const AnotherTokenOfGoodwill3 = {
@@ -764,7 +766,7 @@ export const AnotherTokenOfGoodwill3 = {
     action: 1,
     next: 'anotherTokenOfGoodwill3',
     valid: false,
-    id: "",
+    id: "card56",
     terminal: "Gift accepted, TRUST INCREASED"
 }
 export const AnotherTokenOfGoodwill4 = {
@@ -777,7 +779,7 @@ export const AnotherTokenOfGoodwill4 = {
     action: 1,
     next: 'anotherTokenOfGoodwill4',
     valid: false,
-    id: "",
+    id: "card57",
     terminal: "Gift accepted, TRUST INCREASED"
 }
 export const AnotherTokenOfGoodwill5 = {
@@ -791,7 +793,7 @@ export const AnotherTokenOfGoodwill5 = {
     action: 1,
     next: 'anotherTokenOfGoodwill5',
     valid: false,
-    id: "",
+    id: "card58",
     terminal: "Gift accepted, TRUST INCREASED"
 } // and
 export const AutoTourney = {
@@ -804,7 +806,7 @@ export const AutoTourney = {
     action: 1,
     next: 'autoTourney',
     valid: false,
-    id: "",
+    id: "card59",
     terminal: "Gift accepted, TRUST INCREASED"
 }
 export const AnotherTokenOfGoodwill6 = {
@@ -818,7 +820,7 @@ export const AnotherTokenOfGoodwill6 = {
     action: 1,
     next: 'anotherTokenOfGoodwill6',
     valid: false,
-    id: "",
+    id: "card60",
     terminal: "Gift accepted, TRUST INCREASED"
 }
 export const AnotherTokenOfGoodwill7 = {
@@ -832,7 +834,7 @@ export const AnotherTokenOfGoodwill7 = {
     action: 1,
     next: 'anotherTokenOfGoodwill7',
     valid: false,
-    id: "",
+    id: "card61",
     terminal: "Gift accepted, TRUST INCREASED"
 }//......
 
@@ -856,7 +858,7 @@ export const XavierReinitialization = {
     action: 1,
     next: 'xavierReinitialization',
     valid: false,
-    id: "",
+    id: "card62",
     terminal: "Trust now available for re-allocation"
 }// creat 100000 end obnulaetsa trust processors0 memory0 0/0 operations
 
@@ -869,7 +871,7 @@ export const XavierReinitialization2 = {
     action: 1,
     next: 'xavierReinitialization2',
     valid: false,
-    id: "",
+    id: "card63",
     terminal: "Trust now available for re-allocation"
 }
 
@@ -883,7 +885,7 @@ export const QuantumTemporalReversion = {
     action: 1,
     next: 'quantumTemporalReversion',
     valid: false,
-    id: "",
+    id: "card64",
     terminal: ""
 }
 
@@ -898,6 +900,6 @@ export const HostileTakeover = {
     action: 1,
     next: 'quantumTemporalReversion',
     valid: false,
-    id: "",
+    id: "card65",
     terminal: "Global Fasteners acquired, public demand increased x5"
 }

@@ -977,3 +977,13 @@ export function addCoherentExtrapolatedVolition() {
         type: actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION
     };
 };
+
+export function removePriceOfProjectOpsCreatAndYomi(ops, creat, yomi) {
+    return { 
+        type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_CREAT_AND_YOMI,
+        ops: ops,
+        creativity: creat,
+        yomi: yomi
+    };
+};
+

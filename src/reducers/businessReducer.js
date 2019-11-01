@@ -383,6 +383,14 @@ const removePriceOfProjectOpsAndCreat = (state, action) => {
     });
 }
 
+const removePriceOfProjectOpsCreatAndYomi = (state, action) => {
+    return updateObject(state, {
+        ops: state.ops - action.ops,
+        creativity: state.creativity - action.creativity,
+        yomi: state.yomi - action.yomi
+    });
+}
+
 const removePriceOfProjectTrust = (state, action) => {
     return updateObject(state, {
         trust: state.trust - action.trust
@@ -1085,7 +1093,6 @@ const startNewTournament = (state, action) => {
 }
 
 
-
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1390,6 +1397,10 @@ const businessReducer = (state = initialState, action) => {
             return updateYomi(state, action);   
         case actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION:
             return state; 
+        case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_CREAT_AND_YOMI:
+            return removePriceOfProjectOpsCreatAndYomi(state, action);   
+
+            
         default: 
             return state;
     }
