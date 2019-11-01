@@ -787,19 +787,6 @@ export const QuantumFoamAnnealment = {
     terminal: "Using quantum foam annealment we now get 173,250 supply from every spool"
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const CoherentExtrapolatedVolition = {
     text1: "Coherent Extrapolated Volition(500",
     text2: "creat, 3,000 Yomi, 20,000 ops)",
@@ -817,7 +804,8 @@ export const CoherentExtrapolatedVolition = {
     valid: false,
     id: "card47",
     terminal: "Coherent Extrapolated Volition complete, TRUST INCREASED"
-}// next 4 sdelali
+}
+
 export const CureForCancer1 = {
     text1: "Cure for Cancer(25,000 ops)",
     text2: "The trick is tricking cancer into curing itself",
@@ -834,8 +822,7 @@ export const CureForCancer1 = {
     valid: false,
     id: "card48",
     terminal: "Cancer is cured, +10 TRUST, global stock prices trending upward"
-}//stop sdelali
-
+}
 
 export const WorldPeace2 = {
     text1: "World Peace(15,000 yomi, 30,000 ops)",
@@ -853,7 +840,8 @@ export const WorldPeace2 = {
     valid: false,
     id: "card49",
     terminal: ""
-} //sdelali
+}
+
 export const GlobalWarming3 = {
     text1: "Global Warming(4,500 yomi, 50,000 ops)",
     text2: "A robust solution to man-made climate",
@@ -871,6 +859,7 @@ export const GlobalWarming3 = {
     id: "card50",
     terminal: "Global Warming solved, +15 TRUST, global stock prices trending upward"
 }
+
 export const MalePatternBaldness4 = {
     text1: "MalePatternBaldness(20,000 ops)",
     text2: "A cure for androgenetic alopecia.(+20",
@@ -887,15 +876,7 @@ export const MalePatternBaldness4 = {
     valid: false,
     id: "card51",
     terminal: "They are still monkeys"
-}
-
-
-
-
-
-
-
-
+}//ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 export const FullMonopoly = {
     text1: "Full Monopoly (3,000 yomi, $10,000,000)",
@@ -913,12 +894,7 @@ export const FullMonopoly = {
     valid: false,
     id: "card52",
     terminal: "Full market monopoly achieved, public demand increased x10"
-}// stop sdelano
-
-
-
-
-
+}
 
 export const ATokenOfGoodwill = {
     text1: "A Token Of Goodwill ($500,000)",
@@ -936,6 +912,7 @@ export const ATokenOfGoodwill = {
     id: "card53",
     terminal: "Gift accepted, TRUST INCREASED"
 }
+
 export const AnotherTokenOfGoodwill1 = {
     text1: "Another Token Of Goodwill... ($1,000,000)",
     text2: "Another small gift to the supervisors. (+1",
@@ -953,6 +930,7 @@ export const AnotherTokenOfGoodwill1 = {
     id: "card54",
     terminal: "Gift accepted, TRUST INCREASED"
 }
+
 export const AnotherTokenOfGoodwill2 = {
     text1: "Another Token Of Goodwill... ($2,000,000)",
     text2: "Another small gift to the supervisors. (+1",
@@ -970,6 +948,7 @@ export const AnotherTokenOfGoodwill2 = {
     id: "card55",
     terminal: "Gift accepted, TRUST INCREASED"
 }
+
 export const AnotherTokenOfGoodwill3 = {
     text1: "Another Token Of Goodwill... ($4,000,000)",
     text2: "Another small gift to the supervisors. (+1",
@@ -987,6 +966,7 @@ export const AnotherTokenOfGoodwill3 = {
     id: "card56",
     terminal: "Gift accepted, TRUST INCREASED"
 }
+
 export const AnotherTokenOfGoodwill4 = {
     text1: "Another Token Of Goodwill... ($8,000,000)",
     text2: "Another small gift to the supervisors. (+1",
@@ -1004,6 +984,7 @@ export const AnotherTokenOfGoodwill4 = {
     id: "card57",
     terminal: "Gift accepted, TRUST INCREASED"
 }
+
 export const AnotherTokenOfGoodwill5 = {
     text1: "Another Token Of Goodwill...",
     text2: "($16,000,000)",
@@ -1021,7 +1002,8 @@ export const AnotherTokenOfGoodwill5 = {
     valid: false,
     id: "card58",
     terminal: "Gift accepted, TRUST INCREASED"
-} // and
+} 
+
 export const AutoTourney = {
     text1: "AutoTourney(50,000 creat)",
     text2: "Automatically start a new tournament when",
@@ -1038,7 +1020,8 @@ export const AutoTourney = {
     valid: false,
     id: "card59",
     terminal: "Gift accepted, TRUST INCREASED"
-}
+}// dddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 export const AnotherTokenOfGoodwill6 = {
     text1: "Another Token Of Goodwill...",
     text2: "($32,000,000)",
@@ -1057,6 +1040,7 @@ export const AnotherTokenOfGoodwill6 = {
     id: "card60",
     terminal: "Gift accepted, TRUST INCREASED"
 }
+
 export const AnotherTokenOfGoodwill7 = {
     text1: "Another Token Of Goodwill...",
     text2: "($64,000,000)",
@@ -1074,10 +1058,7 @@ export const AnotherTokenOfGoodwill7 = {
     valid: false,
     id: "card61",
     terminal: "Gift accepted, TRUST INCREASED"
-}//......
-
-
-
+}
 
 
 
