@@ -970,8 +970,32 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
     }
 
     let getArrayOfValues = Utility.getAllValuesOfAStrategicModelingCurrentList(updatedStrategicModelingCurrentList);
+    getArrayOfValues
+    .sort((a,b)=>b-a)
+    .map((el)=>{
+        let filteredElement = updatedStrategicModelingCurrentList.filter(x=>x.val === el);
+       
+        if(filteredElement.length > 1){
+            let arrayOfStrategies = []
+            filteredElement.map((element)=>{
+                arrayOfStrategies.push(element.strategy)
+            });
+            arrayOfStrategies.sort();
+            arrayOfStrategies.map((str) => {
+                let elementStrategy = updatedStrategicModelingCurrentList.find(x=>x.strategy === str);
+                let indexOfStrategy = updatedStrategicModelingCurrentList.findIndex(x=>x.strategy === str);
+                updatedStrategicModelingCurrentList.push(elementStrategy)
+                updatedStrategicModelingCurrentList.splice(indexOfStrategy,1)
+            })
+        }else{
+            let indexOfValue = updatedStrategicModelingCurrentList.findIndex(x=>x.val === el);
+            updatedStrategicModelingCurrentList.push(filteredElement[0])
+            updatedStrategicModelingCurrentList.splice(indexOfValue,1)
+        }
+    });
 
-    console.log(getArrayOfValues)
+    console.log(getArrayOfValues);
+    console.log(updatedStrategicModelingCurrentList)
     
     return updateObject(state, {
         strategicModelingCurrentList: updatedStrategicModelingCurrentList
