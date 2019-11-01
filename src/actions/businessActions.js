@@ -966,4 +966,8 @@ export function toggleCells(obj) {
     };
 };
 
-
+export function updateYomi() {
+    return { 
+        type: actionTypes.UPDATE_YOMI
+    };
+};

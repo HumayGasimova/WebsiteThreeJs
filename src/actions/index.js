@@ -147,5 +147,6 @@ export {
     fillWithValuesStrategicModelingCurrentList,
     toggleStrategicModelingLeftPart,
     toggleStrategicModelingHover,
-    toggleCells
+    toggleCells,
+    updateYomi
 } from './businessActions';

@@ -187,7 +187,7 @@ export class StrategicModeling extends Component {
                         {this.props.stratedicModelingLeftPartIsShown ? this.renderStrategicModelingLeft() : null}
                         {this.props.stratedicModelingRightPartIsShown ? this.renderStrategicModelingRight() : null}
                     </div>
-                    <div className="strategicModeling-section">Yomi: 0</div>
+                    <div className="strategicModeling-section">Yomi: {this.props.yomi}</div>
                 </div>
                 <div>
                     <div className="strategicModeling-wrapper3">
@@ -219,7 +219,8 @@ export default connect(
             roundsArray: Selectors.getRoundsArrayState(state),
             stratedicModelingLeftPartIsShown: Selectors.getStratedicModelingLeftPartIsShownState(state),
             stratedicModelingRightPartIsShown: Selectors.getStratedicModelingRightPartIsShownState(state),
-            strategicModelingPartsHover: Selectors.getStrategicModelingPartsHoverState(state), 
+            strategicModelingPartsHover: Selectors.getStrategicModelingPartsHoverState(state),
+            yomi: Selectors.getYomiState(state),
             
         };
     },

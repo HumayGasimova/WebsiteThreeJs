@@ -96,7 +96,8 @@ export const initialState = {
     stratedicModelingLeftPartIsShown: false,
     stratedicModelingRightPartIsShown: true,
     strategicModelingPartsHover: false,
-    cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+    cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false},
+    yomi: 0
 }
 
 const makePaperclip = (state) => {
@@ -1063,6 +1064,13 @@ const toggleCells = (state, action) => {
     });
 }
 
+const updateYomi = (state, action) => {
+    let updatedYomi = state.strategicModelingCurrentList.find(x => x.chosen === true);
+
+    return updateObject(state, {
+        yomi: state.yomi + updatedYomi.val
+    });
+}
 
 
 
@@ -1366,6 +1374,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleStrategicModelingHover(state, action);   
         case actionTypes.TOGGLE_CELLS:
             return toggleCells(state, action);   
+        case actionTypes.UPDATE_YOMI:
+            return updateYomi(state, action);   
             
         default: 
             return state;

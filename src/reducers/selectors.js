@@ -524,3 +524,12 @@ export const getCellIsDarkState = createSelector(
     [getCellIsDark],
     (x) => x
 );
+
+const getYomi = (state) => state.business.yomi;
+
+export const getYomiState = createSelector(
+    [getYomi],
+    (x) => x
+);
+
+
