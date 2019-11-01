@@ -502,6 +502,13 @@ export class Projects extends Component {
                 break;
             case 'anotherTokenOfGoodwill4':
                 this.props.addProject(projectsToAdd.AnotherTokenOfGoodwill5);
+                this.props.addProject(projectsToAdd.AutoTourney);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectMoney(price.money);
+                this.props.trustPlusOneFromProject(1);
+                break;
+            case 'anotherTokenOfGoodwill5':
+                this.props.addProject(projectsToAdd.AnotherTokenOfGoodwill6);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectMoney(price.money);
                 this.props.trustPlusOneFromProject(1);
