@@ -281,9 +281,9 @@ const trustPlusOne = (state) => {
     });
 }
 
-const trustPlusOneFromProject = (state) => {
+const trustPlusOneFromProject = (state, action) => {
     return updateObject(state, {
-        trust: state.trust + 1
+        trust: state.trust + action.val
     });
 }
 

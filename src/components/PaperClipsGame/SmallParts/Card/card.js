@@ -56,9 +56,23 @@ class Card extends Component {
 
     componentDidMount () {
         this.intervalCheckCardValidity = setInterval(()=>{
-            if(this.props.ops >= this.props.priceOps || 
-                this.props.creativity  >= this.props.priceCreat ||
-                this.props.trust  >= this.props.priceTrust
+            if(this.props.ops >= this.props.priceOps && this.props.priceCreat === 1 && this.props.priceTrust === 1 && this.props.priceYomi === 1 || 
+                this.props.creativity >= this.props.priceCreat && this.props.priceOps === 1 && this.props.priceTrust === 1 && this.props.priceYomi === 1 ||
+                this.props.trust >= this.props.priceTrust && this.props.priceCreat === 1 && this.props.priceOps === 1 && this.props.priceYomi === 1 ||
+                this.props.yomi >= this.props.priceYomi && this.props.priceCreat === 1 && this.props.priceTrust === 1 && this.props.priceOps === 1 ||
+
+                this.props.ops >= this.props.priceOps && this.props.creativity >= this.props.priceCreat && this.props.priceTrust === 1 && this.props.priceYomi === 1 ||
+                this.props.ops >= this.props.priceOps && this.props.trust >= this.props.priceTrust && this.props.priceCreat === 1 && this.props.priceYomi === 1 ||
+                this.props.ops >= this.props.priceOps && this.props.yomi >= this.props.priceYomi && this.props.priceTrust === 1 && this.props.priceCreat === 1 ||
+
+                this.props.creativity >= this.props.priceCreat && this.props.yomi >= this.props.priceYomi && this.props.priceOps === 1 && this.props.priceTrust === 1 ||
+                this.props.creativity >= this.props.priceCreat && this.props.trust >= this.props.priceTrust && this.props.priceOps === 1 && this.props.priceYomi === 1 ||
+                this.props.trust >= this.props.priceTrust && this.props.yomi >= this.props.priceYomi && this.props.priceOps === 1 && this.props.priceCreat === 1 ||
+
+                this.props.ops >= this.props.priceOps && this.props.creativity >= this.props.priceCreat && this.props.trust >= this.props.priceTrust && this.props.priceYomi === 1 ||
+                this.props.ops >= this.props.priceOps && this.props.yomi >= this.props.priceYomi && this.props.trust >= this.props.priceTrust && this.props.priceCreat === 1 ||
+                this.props.ops >= this.props.priceOps && this.props.creativity >= this.props.priceCreat && this.props.yomi >= this.props.priceYomi && this.props.priceTrust === 1 ||
+                this.props.creativity >= this.props.priceCreat  && this.props.yomi >= this.props.priceYomi && this.props.trust >= this.props.priceTrust && this.props.priceOps === 1
             ){
                 this.props.checkCardValidity(this.props.id, true, this.props.i)
             }else{
@@ -94,7 +108,7 @@ export default connect(
             ops: Selectors.getOpsState(state),
             creativity: Selectors.getCreativityState(state),
             trust: Selectors.getTrustState(state),
-            // unsoldInventory: Selectors.getUnsoldInventoryState(state),
+            yomi: Selectors.getYomiState(state),
             // paperclipPrice: Selectors.getPaperclipPriceState(state),
             // delay: Selectors.getDelayState(state),
         };

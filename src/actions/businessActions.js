@@ -171,9 +171,10 @@ export function trustPlusOne() {
     };
 };
 
-export function trustPlusOneFromProject() {
+export function trustPlusOneFromProject(trust) {
     return { 
         type: actionTypes.TRUST_PLUS_ONE_FROM_PROJECT,
+        val: trust
     };
 };
 

@@ -186,7 +186,7 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.AlgorithmicTrading);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
-                this.props.trustPlusOneFromProject();
+                this.props.trustPlusOneFromProject(1);
                 break;
             case 'newSlogan':
                 this.props.sendCommentToTerminal(terminal);
@@ -203,7 +203,7 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.CatchyJingle);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
-                this.props.trustPlusOneFromProject();
+                this.props.trustPlusOneFromProject(1);
                 break;
             case 'catchyJingle':
                 this.props.addProject(projectsToAdd.HypnoHarmonics);
@@ -236,7 +236,7 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.HadwigerClipDiagrams);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
-                this.props.trustPlusOneFromProject();
+                this.props.trustPlusOneFromProject(1);
                 break;
             case 'hadwigerClipDiagrams':
                 this.props.sendCommentToTerminal(terminal);
@@ -251,13 +251,13 @@ export class Projects extends Component {
             case 'theTothSausageConjecture':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
-                this.props.trustPlusOneFromProject();
+                this.props.trustPlusOneFromProject(1);
                 break;
             case 'donkeySpace':
                 this.props.addProject(projectsToAdd.StrategicModeling);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
-                this.props.trustPlusOneFromProject();
+                this.props.trustPlusOneFromProject(1);
                 break;
             case 'strategicModeling':
                 this.props.addProject(projectsToAdd.NewStrategyA100);
@@ -438,8 +438,13 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.MalePatternBaldness4);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsCreatAndYomi(price.ops, price.creat, price.yomi);
-                this.props.trustPlusOneFromProject();
+                this.props.trustPlusOneFromProject(1);
                 break; 
+            case 'cureForCancer':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.trustPlusOneFromProject(10);
+                break;
         }
     }
 
@@ -456,6 +461,7 @@ export class Projects extends Component {
                                 priceOps={el.price.ops}
                                 priceCreat={el.price.creat}
                                 priceTrust={el.price.trust}
+                                priceYomi={el.price.yomi}
                                 id={el.id}
                                 action={el.action}
                                 i={i}
