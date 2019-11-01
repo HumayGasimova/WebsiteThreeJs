@@ -89,11 +89,18 @@ export class StrategicModeling extends Component {
     }
 
     renderStrategicModelingRight = () => {
-        if(!this.props.strategicModelingPartsHover){
+        if(this.props.stratedicModelingLeftPartIsShown === false){
             return(
                 <StrategicModelingRight/>
             )
+        }else{
+            if(!this.props.strategicModelingPartsHover){
+                return(
+                    <StrategicModelingRight/>
+                )
+            }
         }
+        
     }
 
     renderGrid = () => {
