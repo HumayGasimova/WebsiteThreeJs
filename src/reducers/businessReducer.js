@@ -85,7 +85,7 @@ export const initialState = {
     newTournamentButtonDisabled: false,
     strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"},
     strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 0, chosen: false, round: 1}],
-    showStrategicModelingCurrentList: [],
+    showStrategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 0, chosen: false, round: 1}],
     strategicModelingRound: 1,
     roundsArray: [1],
     roundAndPlayersIsShown: false,
@@ -1074,6 +1074,12 @@ const updateYomi = (state, action) => {
     });
 }
 
+const startNewTournament = (state, action) => {
+    return updateObject(state, {
+        ops: state.ops - state.newTournamentCost
+    });
+}
+
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1311,7 +1317,7 @@ const businessReducer = (state = initialState, action) => {
 
             
         case actionTypes.START_NEW_TOURNAMENT:
-            return state; 
+            return startNewTournament(state, action); 
         case actionTypes.TOURNAMENT_STATE:
             return tournamentState(state, action); 
         case actionTypes.UPDATE_NEW_TOURNAMENT_COST:
