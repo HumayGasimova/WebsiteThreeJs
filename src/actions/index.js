@@ -146,5 +146,6 @@ export {
     updateListOfFinalResult,
     fillWithValuesStrategicModelingCurrentList,
     toggleStrategicModelingLeftPart,
-    toggleStrategicModelingHover
+    toggleStrategicModelingHover,
+    toggleCells
 } from './businessActions';

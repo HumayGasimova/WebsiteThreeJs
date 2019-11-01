@@ -1015,6 +1015,56 @@ const toggleStrategicModelingHover = (state, action) => {
     });
 }
 
+const toggleCells = (state, action) => {
+    let updatedCellIsDark;
+    if(action.obj.valLeft === 1 && action.obj.valTop === 1){
+        updatedCellIsDark = {
+            cell1: true, 
+            cell2: false, 
+            cell3: false, 
+            cell4: false
+        }
+    }
+    if(action.obj.valLeft === 2 && action.obj.valTop === 2){
+        updatedCellIsDark = {
+            cell1: false, 
+            cell2: false, 
+            cell3: false, 
+            cell4: true
+        }
+    }
+    if(action.obj.valLeft === 1 && action.obj.valTop === 2){
+        updatedCellIsDark = {
+            cell1: false, 
+            cell2: false, 
+            cell3: true, 
+            cell4: false
+        }
+    }
+    if(action.obj.valLeft === 2 && action.obj.valTop === 1){
+        updatedCellIsDark = {
+            cell1: false, 
+            cell2: true, 
+            cell3: false, 
+            cell4: false
+        }
+    }
+    if(action.obj.valLeft === 3 && action.obj.valTop === 3){
+        updatedCellIsDark = {
+            cell1: false, 
+            cell2: false, 
+            cell3: false, 
+            cell4: false
+        }
+    }
+    
+    return updateObject(state, {
+        cellIsDark: updatedCellIsDark
+    });
+}
+
+
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1314,6 +1364,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleStrategicModelingLeftPart(state, action);   
         case actionTypes.TOGGLE_STRATEGIC_MODELING_HOVER:
             return toggleStrategicModelingHover(state, action);   
+        case actionTypes.TOGGLE_CELLS:
+            return toggleCells(state, action);   
             
         default: 
             return state;

@@ -112,9 +112,15 @@ export const gameStartedEpic = (action$, state$) =>
                             val: plTopVal
                         }
                     }
+
+                    let cellHover = {
+                        valLeft: plLeftVal,
+                        valTop: plTopVal 
+                    }
                     // console.log(obj)
                     return of(
-                        Actions.allRoundsResult(obj)
+                        Actions.allRoundsResult(obj),
+                        Actions.toggleCells(cellHover),
                     )   
                 }),
                 takeUntil(action$.ofType(actionTypes.STOP_TOURNAMENT))

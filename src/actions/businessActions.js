@@ -958,3 +958,12 @@ export function toggleStrategicModelingHover(val) {
         val: val
     };
 };
+
+export function toggleCells(obj) {
+    return { 
+        type: actionTypes.TOGGLE_CELLS,
+        obj: obj
+    };
+};
+
+
