@@ -98,7 +98,9 @@ export const initialState = {
     stratedicModelingRightPartIsShown: true,
     strategicModelingPartsHover: false,
     cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false},
-    yomi: 0
+    yomi: 0,
+    strategyWon: "",
+    valueWon: 0
 }
 
 const makePaperclip = (state) => {
@@ -1067,10 +1069,12 @@ const toggleCells = (state, action) => {
 }
 
 const updateYomi = (state, action) => {
-    let updatedYomi = state.strategicModelingCurrentList.find(x => x.chosen === true);
+    let won = state.strategicModelingCurrentList.find(x => x.chosen === true);
 
     return updateObject(state, {
-        yomi: state.yomi + updatedYomi.val
+        yomi: state.yomi + won.val,
+        strategyWon: won.strategy,
+        valueWon: won.val
     });
 }
 
