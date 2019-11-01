@@ -464,11 +464,17 @@ export class Projects extends Component {
                 this.props.trustPlusOneFromProject(12);
                 break;
             case 'fullMonopoly':
-                this.props.addProject(projectsToAdd.FullMonopoly);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectYomiAndMoney(price.yomi, price.money);
                 this.props.trustPlusOneFromProject(1);
                 this.props.startImprovingMarketing(action);
+                this.props.updatePublicDemand();
+                break;
+            case 'globalWarming':
+                this.props.addProject(projectsToAdd.ATokenOfGoodwill);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOpsAndYomi(price.ops, price.yomi);
+                this.props.trustPlusOneFromProject(15);
                 break;
 
                

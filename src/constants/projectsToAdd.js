@@ -913,7 +913,7 @@ export const FullMonopoly = {
     valid: false,
     id: "card52",
     terminal: "Full market monopoly achieved, public demand increased x10"
-}// stop 
+}// stop sdelano
 
 
 
