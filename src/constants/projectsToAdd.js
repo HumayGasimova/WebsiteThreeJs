@@ -788,6 +788,8 @@ export const CureForCancer1 = {
     id: "card48",
     terminal: "Cancer is cured, +10 TRUST, global stock prices trending upward"
 }//stop
+
+
 export const WorldPeace2 = {
     text1: "World Peace(15,000 yomi, 30,000 ops)",
     text2: "Pareto optimal solutions to all global",
@@ -796,7 +798,7 @@ export const WorldPeace2 = {
         ops: 3,
         creat: 1,
         trust: 1,
-        yomi: 1
+        yomi: 3
     },
     action: 1,
     next: 'worldPeace',

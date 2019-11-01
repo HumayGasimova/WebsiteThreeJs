@@ -150,5 +150,6 @@ export {
     toggleCells,
     updateYomi,
     addCoherentExtrapolatedVolition,
-    removePriceOfProjectOpsCreatAndYomi
+    removePriceOfProjectOpsCreatAndYomi,
+    removePriceOfProjectOpsAndYomi
 } from './businessActions';

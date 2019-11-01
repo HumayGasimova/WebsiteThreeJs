@@ -988,3 +988,10 @@ export function removePriceOfProjectOpsCreatAndYomi(ops, creat, yomi) {
     };
 };
 
+export function removePriceOfProjectOpsAndYomi(ops, yomi) {
+    return { 
+        type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_YOMI,
+        ops: ops,
+        yomi: yomi
+    };
+};

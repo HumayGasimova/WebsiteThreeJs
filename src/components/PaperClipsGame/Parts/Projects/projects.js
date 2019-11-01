@@ -445,6 +445,12 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.trustPlusOneFromProject(10);
                 break;
+            case 'worldPeace':
+                this.props.addProject(projectsToAdd.FullMonopoly);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOpsAndYomi(price.ops, price.yomi);
+                this.props.trustPlusOneFromProject(12);
+                break;
         }
     }
 
@@ -545,6 +551,7 @@ export default connect(
             toggleNewTournamentButton: bindActionCreators(Actions.toggleNewTournamentButton, dispatch),
             updateStrategicModelingCurrentList: bindActionCreators(Actions.updateStrategicModelingCurrentList, dispatch),
             removePriceOfProjectOpsCreatAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsCreatAndYomi, dispatch),
+            removePriceOfProjectOpsAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsAndYomi, dispatch),
         };
     }
 )(Projects);
