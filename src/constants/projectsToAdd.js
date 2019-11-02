@@ -1094,24 +1094,23 @@ export const XavierReinitialization2 = {
     terminal: "Trust now available for re-allocation"
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export const HostileTakeover = {
+    text1: "Hostile Takeover ($1,000,000)",
+    text2: "Acquire a controlling interest in Global",
+    text3: "Fasteners, our biggest rival. (+1 Trust)",
+    price: {
+        ops: 1,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 3
+    },
+    action: 400,
+    next: 'hostileTakeover',
+    valid: false,
+    id: "card65",
+    terminal: "Global Fasteners acquired, public demand increased x5"
+}
 
 export const QuantumTemporalReversion = {
     text1: "Quantum Temporal Reversion (-10,000",
@@ -1136,21 +1135,21 @@ export const QuantumTemporalReversion = {
 
 
 
-//$1000000
-export const HostileTakeover = {
-    text1: "Hostile Takeover ($1,000,000)",
-    text2: "Acquire a controlling interest in Global",
-    text3: "Fasteners, our biggest rival. (+1 Trust)",
-    price: {
-        ops: 1,
-        creat: 1,
-        trust: 1,
-        yomi: 1,
-        money: 3
-    },
-    action: 400,
-    next: 'hostileTakeover',
-    valid: false,
-    id: "card65",
-    terminal: "Global Fasteners acquired, public demand increased x5"
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
