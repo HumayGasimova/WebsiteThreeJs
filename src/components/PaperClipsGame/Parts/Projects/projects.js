@@ -540,6 +540,12 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.reallocationOfTrust();
                 break;
+            case 'hostileTakeover':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectMoney(price.money);
+                this.props.startImprovingMarketing(action);
+                this.props.updatePublicDemand();
+                break;
                         
                 
                

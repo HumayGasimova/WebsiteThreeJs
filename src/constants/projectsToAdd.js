@@ -1148,8 +1148,8 @@ export const HostileTakeover = {
         yomi: 1,
         money: 3
     },
-    action: 1,
-    next: 'quantumTemporalReversion',
+    action: 400,
+    next: 'hostileTakeover',
     valid: false,
     id: "card65",
     terminal: "Global Fasteners acquired, public demand increased x5"
