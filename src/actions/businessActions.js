@@ -1029,4 +1029,10 @@ export function addHostileTakeover() {
     };
 };
 
+export function upgradeInvestmentEngine() {
+    return { 
+        type: actionTypes.UPGRADE_INVESTMENT_ENGINE,
+    };
+};
+
 

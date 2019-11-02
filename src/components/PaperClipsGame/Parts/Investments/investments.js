@@ -153,13 +153,13 @@ export class Investments extends Component {
                 <div>
                     <div className="investments-wrapper3">
                         <Button
-                            // onClick={this.props.raisePrice}
+                            onClick={this.props.upgradeInvestmentEngine}
                             text={"Upgrade Investment Engine"}
                             // disabled={}
                         />
                         <div>Level: {this.props.investmentsLevel}</div>
                     </div>
-                    <div>Cost: 1000 Yomi</div>
+                    <div>Cost: {this.props.upgradeInvestmentEngineCost} Yomi</div>
                 </div>
                 {/* {this.props.showDropdownInvestments ? <Backdrop 
                                                         closeDropdowns={this.props.closeDropdowns}
@@ -180,6 +180,7 @@ export default connect(
             investmentsLines: Selectors.getInvestmentsLinesState(state),
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
             investmentsLevel: Selectors.getInvestmentsLevelState(state),
+            upgradeInvestmentEngineCost: Selectors.getUpgradeInvestmentEngineCostState(state)
         };
     },
     (dispatch) => {
@@ -189,6 +190,7 @@ export default connect(
             startInvestmentsDeposit: bindActionCreators(Actions.startInvestmentsDeposit, dispatch),
             startInvestmentsWithdraw: bindActionCreators(Actions.startInvestmentsWithdraw, dispatch),
             stopUpdatingScreen: bindActionCreators(Actions.stopUpdatingScreen, dispatch),
+            upgradeInvestmentEngine: bindActionCreators(Actions.upgradeInvestmentEngine, dispatch),
         };
     }
 )(Investments);

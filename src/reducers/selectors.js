@@ -546,4 +546,9 @@ export const getInvestmentsLevelState = createSelector(
     (x) => x
 );
 
+const getUpgradeInvestmentEngineCost = (state) => state.business.upgradeInvestmentEngineCost;
 
+export const getUpgradeInvestmentEngineCostState = createSelector(
+    [getUpgradeInvestmentEngineCost],
+    (x) => x
+);

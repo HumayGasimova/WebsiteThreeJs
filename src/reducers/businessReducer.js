@@ -101,7 +101,8 @@ export const initialState = {
     yomi: 0,
     strategyWon: "",
     valueWon: 0,
-    investmentsLevel: 0
+    investmentsLevel: 0,
+    upgradeInvestmentEngineCost: 100
 }
 
 const makePaperclip = (state) => {
@@ -1122,6 +1123,15 @@ const reallocationOfTrust = (state, action) => {
     });
 }
 
+const upgradeInvestmentEngine = (state, action) => {
+    let updatedUpgradeInvestmentEngineCost = (state.upgradeInvestmentEngineCost + (state.upgradeInvestmentEngineCost * 0.17)) + 19 * (state.investmentsLevel + 3);
+    return updateObject(state, {
+        investmentsLevel: state.investmentsLevel + 1,
+        yomi: state.yomi - state.upgradeInvestmentEngineCost,
+        upgradeInvestmentEngineCost: +updatedUpgradeInvestmentEngineCost.toFixed()
+      
+    });
+}
 
 
 const businessReducer = (state = initialState, action) => {
@@ -1442,6 +1452,8 @@ const businessReducer = (state = initialState, action) => {
             return reallocationOfTrust(state, action);  
         case actionTypes.ADD_HOSTILE_TAKEOVER:
             return state; 
+        case actionTypes.UPGRADE_INVESTMENT_ENGINE:
+            return upgradeInvestmentEngine(state, action);  
             
         default: 
             return state;

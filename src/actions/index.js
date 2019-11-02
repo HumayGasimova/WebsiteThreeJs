@@ -156,5 +156,6 @@ export {
     removePriceOfProjectMoney,
     addXavierReinitialization,
     reallocationOfTrust,
-    addHostileTakeover
+    addHostileTakeover,
+    upgradeInvestmentEngine
 } from './businessActions';
