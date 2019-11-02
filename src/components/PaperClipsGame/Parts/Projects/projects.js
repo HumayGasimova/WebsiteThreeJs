@@ -444,10 +444,10 @@ export class Projects extends Component {
                 this.props.startAddingQOps("chip10");
                 break; 
             case 'coherentExtrapolatedVolition':
-                this.props.addProject(projectsToAdd.CureForCancer1);
-                this.props.addProject(projectsToAdd.WorldPeace2);
-                this.props.addProject(projectsToAdd.GlobalWarming3);
-                this.props.addProject(projectsToAdd.MalePatternBaldness4);
+                this.props.addProject(projectsToAdd.CureForCancer);
+                this.props.addProject(projectsToAdd.WorldPeace);
+                this.props.addProject(projectsToAdd.GlobalWarming);
+                this.props.addProject(projectsToAdd.MalePatternBaldness);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOpsCreatAndYomi(price.ops, price.creat, price.yomi);
                 this.props.trustPlusOneFromProject(1);
@@ -523,6 +523,11 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectMoney(price.money);
                 this.props.trustPlusOneFromProject(1);
+                break;
+            case 'malePatternBaldness':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.trustPlusOneFromProject(20);
                 break;
 
                

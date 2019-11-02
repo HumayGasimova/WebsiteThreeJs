@@ -806,7 +806,7 @@ export const CoherentExtrapolatedVolition = {
     terminal: "Coherent Extrapolated Volition complete, TRUST INCREASED"
 }
 
-export const CureForCancer1 = {
+export const CureForCancer = {
     text1: "Cure for Cancer(25,000 ops)",
     text2: "The trick is tricking cancer into curing itself",
     text3: "(+10 Trust)",
@@ -824,7 +824,7 @@ export const CureForCancer1 = {
     terminal: "Cancer is cured, +10 TRUST, global stock prices trending upward"
 }
 
-export const WorldPeace2 = {
+export const WorldPeace = {
     text1: "World Peace(15,000 yomi, 30,000 ops)",
     text2: "Pareto optimal solutions to all global",
     text3: "conflicts (+12 Trust)",
@@ -842,7 +842,7 @@ export const WorldPeace2 = {
     terminal: ""
 }
 
-export const GlobalWarming3 = {
+export const GlobalWarming = {
     text1: "Global Warming(4,500 yomi, 50,000 ops)",
     text2: "A robust solution to man-made climate",
     text3: "change. (+15 Trust)",
@@ -860,7 +860,7 @@ export const GlobalWarming3 = {
     terminal: "Global Warming solved, +15 TRUST, global stock prices trending upward"
 }
 
-export const MalePatternBaldness4 = {
+export const MalePatternBaldness = {
     text1: "MalePatternBaldness(20,000 ops)",
     text2: "A cure for androgenetic alopecia.(+20",
     text3: "Trust)",
@@ -872,11 +872,11 @@ export const MalePatternBaldness4 = {
         money: 1
     },
     action: 1,
-    next: 'MalePatternBaldness',
+    next: 'malePatternBaldness',
     valid: false,
     id: "card51",
     terminal: "They are still monkeys"
-}//ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+}
 
 export const FullMonopoly = {
     text1: "Full Monopoly (3,000 yomi, $10,000,000)",
