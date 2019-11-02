@@ -25,7 +25,7 @@ export const startUpdatingScreenEpic = (action$, state$) =>
             return interval(state$.value.business.delayUpdatingInvScreen).pipe(
                 mergeMap(() => {
                     let randomNum = Utility.getRandomAmount(state$.value.business.fakeInvestmentsCash);
-                    let randomPrice = Utility.getRandomPrice();
+                    let randomPrice = Utility.getRandomPrice(state$.value.business.investmentsLevel);
                     let randomProfitLoss = Utility.getRandomProfitLoss();
                     let randomLetters = Utility.getRandomLetters();
                     let obj = {

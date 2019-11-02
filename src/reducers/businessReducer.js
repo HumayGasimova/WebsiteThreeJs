@@ -47,7 +47,7 @@ export const initialState = {
     chosenListDropdown: ["Low Risk","Pick a Start"],
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
-    showInvestmentEngine: false, //false
+    showInvestmentEngine: true, //false
     showStrategicModeling: true, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
@@ -100,7 +100,8 @@ export const initialState = {
     cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false},
     yomi: 0,
     strategyWon: "",
-    valueWon: 0
+    valueWon: 0,
+    investmentsLevel: 0
 }
 
 const makePaperclip = (state) => {

@@ -30,8 +30,9 @@ export const getRandomAmount = (val) => {
     return randomNumber;
 } 
 
-export const getRandomPrice = () => {
-    return Math.floor(Math.random()*400);
+export const getRandomPrice = (level) => {
+    let num = 400 + level * 100;
+    return Math.floor(Math.random()*num);
 } 
 
 export const getRandomProfitLoss = () => {

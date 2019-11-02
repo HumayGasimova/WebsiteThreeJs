@@ -839,7 +839,7 @@ export const WorldPeace = {
     next: 'worldPeace',
     valid: false,
     id: "card49",
-    terminal: ""
+    terminal: "World peace achieved, +12 TRUST, global stock prices trending upward"
 }
 
 export const GlobalWarming = {
@@ -1128,7 +1128,7 @@ export const QuantumTemporalReversion = {
     valid: false,
     id: "card64",
     terminal: ""
-}
+}// dialog box restart game
 
 
 
