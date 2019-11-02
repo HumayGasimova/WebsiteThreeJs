@@ -1116,6 +1116,8 @@ const reallocationOfTrust = (state, action) => {
     return updateObject(state, {
         processorsNumber: 0,
         processorsMemory: 0,
+        ops: 0,
+        opsMax: state.opsMax - state.opsMax
     });
 }
 

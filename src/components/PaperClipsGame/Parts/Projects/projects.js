@@ -530,12 +530,18 @@ export class Projects extends Component {
                 this.props.trustPlusOneFromProject(20);
                 break;
             case 'xavierReinitialization':
+                this.props.addProject(projectsToAdd.XavierReinitialization2);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectCreat(price.creat);
                 this.props.reallocationOfTrust();
                 break;
+            case 'xavierReinitialization2':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectCreat(price.creat);
+                this.props.reallocationOfTrust();
+                break;
+                        
                 
-
                
         }
     }
