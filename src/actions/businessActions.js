@@ -1010,3 +1010,10 @@ export function removePriceOfProjectMoney(money) {
         money: money,
     };
 };
+
+export function addXavierReinitialization() {
+    return { 
+        type: actionTypes.ADD_XAVIER_REINITIALIZATION_1,
+    };
+};
+

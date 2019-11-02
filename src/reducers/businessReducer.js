@@ -1425,7 +1425,8 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectYomiAndMoney(state, action);   
         case actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY:
             return removePriceOfProjectMoney(state, action);   
-            
+        case actionTypes.ADD_XAVIER_REINITIALIZATION_1:
+            return state;  
         default: 
             return state;
     }

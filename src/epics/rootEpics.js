@@ -92,5 +92,6 @@ export const rootEpic = combineEpics(
     Epic.startCountingResultEpic,
     Epic.countFinalResultOfEachStrategyEpic,
     Epic.updateYomiEpic,
-    Epic.throwCoherentExtrapolatedVolitionEpic
+    Epic.throwCoherentExtrapolatedVolitionEpic,
+    Epic.throwXavierReinitialization1Epic
 );

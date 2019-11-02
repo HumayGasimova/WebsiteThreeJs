@@ -153,5 +153,6 @@ export {
     removePriceOfProjectOpsCreatAndYomi,
     removePriceOfProjectOpsAndYomi,
     removePriceOfProjectYomiAndMoney,
-    removePriceOfProjectMoney
+    removePriceOfProjectMoney,
+    addXavierReinitialization
 } from './businessActions';

@@ -1068,6 +1068,12 @@ export const AnotherTokenOfGoodwill7 = {
 
 
 
+
+
+
+
+
+
 export const XavierReinitialization = {
     text1: "Xavier Re-initialization (100,000 creat)",
     text2: "Re-allocate accumulated trust",
@@ -1084,6 +1090,7 @@ export const XavierReinitialization = {
     id: "card62",
     terminal: "Trust now available for re-allocation"
 }// creat 100000 end obnulaetsa trust processors0 memory0 0/0 operations
+
 
 export const XavierReinitialization2 = {
     text1: "Xavier Re-initialization (100,000 creat)",
@@ -1102,6 +1109,11 @@ export const XavierReinitialization2 = {
     terminal: "Trust now available for re-allocation"
 }
 
+
+
+
+
+
 export const QuantumTemporalReversion = {
     text1: "Quantum Temporal Reversion (-10,000",
     text2: "ops)",
@@ -1119,6 +1131,11 @@ export const QuantumTemporalReversion = {
     id: "card64",
     terminal: ""
 }
+
+
+
+
+
 
 //$1000000
 export const HostileTakeover = {

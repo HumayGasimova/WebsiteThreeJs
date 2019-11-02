@@ -144,6 +144,9 @@ export class ComputationalResources extends Component {
             if(this.props.creativity === 1){
                 this.props.addDonkeySpace();
             }
+            if(this.props.creativity === 1){
+                this.props.addXavierReinitialization();
+            }
         }
        
         if(prevProps.processorsNumber !== this.props.processorsNumber){
@@ -246,6 +249,7 @@ export default connect(
             stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
+            addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
         };
     }
 )(ComputationalResources);

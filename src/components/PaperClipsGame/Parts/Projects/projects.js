@@ -529,6 +529,7 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.trustPlusOneFromProject(20);
                 break;
+                
 
                
         }

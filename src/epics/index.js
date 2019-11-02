@@ -51,6 +51,8 @@ export { startCountingResultEpic } from './startCountingResultEpic';
 export { countFinalResultOfEachStrategyEpic } from './countFinalResultOfEachStrategyEpic';
 export { updateYomiEpic } from './updateYomiEpic';
 export { throwCoherentExtrapolatedVolitionEpic } from './throwCoherentExtrapolatedVolitionEpic';
+export { throwXavierReinitialization1Epic } from './throwXavierReinitialization1Epic';
+
 
 
 
