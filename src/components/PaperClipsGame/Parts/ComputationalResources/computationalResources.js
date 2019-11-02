@@ -189,7 +189,7 @@ export class ComputationalResources extends Component {
                                 className="computationalResources-button"
                                 onClick={()=>this.buttonsOnCLick('processors')}
                                 text={"Processors"}
-                                // disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
+                                disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
                             />
                             <div className="computationalResources-text">{this.props.processorsNumber}</div>
                         </div>
@@ -198,7 +198,7 @@ export class ComputationalResources extends Component {
                                 className="computationalResources-button"
                                 onClick={()=>this.buttonsOnCLick('memory')}
                                 text={"Memory"}
-                                // disabled={this.props.processorsNumber + this.props.processorsMemory > this.props.trust}
+                                disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
                             />
                             <div className="computationalResources-text">{this.props.processorsMemory}</div>
                         </div>

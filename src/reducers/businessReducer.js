@@ -1112,6 +1112,14 @@ const startNewTournament = (state, action) => {
     });
 }
 
+const reallocationOfTrust = (state, action) => {
+    return updateObject(state, {
+        processorsNumber: 0,
+        processorsMemory: 0,
+    });
+}
+
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1427,6 +1435,8 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectMoney(state, action);   
         case actionTypes.ADD_XAVIER_REINITIALIZATION_1:
             return state;  
+        case actionTypes.REALLOCATION_OF_TRUST:
+            return reallocationOfTrust(state, action);  
         default: 
             return state;
     }

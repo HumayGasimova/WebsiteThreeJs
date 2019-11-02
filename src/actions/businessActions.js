@@ -1017,3 +1017,8 @@ export function addXavierReinitialization() {
     };
 };
 
+export function reallocationOfTrust() {
+    return { 
+        type: actionTypes.REALLOCATION_OF_TRUST,
+    };
+};

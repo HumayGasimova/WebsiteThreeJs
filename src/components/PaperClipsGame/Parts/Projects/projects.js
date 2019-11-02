@@ -529,6 +529,11 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.trustPlusOneFromProject(20);
                 break;
+            case 'xavierReinitialization':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectCreat(price.creat);
+                this.props.reallocationOfTrust();
+                break;
                 
 
                
@@ -636,6 +641,7 @@ export default connect(
             removePriceOfProjectOpsAndYomi: bindActionCreators(Actions.removePriceOfProjectOpsAndYomi, dispatch),
             removePriceOfProjectYomiAndMoney: bindActionCreators(Actions.removePriceOfProjectYomiAndMoney, dispatch),
             removePriceOfProjectMoney: bindActionCreators(Actions.removePriceOfProjectMoney, dispatch),
+            reallocationOfTrust: bindActionCreators(Actions.reallocationOfTrust, dispatch),
         };
     }
 )(Projects);
