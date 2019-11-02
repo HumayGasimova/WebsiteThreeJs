@@ -155,8 +155,9 @@ export class Investments extends Component {
                         <Button
                             // onClick={this.props.raisePrice}
                             text={"Upgrade Investment Engine"}
+                            // disabled={}
                         />
-                        <div>Level: 0</div>
+                        <div>Level: {this.props.investmentsLevel}</div>
                     </div>
                     <div>Cost: 1000 Yomi</div>
                 </div>
@@ -178,6 +179,7 @@ export default connect(
             investmentsStocks: Selectors.getInvestmentsStocksState(state),
             investmentsLines: Selectors.getInvestmentsLinesState(state),
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
+            investmentsLevel: Selectors.getInvestmentsLevelState(state),
         };
     },
     (dispatch) => {

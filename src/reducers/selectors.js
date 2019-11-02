@@ -539,4 +539,11 @@ export const getYomiState = createSelector(
     (x) => x
 );
 
+const getInvestmentsLevel = (state) => state.business.investmentsLevel;
+
+export const getInvestmentsLevelState = createSelector(
+    [getInvestmentsLevel],
+    (x) => x
+);
+
 
