@@ -155,7 +155,7 @@ export class Investments extends Component {
                         <Button
                             onClick={this.props.upgradeInvestmentEngine}
                             text={"Upgrade Investment Engine"}
-                            // disabled={}
+                            disabled={this.props.yomi < this.props.upgradeInvestmentEngineCost}
                         />
                         <div>Level: {this.props.investmentsLevel}</div>
                     </div>
@@ -180,7 +180,8 @@ export default connect(
             investmentsLines: Selectors.getInvestmentsLinesState(state),
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
             investmentsLevel: Selectors.getInvestmentsLevelState(state),
-            upgradeInvestmentEngineCost: Selectors.getUpgradeInvestmentEngineCostState(state)
+            upgradeInvestmentEngineCost: Selectors.getUpgradeInvestmentEngineCostState(state),
+            yomi: Selectors.getYomiState(state),
         };
     },
     (dispatch) => {
