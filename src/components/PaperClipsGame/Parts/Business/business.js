@@ -67,6 +67,14 @@ export class Business extends Component {
         this.props.startUpdatingUnsoldInventory();
     }
     
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.funds !== this.props.funds) {
+            if(this.props.funds >= 1200){
+                this.props.addHostileTakeover();
+            }
+        }
+    }
+
     /**
     * Markup
     */
@@ -133,6 +141,7 @@ export default connect(
             raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
             startUpdatingUnsoldInventory: bindActionCreators(Actions.startUpdatingUnsoldInventory, dispatch),
+            addHostileTakeover: bindActionCreators(Actions.addHostileTakeover, dispatch),
         };
     }
 )(Business);

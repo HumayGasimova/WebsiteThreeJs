@@ -1060,20 +1060,6 @@ export const AnotherTokenOfGoodwill7 = {
     terminal: "Gift accepted, TRUST INCREASED"
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const XavierReinitialization = {
     text1: "Xavier Re-initialization (100,000 creat)",
     text2: "Re-allocate accumulated trust",
@@ -1089,8 +1075,7 @@ export const XavierReinitialization = {
     valid: false,
     id: "card62",
     terminal: "Trust now available for re-allocation"
-}// creat 100000 end obnulaetsa trust processors0 memory0 0/0 operations
-
+}
 
 export const XavierReinitialization2 = {
     text1: "Xavier Re-initialization (100,000 creat)",
@@ -1108,6 +1093,20 @@ export const XavierReinitialization2 = {
     id: "card63",
     terminal: "Trust now available for re-allocation"
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

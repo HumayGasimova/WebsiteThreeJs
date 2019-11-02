@@ -155,5 +155,6 @@ export {
     removePriceOfProjectYomiAndMoney,
     removePriceOfProjectMoney,
     addXavierReinitialization,
-    reallocationOfTrust
+    reallocationOfTrust,
+    addHostileTakeover
 } from './businessActions';

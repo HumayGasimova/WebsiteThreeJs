@@ -52,7 +52,7 @@ export { countFinalResultOfEachStrategyEpic } from './countFinalResultOfEachStra
 export { updateYomiEpic } from './updateYomiEpic';
 export { throwCoherentExtrapolatedVolitionEpic } from './throwCoherentExtrapolatedVolitionEpic';
 export { throwXavierReinitialization1Epic } from './throwXavierReinitialization1Epic';
-
+export { throwHostileTakeoverEpic } from './throwHostileTakeoverEpic';
 
 
 

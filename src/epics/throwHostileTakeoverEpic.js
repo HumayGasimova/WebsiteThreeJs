@@ -10,15 +10,15 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 import * as projectsToAdd from '../constants/projectsToAdd';
 
-export const throwXavierReinitialization1Epic = (action$, state$) => 
+export const throwHostileTakeoverEpic = (action$, state$) => 
   action$.pipe(
-    ofType(actionTypes.ADD_XAVIER_REINITIALIZATION),
+    ofType(actionTypes.ADD_HOSTILE_TAKEOVER),
     take(1),
     mergeMap(action => {
         return of(
-          Actions.addProject(projectsToAdd.XavierReinitialization)
+          Actions.addProject(projectsToAdd.HostileTakeover)
         ) 
     })
   )
 
-export default throwXavierReinitialization1Epic;
+export default throwHostileTakeoverEpic;

@@ -144,7 +144,7 @@ export class ComputationalResources extends Component {
             if(this.props.creativity === 1){
                 this.props.addDonkeySpace();
             }
-            if(this.props.creativity === 1){
+            if(this.props.creativity === 100000){
                 this.props.addXavierReinitialization();
             }
         }

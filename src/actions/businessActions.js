@@ -1013,7 +1013,7 @@ export function removePriceOfProjectMoney(money) {
 
 export function addXavierReinitialization() {
     return { 
-        type: actionTypes.ADD_XAVIER_REINITIALIZATION_1,
+        type: actionTypes.ADD_XAVIER_REINITIALIZATION,
     };
 };
 
@@ -1022,3 +1022,11 @@ export function reallocationOfTrust() {
         type: actionTypes.REALLOCATION_OF_TRUST,
     };
 };
+
+export function addHostileTakeover() {
+    return { 
+        type: actionTypes.ADD_HOSTILE_TAKEOVER,
+    };
+};
+
+
