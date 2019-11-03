@@ -1077,14 +1077,14 @@ export function toggleThrownProjectTheTothSausageConjecture(val) {
     };
 };
 
-export function toggleDonkeySpace(val) {
+export function toggleThrownProjectDonkeySpace(val) {
     return { 
         type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
         val: val
     };
 };
 
-export function toggleXavierReinitialization(val) {
+export function toggleThrownProjectXavierReinitialization(val) {
     return { 
         type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
         val: val
@@ -1112,4 +1112,9 @@ export function toggleThrownProjectCoherentExtrapolatedVolition(val) {
     };
 };
 
-
+export function toggleThrownProjectQuantumTemporalReversion(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION,
+        val: val
+    };
+};

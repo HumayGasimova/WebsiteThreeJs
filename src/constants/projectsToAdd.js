@@ -1117,11 +1117,11 @@ export const QuantumTemporalReversion = {
     text2: "ops)",
     text3: "Return to the beginning",
     price: {
-        ops: 3,
-        creat: 1,
-        trust: 1,
-        yomi: 1,
-        money: 1
+        ops: -10,
+        creat: 2,
+        trust: 2,
+        yomi: 2,
+        money: 2
     },
     action: 1,
     next: 'quantumTemporalReversion',

@@ -164,9 +164,10 @@ export {
     toggleThrownProjectCombinatoryHarmonics,
     toggleThrownProjectTheHadwingerProblem,
     toggleThrownProjectTheTothSausageConjecture,
-    toggleDonkeySpace,
-    toggleXavierReinitialization,
+    toggleThrownProjectDonkeySpace,
+    toggleThrownProjectXavierReinitialization,
     toggleThrownProjectHostileTakeover,
     toggleThrownProjectQuantumComputing,
-    toggleThrownProjectCoherentExtrapolatedVolition
+    toggleThrownProjectCoherentExtrapolatedVolition,
+    toggleThrownProjectQuantumTemporalReversion
 } from './businessActions';

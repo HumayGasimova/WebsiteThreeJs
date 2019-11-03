@@ -112,7 +112,8 @@ export const initialState = {
     xavierReinitializationIsThrown: false,
     hostileTakeoverIsThrown: false,
     quantumComputingIsThrown: false,
-    coherentExtrapolatedVolitionIsThrown: false
+    coherentExtrapolatedVolitionIsThrown: false,
+    quantumTemporalReversionIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1178,13 +1179,13 @@ const toggleThrownProjectTheTothSausageConjecture = (state, action) => {
     });
 }
 
-const toggleDonkeySpace = (state, action) => {
+const toggleThrownProjectDonkeySpace = (state, action) => {
     return updateObject(state, {
         donkeySpaceIsThrown: action.val,     
     });
 }
 
-const toggleXavierReinitialization = (state, action) => {
+const toggleThrownProjectXavierReinitialization = (state, action) => {
     return updateObject(state, {
         xavierReinitializationIsThrown: action.val,     
     });
@@ -1205,6 +1206,12 @@ const toggleThrownProjectQuantumComputing = (state, action) => {
 const toggleThrownProjectCoherentExtrapolatedVolition = (state, action) => {
     return updateObject(state, {
         coherentExtrapolatedVolitionIsThrown: action.val,     
+    });
+}
+
+const toggleThrownProjectQuantumTemporalReversion = (state, action) => {
+    return updateObject(state, {
+        quantumTemporalReversionIsThrown: action.val,     
     });
 }
 
@@ -1542,16 +1549,17 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE:
             return toggleThrownProjectTheTothSausageConjecture(state, action);       
         case actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE:
-            return toggleDonkeySpace(state, action);      
+            return toggleThrownProjectDonkeySpace(state, action);      
         case actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION:
-            return toggleXavierReinitialization(state, action); 
+            return toggleThrownProjectXavierReinitialization(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER:
             return toggleThrownProjectHostileTakeover(state, action);   
         case actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING:
             return toggleThrownProjectQuantumComputing(state, action);     
         case actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION:
             return toggleThrownProjectCoherentExtrapolatedVolition(state, action);     
-    
+        case actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION:
+            return toggleThrownProjectQuantumTemporalReversion(state, action);     
             
         default: 
             return state;

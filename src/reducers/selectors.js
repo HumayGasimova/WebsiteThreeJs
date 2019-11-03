@@ -615,3 +615,10 @@ export const getQuantumComputingIsThrownState = createSelector(
     [getQuantumComputingIsThrown],
     (x) => x
 );
+
+const getQuantumTemporalReversionIsThrown = (state) => state.business.quantumTemporalReversionIsThrown;
+
+export const getQuantumTemporalReversionIsThrownState = createSelector(
+    [getQuantumTemporalReversionIsThrown],
+    (x) => x
+);

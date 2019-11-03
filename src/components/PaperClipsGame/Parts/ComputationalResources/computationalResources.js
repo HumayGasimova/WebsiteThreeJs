@@ -148,11 +148,11 @@ export class ComputationalResources extends Component {
             }
             if(this.props.creativity === 250 && this.props.donkeySpaceIsThrown === false){
                 this.props.addProject(projectsToAdd.DonkeySpace);
-                this.props.toggleDonkeySpace(true);
+                this.props.toggleThrownProjectDonkeySpace(true);
             }
             if(this.props.creativity === 10 && this.props.xavierReinitializationIsThrown === false){
                 this.props.addProject(projectsToAdd.XavierReinitialization)
-                this.props.toggleXavierReinitialization(true);
+                this.props.toggleThrownProjectXavierReinitialization(true);
             }
         }
        
@@ -162,11 +162,13 @@ export class ComputationalResources extends Component {
                 this.props.toggleThrownProjectQuantumComputing(true);
             }
         }
-        // if(prevProps.ops !== this.props.ops){
-        //     if(this.props.ops >= this.props.opsMax){
-        //     this.props.startDecreasingOperations();
-        //     }
-        // }
+
+        if(prevProps.ops !== this.props.ops){
+            if(this.props.ops <= -10 && this.props.quantumTemporalReversionIsThrown === false){
+                this.props.addProject(projectsToAdd.QuantumTemporalReversion)
+                this.props.toggleThrownProjectQuantumTemporalReversion(true);
+            }
+        }
     }
 
     componentWillUnmount = () => {
@@ -247,6 +249,7 @@ export default connect(
             donkeySpaceIsThrown: Selectors.getDonkeySpaceIsThrownState(state),
             xavierReinitializationIsThrown: Selectors.getXavierReinitializationIsThrownState(state),
             quantumComputingIsThrown: Selectors.getQuantumComputingIsThrownState(state),
+            quantumTemporalReversionIsThrown: Selectors.getQuantumTemporalReversionIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -271,9 +274,11 @@ export default connect(
             toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),
             toggleThrownProjectTheHadwingerProblem: bindActionCreators(Actions.toggleThrownProjectTheHadwingerProblem, dispatch),
             toggleThrownProjectTheTothSausageConjecture: bindActionCreators(Actions.toggleThrownProjectTheTothSausageConjecture, dispatch),
-            toggleDonkeySpace: bindActionCreators(Actions.toggleDonkeySpace, dispatch),
-            toggleXavierReinitialization: bindActionCreators(Actions.toggleXavierReinitialization, dispatch),
+            toggleThrownProjectDonkeySpace: bindActionCreators(Actions.toggleThrownProjectDonkeySpace, dispatch),
+            toggleThrownProjectXavierReinitialization: bindActionCreators(Actions.toggleThrownProjectXavierReinitialization, dispatch),
             toggleThrownProjectQuantumComputing: bindActionCreators(Actions.toggleThrownProjectQuantumComputing, dispatch),
+            toggleThrownProjectQuantumTemporalReversion: bindActionCreators(Actions.toggleThrownProjectQuantumTemporalReversion, dispatch),
+            
         };
     }
 )(ComputationalResources);

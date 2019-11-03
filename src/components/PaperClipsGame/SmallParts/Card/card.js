@@ -67,7 +67,9 @@ class Card extends Component {
                 this.props.ops >= this.props.priceOps && this.props.trust >= this.props.priceTrust && this.props.priceCreat === 1 && this.props.priceYomi === 1 && this.props.priceMoney === 1||
                 this.props.ops >= this.props.priceOps && this.props.yomi >= this.props.priceYomi && this.props.priceTrust === 1 && this.props.priceCreat === 1 && this.props.priceMoney === 1||
 
-                this.props.ops >= this.props.priceOps && this.props.creativity >= this.props.priceCreat && this.props.yomi >= this.props.priceYomi && this.props.priceTrust === 1 && this.props.priceMoney === 1  
+                this.props.ops >= this.props.priceOps && this.props.creativity >= this.props.priceCreat && this.props.yomi >= this.props.priceYomi && this.props.priceTrust === 1 && this.props.priceMoney === 1 ||
+                
+                this.props.ops <= this.props.priceOps && this.props.priceCreat === 2 && this.props.priceTrust === 2 && this.props.priceYomi === 2 && this.props.priceMoney === 2
             ){
                 this.props.checkCardValidity(this.props.id, true, this.props.i)
             }else{
