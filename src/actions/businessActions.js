@@ -316,11 +316,11 @@ export function improveWireExtrusion(val) {
     };
 };
 
-export function startCreativityCounter() {
-    return { 
-        type: actionTypes.START_CREATIVITY_COUNTER
-    };
-};
+// export function startCreativityCounter() {
+//     return { 
+//         type: actionTypes.START_CREATIVITY_COUNTER
+//     };
+// };
 
 export function creativityTurnOn() {
     return { 
@@ -328,35 +328,35 @@ export function creativityTurnOn() {
     };
 };
 
-export function addLexicalProcessing() {
-    return { 
-        type: actionTypes.ADD_LEXICAL_PROCESSING
-    };
-};
+// export function addLexicalProcessing() {
+//     return { 
+//         type: actionTypes.ADD_LEXICAL_PROCESSING
+//     };
+// };
 
-export function addCombinatoryHarmonics() {
-    return { 
-        type: actionTypes.ADD_COMBINATORY_HARMONICS
-    };
-};
+// export function addCombinatoryHarmonics() {
+//     return { 
+//         type: actionTypes.ADD_COMBINATORY_HARMONICS
+//     };
+// };
 
-export function addTheHadwingerProblem() {
-    return { 
-        type: actionTypes.ADD_THE_HADWINGER_PROBLEM
-    };
-};
+// export function addTheHadwingerProblem() {
+//     return { 
+//         type: actionTypes.ADD_THE_HADWINGER_PROBLEM
+//     };
+// };
 
-export function addTheTothSausageConjecture() {
-    return { 
-        type: actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE
-    };
-};
+// export function addTheTothSausageConjecture() {
+//     return { 
+//         type: actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE
+//     };
+// };
 
-export function addDonkeySpace() {
-    return { 
-        type: actionTypes.ADD_DONKEY_SPACE
-    };
-};
+// export function addDonkeySpace() {
+//     return { 
+//         type: actionTypes.ADD_DONKEY_SPACE
+//     };
+// };
 
 export function startImprovingMarketing(action) {
     return { 
@@ -1011,11 +1011,11 @@ export function removePriceOfProjectMoney(money) {
     };
 };
 
-export function addXavierReinitialization() {
-    return { 
-        type: actionTypes.ADD_XAVIER_REINITIALIZATION,
-    };
-};
+// export function addXavierReinitialization() {
+//     return { 
+//         type: actionTypes.ADD_XAVIER_REINITIALIZATION,
+//     };
+// };
 
 export function reallocationOfTrust() {
     return { 

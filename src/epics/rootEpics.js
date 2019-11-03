@@ -11,7 +11,7 @@ export const rootEpic = combineEpics(
     Epic.buyWireEpic,
     Epic.autoPaperclipsStartEpic,
     Epic.autoPaperClippersAddOneEpic,
-    Epic.startCreativityEpic,
+    // Epic.startCreativityEpic,
     // Epic.throwLexicalProcessingEpic,
     // Epic.throwCombinatoryHarmonicsEpic,
     // Epic.throwTheHadwingerProblemEpic,

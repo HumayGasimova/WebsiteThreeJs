@@ -1298,22 +1298,22 @@ const businessReducer = (state = initialState, action) => {
             return toggleMakePaperclipButton(state, action);  
         case actionTypes.IMPROVE_WIRE_EXTRUSION:
             return improveWireExtrusion(state, action);  
-        case actionTypes.START_CREATIVITY_COUNTER:
-            return state;  
+        // case actionTypes.START_CREATIVITY_COUNTER:
+        //     return state;  
         case actionTypes.CREATIVITY_TURN_ON:
             return creativityTurnOn(state, action);  
         case actionTypes.WIRE_EXISTS:
             return wireExists(state, action);
-        case actionTypes.ADD_LEXICAL_PROCESSING:
-            return state;  
-        case actionTypes.ADD_COMBINATORY_HARMONICS:
-            return state;
-        case actionTypes.ADD_THE_HADWINGER_PROBLEM:
-            return state;  
-        case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
-            return state;
-        case actionTypes.ADD_DONKEY_SPACE:
-            return state;
+        // case actionTypes.ADD_LEXICAL_PROCESSING:
+        //     return state;  
+        // case actionTypes.ADD_COMBINATORY_HARMONICS:
+        //     return state;
+        // case actionTypes.ADD_THE_HADWINGER_PROBLEM:
+        //     return state;  
+        // case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
+        //     return state;
+        // case actionTypes.ADD_DONKEY_SPACE:
+        //     return state;
         case actionTypes.START_IMPROVING_MARKETING:
             return state;
         case actionTypes.IMPROVE_MARKETING:
@@ -1514,8 +1514,8 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectYomiAndMoney(state, action);   
         case actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY:
             return removePriceOfProjectMoney(state, action);   
-        case actionTypes.ADD_XAVIER_REINITIALIZATION:
-            return state;  
+        // case actionTypes.ADD_XAVIER_REINITIALIZATION:
+        //     return state;  
         case actionTypes.REALLOCATION_OF_TRUST:
             return reallocationOfTrust(state, action);  
         case actionTypes.ADD_HOSTILE_TAKEOVER:

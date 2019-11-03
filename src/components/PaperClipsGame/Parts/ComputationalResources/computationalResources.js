@@ -93,7 +93,7 @@ export class ComputationalResources extends Component {
 
         this.intervalStartCreativity = setInterval(()=>{
             if(this.props.ops === this.props.opsMax && this.props.creativityCounterIsThrown === false){
-                this.props.startCreativityCounter();
+                this.props.addProject(projectsToAdd.Creativity);
                 this.props.toggleThrownProjectStartCreativityCounter(true);
             }
         }, 1000);
@@ -255,7 +255,7 @@ export default connect(
             increaseProcessors: bindActionCreators(Actions.increaseProcessors, dispatch),
             increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
             increaseCreativity: bindActionCreators(Actions.increaseCreativity, dispatch),
-            startCreativityCounter: bindActionCreators(Actions.startCreativityCounter, dispatch),
+            // startCreativityCounter: bindActionCreators(Actions.startCreativityCounter, dispatch),
             // addLexicalProcessing: bindActionCreators(Actions.addLexicalProcessing, dispatch),
             // addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
             // addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
