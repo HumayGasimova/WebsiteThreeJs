@@ -162,5 +162,6 @@ export {
     toggleThrownProjectStartCreativityCounter,
     toggleThrownProjectLexicalProcessing,
     toggleThrownProjectCombinatoryHarmonics,
-    toggleThrownProjectTheHadwingerProblem
+    toggleThrownProjectTheHadwingerProblem,
+    toggleThrownProjectTheTothSausageConjecture
 } from './businessActions';

@@ -1065,7 +1065,14 @@ export function toggleThrownProjectCombinatoryHarmonics(val) {
 
 export function toggleThrownProjectTheHadwingerProblem(val) {
     return { 
-        type: actionTypes.TOGGLE_THROWN_THE_HADWINGER_PROBLEM,
+        type: actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM,
+        val: val
+    };
+};
+
+export function toggleThrownProjectTheTothSausageConjecture(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE,
         val: val
     };
 };

@@ -581,5 +581,12 @@ export const getTheHadwingerProblemIsThrownState = createSelector(
     (x) => x
 );
 
+const getTheTothSausageConjectureIsThrown = (state) => state.business.theTothSausageConjectureIsThrown;
+
+export const getTheTothSausageConjectureIsThrownState = createSelector(
+    [getTheTothSausageConjectureIsThrown],
+    (x) => x
+);
+
 
 

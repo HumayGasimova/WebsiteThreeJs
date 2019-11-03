@@ -106,7 +106,8 @@ export const initialState = {
     creativityCounterIsThrown: false,
     lexicalProcessingIsThrown: false,
     combinatoryHarmonicsIsThrown: false,
-    theHadwingerProblemIsThrown: false
+    theHadwingerProblemIsThrown: false,
+    theTothSausageConjectureIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1166,6 +1167,12 @@ const toggleThrownProjectTheHadwingerProblem = (state, action) => {
     });
 }
 
+const toggleThrownProjectTheTothSausageConjecture = (state, action) => {
+    return updateObject(state, {
+        theTothSausageConjectureIsThrown: action.val,     
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1494,8 +1501,10 @@ const businessReducer = (state = initialState, action) => {
             return toggleThrownProjectLexicalProcessing(state, action);     
         case actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS:
             return toggleThrownProjectCombinatoryHarmonics(state, action);     
-        case actionTypes.TOGGLE_THROWN_THE_HADWINGER_PROBLEM:
-            return toggleThrownProjectTheHadwingerProblem(state, action);      
+        case actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM:
+            return toggleThrownProjectTheHadwingerProblem(state, action); 
+        case actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE:
+            return toggleThrownProjectTheTothSausageConjecture(state, action);       
             
         default: 
             return state;
