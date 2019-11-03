@@ -146,8 +146,9 @@ export class ComputationalResources extends Component {
                 this.props.addTheTothSausageConjecture();
                 this.props.toggleThrownProjectTheTothSausageConjecture(true);
             }
-            if(this.props.creativity === 250){
+            if(this.props.creativity === 250 && this.props.donkeySpaceIsThrown === false){
                 this.props.addDonkeySpace();
+                this.props.toggleDonkeySpace(true);
             }
             if(this.props.creativity === 100000){
                 this.props.addXavierReinitialization();
@@ -241,6 +242,7 @@ export default connect(
             combinatoryHarmonicsIsThrown: Selectors.getCombinatoryHarmonicsIsThrownState(state),
             theHadwingerProblemIsThrown: Selectors.getTheHadwingerProblemIsThrownState(state),
             theTothSausageConjectureIsThrown: Selectors.getTheTothSausageConjectureIsThrownState(state),
+            donkeySpaceIsThrown: Selectors.getDonkeySpaceIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -265,6 +267,7 @@ export default connect(
             toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),
             toggleThrownProjectTheHadwingerProblem: bindActionCreators(Actions.toggleThrownProjectTheHadwingerProblem, dispatch),
             toggleThrownProjectTheTothSausageConjecture: bindActionCreators(Actions.toggleThrownProjectTheTothSausageConjecture, dispatch),
+            toggleDonkeySpace: bindActionCreators(Actions.toggleDonkeySpace, dispatch),
         };
     }
 )(ComputationalResources);

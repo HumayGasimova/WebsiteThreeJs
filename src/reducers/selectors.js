@@ -588,5 +588,10 @@ export const getTheTothSausageConjectureIsThrownState = createSelector(
     (x) => x
 );
 
+const getDonkeySpaceIsThrown = (state) => state.business.donkeySpaceIsThrown;
 
+export const getDonkeySpaceIsThrownState = createSelector(
+    [getDonkeySpaceIsThrown],
+    (x) => x
+);
 

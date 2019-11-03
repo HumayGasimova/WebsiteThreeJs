@@ -163,5 +163,6 @@ export {
     toggleThrownProjectLexicalProcessing,
     toggleThrownProjectCombinatoryHarmonics,
     toggleThrownProjectTheHadwingerProblem,
-    toggleThrownProjectTheTothSausageConjecture
+    toggleThrownProjectTheTothSausageConjecture,
+    toggleDonkeySpace
 } from './businessActions';

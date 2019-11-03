@@ -13,7 +13,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 export const throwTheTothSausageConjectureEpic = (action$, state$) => 
   action$.pipe(
     ofType(actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE),
-    take(1),
+    // take(1),
     mergeMap(action => {
         return of(
           Actions.addProject(projectsToAdd.TheTothSausageConjecture)

@@ -1077,3 +1077,10 @@ export function toggleThrownProjectTheTothSausageConjecture(val) {
     };
 };
 
+export function toggleDonkeySpace(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
+        val: val
+    };
+};
+

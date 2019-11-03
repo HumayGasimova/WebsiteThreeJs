@@ -13,7 +13,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 export const throwDonkeySpaceEpic = (action$, state$) => 
   action$.pipe(
     ofType(actionTypes.ADD_DONKEY_SPACE),
-    take(1),
+    // take(1),
     mergeMap(action => {
         return of(
           Actions.addProject(projectsToAdd.DonkeySpace)

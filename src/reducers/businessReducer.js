@@ -107,7 +107,8 @@ export const initialState = {
     lexicalProcessingIsThrown: false,
     combinatoryHarmonicsIsThrown: false,
     theHadwingerProblemIsThrown: false,
-    theTothSausageConjectureIsThrown: false
+    theTothSausageConjectureIsThrown: false,
+    donkeySpaceIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1173,6 +1174,14 @@ const toggleThrownProjectTheTothSausageConjecture = (state, action) => {
     });
 }
 
+const toggleDonkeySpace = (state, action) => {
+    return updateObject(state, {
+        donkeySpaceIsThrown: action.val,     
+    });
+}
+
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1505,6 +1514,9 @@ const businessReducer = (state = initialState, action) => {
             return toggleThrownProjectTheHadwingerProblem(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE:
             return toggleThrownProjectTheTothSausageConjecture(state, action);       
+        case actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE:
+            return toggleDonkeySpace(state, action);      
+
             
         default: 
             return state;
