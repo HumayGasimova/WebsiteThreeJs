@@ -1048,3 +1048,12 @@ export function toggleThrownProjectStartCreativityCounter(val) {
         val: val
     };
 };
+
+export function toggleThrownProjectLexicalProcessing(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
+        val: val
+    };
+};
+
+

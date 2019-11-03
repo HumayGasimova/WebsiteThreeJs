@@ -13,7 +13,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 export const throwLexicalProcessingEpic = (action$, state$) => 
   action$.pipe(
     ofType(actionTypes.ADD_LEXICAL_PROCESSING),
-    take(1),
+    // take(1),
     mergeMap(action => {
         return of(
           Actions.addProject(projectsToAdd.LexicalProcessing)

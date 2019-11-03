@@ -560,3 +560,11 @@ export const getCreativityCounterIsThrownState = createSelector(
     (x) => x
 );
 
+const getLexicalProcessingIsThrown = (state) => state.business.lexicalProcessingIsThrown;
+
+export const getLexicalProcessingIsThrownState = createSelector(
+    [getLexicalProcessingIsThrown],
+    (x) => x
+);
+
+

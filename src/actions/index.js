@@ -159,5 +159,6 @@ export {
     addHostileTakeover,
     upgradeInvestmentEngine,
     stateFromLocalStorage,
-    toggleThrownProjectStartCreativityCounter
+    toggleThrownProjectStartCreativityCounter,
+    toggleThrownProjectLexicalProcessing
 } from './businessActions';

@@ -130,8 +130,9 @@ export class ComputationalResources extends Component {
             }, this.state.delayOperations);
         }
         if (prevProps.creativity !== this.props.creativity) {
-            if(this.props.creativity === 50){
+            if(this.props.creativity === 50 && this.props.lexicalProcessingIsThrown === false){
                 this.props.addLexicalProcessing();
+                this.props.toggleThrownProjectLexicalProcessing(true);
             }
             if(this.props.creativity === 100){
                 this.props.addCombinatoryHarmonics();
@@ -233,6 +234,8 @@ export default connect(
             creativityTurnOn: Selectors.getCreativityTurnOnState(state),
             showQuantumComputing: Selectors.getShowQuantumComputingState(state),
             creativityCounterIsThrown: Selectors.getCreativityCounterIsThrownState(state),
+            lexicalProcessingIsThrown: Selectors.getLexicalProcessingIsThrownState(state),
+            
         };
     },
     (dispatch) => {
@@ -253,6 +256,7 @@ export default connect(
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
             toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
+            toggleThrownProjectLexicalProcessing: bindActionCreators(Actions.toggleThrownProjectLexicalProcessing, dispatch),
         };
     }
 )(ComputationalResources);

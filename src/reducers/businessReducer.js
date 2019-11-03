@@ -103,7 +103,8 @@ export const initialState = {
     valueWon: 0,
     investmentsLevel: 0,
     upgradeInvestmentEngineCost: 100,
-    creativityCounterIsThrown: false
+    creativityCounterIsThrown: false,
+    lexicalProcessingIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1145,6 +1146,11 @@ const toggleThrownProjectStartCreativityCounter = (state, action) => {
     });
 }
 
+const toggleThrownProjectLexicalProcessing = (state, action) => {
+    return updateObject(state, {
+        lexicalProcessingIsThrown: action.val,     
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1469,7 +1475,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.STATE_FROM_LOCAL_STORAGE:
             return stateFromLocalStorage(state, action);   
         case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
-            return toggleThrownProjectStartCreativityCounter(state, action);   
+            return toggleThrownProjectStartCreativityCounter(state, action); 
+        case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:
+            return toggleThrownProjectLexicalProcessing(state, action);     
             
         default: 
             return state;

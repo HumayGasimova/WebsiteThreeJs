@@ -108,7 +108,7 @@ export const Limerick = {
     text2: "Algorithmically-generated poem (+1 Trust)",
     price: {
         ops: 1,
-        creat: 10,
+        creat: 3,
         trust: 1,
         yomi: 1,
         money: 1
@@ -126,7 +126,7 @@ export const LexicalProcessing = {
     text3: "human language (+1 Trust)",
     price: {
         ops: 1,
-        creat: 3,
+        creat: 100,
         trust: 1,
         yomi: 1,
         money: 1
