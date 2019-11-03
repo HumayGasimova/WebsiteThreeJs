@@ -1097,3 +1097,12 @@ export function toggleThrownProjectHostileTakeover(val) {
         val: val
     };
 };
+
+export function toggleThrownProjectQuantumComputing(val) {
+    return { 
+        type: actionTypes.TOGGL_THROWN_PROJECT_QUANTUM_COMPUTING,
+        val: val
+    };
+};
+
+

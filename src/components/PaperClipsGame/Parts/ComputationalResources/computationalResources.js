@@ -157,8 +157,9 @@ export class ComputationalResources extends Component {
         }
        
         if(prevProps.processorsNumber !== this.props.processorsNumber){
-            if(this.props.processorsNumber === 5){
+            if(this.props.processorsNumber === 5 && this.props.quantumComputingIsThrown === false){
                 this.props.addProject(projectsToAdd.QuantumComputing);
+                this.props.toggleThrownProjectQuantumComputing(true);
             }
         }
         // if(prevProps.ops !== this.props.ops){
@@ -196,7 +197,7 @@ export class ComputationalResources extends Component {
                                 className="computationalResources-button"
                                 onClick={()=>this.buttonsOnCLick('processors')}
                                 text={"Processors"}
-                                disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
+                                // disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
                             />
                             <div className="computationalResources-text">{this.props.processorsNumber}</div>
                         </div>
@@ -205,7 +206,7 @@ export class ComputationalResources extends Component {
                                 className="computationalResources-button"
                                 onClick={()=>this.buttonsOnCLick('memory')}
                                 text={"Memory"}
-                                disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
+                                // disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
                             />
                             <div className="computationalResources-text">{this.props.processorsMemory}</div>
                         </div>
@@ -245,6 +246,7 @@ export default connect(
             theTothSausageConjectureIsThrown: Selectors.getTheTothSausageConjectureIsThrownState(state),
             donkeySpaceIsThrown: Selectors.getDonkeySpaceIsThrownState(state),
             xavierReinitializationIsThrown: Selectors.getXavierReinitializationIsThrownState(state),
+            quantumComputingIsThrown: Selectors.getQuantumComputingIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -271,6 +273,7 @@ export default connect(
             toggleThrownProjectTheTothSausageConjecture: bindActionCreators(Actions.toggleThrownProjectTheTothSausageConjecture, dispatch),
             toggleDonkeySpace: bindActionCreators(Actions.toggleDonkeySpace, dispatch),
             toggleXavierReinitialization: bindActionCreators(Actions.toggleXavierReinitialization, dispatch),
+            toggleThrownProjectQuantumComputing: bindActionCreators(Actions.toggleThrownProjectQuantumComputing, dispatch),
         };
     }
 )(ComputationalResources);

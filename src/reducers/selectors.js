@@ -609,4 +609,9 @@ export const getHostileTakeoverIsThrownState = createSelector(
     (x) => x
 );
 
+const getQuantumComputingIsThrown = (state) => state.business.quantumComputingIsThrown;
 
+export const getQuantumComputingIsThrownState = createSelector(
+    [getQuantumComputingIsThrown],
+    (x) => x
+);

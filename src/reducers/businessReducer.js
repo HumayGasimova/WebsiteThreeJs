@@ -110,7 +110,8 @@ export const initialState = {
     theTothSausageConjectureIsThrown: false,
     donkeySpaceIsThrown: false,
     xavierReinitializationIsThrown: false,
-    hostileTakeoverIsThrown: false
+    hostileTakeoverIsThrown: false,
+    quantumComputingIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1194,6 +1195,13 @@ const toggleThrownProjectHostileTakeover = (state, action) => {
     });
 }
 
+const toggleThrownProjectQuantumComputing = (state, action) => {
+    return updateObject(state, {
+        quantumComputingIsThrown: action.val,     
+    });
+}
+
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1532,6 +1540,9 @@ const businessReducer = (state = initialState, action) => {
             return toggleXavierReinitialization(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER:
             return toggleThrownProjectHostileTakeover(state, action);   
+        case actionTypes.TOGGL_THROWN_PROJECT_QUANTUM_COMPUTING:
+            return toggleThrownProjectQuantumComputing(state, action);     
+
             
         default: 
             return state;

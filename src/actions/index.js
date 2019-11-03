@@ -166,5 +166,6 @@ export {
     toggleThrownProjectTheTothSausageConjecture,
     toggleDonkeySpace,
     toggleXavierReinitialization,
-    toggleThrownProjectHostileTakeover
+    toggleThrownProjectHostileTakeover,
+    toggleThrownProjectQuantumComputing
 } from './businessActions';
