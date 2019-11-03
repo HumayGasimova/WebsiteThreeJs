@@ -131,7 +131,7 @@ export class ComputationalResources extends Component {
         }
         if (prevProps.creativity !== this.props.creativity) {
             if(this.props.creativity === 50 && this.props.lexicalProcessingIsThrown === false){
-                this.props.addLexicalProcessing();
+                this.props.addProject(projectsToAdd.LexicalProcessing)
                 this.props.toggleThrownProjectLexicalProcessing(true);
             }
             if(this.props.creativity === 100 && this.props.combinatoryHarmonicsIsThrown === false){
@@ -150,7 +150,7 @@ export class ComputationalResources extends Component {
                 this.props.addDonkeySpace();
                 this.props.toggleDonkeySpace(true);
             }
-            if(this.props.creativity === 1 && this.props.xavierReinitializationIsThrown === false){
+            if(this.props.creativity === 100000 && this.props.xavierReinitializationIsThrown === false){
                 this.props.addXavierReinitialization();
                 this.props.toggleXavierReinitialization(true);
             }
@@ -254,7 +254,7 @@ export default connect(
             increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
             increaseCreativity: bindActionCreators(Actions.increaseCreativity, dispatch),
             startCreativityCounter: bindActionCreators(Actions.startCreativityCounter, dispatch),
-            addLexicalProcessing: bindActionCreators(Actions.addLexicalProcessing, dispatch),
+            // addLexicalProcessing: bindActionCreators(Actions.addLexicalProcessing, dispatch),
             addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
             addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
             addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),

@@ -32,7 +32,7 @@ export { wireButtonBufferEpic } from './wireButtonBufferEpic';
 export { startCreativityEpic } from './startCreativityEpic';
 export { throwCombinatoryHarmonicsEpic } from './throwCombinatoryHarmonicsEpic';
 export { throwDonkeySpaceEpic } from './throwDonkeySpaceEpic';
-export { throwLexicalProcessingEpic } from './throwLexicalProcessingEpic';
+// export { throwLexicalProcessingEpic } from './throwLexicalProcessingEpic';
 export { throwMegaClippersEpic } from './throwMegaClippersEpic';
 export { throwTheHadwingerProblemEpic } from './throwTheHadwingerProblemEpic';
 export { throwTheTothSausageConjectureEpic } from './throwTheTothSausageConjectureEpic';
