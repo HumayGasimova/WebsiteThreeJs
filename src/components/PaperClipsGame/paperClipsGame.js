@@ -33,6 +33,7 @@ import './paperClipsGame.scss';
 */
 
 import * as Actions from '../../actions';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 /**
 * PaperClipsGame component definition and export
@@ -57,8 +58,8 @@ class PaperClipsGame extends Component {
     }
 
     componentDidMount = () => {
-        let state = JSON.parse(localStorage.getItem('store')) === null ? this.props.store : JSON.parse(localStorage.getItem('store'));
-        console.log("GGG", state)
+        let state = JSON.parse(localStorage.getItem('store')) === null ? this.props.store : {...JSON.parse(localStorage.getItem('store')), comments: ['Welcome to Universal Paperclips']};
+        console.log("GGG", {...JSON.parse(localStorage.getItem('store')), comments: ['Welcome to Universal Paperclips']})
         setInterval(()=>{
             this.props.startTimer();
         }, 1000);
