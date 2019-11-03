@@ -86,7 +86,11 @@ export class App extends Component {
       return(
             <div className="app">
                {/* <Toolbar/> */}
-               <PaperClipsGame/>
+               <Route 
+                  exact 
+                  path="/"
+                  component={ PaperClipsGame }
+               />
                {/* <Epic/> */}
             </div>
       );

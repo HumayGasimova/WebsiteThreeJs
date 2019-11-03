@@ -546,6 +546,13 @@ export class Projects extends Component {
                 this.props.startImprovingMarketing(action);
                 this.props.updatePublicDemand();
                 break;
+            case 'quantumTemporalReversion':
+                if(confirm("HEy")){
+                    localStorage.removeItem('store');
+                    window.location.reload();
+                }else{
+                    console.log("no")
+                }
                         
                 
                
