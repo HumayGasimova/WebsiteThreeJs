@@ -108,7 +108,8 @@ export const initialState = {
     combinatoryHarmonicsIsThrown: false,
     theHadwingerProblemIsThrown: false,
     theTothSausageConjectureIsThrown: false,
-    donkeySpaceIsThrown: false
+    donkeySpaceIsThrown: false,
+    xavierReinitializationIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1180,7 +1181,11 @@ const toggleDonkeySpace = (state, action) => {
     });
 }
 
-
+const toggleXavierReinitialization = (state, action) => {
+    return updateObject(state, {
+        xavierReinitializationIsThrown: action.val,     
+    });
+}
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1516,7 +1521,8 @@ const businessReducer = (state = initialState, action) => {
             return toggleThrownProjectTheTothSausageConjecture(state, action);       
         case actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE:
             return toggleDonkeySpace(state, action);      
-
+        case actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION:
+            return toggleXavierReinitialization(state, action);  
             
         default: 
             return state;

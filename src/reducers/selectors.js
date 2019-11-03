@@ -595,3 +595,9 @@ export const getDonkeySpaceIsThrownState = createSelector(
     (x) => x
 );
 
+const getXavierReinitializationIsThrown = (state) => state.business.xavierReinitializationIsThrown;
+
+export const getXavierReinitializationIsThrownState = createSelector(
+    [getXavierReinitializationIsThrown],
+    (x) => x
+);

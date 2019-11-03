@@ -1084,3 +1084,11 @@ export function toggleDonkeySpace(val) {
     };
 };
 
+export function toggleXavierReinitialization(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
+        val: val
+    };
+};
+
+

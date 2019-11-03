@@ -150,8 +150,9 @@ export class ComputationalResources extends Component {
                 this.props.addDonkeySpace();
                 this.props.toggleDonkeySpace(true);
             }
-            if(this.props.creativity === 100000){
+            if(this.props.creativity === 100000 && this.props.xavierReinitializationIsThrown === false){
                 this.props.addXavierReinitialization();
+                this.props.toggleXavierReinitialization(true);
             }
         }
        
@@ -243,6 +244,7 @@ export default connect(
             theHadwingerProblemIsThrown: Selectors.getTheHadwingerProblemIsThrownState(state),
             theTothSausageConjectureIsThrown: Selectors.getTheTothSausageConjectureIsThrownState(state),
             donkeySpaceIsThrown: Selectors.getDonkeySpaceIsThrownState(state),
+            xavierReinitializationIsThrown: Selectors.getXavierReinitializationIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -268,6 +270,7 @@ export default connect(
             toggleThrownProjectTheHadwingerProblem: bindActionCreators(Actions.toggleThrownProjectTheHadwingerProblem, dispatch),
             toggleThrownProjectTheTothSausageConjecture: bindActionCreators(Actions.toggleThrownProjectTheTothSausageConjecture, dispatch),
             toggleDonkeySpace: bindActionCreators(Actions.toggleDonkeySpace, dispatch),
+            toggleXavierReinitialization: bindActionCreators(Actions.toggleXavierReinitialization, dispatch),
         };
     }
 )(ComputationalResources);
