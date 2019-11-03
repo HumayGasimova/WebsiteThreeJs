@@ -601,3 +601,12 @@ export const getXavierReinitializationIsThrownState = createSelector(
     [getXavierReinitializationIsThrown],
     (x) => x
 );
+
+const getHostileTakeoverIsThrown = (state) => state.business.hostileTakeoverIsThrown;
+
+export const getHostileTakeoverIsThrownState = createSelector(
+    [getHostileTakeoverIsThrown],
+    (x) => x
+);
+
+

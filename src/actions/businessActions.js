@@ -1091,4 +1091,9 @@ export function toggleXavierReinitialization(val) {
     };
 };
 
-
+export function toggleThrownProjectHostileTakeover(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
+        val: val
+    };
+};

@@ -165,5 +165,6 @@ export {
     toggleThrownProjectTheHadwingerProblem,
     toggleThrownProjectTheTothSausageConjecture,
     toggleDonkeySpace,
-    toggleXavierReinitialization
+    toggleXavierReinitialization,
+    toggleThrownProjectHostileTakeover
 } from './businessActions';

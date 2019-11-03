@@ -109,7 +109,8 @@ export const initialState = {
     theHadwingerProblemIsThrown: false,
     theTothSausageConjectureIsThrown: false,
     donkeySpaceIsThrown: false,
-    xavierReinitializationIsThrown: false
+    xavierReinitializationIsThrown: false,
+    hostileTakeoverIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1187,6 +1188,12 @@ const toggleXavierReinitialization = (state, action) => {
     });
 }
 
+const toggleThrownProjectHostileTakeover = (state, action) => {
+    return updateObject(state, {
+        hostileTakeoverIsThrown: action.val,     
+    });
+}
+
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.CHECK_BUTTONS:
@@ -1522,7 +1529,9 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE:
             return toggleDonkeySpace(state, action);      
         case actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION:
-            return toggleXavierReinitialization(state, action);  
+            return toggleXavierReinitialization(state, action); 
+        case actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER:
+            return toggleThrownProjectHostileTakeover(state, action);   
             
         default: 
             return state;

@@ -69,8 +69,9 @@ export class Business extends Component {
     
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.funds !== this.props.funds) {
-            if(this.props.funds === 10000){
+            if(this.props.funds >= 10000 && this.props.hostileTakeoverIsThrown === false){
                 this.props.addHostileTakeover();
+                this.props.toggleThrownProjectHostileTakeover(true);
             }
         }
     }
@@ -133,6 +134,7 @@ export default connect(
             revTracker: Selectors.getRevTrackerState(state),
             avgRevPerSec: Selectors.getAvgRevPerSecState(state),
             avgClipsSoldPerSec: Selectors.getAvgClipsSoldPerSecState(state),
+            hostileTakeoverIsThrown: Selectors.getHostileTakeoverIsThrownState(state)
         };
     },
     (dispatch) => {
@@ -142,6 +144,7 @@ export default connect(
             marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
             startUpdatingUnsoldInventory: bindActionCreators(Actions.startUpdatingUnsoldInventory, dispatch),
             addHostileTakeover: bindActionCreators(Actions.addHostileTakeover, dispatch),
+            toggleThrownProjectHostileTakeover: bindActionCreators(Actions.toggleThrownProjectHostileTakeover, dispatch),
         };
     }
 )(Business);

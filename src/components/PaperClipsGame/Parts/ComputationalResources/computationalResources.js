@@ -150,7 +150,7 @@ export class ComputationalResources extends Component {
                 this.props.addDonkeySpace();
                 this.props.toggleDonkeySpace(true);
             }
-            if(this.props.creativity === 100000 && this.props.xavierReinitializationIsThrown === false){
+            if(this.props.creativity === 1 && this.props.xavierReinitializationIsThrown === false){
                 this.props.addXavierReinitialization();
                 this.props.toggleXavierReinitialization(true);
             }

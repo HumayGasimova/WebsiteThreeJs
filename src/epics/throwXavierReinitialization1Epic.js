@@ -13,7 +13,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 export const throwXavierReinitialization1Epic = (action$, state$) => 
   action$.pipe(
     ofType(actionTypes.ADD_XAVIER_REINITIALIZATION),
-    take(1),
+    // take(1),
     mergeMap(action => {
         return of(
           Actions.addProject(projectsToAdd.XavierReinitialization)
