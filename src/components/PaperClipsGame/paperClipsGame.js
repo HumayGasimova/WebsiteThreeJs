@@ -68,7 +68,7 @@ class PaperClipsGame extends Component {
         setInterval(()=>{
             let jsonStore = JSON.stringify(this.props.store)
             localStorage.setItem('store',jsonStore)
-        }, 5000);
+        }, 10000);
 
         this.props.stateFromLocalStorage(state)
     };

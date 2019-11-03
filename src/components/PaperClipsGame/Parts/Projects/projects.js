@@ -551,7 +551,7 @@ export class Projects extends Component {
                     localStorage.removeItem('store');
                     window.location.reload();
                 }else{
-                    console.log("no")
+                   this.props.addProject(projectsToAdd.QuantumTemporalReversion)
                 }
                         
                 
