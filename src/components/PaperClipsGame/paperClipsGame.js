@@ -61,6 +61,11 @@ class PaperClipsGame extends Component {
             this.props.startTimer();
         }, 1000);
         window.addEventListener('scroll', this.mouseScroll);
+
+        setInterval(()=>{
+            let jsonStore = JSON.stringify(this.props.store)
+            localStorage.setItem('store',jsonStore)
+        }, 5000);
     };
 
     /**
@@ -81,7 +86,7 @@ class PaperClipsGame extends Component {
 export default connect(
     (state) => {
         return {
-            // paperClips: state.business.paperClips,
+            store: state.business,
 
         };
     },
