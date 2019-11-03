@@ -1063,4 +1063,10 @@ export function toggleThrownProjectCombinatoryHarmonics(val) {
     };
 };
 
+export function toggleThrownProjectTheHadwingerProblem(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_THE_HADWINGER_PROBLEM,
+        val: val
+    };
+};
 

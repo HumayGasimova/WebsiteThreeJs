@@ -161,5 +161,6 @@ export {
     stateFromLocalStorage,
     toggleThrownProjectStartCreativityCounter,
     toggleThrownProjectLexicalProcessing,
-    toggleThrownProjectCombinatoryHarmonics
+    toggleThrownProjectCombinatoryHarmonics,
+    toggleThrownProjectTheHadwingerProblem
 } from './businessActions';

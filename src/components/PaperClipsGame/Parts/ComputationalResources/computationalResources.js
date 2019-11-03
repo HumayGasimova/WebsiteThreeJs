@@ -138,8 +138,9 @@ export class ComputationalResources extends Component {
                 this.props.addCombinatoryHarmonics();
                 this.props.toggleThrownProjectCombinatoryHarmonics(true);
             }
-            if(this.props.creativity === 150){
+            if(this.props.creativity === 150 && this.props.theHadwingerProblemIsThrown === false){
                 this.props.addTheHadwingerProblem();
+                this.props.toggleThrownProjectTheHadwingerProblem(true);
             }
             if(this.props.creativity === 200){
                 this.props.addTheTothSausageConjecture();
@@ -236,7 +237,8 @@ export default connect(
             showQuantumComputing: Selectors.getShowQuantumComputingState(state),
             creativityCounterIsThrown: Selectors.getCreativityCounterIsThrownState(state),
             lexicalProcessingIsThrown: Selectors.getLexicalProcessingIsThrownState(state),
-            
+            combinatoryHarmonicsIsThrown: Selectors.getCombinatoryHarmonicsIsThrownState(state),
+            theHadwingerProblemIsThrown: Selectors.getTheHadwingerProblemIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -259,6 +261,7 @@ export default connect(
             toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
             toggleThrownProjectLexicalProcessing: bindActionCreators(Actions.toggleThrownProjectLexicalProcessing, dispatch),
             toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),
+            toggleThrownProjectTheHadwingerProblem: bindActionCreators(Actions.toggleThrownProjectTheHadwingerProblem, dispatch),
         };
     }
 )(ComputationalResources);

@@ -567,4 +567,19 @@ export const getLexicalProcessingIsThrownState = createSelector(
     (x) => x
 );
 
+const getCombinatoryHarmonicsIsThrown = (state) => state.business.combinatoryHarmonicsIsThrown;
+
+export const getCombinatoryHarmonicsIsThrownState = createSelector(
+    [getCombinatoryHarmonicsIsThrown],
+    (x) => x
+);
+
+const getTheHadwingerProblemIsThrown = (state) => state.business.theHadwingerProblemIsThrown;
+
+export const getTheHadwingerProblemIsThrownState = createSelector(
+    [getTheHadwingerProblemIsThrown],
+    (x) => x
+);
+
+
 
