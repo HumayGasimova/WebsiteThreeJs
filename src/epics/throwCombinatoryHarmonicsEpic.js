@@ -12,7 +12,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 export const throwCombinatoryHarmonicsEpic = (action$, state$) => 
   action$.pipe(
     ofType(actionTypes.ADD_COMBINATORY_HARMONICS),
-    take(1),
+    // take(1),
     mergeMap(action => {
         return of(
           Actions.addProject(projectsToAdd.CombinatoryHarmonics)

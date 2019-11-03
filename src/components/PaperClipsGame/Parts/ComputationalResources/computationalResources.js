@@ -134,8 +134,9 @@ export class ComputationalResources extends Component {
                 this.props.addLexicalProcessing();
                 this.props.toggleThrownProjectLexicalProcessing(true);
             }
-            if(this.props.creativity === 100){
+            if(this.props.creativity === 100 && this.props.combinatoryHarmonicsIsThrown === false){
                 this.props.addCombinatoryHarmonics();
+                this.props.toggleThrownProjectCombinatoryHarmonics(true);
             }
             if(this.props.creativity === 150){
                 this.props.addTheHadwingerProblem();
@@ -257,6 +258,7 @@ export default connect(
             addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
             toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
             toggleThrownProjectLexicalProcessing: bindActionCreators(Actions.toggleThrownProjectLexicalProcessing, dispatch),
+            toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),
         };
     }
 )(ComputationalResources);

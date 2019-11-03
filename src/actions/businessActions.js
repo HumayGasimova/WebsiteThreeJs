@@ -1056,4 +1056,11 @@ export function toggleThrownProjectLexicalProcessing(val) {
     };
 };
 
+export function toggleThrownProjectCombinatoryHarmonics(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS,
+        val: val
+    };
+};
+
 

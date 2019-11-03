@@ -160,5 +160,6 @@ export {
     upgradeInvestmentEngine,
     stateFromLocalStorage,
     toggleThrownProjectStartCreativityCounter,
-    toggleThrownProjectLexicalProcessing
+    toggleThrownProjectLexicalProcessing,
+    toggleThrownProjectCombinatoryHarmonics
 } from './businessActions';
