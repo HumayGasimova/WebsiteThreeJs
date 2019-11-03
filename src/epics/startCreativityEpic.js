@@ -13,7 +13,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 export const startCreativityEpic = (action$, state$) => 
   action$.pipe(
     ofType(actionTypes.START_CREATIVITY_COUNTER),
-    take(1),
+    // take(1),
     mergeMap(action => {
         return of(
           Actions.addProject(projectsToAdd.Creativity)

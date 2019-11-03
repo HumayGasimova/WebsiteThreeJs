@@ -157,5 +157,7 @@ export {
     addXavierReinitialization,
     reallocationOfTrust,
     addHostileTakeover,
-    upgradeInvestmentEngine
+    upgradeInvestmentEngine,
+    stateFromLocalStorage,
+    toggleThrownProjectStartCreativityCounter
 } from './businessActions';

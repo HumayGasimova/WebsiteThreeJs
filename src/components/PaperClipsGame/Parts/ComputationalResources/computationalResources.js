@@ -92,8 +92,9 @@ export class ComputationalResources extends Component {
         }, this.state.delayOperations);
 
         this.intervalStartCreativity = setInterval(()=>{
-            if(this.props.ops === this.props.opsMax){
+            if(this.props.ops === this.props.opsMax && this.props.creativityCounterIsThrown === false){
                 this.props.startCreativityCounter();
+                this.props.toggleThrownProjectStartCreativityCounter(true);
             }
         }, 1000);
 
@@ -230,7 +231,8 @@ export default connect(
             processorsMemory: Selectors.getProcessorsMemoryState(state),
             creativity: Selectors.getCreativityState(state),
             creativityTurnOn: Selectors.getCreativityTurnOnState(state),
-            showQuantumComputing: Selectors.getShowQuantumComputingState(state)
+            showQuantumComputing: Selectors.getShowQuantumComputingState(state),
+            creativityCounterIsThrown: Selectors.getCreativityCounterIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -250,6 +252,7 @@ export default connect(
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
+            toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
         };
     }
 )(ComputationalResources);

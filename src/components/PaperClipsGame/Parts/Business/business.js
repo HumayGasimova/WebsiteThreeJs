@@ -69,7 +69,7 @@ export class Business extends Component {
     
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.funds !== this.props.funds) {
-            if(this.props.funds >= 1200){
+            if(this.props.funds === 10000){
                 this.props.addHostileTakeover();
             }
         }

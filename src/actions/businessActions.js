@@ -1035,4 +1035,16 @@ export function upgradeInvestmentEngine() {
     };
 };
 
+export function stateFromLocalStorage(state) {
+    return { 
+        type: actionTypes.STATE_FROM_LOCAL_STORAGE,
+        state: state
+    };
+};
 
+export function toggleThrownProjectStartCreativityCounter(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
+        val: val
+    };
+};

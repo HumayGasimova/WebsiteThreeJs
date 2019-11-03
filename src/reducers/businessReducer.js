@@ -102,7 +102,8 @@ export const initialState = {
     strategyWon: "",
     valueWon: 0,
     investmentsLevel: 0,
-    upgradeInvestmentEngineCost: 100
+    upgradeInvestmentEngineCost: 100,
+    creativityCounterIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -1133,6 +1134,17 @@ const upgradeInvestmentEngine = (state, action) => {
     });
 }
 
+const stateFromLocalStorage = (state, action) => {
+    console.log(action.state)
+    return action.state;
+}
+
+const toggleThrownProjectStartCreativityCounter = (state, action) => {
+    return updateObject(state, {
+        creativityCounterIsThrown: action.val,     
+    });
+}
+
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1454,6 +1466,10 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.UPGRADE_INVESTMENT_ENGINE:
             return upgradeInvestmentEngine(state, action);  
+        case actionTypes.STATE_FROM_LOCAL_STORAGE:
+            return stateFromLocalStorage(state, action);   
+        case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
+            return toggleThrownProjectStartCreativityCounter(state, action);   
             
         default: 
             return state;

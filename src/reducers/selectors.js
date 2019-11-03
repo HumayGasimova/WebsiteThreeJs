@@ -552,3 +552,11 @@ export const getUpgradeInvestmentEngineCostState = createSelector(
     [getUpgradeInvestmentEngineCost],
     (x) => x
 );
+
+const getCreativityCounterIsThrown = (state) => state.business.creativityCounterIsThrown;
+
+export const getCreativityCounterIsThrownState = createSelector(
+    [getCreativityCounterIsThrown],
+    (x) => x
+);
+

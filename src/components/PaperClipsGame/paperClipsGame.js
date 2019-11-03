@@ -57,6 +57,8 @@ class PaperClipsGame extends Component {
     }
 
     componentDidMount = () => {
+        let state = JSON.parse(localStorage.getItem('store')) === null ? this.props.store : JSON.parse(localStorage.getItem('store'));
+        console.log("GGG", state)
         setInterval(()=>{
             this.props.startTimer();
         }, 1000);
@@ -66,6 +68,8 @@ class PaperClipsGame extends Component {
             let jsonStore = JSON.stringify(this.props.store)
             localStorage.setItem('store',jsonStore)
         }, 5000);
+
+        this.props.stateFromLocalStorage(state)
     };
 
     /**
@@ -93,7 +97,8 @@ export default connect(
     (dispatch) => {
         return {
             closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch),
-            startTimer: bindActionCreators(Actions.startTimer, dispatch)
+            startTimer: bindActionCreators(Actions.startTimer, dispatch),
+            stateFromLocalStorage: bindActionCreators(Actions.stateFromLocalStorage, dispatch),
         };
     }
 )(PaperClipsGame);
