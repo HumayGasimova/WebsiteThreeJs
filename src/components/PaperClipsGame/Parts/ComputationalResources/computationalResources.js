@@ -135,23 +135,23 @@ export class ComputationalResources extends Component {
                 this.props.toggleThrownProjectLexicalProcessing(true);
             }
             if(this.props.creativity === 100 && this.props.combinatoryHarmonicsIsThrown === false){
-                this.props.addCombinatoryHarmonics();
+                this.props.addProject(projectsToAdd.CombinatoryHarmonics);
                 this.props.toggleThrownProjectCombinatoryHarmonics(true);
             }
             if(this.props.creativity === 150 && this.props.theHadwingerProblemIsThrown === false){
-                this.props.addTheHadwingerProblem();
+                this.props.addProject(projectsToAdd.TheHadwigerProblem);
                 this.props.toggleThrownProjectTheHadwingerProblem(true);
             }
             if(this.props.creativity === 200 && this.props.theTothSausageConjectureIsThrown === false){
-                this.props.addTheTothSausageConjecture();
+                this.props.addProject(projectsToAdd.TheTothSausageConjecture);
                 this.props.toggleThrownProjectTheTothSausageConjecture(true);
             }
             if(this.props.creativity === 250 && this.props.donkeySpaceIsThrown === false){
-                this.props.addDonkeySpace();
+                this.props.addProject(projectsToAdd.DonkeySpace);
                 this.props.toggleDonkeySpace(true);
             }
-            if(this.props.creativity === 100000 && this.props.xavierReinitializationIsThrown === false){
-                this.props.addXavierReinitialization();
+            if(this.props.creativity === 10 && this.props.xavierReinitializationIsThrown === false){
+                this.props.addProject(projectsToAdd.XavierReinitialization)
                 this.props.toggleXavierReinitialization(true);
             }
         }
@@ -255,15 +255,15 @@ export default connect(
             increaseCreativity: bindActionCreators(Actions.increaseCreativity, dispatch),
             startCreativityCounter: bindActionCreators(Actions.startCreativityCounter, dispatch),
             // addLexicalProcessing: bindActionCreators(Actions.addLexicalProcessing, dispatch),
-            addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
-            addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
-            addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
-            addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
+            // addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
+            // addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
+            // addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
+            // addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
             stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
-            addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
+            // addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
             toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
             toggleThrownProjectLexicalProcessing: bindActionCreators(Actions.toggleThrownProjectLexicalProcessing, dispatch),
             toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),

@@ -30,12 +30,12 @@ export { startUpdatingUnsoldInventoryEpic } from './startUpdatingUnsoldInventory
 export { toggleChipEpic } from './toggleChipEpic';
 export { wireButtonBufferEpic } from './wireButtonBufferEpic';
 export { startCreativityEpic } from './startCreativityEpic';
-export { throwCombinatoryHarmonicsEpic } from './throwCombinatoryHarmonicsEpic';
-export { throwDonkeySpaceEpic } from './throwDonkeySpaceEpic';
+// export { throwCombinatoryHarmonicsEpic } from './throwCombinatoryHarmonicsEpic';
+// export { throwDonkeySpaceEpic } from './throwDonkeySpaceEpic';
 // export { throwLexicalProcessingEpic } from './throwLexicalProcessingEpic';
 export { throwMegaClippersEpic } from './throwMegaClippersEpic';
-export { throwTheHadwingerProblemEpic } from './throwTheHadwingerProblemEpic';
-export { throwTheTothSausageConjectureEpic } from './throwTheTothSausageConjectureEpic';
+// export { throwTheHadwingerProblemEpic } from './throwTheHadwingerProblemEpic';
+// export { throwTheTothSausageConjectureEpic } from './throwTheTothSausageConjectureEpic';
 
 export { startNewTournamentEpic } from './startNewTournamentEpic';
 export { startRunningStrategicModelingEpic } from './startRunningStrategicModelingEpic';
@@ -51,7 +51,7 @@ export { startCountingResultEpic } from './startCountingResultEpic';
 export { countFinalResultOfEachStrategyEpic } from './countFinalResultOfEachStrategyEpic';
 export { updateYomiEpic } from './updateYomiEpic';
 export { throwCoherentExtrapolatedVolitionEpic } from './throwCoherentExtrapolatedVolitionEpic';
-export { throwXavierReinitialization1Epic } from './throwXavierReinitialization1Epic';
+// export { throwXavierReinitialization1Epic } from './throwXavierReinitialization1Epic';
 export { throwHostileTakeoverEpic } from './throwHostileTakeoverEpic';
 
 
