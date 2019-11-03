@@ -973,11 +973,11 @@ export function updateYomi() {
     };
 };
 
-export function addCoherentExtrapolatedVolition() {
-    return { 
-        type: actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION
-    };
-};
+// export function addCoherentExtrapolatedVolition() {
+//     return { 
+//         type: actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION
+//     };
+// };
 
 export function removePriceOfProjectOpsCreatAndYomi(ops, creat, yomi) {
     return { 
@@ -1023,11 +1023,11 @@ export function reallocationOfTrust() {
     };
 };
 
-export function addHostileTakeover() {
-    return { 
-        type: actionTypes.ADD_HOSTILE_TAKEOVER,
-    };
-};
+// export function addHostileTakeover() {
+//     return { 
+//         type: actionTypes.ADD_HOSTILE_TAKEOVER,
+//     };
+// };
 
 export function upgradeInvestmentEngine() {
     return { 
@@ -1100,7 +1100,14 @@ export function toggleThrownProjectHostileTakeover(val) {
 
 export function toggleThrownProjectQuantumComputing(val) {
     return { 
-        type: actionTypes.TOGGL_THROWN_PROJECT_QUANTUM_COMPUTING,
+        type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING,
+        val: val
+    };
+};
+
+export function toggleThrownProjectCoherentExtrapolatedVolition(val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION,
         val: val
     };
 };

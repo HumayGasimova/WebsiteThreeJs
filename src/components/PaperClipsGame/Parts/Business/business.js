@@ -46,6 +46,12 @@ import * as Selectors from '../../../../reducers/selectors';
 import * as Utility from '../../../../utility';
 
 /**
+* Const
+*/
+
+import * as projectsToAdd from '../../../../constants/projectsToAdd';
+
+/**
 * Business component definition and export
 */
 
@@ -69,8 +75,8 @@ export class Business extends Component {
     
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.funds !== this.props.funds) {
-            if(this.props.funds >= 10000 && this.props.hostileTakeoverIsThrown === false){
-                this.props.addHostileTakeover();
+            if(this.props.funds >= 1000 && this.props.hostileTakeoverIsThrown === false){
+                this.props.addProject(projectsToAdd.HostileTakeover);
                 this.props.toggleThrownProjectHostileTakeover(true);
             }
         }
@@ -143,8 +149,9 @@ export default connect(
             raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
             startUpdatingUnsoldInventory: bindActionCreators(Actions.startUpdatingUnsoldInventory, dispatch),
-            addHostileTakeover: bindActionCreators(Actions.addHostileTakeover, dispatch),
+            // addHostileTakeover: bindActionCreators(Actions.addHostileTakeover, dispatch),
             toggleThrownProjectHostileTakeover: bindActionCreators(Actions.toggleThrownProjectHostileTakeover, dispatch),
+            addProject: bindActionCreators(Actions.addProject, dispatch),
         };
     }
 )(Business);

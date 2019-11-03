@@ -156,7 +156,7 @@ export {
     removePriceOfProjectMoney,
     // addXavierReinitialization,
     reallocationOfTrust,
-    addHostileTakeover,
+    // addHostileTakeover,
     upgradeInvestmentEngine,
     stateFromLocalStorage,
     toggleThrownProjectStartCreativityCounter,
@@ -167,5 +167,6 @@ export {
     toggleDonkeySpace,
     toggleXavierReinitialization,
     toggleThrownProjectHostileTakeover,
-    toggleThrownProjectQuantumComputing
+    toggleThrownProjectQuantumComputing,
+    toggleThrownProjectCoherentExtrapolatedVolition
 } from './businessActions';
