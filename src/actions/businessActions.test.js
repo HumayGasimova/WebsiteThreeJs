@@ -1778,7 +1778,6 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
-    
     it('Dispatches the correct action and payload (countFinalResultOfEachStrategy)', () => {
         const expectedActions = [
             {
@@ -1787,6 +1786,19 @@ describe('businessActions', () => {
         ];
 
         store.dispatch(Actions.countFinalResultOfEachStrategy());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (updateListOfFinalResult)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_LIST_OF_FINAL_RESULT,
+                obj: {a: 7, b: 9}
+            }
+        ];
+
+        store.dispatch(Actions.updateListOfFinalResult({a: 7, b: 9}));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });

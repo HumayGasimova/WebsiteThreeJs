@@ -1078,6 +1078,18 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateListOfFinalResult) 1`] = `
+Array [
+  Object {
+    "obj": Object {
+      "a": 7,
+      "b": 9,
+    },
+    "type": "UPDATE_LIST_OF_FINAL_RESULT",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateMaxPublicDemand) 1`] = `
 Array [
   Object {
