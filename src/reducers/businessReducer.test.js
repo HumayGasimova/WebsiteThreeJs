@@ -1832,6 +1832,36 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update roundsArray by deleting first element in the array", () => {
+        const action = { 
+            type: actionTypes.UPDATE_ROUNDS_ON_SCREEN
+        }
+        const initState = {
+            ...initialState, 
+            roundsArray: [1,2,3,4]
+        }
+        const state = {
+            ...initialState, 
+            roundsArray: [2,3,4]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update playerLeftStrategyList by deleting first element in the array", () => {
+    const action = { 
+        type: actionTypes.UPDATE_PLAYER_LEFT_ON_SCREEN
+    }
+    const initState = {
+        ...initialState, 
+        playerLeftStrategyList: ['a','b','c']
+    }
+    const state = {
+        ...initialState, 
+        playerLeftStrategyList: ['b','c']
+    }
+    expect(reducer(initState, action)).toEqual(state);
+})
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
