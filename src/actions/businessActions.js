@@ -782,9 +782,6 @@ export function startRunningStrategicModeling() {
     };
 };
 
-
-
-
 export function updateStrategicModelingData(obj) {
     return { 
         type: actionTypes.UPDATE_STRATEGIC_MODELING_DATA,
@@ -852,6 +849,10 @@ export function showRoundAndPlayers(val) {
         val: val
     };
 };
+
+
+
+
 
 export function startUpdatingRoundsOnScreen() {
     return { 
