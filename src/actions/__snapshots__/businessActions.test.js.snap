@@ -921,6 +921,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleStrategicModelingLeftPart) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_STRATEGIC_MODELING_LEFT_PART",
+    "val": false,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleWireButton) 1`] = `
 Array [
   Object {

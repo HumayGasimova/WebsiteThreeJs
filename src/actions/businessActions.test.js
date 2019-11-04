@@ -1814,4 +1814,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleStrategicModelingLeftPart)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART,
+                val: false
+            }
+        ];
+
+        store.dispatch(Actions.toggleStrategicModelingLeftPart(false));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
