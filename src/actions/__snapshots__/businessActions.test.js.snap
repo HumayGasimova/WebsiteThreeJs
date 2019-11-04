@@ -488,6 +488,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showRoundAndPlayers) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_ROUND_AND_PLAYERS",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (showStrategicModeling) 1`] = `
 Array [
   Object {

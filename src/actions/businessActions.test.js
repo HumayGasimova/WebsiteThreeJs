@@ -1618,5 +1618,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (showRoundAndPlayers)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_ROUND_AND_PLAYERS,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.showRoundAndPlayers(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
