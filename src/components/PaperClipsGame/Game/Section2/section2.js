@@ -63,7 +63,7 @@ export class Section2 extends Component {
             return(
                 <div>
                     <ComputationalResources/>
-                    <Projects/> 
+                    <Projects/>
                 </div>
             )
         }

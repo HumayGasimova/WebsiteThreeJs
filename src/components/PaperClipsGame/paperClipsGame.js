@@ -21,6 +21,7 @@ import {
 import Terminal from './Terminal/terminal';
 import Game from './Game/game';
 import Paperclips from './Parts/Paperclips/paperclips';
+import Title from './Title/title'
 
 /**
 * Styles
@@ -33,7 +34,6 @@ import './paperClipsGame.scss';
 */
 
 import * as Actions from '../../actions';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 /**
 * PaperClipsGame component definition and export
@@ -78,11 +78,16 @@ class PaperClipsGame extends Component {
     */
 
     render(){
-        return(
-            <div className="paper-clips-game">
-                <Terminal/>
-                <Paperclips/>
-                <Game/>
+        return(  
+            <div>
+                <div className="paper-clips-game">
+                    <Terminal/>
+                    <Paperclips/>
+                    <Game/>
+                </div>
+                <div className="title">
+                    <Title/>
+                </div>
             </div>
         );
     }
