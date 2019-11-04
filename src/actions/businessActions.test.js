@@ -1655,4 +1655,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (startUpdatingPlayerLeftOnScreen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_UPDATING_PLAYER_LEFT_ON_SCREEN
+            }
+        ];
+
+        store.dispatch(Actions.startUpdatingPlayerLeftOnScreen());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
