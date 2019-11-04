@@ -1769,6 +1769,38 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update strategicModelingRound with the value passed through the action ", () => {
+        const action = { 
+            type: actionTypes.UPDATE_STRATEGIC_MODELING_ROUND,
+            round: 9
+        }
+        const initState = {
+            ...initialState, 
+            strategicModelingRound: 1
+        }
+        const state = {
+            ...initialState, 
+            strategicModelingRound: 9
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update roundAndPlayersIsShown with the value passed through the action ", () => {
+        const action = { 
+            type: actionTypes.SHOW_ROUND_AND_PLAYERS,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            roundAndPlayersIsShown: false
+        }
+        const state = {
+            ...initialState, 
+            roundAndPlayersIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
