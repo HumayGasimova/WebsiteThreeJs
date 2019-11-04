@@ -1827,4 +1827,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleStrategicModelingHover)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_STRATEGIC_MODELING_HOVER,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleStrategicModelingHover(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

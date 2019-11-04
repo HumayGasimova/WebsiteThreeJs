@@ -921,6 +921,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleStrategicModelingHover) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_STRATEGIC_MODELING_HOVER",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleStrategicModelingLeftPart) 1`] = `
 Array [
   Object {
