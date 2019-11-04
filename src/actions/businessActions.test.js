@@ -1971,4 +1971,30 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleThrownProjectLexicalProcessing)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleThrownProjectLexicalProcessing(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (toggleThrownProjectCombinatoryHarmonics)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS,
+                val: false
+            }
+        ];
+
+        store.dispatch(Actions.toggleThrownProjectCombinatoryHarmonics(false));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

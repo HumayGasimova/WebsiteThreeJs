@@ -1011,6 +1011,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectLexicalProcessing) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectStartCreativityCounter) 1`] = `
 Array [
   Object {
