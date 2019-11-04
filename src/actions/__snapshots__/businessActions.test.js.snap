@@ -170,6 +170,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (clearChosenFromStrategicModelingDropdownList) 1`] = `
+Array [
+  Object {
+    "type": "CLEAR_CHOSEN_FROM_STRATEGIC_MODELING_DROPDOWN_LIST",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (clickWireButton) 1`] = `
 Array [
   Object {

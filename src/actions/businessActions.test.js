@@ -1557,5 +1557,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (clearChosenFromStrategicModelingDropdownList)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CLEAR_CHOSEN_FROM_STRATEGIC_MODELING_DROPDOWN_LIST
+            }
+        ];
+
+        store.dispatch(Actions.clearChosenFromStrategicModelingDropdownList());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
