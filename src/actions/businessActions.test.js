@@ -1521,11 +1521,25 @@ describe('businessActions', () => {
         const expectedActions = [
             {
                 type: actionTypes.UPDATE_STRATEGIC_MODELING_DATA,
-                obj: {a:5, b:5}
+                obj: {a: 5, b: 5}
             }
         ];
 
-        store.dispatch(Actions.updateStrategicModelingData({a:5, b:5}));
+        store.dispatch(Actions.updateStrategicModelingData({a: 5, b: 5}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (updateStrategicModelingCurrentList)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_STRATEGIC_MODELING_CURRENT_LIST,
+                obj: {a: 5, b: 8},
+                round: 9
+            }
+        ];
+
+        store.dispatch(Actions.updateStrategicModelingCurrentList({a: 5, b: 8}, 9));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
