@@ -1764,4 +1764,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updatedAllRoundsRes)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATED_ALL_ROUNDS_RES,
+                obj: {a: 9, b: 8}
+            }
+        ];
+
+        store.dispatch(Actions.updatedAllRoundsRes({a: 9, b: 8}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
