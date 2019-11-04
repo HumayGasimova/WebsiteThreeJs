@@ -1573,6 +1573,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update ops by subtracting the value of newTournamentCost", () => {
+        const action = { 
+            type: actionTypes.TOURNAMENT_STATE,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            tournamentContinues: false
+        }
+        const state = {
+            ...initialState, 
+            tournamentContinues: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
