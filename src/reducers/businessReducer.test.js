@@ -1862,6 +1862,36 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update playerTopStrategyList and playerTopStrategyList with the value of listStrategicModeling, roundsArray with the value of strategicModelingRound (using utility), allRoundsRes and allRoundsResWithValues set to [], listOfFinalResult set to {} ", () => {
+        const action = { 
+            type: actionTypes.SET_PLAYERS_ARRAY
+        }
+        const initState = {
+            ...initialState, 
+            listStrategicModeling: ['pick a start','a','b','c'],
+            strategicModelingRound: 9,
+            playerLeftStrategyList: [],
+            playerTopStrategyList: ['c','a','b'],
+            allRoundsRes: [{a:4},{a:7}],
+            roundsArray: [1,2,3,4],
+            allRoundsResWithValues: [{b: 5},{b: 7}],
+            listOfFinalResult: {a: 8, b:3}
+        }
+        const state = {
+            ...initialState, 
+            listStrategicModeling: ['pick a start','a','b','c'],
+            strategicModelingRound: 9,
+            playerLeftStrategyList: ['a','b','c'],
+            playerTopStrategyList: ['a','b','c'],
+            allRoundsRes: [],
+            roundsArray: [1,2,3,4,5,6,7,8,9],
+            allRoundsResWithValues: [],
+            listOfFinalResult: {}
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+    
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

@@ -48,7 +48,7 @@ export const initialState = {
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
     showInvestmentEngine: false, //false
-    showStrategicModeling: false, //false
+    showStrategicModeling: true, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
@@ -93,7 +93,7 @@ export const initialState = {
     playerTopStrategyList: [],
     allRoundsRes: [],
     allRoundsResWithValues: [],
-    listOfFinalResult: [],
+    listOfFinalResult: {},
     stratedicModelingLeftPartIsShown: false,
     stratedicModelingRightPartIsShown: true,
     strategicModelingPartsHover: false,
@@ -933,7 +933,7 @@ const setPlayersArrays = (state, action) => {
         allRoundsRes: [],
         roundsArray: updatedRoundsArray,
         allRoundsResWithValues: [],
-        listOfFinalResult: []
+        listOfFinalResult: {}
     });
 }
 
@@ -1488,14 +1488,14 @@ const businessReducer = (state = initialState, action) => {
             return updatePlayerLeftOnScreen(state, action);  
         case actionTypes.START_UPDATING_PLAYER_TOP_ON_SCREEN:
             return state;    
-
-
         case actionTypes.UPDATE_PLAYER_TOP_ON_SCREEN:
             return updatePlayerTopOnScreen(state, action);
         case actionTypes.SET_PLAYERS_ARRAY:
             return setPlayersArrays(state, action);
         case actionTypes.GAME_STARTED:
             return state;     
+
+
         case actionTypes.ALL_ROUNDS_RESULT:
             return allRoundsResult(state, action);
         case actionTypes.STRATEGIC_MODELING_RESULT:
