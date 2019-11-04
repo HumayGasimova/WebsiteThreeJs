@@ -1945,4 +1945,30 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (stateFromLocalStorage)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STATE_FROM_LOCAL_STORAGE,
+                state: {a: 5, b: 5}
+            }
+        ];
+
+        store.dispatch(Actions.stateFromLocalStorage({a: 5, b: 5}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (toggleThrownProjectStartCreativityCounter)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleThrownProjectStartCreativityCounter(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

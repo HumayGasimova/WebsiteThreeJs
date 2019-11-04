@@ -786,6 +786,18 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stateFromLocalStorage) 1`] = `
+Array [
+  Object {
+    "state": Object {
+      "a": 5,
+      "b": 5,
+    },
+    "type": "STATE_FROM_LOCAL_STORAGE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stop) 1`] = `
 Array [
   Object {
@@ -995,6 +1007,15 @@ Array [
   Object {
     "type": "TOGGLE_STRATEGIC_MODELING_LEFT_PART",
     "val": false,
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectStartCreativityCounter) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER",
+    "val": true,
   },
 ]
 `;
