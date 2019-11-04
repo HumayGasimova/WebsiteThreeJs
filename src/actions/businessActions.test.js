@@ -1840,4 +1840,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleCells)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_CELLS,
+                obj: {a: 3, b: 5}
+            }
+        ];
+
+        store.dispatch(Actions.toggleCells({a: 3, b: 5}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
