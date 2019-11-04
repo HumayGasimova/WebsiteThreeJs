@@ -1035,6 +1035,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateRoundsOnScreen) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_ROUNDS_ON_SCREEN",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateStrategicModelingCurrentList) 1`] = `
 Array [
   Object {

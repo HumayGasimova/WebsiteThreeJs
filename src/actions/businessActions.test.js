@@ -1643,4 +1643,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updateRoundsOnScreen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_ROUNDS_ON_SCREEN
+            }
+        ];
+
+        store.dispatch(Actions.updateRoundsOnScreen());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
