@@ -1020,6 +1020,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectDonkeySpace) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_DONKEY_SPACE",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectLexicalProcessing) 1`] = `
 Array [
   Object {
