@@ -206,6 +206,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (countFinalResultOfEachStrategy) 1`] = `
+Array [
+  Object {
+    "type": "COUNT_FINAL_RESULT_OF_EACH_STRATEGY",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (creativityTurnOn) 1`] = `
 Array [
   Object {

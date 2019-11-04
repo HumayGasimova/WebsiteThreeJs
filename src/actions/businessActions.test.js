@@ -1777,4 +1777,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    
+    it('Dispatches the correct action and payload (countFinalResultOfEachStrategy)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.COUNT_FINAL_RESULT_OF_EACH_STRATEGY
+            }
+        ];
+
+        store.dispatch(Actions.countFinalResultOfEachStrategy());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
