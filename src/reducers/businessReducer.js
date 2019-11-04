@@ -1464,10 +1464,10 @@ const businessReducer = (state = initialState, action) => {
             return updateStrategicModelingCurrentList(state, action);  
         case actionTypes.STRATEGY_CHOSEN:
             return strategyChosen(state, action);  
-            
-            
         case actionTypes.CLEAR_CHOSEN_FROM_STRATEGIC_MODELING_DROPDOWN_LIST:
-            return clearChosenFromStrategicModelingDropdownList(state, action);      
+            return clearChosenFromStrategicModelingDropdownList(state, action); 
+            
+            
         case actionTypes.UPDATE_STRATEGIC_MODELING_ROUND:
             return updateStrategicModelingRound(state, action);      
         case actionTypes.TOURNAMENT_STARTED:
