@@ -1752,4 +1752,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (startCountingResult)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_COUNTING_RESULT
+            }
+        ];
+
+        store.dispatch(Actions.startCountingResult());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
