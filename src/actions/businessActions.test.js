@@ -1667,4 +1667,28 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+    
+    it('Dispatches the correct action and payload (updatePlayerLeftOnScreen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_PLAYER_LEFT_ON_SCREEN
+            }
+        ];
+
+        store.dispatch(Actions.updatePlayerLeftOnScreen());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (startUpdatingPlayerTopOnScreen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_UPDATING_PLAYER_TOP_ON_SCREEN
+            }
+        ];
+
+        store.dispatch(Actions.startUpdatingPlayerTopOnScreen());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

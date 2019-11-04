@@ -646,6 +646,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startUpdatingPlayerTopOnScreen) 1`] = `
+Array [
+  Object {
+    "type": "START_UPDATING_PLAYER_TOP_ON_SCREEN",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startUpdatingRoundsOnScreen) 1`] = `
 Array [
   Object {
@@ -1031,6 +1039,14 @@ Array [
   Object {
     "type": "UPDATE_OPS",
     "val": 34,
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (updatePlayerLeftOnScreen) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_PLAYER_LEFT_ON_SCREEN",
   },
 ]
 `;
