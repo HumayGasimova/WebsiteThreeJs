@@ -1604,6 +1604,90 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should (if ops is less than newTournamentCost and tournamentContinues is set to true) newTournamentButtonDisabled set to true", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            ops: 10,
+            newTournamentCost: 37,
+            tournamentContinues: true,
+            newTournamentButtonDisabled: false,
+        }
+        const state = {
+            ...initialState, 
+            ops: 10,
+            newTournamentCost: 37,
+            tournamentContinues: true,
+            newTournamentButtonDisabled: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if ops is less than newTournamentCost and tournamentContinues is set to false) newTournamentButtonDisabled set to true", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            ops: 10,
+            newTournamentCost: 37,
+            tournamentContinues: false,
+            newTournamentButtonDisabled: false,
+        }
+        const state = {
+            ...initialState, 
+            ops: 10,
+            newTournamentCost: 37,
+            tournamentContinues: false,
+            newTournamentButtonDisabled: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if ops is greater than newTournamentCost and tournamentContinues is set to true) newTournamentButtonDisabled set to true", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            ops: 100,
+            newTournamentCost: 37,
+            tournamentContinues: true,
+            newTournamentButtonDisabled: false,
+        }
+        const state = {
+            ...initialState, 
+            ops: 100,
+            newTournamentCost: 37,
+            tournamentContinues: true,
+            newTournamentButtonDisabled: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if ops is greater than newTournamentCost and tournamentContinues is set to true) newTournamentButtonDisabled set to false", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON
+        }
+        const initState = {
+            ...initialState, 
+            ops: 100,
+            newTournamentCost: 37,
+            tournamentContinues: false,
+            newTournamentButtonDisabled: true,
+        }
+        const state = {
+            ...initialState, 
+            ops: 100,
+            newTournamentCost: 37,
+            tournamentContinues: false,
+            newTournamentButtonDisabled: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
