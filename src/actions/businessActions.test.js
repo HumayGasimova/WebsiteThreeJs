@@ -1727,4 +1727,29 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (allRoundsResult)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ALL_ROUNDS_RESULT,
+                obj: {a: 6, b: 7}
+            }
+        ];
+
+        store.dispatch(Actions.allRoundsResult({a: 6, b: 7}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (strategicModelingResult)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STRATEGIC_MODELING_RESULT
+            }
+        ];
+
+        store.dispatch(Actions.strategicModelingResult());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

@@ -68,6 +68,18 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (allRoundsResult) 1`] = `
+Array [
+  Object {
+    "obj": Object {
+      "a": 6,
+      "b": 7,
+    },
+    "type": "ALL_ROUNDS_RESULT",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (autoClippersAddOne) 1`] = `
 Array [
   Object {
@@ -220,6 +232,14 @@ Array [
 `;
 
 exports[`businessActions Dispatches the correct action and payload (gameStarted) 1`] = `
+Array [
+  Object {
+    "type": "GAME_STARTED",
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (gameStarted) 2`] = `
 Array [
   Object {
     "type": "GAME_STARTED",
@@ -762,6 +782,14 @@ exports[`businessActions Dispatches the correct action and payload (stopUpdating
 Array [
   Object {
     "type": "STOP_UPDATING_UNSOLD_INVENTORY",
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (strategicModelingResult) 1`] = `
+Array [
+  Object {
+    "type": "STRATEGIC_MODELING_RESULT",
   },
 ]
 `;
