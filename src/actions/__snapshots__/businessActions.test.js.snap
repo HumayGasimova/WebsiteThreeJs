@@ -21,36 +21,12 @@ Array [
 ]
 `;
 
-exports[`businessActions Dispatches the correct action and payload (addCombinatoryHarmonics) 1`] = `
-Array [
-  Object {
-    "type": "ADD_COMBINATORY_HARMONICS",
-  },
-]
-`;
-
-exports[`businessActions Dispatches the correct action and payload (addDonkeySpace) 1`] = `
-Array [
-  Object {
-    "type": "ADD_DONKEY_SPACE",
-  },
-]
-`;
-
 exports[`businessActions Dispatches the correct action and payload (addInvestmentsLine) 1`] = `
 Array [
   Object {
     "notEmpty": false,
     "obj": "",
     "type": "ADD_INVESTMENTS_LINE",
-  },
-]
-`;
-
-exports[`businessActions Dispatches the correct action and payload (addLexicalProcessing) 1`] = `
-Array [
-  Object {
-    "type": "ADD_LEXICAL_PROCESSING",
   },
 ]
 `;
@@ -88,22 +64,6 @@ Array [
   Object {
     "chipsNumber": "chipX",
     "type": "ADD_Q_OPS",
-  },
-]
-`;
-
-exports[`businessActions Dispatches the correct action and payload (addTheHadwingerProblem) 1`] = `
-Array [
-  Object {
-    "type": "ADD_THE_HADWINGER_PROBLEM",
-  },
-]
-`;
-
-exports[`businessActions Dispatches the correct action and payload (addTheTothSausageConjecture) 1`] = `
-Array [
-  Object {
-    "type": "ADD_THE_TOTH_SAUSAGE_CONJECTURE",
   },
 ]
 `;
@@ -569,14 +529,6 @@ Array [
 ]
 `;
 
-exports[`businessActions Dispatches the correct action and payload (startCreativityCounter) 1`] = `
-Array [
-  Object {
-    "type": "START_CREATIVITY_COUNTER",
-  },
-]
-`;
-
 exports[`businessActions Dispatches the correct action and payload (startDecreasingOperations) 1`] = `
 Array [
   Object {
@@ -879,6 +831,7 @@ exports[`businessActions Dispatches the correct action and payload (trustPlusOne
 Array [
   Object {
     "type": "TRUST_PLUS_ONE_FROM_PROJECT",
+    "val": 3,
   },
 ]
 `;

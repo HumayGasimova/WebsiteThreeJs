@@ -1128,11 +1128,67 @@ export const QuantumTemporalReversion = {
     valid: false,
     id: "card64",
     terminal: ""
-}// dialog box restart game
+}
 
 
 
 
+
+export const DisassembleTheStrategyEngine = {
+    text1: "Disassemble The Strategy Engine (100,000",
+    text2: "ops)",
+    text3: "Dismantle the computational substrate to",
+    text4: "recover trace amounts of wire",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 1,
+    next: 'disassembleTheStrategyEngine',
+    valid: false,
+    id: "card65",
+    terminal: ""
+}
+
+export const DisassembleQuantumComputing = {
+    text1: "Disassemble Quantum Computing (100,000",
+    text2: "ops)",
+    text3: "Dismantle photonic chips to recover trace",
+    text4: "amounts of wire",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 1,
+    next: 'disassembleTheStrategyEngine',
+    valid: false,
+    id: "card66",
+    terminal: ""
+}
+
+export const DisassembleInvestmentsEngine = {
+    text1: "Disassemble Investments Engine (100,000",
+    text2: "ops)",
+    text3: "Dismantle investments engine",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 1,
+    next: 'disassembleTheStrategyEngine',
+    valid: false,
+    id: "card67",
+    terminal: ""
+}
 
 
 
