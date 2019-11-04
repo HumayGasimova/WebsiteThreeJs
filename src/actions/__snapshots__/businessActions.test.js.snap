@@ -701,6 +701,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (strategyChosen) 1`] = `
+Array [
+  Object {
+    "strategy": "RANDOM",
+    "type": "STRATEGY_CHOSEN",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (subtractQOps) 1`] = `
 Array [
   Object {
@@ -972,6 +982,19 @@ exports[`businessActions Dispatches the correct action and payload (updatePublic
 Array [
   Object {
     "type": "UPDATE_PUBLIC_DEMAND",
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (updateStrategicModelingCurrentList) 1`] = `
+Array [
+  Object {
+    "obj": Object {
+      "a": 5,
+      "b": 8,
+    },
+    "round": 9,
+    "type": "UPDATE_STRATEGIC_MODELING_CURRENT_LIST",
   },
 ]
 `;

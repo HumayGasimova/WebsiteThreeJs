@@ -1543,5 +1543,19 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (strategyChosen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STRATEGY_CHOSEN,
+                strategy: "RANDOM", 
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.strategyChosen("RANDOM", true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
