@@ -1908,4 +1908,29 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (removePriceOfProjectMoney)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY,
+                money: 6
+            }
+        ];
+
+        store.dispatch(Actions.removePriceOfProjectMoney(6));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (reallocationOfTrust)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.REALLOCATION_OF_TRUST,
+            }
+        ];
+
+        store.dispatch(Actions.reallocationOfTrust());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

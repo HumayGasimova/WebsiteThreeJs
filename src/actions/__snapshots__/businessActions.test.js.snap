@@ -413,11 +413,28 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (reallocationOfTrust) 1`] = `
+Array [
+  Object {
+    "type": "REALLOCATION_OF_TRUST",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectCreat) 1`] = `
 Array [
   Object {
     "creativity": 73,
     "type": "REMOVE_PRICE_OF_PROJECT_CREAT",
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectMoney) 1`] = `
+Array [
+  Object {
+    "money": 6,
+    "type": "REMOVE_PRICE_OF_PROJECT_MONEY",
   },
 ]
 `;
