@@ -1606,5 +1606,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (tournamentDuration)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOURNAMENT_DURATION
+            }
+        ];
+
+        store.dispatch(Actions.tournamentDuration());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
