@@ -471,6 +471,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectYomiAndMoney) 1`] = `
+Array [
+  Object {
+    "money": 7,
+    "type": "REMOVE_PRICE_OF_PROJECT_YOMI_AND_MONEY",
+    "yomi": 5,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (sellPaperclips) 1`] = `
 Array [
   Object {
