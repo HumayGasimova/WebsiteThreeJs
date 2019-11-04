@@ -1836,7 +1836,7 @@ describe('businessActions', () => {
             }
         ];
 
-        store.dispatch(Actions.toggleStrategicModelingHover(true));
+        store.dispatch(Actions.toggleStrategicModelingHover(false));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
@@ -1850,6 +1850,18 @@ describe('businessActions', () => {
         ];
 
         store.dispatch(Actions.toggleCells({a: 3, b: 5}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (updateYomi)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_YOMI
+            }
+        ];
+
+        store.dispatch(Actions.updateYomi());
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });

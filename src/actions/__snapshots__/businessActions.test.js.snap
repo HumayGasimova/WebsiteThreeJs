@@ -1227,6 +1227,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateYomi) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_YOMI",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updatedAllRoundsRes) 1`] = `
 Array [
   Object {
