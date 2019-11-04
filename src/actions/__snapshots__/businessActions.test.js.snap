@@ -1019,6 +1019,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateStrategicModelingRound) 1`] = `
+Array [
+  Object {
+    "round": 4,
+    "type": "UPDATE_STRATEGIC_MODELING_ROUND",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateUnsoldInventory) 1`] = `
 Array [
   Object {

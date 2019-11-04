@@ -1569,5 +1569,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updateStrategicModelingRound)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_STRATEGIC_MODELING_ROUND,
+                round: 4
+            }
+        ];
+
+        store.dispatch(Actions.updateStrategicModelingRound(4));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
