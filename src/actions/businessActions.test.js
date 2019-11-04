@@ -2049,4 +2049,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleThrownProjectHostileTakeover)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleThrownProjectHostileTakeover(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

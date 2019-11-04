@@ -1029,6 +1029,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectHostileTakeover) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectLexicalProcessing) 1`] = `
 Array [
   Object {
