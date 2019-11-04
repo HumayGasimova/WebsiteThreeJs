@@ -431,6 +431,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (setPlayersArrays) 1`] = `
+Array [
+  Object {
+    "type": "SET_PLAYERS_ARRAY",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (showAutoClippers) 1`] = `
 Array [
   Object {
