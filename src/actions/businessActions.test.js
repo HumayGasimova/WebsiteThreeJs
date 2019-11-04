@@ -1516,5 +1516,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updateStrategicModelingData)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_STRATEGIC_MODELING_DATA,
+                obj: {a:5, b:5}
+            }
+        ];
+
+        store.dispatch(Actions.updateStrategicModelingData({a:5, b:5}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });
