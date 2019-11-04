@@ -1688,6 +1688,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should strategicModelingData with the object passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_STRATEGIC_MODELING_DATA,
+            obj: {moveA:"Paperclip A", moveB:"Paperclip B", cell1: 34, cell2: 35, cell3: 65, cell4: 83}
+        }
+        const initState = {
+            ...initialState, 
+            strategicModelingData: {moveA:"Move A", moveB:"Move B", cell1: "0,0", cell2: "0,0", cell3: "0,0", cell4: "0,0"}
+        }
+        const state = {
+            ...initialState, 
+            strategicModelingData: {moveA:"Paperclip A", moveB:"Paperclip B", cell1: 34, cell2: 35, cell3: 65, cell4: 83}
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

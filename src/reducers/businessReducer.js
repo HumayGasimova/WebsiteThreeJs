@@ -1452,8 +1452,6 @@ const businessReducer = (state = initialState, action) => {
             return startNewTournament(state, action); 
         case actionTypes.TOURNAMENT_STATE:
             return tournamentState(state, action); 
-
-
         case actionTypes.UPDATE_NEW_TOURNAMENT_COST:
             return updateNewTournamentCost(state, action); 
         case actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON:
@@ -1462,6 +1460,8 @@ const businessReducer = (state = initialState, action) => {
             return state;             
         case actionTypes.UPDATE_STRATEGIC_MODELING_DATA:
             return updateStrategicModelingData(state, action);  
+
+
         case actionTypes.UPDATE_STRATEGIC_MODELING_CURRENT_LIST:
             return updateStrategicModelingCurrentList(state, action);  
         case actionTypes.STRATEGY_CHOSEN:
