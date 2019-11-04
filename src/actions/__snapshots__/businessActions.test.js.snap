@@ -239,6 +239,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (fillWithValuesStrategicModelingCurrentList) 1`] = `
+Array [
+  Object {
+    "type": "FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (gameStarted) 1`] = `
 Array [
   Object {

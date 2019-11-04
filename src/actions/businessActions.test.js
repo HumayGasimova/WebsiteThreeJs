@@ -1802,4 +1802,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (fillWithValuesStrategicModelingCurrentList)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST
+            }
+        ];
+
+        store.dispatch(Actions.fillWithValuesStrategicModelingCurrentList());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
