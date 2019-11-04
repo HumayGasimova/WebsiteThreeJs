@@ -2010,4 +2010,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleThrownProjectTheTothSausageConjecture)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleThrownProjectTheTothSausageConjecture(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

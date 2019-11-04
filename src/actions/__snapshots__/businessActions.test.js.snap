@@ -1047,6 +1047,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectTheTothSausageConjecture) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleWireButton) 1`] = `
 Array [
   Object {
