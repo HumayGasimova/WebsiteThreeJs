@@ -1295,6 +1295,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (upgradeInvestmentEngine) 1`] = `
+Array [
+  Object {
+    "type": "UPGRADE_INVESTMENT_ENGINE",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (wireExists) 1`] = `
 Array [
   Object {

@@ -1933,4 +1933,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (upgradeInvestmentEngine)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPGRADE_INVESTMENT_ENGINE,
+            }
+        ];
+
+        store.dispatch(Actions.upgradeInvestmentEngine());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
