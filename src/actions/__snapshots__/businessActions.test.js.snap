@@ -1065,6 +1065,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectQuantumTemporalReversion) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectStartCreativityCounter) 1`] = `
 Array [
   Object {
