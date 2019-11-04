@@ -1065,6 +1065,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectXavierReinitialization) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleWireButton) 1`] = `
 Array [
   Object {

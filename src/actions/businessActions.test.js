@@ -2036,4 +2036,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleThrownProjectXavierReinitialization)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleThrownProjectXavierReinitialization(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
