@@ -441,6 +441,16 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectOpsAndYomi) 1`] = `
+Array [
+  Object {
+    "ops": 5,
+    "type": "REMOVE_PRICE_OF_PROJECT_OPS_AND_YOMI",
+    "yomi": 7,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (removePriceOfProjectOpsCreatAndYomi) 1`] = `
 Array [
   Object {

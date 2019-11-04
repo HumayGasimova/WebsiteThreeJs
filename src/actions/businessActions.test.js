@@ -1880,4 +1880,18 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (removePriceOfProjectOpsAndYomi)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_YOMI,
+                ops: 5,
+                yomi: 7
+            }
+        ];
+
+        store.dispatch(Actions.removePriceOfProjectOpsAndYomi(5, 7));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
