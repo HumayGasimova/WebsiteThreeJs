@@ -1632,4 +1632,15 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
     
+    it('Dispatches the correct action and payload (startUpdatingRoundsOnScreen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_UPDATING_ROUNDS_ON_SCREEN
+            }
+        ];
+
+        store.dispatch(Actions.startUpdatingRoundsOnScreen());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

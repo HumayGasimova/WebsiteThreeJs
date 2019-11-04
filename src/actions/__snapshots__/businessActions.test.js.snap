@@ -638,6 +638,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (startUpdatingRoundsOnScreen) 1`] = `
+Array [
+  Object {
+    "type": "START_UPDATING_ROUNDS_ON_SCREEN",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startUpdatingScreen) 1`] = `
 Array [
   Object {
