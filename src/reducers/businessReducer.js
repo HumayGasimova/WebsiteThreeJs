@@ -1476,12 +1476,12 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         // case actionTypes.UPDATE_NUMBER_OF_ROUND:
         //     return updateNumberOfRounds(state, action);   
-        
-        
         case actionTypes.SHOW_ROUND_AND_PLAYERS:
             return showRoundAndPlayers(state, action);  
         case actionTypes.START_UPDATING_ROUNDS_ON_SCREEN:
             return state; 
+
+
         case actionTypes.UPDATE_ROUNDS_ON_SCREEN:
             return updateRoundsOnScreen(state, action);  
         case actionTypes.START_UPDATING_PLAYER_LEFT_ON_SCREEN:
