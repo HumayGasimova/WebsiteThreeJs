@@ -1480,8 +1480,6 @@ const businessReducer = (state = initialState, action) => {
             return showRoundAndPlayers(state, action);  
         case actionTypes.START_UPDATING_ROUNDS_ON_SCREEN:
             return state; 
-
-
         case actionTypes.UPDATE_ROUNDS_ON_SCREEN:
             return updateRoundsOnScreen(state, action);  
         case actionTypes.START_UPDATING_PLAYER_LEFT_ON_SCREEN:
@@ -1490,6 +1488,8 @@ const businessReducer = (state = initialState, action) => {
             return updatePlayerLeftOnScreen(state, action);  
         case actionTypes.START_UPDATING_PLAYER_TOP_ON_SCREEN:
             return state;    
+
+
         case actionTypes.UPDATE_PLAYER_TOP_ON_SCREEN:
             return updatePlayerTopOnScreen(state, action);
         case actionTypes.SET_PLAYERS_ARRAY:
