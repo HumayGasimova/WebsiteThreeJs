@@ -1594,5 +1594,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (stopTournament)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STOP_TOURNAMENT
+            }
+        ];
+
+        store.dispatch(Actions.stopTournament());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
     
 });

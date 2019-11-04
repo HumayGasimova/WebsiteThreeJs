@@ -685,6 +685,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopTournament) 1`] = `
+Array [
+  Object {
+    "type": "STOP_TOURNAMENT",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopUpdatingInvestmentLines) 1`] = `
 Array [
   Object {
