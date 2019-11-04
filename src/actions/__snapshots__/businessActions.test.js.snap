@@ -1011,6 +1011,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectCombinatoryHarmonics) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS",
+    "val": false,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectLexicalProcessing) 1`] = `
 Array [
   Object {
@@ -1025,6 +1034,15 @@ Array [
   Object {
     "type": "TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER",
     "val": true,
+  },
+]
+`;
+
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectTheHadwingerProblem) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM",
+    "val": false,
   },
 ]
 `;

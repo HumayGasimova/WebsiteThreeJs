@@ -1997,4 +1997,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleThrownProjectTheHadwingerProblem)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM,
+                val: false
+            }
+        ];
+
+        store.dispatch(Actions.toggleThrownProjectTheHadwingerProblem(false));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
