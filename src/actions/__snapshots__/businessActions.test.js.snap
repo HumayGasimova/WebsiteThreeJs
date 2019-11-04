@@ -1011,6 +1011,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectCoherentExtrapolatedVolition) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleThrownProjectCombinatoryHarmonics) 1`] = `
 Array [
   Object {
