@@ -1051,6 +1051,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updatePlayerTopOnScreen) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_PLAYER_TOP_ON_SCREEN",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updatePublicDemand) 1`] = `
 Array [
   Object {
