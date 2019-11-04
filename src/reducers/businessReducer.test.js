@@ -1574,7 +1574,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update ops by subtracting the value of newTournamentCost", () => {
+    it("should update tournamentContinues with the value passed through the action", () => {
         const action = { 
             type: actionTypes.TOURNAMENT_STATE,
             val: true
@@ -1586,6 +1586,21 @@ describe('businessReducer', () => {
         const state = {
             ...initialState, 
             tournamentContinues: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update newTournamentCost by adding 1000", () => {
+        const action = { 
+            type: actionTypes.UPDATE_NEW_TOURNAMENT_COST
+        }
+        const initState = {
+            ...initialState, 
+            newTournamentCost: 4000
+        }
+        const state = {
+            ...initialState, 
+            newTournamentCost: 5000
         }
         expect(reducer(initState, action)).toEqual(state);
     })

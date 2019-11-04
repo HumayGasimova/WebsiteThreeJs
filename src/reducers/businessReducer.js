@@ -807,7 +807,7 @@ const tournamentState = (state, action) => {
 
 const updateNewTournamentCost = (state, action) => {
     return updateObject(state, {
-        newTournamentCost: state.newTournamentCost + 10//+1000
+        newTournamentCost: state.newTournamentCost + 1000//+1000
     });
 }
 
@@ -1448,12 +1448,12 @@ const businessReducer = (state = initialState, action) => {
             return improveMegaClippers(state, action);  
         case actionTypes.SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS:
             return switchOffOrOnAutoAndMegaClippers(state, action); 
-
-            
         case actionTypes.START_NEW_TOURNAMENT:
             return startNewTournament(state, action); 
         case actionTypes.TOURNAMENT_STATE:
             return tournamentState(state, action); 
+
+
         case actionTypes.UPDATE_NEW_TOURNAMENT_COST:
             return updateNewTournamentCost(state, action); 
         case actionTypes.TOGGLE_NEW_TOURNAMENT_BUTTON:
