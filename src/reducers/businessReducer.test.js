@@ -1721,6 +1721,23 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should find object with strategy 'RANDOM' in strategicModelingCurrentList array and update its property chosen with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.STRATEGY_CHOSEN,
+            strategy: "RANDOM", 
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            strategicModelingCurrentList: [{id: 1, strategy: "A100", val: 0, chosen: false, round: 1},{id: 1, strategy: "RANDOM", val: 0, chosen: false, round: 1}]
+        }
+        const state = {
+            ...initialState, 
+            strategicModelingCurrentList: [{id: 1, strategy: "A100", val: 0, chosen: false, round: 1},{id: 1, strategy: "RANDOM", val: 0, chosen: true, round: 1}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
