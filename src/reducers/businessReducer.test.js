@@ -2204,6 +2204,27 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set processorsNumber, processorsMemory, ops to 0, and update opsMax by subtracting opsMax value", () => {
+        const action = { 
+            type: actionTypes.REALLOCATION_OF_TRUST
+        }
+        const initState = {
+            ...initialState,
+            processorsNumber: 15,
+            processorsMemory: 14,
+            ops: 53,
+            opsMax: 568
+        }
+        const state = {
+            ...initialState,
+            processorsNumber: 0,
+            processorsMemory: 0,
+            ops: 0,
+            opsMax: 0
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
