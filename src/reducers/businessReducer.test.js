@@ -2374,6 +2374,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update hostileTakeoverIsThrown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            hostileTakeoverIsThrown: false
+        }
+        const state = {
+            ...initialState,
+            hostileTakeoverIsThrown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
