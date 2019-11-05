@@ -1891,6 +1891,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update allRoundsRes array by adding the object, passed through the action, to the end", () => {
+        const action = { 
+            type: actionTypes.ALL_ROUNDS_RESULT,
+            obj: {a:7}
+        }
+        const initState = {
+            ...initialState,
+            allRoundsRes: [{a:4}]
+        }
+        const state = {
+            ...initialState,
+            allRoundsRes: [{a:4},{a:7}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
