@@ -17,7 +17,7 @@ describe('startInvestmentsWithdrawEpic', () => {
                 investmentsTotal: 0 
             }
         }
-        }
+      }
       const epic$ = Epic.startInvestmentsWithdrawEpic(action$, state$);
       const array = [];
       epic$.subscribe(
