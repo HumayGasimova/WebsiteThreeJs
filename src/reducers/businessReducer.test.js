@@ -2358,6 +2358,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update xavierReinitializationIsThrown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            xavierReinitializationIsThrown: false
+        }
+        const state = {
+            ...initialState,
+            xavierReinitializationIsThrown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
