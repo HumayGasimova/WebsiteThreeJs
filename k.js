@@ -64,8 +64,8 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
     Epic.startUpdatingRoundsOnScreenEpic,
     Epic.startUpdatingPlayerLeftOnScreenEpic,
     Epic.startUpdatingPlayerTopOnScreenEpic,
-    // Epic.gameStartedEpic,
-    // Epic.strategicModelingResultEpic,
+   X // Epic.gameStartedEpic,
+    Epic.strategicModelingResultEpic,
     // Epic.startCountingResultEpic,
     // Epic.countFinalResultOfEachStrategyEpic,
     // Epic.updateYomiEpic 44 44
