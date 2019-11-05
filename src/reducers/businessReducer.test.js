@@ -2262,6 +2262,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update creativityCounterIsThrown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            creativityCounterIsThrown: false
+        }
+        const state = {
+            ...initialState,
+            creativityCounterIsThrown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
  
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
