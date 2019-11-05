@@ -2279,6 +2279,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
  
+    it("should update lexicalProcessingIsThrown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            lexicalProcessingIsThrown: false
+        }
+        const state = {
+            ...initialState,
+            lexicalProcessingIsThrown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
