@@ -2244,6 +2244,25 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set a new initial state passed through the action", () => {
+        const action = { 
+            type: actionTypes.STATE_FROM_LOCAL_STORAGE,
+            state: {a: 5, b: 'Paperclip game'}
+        }
+        const initState = {
+            ...initialState,
+            investmentsLevel: 2,
+            yomi: 50,
+            upgradeInvestmentEngineCost: 35
+        }
+        const state = {
+            a: 5, 
+            b: 'Paperclip game'
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+ 
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
