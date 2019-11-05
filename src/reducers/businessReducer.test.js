@@ -2106,6 +2106,28 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update ops, creativity and yomi by subtracting the value passed throught the action", () => {
+        const action = { 
+            type: actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_CREAT_AND_YOMI,
+            ops: 1,
+            creativity: 2,
+            yomi: 3
+        }
+        const initState = {
+            ...initialState,
+            ops: 48,
+            creativity: 25,
+            yomi: 78
+        }
+        const state = {
+            ...initialState,
+            ops: 47,
+            creativity: 23,
+            yomi: 75
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
