@@ -1939,6 +1939,44 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update strategicModelingCurrentList and showStrategicModelingCurrentList with the property with name of strategy that exists in strategicModelingCurrentList array", () => {
+        const action = { 
+            type: actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST
+        }
+        const initState = {
+            ...initialState,
+            listOfFinalResult: {random: 573},
+            strategicModelingCurrentList: [{strategy: "RANDOM", val: 0}],
+            showStrategicModelingCurrentList: [{strategy: "RANDOM", val: 0}]
+        }
+        const state = {
+            ...initialState,
+            listOfFinalResult: {random: 573},
+            strategicModelingCurrentList: [{strategy: "RANDOM", val: 573}],
+            showStrategicModelingCurrentList: [{strategy: "RANDOM", val: 573}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update strategicModelingCurrentList and showStrategicModelingCurrentList with the property with name of strategy that exists in strategicModelingCurrentList array", () => {
+        const action = { 
+            type: actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST
+        }
+        const initState = {
+            ...initialState,
+            listOfFinalResult: {random: 573, a100: 636, b100: 875, greedy: 648, generouse: 45, miniMax: 54, titForTat: 458, beatLast: 545},
+            strategicModelingCurrentList: [{strategy: "RANDOM", val: 0},{strategy: "A100", val: 0},{strategy: "B100", val: 0},{strategy: "GREEDY", val: 0},{strategy: "GENEROUS", val: 0},{strategy: "MINIMAX", val: 0},{strategy: "TIT FOR TAT", val: 0},{strategy: "BEAT LAST", val: 0}],
+            showStrategicModelingCurrentList: [{strategy: "RANDOM", val: 0},{strategy: "A100", val: 0},{strategy: "B100", val: 0},{strategy: "GREEDY", val: 0},{strategy: "GENEROUS", val: 0},{strategy: "MINIMAX", val: 0},{strategy: "TIT FOR TAT", val: 0},{strategy: "BEAT LAST", val: 0}]
+        }
+        const state = {
+            ...initialState,
+            listOfFinalResult: {random: 573, a100: 636, b100: 875, greedy: 648, generouse: 45, miniMax: 54, titForTat: 458, beatLast: 545},
+            strategicModelingCurrentList: [{strategy: "B100", val: 875},{strategy: "GREEDY", val: 648},{strategy: "A100", val: 636},{strategy: "RANDOM", val: 573},{strategy: "BEAT LAST", val: 545},{strategy: "TIT FOR TAT", val: 458},{strategy: "MINIMAX", val: 54},{strategy: "GENEROUS", val: 45}],
+            showStrategicModelingCurrentList:[{strategy: "B100", val: 875},{strategy: "GREEDY", val: 648},{strategy: "A100", val: 636},{strategy: "RANDOM", val: 573},{strategy: "BEAT LAST", val: 545},{strategy: "TIT FOR TAT", val: 458},{strategy: "MINIMAX", val: 54},{strategy: "GENEROUS", val: 45}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
