@@ -1506,10 +1506,9 @@ const businessReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.UPDATE_LIST_OF_FINAL_RESULT:
             return updateListOfFinalResult(state, action);
-            
-            
         case actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST:
-            return fillWithValuesStrategicModelingCurrentList(state, action);  
+            return fillWithValuesStrategicModelingCurrentList(state, action); 
+
         case actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART:
             return toggleStrategicModelingLeftPart(state, action);   
         case actionTypes.TOGGLE_STRATEGIC_MODELING_HOVER:

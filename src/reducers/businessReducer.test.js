@@ -1978,6 +1978,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
     
+    it("should update stratedicModelingLeftPartIsShown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            stratedicModelingLeftPartIsShown: false
+        }
+        const state = {
+            ...initialState,
+            stratedicModelingLeftPartIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
