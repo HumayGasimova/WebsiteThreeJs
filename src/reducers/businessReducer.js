@@ -7,7 +7,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 import * as Utility from '../utility'
 
 export const initialState = {
-    paperClips: 2000, //0
+    paperClips: 0, //0
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
