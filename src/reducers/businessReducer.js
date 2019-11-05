@@ -3,10 +3,11 @@ import {
     updateObject
   } from './utility';
 
-  import * as Utility from '../utility'
+import * as projectsToAdd from '../constants/projectsToAdd';
+import * as Utility from '../utility'
 
 export const initialState = {
-    paperClips: 0, //0
+    paperClips: 2000, //0
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
@@ -39,7 +40,7 @@ export const initialState = {
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
-    cards: [],
+    cards: [projectsToAdd.AutoClippers25, projectsToAdd.WireExtrusion50, projectsToAdd.ShowRevTracker],
     revTracker: false,
     makePaperclipDisabled: false,
     creativityTurnOn: false,

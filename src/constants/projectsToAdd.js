@@ -1,3 +1,54 @@
+export const AutoClippers25 = {
+    text1: "Improved AutoClippers (750 ops)",
+    text2 : "Increases AutoClipper performance 25%",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 25,
+    next: 'AutoClippers25',
+    valid: false,
+    id: "card1",
+    terminal: "AutoClippper performance boosted by 25%"
+}
+
+export const WireExtrusion50 = {
+    text1: "Improved Wire Extrusion (1,750 ops)",
+    text2 : "50% more wire supply from every spool",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 50,
+    next: 'wireExtrusion50',
+    valid: false,
+    id: "card2",
+    terminal: "Wire extrusion technique improved, 1,500 supply from every spool"
+}
+
+export const ShowRevTracker = {
+    text1: "RevTracker (500 ops)",
+    text2 : "Automatically calculates average revenue",
+    text3 : "per second",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: null,
+    next: 'showRevTracker',
+    valid: false,
+    id: "card3",
+    terminal: "RevTracker online"
+}
 export const AutoClippers50 = {
     text1: "Even Better AutoClippers (2,500 ops)",
     text2: "Increases AutoClipper performance by an",
