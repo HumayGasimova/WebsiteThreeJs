@@ -57,7 +57,7 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
     Epic.catchUnsoldInventoryEpic,
     Epic.startMegaClippersEpic,
    X // Epic.startNewTournamentEpic,
-    // Epic.startRunningStrategicModelingEpic,
+    Epic.startRunningStrategicModelingEpic,
     // Epic.updateStrategicModelingCurrentListEpic,
     // Epic.tournamentStartedEpic,
     // Epic.tournamentDurationEpic,
