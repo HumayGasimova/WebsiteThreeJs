@@ -1052,79 +1052,79 @@ export function toggleThrownProject(project, val) {
 };
 
 
-export function toggleThrownProjectStartCreativityCounter(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
-        val: val
-    };
-};
+// export function toggleThrownProjectStartCreativityCounter(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectLexicalProcessing(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
-        val: val
-    };
-};
+// export function toggleThrownProjectLexicalProcessing(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectCombinatoryHarmonics(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS,
-        val: val
-    };
-};
+// export function toggleThrownProjectCombinatoryHarmonics(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectTheHadwingerProblem(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM,
-        val: val
-    };
-};
+// export function toggleThrownProjectTheHadwingerProblem(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectTheTothSausageConjecture(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE,
-        val: val
-    };
-};
+// export function toggleThrownProjectTheTothSausageConjecture(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectDonkeySpace(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
-        val: val
-    };
-};
+// export function toggleThrownProjectDonkeySpace(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectXavierReinitialization(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
-        val: val
-    };
-};
+// export function toggleThrownProjectXavierReinitialization(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectHostileTakeover(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
-        val: val
-    };
-};
+// export function toggleThrownProjectHostileTakeover(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectQuantumComputing(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING,
-        val: val
-    };
-};
+// export function toggleThrownProjectQuantumComputing(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectCoherentExtrapolatedVolition(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION,
-        val: val
-    };
-};
+// export function toggleThrownProjectCoherentExtrapolatedVolition(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION,
+//         val: val
+//     };
+// };
 
-export function toggleThrownProjectQuantumTemporalReversion(val) {
-    return { 
-        type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION,
-        val: val
-    };
-};
+// export function toggleThrownProjectQuantumTemporalReversion(val) {
+//     return { 
+//         type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION,
+//         val: val
+//     };
+// };

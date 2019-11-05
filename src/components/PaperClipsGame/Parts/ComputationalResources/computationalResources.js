@@ -150,7 +150,7 @@ export class ComputationalResources extends Component {
                 this.props.addProject(projectsToAdd.DonkeySpace);
                 this.props.toggleThrownProject('donkeySpace', true);
             }
-            if(this.props.creativity === 10 && this.props.xavierReinitializationIsThrown === false){
+            if(this.props.creativity === 10000 && this.props.xavierReinitializationIsThrown === false){
                 this.props.addProject(projectsToAdd.XavierReinitialization)
                 this.props.toggleThrownProject('xavierReinitialization', true);
             }
@@ -269,15 +269,15 @@ export default connect(
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             // addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
-            toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
-            toggleThrownProjectLexicalProcessing: bindActionCreators(Actions.toggleThrownProjectLexicalProcessing, dispatch),
-            toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),
-            toggleThrownProjectTheHadwingerProblem: bindActionCreators(Actions.toggleThrownProjectTheHadwingerProblem, dispatch),
-            toggleThrownProjectTheTothSausageConjecture: bindActionCreators(Actions.toggleThrownProjectTheTothSausageConjecture, dispatch),
-            toggleThrownProjectDonkeySpace: bindActionCreators(Actions.toggleThrownProjectDonkeySpace, dispatch),
-            toggleThrownProjectXavierReinitialization: bindActionCreators(Actions.toggleThrownProjectXavierReinitialization, dispatch),
-            toggleThrownProjectQuantumComputing: bindActionCreators(Actions.toggleThrownProjectQuantumComputing, dispatch),
-            toggleThrownProjectQuantumTemporalReversion: bindActionCreators(Actions.toggleThrownProjectQuantumTemporalReversion, dispatch),
+            // toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
+            // toggleThrownProjectLexicalProcessing: bindActionCreators(Actions.toggleThrownProjectLexicalProcessing, dispatch),
+            // toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),
+            // toggleThrownProjectTheHadwingerProblem: bindActionCreators(Actions.toggleThrownProjectTheHadwingerProblem, dispatch),
+            // toggleThrownProjectTheTothSausageConjecture: bindActionCreators(Actions.toggleThrownProjectTheTothSausageConjecture, dispatch),
+            // toggleThrownProjectDonkeySpace: bindActionCreators(Actions.toggleThrownProjectDonkeySpace, dispatch),
+            // toggleThrownProjectXavierReinitialization: bindActionCreators(Actions.toggleThrownProjectXavierReinitialization, dispatch),
+            // toggleThrownProjectQuantumComputing: bindActionCreators(Actions.toggleThrownProjectQuantumComputing, dispatch),
+            // toggleThrownProjectQuantumTemporalReversion: bindActionCreators(Actions.toggleThrownProjectQuantumTemporalReversion, dispatch),
             toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
             
         };

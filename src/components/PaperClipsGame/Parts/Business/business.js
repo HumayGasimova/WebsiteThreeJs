@@ -150,7 +150,7 @@ export default connect(
             marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
             startUpdatingUnsoldInventory: bindActionCreators(Actions.startUpdatingUnsoldInventory, dispatch),
             // addHostileTakeover: bindActionCreators(Actions.addHostileTakeover, dispatch),
-            toggleThrownProjectHostileTakeover: bindActionCreators(Actions.toggleThrownProjectHostileTakeover, dispatch),
+            // toggleThrownProjectHostileTakeover: bindActionCreators(Actions.toggleThrownProjectHostileTakeover, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
             toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
         };
