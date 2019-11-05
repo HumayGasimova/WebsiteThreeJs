@@ -2225,6 +2225,25 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set investmentsLevel by adding 1, yomi by subtracting the value of upgradeInvestmentEngineCost, and upgradeInvestmentEngineCost using the formula", () => {
+        const action = { 
+            type: actionTypes.UPGRADE_INVESTMENT_ENGINE
+        }
+        const initState = {
+            ...initialState,
+            investmentsLevel: 2,
+            yomi: 50,
+            upgradeInvestmentEngineCost: 35
+        }
+        const state = {
+            ...initialState,
+            investmentsLevel: 3,
+            yomi: 15,
+            upgradeInvestmentEngineCost: 136
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
