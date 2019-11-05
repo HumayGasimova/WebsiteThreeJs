@@ -1508,9 +1508,8 @@ const businessReducer = (state = initialState, action) => {
             return updateListOfFinalResult(state, action);
         case actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST:
             return fillWithValuesStrategicModelingCurrentList(state, action); 
-
         case actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART:
-            return toggleStrategicModelingLeftPart(state, action);   
+            return toggleStrategicModelingLeftPart(state, action);  
         case actionTypes.TOGGLE_STRATEGIC_MODELING_HOVER:
             return toggleStrategicModelingHover(state, action);   
         case actionTypes.TOGGLE_CELLS:
@@ -1520,9 +1519,11 @@ const businessReducer = (state = initialState, action) => {
         // case actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION:
         //     return state; 
         case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_CREAT_AND_YOMI:
-            return removePriceOfProjectOpsCreatAndYomi(state, action);   
+            return removePriceOfProjectOpsCreatAndYomi(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_YOMI:
-            return removePriceOfProjectOpsAndYomi(state, action);   
+            return removePriceOfProjectOpsAndYomi(state, action);  
+            
+            
         case actionTypes.REMOVE_PRICE_OF_PROJECT_YOMI_AND_MONEY:
             return removePriceOfProjectYomiAndMoney(state, action);   
         case actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY:
