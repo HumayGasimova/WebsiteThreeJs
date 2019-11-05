@@ -1993,6 +1993,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update strategicModelingPartsHover with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_STRATEGIC_MODELING_HOVER,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            strategicModelingPartsHover: false
+        }
+        const state = {
+            ...initialState,
+            strategicModelingPartsHover: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
