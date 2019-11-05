@@ -2086,21 +2086,23 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should set all the properties in cellIsDark to false", () => {
+    it("should update yomi by adding val property of chosen strategy, set strategyWon to strategy property of chosen strategy and valueWon to val property of chosen strategy", () => {
         const action = { 
-            type: actionTypes.TOGGLE_CELLS,
-            obj: {
-                valLeft: 3,
-                valTop: 3
-            }
+            type: actionTypes.UPDATE_YOMI
         }
         const initState = {
             ...initialState,
-            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+            strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 473, chosen: false, round: 1}, {id: 1, strategy: "A100", val: 284, chosen: true, round: 4}],
+            yomi: 48,
+            strategyWon: '',
+            valueWon: 0
         }
         const state = {
             ...initialState,
-            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+            strategicModelingCurrentList: [{id: 1, strategy: "RANDOM", val: 473, chosen: false, round: 1}, {id: 1, strategy: "A100", val: 284, chosen: true, round: 4}] ,
+            yomi: 332,
+            strategyWon: "A100",
+            valueWon: 284
         }
         expect(reducer(initState, action)).toEqual(state);
     })
