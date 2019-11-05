@@ -94,7 +94,7 @@ export class ComputationalResources extends Component {
         this.intervalStartCreativity = setInterval(()=>{
             if(this.props.ops === this.props.opsMax && this.props.creativityCounterIsThrown === false){
                 this.props.addProject(projectsToAdd.Creativity);
-                this.props.toggleThrownProjectStartCreativityCounter(true);
+                this.props.toggleThrownProject('creativityCounter', true);
             }
         }, 1000);
 
@@ -132,41 +132,41 @@ export class ComputationalResources extends Component {
         if (prevProps.creativity !== this.props.creativity) {
             if(this.props.creativity === 50 && this.props.lexicalProcessingIsThrown === false){
                 this.props.addProject(projectsToAdd.LexicalProcessing)
-                this.props.toggleThrownProjectLexicalProcessing(true);
+                this.props.toggleThrownProject('lexicalProcessing', true);
             }
             if(this.props.creativity === 100 && this.props.combinatoryHarmonicsIsThrown === false){
                 this.props.addProject(projectsToAdd.CombinatoryHarmonics);
-                this.props.toggleThrownProjectCombinatoryHarmonics(true);
+                this.props.toggleThrownProject('combinatoryHarmonics', true);
             }
             if(this.props.creativity === 150 && this.props.theHadwingerProblemIsThrown === false){
                 this.props.addProject(projectsToAdd.TheHadwigerProblem);
-                this.props.toggleThrownProjectTheHadwingerProblem(true);
+                this.props.toggleThrownProject('theHadwingerProblem', true);
             }
             if(this.props.creativity === 200 && this.props.theTothSausageConjectureIsThrown === false){
                 this.props.addProject(projectsToAdd.TheTothSausageConjecture);
-                this.props.toggleThrownProjectTheTothSausageConjecture(true);
+                this.props.toggleThrownProject('theTothSausageConjecture', true);
             }
             if(this.props.creativity === 250 && this.props.donkeySpaceIsThrown === false){
                 this.props.addProject(projectsToAdd.DonkeySpace);
-                this.props.toggleThrownProjectDonkeySpace(true);
+                this.props.toggleThrownProject('donkeySpace', true);
             }
             if(this.props.creativity === 10 && this.props.xavierReinitializationIsThrown === false){
                 this.props.addProject(projectsToAdd.XavierReinitialization)
-                this.props.toggleThrownProjectXavierReinitialization(true);
+                this.props.toggleThrownProject('xavierReinitialization', true);
             }
         }
        
         if(prevProps.processorsNumber !== this.props.processorsNumber){
             if(this.props.processorsNumber === 5 && this.props.quantumComputingIsThrown === false){
                 this.props.addProject(projectsToAdd.QuantumComputing);
-                this.props.toggleThrownProjectQuantumComputing(true);
+                this.props.toggleThrownProject('quantumComputing', true);
             }
         }
 
         if(prevProps.ops !== this.props.ops){
             if(this.props.ops <= -10 && this.props.quantumTemporalReversionIsThrown === false){
                 this.props.addProject(projectsToAdd.QuantumTemporalReversion)
-                this.props.toggleThrownProjectQuantumTemporalReversion(true);
+                this.props.toggleThrownProject('quantumTemporalReversion', true);
             }
         }
     }
@@ -278,6 +278,7 @@ export default connect(
             toggleThrownProjectXavierReinitialization: bindActionCreators(Actions.toggleThrownProjectXavierReinitialization, dispatch),
             toggleThrownProjectQuantumComputing: bindActionCreators(Actions.toggleThrownProjectQuantumComputing, dispatch),
             toggleThrownProjectQuantumTemporalReversion: bindActionCreators(Actions.toggleThrownProjectQuantumTemporalReversion, dispatch),
+            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
             
         };
     }

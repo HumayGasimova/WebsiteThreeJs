@@ -6,7 +6,7 @@ import {
   import * as Utility from '../utility'
 
 export const initialState = {
-    paperClips: 0, //0
+    paperClips: 2000, //0
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
@@ -35,7 +35,7 @@ export const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 1000,//1000
+    opsMax: 10,//1000
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
@@ -1149,6 +1149,58 @@ const stateFromLocalStorage = (state, action) => {
     return action.state;
 }
 
+const toggleThrownProject = (state, action) => {
+    switch(action.project){
+        case 'creativityCounter':
+            return updateObject(state, {
+                creativityCounterIsThrown: action.val,     
+            });
+        case 'lexicalProcessing':
+            return updateObject(state, {
+                lexicalProcessingIsThrown: action.val,     
+            });
+        case 'combinatoryHarmonics':
+            return updateObject(state, {
+                combinatoryHarmonicsIsThrown: action.val,     
+            });
+        case 'theHadwingerProblem':
+            return updateObject(state, {
+                theHadwingerProblemIsThrown: action.val,     
+            });
+        case 'theTothSausageConjecture':
+            return updateObject(state, {
+                theTothSausageConjectureIsThrown: action.val,     
+            });
+        case 'donkeySpace':
+            return updateObject(state, {
+                donkeySpaceIsThrown: action.val,     
+            });
+        case 'xavierReinitialization':
+            return updateObject(state, {
+                xavierReinitializationIsThrown: action.val,     
+            });
+        case 'hostileTakeover':
+            return updateObject(state, {
+                hostileTakeoverIsThrown: action.val,     
+            });
+        case 'quantumComputing':
+            return updateObject(state, {
+                quantumComputingIsThrown: action.val,     
+            });
+        case 'coherentExtrapolatedVolition':
+            return updateObject(state, {
+                coherentExtrapolatedVolitionIsThrown: action.val,     
+            });
+        case 'quantumTemporalReversion':
+            return updateObject(state, {
+                quantumTemporalReversionIsThrown: action.val,     
+            });
+    }
+   
+}
+
+
+
 const toggleThrownProjectStartCreativityCounter = (state, action) => {
     return updateObject(state, {
         creativityCounterIsThrown: action.val,     
@@ -1536,6 +1588,9 @@ const businessReducer = (state = initialState, action) => {
             return upgradeInvestmentEngine(state, action);  
         case actionTypes.STATE_FROM_LOCAL_STORAGE:
             return stateFromLocalStorage(state, action);   
+
+        case actionTypes.TOGGLE_THROWN_PROJECT:
+            return toggleThrownProject(state, action);   
         case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
             return toggleThrownProjectStartCreativityCounter(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:

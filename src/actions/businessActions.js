@@ -1043,6 +1043,15 @@ export function stateFromLocalStorage(state) {
     };
 };
 
+export function toggleThrownProject(project, val) {
+    return { 
+        type: actionTypes.TOGGLE_THROWN_PROJECT,
+        project: project,
+        val: val
+    };
+};
+
+
 export function toggleThrownProjectStartCreativityCounter(val) {
     return { 
         type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,

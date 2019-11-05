@@ -19,7 +19,7 @@ export const updateYomiEpic = (action$, state$) =>
         return of(
           Actions.sendCommentToTerminal(`${state$.value.business.strategyWon} scored ${state$.value.business.valueWon}. Total amount of yomi is ${state$.value.business.yomi}`),
           Actions.addProject(projectsToAdd.CoherentExtrapolatedVolition),
-          Actions.toggleThrownProjectCoherentExtrapolatedVolition(true)
+          Actions.toggleThrownProject('coherentExtrapolatedVolition', true)
         ) 
       }else{
         return of(

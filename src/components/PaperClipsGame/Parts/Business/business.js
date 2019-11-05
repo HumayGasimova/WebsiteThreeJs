@@ -77,7 +77,7 @@ export class Business extends Component {
         if (prevProps.funds !== this.props.funds) {
             if(this.props.funds >= 1000 && this.props.hostileTakeoverIsThrown === false){
                 this.props.addProject(projectsToAdd.HostileTakeover);
-                this.props.toggleThrownProjectHostileTakeover(true);
+                this.props.toggleThrownProject('hostileTakeover', true);
             }
         }
     }
@@ -140,7 +140,7 @@ export default connect(
             revTracker: Selectors.getRevTrackerState(state),
             avgRevPerSec: Selectors.getAvgRevPerSecState(state),
             avgClipsSoldPerSec: Selectors.getAvgClipsSoldPerSecState(state),
-            hostileTakeoverIsThrown: Selectors.getHostileTakeoverIsThrownState(state)
+            hostileTakeoverIsThrown: Selectors.getHostileTakeoverIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -152,6 +152,7 @@ export default connect(
             // addHostileTakeover: bindActionCreators(Actions.addHostileTakeover, dispatch),
             toggleThrownProjectHostileTakeover: bindActionCreators(Actions.toggleThrownProjectHostileTakeover, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
+            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
         };
     }
 )(Business);
