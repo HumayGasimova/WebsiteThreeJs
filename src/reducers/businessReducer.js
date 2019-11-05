@@ -1540,26 +1540,24 @@ const businessReducer = (state = initialState, action) => {
             return toggleThrownProjectStartCreativityCounter(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:
             return toggleThrownProjectLexicalProcessing(state, action);  
-
         case actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS:
-            return toggleThrownProjectCombinatoryHarmonics(state, action);     
+            return toggleThrownProjectCombinatoryHarmonics(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM:
-            return toggleThrownProjectTheHadwingerProblem(state, action); 
+            return toggleThrownProjectTheHadwingerProblem(state, action);
         case actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE:
-            return toggleThrownProjectTheTothSausageConjecture(state, action);       
+            return toggleThrownProjectTheTothSausageConjecture(state, action);  
         case actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE:
-            return toggleThrownProjectDonkeySpace(state, action);      
+            return toggleThrownProjectDonkeySpace(state, action);
         case actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION:
             return toggleThrownProjectXavierReinitialization(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER:
             return toggleThrownProjectHostileTakeover(state, action);   
         case actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING:
-            return toggleThrownProjectQuantumComputing(state, action);     
+            return toggleThrownProjectQuantumComputing(state, action);  
         case actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION:
             return toggleThrownProjectCoherentExtrapolatedVolition(state, action);     
         case actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION:
-            return toggleThrownProjectQuantumTemporalReversion(state, action);     
-            
+            return toggleThrownProjectQuantumTemporalReversion(state, action);  
         default: 
             return state;
     }
