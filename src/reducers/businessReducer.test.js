@@ -2342,6 +2342,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update theHadwingerProblemIsThrown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            donkeySpaceIsThrown: false
+        }
+        const state = {
+            ...initialState,
+            donkeySpaceIsThrown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
