@@ -2169,6 +2169,25 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update yomi and money by subtracting the value passed throught the action", () => {
+        const action = { 
+            type: actionTypes.REMOVE_PRICE_OF_PROJECT_YOMI_AND_MONEY,
+            yomi: 5,
+            money: 3,
+        }
+        const initState = {
+            ...initialState,
+            yomi: 64,
+            funds: 74
+        }
+        const state = {
+            ...initialState,
+            yomi: 59,
+            funds: 71
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
