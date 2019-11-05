@@ -2390,6 +2390,38 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update hostileTakeoverIsThrown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            quantumComputingIsThrown: false
+        }
+        const state = {
+            ...initialState,
+            quantumComputingIsThrown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should update coherentExtrapolatedVolitionIsThrown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            coherentExtrapolatedVolitionIsThrown: false
+        }
+        const state = {
+            ...initialState,
+            coherentExtrapolatedVolitionIsThrown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
