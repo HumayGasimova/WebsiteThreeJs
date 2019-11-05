@@ -2265,7 +2265,8 @@ describe('businessReducer', () => {
 
     it("should update creativityCounterIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'creativityCounter',
             val: true
         }
         const initState = {
@@ -2281,7 +2282,8 @@ describe('businessReducer', () => {
  
     it("should update lexicalProcessingIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'lexicalProcessing',
             val: true
         }
         const initState = {
@@ -2297,7 +2299,8 @@ describe('businessReducer', () => {
 
     it("should update combinatoryHarmonicsIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'combinatoryHarmonics',
             val: true
         }
         const initState = {
@@ -2313,7 +2316,8 @@ describe('businessReducer', () => {
 
     it("should update theHadwingerProblemIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'theHadwingerProblem',
             val: true
         }
         const initState = {
@@ -2327,9 +2331,10 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update theHadwingerProblemIsThrown with the value passed through the action", () => {
+    it("should update theTothSausageConjectureIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'theTothSausageConjecture',
             val: true
         }
         const initState = {
@@ -2343,9 +2348,10 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update theHadwingerProblemIsThrown with the value passed through the action", () => {
+    it("should update donkeySpaceIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'donkeySpace',
             val: true
         }
         const initState = {
@@ -2361,7 +2367,8 @@ describe('businessReducer', () => {
 
     it("should update xavierReinitializationIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'xavierReinitialization',
             val: true
         }
         const initState = {
@@ -2377,7 +2384,8 @@ describe('businessReducer', () => {
 
     it("should update hostileTakeoverIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'hostileTakeover',
             val: true
         }
         const initState = {
@@ -2391,9 +2399,10 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update hostileTakeoverIsThrown with the value passed through the action", () => {
+    it("should update quantumComputingIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'quantumComputing',
             val: true
         }
         const initState = {
@@ -2409,7 +2418,8 @@ describe('businessReducer', () => {
 
     it("should update coherentExtrapolatedVolitionIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'coherentExtrapolatedVolition',
             val: true
         }
         const initState = {
@@ -2425,7 +2435,8 @@ describe('businessReducer', () => {
 
     it("should update quantumTemporalReversionIsThrown with the value passed through the action", () => {
         const action = { 
-            type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION,
+            type: actionTypes.TOGGLE_THROWN_PROJECT,
+            project: 'quantumTemporalReversion',
             val: true
         }
         const initState = {

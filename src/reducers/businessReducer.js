@@ -6,7 +6,7 @@ import {
   import * as Utility from '../utility'
 
 export const initialState = {
-    paperClips: 2000, //0
+    paperClips: 0, //0
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
@@ -35,7 +35,7 @@ export const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 10,//1000
+    opsMax: 1000,//1000
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
@@ -1201,71 +1201,71 @@ const toggleThrownProject = (state, action) => {
 
 
 
-const toggleThrownProjectStartCreativityCounter = (state, action) => {
-    return updateObject(state, {
-        creativityCounterIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectStartCreativityCounter = (state, action) => {
+//     return updateObject(state, {
+//         creativityCounterIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectLexicalProcessing = (state, action) => {
-    return updateObject(state, {
-        lexicalProcessingIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectLexicalProcessing = (state, action) => {
+//     return updateObject(state, {
+//         lexicalProcessingIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectCombinatoryHarmonics = (state, action) => {
-    return updateObject(state, {
-        combinatoryHarmonicsIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectCombinatoryHarmonics = (state, action) => {
+//     return updateObject(state, {
+//         combinatoryHarmonicsIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectTheHadwingerProblem = (state, action) => {
-    return updateObject(state, {
-        theHadwingerProblemIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectTheHadwingerProblem = (state, action) => {
+//     return updateObject(state, {
+//         theHadwingerProblemIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectTheTothSausageConjecture = (state, action) => {
-    return updateObject(state, {
-        theTothSausageConjectureIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectTheTothSausageConjecture = (state, action) => {
+//     return updateObject(state, {
+//         theTothSausageConjectureIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectDonkeySpace = (state, action) => {
-    return updateObject(state, {
-        donkeySpaceIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectDonkeySpace = (state, action) => {
+//     return updateObject(state, {
+//         donkeySpaceIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectXavierReinitialization = (state, action) => {
-    return updateObject(state, {
-        xavierReinitializationIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectXavierReinitialization = (state, action) => {
+//     return updateObject(state, {
+//         xavierReinitializationIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectHostileTakeover = (state, action) => {
-    return updateObject(state, {
-        hostileTakeoverIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectHostileTakeover = (state, action) => {
+//     return updateObject(state, {
+//         hostileTakeoverIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectQuantumComputing = (state, action) => {
-    return updateObject(state, {
-        quantumComputingIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectQuantumComputing = (state, action) => {
+//     return updateObject(state, {
+//         quantumComputingIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectCoherentExtrapolatedVolition = (state, action) => {
-    return updateObject(state, {
-        coherentExtrapolatedVolitionIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectCoherentExtrapolatedVolition = (state, action) => {
+//     return updateObject(state, {
+//         coherentExtrapolatedVolitionIsThrown: action.val,     
+//     });
+// }
 
-const toggleThrownProjectQuantumTemporalReversion = (state, action) => {
-    return updateObject(state, {
-        quantumTemporalReversionIsThrown: action.val,     
-    });
-}
+// const toggleThrownProjectQuantumTemporalReversion = (state, action) => {
+//     return updateObject(state, {
+//         quantumTemporalReversionIsThrown: action.val,     
+//     });
+// }
 
 
 const businessReducer = (state = initialState, action) => {

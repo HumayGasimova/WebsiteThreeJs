@@ -1959,145 +1959,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
-    it('Dispatches the correct action and payload (toggleThrownProjectStartCreativityCounter)', () => {
+    it('Dispatches the correct action and payload (toggleThrownProject)', () => {
         const expectedActions = [
             {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
+                type: actionTypes.TOGGLE_THROWN_PROJECT,
+                project: "paperclip",
                 val: true
             }
         ];
 
-        store.dispatch(Actions.toggleThrownProjectStartCreativityCounter(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectLexicalProcessing)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectLexicalProcessing(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectCombinatoryHarmonics)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS,
-                val: false
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectCombinatoryHarmonics(false));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectTheHadwingerProblem)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM,
-                val: false
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectTheHadwingerProblem(false));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectTheTothSausageConjecture)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectTheTothSausageConjecture(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectDonkeySpace)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectDonkeySpace(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectXavierReinitialization)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectXavierReinitialization(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectHostileTakeover)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectHostileTakeover(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectQuantumComputing)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectQuantumComputing(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectCoherentExtrapolatedVolition)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectCoherentExtrapolatedVolition(true));
-        expect(store.getActions()).toEqual(expectedActions);
-        expect(store.getActions()).toMatchSnapshot();
-    });
-
-    it('Dispatches the correct action and payload (toggleThrownProjectQuantumTemporalReversion)', () => {
-        const expectedActions = [
-            {
-                type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION,
-                val: true
-            }
-        ];
-
-        store.dispatch(Actions.toggleThrownProjectQuantumTemporalReversion(true));
+        store.dispatch(Actions.toggleThrownProject("paperclip", true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
