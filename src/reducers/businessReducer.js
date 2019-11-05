@@ -1522,14 +1522,13 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectOpsCreatAndYomi(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_YOMI:
             return removePriceOfProjectOpsAndYomi(state, action);  
-            
-            
         case actionTypes.REMOVE_PRICE_OF_PROJECT_YOMI_AND_MONEY:
             return removePriceOfProjectYomiAndMoney(state, action);   
         case actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY:
             return removePriceOfProjectMoney(state, action);   
         // case actionTypes.ADD_XAVIER_REINITIALIZATION:
         //     return state;  
+
         case actionTypes.REALLOCATION_OF_TRUST:
             return reallocationOfTrust(state, action);  
         // case actionTypes.ADD_HOSTILE_TAKEOVER:

@@ -2188,6 +2188,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update money by subtracting the value passed throught the action", () => {
+        const action = { 
+            type: actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY,
+            money: 53
+        }
+        const initState = {
+            ...initialState,
+            funds: 74
+        }
+        const state = {
+            ...initialState,
+            funds: 21
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
