@@ -2009,6 +2009,101 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set the property cell1 in cellIsDark to true and cell2, cell3, cell4 to false", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_CELLS,
+            obj: {
+                valLeft: 1,
+                valTop: 1
+            }
+        }
+        const initState = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+        }
+        const state = {
+            ...initialState,
+            cellIsDark: {cell1: true, cell2: false, cell3: false, cell4: false}
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should set the property cell4 in cellIsDark to true and cell1, cell2, cell3 to false", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_CELLS,
+            obj: {
+                valLeft: 2,
+                valTop: 2
+            }
+        }
+        const initState = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+        }
+        const state = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: true}
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should set the property cell3 in cellIsDark to true and cell1, cell2, cell4 to false", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_CELLS,
+            obj: {
+                valLeft: 1,
+                valTop: 2
+            }
+        }
+        const initState = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+        }
+        const state = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: true, cell4: false}
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should set the property cell2 in cellIsDark to true and cell1, cell3, cell4 to false", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_CELLS,
+            obj: {
+                valLeft: 2,
+                valTop: 1
+            }
+        }
+        const initState = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+        }
+        const state = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: true, cell3: false, cell4: false}
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should set all the properties in cellIsDark to false", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_CELLS,
+            obj: {
+                valLeft: 3,
+                valTop: 3
+            }
+        }
+        const initState = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+        }
+        const state = {
+            ...initialState,
+            cellIsDark: {cell1: false, cell2: false, cell3: false, cell4: false}
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
