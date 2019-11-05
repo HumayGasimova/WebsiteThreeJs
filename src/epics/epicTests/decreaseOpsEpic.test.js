@@ -31,7 +31,6 @@ describe('decreaseOpsEpic', () => {
 
       expect(delay).toHaveBeenCalledWith(10);  
       expect(spy).toHaveBeenCalledWith(
-        
         { type: actionTypes.DECREASE_OPS }
       );  
       expect(spy).toHaveBeenCalledTimes(3);  

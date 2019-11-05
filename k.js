@@ -58,9 +58,9 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
     Epic.startMegaClippersEpic,
    X // Epic.startNewTournamentEpic,
     Epic.startRunningStrategicModelingEpic,
-    // Epic.updateStrategicModelingCurrentListEpic,
-    // Epic.tournamentStartedEpic,
-    // Epic.tournamentDurationEpic,
+    Epic.updateStrategicModelingCurrentListEpic,
+    // Epic.tournamentStartedEpic, posmotret
+    Epic.tournamentDurationEpic,
     // Epic.startUpdatingRoundsOnScreenEpic,
     // Epic.startUpdatingPlayerLeftOnScreenEpic,
     // Epic.startUpdatingPlayerTopOnScreenEpic,
