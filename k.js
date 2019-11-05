@@ -62,8 +62,8 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
     // Epic.tournamentStartedEpic, posmotret
     Epic.tournamentDurationEpic,
     Epic.startUpdatingRoundsOnScreenEpic,
-    // Epic.startUpdatingPlayerLeftOnScreenEpic,
-    // Epic.startUpdatingPlayerTopOnScreenEpic,
+    Epic.startUpdatingPlayerLeftOnScreenEpic,
+    Epic.startUpdatingPlayerTopOnScreenEpic,
     // Epic.gameStartedEpic,
     // Epic.strategicModelingResultEpic,
     // Epic.startCountingResultEpic,
