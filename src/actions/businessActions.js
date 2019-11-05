@@ -921,10 +921,10 @@ export function startCountingResult() {
     };
 };
 
-export function updatedAllRoundsRes(obj) {
+export function updatedAllRoundsRes(array) {
     return { 
         type: actionTypes.UPDATED_ALL_ROUNDS_RES,
-        obj: obj
+        array: array
     };
 };
 

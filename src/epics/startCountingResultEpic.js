@@ -14,7 +14,7 @@ export const startCountingResultEpic = (action$, state$) =>
         ofType(actionTypes.START_COUNTING_RESULT),
         mergeMap(action => {
             let allRoundsRes = [...state$.value.business.allRoundsRes];
-            let updatedObj = []
+            let updatedArray = []
             allRoundsRes.map((el,i) => {
                 let plLeftValue = el.playerLeft.val;
                 let plTopValue = el.playerTop.val;
@@ -38,7 +38,7 @@ export const startCountingResultEpic = (action$, state$) =>
                     newValuePlTop = el.cell2;
                 }
 
-                updatedObj.push({
+                updatedArray.push({
                     playerLeft: {
                         strategy: el.playerLeft.strategy,
                         value: newValuePlLeft
@@ -50,9 +50,9 @@ export const startCountingResultEpic = (action$, state$) =>
 
                 })
             })
-             console.log("YYY", updatedObj)
+             console.log("YYY", updatedArray)
             return of(
-                Actions.updatedAllRoundsRes(updatedObj),
+                Actions.updatedAllRoundsRes(updatedArray),
                 Actions.countFinalResultOfEachStrategy(),
             )
         }) 

@@ -255,14 +255,6 @@ Array [
 ]
 `;
 
-exports[`businessActions Dispatches the correct action and payload (gameStarted) 2`] = `
-Array [
-  Object {
-    "type": "GAME_STARTED",
-  },
-]
-`;
-
 exports[`businessActions Dispatches the correct action and payload (getDeposit) 1`] = `
 Array [
   Object {
@@ -1397,10 +1389,12 @@ Array [
 exports[`businessActions Dispatches the correct action and payload (updatedAllRoundsRes) 1`] = `
 Array [
   Object {
-    "obj": Object {
-      "a": 9,
-      "b": 8,
-    },
+    "array": Array [
+      Object {
+        "a": 9,
+        "b": 8,
+      },
+    ],
     "type": "UPDATED_ALL_ROUNDS_RES",
   },
 ]

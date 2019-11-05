@@ -948,7 +948,7 @@ const allRoundsResult = (state, action) => {
 
 const updatedAllRoundsRes = (state, action) => {
     return updateObject(state, {
-        allRoundsResWithValues: action.obj
+        allRoundsResWithValues: action.array
     });
 }
 
@@ -1502,6 +1502,8 @@ const businessReducer = (state = initialState, action) => {
             return state;  
         case actionTypes.START_COUNTING_RESULT:
             return state;  
+
+            
         case actionTypes.UPDATED_ALL_ROUNDS_RES:
             return updatedAllRoundsRes(state, action);
         case actionTypes.COUNT_FINAL_RESULT_OF_EACH_STRATEGY:
