@@ -1493,23 +1493,21 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.SET_PLAYERS_ARRAY:
             return setPlayersArrays(state, action);
         case actionTypes.GAME_STARTED:
-            return state;     
-
-
+            return state;    
         case actionTypes.ALL_ROUNDS_RESULT:
             return allRoundsResult(state, action);
         case actionTypes.STRATEGIC_MODELING_RESULT:
             return state;  
         case actionTypes.START_COUNTING_RESULT:
             return state;  
-
-            
         case actionTypes.UPDATED_ALL_ROUNDS_RES:
             return updatedAllRoundsRes(state, action);
         case actionTypes.COUNT_FINAL_RESULT_OF_EACH_STRATEGY:
             return state; 
         case actionTypes.UPDATE_LIST_OF_FINAL_RESULT:
-            return updateListOfFinalResult(state, action);  
+            return updateListOfFinalResult(state, action);
+            
+            
         case actionTypes.FILL_WITH_VALUES_STRATEGIC_MODELING_CURRENT_LIST:
             return fillWithValuesStrategicModelingCurrentList(state, action);  
         case actionTypes.TOGGLE_STRATEGIC_MODELING_LEFT_PART:
