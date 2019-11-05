@@ -1528,7 +1528,6 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectMoney(state, action);   
         // case actionTypes.ADD_XAVIER_REINITIALIZATION:
         //     return state;  
-
         case actionTypes.REALLOCATION_OF_TRUST:
             return reallocationOfTrust(state, action);  
         // case actionTypes.ADD_HOSTILE_TAKEOVER:
@@ -1540,7 +1539,8 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
             return toggleThrownProjectStartCreativityCounter(state, action); 
         case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:
-            return toggleThrownProjectLexicalProcessing(state, action);     
+            return toggleThrownProjectLexicalProcessing(state, action);  
+
         case actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS:
             return toggleThrownProjectCombinatoryHarmonics(state, action);     
         case actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM:
