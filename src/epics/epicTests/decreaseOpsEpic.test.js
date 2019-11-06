@@ -19,12 +19,12 @@ describe('decreaseOpsEpic', () => {
       });
 
       const state$ = {
-          value: {
-              business: {
-                ops: 7,
-                opsMax: 4
-              }
-          }
+        value: {
+            business: {
+              ops: 7,
+              opsMax: 4
+            }
+        }
       }
 
       Epic.decreaseOpsEpic(action$, state$).subscribe(spy);

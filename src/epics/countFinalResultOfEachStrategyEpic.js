@@ -16,28 +16,28 @@ export const countFinalResultOfEachStrategyEpic = (action$, state$) =>
         mergeMap(action => {
             let results = [...state$.value.business.allRoundsResWithValues];
             let plLeftRandom = results.filter(x => x.playerLeft.strategy === "RANDOM");
-            let plTopRandom = results.filter(x => x.playerLeft.strategy === "RANDOM");
+            let plTopRandom = results.filter(x => x.playerTop.strategy === "RANDOM");
 
             let plLeftA100 = results.filter(x => x.playerLeft.strategy === "A100");
-            let plTopA100 = results.filter(x => x.playerLeft.strategy === "A100");
+            let plTopA100 = results.filter(x => x.playerTop.strategy === "A100");
 
             let plLeftB100 = results.filter(x => x.playerLeft.strategy === "B100");
-            let plTopB100 = results.filter(x => x.playerLeft.strategy === "B100");
+            let plTopB100 = results.filter(x => x.playerTop.strategy === "B100");
 
             let plLeftGreedy = results.filter(x => x.playerLeft.strategy === "GREEDY");
-            let plTopGreedy = results.filter(x => x.playerLeft.strategy === "GREEDY");
+            let plTopGreedy = results.filter(x => x.playerTop.strategy === "GREEDY");
 
             let plLeftGenerous = results.filter(x => x.playerLeft.strategy === "GENEROUS");
-            let plTopGenerous = results.filter(x => x.playerLeft.strategy === "GENEROUS");
+            let plTopGenerous = results.filter(x => x.playerTop.strategy === "GENEROUS");
 
             let plLeftMiniMax = results.filter(x => x.playerLeft.strategy === "MINIMAX");
-            let plTopMiniMax = results.filter(x => x.playerLeft.strategy === "MINIMAX");
+            let plTopMiniMax = results.filter(x => x.playerTop.strategy === "MINIMAX");
 
             let plLeftTitForTat = results.filter(x => x.playerLeft.strategy === "TIT FOR TAT");
-            let plTopTitForTat = results.filter(x => x.playerLeft.strategy === "TIT FOR TAT");
+            let plTopTitForTat = results.filter(x => x.playerTop.strategy === "TIT FOR TAT");
 
             let plLeftBeatLast = results.filter(x => x.playerLeft.strategy === "BEAT LAST");
-            let plTopBeatLast = results.filter(x => x.playerLeft.strategy === "BEAT LAST");
+            let plTopBeatLast = results.filter(x => x.playerTop.strategy === "BEAT LAST");
 
             let allResults = {
                 random: plLeftRandom.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftRandom, plTopRandom),
