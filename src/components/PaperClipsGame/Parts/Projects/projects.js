@@ -526,7 +526,14 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showInvestEngine(false);
-                break;          
+                break;   
+            case 'disassembleManufacturing':
+                this.props.addProject(projectsToAdd.DisassembleBusiness);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showManufacturing(false)
+                this.props.updateWire("initial", 0)
+                break;        
                 
                
         }
@@ -635,6 +642,8 @@ export default connect(
             removePriceOfProjectMoney: bindActionCreators(Actions.removePriceOfProjectMoney, dispatch),
             reallocationOfTrust: bindActionCreators(Actions.reallocationOfTrust, dispatch),
             removeUnnecessaryCards: bindActionCreators(Actions.removeUnnecessaryCards, dispatch),
+            showManufacturing: bindActionCreators(Actions.showManufacturing, dispatch),
+            updateWire: bindActionCreators(Actions.updateWire, dispatch),
         };
     }
 )(Projects);

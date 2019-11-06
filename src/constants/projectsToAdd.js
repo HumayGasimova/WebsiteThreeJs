@@ -1198,7 +1198,7 @@ export const CompleteGame = {
 }
 
 export const DisassembleTheStrategyEngine = {
-    text1: "Disassemble The Strategy Engine (100,000",
+    text1: "Disassemble The Strategy Engine (10,000",
     text2: "ops)",
     text3: "Dismantle the computational substrate to",
     text4: "recover trace amounts of wire",
@@ -1217,7 +1217,7 @@ export const DisassembleTheStrategyEngine = {
 }
 
 export const DisassembleInvestmentsEngine = {
-    text1: "Disassemble Investments Engine (100,000",
+    text1: "Disassemble Investments Engine (10,000",
     text2: "ops)",
     text3: "Dismantle investments engine",
     price: {
@@ -1248,6 +1248,22 @@ export const DisassembleManufacturing = {
     valid: false,
     id: "card68",
     terminal: "Dismantling the manufacturing"
+}
+
+export const DisassembleBusiness = {
+    text1: "Disassemble Business (10,000 ops)",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 1,
+    next: 'disassembleBusiness',
+    valid: false,
+    id: "card68",
+    terminal: "Dismantling the business"
 }
 
 export const DisassembleQuantumComputing = {

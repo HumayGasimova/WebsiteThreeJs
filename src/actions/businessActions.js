@@ -1053,9 +1053,24 @@ export function toggleThrownProject(project, val) {
     };
 };
 
-export function removeUnnecessaryCards(project, val) {
+export function removeUnnecessaryCards() {
     return { 
         type: actionTypes.REMOVE_UNNECESSARY_CARDS
+    };
+};
+
+export function showManufacturing(val) {
+    return { 
+        type: actionTypes.SHOW_MANUFACTURING,
+        val: val
+    };
+};
+
+export function updateWire(option, val) {
+    return { 
+        type: actionTypes.UPDATE_WIRE,
+        option: option,
+        val: val
     };
 };
 

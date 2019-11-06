@@ -161,6 +161,8 @@ export {
     stateFromLocalStorage,
     toggleThrownProject,
     removeUnnecessaryCards,
+    showManufacturing,
+    updateWire
     // toggleThrownProjectStartCreativityCounter,
     // toggleThrownProjectLexicalProcessing,
     // toggleThrownProjectCombinatoryHarmonics,

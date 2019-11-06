@@ -140,11 +140,7 @@ export class Manufacturing extends Component {
         }
     }
 
-    /**
-    * Markup
-    */
-
-    render(){
+    renderManufacturing = () => {
         return(
             <div className="manufacturing">
                 <div className="manufacturing-label">Manufacturing</div>
@@ -160,7 +156,7 @@ export class Manufacturing extends Component {
                             text={"Wire"}
                             disabled={this.props.wireButtonDisabled}
                             id={"wireButton"}
-                                 // buttonRef={this.buttonRef}
+                                    // buttonRef={this.buttonRef}
                         />
                         <div className="manufacturing-text">{this.props.wire} inches</div>
                     </div>
@@ -170,6 +166,34 @@ export class Manufacturing extends Component {
                 {/* <AutoClippers/>  */}
                 {this.props.megaClippersIsShown ? <MegaClippers/> : null}
                 {/* <MegaClippers/> */}
+            </div>
+        )
+    }
+
+    renderWire = () => {
+        return(
+            <div className="manufacturing">
+                <div className="manufacturing-label">Manufacturing</div>
+                <div className="manufacturing-line"/>
+                <div className="manufacturing-section">
+                    {this.props.wireBuyerIsShown ? <AutoWireBuyer/> : null}
+                    <div className="manufacturing-wrapper1">
+                        <div className="manufacturing-text">Wire: </div>
+                        <div className="manufacturing-text">{this.props.wire} inches</div>
+                    </div>
+                </div> 
+            </div>
+        )
+    }
+
+    /**
+    * Markup
+    */
+
+    render(){
+        return(
+            <div>
+                {this.props.manufacturingIsShown ? this.renderManufacturing() : this.renderWire()}
             </div>
         );
     }
@@ -199,6 +223,7 @@ export default connect(
             megaClippersPerSec: Selectors.getMegaClippersPerSecState(state),
             megaClippersToAdd: Selectors.getMegaClippersToAddState(state),
             autoAndMegaClippersWorks: Selectors.getAutoAndMegaClippersWorksState(state),
+            manufacturingIsShown: Selectors.getManufacturingIsShownState(state),
         };
     },
     (dispatch) => {

@@ -114,7 +114,8 @@ export const initialState = {
     hostileTakeoverIsThrown: false,
     quantumComputingIsThrown: false,
     coherentExtrapolatedVolitionIsThrown: false,
-    quantumTemporalReversionIsThrown: false
+    quantumTemporalReversionIsThrown: false,
+    manufacturingIsShown: true
 }
 
 const makePaperclip = (state) => {
@@ -1206,6 +1207,21 @@ const removeUnnecessaryCards = (state, action) => {
     });
 }
 
+const showManufacturing = (state, action) => {
+    return updateObject(state, {
+        manufacturingIsShown: action.val
+    });
+}
+
+const updateWire = (state, action) => {
+    switch(action.option){
+        case 'initial':
+        return updateObject(state, {
+            wire: action.val
+        });
+    }
+    
+}
 
 // const toggleThrownProjectStartCreativityCounter = (state, action) => {
 //     return updateObject(state, {
@@ -1599,6 +1615,11 @@ const businessReducer = (state = initialState, action) => {
             return toggleThrownProject(state, action);   
         case actionTypes.REMOVE_UNNECESSARY_CARDS:
             return removeUnnecessaryCards(state, action); 
+        case actionTypes.SHOW_MANUFACTURING:
+            return showManufacturing(state, action); 
+        case actionTypes.UPDATE_WIRE:
+            return updateWire(state, action); 
+            
         // case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
         //     return toggleThrownProjectStartCreativityCounter(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:
