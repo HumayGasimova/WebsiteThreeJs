@@ -85,6 +85,7 @@ const getAllValuesOfAPlayer = (playerResult, option) => {
 } 
 
 export const getStrategyModelingResult = (plLeft, plTop) => {
+    console.log("l",plLeft,plTop)
     let plLeftSumOfValues = getAllValuesOfAPlayer(plLeft, "playerLeft");
     let plTopSumOfValues = getAllValuesOfAPlayer(plTop, "playerTop");
     console.log("OOP", plLeftSumOfValues, plTopSumOfValues)
