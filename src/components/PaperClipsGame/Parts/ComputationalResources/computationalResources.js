@@ -215,11 +215,7 @@ export class ComputationalResources extends Component {
         )
     }
 
-    /**
-    * Markup
-    */
-
-    render(){
+    renderComputationalResourses = () => {
         return(
             <div>
                 <div className="computationalResources">
@@ -227,11 +223,11 @@ export class ComputationalResources extends Component {
                     <div className="computationalResources-line"/>
                     {this.props.processorsNumberIsShown ? this.renderTrust() : null}
                     <div className="computationalResources-section">
-                       {this.props.processorsNumberIsShown ? this.renderProcessorsNumber() : null}
-                       {this.props.processorsMemoryIsShown ? this.renderProcessorsMemory() : null}
+                    {this.props.processorsNumberIsShown ? this.renderProcessorsNumber() : null}
+                    {this.renderProcessorsMemory()}
                     </div>
                     <div className="computationalResources-section">
-                        {this.props.processorsMemoryIsShown ?  <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div> : null}
+                        <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div>
                         {this.props.processorsNumberIsShown ? <div className="computationalResources-text">Creativity: {this.props.creativity}</div> : null}
                     </div>
                 
@@ -239,6 +235,18 @@ export class ComputationalResources extends Component {
                 </div>
                 {/* <QuantumComputing/>  */}
                 {this.props.quantumComputingIsShown ? <QuantumComputing/> : null}
+            </div>
+        )
+    }
+
+    /**
+    * Markup
+    */
+
+    render(){
+        return(
+            <div>
+              {this.props.processorsMemoryIsShown ? this.renderComputationalResourses() : null}
             </div>
         );
     }

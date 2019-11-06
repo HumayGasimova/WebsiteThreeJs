@@ -563,6 +563,11 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showProcessorsNumber(false);
+                break;   
+            case 'disassembleMemory':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showProcessorsMemory(false);
                 break;         
                 
                
