@@ -227,7 +227,7 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.NewStrategyA100);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.showStrategicModeling();
+                this.props.showStrategicModeling(true);
                 this.props.toggleNewTournamentButton();
                 break;
             case 'newStrategyA100':
@@ -498,13 +498,26 @@ export class Projects extends Component {
                 this.props.updatePublicDemand();
                 break;
             case 'quantumTemporalReversion':
-                if(confirm("HEy")){
+                if(confirm("Are you sure you want to complete game")){
                     localStorage.removeItem('store');
                     window.location.reload();
                 }else{
                    this.props.addProject(projectsToAdd.QuantumTemporalReversion)
                 }
-                        
+            case 'completeGame':
+                if(confirm("Are you sure you want to complete game?")){
+                    this.props.removeUnnecessaryCards();
+                    this.props.addProject(projectsToAdd.DisassembleTheStrategyEngine);
+                    this.props.removePriceOfProjectOps(price.ops);
+                }else{
+                    this.props.addProject(projectsToAdd.CompleteGame)
+                }
+            case 'disassembleTheStrategyEngine':
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showStrategicModeling(false);
+                
+                break;          
                 
                
         }
@@ -612,6 +625,7 @@ export default connect(
             removePriceOfProjectYomiAndMoney: bindActionCreators(Actions.removePriceOfProjectYomiAndMoney, dispatch),
             removePriceOfProjectMoney: bindActionCreators(Actions.removePriceOfProjectMoney, dispatch),
             reallocationOfTrust: bindActionCreators(Actions.reallocationOfTrust, dispatch),
+            removeUnnecessaryCards: bindActionCreators(Actions.removeUnnecessaryCards, dispatch),
         };
     }
 )(Projects);

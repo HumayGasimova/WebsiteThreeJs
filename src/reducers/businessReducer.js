@@ -485,7 +485,7 @@ const showInvestEngine = (state, action) => {
 
 const showStrategicModeling = (state, action) => {
     return updateObject(state, {
-        showStrategicModeling: true
+        showStrategicModeling: action.val
     });
 }
 
@@ -1200,6 +1200,11 @@ const toggleThrownProject = (state, action) => {
    
 }
 
+const removeUnnecessaryCards = (state, action) => {
+    return updateObject(state, {
+        cards: []
+    });
+}
 
 
 // const toggleThrownProjectStartCreativityCounter = (state, action) => {
@@ -1592,6 +1597,8 @@ const businessReducer = (state = initialState, action) => {
 
         case actionTypes.TOGGLE_THROWN_PROJECT:
             return toggleThrownProject(state, action);   
+        case actionTypes.REMOVE_UNNECESSARY_CARDS:
+            return removeUnnecessaryCards(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
         //     return toggleThrownProjectStartCreativityCounter(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:

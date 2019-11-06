@@ -45,6 +45,12 @@ import * as Selectors from '../../../../reducers/selectors';
 import * as Utility from '../../../../utility';
 
 /**
+* Constants
+*/
+
+import * as projectsToAdd from '../../../../constants/projectsToAdd';
+
+/**
 * General component definition and export
 */
 
@@ -116,6 +122,9 @@ export class General extends Component {
             if(this.props.paperClips === 1000000){
                 this.props.sendCommentToTerminal(`100,000 ${comment}`);
             }
+            if(this.props.paperClips === 2001){
+                this.props.addProject(projectsToAdd.CompleteGame);
+            }
             // if(this.props.paperClips === 2000){
             //     this.props.sendCommentToTerminal(`2,000 ${comment}`);
             // }
@@ -158,6 +167,7 @@ export default connect(
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
             sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
+            addProject: bindActionCreators(Actions.addProject, dispatch),
         };
     }
 )(General);

@@ -160,6 +160,7 @@ export {
     upgradeInvestmentEngine,
     stateFromLocalStorage,
     toggleThrownProject,
+    removeUnnecessaryCards,
     // toggleThrownProjectStartCreativityCounter,
     // toggleThrownProjectLexicalProcessing,
     // toggleThrownProjectCombinatoryHarmonics,

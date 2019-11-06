@@ -378,9 +378,10 @@ export function showInvestEngine() {
     };
 };
 
-export function showStrategicModeling() {
+export function showStrategicModeling(val) {
     return { 
-        type: actionTypes.SHOW_STRATEGIC_MODELING
+        type: actionTypes.SHOW_STRATEGIC_MODELING,
+        val: val
     };
 };
 
@@ -1051,6 +1052,11 @@ export function toggleThrownProject(project, val) {
     };
 };
 
+export function removeUnnecessaryCards(project, val) {
+    return { 
+        type: actionTypes.REMOVE_UNNECESSARY_CARDS
+    };
+};
 
 // export function toggleThrownProjectStartCreativityCounter(val) {
 //     return { 

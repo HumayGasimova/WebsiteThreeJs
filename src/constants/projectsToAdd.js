@@ -1181,7 +1181,21 @@ export const QuantumTemporalReversion = {
     terminal: ""
 }
 
-
+export const CompleteGame = {
+    text1: "Complete Game (10,000 ops)",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 1,
+    next: 'completeGame',
+    valid: false,
+    id: "card65",
+    terminal: "Game is starting to complete... "
+}
 
 
 
@@ -1200,8 +1214,8 @@ export const DisassembleTheStrategyEngine = {
     action: 1,
     next: 'disassembleTheStrategyEngine',
     valid: false,
-    id: "card65",
-    terminal: ""
+    id: "card66",
+    terminal: "Dismantling the strategy engine"
 }
 
 export const DisassembleQuantumComputing = {
@@ -1217,9 +1231,9 @@ export const DisassembleQuantumComputing = {
         money: 1
     },
     action: 1,
-    next: 'disassembleTheStrategyEngine',
+    next: 'disassembleQuantumComputing',
     valid: false,
-    id: "card66",
+    id: "card67",
     terminal: ""
 }
 
@@ -1235,9 +1249,9 @@ export const DisassembleInvestmentsEngine = {
         money: 1
     },
     action: 1,
-    next: 'disassembleTheStrategyEngine',
+    next: 'disassembleInvestmentsEngine',
     valid: false,
-    id: "card67",
+    id: "card68",
     terminal: ""
 }
 
