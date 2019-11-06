@@ -48,7 +48,7 @@ export const initialState = {
     chosenListDropdown: ["Low Risk","Pick a Start"],
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
-    showInvestmentEngine: false, //false
+    showInvestmentEngine: true, //false
     showStrategicModeling: true, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
@@ -479,7 +479,7 @@ const improveMarketing = (state, action) => {
 
 const showInvestEngine = (state, action) => {
     return updateObject(state, {
-        showInvestmentEngine: true
+        showInvestmentEngine: action.val
     });
 }
 

@@ -161,7 +161,7 @@ export class Projects extends Component {
             case 'algorithmicTrading':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.showInvestEngine();
+                this.props.showInvestEngine(true);
                 break;
             case 'combinatoryHarmonics':
                 this.props.addProject(projectsToAdd.CatchyJingle);
@@ -504,19 +504,28 @@ export class Projects extends Component {
                 }else{
                    this.props.addProject(projectsToAdd.QuantumTemporalReversion)
                 }
+                break;
             case 'completeGame':
                 if(confirm("Are you sure you want to complete game?")){
+                    this.props.sendCommentToTerminal(terminal);
                     this.props.removeUnnecessaryCards();
                     this.props.addProject(projectsToAdd.DisassembleTheStrategyEngine);
                     this.props.removePriceOfProjectOps(price.ops);
                 }else{
                     this.props.addProject(projectsToAdd.CompleteGame)
                 }
+                break;
             case 'disassembleTheStrategyEngine':
+                this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showStrategicModeling(false);
-                
+                break;  
+            case 'disassembleInvestmentsEngine':
+                this.props.addProject(projectsToAdd.DisassembleManufacturing);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showInvestEngine(false);
                 break;          
                 
                

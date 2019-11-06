@@ -372,9 +372,10 @@ export function improveMarketing(val) {
     };
 };
 
-export function showInvestEngine() {
+export function showInvestEngine(val) {
     return { 
-        type: actionTypes.SHOW_INVESTMENT_ENGINE
+        type: actionTypes.SHOW_INVESTMENT_ENGINE,
+        val: val
     };
 };
 
