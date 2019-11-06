@@ -1059,9 +1059,9 @@ export function removeUnnecessaryCards() {
     };
 };
 
-export function showManufacturing(val) {
+export function showManufacturingSection(val) {
     return { 
-        type: actionTypes.SHOW_MANUFACTURING,
+        type: actionTypes.SHOW_MANUFACTURING_SECTION,
         val: val
     };
 };
@@ -1073,6 +1073,14 @@ export function updateWire(option, val) {
         val: val
     };
 };
+
+export function showBusinessSection(val) {
+    return { 
+        type: actionTypes.SHOW_BUSINESS_SECTION,
+        val: val
+    };
+};
+
 
 // export function toggleThrownProjectStartCreativityCounter(val) {
 //     return { 

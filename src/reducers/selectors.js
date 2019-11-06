@@ -623,9 +623,16 @@ export const getQuantumTemporalReversionIsThrownState = createSelector(
     (x) => x
 );
 
-const getManufacturingIsShown = (state) => state.business.manufacturingIsShown;
+const getManufacturingSectionIsShown = (state) => state.business.manufacturingSectionIsShown;
 
-export const getManufacturingIsShownState = createSelector(
-    [getManufacturingIsShown],
+export const getManufacturingSectionIsShownState = createSelector(
+    [getManufacturingSectionIsShown],
+    (x) => x
+);
+
+const getBusinessSectionIsShown = (state) => state.business.businessSectionIsShown;
+
+export const getBusinessSectionIsShownState = createSelector(
+    [getBusinessSectionIsShown],
     (x) => x
 );

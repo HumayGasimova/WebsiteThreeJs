@@ -115,7 +115,8 @@ export const initialState = {
     quantumComputingIsThrown: false,
     coherentExtrapolatedVolitionIsThrown: false,
     quantumTemporalReversionIsThrown: false,
-    manufacturingIsShown: true
+    manufacturingSectionIsShown: true,
+    businessSectionIsShown: true
 }
 
 const makePaperclip = (state) => {
@@ -1207,20 +1208,25 @@ const removeUnnecessaryCards = (state, action) => {
     });
 }
 
-const showManufacturing = (state, action) => {
+const showManufacturingSection = (state, action) => {
     return updateObject(state, {
-        manufacturingIsShown: action.val
+        manufacturingSectionIsShown: action.val
     });
 }
 
 const updateWire = (state, action) => {
     switch(action.option){
         case 'initial':
-        return updateObject(state, {
-            wire: action.val
-        });
+            return updateObject(state, {
+                wire: action.val
+            });
     }
-    
+}
+
+const showBusinessSection = (state, action) => {
+    return updateObject(state, {
+        businessSectionIsShown: action.val
+    });
 }
 
 // const toggleThrownProjectStartCreativityCounter = (state, action) => {
@@ -1615,11 +1621,12 @@ const businessReducer = (state = initialState, action) => {
             return toggleThrownProject(state, action);   
         case actionTypes.REMOVE_UNNECESSARY_CARDS:
             return removeUnnecessaryCards(state, action); 
-        case actionTypes.SHOW_MANUFACTURING:
-            return showManufacturing(state, action); 
+        case actionTypes.SHOW_MANUFACTURING_SECTION:
+            return showManufacturingSection(state, action); 
         case actionTypes.UPDATE_WIRE:
             return updateWire(state, action); 
-            
+        case actionTypes.SHOW_BUSINESS_SECTION:
+            return showBusinessSection(state, action);    
         // case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
         //     return toggleThrownProjectStartCreativityCounter(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:

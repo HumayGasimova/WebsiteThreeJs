@@ -82,11 +82,7 @@ export class Business extends Component {
         }
     }
 
-    /**
-    * Markup
-    */
-
-    render(){
+    renderBusiness = () => {
         return(
             <div className="business">
                 <div className="business-label">Business</div>
@@ -122,6 +118,18 @@ export class Business extends Component {
                     <div className="business-text">Cost: ${this.props.marketingCost.toFixed(2)}</div>
                 </div>
             </div>
+        )
+    }
+
+    /**
+    * Markup
+    */
+
+    render(){
+        return(
+            <div>
+                {this.props.businessSectionIsShown ? this.renderBusiness() : null}
+            </div>
         );
     }
 }
@@ -141,6 +149,7 @@ export default connect(
             avgRevPerSec: Selectors.getAvgRevPerSecState(state),
             avgClipsSoldPerSec: Selectors.getAvgClipsSoldPerSecState(state),
             hostileTakeoverIsThrown: Selectors.getHostileTakeoverIsThrownState(state),
+            businessSectionIsShown: Selectors.getBusinessSectionIsShownState(state)
         };
     },
     (dispatch) => {

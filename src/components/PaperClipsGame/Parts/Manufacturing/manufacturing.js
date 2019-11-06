@@ -193,7 +193,7 @@ export class Manufacturing extends Component {
     render(){
         return(
             <div>
-                {this.props.manufacturingIsShown ? this.renderManufacturing() : this.renderWire()}
+                {this.props.manufacturingSectionIsShown ? this.renderManufacturing() : this.renderWire()}
             </div>
         );
     }
@@ -223,7 +223,8 @@ export default connect(
             megaClippersPerSec: Selectors.getMegaClippersPerSecState(state),
             megaClippersToAdd: Selectors.getMegaClippersToAddState(state),
             autoAndMegaClippersWorks: Selectors.getAutoAndMegaClippersWorksState(state),
-            manufacturingIsShown: Selectors.getManufacturingIsShownState(state),
+            manufacturingSectionIsShown: Selectors.getManufacturingSectionIsShownState(state),
+          
         };
     },
     (dispatch) => {
