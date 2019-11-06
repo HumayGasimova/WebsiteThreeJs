@@ -1082,6 +1082,20 @@ export function showBusinessSection(val) {
     };
 };
 
+export function showProcessorsNumber(val) {
+    return { 
+        type: actionTypes.SHOW_PROCESSORS_NUMBER,
+        val: val
+    };
+};
+
+export function showProcessorsMemory(val) {
+    return { 
+        type: actionTypes.SHOW_PROCESSORS_MEMORY,
+        val: val
+    };
+};
+
 
 // export function toggleThrownProjectStartCreativityCounter(val) {
 //     return { 

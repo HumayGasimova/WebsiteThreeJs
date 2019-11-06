@@ -53,7 +53,7 @@ export const initialState = {
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
-    showQuantumComputing: false,
+    quantumComputingIsShown: false,
     showQCompMessage: 0,
     showChip: false,
     changedToQOps: false,
@@ -116,7 +116,9 @@ export const initialState = {
     coherentExtrapolatedVolitionIsThrown: false,
     quantumTemporalReversionIsThrown: false,
     manufacturingSectionIsShown: true,
-    businessSectionIsShown: true
+    businessSectionIsShown: true,
+    processorsMemoryIsShown: true,
+    processorsNumberIsShown: true
 }
 
 const makePaperclip = (state) => {
@@ -537,7 +539,7 @@ const closeDropdowns = (state, action) => {
 
 const showQuantumComputing = (state, action) => {
     return updateObject(state, {
-        showQuantumComputing: action.val
+        quantumComputingIsShown: action.val
     });
 }
 
@@ -1229,6 +1231,19 @@ const showBusinessSection = (state, action) => {
     });
 }
 
+const showProcessorsNumber = (state, action) => {
+    return updateObject(state, {
+        processorsNumberIsShown: action.val
+    });
+}
+
+const showProcessorsMemory = (state, action) => {
+    return updateObject(state, {
+        processorsMemoryIsShown: action.val
+    });
+}
+
+
 // const toggleThrownProjectStartCreativityCounter = (state, action) => {
 //     return updateObject(state, {
 //         creativityCounterIsThrown: action.val,     
@@ -1627,6 +1642,10 @@ const businessReducer = (state = initialState, action) => {
             return updateWire(state, action); 
         case actionTypes.SHOW_BUSINESS_SECTION:
             return showBusinessSection(state, action);    
+        case actionTypes.SHOW_PROCESSORS_NUMBER:
+            return showProcessorsNumber(state, action); 
+        case actionTypes.SHOW_PROCESSORS_MEMORY:
+            return showProcessorsMemory(state, action);  
         // case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
         //     return toggleThrownProjectStartCreativityCounter(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:

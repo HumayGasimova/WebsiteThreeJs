@@ -178,6 +178,43 @@ export class ComputationalResources extends Component {
         clearInterval(this.intervalCreativity);
     }
 
+    renderProcessorsNumber = () => {
+        return(
+            <div className="computationalResources-wrapper1">
+                <Button
+                    className="computationalResources-button"
+                    onClick={()=>this.buttonsOnCLick('processors')}
+                    text={"Processors"}
+                    // disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
+                />
+                <div className="computationalResources-text">{this.props.processorsNumber}</div>
+            </div>
+        )
+    }
+
+    renderProcessorsMemory = () => {
+        return(
+            <div className="computationalResources-wrapper1">
+                <Button
+                    className="computationalResources-button"
+                    onClick={()=>this.buttonsOnCLick('memory')}
+                    text={"Memory"}
+                    // disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
+                />
+                <div className="computationalResources-text">{this.props.processorsMemory}</div>
+            </div>
+        )
+    }
+
+    renderTrust = () => {
+        return(
+            <div className="computationalResources-section">
+                <div className="computationalResources-text">Trust: {this.props.trust}</div>
+                <div className="computationalResources-text">+1 Trust at: {Utility.commaSeparator(this.props.clipsToBuyTrust)}</div>
+            </div>
+        )
+    }
+
     /**
     * Markup
     */
@@ -188,41 +225,20 @@ export class ComputationalResources extends Component {
                 <div className="computationalResources">
                     <div className="computationalResources-label">Computational Resources</div>
                     <div className="computationalResources-line"/>
+                    {this.props.processorsNumberIsShown ? this.renderTrust() : null}
                     <div className="computationalResources-section">
-                        <div className="computationalResources-text">Trust: {this.props.trust}</div>
-                        <div className="computationalResources-text">+1 Trust at: {Utility.commaSeparator(this.props.clipsToBuyTrust)}</div>
+                       {this.props.processorsNumberIsShown ? this.renderProcessorsNumber() : null}
+                       {this.props.processorsMemoryIsShown ? this.renderProcessorsMemory() : null}
                     </div>
-
                     <div className="computationalResources-section">
-                        <div className="computationalResources-wrapper1">
-                            <Button
-                                className="computationalResources-button"
-                                onClick={()=>this.buttonsOnCLick('processors')}
-                                text={"Processors"}
-                                // disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
-                            />
-                            <div className="computationalResources-text">{this.props.processorsNumber}</div>
-                        </div>
-                        <div className="computationalResources-wrapper1">
-                            <Button
-                                className="computationalResources-button"
-                                onClick={()=>this.buttonsOnCLick('memory')}
-                                text={"Memory"}
-                                // disabled={this.props.processorsNumber + this.props.processorsMemory >= this.props.trust}
-                            />
-                            <div className="computationalResources-text">{this.props.processorsMemory}</div>
-                        </div>
-                    </div>
-
-                    <div className="computationalResources-section">
-                        <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div>
-                        <div className="computationalResources-text">Creativity: {this.props.creativity}</div>
+                        {this.props.processorsMemoryIsShown ?  <div className="computationalResources-text">Operations: {this.props.ops}/{this.props.opsMax}</div> : null}
+                        {this.props.processorsNumberIsShown ? <div className="computationalResources-text">Creativity: {this.props.creativity}</div> : null}
                     </div>
                 
                     {/* {this.props.showQuanumComputing ? <QuantumComputing/> : null} */}
                 </div>
                 {/* <QuantumComputing/>  */}
-                {this.props.showQuantumComputing ? <QuantumComputing/> : null}
+                {this.props.quantumComputingIsShown ? <QuantumComputing/> : null}
             </div>
         );
     }
@@ -240,7 +256,7 @@ export default connect(
             processorsMemory: Selectors.getProcessorsMemoryState(state),
             creativity: Selectors.getCreativityState(state),
             creativityTurnOn: Selectors.getCreativityTurnOnState(state),
-            showQuantumComputing: Selectors.getShowQuantumComputingState(state),
+            quantumComputingIsShown: Selectors.getQuantumComputingIsShownState(state),
             creativityCounterIsThrown: Selectors.getCreativityCounterIsThrownState(state),
             lexicalProcessingIsThrown: Selectors.getLexicalProcessingIsThrownState(state),
             combinatoryHarmonicsIsThrown: Selectors.getCombinatoryHarmonicsIsThrownState(state),
@@ -250,6 +266,8 @@ export default connect(
             xavierReinitializationIsThrown: Selectors.getXavierReinitializationIsThrownState(state),
             quantumComputingIsThrown: Selectors.getQuantumComputingIsThrownState(state),
             quantumTemporalReversionIsThrown: Selectors.getQuantumTemporalReversionIsThrownState(state),
+            processorsMemoryIsShown: Selectors.getProcessorsMemoryIsShownState(state),
+            processorsNumberIsShown: Selectors.getProcessorsNumberIsShownState(state),
         };
     },
     (dispatch) => {

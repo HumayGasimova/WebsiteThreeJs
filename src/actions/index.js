@@ -163,7 +163,9 @@ export {
     removeUnnecessaryCards,
     showManufacturingSection,
     updateWire,
-    showBusinessSection
+    showBusinessSection,
+    showProcessorsNumber,
+    showProcessorsMemory
     // toggleThrownProjectStartCreativityCounter,
     // toggleThrownProjectLexicalProcessing,
     // toggleThrownProjectCombinatoryHarmonics,

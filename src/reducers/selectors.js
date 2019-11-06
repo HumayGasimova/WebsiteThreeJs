@@ -294,10 +294,10 @@ export const getShowDropdownInvestmentsState = createSelector(
     (x) => x
 );
 
-const getShowQuantumComputing = (state) => state.business.showQuantumComputing;
+const getQuantumComputingIsShown = (state) => state.business.quantumComputingIsShown;
 
-export const getShowQuantumComputingState = createSelector(
-    [getShowQuantumComputing],
+export const getQuantumComputingIsShownState = createSelector(
+    [getQuantumComputingIsShown],
     (x) => x
 );
 
@@ -634,5 +634,19 @@ const getBusinessSectionIsShown = (state) => state.business.businessSectionIsSho
 
 export const getBusinessSectionIsShownState = createSelector(
     [getBusinessSectionIsShown],
+    (x) => x
+);
+
+const getProcessorsMemoryIsShown = (state) => state.business.processorsMemoryIsShown;
+
+export const getProcessorsMemoryIsShownState = createSelector(
+    [getProcessorsMemoryIsShown],
+    (x) => x
+);
+
+const getProcessorsNumberIsShown = (state) => state.business.processorsNumberIsShown;
+
+export const getProcessorsNumberIsShownState = createSelector(
+    [getProcessorsNumberIsShown],
     (x) => x
 );

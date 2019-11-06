@@ -509,14 +509,22 @@ export class Projects extends Component {
                 if(confirm("Are you sure you want to complete game?")){
                     this.props.sendCommentToTerminal(terminal);
                     this.props.removeUnnecessaryCards();
-                    this.props.addProject(projectsToAdd.DisassembleTheStrategyEngine);
+                    if(this.props.showStrategicModeling){
+                        this.props.addProject(projectsToAdd.DisassembleTheStrategyEngine);
+                    }else{
+                        this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
+                    }
                     this.props.removePriceOfProjectOps(price.ops);
                 }else{
                     this.props.addProject(projectsToAdd.CompleteGame)
                 }
                 break;
             case 'disassembleTheStrategyEngine':
-                this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
+                if(this.props.showInvestmentEngine){
+                    this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
+                }else{
+                    this.props.addProject(projectsToAdd.DisassembleManufacturing);
+                }
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showStrategicModeling(false);
@@ -535,7 +543,11 @@ export class Projects extends Component {
                 this.props.updateWire("initial", 0)
                 break;     
             case 'disassembleBusiness':
-                this.props.addProject(projectsToAdd.DisassembleQuantumComputing);
+                if(this.props.quantumComputingIsShown){
+                    this.props.addProject(projectsToAdd.DisassembleQuantumComputing);
+                }else{
+                    this.props.addProject(projectsToAdd.DisassembleProcessors);
+                }
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showBusinessSection(false)
@@ -545,7 +557,13 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showQuantumComputing(false);
-                break;       
+                break;
+            case 'disassembleProcessors':
+                this.props.addProject(projectsToAdd.DisassembleMemory);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showProcessorsNumber(false);
+                break;         
                 
                
         }
@@ -613,6 +631,9 @@ export default connect(
             opsMax: Selectors.getOpsMaxState(state),
             autoClipperOn: Selectors.getAutoClipperOnState(state),
             processorsNumber: Selectors.getProcessorsNumberState(state),
+            showStrategicModeling: Selectors.getShowStrategicModelingState(state), 
+            showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
+            quantumComputingIsShown: Selectors.getQuantumComputingIsShownState(state),
         };
     },
     (dispatch) => {
@@ -657,6 +678,8 @@ export default connect(
             showManufacturingSection: bindActionCreators(Actions.showManufacturingSection, dispatch),
             updateWire: bindActionCreators(Actions.updateWire, dispatch),
             showBusinessSection: bindActionCreators(Actions.showBusinessSection, dispatch),
+            showProcessorsNumber: bindActionCreators(Actions.showProcessorsNumber, dispatch),
+            showProcessorsMemory: bindActionCreators(Actions.showProcessorsMemory, dispatch),
         };
     }
 )(Projects);
