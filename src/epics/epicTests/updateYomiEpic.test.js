@@ -28,7 +28,8 @@ describe('updateYomiEpic', () => {
             )
 
             expect(array).toEqual([
-                {  type: actionTypes.SEND_COMMENT_TO_TERMINAL,
+                { 
+                    type: actionTypes.SEND_COMMENT_TO_TERMINAL,
                     comment: `RANDOM scored 568. Total amount of yomi is 764`
                 },
                 { 

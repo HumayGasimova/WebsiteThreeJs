@@ -46,8 +46,7 @@ export const startCountingResultEpic = (action$, state$) =>
                     playerTop: {
                         strategy: el.playerTop.strategy,
                         value: newValuePlTop
-                    },
-
+                    }
                 })
             })
              console.log("YYY", updatedArray)
