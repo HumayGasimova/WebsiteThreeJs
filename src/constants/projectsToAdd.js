@@ -1285,6 +1285,42 @@ export const DisassembleQuantumComputing = {
     terminal: "Dismantling the quantum computing"
 }
 
+export const DisassembleProcessors = {
+    text1: "Disassemble Processors (10,000 ops)",
+    text3: "Dismantle processors to recover trace",
+    text4: "amounts of wire",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 1,
+    next: 'disassembleProcessors',
+    valid: false,
+    id: "card71",
+    terminal: "Dismantling processors"
+}
+
+export const DisassembleMemory = {
+    text1: "Disassemble Memory (10,000 ops)",
+    text3: "Dismantle memory to recover trace",
+    text4: "amounts of wire",
+    price: {
+        ops: 3,
+        creat: 1,
+        trust: 1,
+        yomi: 1,
+        money: 1
+    },
+    action: 1,
+    next: 'disassembleMemory',
+    valid: false,
+    id: "card72",
+    terminal: "Dismantling processors"
+}
+
 
 
 

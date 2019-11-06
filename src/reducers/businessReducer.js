@@ -537,7 +537,7 @@ const closeDropdowns = (state, action) => {
 
 const showQuantumComputing = (state, action) => {
     return updateObject(state, {
-        showQuantumComputing: true
+        showQuantumComputing: action.val
     });
 }
 

@@ -418,9 +418,10 @@ export function closeDropdowns() {
     };
 };
 
-export function showQuantumComputing() {
+export function showQuantumComputing(val) {
     return { 
-        type: actionTypes.SHOW_QUANTUM_COMPUTING
+        type: actionTypes.SHOW_QUANTUM_COMPUTING,
+        val: val
     };
 };
 

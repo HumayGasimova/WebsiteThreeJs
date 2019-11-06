@@ -294,7 +294,7 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.PhotonicChip);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.showQuantumComputing();
+                this.props.showQuantumComputing(true);
                 break; 
             case 'photonicChip':
                 this.props.addProject(projectsToAdd.PhotonicChip2);
@@ -539,7 +539,13 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showBusinessSection(false)
-                break;        
+                break;   
+            case 'disassembleQuantumComputing':
+                this.props.addProject(projectsToAdd.DisassembleProcessors);
+                this.props.sendCommentToTerminal(terminal);
+                this.props.removePriceOfProjectOps(price.ops);
+                this.props.showQuantumComputing(false);
+                break;       
                 
                
         }
