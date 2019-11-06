@@ -540,7 +540,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showManufacturingSection(false)
-                this.props.updateWire("initial", 0)
+                this.props.updateWire( 0)
                 break;     
             case 'disassembleBusiness':
                 if(this.props.quantumComputingIsShown){
@@ -568,6 +568,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showProcessorsMemory(false);
+                this.props.updateWire(100)
                 break;         
                 
                
@@ -609,6 +610,15 @@ export class Projects extends Component {
     //     this.props.initProjects(this.state.card1, this.state.card2, this.state.card3)
     // }
     
+    renderProjects = () => {
+        return(
+            <div className="projects">
+                <div className="projects-label">Projects</div>
+                <div className="projects-line"/>
+                {this.renderCards()}
+            </div>
+        )
+    }
     /**
     * Markup
     */
@@ -616,9 +626,7 @@ export class Projects extends Component {
     render(){
         return(
             <div className="projects">
-                <div className="projects-label">Projects</div>
-                <div className="projects-line"/>
-                {this.renderCards()}
+               {this.props.processorsMemoryIsShown ? this.renderProjects() : null}
             </div>
         );
     }
@@ -639,6 +647,7 @@ export default connect(
             showStrategicModeling: Selectors.getShowStrategicModelingState(state), 
             showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
             quantumComputingIsShown: Selectors.getQuantumComputingIsShownState(state),
+            processorsMemoryIsShown: Selectors.getProcessorsMemoryIsShownState(state),
         };
     },
     (dispatch) => {

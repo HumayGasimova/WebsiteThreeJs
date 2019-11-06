@@ -1217,12 +1217,9 @@ const showManufacturingSection = (state, action) => {
 }
 
 const updateWire = (state, action) => {
-    switch(action.option){
-        case 'initial':
-            return updateObject(state, {
-                wire: action.val
-            });
-    }
+    return updateObject(state, {
+        wire: action.val
+    });
 }
 
 const showBusinessSection = (state, action) => {

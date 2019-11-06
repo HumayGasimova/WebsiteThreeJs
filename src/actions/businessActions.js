@@ -1067,10 +1067,9 @@ export function showManufacturingSection(val) {
     };
 };
 
-export function updateWire(option, val) {
+export function updateWire(val) {
     return { 
         type: actionTypes.UPDATE_WIRE,
-        option: option,
         val: val
     };
 };
