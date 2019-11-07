@@ -2077,4 +2077,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (stopSendingLastComments)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.STOP_SENDING_LAST_COMMENTS
+            }
+        ];
+
+        store.dispatch(Actions.stopSendingLastComments());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

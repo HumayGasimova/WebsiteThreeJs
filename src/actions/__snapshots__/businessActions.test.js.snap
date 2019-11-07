@@ -886,6 +886,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopSendingLastComments) 1`] = `
+Array [
+  Object {
+    "type": "STOP_SENDING_LAST_COMMENTS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopSubtractingQOps) 1`] = `
 Array [
   Object {
