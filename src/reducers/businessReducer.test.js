@@ -2483,6 +2483,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set wire to the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.UPDATE_WIRE,
+            val: 64
+        }
+        const initState = {
+            ...initialState,
+            wire: 380
+        }
+        const state = {
+            ...initialState,
+            wire: 64
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
