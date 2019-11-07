@@ -121,12 +121,12 @@ describe('<Projects/>', () => {
     });
 
     it("should render three <Card/>", () => {
-        wrapper.setProps({cards: cards})
+        wrapper.setProps({cards: cards, processorsMemoryIsShown: true})
        expect(wrapper.find(Card).length).toBe(3);
     })
 
     it("should render five <Card/>", () => {
-        wrapper.setProps({cards: cards2})
+        wrapper.setProps({cards: cards2, processorsMemoryIsShown: true})
        expect(wrapper.find(Card).length).toBe(5);
     })
 });

@@ -7,7 +7,7 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 import * as Utility from '../utility'
 
 export const initialState = {
-    paperClips: 2000, //0
+    paperClips: 0, //0
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
@@ -36,7 +36,7 @@ export const initialState = {
     clipsToBuyTrust: 3000,
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 10,//1000
+    opsMax: 1000,//1000
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
@@ -821,7 +821,7 @@ const tournamentState = (state, action) => {
 
 const updateNewTournamentCost = (state, action) => {
     return updateObject(state, {
-        newTournamentCost: state.newTournamentCost + 10//+1000
+        newTournamentCost: state.newTournamentCost + 1000//+1000
     });
 }
 

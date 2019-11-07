@@ -543,6 +543,7 @@ exports[`businessActions Dispatches the correct action and payload (showInvestEn
 Array [
   Object {
     "type": "SHOW_INVESTMENT_ENGINE",
+    "val": true,
   },
 ]
 `;
@@ -567,6 +568,7 @@ exports[`businessActions Dispatches the correct action and payload (showQuantumC
 Array [
   Object {
     "type": "SHOW_QUANTUM_COMPUTING",
+    "val": true,
   },
 ]
 `;
@@ -593,6 +595,7 @@ exports[`businessActions Dispatches the correct action and payload (showStrategi
 Array [
   Object {
     "type": "SHOW_STRATEGIC_MODELING",
+    "val": true,
   },
 ]
 `;

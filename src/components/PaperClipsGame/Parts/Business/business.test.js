@@ -12,13 +12,13 @@ describe('<Business/>', () => {
         wrapper = shallow(<Business funds={10} marketingCost={10} startUpdatingUnsoldInventory={()=>{}}/>);
     });
 
-    it("should render three <Buttons/>", () => {
-        // wrapper.setProps({})
+    it("should render three <Buttons/> if businessSectionIsShown is set to true", () => {
+        wrapper.setProps({businessSectionIsShown: true})
        expect(wrapper.find(Button)).toHaveLength(3);
     })
 
-    it("should render <RevTracker/> if revTracker set to true", () => {
-        wrapper.setProps({revTracker: true})
+    it("should render <RevTracker/> if revTracker and businessSectionIsShown set to true", () => {
+        wrapper.setProps({revTracker: true, businessSectionIsShown: true})
         expect(wrapper.find(RevTracker)).toHaveLength(1);
     })
 
@@ -28,7 +28,7 @@ describe('<Business/>', () => {
     })
 
     it("<Button> should contain className = `revTracker-text`", () => {
-        wrapper.setProps({revTracker: true})
+        wrapper.setProps({revTracker: true, businessSectionIsShown: true})
         expect(wrapper.find(RevTracker).dive().find('.revTracker-text')).toHaveLength(2);
     })
 });

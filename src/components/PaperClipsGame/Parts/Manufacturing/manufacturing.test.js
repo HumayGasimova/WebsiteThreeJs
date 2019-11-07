@@ -14,23 +14,23 @@ describe('<Manufacturing/>', () => {
         wrapper = shallow(<Manufacturing sendCommentToTerminal={()=>{}}/>);
     });
 
-    it("should render one <Buttons/>", () => {
-        // wrapper.setProps({})
+    it("should render one <Buttons/> if manufacturingSectionIsShown is set to true", () => {
+        wrapper.setProps({manufacturingSectionIsShown: true})
        expect(wrapper.find(Button)).toHaveLength(1);
     });
 
-    it("should render <AutoWireBuyer/> if wireBuyerIsShown set to true", () => {
-        wrapper.setProps({wireBuyerIsShown: true})
+    it("should render <AutoWireBuyer/> if wireBuyerIsShown and manufacturingSectionIsShown set to true", () => {
+        wrapper.setProps({wireBuyerIsShown: true, manufacturingSectionIsShown: true})
         expect(wrapper.find(AutoWireBuyer)).toHaveLength(1);
     });
 
     it("should not render <AutoWireBuyer/> if wireBuyerIsShown set to false", () => {
-        wrapper.setProps({wireBuyerIsShown: false})
+        wrapper.setProps({wireBuyerIsShown: false, manufacturingSectionIsShown: true})
         expect(wrapper.find(AutoWireBuyer)).toHaveLength(0);
     });
 
-    it("should render <AutoClippers/> if autoClippersIsShown set to true", () => {
-        wrapper.setProps({autoClippersIsShown: true})
+    it("should render <AutoClippers/> if autoClippersIsShown and manufacturingSectionIsShown set to true", () => {
+        wrapper.setProps({autoClippersIsShown: true, manufacturingSectionIsShown: true})
         expect(wrapper.find(AutoClippers)).toHaveLength(1);
     });
 
@@ -39,8 +39,8 @@ describe('<Manufacturing/>', () => {
         expect(wrapper.find(AutoClippers)).toHaveLength(0);
     });
 
-    it("should render <MegaClippers/> if autoClipperInitPrice set to true", () => {
-        wrapper.setProps({megaClippersIsShown: true})
+    it("should render <MegaClippers/> if autoClipperInitPrice and manufacturingSectionIsShown set to true", () => {
+        wrapper.setProps({megaClippersIsShown: true, manufacturingSectionIsShown: true})
         expect(wrapper.find(MegaClippers)).toHaveLength(1);
     });
 

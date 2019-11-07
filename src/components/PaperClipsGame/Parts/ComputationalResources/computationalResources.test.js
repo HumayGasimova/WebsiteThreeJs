@@ -12,13 +12,13 @@ describe('<ComputationalResources/>', () => {
         wrapper = shallow(<ComputationalResources clipsToBuyTrust={100} sendCommentToTerminal={()=>{}}/>);
     });
 
-    it("should render two <Buttons/>", () => {
-        // wrapper.setProps({})
+    it("should render two <Buttons/> if processorsNumberIsShown and processorsMemoryIsShown are set to true", () => {
+        wrapper.setProps({processorsNumberIsShown: true, processorsMemoryIsShown: true})
        expect(wrapper.find(Button)).toHaveLength(2);
     })
 
-    it("should render <QuantumComputing/> if showQuantumComputing set to true", () => {
-        wrapper.setProps({showQuantumComputing: true})
+    it("should render <QuantumComputing/> if showQuantumComputing, processorsNumberIsShown and processorsMemoryIsShown are set to true", () => {
+        wrapper.setProps({quantumComputingIsShown: true, processorsNumberIsShown: true, processorsMemoryIsShown: true})
         expect(wrapper.find(QuantumComputing)).toHaveLength(1);
     })
 

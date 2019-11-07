@@ -733,11 +733,12 @@ describe('businessActions', () => {
     it('Dispatches the correct action and payload (showInvestEngine)', () => {
         const expectedActions = [
             {
-                type: actionTypes.SHOW_INVESTMENT_ENGINE
+                type: actionTypes.SHOW_INVESTMENT_ENGINE,
+                val: true
             }
         ];
 
-        store.dispatch(Actions.showInvestEngine(46));
+        store.dispatch(Actions.showInvestEngine(true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
@@ -745,11 +746,12 @@ describe('businessActions', () => {
     it('Dispatches the correct action and payload (showStrategicModeling)', () => {
         const expectedActions = [
             {
-                type: actionTypes.SHOW_STRATEGIC_MODELING
+                type: actionTypes.SHOW_STRATEGIC_MODELING,
+                val: true
             }
         ];
 
-        store.dispatch(Actions.showStrategicModeling(46));
+        store.dispatch(Actions.showStrategicModeling(true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
@@ -819,11 +821,12 @@ describe('businessActions', () => {
     it('Dispatches the correct action and payload (showQuantumComputing)', () => {
         const expectedActions = [
             {
-                type: actionTypes.SHOW_QUANTUM_COMPUTING
+                type: actionTypes.SHOW_QUANTUM_COMPUTING,
+                val: true
             }
         ];
 
-        store.dispatch(Actions.showQuantumComputing());
+        store.dispatch(Actions.showQuantumComputing(true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });

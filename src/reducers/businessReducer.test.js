@@ -837,7 +837,8 @@ describe('businessReducer', () => {
 
     it("should set showInvestmentEngine to true", () => {
         const action = { 
-            type: actionTypes.SHOW_INVESTMENT_ENGINE
+            type: actionTypes.SHOW_INVESTMENT_ENGINE,
+            val: true
         }
         const initState = {
             ...initialState, 
@@ -852,7 +853,8 @@ describe('businessReducer', () => {
     
     it("should set showStrategicModeling to true", () => {
         const action = { 
-            type: actionTypes.SHOW_STRATEGIC_MODELING
+            type: actionTypes.SHOW_STRATEGIC_MODELING,
+            val: true
         }
         const initState = {
             ...initialState, 
@@ -980,17 +982,18 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should set showQuantumComputing to true", () => {
+    it("should set quantumComputingIsShown to true", () => {
         const action = { 
-            type: actionTypes.SHOW_QUANTUM_COMPUTING
+            type: actionTypes.SHOW_QUANTUM_COMPUTING,
+            val: true
         }
         const initState = {
             ...initialState, 
-            showQuantumComputing: false
+            quantumComputingIsShown: false
         }
         const state = {
             ...initialState, 
-            showQuantumComputing: true
+            quantumComputingIsShown: true
         }
         expect(reducer(initState, action)).toEqual(state);
     })
