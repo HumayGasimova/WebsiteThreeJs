@@ -2066,15 +2066,15 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
-    // it('Dispatches the correct action and payload (lastComents)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.LAST_COMMENTS
-    //         }
-    //     ];
+    it('Dispatches the correct action and payload (lastComents)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.LAST_COMMENTS
+            }
+        ];
 
-    //     store.dispatch(Actions.lastComents());
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
+        store.dispatch(Actions.lastComents());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

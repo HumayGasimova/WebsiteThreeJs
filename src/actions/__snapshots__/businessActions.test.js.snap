@@ -348,6 +348,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (lastComents) 1`] = `
+Array [
+  Object {
+    "type": "LAST_COMMENTS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (lowerPrice) 1`] = `
 Array [
   Object {
