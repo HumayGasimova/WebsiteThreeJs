@@ -2531,6 +2531,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set wirePartIsShown to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_WIRE_PART,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            wirePartIsShown: false
+        }
+        const state = {
+            ...initialState,
+            wirePartIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
