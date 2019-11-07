@@ -2014,4 +2014,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
+    it('Dispatches the correct action and payload (showBusinessSection)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_BUSINESS_SECTION,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.showBusinessSection(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
