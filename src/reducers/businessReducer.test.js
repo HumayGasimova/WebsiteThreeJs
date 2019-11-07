@@ -2453,6 +2453,20 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
     
+    it("should set cards with the empty array", () => {
+        const action = { 
+            type: actionTypes.REMOVE_UNNECESSARY_CARDS
+        }
+        const initState = {
+            ...initialState,
+            cards: [{a: 7},{a: 8}]
+        }
+        const state = {
+            ...initialState,
+            cards: []
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

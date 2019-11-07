@@ -1643,9 +1643,10 @@ const businessReducer = (state = initialState, action) => {
             return upgradeInvestmentEngine(state, action);  
         case actionTypes.STATE_FROM_LOCAL_STORAGE:
             return stateFromLocalStorage(state, action);   
-
         case actionTypes.TOGGLE_THROWN_PROJECT:
-            return toggleThrownProject(state, action);   
+            return toggleThrownProject(state, action); 
+            
+            
         case actionTypes.REMOVE_UNNECESSARY_CARDS:
             return removeUnnecessaryCards(state, action); 
         case actionTypes.SHOW_MANUFACTURING_SECTION:
