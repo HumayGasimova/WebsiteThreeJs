@@ -125,9 +125,11 @@ export class General extends Component {
             if(this.props.paperClips === 2001){
                 this.props.addProject(projectsToAdd.CompleteGame);
             }
-            // if(this.props.paperClips === 2000){
-            //     this.props.sendCommentToTerminal(`2,000 ${comment}`);
-            // }
+            if(this.props.paperClips === 2030){
+                this.props.showWirePart(false);
+                this.props.lastComents()
+                this.props.stopSendingLastComments();
+            }
         }
     }
     
@@ -168,6 +170,9 @@ export default connect(
             sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
+            showWirePart: bindActionCreators(Actions.showWirePart, dispatch),
+            lastComents: bindActionCreators(Actions.lastComents, dispatch),
+            stopSendingLastComments: bindActionCreators(Actions.stopSendingLastComments, dispatch),
         };
     }
 )(General);

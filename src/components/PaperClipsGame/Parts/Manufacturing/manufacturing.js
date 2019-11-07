@@ -171,19 +171,20 @@ export class Manufacturing extends Component {
     }
 
     renderWire = () => {
-        return(
-            <div className="manufacturing">
-                <div className="manufacturing-label">Manufacturing</div>
-                <div className="manufacturing-line"/>
-                <div className="manufacturing-section">
-                    {this.props.wireBuyerIsShown ? <AutoWireBuyer/> : null}
-                    <div className="manufacturing-wrapper1">
-                        <div className="manufacturing-text">Wire: </div>
-                        <div className="manufacturing-text">{this.props.wire} inches</div>
-                    </div>
-                </div> 
-            </div>
-        )
+        if(this.props.wirePartIsShown){
+            return(
+                <div className="manufacturing">
+                    <div className="manufacturing-label">Manufacturing</div>
+                    <div className="manufacturing-line"/>
+                    <div className="manufacturing-section">
+                        <div className="manufacturing-wrapper1">
+                            <div className="manufacturing-text">Wire: </div>
+                            <div className="manufacturing-text">{this.props.wire} inches</div>
+                        </div>
+                    </div> 
+                </div>
+            )
+        }
     }
 
     /**
@@ -224,7 +225,8 @@ export default connect(
             megaClippersToAdd: Selectors.getMegaClippersToAddState(state),
             autoAndMegaClippersWorks: Selectors.getAutoAndMegaClippersWorksState(state),
             manufacturingSectionIsShown: Selectors.getManufacturingSectionIsShownState(state),
-          
+            wirePartIsShown: Selectors.getWirePartIsShownState(state),
+            
         };
     },
     (dispatch) => {

@@ -48,8 +48,8 @@ export const initialState = {
     chosenListDropdown: ["Low Risk","Pick a Start"],
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
-    showInvestmentEngine: true, //false
-    showStrategicModeling: true, //false
+    showInvestmentEngine: false, //false
+    showStrategicModeling: false, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
@@ -118,7 +118,16 @@ export const initialState = {
     manufacturingSectionIsShown: true,
     businessSectionIsShown: true,
     processorsMemoryIsShown: true,
-    processorsNumberIsShown: true
+    processorsNumberIsShown: true,
+    wirePartIsShown: true,
+    lastComments: [
+        "Universal Paperclips",
+        "a game by Frank Lantz",
+        "recreated by Humay Gasimova",
+        "Combat programming by Bennett Foddy",
+        "'Riversong' by Tonto's Expanding Headband used by kind permission of Malcom Cecil",
+        "© 2017 Everybody House Games"
+    ]
 }
 
 const makePaperclip = (state) => {
@@ -1240,6 +1249,12 @@ const showProcessorsMemory = (state, action) => {
     });
 }
 
+const showWirePart = (state, action) => {
+    return updateObject(state, {
+        wirePartIsShown: action.val
+    });
+}
+
 
 // const toggleThrownProjectStartCreativityCounter = (state, action) => {
 //     return updateObject(state, {
@@ -1643,6 +1658,14 @@ const businessReducer = (state = initialState, action) => {
             return showProcessorsNumber(state, action); 
         case actionTypes.SHOW_PROCESSORS_MEMORY:
             return showProcessorsMemory(state, action);  
+        case actionTypes.SHOW_WIRE_PART:
+            return showWirePart(state, action); 
+        case actionTypes.LAST_COMMENTS:
+            return state;  
+        case actionTypes.STOP_SENDING_LAST_COMMENTS:
+            return state;   
+        case actionTypes.STOP_COMMENTS:
+            return state;
         // case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
         //     return toggleThrownProjectStartCreativityCounter(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:

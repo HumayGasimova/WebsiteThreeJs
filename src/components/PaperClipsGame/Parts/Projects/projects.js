@@ -568,7 +568,7 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showProcessorsMemory(false);
-                this.props.updateWire(100)
+                this.props.updateWire(29)
                 break;         
                 
                

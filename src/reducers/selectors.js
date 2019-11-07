@@ -650,3 +650,10 @@ export const getProcessorsNumberIsShownState = createSelector(
     [getProcessorsNumberIsShown],
     (x) => x
 );
+
+const getWirePartIsShown = (state) => state.business.wirePartIsShown;
+
+export const getWirePartIsShownState = createSelector(
+    [getWirePartIsShown],
+    (x) => x
+);

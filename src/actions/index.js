@@ -165,7 +165,11 @@ export {
     updateWire,
     showBusinessSection,
     showProcessorsNumber,
-    showProcessorsMemory
+    showProcessorsMemory,
+    showWirePart,
+    lastComents,
+    stopSendingLastComments,
+    stopComments
     // toggleThrownProjectStartCreativityCounter,
     // toggleThrownProjectLexicalProcessing,
     // toggleThrownProjectCombinatoryHarmonics,

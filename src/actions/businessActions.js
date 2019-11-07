@@ -1095,6 +1095,31 @@ export function showProcessorsMemory(val) {
     };
 };
 
+export function showWirePart(val) {
+    return { 
+        type: actionTypes.SHOW_WIRE_PART,
+        val: val
+    };
+};
+
+export function lastComents() {
+    return { 
+        type: actionTypes.LAST_COMMENTS
+    };
+};
+
+export function stopSendingLastComments() {
+    return { 
+        type: actionTypes.STOP_SENDING_LAST_COMMENTS
+    };
+};
+
+export function stopComments() {
+    return { 
+        type: actionTypes.STOP_COMMENTS
+    };
+};
+
 
 // export function toggleThrownProjectStartCreativityCounter(val) {
 //     return { 

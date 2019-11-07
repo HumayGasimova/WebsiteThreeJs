@@ -43,6 +43,8 @@ export { strategicModelingResultEpic } from './strategicModelingResultEpic';
 export { startCountingResultEpic } from './startCountingResultEpic';
 export { countFinalResultOfEachStrategyEpic } from './countFinalResultOfEachStrategyEpic';
 export { updateYomiEpic } from './updateYomiEpic';
+export { lastCommentEpic } from './lastCommentEpic';
+export { stopSendingLastCommentsEpic } from './stopSendingLastCommentsEpic';
 
 // export { throwCoherentExtrapolatedVolitionEpic } from './throwCoherentExtrapolatedVolitionEpic';
 // export { throwXavierReinitialization1Epic } from './throwXavierReinitialization1Epic';
