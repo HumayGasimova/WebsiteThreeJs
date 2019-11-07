@@ -582,6 +582,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showProcessorsNumber) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_PROCESSORS_NUMBER",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (showQuantCompMessage) 1`] = `
 Array [
   Object {

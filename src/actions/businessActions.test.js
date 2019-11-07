@@ -2026,4 +2026,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (showProcessorsNumber)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_PROCESSORS_NUMBER,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.showProcessorsNumber(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
