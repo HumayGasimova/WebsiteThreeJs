@@ -878,6 +878,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (stopComments) 1`] = `
+Array [
+  Object {
+    "type": "STOP_COMMENTS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (stopDecreasingOps) 1`] = `
 Array [
   Object {
