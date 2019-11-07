@@ -2467,6 +2467,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set manufacturingSectionIsShown to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_MANUFACTURING_SECTION,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            manufacturingSectionIsShown: false
+        }
+        const state = {
+            ...initialState,
+            manufacturingSectionIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
