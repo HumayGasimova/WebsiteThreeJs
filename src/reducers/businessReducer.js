@@ -1645,8 +1645,6 @@ const businessReducer = (state = initialState, action) => {
             return stateFromLocalStorage(state, action);   
         case actionTypes.TOGGLE_THROWN_PROJECT:
             return toggleThrownProject(state, action); 
-            
-            
         case actionTypes.REMOVE_UNNECESSARY_CARDS:
             return removeUnnecessaryCards(state, action); 
         case actionTypes.SHOW_MANUFACTURING_SECTION:
@@ -1654,7 +1652,7 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.UPDATE_WIRE:
             return updateWire(state, action); 
         case actionTypes.SHOW_BUSINESS_SECTION:
-            return showBusinessSection(state, action);    
+            return showBusinessSection(state, action); 
         case actionTypes.SHOW_PROCESSORS_NUMBER:
             return showProcessorsNumber(state, action); 
         case actionTypes.SHOW_PROCESSORS_MEMORY:
