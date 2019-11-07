@@ -2001,17 +2001,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
-    // it('Dispatches the correct action and payload (updateWire)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.UPDATE_WIRE,
-    //             val: 40
-    //         }
-    //     ];
+    it('Dispatches the correct action and payload (updateWire)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_WIRE,
+                val: 40
+            }
+        ];
 
-    //     store.dispatch(Actions.updateWire(40));
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
+        store.dispatch(Actions.updateWire(40));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 
 });

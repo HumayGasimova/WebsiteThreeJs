@@ -1309,6 +1309,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (updateWire) 1`] = `
+Array [
+  Object {
+    "type": "UPDATE_WIRE",
+    "val": 40,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (updateYomi) 1`] = `
 Array [
   Object {
