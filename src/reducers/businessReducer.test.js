@@ -2516,7 +2516,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-   
+    it("should set processorsNumberIsShown to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_PROCESSORS_NUMBER,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            processorsNumberIsShown: false
+        }
+        const state = {
+            ...initialState,
+            processorsNumberIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
