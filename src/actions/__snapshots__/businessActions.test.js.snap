@@ -644,6 +644,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showWirePart) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_WIRE_PART",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (startAddingEmptyInvestmentsLine) 1`] = `
 Array [
   Object {

@@ -2052,4 +2052,29 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (showWirePart)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_WIRE_PART,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.showWirePart(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    // it('Dispatches the correct action and payload (lastComents)', () => {
+    //     const expectedActions = [
+    //         {
+    //             type: actionTypes.LAST_COMMENTS
+    //         }
+    //     ];
+
+    //     store.dispatch(Actions.lastComents());
+    //     expect(store.getActions()).toEqual(expectedActions);
+    //     expect(store.getActions()).toMatchSnapshot();
+    // });
 });
