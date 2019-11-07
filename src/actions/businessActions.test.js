@@ -1976,4 +1976,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
+    it('Dispatches the correct action and payload (removeUnnecessaryCards)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.REMOVE_UNNECESSARY_CARDS
+            }
+        ];
+
+        store.dispatch(Actions.removeUnnecessaryCards());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
 });

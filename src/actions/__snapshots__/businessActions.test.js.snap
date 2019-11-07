@@ -490,6 +490,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (removeUnnecessaryCards) 1`] = `
+Array [
+  Object {
+    "type": "REMOVE_UNNECESSARY_CARDS",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (sellPaperclips) 1`] = `
 Array [
   Object {
