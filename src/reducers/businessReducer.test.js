@@ -2499,6 +2499,24 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should set businessSectionIsShown to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_BUSINESS_SECTION,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            businessSectionIsShown: false
+        }
+        const state = {
+            ...initialState,
+            businessSectionIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+   
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
