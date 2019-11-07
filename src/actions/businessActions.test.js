@@ -1988,4 +1988,30 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
+    it('Dispatches the correct action and payload (showManufacturingSection)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_MANUFACTURING_SECTION,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.showManufacturingSection(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    // it('Dispatches the correct action and payload (updateWire)', () => {
+    //     const expectedActions = [
+    //         {
+    //             type: actionTypes.UPDATE_WIRE,
+    //             val: 40
+    //         }
+    //     ];
+
+    //     store.dispatch(Actions.updateWire(40));
+    //     expect(store.getActions()).toEqual(expectedActions);
+    //     expect(store.getActions()).toMatchSnapshot();
+    // });
+
 });
