@@ -582,6 +582,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showProcessorsMemory) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_PROCESSORS_MEMORY",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (showProcessorsNumber) 1`] = `
 Array [
   Object {
