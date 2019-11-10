@@ -88,7 +88,7 @@ export class Manufacturing extends Component {
         this.intervalCheckButton = setInterval(()=>{
             this.props.checkButtons();
             this.props.checkExistenceOfWire();
-        }, 1000);
+        }, 10);
     }
 
     componentWillUnmount = () => {
@@ -112,7 +112,7 @@ export class Manufacturing extends Component {
             }, 1000);
         }
         if (prevProps.paperClips !== this.props.paperClips) {
-            if(this.props.paperClips === 500000){
+            if(this.props.paperClips === 50000){//50000
                 this.props.addMegaClippers();
             }
         }
@@ -132,10 +132,11 @@ export class Manufacturing extends Component {
         this.props.startBuyingWire();
         this.props.clickWireButton();
         if(this.props.autoClippersIsShown && this.props.autoAndMegaClippersWorks){
-            // this.props.stop();
+            this.props.stop();
             this.props.autoPaperclipsStart();
         }
         if(this.props.megaClippersIsShown && this.props.autoAndMegaClippersWorks){
+            this.props.stop();
             this.props.startMegaClippers();
         }
     }
@@ -245,7 +246,7 @@ export default connect(
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
             showAutoClippers: bindActionCreators(Actions.showAutoClippers, dispatch),
             startMegaClippers: bindActionCreators(Actions.startMegaClippers, dispatch),
-            // stop: bindActionCreators(Actions.stop, dispatch),
+            stop: bindActionCreators(Actions.stop, dispatch),
         };
     }
 )(Manufacturing);

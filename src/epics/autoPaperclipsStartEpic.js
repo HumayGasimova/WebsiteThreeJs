@@ -15,9 +15,15 @@ export const autoPaperclipsStartEpic = (action$, state$) =>
         ofType(actionTypes.AUTO_PAPERCLIPS_START),
         mergeMap(action => {
             return interval(state$.value.business.delayAutoPaperClippers).pipe(
-                mergeMap(() => of(
-                            Actions.makePaperclip()
-                        )   
+                mergeMap(() => {
+                    console.log(state$.value.business.delayAutoPaperClippers)
+                    return of(
+                                    Actions.makePaperclip()
+                                )   
+                }
+                // of(
+                //             Actions.makePaperclip()
+                //         )   
                         // .delay(1000)
                         // .repeat(state$.value.business.autoClippersPerSec)
                 ),
