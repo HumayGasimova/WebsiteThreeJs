@@ -75,7 +75,7 @@ class Card extends Component {
             }else{
                 this.props.checkCardValidity(this.props.id, false, this.props.i)
             }
-        }, 1000);
+        }, 100);
     }
 
     componentWillUnmount = () => {
