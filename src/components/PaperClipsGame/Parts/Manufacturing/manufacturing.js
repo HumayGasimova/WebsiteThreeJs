@@ -78,7 +78,6 @@ export class Manufacturing extends Component {
 
     getRandomDelay = () => {
         let a = Math.floor(Math.random()*15000) + 5000;
-        console.log(a)
         return a;
    
     }

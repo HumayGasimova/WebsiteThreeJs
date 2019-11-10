@@ -16,7 +16,6 @@ export const startAddingEmptyInvestmentsLineEpic = (action$, state$) =>
         ofType(actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE),
         mergeMap(action => {
             let randomNum = Math.floor(Math.random()*9)+2;
-            // console.log(randomNum)
             return interval(randomNum*1000).pipe(
                 mergeMap(() => {
                    return of(

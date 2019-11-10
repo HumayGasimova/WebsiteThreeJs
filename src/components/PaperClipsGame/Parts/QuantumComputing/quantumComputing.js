@@ -66,7 +66,7 @@ export class QuantumComputing extends Component {
         if(this.props.changedToQOps){
             let chips = this.props.chips;
             let captureQOps = chips.reduce((a,b) => +a + b.qOps, 0);
-            // console.log(captureVal)
+         
              
             this.props.captureCurrentQOps(captureQOps);
 

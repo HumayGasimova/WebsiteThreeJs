@@ -40,7 +40,6 @@ export const startApplyingProfitLossEpic = (action$, state$) =>
                     let total = cash + stocks;
                 
                   
-                    // console.log("HEY", state$.value.business.investmentsStocks, profitLoss)
                     return of(
                         Actions.updateInvestmentsTotal(total),
                         Actions.updateInvestmentsCash(cash),

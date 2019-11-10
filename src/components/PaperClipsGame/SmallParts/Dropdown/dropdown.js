@@ -60,7 +60,6 @@ class Dropdown extends Component {
     */
 
     handleOnClick = (i, el) => {
-        console.log(i,el,this.props.elementsIndexInArray)
         this.props.chooseFromDropdown(el, this.props.elementsIndexInArray);
     }
 

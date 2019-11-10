@@ -16,7 +16,6 @@ export const autoPaperclipsStartEpic = (action$, state$) =>
         mergeMap(action => {
             return interval(state$.value.business.delayAutoPaperClippers).pipe(
                 mergeMap(() => {
-                    console.log(state$.value.business.delayAutoPaperClippers)
                     return of(
                                     Actions.makePaperclip()
                                 )   

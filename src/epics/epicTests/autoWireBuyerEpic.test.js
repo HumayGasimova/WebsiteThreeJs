@@ -74,7 +74,6 @@ describe('autoWireBuyerEpic', () => {
       const epic$ = Epic.autoWireBuyerEpic(action$, state$);
       const array = [];
       let result = await epic$;
-      console.log("RESULT",result)
       result.subscribe((action) => {
         console.log("RESULTRESULT",action)
       })

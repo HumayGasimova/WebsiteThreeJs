@@ -140,10 +140,11 @@ export class General extends Component {
             if(this.props.paperClips === 100000){
                 this.props.sendCommentToTerminal(`100,000 ${comment}`);
             }
-            if(this.props.paperClips === 5001){
+            if(this.props.paperClips === 4971 && this.props.completeGameIsThrown === false){
                 this.props.addProject(projectsToAdd.CompleteGame);
+                this.props.toggleThrownProject('completeGame', true);
             }
-            if(this.props.paperClips === 5030){
+            if(this.props.paperClips === 5000){
                 this.props.showWirePart(false);
                 this.props.lastComents()
                 this.props.stopSendingLastComments();
@@ -178,7 +179,8 @@ export default connect(
             delay: Selectors.getDelayState(state),
             wire: Selectors.getWireState(state),
             makePaperclipDisabled: Selectors.getMakePaperclipDisabledState(state),
-            time: Selectors.getTimeState(state)
+            time: Selectors.getTimeState(state),
+            completeGameIsThrown: Selectors.getCompleteGameIsThrownState(state),
         };
     },
     (dispatch) => {
@@ -190,6 +192,7 @@ export default connect(
             showWirePart: bindActionCreators(Actions.showWirePart, dispatch),
             lastComents: bindActionCreators(Actions.lastComents, dispatch),
             stopSendingLastComments: bindActionCreators(Actions.stopSendingLastComments, dispatch),
+            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
         };
     }
 )(General);

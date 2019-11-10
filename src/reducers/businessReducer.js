@@ -7,7 +7,8 @@ import * as projectsToAdd from '../constants/projectsToAdd';
 import * as Utility from '../utility'
 
 export const initialState = {
-    paperClips: 100, //0
+    paperClips: 4970
+    , //0
     clipsPerSec: 0,
     funds: 0, //pomenat na 0
     paperclipPrice: 0.5, // 0.5
@@ -49,7 +50,7 @@ export const initialState = {
     listStrategicModeling: ["Pick a Start","RANDOM"],
     noWire: false,
     showInvestmentEngine: false, //false
-    showStrategicModeling: false, //false
+    strategicModelingIsShown: false, //false
     comments: ['Welcome to Universal Paperclips'],
     showDropdownStrategicModeling: false,
     showDropdownInvestments: false,
@@ -127,7 +128,9 @@ export const initialState = {
         "Combat programming by Bennett Foddy",
         "'Riversong' by Tonto's Expanding Headband used by kind permission of Malcom Cecil",
         "© 2017 Everybody House Games"
-    ]
+    ],
+    clipsToEndGame: -1,
+    completeGameIsThrown: false
 }
 
 const makePaperclip = (state) => {
@@ -359,8 +362,6 @@ const checkCardValidity = (state, action) => {
     updatedCard.valid = action.valid;
     updatedCards[action.i] = updatedCard;
 
-    // console.log("before", state.cards)
-    // console.log("after",updatedCards)
     return updateObject(state, {
         cards: updatedCards
     });
@@ -498,7 +499,7 @@ const showInvestEngine = (state, action) => {
 
 const showStrategicModeling = (state, action) => {
     return updateObject(state, {
-        showStrategicModeling: action.val
+        strategicModelingIsShown: action.val
     });
 }
 
@@ -573,9 +574,7 @@ const toggleChip = (state, action) => {
     let chipsIndex = updatedChips.findIndex(x=> x.chipsNumber === action.chipsNumber);
     chip.showChip = action.val;
     updatedChips.splice(chipsIndex, 1, chip)
-    // console.log(state.chips)
-    // console.log(chip)
-    // console.log(updatedChips)
+
     return updateObject(state, {
         chips: updatedChips
     });
@@ -837,7 +836,6 @@ const toggleNewTournamentButton = (state) => {
     if( !opsCheck && !tournamentCheck ){
         isDisable = false
     }
-    // console.log("GF", opsCheck, tournamentCheck)
     return updateObject(state, {
         newTournamentButtonDisabled: isDisable
     });
@@ -875,7 +873,6 @@ const clearChosenFromStrategicModelingDropdownList = (state, action) => {
         updatedStrategicModelingCurrentList[i].chosen = false
     })
 
-    console.log("RESalt",updatedStrategicModelingCurrentList)
     return updateObject(state, {
         strategicModelingCurrentList: updatedStrategicModelingCurrentList
     });
@@ -889,7 +886,7 @@ const updateStrategicModelingRound = (state, action) => {
 
 // const updateNumberOfRounds = (state, action) => {
 //     let updatedRoundsArray = Utility.getArrayOfRounds(action.val);
-//     console.log(updatedRoundsArray)
+//  
 //     return updateObject(state, {
 //         roundsArray: updatedRoundsArray
 //     });
@@ -954,7 +951,7 @@ const setPlayersArrays = (state, action) => {
 const allRoundsResult = (state, action) => {
     let updatedAllRoundsRes = [...state.allRoundsRes];
     updatedAllRoundsRes.push(action.obj);
-    // console.log(updatedAllRoundsRes)
+  
     return updateObject(state, {
         allRoundsRes: updatedAllRoundsRes
     });
@@ -1054,8 +1051,6 @@ const fillWithValuesStrategicModelingCurrentList = (state, action) => {
         }
     });
 
-    console.log(getArrayOfValues);
-    console.log(updatedStrategicModelingCurrentList)
     
     return updateObject(state, {
         strategicModelingCurrentList: updatedStrategicModelingCurrentList,
@@ -1159,7 +1154,6 @@ const upgradeInvestmentEngine = (state, action) => {
 }
 
 const stateFromLocalStorage = (state, action) => {
-    console.log(action.state)
     return action.state;
 }
 
@@ -1209,6 +1203,11 @@ const toggleThrownProject = (state, action) => {
             return updateObject(state, {
                 quantumTemporalReversionIsThrown: action.val,     
             });
+        case 'completeGame':
+            return updateObject(state, {
+                completeGameIsThrown: action.val,     
+            });
+
     }
    
 }

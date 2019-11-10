@@ -44,7 +44,6 @@ import React,{
            {this.props.isLoading && <h1>Fetching data</h1>}
            {!this.props.isLoading && !this.props.error && <ExampleGrid whiskies={this.props.whiskies} />}
            {this.props.error && <h1>{this.props.error}</h1>}
-           {console.log(this.props.whiskies)}
          </div>
        );
      }

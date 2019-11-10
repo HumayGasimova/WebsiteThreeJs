@@ -21,7 +21,6 @@ action$.pipe(
       let moveCase = Utility.getRandomMove();
       let moveA;
       let moveB;
-      console.log(moveCase)
       switch(moveCase){
           case 1:
               moveA = 'cooperate';

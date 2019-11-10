@@ -39,7 +39,7 @@ class Button extends Component {
 
     // componentDidMount() {
     //     this.buttonRef.current.addEventListener("click", e => {
-    //     console.log("onClick", e);
+   
     //     });
     // }
     

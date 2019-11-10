@@ -17,7 +17,6 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_RUNNING_STRATEGIC_MODELING),
         mergeMap(action => {
-            console.log(state$.value.business.chosenListDropdown[1])
            switch(state$.value.business.chosenListDropdown[1]){
                 case "Pick a Start":
                     return of(

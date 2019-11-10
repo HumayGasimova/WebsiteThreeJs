@@ -50,7 +50,6 @@ export const countFinalResultOfEachStrategyEpic = (action$, state$) =>
                 beatLast: plLeftBeatLast.length === 0 ? 0 : Utility.getStrategyModelingResult(plLeftBeatLast, plTopBeatLast)      
             }
 
-            console.log("RANDOM", allResults)
             return of(
                 Actions.updateListOfFinalResult(allResults),
                 Actions.fillWithValuesStrategicModelingCurrentList(),

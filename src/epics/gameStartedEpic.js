@@ -117,7 +117,6 @@ export const gameStartedEpic = (action$, state$) =>
                         valLeft: plLeftVal,
                         valTop: plTopVal 
                     }
-                    // console.log(obj)
                     return of(
                         Actions.allRoundsResult(obj),
                         Actions.toggleCells(cellHover),

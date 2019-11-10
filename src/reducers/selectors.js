@@ -266,10 +266,10 @@ export const getShowInvestmentEngineState = createSelector(
     (x) => x
 );
 
-const getShowStrategicModeling = (state) => state.business.showStrategicModeling;
+const getStrategicModelingIsShown = (state) => state.business.strategicModelingIsShown;
 
-export const getShowStrategicModelingState = createSelector(
-    [getShowStrategicModeling],
+export const getStrategicModelingIsShownState = createSelector(
+    [getStrategicModelingIsShown],
     (x) => x
 );
 
@@ -657,3 +657,18 @@ export const getWirePartIsShownState = createSelector(
     [getWirePartIsShown],
     (x) => x
 );
+
+const getClipsToEndGame = (state) => state.business.clipsToEndGame;
+
+export const getClipsToEndGameState = createSelector(
+    [getClipsToEndGame],
+    (x) => x
+);
+
+const getCompleteGameIsThrown = (state) => state.business.completeGameIsThrown;
+
+export const getCompleteGameIsThrownState = createSelector(
+    [getCompleteGameIsThrown],
+    (x) => x
+);
+

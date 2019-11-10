@@ -59,7 +59,7 @@ class PaperClipsGame extends Component {
 
     componentDidMount = () => {
         let state = JSON.parse(localStorage.getItem('store')) === null ? this.props.store : {...JSON.parse(localStorage.getItem('store')), comments: ['Welcome to Universal Paperclips']};
-        console.log("GGG", {...JSON.parse(localStorage.getItem('store')), comments: ['Welcome to Universal Paperclips']})
+       
         setInterval(()=>{
             this.props.startTimer();
         }, 1000);

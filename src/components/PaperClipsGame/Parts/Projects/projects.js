@@ -453,7 +453,7 @@ export class Projects extends Component {
                 break;
             case 'anotherTokenOfGoodwill4':
                 this.props.addProject(projectsToAdd.AnotherTokenOfGoodwill5);
-                this.props.addProject(projectsToAdd.AutoTourney);
+                // this.props.addProject(projectsToAdd.AutoTourney);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectMoney(price.money);
                 this.props.trustPlusOneFromProject(1);
@@ -509,7 +509,7 @@ export class Projects extends Component {
                 if(confirm("Are you sure you want to complete game?")){
                     this.props.sendCommentToTerminal(terminal);
                     this.props.removeUnnecessaryCards();
-                    if(this.props.showStrategicModeling){
+                    if(this.props.strategicModelingIsShown){
                         this.props.addProject(projectsToAdd.DisassembleTheStrategyEngine);
                     }else{
                         this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
@@ -644,7 +644,7 @@ export default connect(
             opsMax: Selectors.getOpsMaxState(state),
             autoClipperOn: Selectors.getAutoClipperOnState(state),
             processorsNumber: Selectors.getProcessorsNumberState(state),
-            showStrategicModeling: Selectors.getShowStrategicModelingState(state), 
+            strategicModelingIsShown: Selectors.getStrategicModelingIsShownState(state), 
             showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
             quantumComputingIsShown: Selectors.getQuantumComputingIsShownState(state),
             processorsMemoryIsShown: Selectors.getProcessorsMemoryIsShownState(state),
