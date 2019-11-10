@@ -625,7 +625,7 @@ export class Projects extends Component {
 
     render(){
         return(
-            <div className="projects">
+            <div>
                {this.props.processorsMemoryIsShown ? this.renderProjects() : null}
             </div>
         );

@@ -28,6 +28,12 @@ import Button from '../../../../../library/Button/button';
 import './autoClippers.scss';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../../../../../utility';
+
+/**
 * Actions
 */
 
@@ -77,7 +83,7 @@ export class AutoClippers extends Component {
                     />
                     <div className="autoClipper-text">{this.props.autoClippersPerSec}</div>
                 </div>
-                <div className="autoClipper-text">Cost: ${this.props.autoClippersPerSec === 0 ? this.props.autoClipperInitPrice : this.props.autoClipperPrice}</div>
+                <div className="autoClipper-text">Cost: ${this.props.autoClippersPerSec === 0 ? Utility.commaSeparator(this.props.autoClipperInitPrice) : Utility.commaSeparator(this.props.autoClipperPrice)}</div>
             </div>  
         );
     }

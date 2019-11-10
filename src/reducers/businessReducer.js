@@ -31,12 +31,12 @@ export const initialState = {
     autoClippersButtonDisabled: true,
     megaClippersButtonDisabled: true,
     autoClipperOn: false,
-    prevTrust: 3000,
+    prevTrust: 200,//3000
     trust: 2,
-    clipsToBuyTrust: 3000,
+    clipsToBuyTrust: 200,//3000
     delayAutoPaperClippers: 1000,
     ops: 0,
-    opsMax: 1000,//1000
+    opsMax: 100,//1000
     processorsNumber: 1,
     processorsMemory: 1,
     creativity: 0,
@@ -295,7 +295,7 @@ const trustPlusOne = (state) => {
     if(state.paperClips >= state.clipsToBuyTrust){
         updatedTrust = state.trust + 1;
         if(state.trust === 2 ){
-            updatedClipsToBuyTrust = 5000;
+            updatedClipsToBuyTrust = 200;//updatedClipsToBuyTrust = 5000;
         }else{
             updatedPrevTrust = state.clipsToBuyTrust;
             updatedClipsToBuyTrust = state.prevTrust + state.clipsToBuyTrust;
@@ -335,7 +335,7 @@ const increaseProcessors = (state) => {
 const increaseProcessorsMemory = (state) => {
     return updateObject(state, {
         processorsMemory: state.processorsMemory + 1,
-        opsMax: state.opsMax + 1000
+        opsMax: state.opsMax + 100
     });
 }
 
@@ -821,7 +821,7 @@ const tournamentState = (state, action) => {
 
 const updateNewTournamentCost = (state, action) => {
     return updateObject(state, {
-        newTournamentCost: state.newTournamentCost + 1000//+1000
+        newTournamentCost: state.newTournamentCost + 10//+1000
     });
 }
 

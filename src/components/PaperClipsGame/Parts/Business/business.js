@@ -75,7 +75,7 @@ export class Business extends Component {
     
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.funds !== this.props.funds) {
-            if(this.props.funds >= 1000 && this.props.hostileTakeoverIsThrown === false){
+            if(this.props.funds >= 100 && this.props.hostileTakeoverIsThrown === false){
                 this.props.addProject(projectsToAdd.HostileTakeover);
                 this.props.toggleThrownProject('hostileTakeover', true);
             }
@@ -91,7 +91,7 @@ export class Business extends Component {
                     <div className="business-text">Available Funds: $ {Utility.commaSeparator(this.props.funds)}</div>
                     {this.props.revTracker ? <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/> : null}
                     {/* <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/> */}
-                    <div className="business-text">Unsold Inventory: {this.props.unsoldInventory}</div>
+                    <div className="business-text">Unsold Inventory: {Utility.commaSeparator(this.props.unsoldInventory)}</div>
                     <div className="business-wrapper1">
                         <Button
                             onClick={this.props.lowerPrice}
@@ -102,9 +102,9 @@ export class Business extends Component {
                             onClick={this.props.raisePrice}
                             text={"raise"}
                         />
-                        <div className="business-text">Price per Clip: $ {this.props.paperclipPrice}</div>
+                        <div className="business-text">Price per Clip: $ {Utility.commaSeparator(this.props.paperclipPrice)}</div>
                     </div>
-                    <div className="business-text">Public Demand: {this.props.publicDemand}%</div>
+                    <div className="business-text">Public Demand: {Utility.commaSeparator(this.props.publicDemand)}%</div>
                 </div>
                 <div className="business-section">
                     <div className="business-wrapper2">
@@ -115,7 +115,7 @@ export class Business extends Component {
                         />
                         <div className="business-text">Level: {this.props.marketingLevel}</div>
                     </div>
-                    <div className="business-text">Cost: ${this.props.marketingCost.toFixed(2)}</div>
+                    <div className="business-text">Cost: ${Utility.commaSeparator(this.props.marketingCost.toFixed(2))}</div>
                 </div>
             </div>
         )

@@ -59,7 +59,7 @@ export class Section3 extends Component {
     */
 
     renderSection3 = () => {
-        if(this.props.paperClips >= 2000){
+        if(this.props.paperClips >= 100){
             // if(this.props.paperClips){
             return(
                 <div>

@@ -47,6 +47,13 @@ import * as Actions from '../../../../actions';
 
 import * as Selectors from '../../../../reducers/selectors';
 
+
+/**
+* Utility
+*/
+
+import * as Utility from '../../../../utility';
+
 /**
 * Manufacturing component definition and export
 */
@@ -145,9 +152,9 @@ export class Manufacturing extends Component {
         return(
             <div className="manufacturing">
                 <div className="manufacturing-label">Manufacturing</div>
-                <div className="manufacturing-line"/>
+                <div className="manufacturing-line"/>{}
                 <div className="manufacturing-section">
-                    <div className="manufacturing-text">Clips per Second: {this.props.megaClippersIsShown ? this.props.clipsPerSec + (this.props.megaClippersPerSec * this.props.megaClippersToAdd) : this.props.clipsPerSec}</div>
+                    <div className="manufacturing-text">Clips per Second: {this.props.megaClippersIsShown ? Utility.commaSeparator(this.props.clipsPerSec + (this.props.megaClippersPerSec * this.props.megaClippersToAdd)) : Utility.commaSeparator(this.props.clipsPerSec)}</div>
                 </div>
                 <div className="manufacturing-section">
                     {this.props.wireBuyerIsShown ? <AutoWireBuyer/> : null}
@@ -159,9 +166,9 @@ export class Manufacturing extends Component {
                             id={"wireButton"}
                                     // buttonRef={this.buttonRef}
                         />
-                        <div className="manufacturing-text">{this.props.wire} inches</div>
+                        <div className="manufacturing-text">{Utility.commaSeparator(this.props.wire)} inches</div>
                     </div>
-                    <div className="manufacturing-text">Cost: $ {this.props.wirePrice}</div>
+                    <div className="manufacturing-text">Cost: $ {Utility.commaSeparator(this.props.wirePrice)}</div>
                 </div> 
                 {this.props.autoClippersIsShown ? <AutoClippers/> : null}
                 {/* <AutoClippers/>  */}

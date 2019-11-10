@@ -113,19 +113,37 @@ export class General extends Component {
                 comment = `clips created in ${sec} ${sec === 1 ? "second": "seconds"}`;
             }
         
+            if(this.props.paperClips === 100){
+                this.props.sendCommentToTerminal(`100 ${comment}`);
+            }
+            if(this.props.paperClips === 300){
+                this.props.sendCommentToTerminal(`300 ${comment}`);
+            }
             if(this.props.paperClips === 500){
                 this.props.sendCommentToTerminal(`500 ${comment}`);
             }
             if(this.props.paperClips === 1000){
                 this.props.sendCommentToTerminal(`1,000 ${comment}`);
             }
-            if(this.props.paperClips === 1000000){
+            if(this.props.paperClips === 3000){
+                this.props.sendCommentToTerminal(`3,000 ${comment}`);
+            }
+            if(this.props.paperClips === 5000){
+                this.props.sendCommentToTerminal(`5,000 ${comment}`);
+            }
+            if(this.props.paperClips === 7000){
+                this.props.sendCommentToTerminal(`7,000 ${comment}`);
+            }
+            if(this.props.paperClips === 10000){
+                this.props.sendCommentToTerminal(`10,000 ${comment}`);
+            }
+            if(this.props.paperClips === 100000){
                 this.props.sendCommentToTerminal(`100,000 ${comment}`);
             }
-            if(this.props.paperClips === 2001){
+            if(this.props.paperClips === 5001){
                 this.props.addProject(projectsToAdd.CompleteGame);
             }
-            if(this.props.paperClips === 2030){
+            if(this.props.paperClips === 5030){
                 this.props.showWirePart(false);
                 this.props.lastComents()
                 this.props.stopSendingLastComments();
@@ -145,7 +163,6 @@ export class General extends Component {
                     text={"Make Paperclip"}
                     disabled={this.props.makePaperclipDisabled}
                 />
-                <div>{this.props.isPing}</div>
             </div>
         );
     }

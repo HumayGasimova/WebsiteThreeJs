@@ -34,6 +34,12 @@ import './megaClippers.scss';
 import * as Actions from '../../../../../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../../../../../utility';
+
+/**
 * Selectors
 */
 
@@ -83,7 +89,7 @@ export class MegaClippers extends Component {
                     />
                     <div className="megaClippers-text">{this.props.megaClippersPerSec}</div>
                 </div>
-                <div className="megaClippers-text">Cost: $ {this.props.megaClippersPerSec === 0 ? this.props.megaClipperInitPrice : this.props.megaClipperPrice}</div>
+                <div className="megaClippers-text">Cost: $ {this.props.megaClippersPerSec === 0 ? Utility.commaSeparator(this.props.megaClipperInitPrice) : Utility.commaSeparator(this.props.megaClipperPrice)}</div>
             </div> 
         );
     }

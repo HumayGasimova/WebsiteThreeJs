@@ -159,7 +159,7 @@ export class Investments extends Component {
                         />
                         <div>Level: {this.props.investmentsLevel}</div>
                     </div>
-                    <div>Cost: {this.props.upgradeInvestmentEngineCost} Yomi</div>
+                    <div>Cost: {Utility.commaSeparator(this.props.upgradeInvestmentEngineCost)} Yomi</div>
                 </div>
                 {/* {this.props.showDropdownInvestments ? <Backdrop 
                                                         closeDropdowns={this.props.closeDropdowns}

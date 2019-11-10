@@ -39,6 +39,12 @@ import './strategicModeling.scss';
 import * as Actions from '../../../../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../../../../utility';
+
+/**
 * Selectors
 */
 
@@ -202,7 +208,7 @@ export class StrategicModeling extends Component {
                             text={"New Tournament"}
                             disabled={this.props.newTournamentButtonDisabled}
                         />
-                        <div>Cost: {this.props.newTournamentCost} ops</div>
+                        <div>Cost: {Utility.commaSeparator(this.props.newTournamentCost)} ops</div>
                     </div>
                 </div>
             </div>
