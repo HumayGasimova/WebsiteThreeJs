@@ -222,12 +222,17 @@ export class Paperclips extends Component {
     render(){
         return(
             <div className="paperclips">
-               <div 
-                    onMouseEnter={this.handleMouseEnter} 
-                    onMouseLeave={this.handleMouseLeave} 
-                    className="paperclips-text"> 
-                    Paperclips : {Utility.commaSeparator(this.props.paperClips)}
-                </div>
+               {this.props.isGameOver ? 
+                    <div className="paperclips-text"> 
+                        Countdown : {Utility.commaSeparator(this.props.countdown)}
+                    </div> : 
+                   <div 
+                        onMouseEnter={this.handleMouseEnter} 
+                        onMouseLeave={this.handleMouseLeave} 
+                        className="paperclips-text"> 
+                        Paperclips : {Utility.commaSeparator(this.props.paperClips)}
+                    </div>
+                }
                 {this.renderHoverComponent()}
             </div>
         );
@@ -244,7 +249,9 @@ export default connect(
             delay: Selectors.getDelayState(state),
             wire: Selectors.getWireState(state),
             makePaperclipDisabled: Selectors.getMakePaperclipDisabledState(state),
-            time: Selectors.getTimeState(state)
+            time: Selectors.getTimeState(state),
+            countdown: Selectors.getCountdownState(state),
+            isGameOver: Selectors.getIsGameOverState(state)
         };
     },
     (dispatch) => {

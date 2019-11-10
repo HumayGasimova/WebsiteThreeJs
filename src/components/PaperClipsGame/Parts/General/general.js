@@ -144,12 +144,24 @@ export class General extends Component {
                 this.props.addProject(projectsToAdd.CompleteGame);
                 this.props.toggleThrownProject('completeGame', true);
             }
-            if(this.props.paperClips === 5000){
-                this.props.showWirePart(false);
+            if(this.props.countdown === 0){
+                this.props.showEnding(false);
                 this.props.lastComents()
                 this.props.stopSendingLastComments();
             }
         }
+    }
+
+    renderDots = () => {
+        return(
+            <div className="general-dots">
+                {this.props.dots.map((el,i) => {
+                    return(
+                        <div className="general-dots-dot" key={i}/>
+                    )
+                })}
+            </div>
+        )
     }
     
     /**
@@ -159,11 +171,22 @@ export class General extends Component {
     render(){
         return(
             <div className="general">
-                <Button 
-                    onClick={this.makePaperclip}
-                    text={"Make Paperclip"}
-                    disabled={this.props.makePaperclipDisabled}
-                />
+                {this.props.isGameOver ? 
+                <div className="general-ending">
+                    <Button 
+                        onClick={this.props.countdownOnClick}
+                        text={"PRESS"}
+                        disabled={this.props.countdown === 0}
+                    />
+                    {this.renderDots()}
+                </div>
+                     : 
+                    <Button 
+                        onClick={this.makePaperclip}
+                        text={"Make Paperclip"}
+                        disabled={this.props.makePaperclipDisabled}
+                    />
+                }
             </div>
         );
     }
@@ -181,6 +204,9 @@ export default connect(
             makePaperclipDisabled: Selectors.getMakePaperclipDisabledState(state),
             time: Selectors.getTimeState(state),
             completeGameIsThrown: Selectors.getCompleteGameIsThrownState(state),
+            isGameOver: Selectors.getIsGameOverState(state),
+            countdown: Selectors.getCountdownState(state),
+            dots: Selectors.getDotsState(state),
         };
     },
     (dispatch) => {
@@ -189,10 +215,11 @@ export default connect(
             sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
-            showWirePart: bindActionCreators(Actions.showWirePart, dispatch),
+            showEnding: bindActionCreators(Actions.showEnding, dispatch),
             lastComents: bindActionCreators(Actions.lastComents, dispatch),
             stopSendingLastComments: bindActionCreators(Actions.stopSendingLastComments, dispatch),
             toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
+            countdownOnClick: bindActionCreators(Actions.countdownOnClick, dispatch),
         };
     }
 )(General);

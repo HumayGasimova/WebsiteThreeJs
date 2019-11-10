@@ -651,17 +651,24 @@ export const getProcessorsNumberIsShownState = createSelector(
     (x) => x
 );
 
-const getWirePartIsShown = (state) => state.business.wirePartIsShown;
+const getEndingIsShown = (state) => state.business.endingIsShown;
 
-export const getWirePartIsShownState = createSelector(
-    [getWirePartIsShown],
+export const getEndingIsShownState = createSelector(
+    [getEndingIsShown],
     (x) => x
 );
 
-const getClipsToEndGame = (state) => state.business.clipsToEndGame;
+const getCountdown = (state) => state.business.countdown;
 
-export const getClipsToEndGameState = createSelector(
-    [getClipsToEndGame],
+export const getCountdownState = createSelector(
+    [getCountdown],
+    (x) => x
+);
+
+const getIsGameOver = (state) => state.business.isGameOver;
+
+export const getIsGameOverState = createSelector(
+    [getIsGameOver],
     (x) => x
 );
 
@@ -671,4 +678,12 @@ export const getCompleteGameIsThrownState = createSelector(
     [getCompleteGameIsThrown],
     (x) => x
 );
+
+const getDots = (state) => state.business.dots;
+
+export const getDotsState = createSelector(
+    [getDots],
+    (x) => x
+);
+
 

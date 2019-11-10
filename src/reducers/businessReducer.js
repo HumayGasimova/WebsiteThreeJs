@@ -120,7 +120,7 @@ export const initialState = {
     businessSectionIsShown: true,
     processorsMemoryIsShown: true,
     processorsNumberIsShown: true,
-    wirePartIsShown: true,
+    endingIsShown: true,
     lastComments: [
         "Universal Paperclips",
         "a game by Frank Lantz",
@@ -129,8 +129,10 @@ export const initialState = {
         "'Riversong' by Tonto's Expanding Headband used by kind permission of Malcom Cecil",
         "© 2017 Everybody House Games"
     ],
-    clipsToEndGame: -1,
-    completeGameIsThrown: false
+    countdown: 10,
+    completeGameIsThrown: false,
+    isGameOver: false,
+    dots: ['.','.','.','.','.','.','.','.','.','.']
 }
 
 const makePaperclip = (state) => {
@@ -1248,12 +1250,35 @@ const showProcessorsMemory = (state, action) => {
     });
 }
 
-const showWirePart = (state, action) => {
+const showEnding = (state, action) => {
     return updateObject(state, {
-        wirePartIsShown: action.val
+        endingIsShown: action.val
     });
 }
 
+const countdownOnClick = (state, action) => {
+    let updatedCountdown;
+    let updatedDots = [...state.dots];
+   
+    if(state.countdown > 0){
+        updatedCountdown = state.countdown - 1
+        updatedDots.pop();
+    }else{
+        updatedCountdown = 0
+        updatedDots = []
+    }
+
+    return updateObject(state, {
+        countdown: updatedCountdown,
+        dots: updatedDots
+    });
+}
+
+const toggleGameOver = (state, action) => {
+    return updateObject(state, {
+        isGameOver: action.val
+    });
+}
 
 // const toggleThrownProjectStartCreativityCounter = (state, action) => {
 //     return updateObject(state, {
@@ -1656,14 +1681,18 @@ const businessReducer = (state = initialState, action) => {
             return showProcessorsNumber(state, action); 
         case actionTypes.SHOW_PROCESSORS_MEMORY:
             return showProcessorsMemory(state, action);  
-        case actionTypes.SHOW_WIRE_PART:
-            return showWirePart(state, action); 
+        case actionTypes.SHOW_ENDING:
+            return showEnding(state, action); 
         case actionTypes.LAST_COMMENTS:
             return state;  
         case actionTypes.STOP_SENDING_LAST_COMMENTS:
             return state;   
         case actionTypes.STOP_COMMENTS:
             return state;
+        case actionTypes.COUNTDOWN_ON_CLICK:
+            return countdownOnClick(state, action); 
+        case actionTypes.TOGGLE_GAME_OVER:
+            return toggleGameOver(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
         //     return toggleThrownProjectStartCreativityCounter(state, action); 
         // case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:

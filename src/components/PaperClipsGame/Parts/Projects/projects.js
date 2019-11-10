@@ -506,13 +506,17 @@ export class Projects extends Component {
                 }
                 break;
             case 'completeGame':
+                this.props.removeUnnecessaryCards();
                 if(confirm("Are you sure you want to complete game?")){
                     this.props.sendCommentToTerminal(terminal);
-                    this.props.removeUnnecessaryCards();
                     if(this.props.strategicModelingIsShown){
                         this.props.addProject(projectsToAdd.DisassembleTheStrategyEngine);
                     }else{
-                        this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
+                        if(this.props.showInvestmentEngine){
+                            this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
+                        }else{
+                            this.props.addProject(projectsToAdd.DisassembleBusiness);
+                        }
                     }
                     this.props.removePriceOfProjectOps(price.ops);
                 }else{
@@ -520,29 +524,32 @@ export class Projects extends Component {
                 }
                 break;
             case 'disassembleTheStrategyEngine':
+                this.props.removeUnnecessaryCards();
                 if(this.props.showInvestmentEngine){
                     this.props.addProject(projectsToAdd.DisassembleInvestmentsEngine);
                 }else{
-                    this.props.addProject(projectsToAdd.DisassembleManufacturing);
+                    this.props.addProject(projectsToAdd.DisassembleBusiness);
                 }
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showStrategicModeling(false);
                 break;  
             case 'disassembleInvestmentsEngine':
-                this.props.addProject(projectsToAdd.DisassembleManufacturing);
+                this.props.removeUnnecessaryCards();
+                this.props.addProject(projectsToAdd.DisassembleBusiness);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showInvestEngine(false);
                 break;   
-            case 'disassembleManufacturing':
-                this.props.addProject(projectsToAdd.DisassembleBusiness);
+            case 'disassembleBusiness':
+                this.props.removeUnnecessaryCards();
+                this.props.addProject(projectsToAdd.DisassembleManufacturing);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.showManufacturingSection(false)
-                this.props.updateWire( 0)
-                break;     
-            case 'disassembleBusiness':
+                this.props.showBusinessSection(false)
+                break;   
+            case 'disassembleManufacturing':
+                this.props.removeUnnecessaryCards();
                 if(this.props.quantumComputingIsShown){
                     this.props.addProject(projectsToAdd.DisassembleQuantumComputing);
                 }else{
@@ -550,9 +557,11 @@ export class Projects extends Component {
                 }
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.showBusinessSection(false)
-                break;   
+                this.props.showManufacturingSection(false)
+                // this.props.updateWire(0)
+                break;  
             case 'disassembleQuantumComputing':
+                this.props.removeUnnecessaryCards();
                 this.props.addProject(projectsToAdd.DisassembleProcessors);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
@@ -568,7 +577,8 @@ export class Projects extends Component {
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showProcessorsMemory(false);
-                this.props.updateWire(29)
+                this.props.toggleGameOver(true);
+                // this.props.updateWire(29)
                 break;         
                 
                
@@ -694,6 +704,7 @@ export default connect(
             showBusinessSection: bindActionCreators(Actions.showBusinessSection, dispatch),
             showProcessorsNumber: bindActionCreators(Actions.showProcessorsNumber, dispatch),
             showProcessorsMemory: bindActionCreators(Actions.showProcessorsMemory, dispatch),
+            toggleGameOver: bindActionCreators(Actions.toggleGameOver, dispatch),
         };
     }
 )(Projects);

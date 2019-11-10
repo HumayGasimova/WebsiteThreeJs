@@ -2638,7 +2638,7 @@ export const DisassembleMemory = {
     next: 'disassembleMemory',
     valid: false,
     id: "card72",
-    terminal: "Dismantling processors"
+    terminal: "Dismantling memory"
 }
 
 

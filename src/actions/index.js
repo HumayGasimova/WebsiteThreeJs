@@ -166,10 +166,12 @@ export {
     showBusinessSection,
     showProcessorsNumber,
     showProcessorsMemory,
-    showWirePart,
+    showEnding,
     lastComents,
     stopSendingLastComments,
-    stopComments
+    stopComments,
+    countdownOnClick,
+    toggleGameOver
     // toggleThrownProjectStartCreativityCounter,
     // toggleThrownProjectLexicalProcessing,
     // toggleThrownProjectCombinatoryHarmonics,

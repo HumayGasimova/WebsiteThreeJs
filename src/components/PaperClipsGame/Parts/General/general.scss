@@ -5,4 +5,19 @@
         font-weight: bold;
         font-size: 25px;
     }
+    .general-ending {
+        display: flex;
+        align-items: center;
+        .general-dots {
+            display: flex;
+            padding-left: 15px;
+            .general-dots-dot {
+                width: 10px;
+                height: 10px;
+                background-color: black;
+                margin: 3px;
+                border-radius: 50%;
+            }
+        }
+    }
 }

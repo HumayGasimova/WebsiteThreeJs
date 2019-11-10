@@ -151,7 +151,7 @@ export class Manufacturing extends Component {
         return(
             <div className="manufacturing">
                 <div className="manufacturing-label">Manufacturing</div>
-                <div className="manufacturing-line"/>{}
+                <div className="manufacturing-line"/>
                 <div className="manufacturing-section">
                     <div className="manufacturing-text">Clips per Second: {this.props.megaClippersIsShown ? Utility.commaSeparator(this.props.clipsPerSec + (this.props.megaClippersPerSec * this.props.megaClippersToAdd)) : Utility.commaSeparator(this.props.clipsPerSec)}</div>
                 </div>
@@ -177,18 +177,11 @@ export class Manufacturing extends Component {
         )
     }
 
-    renderWire = () => {
-        if(this.props.wirePartIsShown){
+    renderEnding = () => {
+        if(this.props.endingIsShown){
             return(
                 <div className="manufacturing">
-                    <div className="manufacturing-label">Manufacturing</div>
                     <div className="manufacturing-line"/>
-                    <div className="manufacturing-section">
-                        <div className="manufacturing-wrapper1">
-                            <div className="manufacturing-text">Wire: </div>
-                            <div className="manufacturing-text">{this.props.wire} inches</div>
-                        </div>
-                    </div> 
                 </div>
             )
         }
@@ -201,7 +194,7 @@ export class Manufacturing extends Component {
     render(){
         return(
             <div>
-                {this.props.manufacturingSectionIsShown ? this.renderManufacturing() : this.renderWire()}
+                {this.props.manufacturingSectionIsShown ? this.renderManufacturing() : this.renderEnding()}
             </div>
         );
     }
@@ -232,8 +225,8 @@ export default connect(
             megaClippersToAdd: Selectors.getMegaClippersToAddState(state),
             autoAndMegaClippersWorks: Selectors.getAutoAndMegaClippersWorksState(state),
             manufacturingSectionIsShown: Selectors.getManufacturingSectionIsShownState(state),
-            wirePartIsShown: Selectors.getWirePartIsShownState(state),
-            
+            endingIsShown: Selectors.getEndingIsShownState(state),
+            countdown: Selectors.getCountdownState(state),
         };
     },
     (dispatch) => {

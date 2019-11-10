@@ -1095,9 +1095,9 @@ export function showProcessorsMemory(val) {
     };
 };
 
-export function showWirePart(val) {
+export function showEnding(val) {
     return { 
-        type: actionTypes.SHOW_WIRE_PART,
+        type: actionTypes.SHOW_ENDING,
         val: val
     };
 };
@@ -1117,6 +1117,19 @@ export function stopSendingLastComments() {
 export function stopComments() {
     return { 
         type: actionTypes.STOP_COMMENTS
+    };
+};
+
+export function countdownOnClick() {
+    return { 
+        type: actionTypes.COUNTDOWN_ON_CLICK
+    };
+};
+
+export function toggleGameOver(val) {
+    return { 
+        type: actionTypes.TOGGLE_GAME_OVER,
+        val: val
     };
 };
 
