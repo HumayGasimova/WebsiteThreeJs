@@ -489,7 +489,7 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update processorsMemory by adding 1 and opsMax by adding 1000", () => {
+    it("should update processorsMemory by adding 1 and opsMax by adding 100", () => {
         const action = { 
             type: actionTypes.INCREASE_PROCESSORS_MEMORY
         }
@@ -501,7 +501,7 @@ describe('businessReducer', () => {
         const state = {
             ...initialState, 
             processorsMemory: 8,
-            opsMax: 1100
+            opsMax: 200
         }
         expect(reducer(initState, action)).toEqual(state);
     })
@@ -608,21 +608,21 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should (if paperClips are more than and equal to clipsToBuyTrust && trust is equal to 2) update clipsToBuyTrust with the value 5000 and trust by adding 1", () => {
+    it("should (if paperClips are more than and equal to clipsToBuyTrust && trust is equal to 2) update clipsToBuyTrust with the value 200 and trust by adding 1", () => {
         const action = { 
             type: actionTypes.TRUST_PLUS_ONE
         }
         const initState = {
             ...initialState, 
             paperClips: 4000,
-            clipsToBuyTrust: 3000,
+            clipsToBuyTrust: 100,
             prevTrust: 1000,
             trust: 2
         }
         const state = {
             ...initialState, 
             paperClips: 4000,
-            clipsToBuyTrust: 5000,
+            clipsToBuyTrust: 200,
             prevTrust: 1000,
             trust: 3
         }
@@ -851,18 +851,18 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
     
-    it("should set showStrategicModeling to true", () => {
+    it("should set strategicModelingIsShown to true", () => {
         const action = { 
             type: actionTypes.SHOW_STRATEGIC_MODELING,
             val: true
         }
         const initState = {
             ...initialState, 
-            showStrategicModeling: false
+            strategicModelingIsShown: false
         }
         const state = {
             ...initialState, 
-            showStrategicModeling: true
+            strategicModelingIsShown: true
         }
         expect(reducer(initState, action)).toEqual(state);
     })
@@ -1593,17 +1593,17 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should update newTournamentCost by adding 1000", () => {
+    it("should update newTournamentCost by adding 10", () => {
         const action = { 
             type: actionTypes.UPDATE_NEW_TOURNAMENT_COST
         }
         const initState = {
             ...initialState, 
-            newTournamentCost: 4000
+            newTournamentCost: 40
         }
         const state = {
             ...initialState, 
-            newTournamentCost: 5000
+            newTournamentCost: 50
         }
         expect(reducer(initState, action)).toEqual(state);
     })
@@ -2532,18 +2532,18 @@ describe('businessReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     })
 
-    it("should set wirePartIsShown to true", () => {
+    it("should set endingIsShown to true", () => {
         const action = { 
-            type: actionTypes.SHOW_WIRE_PART,
+            type: actionTypes.SHOW_ENDING,
             val: true
         }
         const initState = {
             ...initialState,
-            wirePartIsShown: false
+            endingIsShown: false
         }
         const state = {
             ...initialState,
-            wirePartIsShown: true
+            endingIsShown: true
         }
         expect(reducer(initState, action)).toEqual(state);
     })

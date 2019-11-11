@@ -6,7 +6,7 @@ import Investments from '../../Parts/Investments/investments';
 import StrategicModeling from '../../Parts/StrategicModeling/strategicModeling';
 import Backdrop from '../../SmallParts/Backdrop/backdrop';
 
-describe('<Section2/>', () => {
+describe('<Section3/>', () => {
     let wrapper;
 
     beforeEach(() => {
@@ -20,13 +20,13 @@ describe('<Section2/>', () => {
         expect(wrapper.find(Backdrop)).toHaveLength(0);
     })
 
-    it("should render <Investments/> if the number of paperclips reaches 2000 and showInvestmentEngine set to true", () => {
-        wrapper.setProps({paperClips: 2000, showInvestmentEngine: true})
+    it("should render <Investments/> if the number of paperclips reaches 100 and showInvestmentEngine set to true", () => {
+        wrapper.setProps({paperClips: 100, showInvestmentEngine: true})
         expect(wrapper.find(Investments)).toHaveLength(1);
     })
 
-    it("should render <StrategicModeling/> if the number of paperclips reaches 2000 and showStrategicModeling set to true", () => {
-        wrapper.setProps({paperClips: 2000, showStrategicModeling: true})
+    it("should render <StrategicModeling/> if the number of paperclips reaches 100 and strategicModelingIsShown set to true", () => {
+        wrapper.setProps({paperClips: 100, strategicModelingIsShown: true})
         expect(wrapper.find(StrategicModeling)).toHaveLength(1);
     })
 

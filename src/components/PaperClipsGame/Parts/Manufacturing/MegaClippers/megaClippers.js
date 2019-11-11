@@ -85,7 +85,6 @@ export class MegaClippers extends Component {
                         onClick={this.megaClippersOnClick}
                         text={"MegaClippers"}
                         disabled={this.props.megaClippersButtonDisabled}
-                
                     />
                     <div className="megaClippers-text">{this.props.megaClippersPerSec}</div>
                 </div>

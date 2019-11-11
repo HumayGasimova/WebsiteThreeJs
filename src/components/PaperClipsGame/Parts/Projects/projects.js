@@ -506,8 +506,8 @@ export class Projects extends Component {
                 }
                 break;
             case 'completeGame':
-                this.props.removeUnnecessaryCards();
                 if(confirm("Are you sure you want to complete game?")){
+                    this.props.removeUnnecessaryCards();
                     this.props.sendCommentToTerminal(terminal);
                     if(this.props.strategicModelingIsShown){
                         this.props.addProject(projectsToAdd.DisassembleTheStrategyEngine);

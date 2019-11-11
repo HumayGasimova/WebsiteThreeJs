@@ -564,6 +564,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (showEnding) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_ENDING",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (showInvestEngine) 1`] = `
 Array [
   Object {

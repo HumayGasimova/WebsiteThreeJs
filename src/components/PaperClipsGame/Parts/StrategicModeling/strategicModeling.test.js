@@ -9,7 +9,7 @@ describe('<StrategicModeling/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<StrategicModeling chosenListDropdown={['']}/>);
+        wrapper = shallow(<StrategicModeling newTournamentCost={100} chosenListDropdown={['']}/>);
     });
 
     it("should render two <Buttons/> and one <Dropdown/>", () => {

@@ -287,7 +287,7 @@ export class Paperclips extends Component {
             if(this.props.paperClips === 100000){
                 this.props.sendCommentToTerminal(`100,000 ${comment}`);
             }
-            if(this.props.paperClips === 4971 && this.props.completeGameIsThrown === false){
+            if(this.props.paperClips === 5000 && this.props.completeGameIsThrown === false){
                 this.props.addProject(projectsToAdd.CompleteGame);
                 this.props.toggleThrownProject('completeGame', true);
             }

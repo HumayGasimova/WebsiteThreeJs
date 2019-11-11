@@ -8,7 +8,7 @@ describe('<MegaClippers/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<MegaClippers/>);
+        wrapper = shallow(<MegaClippers megaClipperInitPrice={100} megaClipperPrice={100}/>);
     });
 
     it("should render one <Buttons/>", () => {

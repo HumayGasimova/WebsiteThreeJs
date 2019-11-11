@@ -9,7 +9,7 @@ describe('<Business/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Business funds={10} marketingCost={10} startUpdatingUnsoldInventory={()=>{}}/>);
+        wrapper = shallow(<Business avgRevPerSec={10} avgClipsSoldPerSec={10} funds={10} marketingCost={10} unsoldInventory={100} paperclipPrice={100} publicDemand={100} marketingCost={100} startUpdatingUnsoldInventory={()=>{}}/>);
     });
 
     it("should render three <Buttons/> if businessSectionIsShown is set to true", () => {

@@ -2053,15 +2053,15 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
-    it('Dispatches the correct action and payload (showWirePart)', () => {
+    it('Dispatches the correct action and payload (showEnding)', () => {
         const expectedActions = [
             {
-                type: actionTypes.SHOW_WIRE_PART,
+                type: actionTypes.SHOW_ENDING,
                 val: true
             }
         ];
 
-        store.dispatch(Actions.showWirePart(true));
+        store.dispatch(Actions.showEnding(true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });

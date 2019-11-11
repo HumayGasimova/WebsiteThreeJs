@@ -64,7 +64,7 @@ export class Section3 extends Component {
             return(
                 <div>
                     {this.props.showInvestmentEngine ? <Investments/> : null}
-                    {this.props.showStrategicModeling ?  <StrategicModeling/> : null}
+                    {this.props.strategicModelingIsShown ?  <StrategicModeling/> : null}
                 </div>
             )
         }

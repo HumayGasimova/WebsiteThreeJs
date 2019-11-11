@@ -11,7 +11,7 @@ describe('<Manufacturing/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Manufacturing sendCommentToTerminal={()=>{}}/>);
+        wrapper = shallow(<Manufacturing clipsPerSec={15} megaClippersPerSec={15} megaClippersToAdd={15} wire={15} wirePrice={15} sendCommentToTerminal={()=>{}}/>);
     });
 
     it("should render one <Buttons/> if manufacturingSectionIsShown is set to true", () => {

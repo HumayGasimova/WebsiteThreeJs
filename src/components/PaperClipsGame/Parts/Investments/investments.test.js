@@ -10,7 +10,7 @@ describe('<Investments/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Investments investmentsCash={1000} investmentsStocks={1000} investmentsTotal={1000} investmentsLines={['']} chosenListDropdown={['']}/>);
+        wrapper = shallow(<Investments investmentsCash={1000} investmentsStocks={1000} investmentsTotal={1000} upgradeInvestmentEngineCost={1000} investmentsLines={['']} chosenListDropdown={['']}/>);
     });
 
     it("should render three <Buttons/>, <Dropdown/> and <Grid/>", () => {
