@@ -331,29 +331,21 @@ export default connect(
     (state) => {
         return {
             paperClips: Selectors.getPaperclipsState(state),
-            funds: Selectors.getFundsState(state),
-            unsoldInventory: Selectors.getUnsoldInventoryState(state),
-            paperclipPrice: Selectors.getPaperclipPriceState(state),
-            delay: Selectors.getDelayState(state),
-            wire: Selectors.getWireState(state),
-            makePaperclipDisabled: Selectors.getMakePaperclipDisabledState(state),
             time: Selectors.getTimeState(state),
             countdown: Selectors.getCountdownState(state),
             isGameOver: Selectors.getIsGameOverState(state),
-            completeGameIsThrown: Selectors.getCompleteGameIsThrownState(state),
+            completeGameIsThrown: Selectors.getCompleteGameIsThrownState(state)
         };
     },
     (dispatch) => {
         return {
-            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
             sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             showEnding: bindActionCreators(Actions.showEnding, dispatch),
             lastComents: bindActionCreators(Actions.lastComents, dispatch),
             stopSendingLastComments: bindActionCreators(Actions.stopSendingLastComments, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
-            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
-            countdownOnClick: bindActionCreators(Actions.countdownOnClick, dispatch),
+            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch)
         };
     }
 )(Paperclips);
