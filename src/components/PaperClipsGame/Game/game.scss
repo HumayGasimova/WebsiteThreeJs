@@ -2,13 +2,10 @@
     display: flex;
 }
 
-
 @media (max-width: 950px){
     .game {
-        // margin-top: 40px;
         display: flex;
         flex-wrap: wrap;
         width: 800px;
-    }
-    
+    }  
 }

@@ -1,9 +1,25 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { Section2 } from './section2';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    Section2 
+} from './section2';
 import ComputationalResources from '../../Parts/ComputationalResources/computationalResources';
 import Projects from '../../Parts/Projects/projects';
+
+/**
+* Tests
+*/
 
 describe('<Section2/>', () => {
     let wrapper;

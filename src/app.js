@@ -20,9 +20,7 @@ import {
 * Components
 */
 
-import Toolbar from './components/Toolbar/toolbar';
 import PaperClipsGame from './components/PaperClipsGame/paperClipsGame';
-import Epic from './components/epic/epic';
 
 /**
 * Components
@@ -85,7 +83,6 @@ export class App extends Component {
    render(){
       return(
             <div className="app">
-               {/* <Toolbar/> */}
                <Route 
                   exact 
                   path="/"

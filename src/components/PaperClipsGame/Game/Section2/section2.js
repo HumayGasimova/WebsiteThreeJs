@@ -59,7 +59,6 @@ export class Section2 extends Component {
 
     renderSection2 = () => {
         if(this.props.paperClips >= 100){
-        // if(this.props.paperClips){
             return(
                 <div>
                     <ComputationalResources/>
@@ -77,7 +76,6 @@ export class Section2 extends Component {
         return(
             <div 
                 className="section2"
-                // onClick={this.props.closeDropdowns}
             >
                 {this.renderSection2()}
             </div>
@@ -89,11 +87,6 @@ export default connect(
     (state) => {
         return {
             paperClips: Selectors.getPaperclipsState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)
         };
     }
 )(Section2);

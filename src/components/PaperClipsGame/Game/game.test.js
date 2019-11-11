@@ -1,10 +1,27 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { Game } from './game';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    Game 
+} from './game';
+
 import Section1 from './Section1/section1';
 import Section2 from './Section2/section2';
 import Section3 from './Section3/section3';
+
+/**
+* Tests
+*/
 
 describe('<Game/>', () => {
     let wrapper;

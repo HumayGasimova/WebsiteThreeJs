@@ -1,7 +1,19 @@
+/**
+* Libraries
+*/
+
 import configureStore from 'redux-mock-store';
+
+/**
+* Constants
+*/
+
 import * as Actions from '../actions';
 import * as actionTypes from "../constants/actionTypes";
-import { iterator } from 'rxjs/internal-compatibility';
+
+/**
+* Tests
+*/
 
 const mockStore = configureStore();
 const store = mockStore();
@@ -620,18 +632,6 @@ describe('businessActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
-    // it('Dispatches the correct action and payload (startCreativityCounter)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.START_CREATIVITY_COUNTER
-    //         }
-    //     ];
-
-    //     store.dispatch(Actions.startCreativityCounter());
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
-
     it('Dispatches the correct action and payload (creativityTurnOn)', () => {
         const expectedActions = [
             {
@@ -643,66 +643,6 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
-
-    // it('Dispatches the correct action and payload (addLexicalProcessing)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.ADD_LEXICAL_PROCESSING
-    //         }
-    //     ];
-
-    //     store.dispatch(Actions.addLexicalProcessing());
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
-
-    // it('Dispatches the correct action and payload (addCombinatoryHarmonics)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.ADD_COMBINATORY_HARMONICS
-    //         }
-    //     ];
-
-    //     store.dispatch(Actions.addCombinatoryHarmonics());
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
-
-    // it('Dispatches the correct action and payload (addTheHadwingerProblem)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.ADD_THE_HADWINGER_PROBLEM
-    //         }
-    //     ];
-
-    //     store.dispatch(Actions.addTheHadwingerProblem());
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
-
-    // it('Dispatches the correct action and payload (addTheTothSausageConjecture)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE
-    //         }
-    //     ];
-
-    //     store.dispatch(Actions.addTheTothSausageConjecture());
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
-
-    // it('Dispatches the correct action and payload (addDonkeySpace)', () => {
-    //     const expectedActions = [
-    //         {
-    //             type: actionTypes.ADD_DONKEY_SPACE
-    //         }
-    //     ];
-
-    //     store.dispatch(Actions.addDonkeySpace());
-    //     expect(store.getActions()).toEqual(expectedActions);
-    //     expect(store.getActions()).toMatchSnapshot();
-    // });
 
     it('Dispatches the correct action and payload (startImprovingMarketing)', () => {
         const expectedActions = [

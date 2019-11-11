@@ -316,47 +316,11 @@ export function improveWireExtrusion(val) {
     };
 };
 
-// export function startCreativityCounter() {
-//     return { 
-//         type: actionTypes.START_CREATIVITY_COUNTER
-//     };
-// };
-
 export function creativityTurnOn() {
     return { 
         type: actionTypes.CREATIVITY_TURN_ON
     };
 };
-
-// export function addLexicalProcessing() {
-//     return { 
-//         type: actionTypes.ADD_LEXICAL_PROCESSING
-//     };
-// };
-
-// export function addCombinatoryHarmonics() {
-//     return { 
-//         type: actionTypes.ADD_COMBINATORY_HARMONICS
-//     };
-// };
-
-// export function addTheHadwingerProblem() {
-//     return { 
-//         type: actionTypes.ADD_THE_HADWINGER_PROBLEM
-//     };
-// };
-
-// export function addTheTothSausageConjecture() {
-//     return { 
-//         type: actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE
-//     };
-// };
-
-// export function addDonkeySpace() {
-//     return { 
-//         type: actionTypes.ADD_DONKEY_SPACE
-//     };
-// };
 
 export function startImprovingMarketing(action) {
     return { 
@@ -839,23 +803,12 @@ export function tournamentDuration() {
     };
 };
 
-// export function updateNumberOfRounds(val) {
-//     return { 
-//         type: actionTypes.UPDATE_NUMBER_OF_ROUND,
-//         val: val
-//     };
-// };
-
 export function showRoundAndPlayers(val) {
     return { 
         type: actionTypes.SHOW_ROUND_AND_PLAYERS,
         val: val
     };
 };
-
-
-
-
 
 export function startUpdatingRoundsOnScreen() {
     return { 
@@ -1015,23 +968,11 @@ export function removePriceOfProjectMoney(money) {
     };
 };
 
-// export function addXavierReinitialization() {
-//     return { 
-//         type: actionTypes.ADD_XAVIER_REINITIALIZATION,
-//     };
-// };
-
 export function reallocationOfTrust() {
     return { 
         type: actionTypes.REALLOCATION_OF_TRUST,
     };
 };
-
-// export function addHostileTakeover() {
-//     return { 
-//         type: actionTypes.ADD_HOSTILE_TAKEOVER,
-//     };
-// };
 
 export function upgradeInvestmentEngine() {
     return { 
@@ -1132,81 +1073,3 @@ export function toggleGameOver(val) {
         val: val
     };
 };
-
-
-// export function toggleThrownProjectStartCreativityCounter(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectLexicalProcessing(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectCombinatoryHarmonics(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectTheHadwingerProblem(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectTheTothSausageConjecture(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectDonkeySpace(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectXavierReinitialization(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectHostileTakeover(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectQuantumComputing(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectCoherentExtrapolatedVolition(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION,
-//         val: val
-//     };
-// };
-
-// export function toggleThrownProjectQuantumTemporalReversion(val) {
-//     return { 
-//         type: actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION,
-//         val: val
-//     };
-// };

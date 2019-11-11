@@ -67,11 +67,7 @@ export class Section1 extends Component {
 }
 
 export default connect(
-    (state) => {
-        return {
-            // Selectors.getListStrategicModelingState(state),
-        };
-    },
+   null,
     (dispatch) => {
         return {
             closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch)

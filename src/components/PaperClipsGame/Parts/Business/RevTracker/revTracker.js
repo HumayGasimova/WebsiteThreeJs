@@ -18,24 +18,11 @@ import './revTracker.scss';
 
 import * as Utility from '../../../../../utility';
 
-
 /**
 * RevTracker component definition and export
 */
 
 export class RevTracker extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
-    * Methods
-    */
 
     /**
     * Markup

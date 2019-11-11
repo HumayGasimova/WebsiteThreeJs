@@ -1,10 +1,27 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { Section1 } from './section1';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    Section1 
+} from './section1';
+
 import General from '../../Parts/General/general';
 import Business from '../../Parts/Business/business';
 import Manufacturing from '../../Parts/Manufacturing/manufacturing';
+
+/**
+* Tests
+*/
 
 describe('<Section1/>', () => {
     let wrapper;

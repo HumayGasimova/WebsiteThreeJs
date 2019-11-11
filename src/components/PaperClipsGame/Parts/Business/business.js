@@ -58,14 +58,6 @@ import * as projectsToAdd from '../../../../constants/projectsToAdd';
 export class Business extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
     * Methods
     */
 
@@ -73,7 +65,7 @@ export class Business extends Component {
         this.props.startUpdatingUnsoldInventory();
     }
     
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if (prevProps.funds !== this.props.funds) {
             if(this.props.funds >= 100 && this.props.hostileTakeoverIsThrown === false){
                 this.props.addProject(projectsToAdd.HostileTakeover);
@@ -90,7 +82,6 @@ export class Business extends Component {
                 <div className="business-section">
                     <div className="business-text">Available Funds: $ {Utility.commaSeparator(this.props.funds)}</div>
                     {this.props.revTracker ? <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/> : null}
-                    {/* <RevTracker avgRevPerSec={this.props.avgRevPerSec} avgClipsSoldPerSec={this.props.avgClipsSoldPerSec}/> */}
                     <div className="business-text">Unsold Inventory: {Utility.commaSeparator(this.props.unsoldInventory)}</div>
                     <div className="business-wrapper1">
                         <Button
@@ -137,7 +128,6 @@ export class Business extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: Selectors.getPaperclipsState(state),
             unsoldInventory: Selectors.getUnsoldInventoryState(state),
             funds: Selectors.getFundsState(state),
             paperclipPrice: Selectors.getPaperclipPriceState(state),
@@ -158,8 +148,6 @@ export default connect(
             raisePrice: bindActionCreators(Actions.raisePrice, dispatch),
             marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
             startUpdatingUnsoldInventory: bindActionCreators(Actions.startUpdatingUnsoldInventory, dispatch),
-            // addHostileTakeover: bindActionCreators(Actions.addHostileTakeover, dispatch),
-            // toggleThrownProjectHostileTakeover: bindActionCreators(Actions.toggleThrownProjectHostileTakeover, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
             toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
         };

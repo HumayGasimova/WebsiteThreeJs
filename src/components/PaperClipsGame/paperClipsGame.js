@@ -175,7 +175,7 @@ class PaperClipsGame extends Component {
 export default connect(
     (state) => {
         return {
-            store: state.business,
+            store: state.business
 
         };
     },
