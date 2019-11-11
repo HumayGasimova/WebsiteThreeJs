@@ -2547,6 +2547,40 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should (if countdown is greater than 0) update countdown by subtracting 1 and dots array by deleting the last element", () => {
+        const action = { 
+            type: actionTypes.COUNTDOWN_ON_CLICK
+        }
+        const initState = {
+            ...initialState,
+            countdown: 7,
+            dots: ['','','','','','','']
+        }
+        const state = {
+            ...initialState,
+            countdown: 6,
+            dots: ['','','','','','']
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
+
+    it("should (if countdown is 0) do nothing", () => {
+        const action = { 
+            type: actionTypes.COUNTDOWN_ON_CLICK
+        }
+        const initState = {
+            ...initialState,
+            countdown: 0,
+            dots: []
+        }
+        const state = {
+            ...initialState,
+            countdown: 0,
+            dots: []
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })

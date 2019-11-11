@@ -1049,6 +1049,15 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (toggleGameOver) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_GAME_OVER",
+    "val": true,
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (toggleMakePaperclipButton) 1`] = `
 Array [
   Object {
