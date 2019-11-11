@@ -214,6 +214,14 @@ Array [
 ]
 `;
 
+exports[`businessActions Dispatches the correct action and payload (countdownOnClick) 1`] = `
+Array [
+  Object {
+    "type": "COUNTDOWN_ON_CLICK",
+  },
+]
+`;
+
 exports[`businessActions Dispatches the correct action and payload (creativityTurnOn) 1`] = `
 Array [
   Object {

@@ -2101,4 +2101,16 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (countdownOnClick)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.COUNTDOWN_ON_CLICK
+            }
+        ];
+
+        store.dispatch(Actions.countdownOnClick());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
