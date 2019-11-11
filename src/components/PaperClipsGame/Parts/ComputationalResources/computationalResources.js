@@ -20,6 +20,7 @@ import {
 
 import Button from '../../../../library/Button/button';
 import QuantumComputing from '../../Parts/QuantumComputing/quantumComputing';
+
 /**
 * Styles
 */
@@ -131,6 +132,7 @@ export class ComputationalResources extends Component {
                 }
             }, this.state.delayOperations);
         }
+
         if (prevProps.creativity !== this.props.creativity) {
             if(this.props.creativity === 10 && this.props.lexicalProcessingIsThrown === false){
                 this.props.addProject(projectsToAdd.LexicalProcessing)
@@ -257,7 +259,6 @@ export class ComputationalResources extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: Selectors.getPaperclipsState(state),
             trust: Selectors.getTrustState(state),
             clipsToBuyTrust: Selectors.getClipsToBuyTrustState(state),
             ops: Selectors.getOpsState(state),
@@ -277,7 +278,7 @@ export default connect(
             quantumComputingIsThrown: Selectors.getQuantumComputingIsThrownState(state),
             quantumTemporalReversionIsThrown: Selectors.getQuantumTemporalReversionIsThrownState(state),
             processorsMemoryIsShown: Selectors.getProcessorsMemoryIsShownState(state),
-            processorsNumberIsShown: Selectors.getProcessorsNumberIsShownState(state),
+            processorsNumberIsShown: Selectors.getProcessorsNumberIsShownState(state)
         };
     },
     (dispatch) => {
@@ -286,28 +287,10 @@ export default connect(
             increaseProcessors: bindActionCreators(Actions.increaseProcessors, dispatch),
             increaseProcessorsMemory: bindActionCreators(Actions.increaseProcessorsMemory, dispatch),
             increaseCreativity: bindActionCreators(Actions.increaseCreativity, dispatch),
-            // startCreativityCounter: bindActionCreators(Actions.startCreativityCounter, dispatch),
-            // addLexicalProcessing: bindActionCreators(Actions.addLexicalProcessing, dispatch),
-            // addCombinatoryHarmonics: bindActionCreators(Actions.addCombinatoryHarmonics, dispatch),
-            // addTheHadwingerProblem: bindActionCreators(Actions.addTheHadwingerProblem, dispatch),
-            // addTheTothSausageConjecture: bindActionCreators(Actions.addTheTothSausageConjecture, dispatch),
-            // addDonkeySpace: bindActionCreators(Actions.addDonkeySpace, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
-            stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
             startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
-            // addXavierReinitialization: bindActionCreators(Actions.addXavierReinitialization, dispatch),
-            // toggleThrownProjectStartCreativityCounter: bindActionCreators(Actions.toggleThrownProjectStartCreativityCounter, dispatch),
-            // toggleThrownProjectLexicalProcessing: bindActionCreators(Actions.toggleThrownProjectLexicalProcessing, dispatch),
-            // toggleThrownProjectCombinatoryHarmonics: bindActionCreators(Actions.toggleThrownProjectCombinatoryHarmonics, dispatch),
-            // toggleThrownProjectTheHadwingerProblem: bindActionCreators(Actions.toggleThrownProjectTheHadwingerProblem, dispatch),
-            // toggleThrownProjectTheTothSausageConjecture: bindActionCreators(Actions.toggleThrownProjectTheTothSausageConjecture, dispatch),
-            // toggleThrownProjectDonkeySpace: bindActionCreators(Actions.toggleThrownProjectDonkeySpace, dispatch),
-            // toggleThrownProjectXavierReinitialization: bindActionCreators(Actions.toggleThrownProjectXavierReinitialization, dispatch),
-            // toggleThrownProjectQuantumComputing: bindActionCreators(Actions.toggleThrownProjectQuantumComputing, dispatch),
-            // toggleThrownProjectQuantumTemporalReversion: bindActionCreators(Actions.toggleThrownProjectQuantumTemporalReversion, dispatch),
-            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
-            
+            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch)
         };
     }
 )(ComputationalResources);

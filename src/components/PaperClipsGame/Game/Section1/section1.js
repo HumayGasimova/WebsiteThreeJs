@@ -41,14 +41,6 @@ import * as Actions from '../../../../actions';
 export class Section1 extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-    
-    /**
     * Markup
     */
 

@@ -1,8 +1,24 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { General } from './general';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    General 
+} from './general';
 import Button from '../../../../library/Button/button';
+
+/**
+* Tests
+*/
 
 describe('<General/>', () => {
     let wrapper;

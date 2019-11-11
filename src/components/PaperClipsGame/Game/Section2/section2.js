@@ -46,14 +46,6 @@ import * as Selectors from '../../../../reducers/selectors';
 export class Section2 extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-    
-    /**
     * Methods
     */
 
@@ -86,7 +78,7 @@ export class Section2 extends Component {
 export default connect(
     (state) => {
         return {
-            paperClips: Selectors.getPaperclipsState(state),
+            paperClips: Selectors.getPaperclipsState(state)
         };
     }
 )(Section2);

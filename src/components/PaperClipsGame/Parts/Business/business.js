@@ -149,7 +149,7 @@ export default connect(
             marketingNextLevel: bindActionCreators(Actions.marketing, dispatch),
             startUpdatingUnsoldInventory: bindActionCreators(Actions.startUpdatingUnsoldInventory, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
-            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch),
+            toggleThrownProject: bindActionCreators(Actions.toggleThrownProject, dispatch)
         };
     }
 )(Business);

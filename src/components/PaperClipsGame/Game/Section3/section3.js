@@ -47,14 +47,6 @@ import * as Selectors from '../../../../reducers/selectors';
 export class Section3 extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-    
-    /**
     * Methods
     */
 
@@ -91,7 +83,7 @@ export default connect(
             showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
             strategicModelingIsShown: Selectors.getStrategicModelingIsShownState(state),
             showDropdownInvestments: Selectors.getShowDropdownInvestmentsState(state),
-            showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
+            showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state)
   
         };
     },

@@ -1,9 +1,25 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { ComputationalResources } from './computationalResources';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    ComputationalResources 
+} from './computationalResources';
 import Button from '../../../../library/Button/button';
 import QuantumComputing from '../QuantumComputing/quantumComputing';
+
+/**
+* Tests
+*/
 
 describe('<ComputationalResources/>', () => {
     let wrapper;

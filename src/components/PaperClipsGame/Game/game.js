@@ -25,16 +25,8 @@ import './game.scss';
 */
 
 export class Game extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
     
-    /**s
+    /**
     * Markup
     */
 
