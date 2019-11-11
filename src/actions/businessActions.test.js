@@ -2113,4 +2113,17 @@ describe('businessActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleGameOver)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_GAME_OVER,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.toggleGameOver(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
