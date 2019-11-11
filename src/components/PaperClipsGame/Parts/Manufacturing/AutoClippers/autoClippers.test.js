@@ -1,14 +1,33 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { AutoClippers } from './autoClippers';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    AutoClippers 
+} from './autoClippers';
 import Button from '../../../../../library/Button/button';
+
+/**
+* Tests
+*/
 
 describe('<AutoClippers/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<AutoClippers autoClipperInitPrice={100} autoClipperPrice={100}/>);
+        wrapper = shallow(<AutoClippers 
+                            autoClipperInitPrice={100} 
+                            autoClipperPrice={100}
+                            />);
     });
 
     it("should render one <Buttons/>", () => {

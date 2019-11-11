@@ -46,22 +46,6 @@ import * as Selectors from '../../../../../reducers/selectors';
 export class AutoWireBuyer extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
-    * Methods
-    */
-
-    /**
-    * Methods
-    */
-
-    /**
     * Markup
     */
 
@@ -71,7 +55,6 @@ export class AutoWireBuyer extends Component {
                 <Button
                     onClick={this.props.toggleAutoWireBuyer}
                     text={"WireBuyer"}
-                    // disabled={this.props.wireButtonDisabled}
                 />
                 <div className="autoWireBuyer-text">{this.props.autoWireBuyerIsOn ? "ON" : "OFF"}</div>
             </div>
@@ -82,7 +65,7 @@ export class AutoWireBuyer extends Component {
 export default connect(
     (state) => {
         return {
-            autoWireBuyerIsOn: Selectors.getAutoWireBuyerIsOnState(state),
+            autoWireBuyerIsOn: Selectors.getAutoWireBuyerIsOnState(state)
         };
     },
     (dispatch) => {

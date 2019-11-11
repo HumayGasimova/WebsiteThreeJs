@@ -99,14 +99,14 @@ export default connect(
             completeGameIsThrown: Selectors.getCompleteGameIsThrownState(state),
             isGameOver: Selectors.getIsGameOverState(state),
             countdown: Selectors.getCountdownState(state),
-            dots: Selectors.getDotsState(state),
+            dots: Selectors.getDotsState(state)
         };
     },
     (dispatch) => {
         return {
             makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
             sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch),
-            countdownOnClick: bindActionCreators(Actions.countdownOnClick, dispatch),
+            countdownOnClick: bindActionCreators(Actions.countdownOnClick, dispatch)
         };
     }
 )(General);

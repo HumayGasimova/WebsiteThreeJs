@@ -52,22 +52,6 @@ import * as Selectors from '../../../../../reducers/selectors';
 export class AutoClippers extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
-    * Methods
-    */
-
-    /**
-    * Methods
-    */
-
-    /**
     * Markup
     */
 
@@ -104,7 +88,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
+            autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch)
         };
     }
 )(AutoClippers);

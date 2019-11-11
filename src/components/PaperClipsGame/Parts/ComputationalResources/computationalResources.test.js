@@ -25,7 +25,13 @@ describe('<ComputationalResources/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<ComputationalResources clipsToBuyTrust={100} ops={100} opsMax={100} creativity={100} sendCommentToTerminal={()=>{}}/>);
+        wrapper = shallow(<ComputationalResources 
+                            clipsToBuyTrust={100} 
+                            ops={100} 
+                            opsMax={100} 
+                            creativity={100} 
+                            sendCommentToTerminal={()=>{}}
+                            />);
     });
 
     it("should render two <Buttons/> if processorsNumberIsShown and processorsMemoryIsShown are set to true", () => {

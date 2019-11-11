@@ -14,11 +14,6 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { Subject } from 'rxjs';
-import {  Observable } from 'rxjs';
-import 'rxjs/add/observable/fromEvent';
-
-
 /**
 * Components
 */
@@ -27,7 +22,6 @@ import Button from '../../../../library/Button/button';
 import AutoClippers from './AutoClippers/autoClippers';
 import MegaClippers from './MegaClippers/megaClippers';
 import AutoWireBuyer from './AutoWireBuyer/autoWireBuyer';
-
 
 /**
 * Styles
@@ -47,7 +41,6 @@ import * as Actions from '../../../../actions';
 
 import * as Selectors from '../../../../reducers/selectors';
 
-
 /**
 * Utility
 */
@@ -61,25 +54,11 @@ import * as Utility from '../../../../utility';
 export class Manufacturing extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
-    * Methods
-    */
-
-    /**
     * Methods
     */
 
     getRandomDelay = () => {
-        let a = Math.floor(Math.random()*15000) + 5000;
-        return a;
-   
+        return Math.floor(Math.random()*15000) + 5000;
     }
 
     getRandomNumber = () => {
@@ -103,7 +82,7 @@ export class Manufacturing extends Component {
         clearInterval(this.intervalAutoWireBuyer);
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if (prevProps.wireBuyerIsShown !== this.props.wireBuyerIsShown) {
             this.intervalAutoWireBuyer = setInterval(()=>{
                 if(this.props.autoWireBuyerIsOn === true){
@@ -117,6 +96,7 @@ export class Manufacturing extends Component {
                 }
             }, 1000);
         }
+
         if (prevProps.paperClips !== this.props.paperClips) {
             if(this.props.paperClips === 50000){//50000
                 this.props.addMegaClippers();
@@ -129,9 +109,6 @@ export class Manufacturing extends Component {
                 this.props.showAutoClippers();
             }
         }
-       
-       
-       
     }
     
     wireButtonToggle = () => {
@@ -163,16 +140,13 @@ export class Manufacturing extends Component {
                             text={"Wire"}
                             disabled={this.props.wireButtonDisabled}
                             id={"wireButton"}
-                                    // buttonRef={this.buttonRef}
                         />
                         <div className="manufacturing-text">{Utility.commaSeparator(this.props.wire)} inches</div>
                     </div>
                     <div className="manufacturing-text">Cost: $ {Utility.commaSeparator(this.props.wirePrice)}</div>
                 </div> 
                 {this.props.autoClippersIsShown ? <AutoClippers/> : null}
-                {/* <AutoClippers/>  */}
                 {this.props.megaClippersIsShown ? <MegaClippers/> : null}
-                {/* <MegaClippers/> */}
             </div>
         )
     }
@@ -207,14 +181,7 @@ export default connect(
             funds: Selectors.getFundsState(state),
             wirePrice: Selectors.getWirePriceState(state),
             wireButtonDisabled: Selectors.getWireButtonDisabledState(state),
-            autoClippersPerSec: Selectors.getAutoClippersPerSecState(state),
-            autoClipperInitPrice: Selectors.getAutoClipperInitPriceState(state),
-            autoClipperPrice: Selectors.getAutoClipperPriceState(state),
-            autoClippersButtonDisabled: Selectors.getAutoClippersButtonDisabledState(state),
-            paperclipPrice: Selectors.getPaperclipPriceState(state),
             delay: Selectors.getDelayState(state),
-            delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
-            noWire: Selectors.getNoWireState(state),
             wireBuyerIsShown: Selectors.getWireBuyerIsShownState(state),
             autoWireBuyerIsOn: Selectors.getAutoWireBuyerIsOnState(state),
             paperClips: Selectors.getPaperclipsState(state),
@@ -225,8 +192,7 @@ export default connect(
             megaClippersToAdd: Selectors.getMegaClippersToAddState(state),
             autoAndMegaClippersWorks: Selectors.getAutoAndMegaClippersWorksState(state),
             manufacturingSectionIsShown: Selectors.getManufacturingSectionIsShownState(state),
-            endingIsShown: Selectors.getEndingIsShownState(state),
-            countdown: Selectors.getCountdownState(state),
+            endingIsShown: Selectors.getEndingIsShownState(state)
         };
     },
     (dispatch) => {
@@ -235,12 +201,10 @@ export default connect(
             startBuyingWire: bindActionCreators(Actions.startBuyingWire, dispatch),
             randomWirePrice: bindActionCreators(Actions.randomWirePrice, dispatch),
             autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
-            makePaperclip: bindActionCreators(Actions.makePaperclip, dispatch),
             checkExistenceOfWire: bindActionCreators(Actions.checkExistenceOfWire, dispatch),
             sendCommentToTerminal: bindActionCreators(Actions.sendCommentToTerminal, dispatch),
             clickWireButton: bindActionCreators(Actions.clickWireButton, dispatch),
             autoWireBuyer: bindActionCreators(Actions.autoWireBuyer, dispatch),
-            toggleAutoWireBuyer: bindActionCreators(Actions.toggleAutoWireBuyer, dispatch),
             addMegaClippers: bindActionCreators(Actions.addMegaClippers, dispatch),
             autoPaperclipsStart: bindActionCreators(Actions.autoPaperclipsStart, dispatch),
             showAutoClippers: bindActionCreators(Actions.showAutoClippers, dispatch),

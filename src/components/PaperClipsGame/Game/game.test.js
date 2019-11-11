@@ -27,7 +27,7 @@ describe('<Game/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Game />);
+        wrapper = shallow(<Game/>);
     });
 
     it("should render <Section1/>, <Section2/>, <Section3/>", () => {

@@ -1,17 +1,40 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { Manufacturing } from './manufacturing';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    Manufacturing 
+} from './manufacturing';
 import Button from '../../../../library/Button/button';
 import AutoWireBuyer from './AutoWireBuyer/autoWireBuyer';
 import AutoClippers from './AutoClippers/autoClippers';
 import MegaClippers from './MegaClippers/megaClippers';
 
+/**
+* Tests
+*/
+
 describe('<Manufacturing/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Manufacturing clipsPerSec={15} megaClippersPerSec={15} megaClippersToAdd={15} wire={15} wirePrice={15} sendCommentToTerminal={()=>{}}/>);
+        wrapper = shallow(<Manufacturing 
+                            clipsPerSec={15} 
+                            megaClippersPerSec={15} 
+                            megaClippersToAdd={15} 
+                            wire={15} 
+                            wirePrice={15} 
+                            sendCommentToTerminal={()=>{}}
+                            />);
     });
 
     it("should render one <Buttons/> if manufacturingSectionIsShown is set to true", () => {

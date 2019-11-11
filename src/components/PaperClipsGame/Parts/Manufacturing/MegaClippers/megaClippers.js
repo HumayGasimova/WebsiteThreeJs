@@ -52,26 +52,14 @@ import * as Selectors from '../../../../../reducers/selectors';
 export class MegaClippers extends Component {
 
     /**
-    * Constructor
+    * Methods
     */
 
-    constructor (props){
-        super(props);
+    megaClippersOnClick = () => {
+        this.props.megaClippersButtonPressed();
+        this.props.startMegaClippers();
+        this.props.switchOffOrOnAutoAndMegaClippers(true);
     }
-
-    /**
-    * Methods
-    */
-
-    /**
-    * Methods
-    */
-
-   megaClippersOnClick = () => {
-       this.props.megaClippersButtonPressed();
-       this.props.startMegaClippers();
-       this.props.switchOffOrOnAutoAndMegaClippers(true);
-   }
 
     /**
     * Markup
@@ -97,21 +85,17 @@ export class MegaClippers extends Component {
 export default connect(
     (state) => {
         return {
-            autoClippersButtonDisabled: Selectors.getAutoClippersButtonDisabledState(state),
             megaClippersPerSec: Selectors.getMegaClippersPerSecState(state),
-            autoClipperInitPrice: Selectors.getAutoClipperInitPriceState(state),
-            autoClipperPrice: Selectors.getAutoClipperPriceState(state),
             megaClipperPrice: Selectors.getMegaClipperPriceState(state),
             megaClipperInitPrice: Selectors.getMegaClipperInitPriceState(state),
-            megaClippersButtonDisabled: Selectors.getMegaClippersButtonDisabledState(state),
+            megaClippersButtonDisabled: Selectors.getMegaClippersButtonDisabledState(state)
         };
     },
     (dispatch) => {
         return {
-            autoPaperclips: bindActionCreators(Actions.autoPaperclips, dispatch),
             megaClippersButtonPressed: bindActionCreators(Actions.megaClippersButtonPressed, dispatch),
             startMegaClippers: bindActionCreators(Actions.startMegaClippers, dispatch),
-            switchOffOrOnAutoAndMegaClippers: bindActionCreators(Actions.switchOffOrOnAutoAndMegaClippers, dispatch),
+            switchOffOrOnAutoAndMegaClippers: bindActionCreators(Actions.switchOffOrOnAutoAndMegaClippers, dispatch)
         };
     }
 )(MegaClippers);

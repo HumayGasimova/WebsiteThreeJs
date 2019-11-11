@@ -21,7 +21,6 @@ import {
 import Button from '../../../../library/Button/button';
 import Grid from '../../SmallParts/Grid/grid';
 import Dropdown from '../../SmallParts/Dropdown/dropdown';
-import Backdrop from '../../SmallParts/Backdrop/backdrop';
 
 /**
 * Styles
@@ -54,18 +53,10 @@ import * as Utility from '../../../../utility';
 export class Investments extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
      * Methods
      */
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if (prevProps.investmentsCash !== this.props.investmentsCash || prevProps.investmentsStocks !== this.props.investmentsStocks) {
             if(this.props.investmentsCash === 0 && this.props.investmentsTotal === 0 && this.props.investmentsStocks === 0){
                 this.props.stopUpdatingScreen();
@@ -74,25 +65,23 @@ export class Investments extends Component {
     }
 
     renderGrid = () => {
-        // if(true){
-            return(
-                <div>
-                    {this.props.investmentsLines.map((el,i) => {
-                        return(
-                            <Grid
-                                key={i}
-                                className={`grid-line${i}`}
-                                stock={el.stock}
-                                amt={el.amt}
-                                price={el.price}
-                                total={el.total}
-                                profitLoss={el.profitLoss}    
-                            />
-                        )
-                    })}
-                </div>
-            )
-        // }
+        return(
+            <div>
+                {this.props.investmentsLines.map((el,i) => {
+                    return(
+                        <Grid
+                            key={i}
+                            className={`grid-line${i}`}
+                            stock={el.stock}
+                            amt={el.amt}
+                            price={el.price}
+                            total={el.total}
+                            profitLoss={el.profitLoss}    
+                        />
+                    )
+                })}
+            </div>
+        )
     }
     
     /**
@@ -161,9 +150,6 @@ export class Investments extends Component {
                     </div>
                     <div>Cost: {Utility.commaSeparator(this.props.upgradeInvestmentEngineCost)} Yomi</div>
                 </div>
-                {/* {this.props.showDropdownInvestments ? <Backdrop 
-                                                        closeDropdowns={this.props.closeDropdowns}
-                                                        className="backdrop-investments"/> : null} */}
             </div>
         );
     }
@@ -181,17 +167,16 @@ export default connect(
             chosenListDropdown: Selectors.getChosenListDropdownState(state),
             investmentsLevel: Selectors.getInvestmentsLevelState(state),
             upgradeInvestmentEngineCost: Selectors.getUpgradeInvestmentEngineCostState(state),
-            yomi: Selectors.getYomiState(state),
+            yomi: Selectors.getYomiState(state)
         };
     },
     (dispatch) => {
         return {
             toggleDropdownInvestments: bindActionCreators(Actions.toggleDropdownInvestments, dispatch),
-            closeDropdowns: bindActionCreators(Actions.closeDropdowns, dispatch),
             startInvestmentsDeposit: bindActionCreators(Actions.startInvestmentsDeposit, dispatch),
             startInvestmentsWithdraw: bindActionCreators(Actions.startInvestmentsWithdraw, dispatch),
             stopUpdatingScreen: bindActionCreators(Actions.stopUpdatingScreen, dispatch),
-            upgradeInvestmentEngine: bindActionCreators(Actions.upgradeInvestmentEngine, dispatch),
+            upgradeInvestmentEngine: bindActionCreators(Actions.upgradeInvestmentEngine, dispatch)
         };
     }
 )(Investments);

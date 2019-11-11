@@ -1,8 +1,24 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { AutoWireBuyer } from './autoWireBuyer';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    AutoWireBuyer 
+} from './autoWireBuyer';
 import Button from '../../../../../library/Button/button';
+
+/**
+* Tests
+*/
 
 describe('<AutoWireBuyer/>', () => {
     let wrapper;

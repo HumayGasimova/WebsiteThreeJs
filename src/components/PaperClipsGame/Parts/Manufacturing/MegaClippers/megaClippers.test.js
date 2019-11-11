@@ -1,14 +1,33 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { MegaClippers } from './megaClippers';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    MegaClippers 
+} from './megaClippers';
 import Button from '../../../../../library/Button/button';
+
+/**
+* Tests
+*/
 
 describe('<MegaClippers/>', () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<MegaClippers megaClipperInitPrice={100} megaClipperPrice={100}/>);
+        wrapper = shallow(<MegaClippers 
+                            megaClipperInitPrice={100} 
+                            megaClipperPrice={100}
+                            />);
     });
 
     it("should render one <Buttons/>", () => {
