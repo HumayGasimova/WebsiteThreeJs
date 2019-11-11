@@ -2581,6 +2581,22 @@ describe('businessReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     })
+
+    it("should update isGameOver with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_GAME_OVER,
+            val: true
+        }
+        const initState = {
+            ...initialState,
+            isGameOver: false
+        }
+        const state = {
+            ...initialState,
+            isGameOver: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
     // it("should return the initial state", () => {
     //    expect(reducer(undefined, {})).toEqual(state);
     // })
