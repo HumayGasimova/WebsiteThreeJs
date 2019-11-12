@@ -39,7 +39,7 @@ import * as Actions from '../../../../actions';
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Const
+* Constants
 */
 
 import * as projectsToAdd from '../../../../constants/projectsToAdd';

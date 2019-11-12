@@ -46,7 +46,7 @@ import * as Selectors from '../../../../reducers/selectors';
 import * as Utility from '../../../../utility';
 
 /**
-* Const
+* Constants
 */
 
 import * as projectsToAdd from '../../../../constants/projectsToAdd';

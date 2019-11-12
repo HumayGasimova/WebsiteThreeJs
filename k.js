@@ -69,7 +69,7 @@ case actionTypes.START_ADDING_EMPTY_INVESTMENTS_LINE:
    X // Epic.startCountingResultEpic,
    X // Epic.countFinalResultOfEachStrategyEpic,
     Epic.updateYomiEpic
-    // Epic.lastCommentEpic,
+   X // Epic.lastCommentEpic,
     // Epic.stopSendingLastCommentsEpic 46 46
     
 
