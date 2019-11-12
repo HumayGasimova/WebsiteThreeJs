@@ -1,11 +1,26 @@
+/**
+* Libraries
+*/
+
 import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
-import * as Actions from "../../actions";
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from "../../constants/actionTypes";
-import * as projectsToAdd from '../../constants/projectsToAdd';
+
+/**
+* Tests
+*/
 
 describe('startCountingResultEpic', () => {
-
     it('should return UPDATED_ALL_ROUNDS_RES, ADD_PROJECT, COUNT_FINAL_RESULT_OF_EACH_STRATEGY',
         () => {
             const action$ = ActionsObservable.of({
@@ -19,7 +34,7 @@ describe('startCountingResultEpic', () => {
                             {cell1: 30, cell2: 40, cell3: 20, cell4: 10, playerLeft: {val: 2, strategy: "RANDOM"}, playerTop: {val: 2, strategy: "MINIMAX"}},
                             {cell1: 30, cell2: 40, cell3: 20, cell4: 10, playerLeft: {val: 1, strategy: "RANDOM"}, playerTop: {val: 2, strategy: "MINIMAX"}},
                             {cell1: 30, cell2: 40, cell3: 20, cell4: 10, playerLeft: {val: 2, strategy: "RANDOM"}, playerTop: {val: 1, strategy: "MINIMAX"}}
-                    ]
+                        ]
                     }
                 }
             }

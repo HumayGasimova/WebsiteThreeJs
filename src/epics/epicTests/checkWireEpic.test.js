@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('checkWireEpic', () => {
-
     it('should (if wire is equal to 0) return WIRE_EXISTS',
         () => {
             const action$ = ActionsObservable.of({

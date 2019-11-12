@@ -31,5 +31,4 @@ describe('Marble testing', () => {
         //   scheduler.expectObservable(result).toBe(expectedMarble, expectedValues);
         //   scheduler.flush()
     })
-
 });

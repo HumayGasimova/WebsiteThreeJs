@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('buyWireEpic', () => {
-
   it('should return BUY_WIRE, TOGGLE_WIRE_BUTTON, TOGGLE_MAKE_PAPERCLIP_BUTTON',
     () => {
       const action$ = ActionsObservable.of({

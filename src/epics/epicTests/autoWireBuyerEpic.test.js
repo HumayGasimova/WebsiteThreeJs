@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('autoWireBuyerEpic', () => {
-
    it('should (if wire is equal to 0 and autoWireBuyerIsOn set to true) return START_BUYING_WIRE',
     () => {
       const action$ = ActionsObservable.of({

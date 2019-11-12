@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('catchPaperclipsEpic', () => {
-
   it('should return UPDATE_CLIPS_PER_SEC with value equals to the number of arguments of .of',
     () => {
       const action$ = ActionsObservable.of({

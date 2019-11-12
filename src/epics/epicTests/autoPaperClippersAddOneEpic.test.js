@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('autoPaperClippersAddOneEpic', () => {
-
   it('should return AUTO_CLIPPERS_ADD_ONE, AUTO_PAPERCLIPS_START, SWITCH_OFF_OR_ON_AUTO_AND_MEGA_CLIPPERS',
     () => {
       const action$ = ActionsObservable.of({

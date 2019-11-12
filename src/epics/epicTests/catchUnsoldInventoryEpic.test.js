@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('catchUnsoldInventoryEpic', () => {
-
     it('should return UPDATE_AVG_REV_PER_SEC with value equals to the number of arguments of .of and UPDATE_AVG_CLIPS_SOLD_PER_SEC',
         () => {
             const action$ = ActionsObservable.of({

@@ -1,10 +1,26 @@
+/**
+* Libraries
+*/
+
 import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
-import * as Actions from "../../actions";
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from "../../constants/actionTypes";
 
-describe('startInvestmentsWithdrawEpic', () => {
+/**
+* Tests
+*/
 
+describe('startInvestmentsWithdrawEpic', () => {
   it('should (if investmentsTotal is equal to 0 (total = 0)) return UPDATE_INVESTMENTS_TOTAL, UPDATE_INVESTMENTS_CASH, UPDATE_FAKE_INVESTMENTS_CASH, UPDATE_FUNDS_WITHDRAW',
     () => {
       const action$ = ActionsObservable.of({

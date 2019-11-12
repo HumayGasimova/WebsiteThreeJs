@@ -27,7 +27,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('autoPaperclipsStartEpic', () => {
-
   it('should return a MAKE_PAPERCLIP after each second',
     () => {
         const scheduler = new TestScheduler((actual, expected) => {

@@ -1,10 +1,26 @@
+/**
+* Libraries
+*/
+
 import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
-import * as Actions from "../../actions";
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from "../../constants/actionTypes";
 
-describe('startInvestmentsDepositEpic', () => {
+/**
+* Tests
+*/
 
+describe('startInvestmentsDepositEpic', () => {
   it('should return GET_DEPOSIT, START_UPDATING_SCREEN, START_UPDATING_INVESTMENTS_LINE, START_COUNTING_RISK, START_APPLYING_PROFIT_LOSS',
     () => {
       const action$ = ActionsObservable.of({

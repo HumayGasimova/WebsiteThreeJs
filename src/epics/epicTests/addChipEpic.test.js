@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('addChipEpic', () => {
-
   it('should return TOGGLE_CHIP',
     () => {
       const action$ = ActionsObservable.of({

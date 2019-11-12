@@ -23,7 +23,6 @@ import * as actionTypes from "../../constants/actionTypes";
 */
 
 describe('chooseFromDropdownEpic', () => {
-
     it('should (if chosen is "Low Risk") return ADD_CHOSEN_FROM_DROPDOWN, CLOSE_DROPDOWNS, UPDATE_INVESTMENTS_DELAY, STOP_UPDATING_SCREEN, STOP_UPDATING_INVESTMENTS_LINE, START_UPDATING_SCREEN, START_UPDATING_INVESTMENTS_LINE, STOP_ADDING_EMPTY_INVESTMENTS_LINE',
         () => {
             const action$ = ActionsObservable.of({
