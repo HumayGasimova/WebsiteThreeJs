@@ -13,4 +13,4 @@ export {
     getRandomStrategyVal,
     getStrategyModelingResult,
     getAllValuesOfAStrategicModelingCurrentList
-} from './utility'
+} from './utility';
