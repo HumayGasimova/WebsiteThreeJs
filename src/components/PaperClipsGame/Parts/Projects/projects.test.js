@@ -1,8 +1,24 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { Projects } from './projects';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    Projects 
+} from './projects';
 import Card from '../../SmallParts/Card/card';
+
+/**
+* Tests
+*/
 
 describe('<Projects/>', () => {
     let wrapper;
@@ -117,7 +133,10 @@ describe('<Projects/>', () => {
     ]
 
     beforeEach(() => {
-        wrapper = shallow(<Projects initProjects={()=>{}} cards={[]}/>);
+        wrapper = shallow(<Projects 
+                            initProjects={()=>{}} 
+                            cards={[]}
+                            />);
     });
 
     it("should render three <Card/>", () => {

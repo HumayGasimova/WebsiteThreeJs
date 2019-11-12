@@ -15,15 +15,10 @@ import {
 } from 'redux';
 
 /**
-* Components
-*/
-
-/**
 * Styles
 */
 
 import './dropdown.scss';
-
 
 /**
 * Images
@@ -42,18 +37,6 @@ import * as Actions from '../../../../actions';
 */
 
 class Dropdown extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-        // this.state = {
-        //     showDropdown: false
-        // }
-    }
-
 
     /**
     * Methods
@@ -109,19 +92,10 @@ class Dropdown extends Component {
 }
 
 export default connect(
-    (state) => {
-        return {
-            // showDropdown: state.business.showDropdown,
-            // creativity: Selectors.getCreativityState(state),
-            // unsoldInventory: Selectors.getUnsoldInventoryState(state),
-            // paperclipPrice: Selectors.getPaperclipPriceState(state),
-            // delay: Selectors.getDelayState(state),
-        };
-    },
+    null,
     (dispatch) => {
         return {
-            chooseFromDropdown: bindActionCreators(Actions.chooseFromDropdown, dispatch),
-            // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
+            chooseFromDropdown: bindActionCreators(Actions.chooseFromDropdown, dispatch)
         };
     }
 )(Dropdown);

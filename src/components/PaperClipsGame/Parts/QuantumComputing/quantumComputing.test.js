@@ -1,9 +1,25 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { QuantumComputing } from './quantumComputing';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    QuantumComputing 
+} from './quantumComputing';
 import Button from '../../../../library/Button/button';
 import Chip from '../../SmallParts/Chip/chip';
+
+/**
+* Tests
+*/
 
 describe('<QuantumComputing/>', () => {
     let wrapper;

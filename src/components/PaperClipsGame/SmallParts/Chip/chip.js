@@ -15,10 +15,6 @@ import {
 } from 'redux';
 
 /**
-* Components
-*/
-
-/**
 * Styles
 */
 
@@ -37,18 +33,10 @@ import * as Actions from '../../../../actions';
 class Chip extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
     * Methods
     */
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if (prevProps.qOps !== this.props.qOps) {
             if(this.props.qOps === 360){
                 // debugger
@@ -70,21 +58,13 @@ class Chip extends Component {
         return(
             <div>
                 {this.props.showChip ? <div className="chip"/> : null}
-                {/* <div className="chip"/> */}
             </div>
         );
     }
 }
 
 export default connect(
-    (state) => {
-        return {
-            // ops: Selectors.getOpsState(state),
-            // creativity: Selectors.getCreativityState(state),
-            // trust: Selectors.getTrustState(state),
-            
-        };
-    },
+  null,
     (dispatch) => {
         return {
             stopAddingQOps: bindActionCreators(Actions.stopAddingQOps, dispatch),

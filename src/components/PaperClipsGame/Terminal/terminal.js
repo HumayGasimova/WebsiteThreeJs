@@ -27,14 +27,6 @@ import './terminal.scss';
 export class Terminal extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-    
-    /**
     * Markup
     */
 

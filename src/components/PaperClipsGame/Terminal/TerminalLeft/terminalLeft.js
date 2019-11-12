@@ -6,11 +6,6 @@ import React,{
     Component
 } from 'react';
 
-
-/**
-* Components
-*/
-
 /**
 * Styles
 */
@@ -23,14 +18,6 @@ import './terminalLeft.scss';
 
 export class TerminalLeft extends Component {
 
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-    
     /**
     * Markup
     */

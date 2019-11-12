@@ -10,25 +10,11 @@ import {
     connect
 } from 'react-redux';
 
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
 /**
 * Styles
 */
 
 import './strategicModelingLeft.scss';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../../../actions';
 
 /**
 * Selectors
@@ -41,16 +27,6 @@ import * as Selectors from '../../../../../reducers/selectors';
 */
 
 export class StrategicModelingLeft extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-        this.state = {}
-        
-    }
 
     /**
     * Methods
@@ -86,14 +62,8 @@ export class StrategicModelingLeft extends Component {
 export default connect(
     (state) => {
         return {
-            showStrategicModelingCurrentList: Selectors.getShowStrategicModelingCurrentListState(state),
-            // showDropdownStrategicModeling: Selectors.getShowDropdownStrategicModelingState(state),
-            // chosenListDropdown: Selectors.getChosenListDropdownState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleDropdownStrategicModeling: bindActionCreators(Actions.toggleDropdownStrategicModeling, dispatch),
+            showStrategicModelingCurrentList: Selectors.getShowStrategicModelingCurrentListState(state)
+           
         };
     }
 )(StrategicModelingLeft);

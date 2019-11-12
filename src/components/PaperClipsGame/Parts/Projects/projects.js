@@ -53,17 +53,6 @@ import * as strategyTypes from '../../../../constants/strategyTypes';
 export class Projects extends Component {
 
     /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-        this.state = {
-            
-        }
-    }
-
-    /**
     * Methods
     */
 
@@ -78,7 +67,7 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.AutoClippers50);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveAutoClippers(action); //change logic
+                this.props.improveAutoClippers(action);
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart();
@@ -89,7 +78,7 @@ export class Projects extends Component {
                 this.props.addProject(projectsToAdd.OptimizedAutoClippers75);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveAutoClippers(action);//change logic
+                this.props.improveAutoClippers(action);
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart();
@@ -99,7 +88,7 @@ export class Projects extends Component {
             case 'autoClippers75':
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.improveAutoClippers(action);//change logic
+                this.props.improveAutoClippers(action);
                 if(this.props.autoClipperOn){
                     this.props.stop();
                     this.props.autoPaperclipsStart();
@@ -210,7 +199,7 @@ export class Projects extends Component {
                     this.props.stop();
                     this.props.autoPaperclipsStart(this.props.paperclipPrice, this.props.delay, this.props.delayAutoPaperClippers, this.props.wire);
                     this.props.switchOffOrOnAutoAndMegaClippers(true);
-                } //in progress //change logic
+                }
                 break;
             case 'theTothSausageConjecture':
                 this.props.sendCommentToTerminal(terminal);
@@ -453,7 +442,6 @@ export class Projects extends Component {
                 break;
             case 'anotherTokenOfGoodwill4':
                 this.props.addProject(projectsToAdd.AnotherTokenOfGoodwill5);
-                // this.props.addProject(projectsToAdd.AutoTourney);
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectMoney(price.money);
                 this.props.trustPlusOneFromProject(1);
@@ -557,8 +545,7 @@ export class Projects extends Component {
                 }
                 this.props.sendCommentToTerminal(terminal);
                 this.props.removePriceOfProjectOps(price.ops);
-                this.props.showManufacturingSection(false)
-                // this.props.updateWire(0)
+                this.props.showManufacturingSection(false);
                 break;  
             case 'disassembleQuantumComputing':
                 this.props.removeUnnecessaryCards();
@@ -578,10 +565,7 @@ export class Projects extends Component {
                 this.props.removePriceOfProjectOps(price.ops);
                 this.props.showProcessorsMemory(false);
                 this.props.toggleGameOver(true);
-                // this.props.updateWire(29)
-                break;         
-                
-               
+                break;    
         }
     }
 
@@ -610,15 +594,10 @@ export class Projects extends Component {
                             </Card>
                         )
                     }
-                   
                 })}
             </div>
         )        
     }
-
-    // componentWillMount = () => {
-    //     this.props.initProjects(this.state.card1, this.state.card2, this.state.card3)
-    // }
     
     renderProjects = () => {
         return(
@@ -629,6 +608,7 @@ export class Projects extends Component {
             </div>
         )
     }
+
     /**
     * Markup
     */
@@ -651,18 +631,16 @@ export default connect(
             delay: Selectors.getDelayState(state),
             delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
             ops: Selectors.getOpsState(state),
-            opsMax: Selectors.getOpsMaxState(state),
             autoClipperOn: Selectors.getAutoClipperOnState(state),
             processorsNumber: Selectors.getProcessorsNumberState(state),
             strategicModelingIsShown: Selectors.getStrategicModelingIsShownState(state), 
             showInvestmentEngine: Selectors.getShowInvestmentEngineState(state),
             quantumComputingIsShown: Selectors.getQuantumComputingIsShownState(state),
-            processorsMemoryIsShown: Selectors.getProcessorsMemoryIsShownState(state),
+            processorsMemoryIsShown: Selectors.getProcessorsMemoryIsShownState(state)
         };
     },
     (dispatch) => {
         return {
-            initProjects: bindActionCreators(Actions.initProjects, dispatch),
             deleteCard: bindActionCreators(Actions.deleteCard, dispatch),
             showRevTracker: bindActionCreators(Actions.showRevTracker, dispatch),
             addProject: bindActionCreators(Actions.addProject, dispatch),
@@ -700,11 +678,10 @@ export default connect(
             reallocationOfTrust: bindActionCreators(Actions.reallocationOfTrust, dispatch),
             removeUnnecessaryCards: bindActionCreators(Actions.removeUnnecessaryCards, dispatch),
             showManufacturingSection: bindActionCreators(Actions.showManufacturingSection, dispatch),
-            updateWire: bindActionCreators(Actions.updateWire, dispatch),
             showBusinessSection: bindActionCreators(Actions.showBusinessSection, dispatch),
             showProcessorsNumber: bindActionCreators(Actions.showProcessorsNumber, dispatch),
             showProcessorsMemory: bindActionCreators(Actions.showProcessorsMemory, dispatch),
-            toggleGameOver: bindActionCreators(Actions.toggleGameOver, dispatch),
+            toggleGameOver: bindActionCreators(Actions.toggleGameOver, dispatch)
         };
     }
 )(Projects);

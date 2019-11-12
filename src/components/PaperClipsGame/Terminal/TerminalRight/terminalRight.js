@@ -10,14 +10,6 @@ import {
     connect
 } from 'react-redux';
 
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
 /**
 * Styles
 */
@@ -37,13 +29,8 @@ import * as Selectors from '../../../../reducers/selectors';
 export class TerminalRight extends Component {
 
     /**
-    * Constructor
+    * Methods
     */
-
-    constructor (props){
-        super(props);
-    }
-
 
     renderComments = () => {
         return(
@@ -79,20 +66,7 @@ export class TerminalRight extends Component {
 export default connect(
     (state) => {
         return {
-            comments: Selectors.getCommentsState(state),
-            // paperclipPrice: Selectors.getPaperclipPriceState(state),
-            // wire: Selectors.getWireState(state),
-            // delay: Selectors.getDelayState(state),
-            // delayAutoPaperClippers: Selectors.getDelayAutoPaperClippersState(state),
-            // ops: Selectors.getOpsState(state),
-            // opsMax: Selectors.getOpsMaxState(state),
-            // autoClipperOn: Selectors.getAutoClipperOnState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // initProjects: bindActionCreators(Actions.initProjects, dispatch),
-    
+            comments: Selectors.getCommentsState(state)
         };
     }
 )(TerminalRight);

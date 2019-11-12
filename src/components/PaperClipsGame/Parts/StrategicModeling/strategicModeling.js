@@ -19,10 +19,7 @@ import {
 */
 
 import Button from '../../../../library/Button/button';
-import Grid from '../../SmallParts/Grid/grid';
 import Dropdown from '../../SmallParts/Dropdown/dropdown';
-import Backdrop from '../../SmallParts/Backdrop/backdrop';
-
 import StrategicModelingLeft from './StrategicModelingLeft/strategicModelingLeft';
 import StrategicModelingRight from './StrategicModelingRight/strategicModelingRight';
 
@@ -63,7 +60,6 @@ export class StrategicModeling extends Component {
     constructor (props){
         super(props);
         this.state = {
-            // isHovering: false,
             newTournamentButtonDisabled: false
         }
     }
@@ -74,16 +70,10 @@ export class StrategicModeling extends Component {
 
     handleMouseEnter = () => {
         this.props.toggleStrategicModelingHover(false);
-        // this.setState({
-        //     isHovering: false
-        // })
     }
 
     handleMouseLeave = () => {
         this.props.toggleStrategicModelingHover(true);
-        // this.setState({
-        //     isHovering: true
-        // })
     }
 
     renderStrategicModelingLeft = () => {
@@ -108,40 +98,6 @@ export class StrategicModeling extends Component {
         }
         
     }
-
-    renderGrid = () => {
-        // if(true){
-        //     return(
-        //         <div>
-        //             {this.state.example.map((el,i) => {
-        //                 return(
-        //                     <Grid
-        //                         key={i}
-        //                         className={`grid-line${i}`}
-        //                         stock={el.stock}
-        //                         amt={el.amt}
-        //                         price={el.price}
-        //                         total={el.total}
-        //                         pl={el.pl}    
-        //                     />
-        //                 )
-        //             })}
-        //         </div>
-        //     )
-        // }
-    }
-
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (prevState.ops !== this.props.ops) {
-    //         if(!this.props.newTournamentCost <= this.props.ops && !this.props.tournamentContinues){
-    //             this.setState({
-    //                 newTournamentButtonDisabled:
-    //             })
-    //         }
-   
-    //     }
-      
-    // }
 
     renderSubHeader = () => {
         if(this.props.roundAndPlayersIsShown){
@@ -231,7 +187,7 @@ export default connect(
             stratedicModelingLeftPartIsShown: Selectors.getStratedicModelingLeftPartIsShownState(state),
             stratedicModelingRightPartIsShown: Selectors.getStratedicModelingRightPartIsShownState(state),
             strategicModelingPartsHover: Selectors.getStrategicModelingPartsHoverState(state),
-            yomi: Selectors.getYomiState(state),
+            yomi: Selectors.getYomiState(state)
             
         };
     },
@@ -240,7 +196,7 @@ export default connect(
             toggleDropdownStrategicModeling: bindActionCreators(Actions.toggleDropdownStrategicModeling, dispatch),
             startNewTournament: bindActionCreators(Actions.startNewTournament, dispatch),
             startRunningStrategicModeling: bindActionCreators(Actions.startRunningStrategicModeling, dispatch),
-            toggleStrategicModelingHover: bindActionCreators(Actions.toggleStrategicModelingHover, dispatch),
+            toggleStrategicModelingHover: bindActionCreators(Actions.toggleStrategicModelingHover, dispatch)
         };
     }
 )(StrategicModeling);

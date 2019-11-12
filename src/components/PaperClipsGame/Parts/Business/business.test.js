@@ -1,9 +1,25 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { Business } from './business';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    Business 
+} from './business';
 import Button from '../../../../library/Button/button';
 import RevTracker from './RevTracker/revTracker';
+
+/**
+* Tests
+*/
 
 describe('<Business/>', () => {
     let wrapper;

@@ -6,18 +6,6 @@ import React,{
     Component
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
 /**
 * Styles
 */
@@ -25,28 +13,10 @@ import {
 import './grid.scss';
 
 /**
-* Actions
-*/
-
-import * as Actions from '../../../../actions';
-
-/**
 * Grid component definition and export
 */
 
 class Grid extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
-    * Methods
-    */
     
     /**
     * Markup
@@ -65,20 +35,4 @@ class Grid extends Component {
     }
 }
 
-export default connect(
-    (state) => {
-        return {
-            // ops: Selectors.getOpsState(state),
-            // creativity: Selectors.getCreativityState(state),
-            // unsoldInventory: Selectors.getUnsoldInventoryState(state),
-            // paperclipPrice: Selectors.getPaperclipPriceState(state),
-            // delay: Selectors.getDelayState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // checkCardValidity: bindActionCreators(Actions.checkCardValidity, dispatch),
-            // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
-        };
-    }
-)(Grid);
+export default Grid;

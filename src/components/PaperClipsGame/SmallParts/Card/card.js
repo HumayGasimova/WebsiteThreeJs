@@ -15,10 +15,6 @@ import {
 } from 'redux';
 
 /**
-* Components
-*/
-
-/**
 * Styles
 */
 
@@ -41,14 +37,6 @@ import * as Selectors from '../../../../reducers/selectors';
 */
 
 class Card extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
 
     /**
     * Methods
@@ -106,14 +94,12 @@ export default connect(
             creativity: Selectors.getCreativityState(state),
             trust: Selectors.getTrustState(state),
             yomi: Selectors.getYomiState(state),
-            funds: Selectors.getFundsState(state),
-            // delay: Selectors.getDelayState(state),
+            funds: Selectors.getFundsState(state)
         };
     },
     (dispatch) => {
         return {
-            checkCardValidity: bindActionCreators(Actions.checkCardValidity, dispatch),
-            // sellPaperclips: bindActionCreators(Actions.sellPaperclips, dispatch)
+            checkCardValidity: bindActionCreators(Actions.checkCardValidity, dispatch)
         };
     }
 )(Card);

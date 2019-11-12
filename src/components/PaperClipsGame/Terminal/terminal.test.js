@@ -1,9 +1,25 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+/**
+* Libraries
+*/
 
-import { Terminal } from './terminal';
+import React from 'react';
+import { 
+    shallow 
+} from 'enzyme';
+
+/**
+* Components
+*/
+
+import { 
+    Terminal 
+} from './terminal';
 import TerminalLeft from './TerminalLeft/terminalLeft';
 import TerminalRight from './TerminalRight/terminalRight';
+
+/**
+* Tests
+*/
 
 describe('<StrategicModeling/>', () => {
     let wrapper;

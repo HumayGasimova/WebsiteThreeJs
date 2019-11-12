@@ -39,23 +39,11 @@ import * as Actions from '../../../../actions';
 
 import * as Selectors from '../../../../reducers/selectors';
 
-
 /**
 * QuantumComputing component definition and export
 */
 
 export class QuantumComputing extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-        // this.state = {
-        //     chips: ['','']
-        // }
-    }
     
     /**
     * Methods
@@ -67,13 +55,11 @@ export class QuantumComputing extends Component {
             let chips = this.props.chips;
             let captureQOps = chips.reduce((a,b) => +a + b.qOps, 0);
          
-             
             this.props.captureCurrentQOps(captureQOps);
 
             if(this.props.ops >= this.props.opsMax && captureQOps > 0){
                 let randomNumber =  Math.floor(Math.random()*70);
                 this.props.updateOps(randomNumber);
-                // this.props.startDecreasingOperations();
             }else{
                 this.props.updateOps(captureQOps);
             }            
@@ -97,19 +83,6 @@ export class QuantumComputing extends Component {
         )        
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (prevProps.qOps !== this.props.qOps) {
-    //         if(this.props.qOps === 360){
-    //             this.props.stopAddingQOps();
-    //             this.props.startSubtractingQOps();
-    //         }
-    //         if(this.props.qOps === -360){
-    //             this.props.stopSubtractingQOps();
-    //             this.props.startAddingQOps();
-    //         }
-    //     }      
-    // }
-
     /**
     * Markup
     */
@@ -119,13 +92,11 @@ export class QuantumComputing extends Component {
             <div className="quantumComputing">
                 <div className="quantumComputing-label">Quantum Computing</div>
                 {this.renderChip()}
-                {/* {this.props.showChip ? <Chip/> : null} */}
                 <div className={this.props.changedToQOps ? "quantumComputing-wrapper2" : "quantumComputing-wrapper1"}>
                     <Button
                         className="quantumComputing-button"
                         onClick={this.computeOnClick}
                         text={"Compute"}
-                        // disabled={this.props.marketingButtonDisabled}
                     />
                     {this.props.changedToQOps ? 
                     <div className={this.props.showQCompMessage === 0 ? 'quantumComputing-text-with-effect0' : (this.props.showQCompMessage % 2 === 0 ? 'quantumComputing-text-with-effect1' :'quantumComputing-text-with-effect2' )}>
@@ -151,17 +122,14 @@ export default connect(
             currentQOps: Selectors.getCurrentQOpsState(state),
             chips: Selectors.getChipsState(state),
             ops: Selectors.getOpsState(state),
-            opsMax: Selectors.getOpsMaxState(state),
+            opsMax: Selectors.getOpsMaxState(state)
         };
     },
     (dispatch) => {
         return {
             showQuantCompMessage: bindActionCreators(Actions.showQuantCompMessage, dispatch),
             captureCurrentQOps: bindActionCreators(Actions.captureCurrentQOps, dispatch),
-            updateOps: bindActionCreators(Actions.updateOps, dispatch),
-            startDecreasingOperations: bindActionCreators(Actions.startDecreasingOperations, dispatch),
-            stopDecreasingOps: bindActionCreators(Actions.stopDecreasingOps, dispatch),
-            // addCaptureVal: bindActionCreators(Actions.addCaptureVal, dispatch),
+            updateOps: bindActionCreators(Actions.updateOps, dispatch)
         };
     }
 )(QuantumComputing);

@@ -7,20 +7,10 @@ import React,{
 } from 'react';
 
 /**
-* Components
-*/
-
-/**
 * Styles
 */
 
 import './backdrop.scss';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../../actions';
 
 /**
 * Backdrop component definition and export
@@ -28,18 +18,6 @@ import * as Actions from '../../../../actions';
 
 export class Backdrop extends Component {
 
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-
-    /**
-    * Methods
-    */
-    
     /**
     * Markup
     */

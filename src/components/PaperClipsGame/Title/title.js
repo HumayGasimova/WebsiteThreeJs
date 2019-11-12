@@ -7,11 +7,6 @@ import React,{
 } from 'react';
 
 /**
-* Components
-*/
-
-
-/**
 * Styles
 */
 
@@ -29,19 +24,6 @@ import linkImages from '../../../images/Images.png';
 */
 
 class Title extends Component {
-
-    /**
-    * Constructor
-    */
-
-    constructor (props){
-        super(props);
-    }
-    
-    /**
-    * Methods
-    */
-
    
     /**
     * Markup
