@@ -1,7 +1,34 @@
-import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
+/**
+* Libraries
+*/
+
+import { 
+  ActionsObservable 
+} from 'redux-observable';
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from "../../constants/actionTypes";
-import { delay } from 'rxjs/operators';
+
+/**
+* Operators
+*/
+
+import { 
+  delay 
+} from 'rxjs/operators';
+
+/**
+* Test setup
+*/
 
 jest.mock('rxjs/operators', () => {
   const operators = jest.requireActual('rxjs/operators');
@@ -9,8 +36,11 @@ jest.mock('rxjs/operators', () => {
   return operators;
 });
 
-describe('strategicModelingResultEpic', () => {
+/**
+* Tests
+*/
 
+describe('strategicModelingResultEpic', () => {
   it('should return START_COUNTING_RESULT after 3001 ms',
     () => {
       const spy = jest.fn();
@@ -19,11 +49,11 @@ describe('strategicModelingResultEpic', () => {
       });
 
       const state$ = {
-          value: {
-              business: {
-                strategicModelingRound: 3
-              }
+        value: {
+          business: {
+            strategicModelingRound: 3
           }
+        }
       }
 
       Epic.strategicModelingResultEpic(action$, state$).subscribe(spy);

@@ -26,7 +26,9 @@ import * as actionTypes from "../../constants/actionTypes";
 * Operators
 */
 
-import { take } from 'rxjs/operators';
+import { 
+  take 
+} from 'rxjs/operators';
 
 /**
 * Tests
@@ -40,8 +42,8 @@ describe('startAddingQOpsEpic', () => {
       });
 
       const action$ = ActionsObservable.of({
-          type: actionTypes.START_ADDING_Q_OPS,
-          chipsNumber: 'chipX'
+        type: actionTypes.START_ADDING_Q_OPS,
+        chipsNumber: 'chipX'
       });
 
       scheduler.run(helpers => {

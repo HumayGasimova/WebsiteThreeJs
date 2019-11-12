@@ -1,11 +1,38 @@
-import { ActionsObservable } from 'redux-observable';
-import { toArray, take } from 'rxjs/operators';
-import * as Epic from '../index'
-import * as Actions from "../../actions";
-import * as actionTypes from "../../constants/actionTypes";
-import { TestScheduler } from 'rxjs/testing';
-import {callHeroes} from './hero';
+/**
+* Libraries
+*/
 
+import { 
+  ActionsObservable 
+} from 'redux-observable';
+import { 
+  TestScheduler 
+} from 'rxjs/testing';
+
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index'
+
+/**
+* Constants
+*/
+
+import * as actionTypes from "../../constants/actionTypes";
+
+/**
+* Operators
+*/
+
+import { 
+  take 
+} from 'rxjs/operators';
+
+/**
+* Tests
+*/
 
 describe('startUpdatingPlayerLeftOnScreenEpic', () => {
 
@@ -20,11 +47,11 @@ describe('startUpdatingPlayerLeftOnScreenEpic', () => {
         });
 
         const state$ = {
-            value: {
-                business: {
-                    strategicModelingRound: 16
-                }
+          value: {
+            business: {
+              strategicModelingRound: 16
             }
+          }
         }
         scheduler.run(helpers => {
           const {expectObservable} = helpers;

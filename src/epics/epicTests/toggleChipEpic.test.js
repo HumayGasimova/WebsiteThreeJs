@@ -1,7 +1,34 @@
-import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
+/**
+* Libraries
+*/
+
+import { 
+    ActionsObservable 
+} from 'redux-observable';
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from "../../constants/actionTypes";
-import { delay, toArray } from 'rxjs/operators';
+
+/**
+* Operators
+*/
+
+import { 
+    delay 
+} from 'rxjs/operators';
+
+/**
+* Test setup
+*/
 
 jest.mock('rxjs/operators', () => {
   const operators = jest.requireActual('rxjs/operators');
@@ -9,8 +36,11 @@ jest.mock('rxjs/operators', () => {
   return operators;
 });
 
-describe('toggleChipEpic', () => {
+/**
+* Tests
+*/
 
+describe('toggleChipEpic', () => {
     it('should (for chip1 if showChip is true) return TOGGLE_CHIP in 120000 ms',
         () => {
             const spy = jest.fn();
@@ -590,5 +620,4 @@ describe('toggleChipEpic', () => {
         
             expect(spy).toHaveBeenCalledTimes(1); 
         })
-
 });

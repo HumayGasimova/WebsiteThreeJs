@@ -1,10 +1,29 @@
-import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
+/**
+* Libraries
+*/
+
+import { 
+  ActionsObservable 
+} from 'redux-observable';
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as projectsToAdd from '../../constants/projectsToAdd';
 import * as actionTypes from "../../constants/actionTypes";
 
-describe('throwMegaClippersEpic', () => {
+/**
+* Tests
+*/
 
+describe('throwMegaClippersEpic', () => {
   it('should return ADD_PROJECT',
     () => {
       const action$ = ActionsObservable.of({
@@ -18,8 +37,8 @@ describe('throwMegaClippersEpic', () => {
 
       expect(array).toEqual([
         { 
-            type: actionTypes.ADD_PROJECT,
-            project: projectsToAdd.MegaClippers 
+          type: actionTypes.ADD_PROJECT,
+          project: projectsToAdd.MegaClippers 
         }
       ])
     })

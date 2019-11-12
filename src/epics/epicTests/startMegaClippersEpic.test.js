@@ -2,8 +2,13 @@
 * Libraries
 */
 
-import { ActionsObservable } from 'redux-observable';
-import { TestScheduler } from 'rxjs/testing';
+import { 
+  ActionsObservable 
+} from 'redux-observable';
+
+import { 
+  TestScheduler 
+} from 'rxjs/testing';
 
 /**
 * Epic
@@ -33,12 +38,12 @@ describe('startMegaClippersEpic', () => {
       });
 
       const state$ = {
-          value: {
-              business: {
-                  wire: 4,
-                  megaClippersToAdd: 1
-              }
+        value: {
+          business: {
+              wire: 4,
+              megaClippersToAdd: 1
           }
+        }
       }
 
       scheduler.run(helpers => {
@@ -65,12 +70,12 @@ describe('startMegaClippersEpic', () => {
       });
 
       const state$ = {
-          value: {
-              business: {
-                  wire: 1,
-                  megaClippersToAdd: 6
-              }
+        value: {
+          business: {
+            wire: 1,
+            megaClippersToAdd: 6
           }
+        }
       }
 
       scheduler.run(helpers => {

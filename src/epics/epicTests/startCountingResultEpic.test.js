@@ -2,7 +2,9 @@
 * Libraries
 */
 
-import { ActionsObservable } from 'redux-observable';
+import { 
+    ActionsObservable 
+} from 'redux-observable';
 
 /**
 * Epic

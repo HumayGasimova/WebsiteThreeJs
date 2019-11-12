@@ -1,11 +1,27 @@
+/**
+* Libraries
+*/
+
 import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
-import * as Actions from "../../actions";
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from "../../constants/actionTypes";
 import * as projectsToAdd from '../../constants/projectsToAdd';
 
-describe('updateYomiEpic', () => {
+/**
+* Tests
+*/
 
+describe('updateYomiEpic', () => {
     it('should (if coherentExtrapolatedVolitionIsThrown is set to false) return SEND_COMMENT_TO_TERMINAL, ADD_PROJECT, TOGGLE_THROWN_PROJECT',
         () => {
             const action$ = ActionsObservable.of({

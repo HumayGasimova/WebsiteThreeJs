@@ -1,10 +1,28 @@
-import { ActionsObservable } from 'redux-observable';
-import * as Epic from '../index'
-import * as projectsToAdd from '../../constants/projectsToAdd';
+/**
+* Libraries
+*/
+
+import { 
+  ActionsObservable 
+} from 'redux-observable';
+
+/**
+* Epic
+*/
+
+import * as Epic from '../index';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from "../../constants/actionTypes";
 
-describe('updateStrategicModelingCurrentListEpic', () => {
+/**
+* Tests
+*/
 
+describe('updateStrategicModelingCurrentListEpic', () => {
   it('should return ADD_PROJECT',
     () => {
       const action$ = ActionsObservable.of({
@@ -20,8 +38,8 @@ describe('updateStrategicModelingCurrentListEpic', () => {
 
       expect(array).toEqual([
         { 
-            type: actionTypes.UPDATE_STRATEGIC_MODELING_ROUND,
-            round: 4
+          type: actionTypes.UPDATE_STRATEGIC_MODELING_ROUND,
+          round: 4
         }
       ])
     })

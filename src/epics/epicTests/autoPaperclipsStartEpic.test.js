@@ -38,11 +38,11 @@ describe('autoPaperclipsStartEpic', () => {
         });
 
         const state$ = {
-            value: {
-                business: {
-                  delayAutoPaperClippers: 1000
-                }
-            }
+          value: {
+              business: {
+                delayAutoPaperClippers: 1000
+              }
+          }
         }
 
         scheduler.run(helpers => {

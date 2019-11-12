@@ -37,8 +37,8 @@ describe('startImprovingMarketingEpic', () => {
 
       expect(array).toEqual([
         { 
-            type: actionTypes.IMPROVE_MARKETING,
-            val: 50
+          type: actionTypes.IMPROVE_MARKETING,
+          val: 50
         },
         { type: actionTypes.CALC_DELAY_UNSOLD_INVENTARY },
         { type: actionTypes.STOP_UPDATING_UNSOLD_INVENTORY },

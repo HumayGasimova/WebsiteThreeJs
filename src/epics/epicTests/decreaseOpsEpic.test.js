@@ -22,7 +22,9 @@ import * as actionTypes from "../../constants/actionTypes";
 * Operators
 */
 
-import { delay } from 'rxjs/operators';
+import { 
+  delay 
+} from 'rxjs/operators';
 
 /**
 * Test setup
@@ -48,10 +50,10 @@ describe('decreaseOpsEpic', () => {
 
       const state$ = {
         value: {
-            business: {
-              ops: 7,
-              opsMax: 4
-            }
+          business: {
+            ops: 7,
+            opsMax: 4
+          }
         }
       }
 

@@ -22,7 +22,9 @@ import * as actionTypes from "../../constants/actionTypes";
 * Operators
 */
 
-import { delay } from 'rxjs/operators';
+import { 
+  delay 
+} from 'rxjs/operators';
 
 /**
 * Test setup
@@ -47,14 +49,14 @@ describe('makePaperClipEpic', () => {
       });
 
       const state$ = {
-          value: {
-              business: {
-                paperClips: 1000,
-                clipsToBuyTrust: 1000,
-                wire: 37,
-                delay: 1000
-              }
+        value: {
+          business: {
+            paperClips: 1000,
+            clipsToBuyTrust: 1000,
+            wire: 37,
+            delay: 1000
           }
+        }
       }
 
       Epic.makePaperClipEpic(action$, state$).subscribe(spy);

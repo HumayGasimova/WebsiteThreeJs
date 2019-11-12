@@ -2,7 +2,9 @@
 * Libraries
 */
 
-import { ActionsObservable } from 'redux-observable';
+import { 
+  ActionsObservable 
+} from 'redux-observable';
 
 /**
 * Epic
@@ -28,10 +30,10 @@ describe('startInvestmentsWithdrawEpic', () => {
       });
       const state$ = {
         value: {
-            business: {
-                investmentsCash: 500,
-                investmentsTotal: 0 
-            }
+          business: {
+            investmentsCash: 500,
+            investmentsTotal: 0 
+          }
         }
       }
       const epic$ = Epic.startInvestmentsWithdrawEpic(action$, state$);
@@ -68,12 +70,12 @@ describe('startInvestmentsWithdrawEpic', () => {
       });
       const state$ = {
         value: {
-            business: {
-                investmentsCash: 500,
-                investmentsTotal: 700
-            }
+          business: {
+            investmentsCash: 500,
+            investmentsTotal: 700
+          }
         }
-        }
+      }
       const epic$ = Epic.startInvestmentsWithdrawEpic(action$, state$);
       const array = [];
       epic$.subscribe(
