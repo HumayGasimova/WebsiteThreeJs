@@ -1,10 +1,23 @@
+/**
+* Constants
+*/
+
 import * as actionTypes from "../constants/actionTypes";
+import * as projectsToAdd from '../constants/projectsToAdd';
+
+/**
+* Constants
+*/
+
 import {
     updateObject
-  } from './utility';
+} from './utility';
 
-import * as projectsToAdd from '../constants/projectsToAdd';
-import * as Utility from '../utility'
+import * as Utility from '../utility';
+
+/**
+* Initial State
+*/
 
 export const initialState = {
     paperClips: 0, //0
@@ -23,7 +36,6 @@ export const initialState = {
     wirePrice: 20,
     wireButtonDisabled: true,
     autoClippersPerSec: 0,
-    // autoPaperclips: 0,
     autoClipperInitPrice: 5,
     autoClipperPrice: 6.1,
     megaClipperInitPrice: 500,
@@ -57,7 +69,6 @@ export const initialState = {
     showQCompMessage: 0,
     showChip: false,
     changedToQOps: false,
-    // qOps: -360,
     currentQOps: -360,
     chips: [],
     time: 0,
@@ -136,7 +147,6 @@ export const initialState = {
 
 const makePaperclip = (state) => {
     let updateWire = +state.wire >= 1 ? +state.wire - 1 : 0   // 500 pomenat na 1
-    // localStorage.setItem('paperClips', state.paperClips)
     return updateObject(state, {
        paperClips: state.paperClips + 1, //pomenat na 1
        unsoldInventory: +state.unsoldInventory + 1,
@@ -158,8 +168,6 @@ const updateFunds = (state, action) => {
 }
 
 const updateUnsoldInventory = (state, action) => {
-//    let updatedInventory = state.unsoldInventory;
-    // updatedInventory.splice(-1,1)
     return updateObject(state, {
         unsoldInventory: +state.unsoldInventory - 1,
     });
@@ -781,22 +789,18 @@ const updateAvgClipsSoldPerSec = (state, action) => {
 const megaClippersButtonPressed = (state, action) => {
     let updatedMegaClippersPrice;
     let updatedFunds;
-    // let updatedMegaClippersToAdd;
 
     if(state.megaClippersPerSec === 0){
         updatedMegaClippersPrice = state.megaClipperPrice;
         updatedFunds = state.funds - state.megaClipperInitPrice;
-        // updatedMegaClippersToAdd = state.megaClippersToAdd
     }else{
         updatedMegaClippersPrice = +(state.megaClipperPrice + (state.megaClipperPrice * 0.07)).toFixed(2);
         updatedFunds = +state.funds - +state.megaClipperPrice;
-        // updatedMegaClippersToAdd = state.megaClippersToAdd + 500;
     }
     return updateObject(state, {
         megaClippersPerSec: +state.megaClippersPerSec + 1,
         megaClipperPrice: +updatedMegaClippersPrice,
-        funds: +updatedFunds,
-        // megaClippersToAdd: updatedMegaClippersToAdd
+        funds: +updatedFunds
     });
 }
 
@@ -884,14 +888,6 @@ const updateStrategicModelingRound = (state, action) => {
         strategicModelingRound: action.round
     });
 }
-
-// const updateNumberOfRounds = (state, action) => {
-//     let updatedRoundsArray = Utility.getArrayOfRounds(action.val);
-//  
-//     return updateObject(state, {
-//         roundsArray: updatedRoundsArray
-//     });
-// }
 
 const showRoundAndPlayers = (state, action) => {
     return updateObject(state, {
@@ -1208,9 +1204,7 @@ const toggleThrownProject = (state, action) => {
             return updateObject(state, {
                 completeGameIsThrown: action.val,     
             });
-
     }
-   
 }
 
 const removeUnnecessaryCards = (state, action) => {
@@ -1278,73 +1272,6 @@ const toggleGameOver = (state, action) => {
         isGameOver: action.val
     });
 }
-
-// const toggleThrownProjectStartCreativityCounter = (state, action) => {
-//     return updateObject(state, {
-//         creativityCounterIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectLexicalProcessing = (state, action) => {
-//     return updateObject(state, {
-//         lexicalProcessingIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectCombinatoryHarmonics = (state, action) => {
-//     return updateObject(state, {
-//         combinatoryHarmonicsIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectTheHadwingerProblem = (state, action) => {
-//     return updateObject(state, {
-//         theHadwingerProblemIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectTheTothSausageConjecture = (state, action) => {
-//     return updateObject(state, {
-//         theTothSausageConjectureIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectDonkeySpace = (state, action) => {
-//     return updateObject(state, {
-//         donkeySpaceIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectXavierReinitialization = (state, action) => {
-//     return updateObject(state, {
-//         xavierReinitializationIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectHostileTakeover = (state, action) => {
-//     return updateObject(state, {
-//         hostileTakeoverIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectQuantumComputing = (state, action) => {
-//     return updateObject(state, {
-//         quantumComputingIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectCoherentExtrapolatedVolition = (state, action) => {
-//     return updateObject(state, {
-//         coherentExtrapolatedVolitionIsThrown: action.val,     
-//     });
-// }
-
-// const toggleThrownProjectQuantumTemporalReversion = (state, action) => {
-//     return updateObject(state, {
-//         quantumTemporalReversionIsThrown: action.val,     
-//     });
-// }
-
 
 const businessReducer = (state = initialState, action) => {
     switch(action.type){
@@ -1442,22 +1369,10 @@ const businessReducer = (state = initialState, action) => {
             return toggleMakePaperclipButton(state, action);  
         case actionTypes.IMPROVE_WIRE_EXTRUSION:
             return improveWireExtrusion(state, action);  
-        // case actionTypes.START_CREATIVITY_COUNTER:
-        //     return state;  
         case actionTypes.CREATIVITY_TURN_ON:
             return creativityTurnOn(state, action);  
         case actionTypes.WIRE_EXISTS:
             return wireExists(state, action);
-        // case actionTypes.ADD_LEXICAL_PROCESSING:
-        //     return state;  
-        // case actionTypes.ADD_COMBINATORY_HARMONICS:
-        //     return state;
-        // case actionTypes.ADD_THE_HADWINGER_PROBLEM:
-        //     return state;  
-        // case actionTypes.ADD_THE_TOTH_SAUSAGE_CONJECTURE:
-        //     return state;
-        // case actionTypes.ADD_DONKEY_SPACE:
-        //     return state;
         case actionTypes.START_IMPROVING_MARKETING:
             return state;
         case actionTypes.IMPROVE_MARKETING:
@@ -1641,9 +1556,7 @@ const businessReducer = (state = initialState, action) => {
         case actionTypes.TOGGLE_CELLS:
             return toggleCells(state, action);   
         case actionTypes.UPDATE_YOMI:
-            return updateYomi(state, action);   
-        // case actionTypes.ADD_COHERENT_EXTRAPOLATED_VOLITION:
-        //     return state; 
+            return updateYomi(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_CREAT_AND_YOMI:
             return removePriceOfProjectOpsCreatAndYomi(state, action);
         case actionTypes.REMOVE_PRICE_OF_PROJECT_OPS_AND_YOMI:
@@ -1652,12 +1565,8 @@ const businessReducer = (state = initialState, action) => {
             return removePriceOfProjectYomiAndMoney(state, action);   
         case actionTypes.REMOVE_PRICE_OF_PROJECT_MONEY:
             return removePriceOfProjectMoney(state, action);   
-        // case actionTypes.ADD_XAVIER_REINITIALIZATION:
-        //     return state;  
         case actionTypes.REALLOCATION_OF_TRUST:
             return reallocationOfTrust(state, action);  
-        // case actionTypes.ADD_HOSTILE_TAKEOVER:
-        //     return state; 
         case actionTypes.UPGRADE_INVESTMENT_ENGINE:
             return upgradeInvestmentEngine(state, action);  
         case actionTypes.STATE_FROM_LOCAL_STORAGE:
@@ -1688,45 +1597,9 @@ const businessReducer = (state = initialState, action) => {
             return countdownOnClick(state, action); 
         case actionTypes.TOGGLE_GAME_OVER:
             return toggleGameOver(state, action); 
-        // case actionTypes.TOGGLE_THROWN_PROJECT_START_CREATIVITY_COUNTER:
-        //     return toggleThrownProjectStartCreativityCounter(state, action); 
-        // case actionTypes.TOGGLE_THROWN_PROJECT_LEXICAL_PROCESSING:
-        //     return toggleThrownProjectLexicalProcessing(state, action);  
-        // case actionTypes.TOGGLE_THROWN_PROJECT_COMBINATORY_HARMONICS:
-        //     return toggleThrownProjectCombinatoryHarmonics(state, action); 
-        // case actionTypes.TOGGLE_THROWN_PROJECT_THE_HADWINGER_PROBLEM:
-        //     return toggleThrownProjectTheHadwingerProblem(state, action);
-        // case actionTypes.TOGGLE_THROWN_PROJECT_THE_TOTH_SAUSAGE_CONJECTURE:
-        //     return toggleThrownProjectTheTothSausageConjecture(state, action);  
-        // case actionTypes.TOGGLE_THROWN_PROJECT_DONKEY_SPACE:
-        //     return toggleThrownProjectDonkeySpace(state, action);
-        // case actionTypes.TOGGLE_THROWN_PROJECT_XAVIER_REINITIALIZATION:
-        //     return toggleThrownProjectXavierReinitialization(state, action); 
-        // case actionTypes.TOGGLE_THROWN_PROJECT_HOSTILE_TAKEOVER:
-        //     return toggleThrownProjectHostileTakeover(state, action);   
-        // case actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_COMPUTING:
-        //     return toggleThrownProjectQuantumComputing(state, action);  
-        // case actionTypes.TOGGLE_THROWN_PROJECT_COHERENT_EXTRAPOLATED_VOLITION:
-        //     return toggleThrownProjectCoherentExtrapolatedVolition(state, action);     
-        // case actionTypes.TOGGLE_THROWN_PROJECT_QUANTUM_TEMPORAL_REVERSION:
-        //     return toggleThrownProjectQuantumTemporalReversion(state, action);  
         default: 
             return state;
     }
 }
 
 export default businessReducer;
-
-// const addProject = (state, action) => {
-//     let updatedCards = [...state.cards];
-
-// //     let a = [1, 2, 3];
-// // let copy1 = [...a];
-// // let copy2 = a.slice();
-// // let copy3 = a.concat();
-
-//     updatedCards.push('');
-//     return updateObject(state, {
-//       cards: updatedCards
-//     });
-// }

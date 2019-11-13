@@ -685,5 +685,3 @@ export const getDotsState = createSelector(
     [getDots],
     (x) => x
 );
-
-

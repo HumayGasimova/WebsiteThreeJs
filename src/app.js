@@ -7,13 +7,7 @@ import React,{
 } from 'react';
 
 import {
-   connect
-} from 'react-redux';
-
-import {
-   Route,
-   Switch,
-   Redirect
+   Route
 } from 'react-router-dom';
 
 /**
@@ -23,7 +17,7 @@ import {
 import PaperClipsGame from './components/PaperClipsGame/paperClipsGame';
 
 /**
-* Components
+* Styles
 */
 
 import './app.scss';
@@ -33,48 +27,6 @@ import './app.scss';
 */
 
 export class App extends Component {
-  
-   /**
-   * Methods
-   */
-
-   // renderRoutes = () => {
-   //     if(this.props.isAuthenticated){
-   //         return(
-   //             <div>
-   //                 <Switch>
-   //                     <Route 
-   //                         path="/tictactoe"
-   //                         component={ App3x3 }
-   //                     />
-   //                     <Route 
-   //                         path="/tictactoe4x4"
-   //                         component={ App4x4 }// render={props => <App4x4 {...props}/>}
-   //                     />
-   //                     <Route 
-   //                         exact 
-   //                         path="/"
-   //                         component={ Welcome }
-   //                     />
-   //                     <Redirect to="/"/>
-   //                 </Switch>
-   //             </div>
-   //         );
-   //     }else{
-   //         return(
-   //             <div>
-   //                 <Switch>
-   //                     <Route 
-   //                         exact 
-   //                         path="/"
-   //                         component={ Welcome }
-   //                         />
-   //                     <Redirect to="/"/>
-   //                 </Switch>
-   //             </div>
-   //         );
-   //     }
-   // }
 
    /**
    * Markup
@@ -88,16 +40,9 @@ export class App extends Component {
                   path="/"
                   component={ PaperClipsGame }
                />
-               {/* <Epic/> */}
             </div>
       );
    }
 }
 
-export default connect(
-   (state) => {
-      return {
-         //   isAuthenticated: state.auth.token !== null
-      };
-   }
-)(App);
+export default App;
