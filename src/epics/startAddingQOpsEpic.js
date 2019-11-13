@@ -27,7 +27,7 @@ import * as Actions from '../actions';
 * Epic
 */
 
-export const startAddingQOpsEpic = (action$, state$) => 
+export const startAddingQOpsEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.START_ADDING_Q_OPS),
         mergeMap(action => {

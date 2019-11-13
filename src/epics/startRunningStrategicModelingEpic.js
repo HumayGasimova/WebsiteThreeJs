@@ -1,17 +1,29 @@
-import { of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/switchMap';
-// import 'rxjs/add/operator/mapTo';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/repeat';
-// .timeInterval(2000)
-// import { interval } from "rxjs"
+/**
+* Operators
+*/
+
+import { 
+    of 
+} from 'rxjs';
+
+import { 
+    mergeMap 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
-// import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
+
+/**
+* Epic
+*/
 
 export const startRunningStrategicModelingEpic = (action$, state$) => 
     action$.pipe(
@@ -30,8 +42,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerLeftOnScreen(),
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
-                        Actions.tournamentDuration(),
-
+                        Actions.tournamentDuration()
                     )
                 case "RANDOM":
                     return of(
@@ -47,7 +58,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
                 case "A100":
                     return of(
@@ -63,7 +74,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
                 case "B100":
                     return of(
@@ -79,7 +90,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
                 case "GREEDY":
                     return of(
@@ -95,7 +106,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
                 case "GENEROUS":
                     return of(
@@ -111,7 +122,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
                 case "MINIMAX":
                     return of(
@@ -127,7 +138,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
                 case "TIT FOR TAT":
                     return of(
@@ -143,7 +154,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
                 case "BEAT LAST":
                     return of(
@@ -159,7 +170,7 @@ export const startRunningStrategicModelingEpic = (action$, state$) =>
                         Actions.startUpdatingPlayerTopOnScreen(),
                         Actions.gameStarted(),
                         Actions.strategicModelingResult(),
-                        Actions.tournamentDuration(),
+                        Actions.tournamentDuration()
                     )
            }
             return of(

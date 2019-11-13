@@ -21,6 +21,10 @@ import {
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
+/**
+* Epic
+*/
+
 export const raisePriceEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.RAISE_PRICE, actionTypes.LOWER_PRICE),
