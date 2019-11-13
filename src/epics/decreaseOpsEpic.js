@@ -2,9 +2,19 @@
 * Operators
 */
 
-import { of } from 'rxjs';
-import { switchMap, delay, repeat } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
+import { 
+    of 
+} from 'rxjs';
+
+import { 
+    switchMap, 
+    delay, 
+    repeat 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
 
 /**
 * Constants

@@ -1,18 +1,31 @@
-import { of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/observable/of';
+/**
+* Operators
+*/
+
+import { 
+    of 
+} from 'rxjs';
+
+import { 
+    mergeMap 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-// import { mergeMap, of } from 'rxjs/operators';
+/**
+* Epic
+*/
 
-// import { mergeMap } from 'rxjs/operators';
-// import { ofType } from 'redux-observable';
-
-export const paperclipsGenerateEpic = (action$, state$) => 
+export const paperclipsGenerateEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.START_SELLING),
         mergeMap(action => {

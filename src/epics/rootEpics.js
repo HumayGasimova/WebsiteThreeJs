@@ -11,12 +11,6 @@ export const rootEpic = combineEpics(
     Epic.buyWireEpic,
     Epic.autoPaperclipsStartEpic,
     Epic.autoPaperClippersAddOneEpic,
-    // Epic.startCreativityEpic,
-    // Epic.throwLexicalProcessingEpic,
-    // Epic.throwCombinatoryHarmonicsEpic,
-    // Epic.throwTheHadwingerProblemEpic,
-    // Epic.throwTheTothSausageConjectureEpic,
-    // Epic.throwDonkeySpaceEpic,
     Epic.startAddingQOpsEpic,
     Epic.startSubtractingQOpsEpic,
     Epic.addChipEpic,
@@ -54,7 +48,4 @@ export const rootEpic = combineEpics(
     Epic.updateYomiEpic,
     Epic.lastCommentEpic,
     Epic.stopSendingLastCommentsEpic
-    // Epic.throwCoherentExtrapolatedVolitionEpic,
-    // Epic.throwXavierReinitialization1Epic,
-    // Epic.throwHostileTakeoverEpic
 );

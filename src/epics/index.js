@@ -5,7 +5,6 @@ export { autoWireBuyerEpic } from './autoWireBuyerEpic';
 export { buyWireEpic } from './buyWireEpic';
 export { catchPaperclipsEpic } from './catchPaperclipsEpic';
 export { catchUnsoldInventoryEpic } from './catchUnsoldInventoryEpic';
-// export { checkAutoAndMegaClippersIsOnEpic } from './checkAutoAndMegaClippersIsOnEpic';
 export { checkButtonsEpic } from './checkButtonsEpic';
 export { checkWireEpic } from './checkWireEpic';
 export { chooseFromDropdownEpic } from './chooseFromDropdownEpic';
@@ -45,16 +44,3 @@ export { countFinalResultOfEachStrategyEpic } from './countFinalResultOfEachStra
 export { updateYomiEpic } from './updateYomiEpic';
 export { lastCommentEpic } from './lastCommentEpic';
 export { stopSendingLastCommentsEpic } from './stopSendingLastCommentsEpic';
-
-// export { throwCoherentExtrapolatedVolitionEpic } from './throwCoherentExtrapolatedVolitionEpic';
-// export { throwXavierReinitialization1Epic } from './throwXavierReinitialization1Epic';
-// export { throwHostileTakeoverEpic } from './throwHostileTakeoverEpic';
-// export { throwTheHadwingerProblemEpic } from './throwTheHadwingerProblemEpic';
-// export { throwTheTothSausageConjectureEpic } from './throwTheTothSausageConjectureEpic';
-// export { startCreativityEpic } from './startCreativityEpic';
-// export { throwCombinatoryHarmonicsEpic } from './throwCombinatoryHarmonicsEpic';
-// export { throwDonkeySpaceEpic } from './throwDonkeySpaceEpic';
-// export { throwLexicalProcessingEpic } from './throwLexicalProcessingEpic';
-
-
-

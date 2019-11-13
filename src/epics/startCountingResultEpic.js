@@ -1,13 +1,29 @@
-import { of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/delay';
+/**
+* Operators
+*/
+
+import { 
+    of 
+} from 'rxjs';
+
+import { 
+    mergeMap 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
+
+/**
+* Epic
+*/
 
 export const startCountingResultEpic = (action$, state$) => 
     action$.pipe(
@@ -51,7 +67,7 @@ export const startCountingResultEpic = (action$, state$) =>
             })
             return of(
                 Actions.updatedAllRoundsRes(updatedArray),
-                Actions.countFinalResultOfEachStrategy(),
+                Actions.countFinalResultOfEachStrategy()
             )
         }) 
     )
