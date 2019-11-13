@@ -32,7 +32,6 @@ export { throwMegaClippersEpic } from './throwMegaClippersEpic';
 export { startNewTournamentEpic } from './startNewTournamentEpic';
 export { startRunningStrategicModelingEpic } from './startRunningStrategicModelingEpic';
 export { updateStrategicModelingCurrentListEpic } from './updateStrategicModelingCurrentListEpic';
-export { tournamentStartedEpic } from './tournamentStartedEpic';
 export { tournamentDurationEpic } from './tournamentDurationEpic';
 export { startUpdatingRoundsOnScreenEpic } from './startUpdatingRoundsOnScreenEpic';
 export { startUpdatingPlayerLeftOnScreenEpic } from './startUpdatingPlayerLeftOnScreenEpic';

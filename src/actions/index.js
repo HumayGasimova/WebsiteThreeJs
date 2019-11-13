@@ -119,7 +119,6 @@ export {
     strategyChosen,
     clearChosenFromStrategicModelingDropdownList,
     updateStrategicModelingRound,
-    tournamentStarted,
     stopTournament,
     tournamentDuration,
     showRoundAndPlayers,

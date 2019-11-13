@@ -1,18 +1,34 @@
-import { of, interval, empty } from 'rxjs';
-import { mergeMap, bufferWhen, filter } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable, Rx, empty } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/bufferWhen';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/filter';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/observable/interval';
-// import 'rxjs/add/observable/empty';
-// import 'rxjs/add/operator/delay';
+/**
+* Operators
+*/
+
+import { 
+    of, 
+    interval, 
+    empty 
+} from 'rxjs';
+
+import { 
+    mergeMap, 
+    bufferWhen, 
+    filter 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as projectsToAdd from '../constants/projectsToAdd';
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
+
+/**
+* Epic
+*/
 
 export const wireButtonBufferEpic = (action$, state$) => 
     action$.pipe(
@@ -27,8 +43,7 @@ export const wireButtonBufferEpic = (action$, state$) =>
                 )  
             }else{
                 return empty();
-            }
-                  
+            }        
         })
     )
 

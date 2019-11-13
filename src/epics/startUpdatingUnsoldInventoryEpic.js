@@ -1,16 +1,32 @@
-import { of, interval, empty } from 'rxjs';
-import { mergeMap, takeUntil } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/delay';
-// import 'rxjs/add/observable/empty';
+/**
+* Operators
+*/
+
+import { 
+    of, 
+    interval, 
+    empty 
+} from 'rxjs';
+
+import { 
+    mergeMap, 
+    takeUntil 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
-// import { mergeMap, takeUntil, ofType, repeat } from 'rxjs/operators';
-// import { interval } from "rxjs"
+
+/**
+* Epic
+*/
 
 export const startUpdatingUnsoldInventoryEpic = (action$, state$) => 
     action$.pipe(

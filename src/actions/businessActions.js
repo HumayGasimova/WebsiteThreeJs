@@ -785,12 +785,6 @@ export function updateStrategicModelingRound(round) {
     };
 };
 
-export function tournamentStarted() {
-    return { 
-        type: actionTypes.TOURNAMENT_STARTED
-    };
-};
-
 export function stopTournament() {
     return { 
         type: actionTypes.STOP_TOURNAMENT

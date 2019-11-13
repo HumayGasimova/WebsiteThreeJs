@@ -36,7 +36,6 @@ export const rootEpic = combineEpics(
     Epic.startNewTournamentEpic,
     Epic.startRunningStrategicModelingEpic,
     Epic.updateStrategicModelingCurrentListEpic,
-    Epic.tournamentStartedEpic,
     Epic.tournamentDurationEpic,
     Epic.startUpdatingRoundsOnScreenEpic,
     Epic.startUpdatingPlayerLeftOnScreenEpic,
