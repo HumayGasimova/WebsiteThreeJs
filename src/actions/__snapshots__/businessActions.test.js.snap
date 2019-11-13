@@ -1134,14 +1134,6 @@ Array [
 ]
 `;
 
-exports[`businessActions Dispatches the correct action and payload (tournamentStarted) 1`] = `
-Array [
-  Object {
-    "type": "TOURNAMENT_STARTED",
-  },
-]
-`;
-
 exports[`businessActions Dispatches the correct action and payload (tournamentState) 1`] = `
 Array [
   Object {

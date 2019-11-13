@@ -23,6 +23,14 @@ import * as Epic from '../index';
 import * as actionTypes from "../../constants/actionTypes";
 
 /**
+* Operators
+*/
+
+import { 
+  take 
+} from 'rxjs/operators';
+
+/**
 * Tests
 */
 
