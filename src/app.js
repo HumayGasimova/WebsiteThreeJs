@@ -14,7 +14,7 @@ import {
 * Components
 */
 
-import PaperClipsGame from './components/PaperClipsGame/paperClipsGame';
+import Canvas from './components/Canvas/canvas';
 
 /**
 * Styles
@@ -38,7 +38,7 @@ export class App extends Component {
                <Route 
                   exact 
                   path="/"
-                  component={ PaperClipsGame }
+                  component={ Canvas }
                />
             </div>
       );

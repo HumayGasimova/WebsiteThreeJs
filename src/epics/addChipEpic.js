@@ -28,11 +28,11 @@ import * as Actions from '../actions';
 export const addChipEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.ADD_CHIP),
-        mergeMap(action => {
-           return of(
-                Actions.toggleChip(true, action.obj.chipsNumber)
-           ) 
-        })    
+        // mergeMap(action => {
+        //    return of(
+        //         Actions.toggleChip(true, action.obj.chipsNumber)
+        //    ) 
+        // })    
     )
          
 export default addChipEpic;
