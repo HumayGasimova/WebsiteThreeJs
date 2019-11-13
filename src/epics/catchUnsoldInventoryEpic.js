@@ -1,16 +1,31 @@
-import { of, interval } from 'rxjs';
-import { mergeMap, bufferWhen } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable, Rx, empty } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/bufferWhen';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/filter';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/observable/interval';
-// import 'rxjs/add/observable/empty';
+/**
+* Operators
+*/
+
+import { 
+    of, 
+    interval 
+} from 'rxjs';
+
+import { 
+    mergeMap, 
+    bufferWhen 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
+
+/**
+* Epic
+*/
 
 export const catchUnsoldInventoryEpic = (action$, state$) => 
     action$.pipe(
@@ -23,7 +38,7 @@ export const catchUnsoldInventoryEpic = (action$, state$) =>
 
             return of(
                 Actions.updateAvgRevPerSec(avgRevPerSec),
-                Actions.updateAvgClipsSoldPerSec(unsoldInventoryEvents),
+                Actions.updateAvgClipsSoldPerSec(unsoldInventoryEvents)
             ) 
         })
     )

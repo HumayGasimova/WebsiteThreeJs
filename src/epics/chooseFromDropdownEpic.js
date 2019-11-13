@@ -1,15 +1,31 @@
-import { of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable, Rx } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/switchMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/observable/of';
+/**
+* Operators
+*/
+
+import { 
+    of 
+} from 'rxjs';
+
+import { 
+    mergeMap 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-export const chooseFromDropdownEpic = (action$, state$) => 
+/**
+* Epic
+*/
+
+export const chooseFromDropdownEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.CHOOSE_FROM_DROPDOWN),
         mergeMap(action => {
@@ -24,10 +40,8 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
                         Actions.startUpdatingInvestmentLines(),
-                        Actions.stopAddingEmptyInvestmentsLine(),
-
+                        Actions.stopAddingEmptyInvestmentsLine()
                     ) 
-                break;
                 case 'Med Risk':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
@@ -37,9 +51,8 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                         Actions.stopUpdatingInvestmentLines(),
                         Actions.startUpdatingScreen(),
                         Actions.startUpdatingInvestmentLines(),
-                        Actions.stopAddingEmptyInvestmentsLine(),
+                        Actions.stopAddingEmptyInvestmentsLine()
                     ) 
-                break;
                 case 'High Risk':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
@@ -51,66 +64,53 @@ export const chooseFromDropdownEpic = (action$, state$) =>
                         Actions.startUpdatingInvestmentLines(),
                         Actions.startAddingEmptyInvestmentsLine()
                     ) 
-                break;
                 case 'Pick a Start':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
-                    ) 
-                break;
+                    )
                 case 'RANDOM':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
-                        Actions.closeDropdowns(),
+                        Actions.closeDropdowns()
                     ) 
-                break;
                 case 'A100':
                 return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
-                break;
                 case 'B100':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
-                    ) 
-                break;
+                    )
                 case 'GREEDY':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
-                break;
                 case 'GENEROUS':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
-                break;
                 case 'MINIMAX':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
-                break;
                 case 'TIT FOR TAT':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
                     ) 
-                break;
                 case 'BEAT LAST':
                     return of(
                         Actions.addChosenFromDropdown(action.chosen, action.index),
                         Actions.closeDropdowns()
-                    ) 
-                break;
+                    )
             } 
         })
     )
-       
-        
-
-
+    
 export default chooseFromDropdownEpic;

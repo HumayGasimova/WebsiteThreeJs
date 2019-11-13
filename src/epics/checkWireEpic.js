@@ -1,15 +1,29 @@
-import { of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable, Rx } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/switchMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/repeat';
-// .timeInterval(2000)
+/**
+* Operators
+*/
+
+import { 
+    of 
+} from 'rxjs';
+
+import { 
+    mergeMap 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
+
+/**
+* Epic
+*/
 
 export const checkWireEpic = (action$, state$) => 
     action$.pipe(
@@ -22,9 +36,7 @@ export const checkWireEpic = (action$, state$) =>
                 ) 
             }else{
                 return of(
-                    // Actions.toggleWireButton(),
-                    Actions.wireExists(true),
-                    // Actions.autoPaperclipsStart()
+                    Actions.wireExists(true)
                 ) 
             }
                   

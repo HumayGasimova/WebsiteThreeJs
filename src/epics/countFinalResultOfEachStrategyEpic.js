@@ -1,14 +1,27 @@
+/**
+* Operators
+*/
+
 import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/delay';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
+
+/**
+* Utility
+*/
+
 import * as Utility from '../utility';
+
+/**
+* Epic
+*/
 
 export const countFinalResultOfEachStrategyEpic = (action$, state$) => 
     action$.pipe(

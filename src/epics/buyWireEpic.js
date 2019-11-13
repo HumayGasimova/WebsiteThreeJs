@@ -1,33 +1,39 @@
-import { of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/mergeMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/withLatestFrom';
+/**
+* Operators
+*/
+
+import { 
+    of 
+} from 'rxjs';
+
+import { 
+    mergeMap 
+} from 'rxjs/operators';
+
+import { 
+    ofType 
+} from 'redux-observable';
+
+/**
+* Constants
+*/
+
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
-export const buyWireEpic = (action$, state$) => 
+/**
+* Epic
+*/
+
+export const buyWireEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.START_BUYING_WIRE),
         mergeMap((action) => {
-            // if(state$.value.business.autoClipperOn){
-                return of(
-                    Actions.buyWire(),
-                    Actions.toggleWireButton(),
-                    Actions.toggleMakePaperclipButton(false),
-                    // Actions.autoPaperclipsStart()
-                )
-            // }else{
-            //     return of(
-            //         Actions.buyWire(),
-            //         Actions.toggleWireButton(),
-            //         Actions.toggleMakePaperclipButton(false)
-            //     )
-            // }
-           
+            return of(
+                Actions.buyWire(),
+                Actions.toggleWireButton(),
+                Actions.toggleMakePaperclipButton(false)                
+            )
         })  
     )
 
