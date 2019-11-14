@@ -93,14 +93,23 @@ export class Canvas extends Component {
 
     animate = () => {
         requestAnimationFrame(this.animate);
-        this.ctx.clearRect(0, 0, 1000, 700);
+        this.ctx.clearRect(0, 0, (innerWidth - 35), innerHeight);
         this.ctx.beginPath();
         this.ctx.arc(this.props.x, 200, 10, 0, Math.PI * 2, false);
         this.ctx.strokeStyle = 'blue';
         this.ctx.stroke();
        
-        this.props.moveCircle(this.props.dx)
-        // this.x += this.dx;
+        if(this.props.x > (window.innerWidth-35)){
+            this.props.changeDirectionOfMove();
+        }
+        if(this.props.x < 0){
+            debugger
+            this.props.changeDirectionOfMove();
+        }
+
+        this.props.moveCircle(this.props.dx);
+        
+   
     }
 
     /**
@@ -110,7 +119,7 @@ export class Canvas extends Component {
     render(){
         return(
             <div>
-                <canvas width="1000" height="700" style={{border: "2px solid black"}} ref="canvas" ></canvas>
+                <canvas width={window.innerWidth - 35} height={window.innerHeight} style={{border: "2px solid black"}} ref="canvas" ></canvas>
                 <img src={Nature} ref="image"/>
             </div>
         );
@@ -128,7 +137,7 @@ export default connect(
     (dispatch) => {
         return {
             moveCircle: bindActionCreators(Actions.moveCircle, dispatch),
-      
+            changeDirectionOfMove: bindActionCreators(Actions.changeDirectionOfMove, dispatch)
         };
     }
 )(Canvas);

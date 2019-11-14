@@ -7,3 +7,10 @@ export function moveCircle(val) {
     };
 };
 
+export function changeDirectionOfMove() {
+    return { 
+        type: actionTypes.CHANGE_DIRECTION_OF_MOVE
+    };
+};
+
+

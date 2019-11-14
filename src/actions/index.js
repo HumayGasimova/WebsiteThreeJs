@@ -1,3 +1,4 @@
 export {
-    moveCircle
+    moveCircle,
+    changeDirectionOfMove
 } from './businessActions';

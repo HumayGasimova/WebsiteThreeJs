@@ -22,9 +22,14 @@ export const initialState = {
 }
 
 const moveCircle = (state, action) => {
-
     return updateObject(state, {
         x: state.x + action.val
+    });
+}
+
+const changeDirectionOfMove = (state) => {
+    return updateObject(state, {
+        dx: -state.dx
     });
 }
 
@@ -33,8 +38,9 @@ const canvasReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MOVE_CIRCLE:
             return moveCircle(state, action);
-        // case actionTypes.MAKE_PAPERCLIP:
-        //     return makePaperclip(state, action);
+        case actionTypes.CHANGE_DIRECTION_OF_MOVE:
+            return changeDirectionOfMove(state, action);
+     
         
         default: 
             return state;
