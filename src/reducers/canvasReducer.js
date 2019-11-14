@@ -50,9 +50,17 @@ const changeDirectionOfYMove = (state) => {
 const updateCoordinates = (state, action) => {
     return updateObject(state, {
         x: action.x,
-        y: action.y,
+        y: action.y
     });
 }
+
+const updateVelocities = (state, action) => {
+    return updateObject(state, {
+        dx: action.dx,
+        dy: action.dy
+    });
+}
+
 
 
 const canvasReducer = (state = initialState, action) => {
@@ -67,6 +75,8 @@ const canvasReducer = (state = initialState, action) => {
             return changeDirectionOfYMove(state, action);
         case actionTypes.UPDATE_COORDINATES:
             return updateCoordinates(state, action);
+        case actionTypes.UPDATE_VELOCITIES:
+            return updateVelocities(state, action);
         default: 
             return state;
     }

@@ -94,8 +94,11 @@ export class Canvas extends Component {
         // }
         let randomX = Utility.getRandomCoordianteX();
         let randomY = Utility.getRandomCoordianteY();
-        console.log(randomX, randomY)
+        let randomDx = Utility.getRandomVelocity();
+        let randomDy = Utility.getRandomVelocity();
+        console.log(randomDx, randomDy)
         this.props.updateCoordinates(randomX, randomY);
+        this.props.updateVelocities(randomDx, randomDy);
         this.animate();
     }
 
@@ -150,6 +153,7 @@ export default connect(
             changeDirectionOfXMove: bindActionCreators(Actions.changeDirectionOfXMove, dispatch),
             changeDirectionOfYMove: bindActionCreators(Actions.changeDirectionOfYMove, dispatch),
             updateCoordinates: bindActionCreators(Actions.updateCoordinates, dispatch),
+            updateVelocities: bindActionCreators(Actions.updateVelocities, dispatch),
         };
     }
 )(Canvas);

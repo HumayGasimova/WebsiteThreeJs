@@ -33,3 +33,12 @@ export function updateCoordinates(x, y) {
         y: y
     };
 };
+
+export function updateVelocities(x, y) {
+    return { 
+        type: actionTypes.UPDATE_VELOCITIES,
+        dx: x,
+        dy: y
+    };
+};
+

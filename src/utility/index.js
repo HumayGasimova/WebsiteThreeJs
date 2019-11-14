@@ -1,5 +1,6 @@
 export {
     commaSeparator,
     getRandomCoordianteX,
-    getRandomCoordianteY
+    getRandomCoordianteY,
+    getRandomVelocity
 } from './utility';

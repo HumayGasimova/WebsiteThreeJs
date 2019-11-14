@@ -10,3 +10,7 @@ export const getRandomCoordianteY = () => {
     return  Math.random()* (window.innerHeight - 35);
 } 
 
+export const getRandomVelocity = () => {
+    return  (Math.random() - 0.5) * 50;
+} 
+

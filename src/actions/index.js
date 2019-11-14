@@ -3,5 +3,6 @@ export {
     moveCircleYCoordinate,
     changeDirectionOfXMove,
     changeDirectionOfYMove,
-    updateCoordinates
+    updateCoordinates,
+    updateVelocities
 } from './canvasActions';
