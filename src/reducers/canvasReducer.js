@@ -25,7 +25,7 @@ const moveCircleXCoordinate = (state, action) => {
     let circle = updatedCircles.find(x => x.id === action.id);
     circle.x = circle.x + action.dx;
     updatedCircles.splice(action.id, 1 ,circle);
-
+    // updatedCircles[action.id] = circle
     return updateObject(state, {
         circles: updatedCircles
     });

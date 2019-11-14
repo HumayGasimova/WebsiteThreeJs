@@ -2,12 +2,12 @@ export const commaSeparator = (num) => {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-export const getRandomCoordianteX = () => {
-    return  Math.random()*window.innerWidth;
+export const getRandomCoordianteX = (radius) => {
+    return  Math.random()* (window.innerWidth - radius * 2) + radius;
 } 
 
-export const getRandomCoordianteY = () => {
-    return  Math.random()* (window.innerHeight - 35);
+export const getRandomCoordianteY = (radius) => {
+    return  Math.random()* ((window.innerHeight - 35) - radius * 2) + radius;
 } 
 
 export const getRandomVelocity = () => {

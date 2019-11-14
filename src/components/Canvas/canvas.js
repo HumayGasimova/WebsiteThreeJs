@@ -124,25 +124,6 @@ export class Canvas extends Component {
             this.props.moveCircleXCoordinate(el.dx, el.id);
             this.props.moveCircleYCoordinate(el.dy, el.id);
         })
-    
-        // circlesArray.map((el, i) => {
-        //     if(el.x + 40 > (window.innerWidth-35) || el.x - 40 < 0){
-        //         this.props.changeDirectionOfXMove(el.id);
-        //     }
-    
-        //     if(el.y + 40 > (window.innerHeight) || el.y - 40 < 0){
-        //         this.props.changeDirectionOfYMove(el.id);
-        //     }
-        //     this.props.moveCircleXCoordinate(el.dx, el.id);
-        //     this.props.moveCircleYCoordinate(el.dy, el.id);
-
-        // })
-       
-       
-        
-
-       
-   
     }
 
     /**

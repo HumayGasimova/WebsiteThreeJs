@@ -36,15 +36,16 @@ export const fillCirclesArrayEpic = (action$) =>
     action$.pipe(
         ofType(actionTypes.FILL_CIRCLES_ARRAY),
             mergeMap(action => {
-                let arrayOfCircles = Utility.getArrayOfCircles(100);
+                let arrayOfCircles = Utility.getArrayOfCircles(10);
                 arrayOfCircles.map((el,i) => {
+                    let radius = Utility.getRandomRadius();
                     arrayOfCircles[i] = {
                         id: i,
-                        x: Utility.getRandomCoordianteX(),
-                        y: Utility.getRandomCoordianteY(),
+                        x: Utility.getRandomCoordianteX(radius),
+                        y: Utility.getRandomCoordianteY(radius),
                         dx: Utility.getRandomVelocity(),
                         dy: Utility.getRandomVelocity(),
-                        radius: Utility.getRandomRadius()
+                        radius: radius
                     }
                 })
                 console.log("RANDOM", arrayOfCircles)
