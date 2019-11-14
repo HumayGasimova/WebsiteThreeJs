@@ -38,6 +38,12 @@ import * as Selectors from '../../reducers/selectors';
 import * as Actions from '../../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../../utility';
+
+/**
  * App component definition and export
  */
 
@@ -57,7 +63,6 @@ export class Canvas extends Component {
         const canvas = this.refs.canvas;
         this.ctx = canvas.getContext("2d");
         const img = this.refs.image;
-        this.ctx.imageSmoothingEnabled = true;
 
         this.ctx.fillStyle = "rgba(185, 106, 180, 0.7)";
         // ctx.fillRect(10, 10, 50, 50);
@@ -87,7 +92,10 @@ export class Canvas extends Component {
         //     ctx.strokeStyle = 'blue';
         //     ctx.stroke();
         // }
-       
+        let randomX = Utility.getRandomCoordianteX();
+        let randomY = Utility.getRandomCoordianteY();
+        console.log(randomX, randomY)
+        this.props.updateCoordinates(randomX, randomY);
         this.animate();
     }
 
@@ -99,11 +107,11 @@ export class Canvas extends Component {
         this.ctx.strokeStyle = 'blue';
         this.ctx.stroke();
        
-        if(this.props.x + 40 > (window.innerWidth-35) || this.props.x < 0){
+        if(this.props.x + 40 > (window.innerWidth-35) || this.props.x - 40 < 0){
             this.props.changeDirectionOfXMove();
         }
 
-        if(this.props.y + 40 > (window.innerHeight) || this.props.y < 0){
+        if(this.props.y + 40 > (window.innerHeight) || this.props.y - 40 < 0){
             this.props.changeDirectionOfYMove();
         }
 
@@ -141,6 +149,7 @@ export default connect(
             moveCircleYCoordinate: bindActionCreators(Actions.moveCircleYCoordinate, dispatch),
             changeDirectionOfXMove: bindActionCreators(Actions.changeDirectionOfXMove, dispatch),
             changeDirectionOfYMove: bindActionCreators(Actions.changeDirectionOfYMove, dispatch),
+            updateCoordinates: bindActionCreators(Actions.updateCoordinates, dispatch),
         };
     }
 )(Canvas);

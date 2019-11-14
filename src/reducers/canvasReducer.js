@@ -47,6 +47,13 @@ const changeDirectionOfYMove = (state) => {
     });
 }
 
+const updateCoordinates = (state, action) => {
+    return updateObject(state, {
+        x: action.x,
+        y: action.y,
+    });
+}
+
 
 const canvasReducer = (state = initialState, action) => {
     switch(action.type){
@@ -58,7 +65,8 @@ const canvasReducer = (state = initialState, action) => {
             return changeDirectionOfXMove(state, action);
         case actionTypes.CHANGE_DIRECTION_OF_Y_MOVE:
             return changeDirectionOfYMove(state, action);
-        
+        case actionTypes.UPDATE_COORDINATES:
+            return updateCoordinates(state, action);
         default: 
             return state;
     }

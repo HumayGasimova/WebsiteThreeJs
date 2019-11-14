@@ -26,3 +26,10 @@ export function changeDirectionOfYMove() {
     };
 };
 
+export function updateCoordinates(x, y) {
+    return { 
+        type: actionTypes.UPDATE_COORDINATES,
+        x: x,
+        y: y
+    };
+};
