@@ -14,3 +14,16 @@ export const getDxState = createSelector(
     (x) => x
 );
 
+const getY = (state) => state.canvas.y;
+
+export const getYState = createSelector(
+    [getY],
+    (x) => x
+);
+
+const getDy = (state) => state.canvas.dy;
+
+export const getDyState = createSelector(
+    [getDy],
+    (x) => x
+);

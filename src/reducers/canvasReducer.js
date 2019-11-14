@@ -18,29 +18,46 @@ import {
 
 export const initialState = {
    x: 200,
-   dx: 3
+   dx: 3,
+   y: 200,
+   dy: 3
 }
 
-const moveCircle = (state, action) => {
+const moveCircleXCoordinate = (state, action) => {
     return updateObject(state, {
-        x: state.x + action.val
+        x: state.x + action.dx
     });
 }
 
-const changeDirectionOfMove = (state) => {
+const moveCircleYCoordinate = (state, action) => {
+    return updateObject(state, {
+        y: state.y + action.dy
+    });
+}
+
+const changeDirectionOfXMove = (state) => {
     return updateObject(state, {
         dx: -state.dx
+    });
+}
+
+const changeDirectionOfYMove = (state) => {
+    return updateObject(state, {
+        dy: -state.dy
     });
 }
 
 
 const canvasReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.MOVE_CIRCLE:
-            return moveCircle(state, action);
-        case actionTypes.CHANGE_DIRECTION_OF_MOVE:
-            return changeDirectionOfMove(state, action);
-     
+        case actionTypes.MOVE_CIRCLE_X_COORDINATE:
+            return moveCircleXCoordinate(state, action);
+        case actionTypes.MOVE_CIRCLE_Y_COORDINATE:
+            return moveCircleYCoordinate(state, action);
+        case actionTypes.CHANGE_DIRECTION_OF_X_MOVE:
+            return changeDirectionOfXMove(state, action);
+        case actionTypes.CHANGE_DIRECTION_OF_Y_MOVE:
+            return changeDirectionOfYMove(state, action);
         
         default: 
             return state;

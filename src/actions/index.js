@@ -1,4 +1,6 @@
 export {
-    moveCircle,
-    changeDirectionOfMove
-} from './businessActions';
+    moveCircleXCoordinate,
+    moveCircleYCoordinate,
+    changeDirectionOfXMove,
+    changeDirectionOfYMove
+} from './canvasActions';

@@ -95,20 +95,20 @@ export class Canvas extends Component {
         requestAnimationFrame(this.animate);
         this.ctx.clearRect(0, 0, (innerWidth - 35), innerHeight);
         this.ctx.beginPath();
-        this.ctx.arc(this.props.x, 200, 10, 0, Math.PI * 2, false);
+        this.ctx.arc(this.props.x, this.props.y, 40, 0, Math.PI * 2, false);
         this.ctx.strokeStyle = 'blue';
         this.ctx.stroke();
        
-        if(this.props.x > (window.innerWidth-35)){
-            this.props.changeDirectionOfMove();
-        }
-        if(this.props.x < 0){
-            debugger
-            this.props.changeDirectionOfMove();
+        if(this.props.x + 40 > (window.innerWidth-35) || this.props.x < 0){
+            this.props.changeDirectionOfXMove();
         }
 
-        this.props.moveCircle(this.props.dx);
-        
+        if(this.props.y + 40 > (window.innerHeight) || this.props.y < 0){
+            this.props.changeDirectionOfYMove();
+        }
+
+        this.props.moveCircleXCoordinate(this.props.dx);
+        this.props.moveCircleYCoordinate(this.props.dy);
    
     }
 
@@ -131,13 +131,16 @@ export default connect(
         return {
             x: Selectors.getXState(state),
             dx: Selectors.getDxState(state),
-
+            y: Selectors.getYState(state),
+            dy: Selectors.getDyState(state),
         };
     },
     (dispatch) => {
         return {
-            moveCircle: bindActionCreators(Actions.moveCircle, dispatch),
-            changeDirectionOfMove: bindActionCreators(Actions.changeDirectionOfMove, dispatch)
+            moveCircleXCoordinate: bindActionCreators(Actions.moveCircleXCoordinate, dispatch),
+            moveCircleYCoordinate: bindActionCreators(Actions.moveCircleYCoordinate, dispatch),
+            changeDirectionOfXMove: bindActionCreators(Actions.changeDirectionOfXMove, dispatch),
+            changeDirectionOfYMove: bindActionCreators(Actions.changeDirectionOfYMove, dispatch),
         };
     }
 )(Canvas);
