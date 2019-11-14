@@ -1,1 +1,1 @@
-export { addChipEpic } from './addChipEpic';
+export { fillCirclesArrayEpic } from './fillCirclesArrayEpic';

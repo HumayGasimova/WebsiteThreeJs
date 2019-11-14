@@ -2,5 +2,7 @@ export {
     commaSeparator,
     getRandomCoordianteX,
     getRandomCoordianteY,
-    getRandomVelocity
+    getRandomVelocity,
+    getRandomRadius,
+    getArrayOfCircles
 } from './utility';

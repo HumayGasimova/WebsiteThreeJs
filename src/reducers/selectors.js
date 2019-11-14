@@ -27,3 +27,11 @@ export const getDyState = createSelector(
     [getDy],
     (x) => x
 );
+
+const getCircles = (state) => state.canvas.circles;
+
+export const getCirclesState = createSelector(
+    [getCircles],
+    (x) => x
+);
+

@@ -57,6 +57,7 @@ export class Canvas extends Component {
 
     componentDidMount() {
         this.updateCanvas();
+        this.props.fillCirclesArray();
     }
 
     updateCanvas = () => {
@@ -92,34 +93,55 @@ export class Canvas extends Component {
         //     ctx.strokeStyle = 'blue';
         //     ctx.stroke();
         // }
-        let randomX = Utility.getRandomCoordianteX();
-        let randomY = Utility.getRandomCoordianteY();
-        let randomDx = Utility.getRandomVelocity();
-        let randomDy = Utility.getRandomVelocity();
-        console.log(randomDx, randomDy)
-        this.props.updateCoordinates(randomX, randomY);
-        this.props.updateVelocities(randomDx, randomDy);
+        // let randomX = Utility.getRandomCoordianteX();
+        // let randomY = Utility.getRandomCoordianteY();
+        // let randomDx = Utility.getRandomVelocity();
+        // let randomDy = Utility.getRandomVelocity();
+        // console.log(randomDx, randomDy)
+        // this.props.updateCoordinates(randomX, randomY);
+        // this.props.updateVelocities(randomDx, randomDy);
         this.animate();
     }
 
     animate = () => {
         requestAnimationFrame(this.animate);
+        let circlesArray = [...this.props.circles];
         this.ctx.clearRect(0, 0, (innerWidth - 35), innerHeight);
-        this.ctx.beginPath();
-        this.ctx.arc(this.props.x, this.props.y, 40, 0, Math.PI * 2, false);
-        this.ctx.strokeStyle = 'blue';
-        this.ctx.stroke();
+        circlesArray.map((el, i) => {
+            this.ctx.beginPath();
+            this.ctx.arc(el.x, el.y, el.radius, 0, Math.PI * 2, false);
+            this.ctx.strokeStyle = 'blue';
+            this.ctx.stroke();
+
+            if(el.x + el.radius > (window.innerWidth-35) || el.x - el.radius < 0){
+                this.props.changeDirectionOfXMove(el.id);
+            }
+    
+            if(el.y + el.radius > (window.innerHeight) || el.y - el.radius < 0){
+                this.props.changeDirectionOfYMove(el.id);
+            }
+
+            this.props.moveCircleXCoordinate(el.dx, el.id);
+            this.props.moveCircleYCoordinate(el.dy, el.id);
+        })
+    
+        // circlesArray.map((el, i) => {
+        //     if(el.x + 40 > (window.innerWidth-35) || el.x - 40 < 0){
+        //         this.props.changeDirectionOfXMove(el.id);
+        //     }
+    
+        //     if(el.y + 40 > (window.innerHeight) || el.y - 40 < 0){
+        //         this.props.changeDirectionOfYMove(el.id);
+        //     }
+        //     this.props.moveCircleXCoordinate(el.dx, el.id);
+        //     this.props.moveCircleYCoordinate(el.dy, el.id);
+
+        // })
        
-        if(this.props.x + 40 > (window.innerWidth-35) || this.props.x - 40 < 0){
-            this.props.changeDirectionOfXMove();
-        }
+       
+        
 
-        if(this.props.y + 40 > (window.innerHeight) || this.props.y - 40 < 0){
-            this.props.changeDirectionOfYMove();
-        }
-
-        this.props.moveCircleXCoordinate(this.props.dx);
-        this.props.moveCircleYCoordinate(this.props.dy);
+       
    
     }
 
@@ -144,6 +166,7 @@ export default connect(
             dx: Selectors.getDxState(state),
             y: Selectors.getYState(state),
             dy: Selectors.getDyState(state),
+            circles: Selectors.getCirclesState(state),
         };
     },
     (dispatch) => {
@@ -154,6 +177,7 @@ export default connect(
             changeDirectionOfYMove: bindActionCreators(Actions.changeDirectionOfYMove, dispatch),
             updateCoordinates: bindActionCreators(Actions.updateCoordinates, dispatch),
             updateVelocities: bindActionCreators(Actions.updateVelocities, dispatch),
+            fillCirclesArray: bindActionCreators(Actions.fillCirclesArray, dispatch),
         };
     }
 )(Canvas);

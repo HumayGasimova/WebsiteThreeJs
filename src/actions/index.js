@@ -4,5 +4,7 @@ export {
     changeDirectionOfXMove,
     changeDirectionOfYMove,
     updateCoordinates,
-    updateVelocities
+    updateVelocities,
+    fillCirclesArray,
+    updateCirclesArray
 } from './canvasActions';

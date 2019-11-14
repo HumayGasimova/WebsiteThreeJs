@@ -17,33 +17,49 @@ import {
 */
 
 export const initialState = {
-   x: 200,
-   dx: 3,
-   y: 200,
-   dy: 3
+    circles: []
 }
 
 const moveCircleXCoordinate = (state, action) => {
+    let updatedCircles = [...state.circles];
+    let circle = updatedCircles.find(x => x.id === action.id);
+    circle.x = circle.x + action.dx;
+    updatedCircles.splice(action.id, 1 ,circle);
+
     return updateObject(state, {
-        x: state.x + action.dx
+        circles: updatedCircles
     });
 }
 
 const moveCircleYCoordinate = (state, action) => {
+    let updatedCircles = [...state.circles];
+    let circle = updatedCircles.find(x => x.id === action.id);
+    circle.y = circle.y + action.dy;
+    updatedCircles.splice(action.id, 1 ,circle);
+
+    // console.log(updatedCircles)
     return updateObject(state, {
-        y: state.y + action.dy
+        circles: updatedCircles
     });
 }
 
-const changeDirectionOfXMove = (state) => {
+const changeDirectionOfXMove = (state, action) => {
+    let updatedCircles = [...state.circles];
+    let circle = updatedCircles.find(x => x.id === action.id);
+    circle.dx = -circle.dx;
+    updatedCircles.splice(action.id, 1 ,circle);
     return updateObject(state, {
-        dx: -state.dx
+        circles: updatedCircles
     });
 }
 
-const changeDirectionOfYMove = (state) => {
+const changeDirectionOfYMove = (state, action) => {
+    let updatedCircles = [...state.circles];
+    let circle = updatedCircles.find(x => x.id === action.id);
+    circle.dy = -circle.dy;
+    updatedCircles.splice(action.id, 1 ,circle);
     return updateObject(state, {
-        dy: -state.dy
+        circles: updatedCircles
     });
 }
 
@@ -61,7 +77,11 @@ const updateVelocities = (state, action) => {
     });
 }
 
-
+const updateCirclesArray = (state, action) => {
+    return updateObject(state, {
+        circles: action.arr
+    });
+}
 
 const canvasReducer = (state = initialState, action) => {
     switch(action.type){
@@ -77,6 +97,10 @@ const canvasReducer = (state = initialState, action) => {
             return updateCoordinates(state, action);
         case actionTypes.UPDATE_VELOCITIES:
             return updateVelocities(state, action);
+        case actionTypes.FILL_CIRCLES_ARRAY:
+            return state;
+        case actionTypes.UPDATE_CIRCLES_ARRAY:
+            return updateCirclesArray(state, action);
         default: 
             return state;
     }

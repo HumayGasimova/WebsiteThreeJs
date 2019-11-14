@@ -1,28 +1,32 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function moveCircleXCoordinate(x) {
+export function moveCircleXCoordinate(x, id) {
     return { 
         type: actionTypes.MOVE_CIRCLE_X_COORDINATE,
-        dx: x
+        dx: x,
+        id: id
     };
 };
 
-export function moveCircleYCoordinate(y) {
+export function moveCircleYCoordinate(y, id) {
     return { 
         type: actionTypes.MOVE_CIRCLE_Y_COORDINATE,
-        dy: y
+        dy: y,
+        id: id
     };
 };
 
-export function changeDirectionOfXMove() {
+export function changeDirectionOfXMove(id) {
     return { 
-        type: actionTypes.CHANGE_DIRECTION_OF_X_MOVE
+        type: actionTypes.CHANGE_DIRECTION_OF_X_MOVE,
+        id: id
     };
 };
 
-export function changeDirectionOfYMove() {
+export function changeDirectionOfYMove(id) {
     return { 
-        type: actionTypes.CHANGE_DIRECTION_OF_Y_MOVE
+        type: actionTypes.CHANGE_DIRECTION_OF_Y_MOVE,
+        id: id
     };
 };
 
@@ -42,3 +46,15 @@ export function updateVelocities(x, y) {
     };
 };
 
+export function fillCirclesArray() {
+    return { 
+        type: actionTypes.FILL_CIRCLES_ARRAY
+    };
+};
+
+export function updateCirclesArray(arr) {
+    return { 
+        type: actionTypes.UPDATE_CIRCLES_ARRAY,
+        arr: arr
+    };
+};
