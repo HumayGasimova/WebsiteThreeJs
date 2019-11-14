@@ -6,6 +6,13 @@ import React,{
     Component
 } from 'react';
  
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
 
 /**
  * Components
@@ -17,6 +24,19 @@ import React,{
 
 import './canvas.scss';
 import Nature from '../../images/76-760412_lake-clip-sunset-mountains-vector-png.png';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../reducers/selectors';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../actions';
+
 /**
  * App component definition and export
  */
@@ -35,8 +55,6 @@ export class Canvas extends Component {
 
     updateCanvas = () => {
         const canvas = this.refs.canvas;
-        this.x = 200;
-        this.dx = 2;
         this.ctx = canvas.getContext("2d");
         const img = this.refs.image;
         this.ctx.imageSmoothingEnabled = true;
@@ -77,11 +95,12 @@ export class Canvas extends Component {
         requestAnimationFrame(this.animate);
         this.ctx.clearRect(0, 0, 1000, 700);
         this.ctx.beginPath();
-        this.ctx.arc(this.x, 200, 10, 0, Math.PI * 2, false);
+        this.ctx.arc(this.props.x, 200, 10, 0, Math.PI * 2, false);
         this.ctx.strokeStyle = 'blue';
         this.ctx.stroke();
        
-        this.x += this.dx;
+        this.props.moveCircle(this.props.dx)
+        // this.x += this.dx;
     }
 
     /**
@@ -98,5 +117,19 @@ export class Canvas extends Component {
     }
 }
 
-export default Canvas;
+export default connect(
+    (state) => {
+        return {
+            x: Selectors.getXState(state),
+            dx: Selectors.getDxState(state),
+
+        };
+    },
+    (dispatch) => {
+        return {
+            moveCircle: bindActionCreators(Actions.moveCircle, dispatch),
+      
+        };
+    }
+)(Canvas);
  

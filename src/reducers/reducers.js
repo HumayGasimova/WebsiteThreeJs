@@ -5,9 +5,9 @@ import {
      connectRouter 
 } from 'connected-react-router';
 
-import businessReducer from './businessReducer';
+import canvasReducer from './canvasReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    business: businessReducer
+    canvas: canvasReducer
 });

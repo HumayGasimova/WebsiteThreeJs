@@ -1,8 +1,9 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function checkButtons() {
-    // return { 
-    //     type: actionTypes.CHECK_BUTTONS
-    // };
+export function moveCircle(val) {
+    return { 
+        type: actionTypes.MOVE_CIRCLE,
+        val: val
+    };
 };
 

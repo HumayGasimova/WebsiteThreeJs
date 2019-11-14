@@ -1,3 +1,3 @@
 export {
-    checkButtons
+    moveCircle
 } from './businessActions';

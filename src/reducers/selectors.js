@@ -1,9 +1,16 @@
-// import { createSelector } from 'reselect';
+import { createSelector } from 'reselect';
 
-// const getPaperclips = (state) => state.business.paperClips;
+const getX = (state) => state.canvas.x;
 
-// export const getPaperclipsState = createSelector(
-//     [getPaperclips],
-//     (paperClips) => paperClips
-// );
+export const getXState = createSelector(
+    [getX],
+    (x) => x
+);
+
+const getDx = (state) => state.canvas.dx;
+
+export const getDxState = createSelector(
+    [getDx],
+    (x) => x
+);
 
