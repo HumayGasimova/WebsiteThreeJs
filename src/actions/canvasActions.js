@@ -58,3 +58,10 @@ export function updateCirclesArray(arr) {
         arr: arr
     };
 };
+
+export function getNumbersOfBalls(num) {
+    return { 
+        type: actionTypes.GET_NUMBERS_OF_BALLS,
+        num: num
+    };
+};

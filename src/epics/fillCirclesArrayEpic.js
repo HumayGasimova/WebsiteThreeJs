@@ -32,11 +32,11 @@ import * as Utility from '../utility';
 * Epic
 */
 
-export const fillCirclesArrayEpic = (action$) => 
+export const fillCirclesArrayEpic = (action$, state$) => 
     action$.pipe(
         ofType(actionTypes.FILL_CIRCLES_ARRAY),
             mergeMap(action => {
-                let arrayOfCircles = Utility.getArrayOfCircles(10);
+                let arrayOfCircles = Utility.getArrayOfCircles(state$.value.canvas.numberOfBalls);
                 arrayOfCircles.map((el,i) => {
                     let radius = Utility.getRandomRadius();
                     arrayOfCircles[i] = {
@@ -45,7 +45,8 @@ export const fillCirclesArrayEpic = (action$) =>
                         y: Utility.getRandomCoordianteY(radius),
                         dx: Utility.getRandomVelocity(),
                         dy: Utility.getRandomVelocity(),
-                        radius: radius
+                        radius: radius,
+                        color: `rgba(${Utility.getRandomColor()}, ${Utility.getRandomColor()}, ${Utility.getRandomColor()}, ${Utility.getRandomAlfa()})`
                     }
                 })
                 console.log("RANDOM", arrayOfCircles)

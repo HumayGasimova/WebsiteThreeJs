@@ -15,14 +15,16 @@ import {
 } from 'redux';
 
 /**
- * Components
- */
+* Components
+*/
+
+import Button from '../../library/Button/button';
 
 /**
- * Styles
- */
+* Styles
+*/
 
-import './canvas.scss';
+import './movingBalls.scss';
 import Nature from '../../images/76-760412_lake-clip-sunset-mountains-vector-png.png';
 
 /**
@@ -44,11 +46,11 @@ import * as Actions from '../../actions';
 import * as Utility from '../../utility';
 
 /**
- * App component definition and export
+ * MovingBalls component definition and export
  */
 
 
-export class Canvas extends Component {
+export class MovingBalls extends Component {
 
     
     /**
@@ -65,7 +67,7 @@ export class Canvas extends Component {
         this.ctx = canvas.getContext("2d");
         const img = this.refs.image;
 
-        this.ctx.fillStyle = "rgba(185, 106, 180, 0.7)";
+        this.ctx.fillStyle = `rgba(${Utility.getRandomColor()}, ${Utility.getRandomColor()}, ${Utility.getRandomColor()}, ${Utility.getRandomAlfa()})`;
         // ctx.fillRect(10, 10, 50, 50);
         // ctx.fillStyle = "rgba(106, 185, 148, 0.5)";
         // ctx.fillRect(370, 30, 60, 80);
@@ -110,8 +112,11 @@ export class Canvas extends Component {
         circlesArray.map((el, i) => {
             this.ctx.beginPath();
             this.ctx.arc(el.x, el.y, el.radius, 0, Math.PI * 2, false);
-            this.ctx.strokeStyle = 'blue';
+            this.ctx.strokeStyle = el.color;
+            this.ctx.lineWidth = 30;
+            this.ctx.fill();
             this.ctx.stroke();
+           
 
             if(el.x + el.radius > (window.innerWidth-35) || el.x - el.radius < 0){
                 this.props.changeDirectionOfXMove(el.id);
@@ -126,6 +131,10 @@ export class Canvas extends Component {
         })
     }
 
+    onChangeHandler = (event) => {
+        this.props.getNumbersOfBalls(event.target.value);
+    }
+
     /**
     * Markup
     */
@@ -133,8 +142,16 @@ export class Canvas extends Component {
     render(){
         return(
             <div>
+                <div className="movingBall-input">
+                    <input placeholder="Choose number of balls" onChange={() => this.onChangeHandler(event)}/>
+                    <Button
+                        onClick={this.props.fillCirclesArray}
+                        text={"Press"}
+                        disabled={isNaN(this.props.numberOfBalls)}
+                    />
+                </div>
                 <canvas width={window.innerWidth - 35} height={window.innerHeight} style={{border: "2px solid black"}} ref="canvas" ></canvas>
-                <img src={Nature} ref="image"/>
+                {/* <img src={Nature} ref="image"/> */}
             </div>
         );
     }
@@ -143,11 +160,8 @@ export class Canvas extends Component {
 export default connect(
     (state) => {
         return {
-            x: Selectors.getXState(state),
-            dx: Selectors.getDxState(state),
-            y: Selectors.getYState(state),
-            dy: Selectors.getDyState(state),
             circles: Selectors.getCirclesState(state),
+            numberOfBalls: Selectors.getNumberOfBallsState(state)
         };
     },
     (dispatch) => {
@@ -159,7 +173,8 @@ export default connect(
             updateCoordinates: bindActionCreators(Actions.updateCoordinates, dispatch),
             updateVelocities: bindActionCreators(Actions.updateVelocities, dispatch),
             fillCirclesArray: bindActionCreators(Actions.fillCirclesArray, dispatch),
+            getNumbersOfBalls: bindActionCreators(Actions.getNumbersOfBalls, dispatch),
         };
     }
-)(Canvas);
+)(MovingBalls);
  

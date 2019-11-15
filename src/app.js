@@ -14,13 +14,14 @@ import {
 * Components
 */
 
-import Canvas from './components/Canvas/canvas';
+import MovingBalls from './components/MovingBalls/movingBalls';
 
 /**
 * Styles
 */
 
 import './app.scss';
+
 
 /**
 * App component definition and export
@@ -38,7 +39,7 @@ export class App extends Component {
                <Route 
                   exact 
                   path="/"
-                  component={ Canvas }
+                  component={ MovingBalls }
                />
             </div>
       );

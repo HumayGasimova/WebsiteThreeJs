@@ -6,5 +6,6 @@ export {
     updateCoordinates,
     updateVelocities,
     fillCirclesArray,
-    updateCirclesArray
+    updateCirclesArray,
+    getNumbersOfBalls
 } from './canvasActions';

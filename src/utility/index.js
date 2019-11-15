@@ -4,5 +4,7 @@ export {
     getRandomCoordianteY,
     getRandomVelocity,
     getRandomRadius,
-    getArrayOfCircles
+    getArrayOfCircles,
+    getRandomColor,
+    getRandomAlfa
 } from './utility';

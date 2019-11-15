@@ -23,3 +23,11 @@ export const getArrayOfCircles = (val) => {
     // array.map((el,i) => array[i] = i+1)
     return array;
 } 
+
+export const getRandomColor = () => {
+    return  Math.random() * 255;
+} 
+
+export const getRandomAlfa = () => {
+    return  Math.random();
+} 
