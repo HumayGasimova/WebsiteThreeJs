@@ -14,3 +14,9 @@ export const getNumberOfBallsState = createSelector(
     (x) => x
 );
 
+const getMousePressed = (state) => state.paint.mousePressed;
+
+export const getMousePressedState = createSelector(
+    [getMousePressed],
+    (x) => x
+);

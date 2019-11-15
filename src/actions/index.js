@@ -9,3 +9,7 @@ export {
     updateCirclesArray,
     getNumbersOfBalls
 } from './canvasActions';
+
+export {
+    mouseDown
+} from './paintActions';

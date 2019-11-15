@@ -8,6 +8,9 @@ export const FILL_CIRCLES_ARRAY = 'FILL_CIRCLES_ARRAY';
 export const UPDATE_CIRCLES_ARRAY = 'UPDATE_CIRCLES_ARRAY';
 export const GET_NUMBERS_OF_BALLS = 'GET_NUMBERS_OF_BALLS';
 
+export const MOUSE_DOWN = 'MOUSE_DOWN';
+
+
 export const ADD_CHIP = 'ADD_CHIP';
 
 
