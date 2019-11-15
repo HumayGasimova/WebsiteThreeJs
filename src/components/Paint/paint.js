@@ -14,6 +14,8 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { SketchPicker } from 'react-color';
+
 /**
 * Components
 */
@@ -68,12 +70,15 @@ export class Paint extends Component {
             // console.log(e.x, canvas.offsetLeft, canvas.offsetTop)
             // console.log(e.x)
             this.props.mouseDown(true);
-            this.onPaint(e.x - 20, e.y - 20, false)
+            this.props.captureLastXY(e.x - 190, e.y - 10)
+            // this.onPaint(e.x - 190, e.y - 10, false)
         })
 
         canvas.addEventListener('mousemove', (e) => {
             if(this.props.mousePressed){
-                this.onPaint(e.x- 20, e.y- 20, true)
+                this.props.captureXY(e.x - 190, e.y - 10)
+                // this.onPaint(e.x - 190, e.y - 10, true)
+                this.onPaint()
             }
             
         })
@@ -81,29 +86,36 @@ export class Paint extends Component {
         canvas.addEventListener('mouseup', (e) => {
             this.props.mouseDown(false);
         })
+
+        // canvas.addEventListener('mouseleave', (e) => {
+        //     this.props.mouseDown(false);
+        // })
         
     }
 
-    onPaint = (x, y, mousePressed) => {
+    onPaint = () => {
+        this.ctx.strokeStyle = this.props.color;
+        this.ctx.lineWidth = 10;
+        this.ctx.lineJoin = "round";
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.props.lastX, this.props.lastY);
         
-        if(mousePressed){
-            this.ctx.strokeStyle = 'black';
-            this.ctx.lineWidth = 10;
-            this.ctx.lineJoin = "round";
-            this.ctx.moveTo(lastX, lastY);
-            this.ctx.lineTo(x, y);
-            // this.ctx.closePath();
-            this.ctx.stroke();
-        }
-        let lastX = x;
-        let lastY = y;
-        console.log(lastX, lastY)
-      
+        this.ctx.lineTo(this.props.x, this.props.y);
+        this.ctx.closePath();
+        this.ctx.stroke();
     }
 
     clearCanvas = () => {
         this.ctx.clearRect(0, 0, (innerWidth - 35), innerHeight);
     }
+
+    handleChangeComplete  = (color, event) => {
+ 
+        // let color = `rgba(${e.rgb.r}, ${e.rgb.g}, ${e.rgb.b}, ${e.rgb.a})`;
+        this.props.getColor(color);
+        console.log(color, event)
+    }
+    
 
     /**
     * Markup
@@ -111,13 +123,19 @@ export class Paint extends Component {
 
     render(){
         return(
-            <div>
-                <canvas width={window.innerWidth - 35} height={window.innerHeight} style={{border: "2px solid black"}} ref="canvas" ></canvas>
-                <Button
+            <div className="paint">
+                <div className="paint-tool-box">
+                    {/* <SketchPicker
+                    onChangeComplete={this.handleChangeComplete }
+                        // onChange={(e)=>this.colorPicker(e)}
+                    /> */}
+                </div>
+                <canvas width={window.innerWidth - 200} height={window.innerHeight-30} style={{border: "2px solid black"}} ref="canvas" ></canvas>
+                {/* <Button
                     onClick={this.clearCanvas}
                     text={"Press"}
                     // disabled={isNaN(this.props.numberOfBalls)}
-                />
+                /> */}
             </div>
         );
     }
@@ -127,11 +145,19 @@ export default connect(
     (state) => {
         return {
             mousePressed: Selectors.getMousePressedState(state),
+            color: Selectors.getColorState(state),
+            lastX: Selectors.getLastXState(state),
+            lastY: Selectors.getLastYState(state),
+            x: Selectors.getXState(state),
+            y: Selectors.getYState(state),
         };
     },
     (dispatch) => {
         return {
             mouseDown: bindActionCreators(Actions.mouseDown, dispatch),
+            getColor: bindActionCreators(Actions.getColor, dispatch),
+            captureLastXY: bindActionCreators(Actions.captureLastXY, dispatch),
+            captureXY: bindActionCreators(Actions.captureXY, dispatch),
         };
     }
 )(Paint);

@@ -9,7 +9,9 @@ export const UPDATE_CIRCLES_ARRAY = 'UPDATE_CIRCLES_ARRAY';
 export const GET_NUMBERS_OF_BALLS = 'GET_NUMBERS_OF_BALLS';
 
 export const MOUSE_DOWN = 'MOUSE_DOWN';
-
+export const GET_COLOR = 'GET_COLOR';
+export const CAPTURE_LAST_X_Y = 'CAPTURE_LAST_X_Y';
+export const CAPTURE_X_Y = 'CAPTURE_X_Y';
 
 export const ADD_CHIP = 'ADD_CHIP';
 

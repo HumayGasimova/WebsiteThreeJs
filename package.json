@@ -47,6 +47,7 @@
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
     "react": "^16.10.2",
+    "react-color": "^2.17.3",
     "react-dom": "^16.10.2",
     "react-spring": "^8.0.27",
     "react-test-renderer": "^16.10.2",

@@ -11,5 +11,8 @@ export {
 } from './canvasActions';
 
 export {
-    mouseDown
+    mouseDown,
+    getColor,
+    captureLastXY,
+    captureXY
 } from './paintActions';
