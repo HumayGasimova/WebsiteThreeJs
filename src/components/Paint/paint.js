@@ -166,8 +166,8 @@ export class Paint extends Component {
                         <div className="paint-tools-button-erase">
                             <FontAwesomeIcon icon={faEraser}/>
                         </div>
-                        <div className="paint-tools-button-refresh">
-                            <FontAwesomeIcon icon={faRedoAlt} color="white"/>
+                        <div className="paint-tools-button-refresh" onClick={this.clearCanvas}>
+                            <FontAwesomeIcon icon={faRedoAlt} color="black"/>
                         </div>
                     </div>
 
@@ -194,7 +194,7 @@ export class Paint extends Component {
                         </div> : null}
                     
                 </div>
-                <canvas width={window.innerWidth - 200} height={window.innerHeight-30} style={{border: "2px solid black"}} ref="canvas" ></canvas>
+                <canvas width={window.innerWidth - 200} height={window.innerHeight-30} style={{border: "2px solid rgb(116, 67, 19)", background: `${this.props.bgColor}`}} ref="canvas" ></canvas>
                 {/* <Button
                     onClick={this.clearCanvas}
                     text={"Press"}
@@ -210,11 +210,13 @@ export default connect(
         return {
             mousePressed: Selectors.getMousePressedState(state),
             color: Selectors.getColorState(state),
+            bgColor: Selectors.getBgColorState(state),
             lastX: Selectors.getLastXState(state),
             lastY: Selectors.getLastYState(state),
             x: Selectors.getXState(state),
             y: Selectors.getYState(state),
             colorPickerIsShown: Selectors.getColorPickerIsShownState(state),
+    
         };
     },
     (dispatch) => {

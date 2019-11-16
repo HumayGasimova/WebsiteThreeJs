@@ -19,6 +19,7 @@ import {
 export const initialState = {
     mousePressed: false,
     color: 'black',
+    bgColor: "white",
     lastX: 0,
     lastY: 0,
     x: 0,

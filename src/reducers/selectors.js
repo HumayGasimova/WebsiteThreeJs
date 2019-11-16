@@ -63,3 +63,9 @@ export const getColorPickerIsShownState = createSelector(
     (x) => x
 );
 
+const getBgColor = (state) => state.paint.bgColor;
+
+export const getBgColorState = createSelector(
+    [getBgColor],
+    (x) => x
+);
