@@ -31,7 +31,7 @@ import {
 * Components
 */
 
-// import Button from '../../library/Button/button';
+import Backdrop from '../../library/Backdrop/backdrop';
 
 /**
 * Styles
@@ -127,6 +127,15 @@ export class Paint extends Component {
         let color = `rgba(${e.rgb.r}, ${e.rgb.g}, ${e.rgb.b}, ${e.rgb.a})`;
         this.props.getColor(color);
         console.log(this.props.color)
+        // this.props.toggleColorPicker(false)
+    }
+    
+    colorHandler = () => {
+        this.props.toggleColorPicker(true)
+    }
+
+    handleMouseLeave = () => {
+        this.props.toggleColorPicker(false)
     }
     
 
@@ -140,12 +149,18 @@ export class Paint extends Component {
                 <div className="paint-tool-box">
                     <div className="paint-text">Color</div>
                     <div className="paint-button">
-                        <div className="paint-color"/>
+                        <div 
+                            className="paint-color" 
+                            style={{background: `${this.props.color}`}}
+                            onClick={this.colorHandler}    
+                        />
                     </div>
+
                     <div className="paint-text">Bg Color</div>
                     <div className="paint-button">
                         <div className="paint-bg-color"/>
                     </div>
+
                     <div className="paint-text">Tools</div>
                     <div className="paint-tools-button">
                         <div className="paint-tools-button-erase">
@@ -155,21 +170,29 @@ export class Paint extends Component {
                             <FontAwesomeIcon icon={faRedoAlt} color="white"/>
                         </div>
                     </div>
+
                     <div className="paint-text">Size (5)</div>
                     <div className="paint-button">
                         <div className="paint-bg-color"/>
                     </div>
+
                     <div className="paint-text">Canvas</div>
-                    <div className="paint-button">
-                        <div className="paint-bg-color"/>
-                        <div className="paint-bg-color"/>
-                        <div className="paint-bg-color"/>
+                    <div className="paint-canvas-wrapper">
+                        <div className="paint-button"/>
+                        <div className="paint-button"/>
+                        <div className="paint-button"/>
                     </div>
-                    {/* <SketchPicker
-                    color={ this.props.color }
-                    onChangeComplete={this.handleChangeComplete }
-                        // onChange={(e)=>this.colorPicker(e)}
-                    /> */}
+                    {this.props.colorPickerIsShown ? 
+                        <div className="paint-sketchPicker" onMouseLeave={this.handleMouseLeave} >
+                            <SketchPicker
+                                color={ this.props.color }
+                                onChangeComplete={this.handleChangeComplete }
+                                // onChange={ this.handleChangeComplete }
+                                // onSwatchHover={this.handleChangeComplete}
+                            /> 
+                         
+                        </div> : null}
+                    
                 </div>
                 <canvas width={window.innerWidth - 200} height={window.innerHeight-30} style={{border: "2px solid black"}} ref="canvas" ></canvas>
                 {/* <Button
@@ -191,6 +214,7 @@ export default connect(
             lastY: Selectors.getLastYState(state),
             x: Selectors.getXState(state),
             y: Selectors.getYState(state),
+            colorPickerIsShown: Selectors.getColorPickerIsShownState(state),
         };
     },
     (dispatch) => {
@@ -199,6 +223,7 @@ export default connect(
             getColor: bindActionCreators(Actions.getColor, dispatch),
             captureLastXY: bindActionCreators(Actions.captureLastXY, dispatch),
             captureXY: bindActionCreators(Actions.captureXY, dispatch),
+            toggleColorPicker: bindActionCreators(Actions.toggleColorPicker, dispatch),
         };
     }
 )(Paint);

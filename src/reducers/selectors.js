@@ -55,3 +55,11 @@ export const getYState = createSelector(
     [getY],
     (x) => x
 );
+
+const getColorPickerIsShown = (state) => state.paint.colorPickerIsShown;
+
+export const getColorPickerIsShownState = createSelector(
+    [getColorPickerIsShown],
+    (x) => x
+);
+

@@ -29,3 +29,10 @@ export function captureXY(x, y) {
         y: y
     };
 };
+
+export function toggleColorPicker(val) {
+    return { 
+        type: actionTypes.TOGGLE_COLOR_PICKER,
+        val: val
+    };
+};

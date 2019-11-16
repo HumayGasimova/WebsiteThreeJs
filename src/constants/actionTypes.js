@@ -12,6 +12,8 @@ export const MOUSE_DOWN = 'MOUSE_DOWN';
 export const GET_COLOR = 'GET_COLOR';
 export const CAPTURE_LAST_X_Y = 'CAPTURE_LAST_X_Y';
 export const CAPTURE_X_Y = 'CAPTURE_X_Y';
+export const TOGGLE_COLOR_PICKER = 'TOGGLE_COLOR_PICKER';
+
 
 export const ADD_CHIP = 'ADD_CHIP';
 

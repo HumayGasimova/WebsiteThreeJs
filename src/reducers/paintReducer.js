@@ -22,7 +22,8 @@ export const initialState = {
     lastX: 0,
     lastY: 0,
     x: 0,
-    y: 0
+    y: 0,
+    colorPickerIsShown: false
 }
 
 const mouseDown = (state, action) => {
@@ -51,6 +52,12 @@ const captureXY = (state, action) => {
     });
 }
 
+const toggleColorPicker = (state, action) => {
+    return updateObject(state, {
+       colorPickerIsShown: action.val
+    });
+}
+
 const paintReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MOUSE_DOWN:
@@ -61,6 +68,8 @@ const paintReducer = (state = initialState, action) => {
             return captureLastXY(state, action);
         case actionTypes.CAPTURE_X_Y:
             return captureXY(state, action);
+        case actionTypes.TOGGLE_COLOR_PICKER:
+            return toggleColorPicker(state, action);
         default: 
             return state;
     }

@@ -14,5 +14,6 @@ export {
     mouseDown,
     getColor,
     captureLastXY,
-    captureXY
+    captureXY,
+    toggleColorPicker
 } from './paintActions';
