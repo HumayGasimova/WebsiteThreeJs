@@ -14,7 +14,19 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { SketchPicker  } from 'react-color';
+import { 
+    SketchPicker  
+} from 'react-color';
+
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+import { 
+    faEraser, 
+    faRedoAlt 
+} from '@fortawesome/free-solid-svg-icons'
+
 /**
 * Components
 */
@@ -126,12 +138,38 @@ export class Paint extends Component {
         return(
             <div className="paint">
                 <div className="paint-tool-box">
-                
-                    <SketchPicker
+                    <div className="paint-text">Color</div>
+                    <div className="paint-button">
+                        <div className="paint-color"/>
+                    </div>
+                    <div className="paint-text">Bg Color</div>
+                    <div className="paint-button">
+                        <div className="paint-bg-color"/>
+                    </div>
+                    <div className="paint-text">Tools</div>
+                    <div className="paint-tools-button">
+                        <div className="paint-tools-button-erase">
+                            <FontAwesomeIcon icon={faEraser}/>
+                        </div>
+                        <div className="paint-tools-button-refresh">
+                            <FontAwesomeIcon icon={faRedoAlt} color="white"/>
+                        </div>
+                    </div>
+                    <div className="paint-text">Size (5)</div>
+                    <div className="paint-button">
+                        <div className="paint-bg-color"/>
+                    </div>
+                    <div className="paint-text">Canvas</div>
+                    <div className="paint-button">
+                        <div className="paint-bg-color"/>
+                        <div className="paint-bg-color"/>
+                        <div className="paint-bg-color"/>
+                    </div>
+                    {/* <SketchPicker
                     color={ this.props.color }
                     onChangeComplete={this.handleChangeComplete }
                         // onChange={(e)=>this.colorPicker(e)}
-                    />
+                    /> */}
                 </div>
                 <canvas width={window.innerWidth - 200} height={window.innerHeight-30} style={{border: "2px solid black"}} ref="canvas" ></canvas>
                 {/* <Button

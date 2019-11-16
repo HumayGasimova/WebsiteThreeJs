@@ -2,7 +2,45 @@
     display: flex;
 
     .paint-tool-box {
-        border: 2px solid red;
+        // border: 2px solid red;
         width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .paint-tools-button {
+            display: flex;
+            .paint-tools-button-erase {
+                margin-top: 7px;
+                border: 2px solid red;
+                width: 40px;
+                height: 40px;
+            }
+            .paint-tools-button-refresh {
+                margin-top: 7px;
+                border: 2px solid red;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .paint-text {
+        font-size: 25px;
+        font-family: 'Niconne', cursive;
+        padding-top: 7px;
+    }
+
+    .paint-color {
+        margin-top: 7px;
+        border: 2px solid red;
+        width: 130px;
+        height: 40px;
+    }
+
+    .paint-bg-color {
+        margin-top: 7px;
+        border: 2px solid red;
+        width: 130px;
+        height: 40px;
     }
 }
