@@ -14,8 +14,7 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { SketchPicker } from 'react-color';
-
+import { SketchPicker  } from 'react-color';
 /**
 * Components
 */
@@ -66,6 +65,7 @@ export class Paint extends Component {
     updateCanvas = () => {
         const canvas = this.refs.canvas;
         this.ctx = canvas.getContext("2d");
+    
         canvas.addEventListener('mousedown', (e) => {
             // console.log(e.x, canvas.offsetLeft, canvas.offsetTop)
             // console.log(e.x)
@@ -103,17 +103,18 @@ export class Paint extends Component {
         this.ctx.lineTo(this.props.x, this.props.y);
         this.ctx.closePath();
         this.ctx.stroke();
+        this.props.captureLastXY(this.props.x, this.props.y)
     }
 
     clearCanvas = () => {
         this.ctx.clearRect(0, 0, (innerWidth - 35), innerHeight);
     }
 
-    handleChangeComplete  = (color, event) => {
+    handleChangeComplete  = (e) => {
  
-        // let color = `rgba(${e.rgb.r}, ${e.rgb.g}, ${e.rgb.b}, ${e.rgb.a})`;
+        let color = `rgba(${e.rgb.r}, ${e.rgb.g}, ${e.rgb.b}, ${e.rgb.a})`;
         this.props.getColor(color);
-        console.log(color, event)
+        console.log(this.props.color)
     }
     
 
@@ -125,10 +126,12 @@ export class Paint extends Component {
         return(
             <div className="paint">
                 <div className="paint-tool-box">
-                    {/* <SketchPicker
+                
+                    <SketchPicker
+                    color={ this.props.color }
                     onChangeComplete={this.handleChangeComplete }
                         // onChange={(e)=>this.colorPicker(e)}
-                    /> */}
+                    />
                 </div>
                 <canvas width={window.innerWidth - 200} height={window.innerHeight-30} style={{border: "2px solid black"}} ref="canvas" ></canvas>
                 {/* <Button
