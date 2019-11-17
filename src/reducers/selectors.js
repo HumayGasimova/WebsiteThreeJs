@@ -69,3 +69,11 @@ export const getBgColorState = createSelector(
     [getBgColor],
     (x) => x
 );
+
+const getButtonsName = (state) => state.paint.buttonsName;
+
+export const getButtonsNameState = createSelector(
+    [getButtonsName],
+    (x) => x
+);
+

@@ -36,3 +36,17 @@ export function toggleColorPicker(val) {
         val: val
     };
 };
+
+export function getBgColor(color) {
+    return { 
+        type: actionTypes.GET_BG_COLOR,
+        color: color
+    };
+};
+
+export function whichButton(name) {
+    return { 
+        type: actionTypes.WHICH_BUTTON,
+        name: name
+    };
+};

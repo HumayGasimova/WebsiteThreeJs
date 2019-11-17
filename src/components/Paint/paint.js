@@ -123,16 +123,28 @@ export class Paint extends Component {
     }
 
     handleChangeComplete  = (e) => {
- 
         let color = `rgba(${e.rgb.r}, ${e.rgb.g}, ${e.rgb.b}, ${e.rgb.a})`;
-        this.props.getColor(color);
-        console.log(this.props.color)
-        // this.props.toggleColorPicker(false)
+        switch(this.props.buttonsName){
+            case "color":
+                this.props.getColor(color);
+                break;
+            case "bgColor":
+                this.props.getBgColor(color);
+                break;
+        }
     }
     
     colorHandler = () => {
-        this.props.toggleColorPicker(true)
+        this.props.toggleColorPicker(true);
+        this.props.whichButton("color");
     }
+
+    bgColorHandler = () => {
+        this.props.toggleColorPicker(true)
+        this.props.whichButton("bgColor");
+    }
+
+    
 
     handleMouseLeave = () => {
         this.props.toggleColorPicker(false)
@@ -158,7 +170,11 @@ export class Paint extends Component {
 
                     <div className="paint-text">Bg Color</div>
                     <div className="paint-button">
-                        <div className="paint-bg-color"/>
+                        <div 
+                            className="paint-bg-color"
+                            style={{background: `${this.props.bgColor}`}}
+                            onClick={this.bgColorHandler} 
+                        />
                     </div>
 
                     <div className="paint-text">Tools</div>
@@ -216,6 +232,7 @@ export default connect(
             x: Selectors.getXState(state),
             y: Selectors.getYState(state),
             colorPickerIsShown: Selectors.getColorPickerIsShownState(state),
+            buttonsName: Selectors.getButtonsNameState(state),
     
         };
     },
@@ -226,6 +243,8 @@ export default connect(
             captureLastXY: bindActionCreators(Actions.captureLastXY, dispatch),
             captureXY: bindActionCreators(Actions.captureXY, dispatch),
             toggleColorPicker: bindActionCreators(Actions.toggleColorPicker, dispatch),
+            getBgColor: bindActionCreators(Actions.getBgColor, dispatch),
+            whichButton: bindActionCreators(Actions.whichButton, dispatch),
         };
     }
 )(Paint);

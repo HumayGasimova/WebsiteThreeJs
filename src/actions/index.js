@@ -15,5 +15,7 @@ export {
     getColor,
     captureLastXY,
     captureXY,
-    toggleColorPicker
+    toggleColorPicker,
+    getBgColor,
+    whichButton
 } from './paintActions';

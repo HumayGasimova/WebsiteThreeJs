@@ -13,7 +13,8 @@ export const GET_COLOR = 'GET_COLOR';
 export const CAPTURE_LAST_X_Y = 'CAPTURE_LAST_X_Y';
 export const CAPTURE_X_Y = 'CAPTURE_X_Y';
 export const TOGGLE_COLOR_PICKER = 'TOGGLE_COLOR_PICKER';
-
+export const GET_BG_COLOR = 'GET_BG_COLOR';
+export const WHICH_BUTTON = 'WHICH_BUTTON';
 
 export const ADD_CHIP = 'ADD_CHIP';
 
