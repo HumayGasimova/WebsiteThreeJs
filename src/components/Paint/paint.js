@@ -180,10 +180,10 @@ export class Paint extends Component {
                     <div className="paint-text">Tools</div>
                     <div className="paint-tools-button">
                         <div className="paint-tools-button-erase">
-                            <FontAwesomeIcon icon={faEraser}/>
+                            <FontAwesomeIcon icon={faEraser} size="lg"/>
                         </div>
                         <div className="paint-tools-button-refresh" onClick={this.clearCanvas}>
-                            <FontAwesomeIcon icon={faRedoAlt} color="black"/>
+                            <FontAwesomeIcon icon={faRedoAlt} color="white" size="lg"/>
                         </div>
                     </div>
 

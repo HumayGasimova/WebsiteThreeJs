@@ -22,18 +22,29 @@
         .paint-tools-button {
             display: flex;
             .paint-tools-button-erase {
-                margin-top: 7px;
+                margin: 7px 10px 0 10px;
+                padding-top: 9px;
                 border: 1px solid rgb(116, 67, 19);
                 border-radius: 7px;
                 width: 40px;
-                height: 40px;
+                height: 31px;
+                text-align: center;
+                &:hover {
+                    background: rgb(185, 185, 178);;
+                }
             }
             .paint-tools-button-refresh {
-                margin-top: 7px;
+                margin: 7px 10px 0 10px;
+                padding-top: 9px;
                 border: 1px solid rgb(116, 67, 19);
                 border-radius: 7px;
                 width: 40px;
-                height: 40px;
+                height: 31px;
+                text-align: center;
+                background: rgb(255, 112, 112);
+                &:hover {
+                    background: rgb(236, 63, 63);
+                }
             }
         }
     }
