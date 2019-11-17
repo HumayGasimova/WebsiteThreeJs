@@ -26,7 +26,9 @@ export const initialState = {
     y: 0,
     colorPickerIsShown: false,
     buttonsName: '',
-    activeToolButton: 'pencil'
+    activeToolButton: 'pencil',
+    sizePencil: 10,
+    sizeEraser: 10
 }
 
 const mouseDown = (state, action) => {
@@ -79,6 +81,19 @@ const chooseTool = (state, action) => {
     });
 }
 
+const getSize = (state, action) => {
+    switch(action.tool){
+        case "pencil":
+            return updateObject(state, {
+                sizePencil: +action.val
+            });
+        case "eraser":
+            return updateObject(state, {
+                sizeEraser: +action.val
+            });
+    }
+   
+}
 
 const paintReducer = (state = initialState, action) => {
     switch(action.type){
@@ -98,6 +113,8 @@ const paintReducer = (state = initialState, action) => {
             return whichButton(state, action);
         case actionTypes.CHOOSE_TOOL:
             return chooseTool(state, action);
+        case actionTypes.GET_SIZE:
+            return getSize(state, action);
         default: 
             return state;
     }

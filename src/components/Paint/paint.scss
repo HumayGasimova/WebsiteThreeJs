@@ -43,11 +43,11 @@
 
             .paint-tools-button-erase {
                 margin: 7px 7px 0 7px;
-                padding-top: 9px;
+                padding-top: 11px;
                 border: 1px solid rgb(116, 67, 19);
                 border-radius: 7px;
                 width: 40px;
-                height: 31px;
+                height: 29px;
                 text-align: center;
                 &:hover {
                     background: rgb(185, 185, 178);
@@ -76,9 +76,23 @@
                 &:hover {
                     background: rgb(236, 63, 63);
                 }
-            }
+            }            
+        }
 
-            
+        .paint-size-wrapper {
+            display: flex;
+            align-items: flex-end;
+            padding-top: 7px;
+            .paint-size-icon {
+                width: 25px;
+                height: 27px;
+            }
+            .paint-text-size {
+                font-size: 25px;
+                font-family: 'Niconne', cursive;
+                padding-top: 7px;
+                padding-left: 4px;
+            }
         }
     }
 

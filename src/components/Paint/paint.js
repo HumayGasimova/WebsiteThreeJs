@@ -105,9 +105,10 @@ export class Paint extends Component {
         // })
         
     }
-    onErase = () => {
-        this.ctx.strokeStyle = this.props.bgColor;
-        this.ctx.lineWidth = 20;
+ 
+    onPaint = () => {
+        this.ctx.strokeStyle = this.props.color;
+        this.ctx.lineWidth = this.props.sizePencil;
         this.ctx.lineJoin = "round";
         this.ctx.beginPath();
         this.ctx.moveTo(this.props.lastX, this.props.lastY);
@@ -118,9 +119,9 @@ export class Paint extends Component {
         this.props.captureLastXY(this.props.x, this.props.y)
     }
 
-    onPaint = () => {
-        this.ctx.strokeStyle = this.props.color;
-        this.ctx.lineWidth = 10;
+    onErase = () => {
+        this.ctx.strokeStyle = this.props.bgColor;
+        this.ctx.lineWidth = this.props.sizeEraser;
         this.ctx.lineJoin = "round";
         this.ctx.beginPath();
         this.ctx.moveTo(this.props.lastX, this.props.lastY);
@@ -130,6 +131,7 @@ export class Paint extends Component {
         this.ctx.stroke();
         this.props.captureLastXY(this.props.x, this.props.y)
     }
+
 
     clearCanvas = () => {
         this.ctx.clearRect(0, 0, (innerWidth - 35), innerHeight);
@@ -142,7 +144,7 @@ export class Paint extends Component {
                 this.props.getColor(color);
                 break;
             case "bgColor":
-                    // this.clearCanvas();
+                    this.clearCanvas();
                 this.props.getBgColor(color);
                 break;
         }
@@ -167,6 +169,13 @@ export class Paint extends Component {
         this.props.chooseTool("eraser");
     }
 
+    onPencilSizeChange = (e) => {
+        this.props.getSize("pencil", e.target.value);
+    }
+
+    onEraserSizeChange = (e) => {
+        this.props.getSize("eraser", e.target.value);
+    }
 
     handleMouseLeave = () => {
         this.props.toggleColorPicker(false)
@@ -223,10 +232,23 @@ export class Paint extends Component {
                         </div>
                     </div>
 
-                    <div className="paint-text">Size (5)</div>
-                    <div className="paint-button">
-                        <div className="paint-bg-color"/>
+                   
+                    <div className="paint-size-wrapper">
+                        <div className="paint-size-icon">
+                            <FontAwesomeIcon icon={faPencilAlt} size="lg"/>
+                        </div>
+                        <div className="paint-text-size">Size ({this.props.sizePencil})</div>
                     </div>
+                    <input type="range" value="10" min="1" max ="50" className="paint-size" onChange={()=>this.onPencilSizeChange(event)}/>
+
+                    <div className="paint-size-wrapper">
+                        <div className="paint-size-icon">
+                            <FontAwesomeIcon icon={faEraser} size="lg"/>
+                        </div>
+                        <div className="paint-text-size">Size ({this.props.sizeEraser})</div>
+                    </div>
+                    <input type="range" value="10" min="1" max ="50" className="paint-size" onChange={()=>this.onEraserSizeChange(event)}/>
+
 
                     <div className="paint-text">Canvas</div>
                     <div className="paint-canvas-wrapper">
@@ -270,7 +292,8 @@ export default connect(
             colorPickerIsShown: Selectors.getColorPickerIsShownState(state),
             buttonsName: Selectors.getButtonsNameState(state),
             activeToolButton: Selectors.getActiveToolButtonState(state),
-    
+            sizePencil: Selectors.getSizePencilState(state),
+            sizeEraser: Selectors.getSizeEraserState(state),
         };
     },
     (dispatch) => {
@@ -283,6 +306,7 @@ export default connect(
             getBgColor: bindActionCreators(Actions.getBgColor, dispatch),
             whichButton: bindActionCreators(Actions.whichButton, dispatch),
             chooseTool: bindActionCreators(Actions.chooseTool, dispatch),
+            getSize: bindActionCreators(Actions.getSize, dispatch),
         };
     }
 )(Paint);

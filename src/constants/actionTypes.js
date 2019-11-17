@@ -16,7 +16,7 @@ export const TOGGLE_COLOR_PICKER = 'TOGGLE_COLOR_PICKER';
 export const GET_BG_COLOR = 'GET_BG_COLOR';
 export const WHICH_BUTTON = 'WHICH_BUTTON';
 export const CHOOSE_TOOL = 'CHOOSE_TOOL';
-
+export const GET_SIZE = 'GET_SIZE';
 
 export const ADD_CHIP = 'ADD_CHIP';
 

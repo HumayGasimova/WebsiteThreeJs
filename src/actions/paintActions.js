@@ -57,3 +57,11 @@ export function chooseTool(opt) {
         tool: opt
     };
 };
+
+export function getSize(option, val) {
+    return { 
+        type: actionTypes.GET_SIZE,
+        tool: option,
+        val: val
+    };
+};

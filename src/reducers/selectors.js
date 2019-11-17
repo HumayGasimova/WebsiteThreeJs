@@ -84,4 +84,16 @@ export const getActiveToolButtonState = createSelector(
     (x) => x
 );
 
+const getSizePencil = (state) => state.paint.sizePencil;
 
+export const getSizePencilState = createSelector(
+    [getSizePencil],
+    (x) => x
+);
+
+const getSizeEraser = (state) => state.paint.sizeEraser;
+
+export const getSizeEraserState = createSelector(
+    [getSizeEraser],
+    (x) => x
+);

@@ -18,5 +18,6 @@ export {
     toggleColorPicker,
     getBgColor,
     whichButton,
-    chooseTool
+    chooseTool,
+    getSize
 } from './paintActions';
