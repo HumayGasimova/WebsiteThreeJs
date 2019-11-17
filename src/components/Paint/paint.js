@@ -239,7 +239,7 @@ export class Paint extends Component {
                         </div>
                         <div className="paint-text-size">Size ({this.props.sizePencil})</div>
                     </div>
-                    <input type="range" value="10" min="1" max ="50" className="paint-size" onChange={()=>this.onPencilSizeChange(event)}/>
+                    <input type="range" value={this.props.sizePencil} min="1" max ="50" className="paint-size-reange" onChange={()=>this.onPencilSizeChange(event)}/>
 
                     <div className="paint-size-wrapper">
                         <div className="paint-size-icon">
@@ -247,7 +247,7 @@ export class Paint extends Component {
                         </div>
                         <div className="paint-text-size">Size ({this.props.sizeEraser})</div>
                     </div>
-                    <input type="range" value="10" min="1" max ="50" className="paint-size" onChange={()=>this.onEraserSizeChange(event)}/>
+                    <input type="range" value={this.props.sizeEraser} min="1" max ="50" onChange={()=>this.onEraserSizeChange(event)}/>
 
 
                     <div className="paint-text">Canvas</div>

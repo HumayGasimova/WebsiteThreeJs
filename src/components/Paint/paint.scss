@@ -121,5 +121,28 @@
         top: 0;
         left: 0;
     }
+
+
+
+    input[type=range] {
+        -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+        background: rgb(116, 67, 19);
+        border: 1px solid rgb(56, 32, 8);
+        height: 7px;
+        border-radius: 5px;
+        margin-top: 7px;
+      }
+      
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #382b18;
+        height: 20px;
+        width: 10px;
+        border-radius: 3px;
+        background: rgb(243, 157, 71);
+        cursor: pointer;
+        margin-bottom: 2px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+      }
 }
 
