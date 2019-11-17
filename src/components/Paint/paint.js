@@ -53,11 +53,10 @@ import * as Selectors from '../../reducers/selectors';
 import * as Actions from '../../actions';
 
 /**
-* Utility
+* Images
 */
 
-import * as Utility from '../../utility';
-import Button from '../../library/Button/button';
+import Arrow from '../../images/arrow__triangle-small-2-01-512.png';
 
 /**
  * Paint component definition and export
@@ -252,9 +251,41 @@ export class Paint extends Component {
 
                     <div className="paint-text">Canvas</div>
                     <div className="paint-canvas-wrapper">
-                        <div className="paint-button"/>
-                        <div className="paint-button"/>
-                        <div className="paint-button"/>
+                        <div className="paint-canvas-button">
+                            <div className="paint-canvas-coordinate">
+                                X
+                            </div>
+                            <div className="paint-canvas-button-size">
+                                800
+                            </div>
+                            <div className="paint-canvas-buttons-arrows">
+                                <div className="paint-canvas-buttons-arrow-up">
+                                    <img src={Arrow}/>
+                                </div>
+                                <div className="paint-canvas-buttons-arrow-down">
+                                    <img src={Arrow}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="paint-canvas-button">
+                            <div className="paint-canvas-coordinate">
+                                Y
+                            </div>
+                            <div className="paint-canvas-button-size">
+                                800
+                            </div>
+                            <div className="paint-canvas-buttons-arrows">
+                                <div className="paint-canvas-buttons-arrow-up">
+                                    <img src={Arrow}/>
+                                </div>
+                                <div className="paint-canvas-buttons-arrow-down">
+                                    <img src={Arrow}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="paint-button">
+                            Update
+                        </div>
                     </div>
                     {this.props.colorPickerIsShown ? 
                         <div className="paint-sketchPicker" onMouseLeave={this.handleMouseLeave} >
@@ -264,16 +295,13 @@ export class Paint extends Component {
                                 // onChange={ this.handleChangeComplete }
                                 // onSwatchHover={this.handleChangeComplete}
                             /> 
-                         
                         </div> : null}
-                    
                 </div>
-                <canvas width={window.innerWidth - 200} height={window.innerHeight-30} style={{border: "2px solid rgb(116, 67, 19)", background: `${this.props.bgColor}`}} ref="canvas" ></canvas>
-                {/* <Button
-                    onClick={this.clearCanvas}
-                    text={"Press"}
-                    // disabled={isNaN(this.props.numberOfBalls)}
-                /> */}
+                <canvas 
+                    width={window.innerWidth - 200} 
+                    height={window.innerHeight - 30} 
+                    style={{border: "2px solid rgb(116, 67, 19)", background: `${this.props.bgColor}`}} 
+                    ref="canvas"></canvas>
             </div>
         );
     }

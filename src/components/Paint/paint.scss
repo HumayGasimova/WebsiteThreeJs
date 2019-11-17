@@ -94,6 +94,66 @@
                 padding-left: 4px;
             }
         }
+
+        .paint-canvas-wrapper {
+            .paint-canvas-button {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 7px;
+                border: 1px solid rgb(116, 67, 19);
+                border-radius: 7px;
+                width: 130px;
+                height: 40px;
+                .paint-canvas-coordinate {
+                    border-right: 1px solid rgb(116, 67, 19);
+                    border-top-left-radius: 7px;
+                    border-bottom-left-radius: 7px;
+                    width: 30px;
+                    height: 33px;
+                    padding: 7px 7px 0 7px;
+                    font-size: 20px;
+                    background: rgb(207, 176, 155);
+                    text-align: center;
+                }
+
+                .paint-canvas-button-size {
+
+                }
+
+                .paint-canvas-buttons-arrows {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    &:hover {
+                        background: rgb(214, 204, 182);
+                    }
+                    .paint-canvas-buttons-arrow-up {
+                        width: 25px;
+                        height: 15px;
+                        >img {
+                            width: 25px;
+                            height: 15px;
+                        }
+                        &:hover{
+                            background: rgb(156, 149, 132);
+                        }
+                    }
+                    .paint-canvas-buttons-arrow-down {
+                        width: 25px;
+                        height: 15px;
+                        img {
+                            width: 25px;
+                            height: 15px;
+                            transform: rotateZ(180deg);
+                        }
+                        &:hover{
+                            background: rgb(156, 149, 132);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .paint-text {
@@ -122,8 +182,6 @@
         left: 0;
     }
 
-
-
     input[type=range] {
         -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
         background: rgb(116, 67, 19);
@@ -133,16 +191,18 @@
         margin-top: 7px;
       }
       
-      input[type=range]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        border: 1px solid #382b18;
-        height: 20px;
-        width: 10px;
-        border-radius: 3px;
-        background: rgb(243, 157, 71);
-        cursor: pointer;
-        margin-bottom: 2px;
-        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
-      }
+    input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #382b18;
+    height: 20px;
+    width: 10px;
+    border-radius: 3px;
+    background: rgb(243, 157, 71);
+    cursor: pointer;
+    margin-bottom: 2px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+    }
 }
+
+
 
