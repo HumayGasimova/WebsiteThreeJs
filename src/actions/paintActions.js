@@ -50,3 +50,10 @@ export function whichButton(name) {
         name: name
     };
 };
+
+export function chooseTool(opt) {
+    return { 
+        type: actionTypes.CHOOSE_TOOL,
+        tool: opt
+    };
+};

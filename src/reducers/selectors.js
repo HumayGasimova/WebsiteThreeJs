@@ -77,3 +77,11 @@ export const getButtonsNameState = createSelector(
     (x) => x
 );
 
+const getActiveToolButton = (state) => state.paint.activeToolButton;
+
+export const getActiveToolButtonState = createSelector(
+    [getActiveToolButton],
+    (x) => x
+);
+
+

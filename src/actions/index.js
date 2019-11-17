@@ -17,5 +17,6 @@ export {
     captureXY,
     toggleColorPicker,
     getBgColor,
-    whichButton
+    whichButton,
+    chooseTool
 } from './paintActions';

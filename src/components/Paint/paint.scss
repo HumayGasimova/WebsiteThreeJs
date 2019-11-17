@@ -21,8 +21,28 @@
 
         .paint-tools-button {
             display: flex;
+            .paint-tools-button-pensil {
+                margin: 7px 7px 0 7px;
+                padding-top: 9px;
+                border: 1px solid rgb(116, 67, 19);
+                border-radius: 7px;
+                width: 40px;
+                height: 31px;
+                text-align: center;
+            }
+            .paint-tools-button-pensil-active {
+                margin: 7px 7px 0 7px;
+                padding-top: 9px;
+                border: 1px solid rgb(116, 67, 19);
+                border-radius: 7px;
+                width: 40px;
+                height: 31px;
+                text-align: center;
+                background: rgb(185, 185, 178);
+            }
+
             .paint-tools-button-erase {
-                margin: 7px 10px 0 10px;
+                margin: 7px 7px 0 7px;
                 padding-top: 9px;
                 border: 1px solid rgb(116, 67, 19);
                 border-radius: 7px;
@@ -30,11 +50,22 @@
                 height: 31px;
                 text-align: center;
                 &:hover {
-                    background: rgb(185, 185, 178);;
+                    background: rgb(185, 185, 178);
                 }
             }
+            .paint-tools-button-erase-active {
+                margin: 7px 7px 0 7px;
+                padding-top: 9px;
+                border: 1px solid rgb(116, 67, 19);
+                border-radius: 7px;
+                width: 40px;
+                height: 31px;
+                text-align: center;
+                background: rgb(185, 185, 178);
+            }
+
             .paint-tools-button-refresh {
-                margin: 7px 10px 0 10px;
+                margin: 7px 7px 0 7px;
                 padding-top: 9px;
                 border: 1px solid rgb(116, 67, 19);
                 border-radius: 7px;
@@ -46,6 +77,8 @@
                     background: rgb(236, 63, 63);
                 }
             }
+
+            
         }
     }
 

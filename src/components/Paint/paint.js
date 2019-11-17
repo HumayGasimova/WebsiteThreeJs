@@ -24,7 +24,8 @@ import {
 
 import { 
     faEraser, 
-    faRedoAlt 
+    faRedoAlt, 
+    faPencilAlt
 } from '@fortawesome/free-solid-svg-icons'
 
 /**
@@ -77,24 +78,24 @@ export class Paint extends Component {
     updateCanvas = () => {
         const canvas = this.refs.canvas;
         this.ctx = canvas.getContext("2d");
-    
         canvas.addEventListener('mousedown', (e) => {
-            // console.log(e.x, canvas.offsetLeft, canvas.offsetTop)
-            // console.log(e.x)
             this.props.mouseDown(true);
-            this.props.captureLastXY(e.x - 190, e.y - 10)
-            // this.onPaint(e.x - 190, e.y - 10, false)
+            this.props.captureLastXY(e.x - 190, e.y - 10);
         })
-
         canvas.addEventListener('mousemove', (e) => {
             if(this.props.mousePressed){
-                this.props.captureXY(e.x - 190, e.y - 10)
-                // this.onPaint(e.x - 190, e.y - 10, true)
-                this.onPaint()
+                this.props.captureXY(e.x - 190, e.y - 10);
+                if(this.props.activeToolButton === "pencil"){
+                    this.onPaint();
+                }
+                if(this.props.activeToolButton === "eraser"){
+                    this.onErase();
+                }
+                
+                
             }
             
         })
-
         canvas.addEventListener('mouseup', (e) => {
             this.props.mouseDown(false);
         })
@@ -103,6 +104,18 @@ export class Paint extends Component {
         //     this.props.mouseDown(false);
         // })
         
+    }
+    onErase = () => {
+        this.ctx.strokeStyle = this.props.bgColor;
+        this.ctx.lineWidth = 20;
+        this.ctx.lineJoin = "round";
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.props.lastX, this.props.lastY);
+        
+        this.ctx.lineTo(this.props.x, this.props.y);
+        this.ctx.closePath();
+        this.ctx.stroke();
+        this.props.captureLastXY(this.props.x, this.props.y)
     }
 
     onPaint = () => {
@@ -129,6 +142,7 @@ export class Paint extends Component {
                 this.props.getColor(color);
                 break;
             case "bgColor":
+                    // this.clearCanvas();
                 this.props.getBgColor(color);
                 break;
         }
@@ -140,11 +154,19 @@ export class Paint extends Component {
     }
 
     bgColorHandler = () => {
-        this.props.toggleColorPicker(true)
+        this.props.toggleColorPicker(true);
         this.props.whichButton("bgColor");
+       
     }
 
-    
+    pencilHandler = () => {
+        this.props.chooseTool("pencil");
+    }
+
+    eraseHandler = () => {
+        this.props.chooseTool("eraser");
+    }
+
 
     handleMouseLeave = () => {
         this.props.toggleColorPicker(false)
@@ -179,10 +201,24 @@ export class Paint extends Component {
 
                     <div className="paint-text">Tools</div>
                     <div className="paint-tools-button">
-                        <div className="paint-tools-button-erase">
+
+                        <div 
+                            className={this.props.activeToolButton === "pencil" ? "paint-tools-button-pensil-active" : "paint-tools-button-pensil" }
+                            onClick={this.pencilHandler}
+                        >
+                            <FontAwesomeIcon icon={faPencilAlt} size="lg"/>
+                        </div>
+
+                        <div 
+                            className={this.props.activeToolButton === "eraser" ? "paint-tools-button-erase-active" : "paint-tools-button-erase" } 
+                            onClick={this.eraseHandler}
+                        >
                             <FontAwesomeIcon icon={faEraser} size="lg"/>
                         </div>
-                        <div className="paint-tools-button-refresh" onClick={this.clearCanvas}>
+                        <div 
+                            className="paint-tools-button-refresh" 
+                            onClick={this.clearCanvas}
+                        >
                             <FontAwesomeIcon icon={faRedoAlt} color="white" size="lg"/>
                         </div>
                     </div>
@@ -233,6 +269,7 @@ export default connect(
             y: Selectors.getYState(state),
             colorPickerIsShown: Selectors.getColorPickerIsShownState(state),
             buttonsName: Selectors.getButtonsNameState(state),
+            activeToolButton: Selectors.getActiveToolButtonState(state),
     
         };
     },
@@ -245,6 +282,7 @@ export default connect(
             toggleColorPicker: bindActionCreators(Actions.toggleColorPicker, dispatch),
             getBgColor: bindActionCreators(Actions.getBgColor, dispatch),
             whichButton: bindActionCreators(Actions.whichButton, dispatch),
+            chooseTool: bindActionCreators(Actions.chooseTool, dispatch),
         };
     }
 )(Paint);

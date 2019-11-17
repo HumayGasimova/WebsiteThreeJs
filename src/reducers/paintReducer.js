@@ -25,7 +25,8 @@ export const initialState = {
     x: 0,
     y: 0,
     colorPickerIsShown: false,
-    buttonsName: ''
+    buttonsName: '',
+    activeToolButton: 'pencil'
 }
 
 const mouseDown = (state, action) => {
@@ -72,6 +73,13 @@ const whichButton = (state, action) => {
     });
 }
 
+const chooseTool = (state, action) => {
+    return updateObject(state, {
+        activeToolButton: action.tool
+    });
+}
+
+
 const paintReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.MOUSE_DOWN:
@@ -88,6 +96,8 @@ const paintReducer = (state = initialState, action) => {
             return getBgColor(state, action);
         case actionTypes.WHICH_BUTTON:
             return whichButton(state, action);
+        case actionTypes.CHOOSE_TOOL:
+            return chooseTool(state, action);
         default: 
             return state;
     }
