@@ -24,7 +24,7 @@ describe('paintReducer', () => {
     it("should return the initial state", () => {
         const action = { type: "NONE" }
         expect(reducer(undefined, action)).toEqual(initialState);
-    })
+    });
 
     it("should update mousePressed with the value passed through the action", () => {
         const action = { 
@@ -40,6 +40,22 @@ describe('paintReducer', () => {
             mousePressed: true
         }
         expect(reducer(initState, action)).toEqual(state);
-    })
+    });
+
+    it("should update color with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.GET_COLOR,
+            color: "blue"
+        }
+        const initState = {
+            ...initialState, 
+            color: "green"
+        }
+        const state = {
+            ...initialState, 
+            color: "blue"
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 
 });
