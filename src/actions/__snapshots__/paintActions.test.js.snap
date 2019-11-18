@@ -55,3 +55,12 @@ Array [
   },
 ]
 `;
+
+exports[`paintActions Dispatches the correct action and payload (whichButton) 1`] = `
+Array [
+  Object {
+    "name": "color",
+    "type": "WHICH_BUTTON",
+  },
+]
+`;

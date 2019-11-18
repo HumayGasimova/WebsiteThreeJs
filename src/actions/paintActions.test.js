@@ -102,4 +102,17 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (whichButton)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.WHICH_BUTTON,
+                name: "color"
+            }
+        ];
+
+        store.dispatch(Actions.whichButton("color"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
