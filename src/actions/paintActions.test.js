@@ -48,4 +48,18 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (captureLastXY)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CAPTURE_LAST_X_Y,
+                lastX: 54,
+                lastY: 67
+            }
+        ];
+
+        store.dispatch(Actions.captureLastXY(54, 67));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

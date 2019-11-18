@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`paintActions Dispatches the correct action and payload (captureLastXY) 1`] = `
+Array [
+  Object {
+    "lastX": 54,
+    "lastY": 67,
+    "type": "CAPTURE_LAST_X_Y",
+  },
+]
+`;
+
 exports[`paintActions Dispatches the correct action and payload (getColor) 1`] = `
 Array [
   Object {
