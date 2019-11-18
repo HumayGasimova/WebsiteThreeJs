@@ -155,4 +155,16 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updateCanvasSize)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_CANVAS_SIZE
+            }
+        ];
+
+        store.dispatch(Actions.updateCanvasSize());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
