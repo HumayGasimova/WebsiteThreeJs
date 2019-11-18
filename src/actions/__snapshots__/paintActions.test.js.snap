@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paintActions Dispatches the correct action and payload (mouseDown) 1`] = `
+Array [
+  Object {
+    "type": "MOUSE_DOWN",
+    "val": true,
+  },
+]
+`;

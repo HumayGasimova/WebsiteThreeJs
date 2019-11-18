@@ -78,4 +78,3 @@ export function updateCanvasSize() {
         type: actionTypes.UPDATE_CANVAS_SIZE
     };
 };
-

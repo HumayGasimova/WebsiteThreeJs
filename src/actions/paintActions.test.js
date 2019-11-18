@@ -18,19 +18,20 @@ import * as actionTypes from "../constants/actionTypes";
 const mockStore = configureStore();
 const store = mockStore();
 
-describe('businessActions', () => {
+describe('paintActions', () => {
     beforeEach(() => { // Runs before each test in the suite
       store.clearActions();
     });
 
-    it('Dispatches the correct action and payload (checkButtons)', () => {
+    it('Dispatches the correct action and payload (mouseDown)', () => {
         const expectedActions = [
             {
-                type: actionTypes.CHECK_BUTTONS
+                type: actionTypes.MOUSE_DOWN,
+                val: true
             }
         ];
 
-        store.dispatch(Actions.checkButtons());
+        store.dispatch(Actions.mouseDown(true));
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
