@@ -37,3 +37,12 @@ Array [
   },
 ]
 `;
+
+exports[`paintActions Dispatches the correct action and payload (toggleColorPicker) 1`] = `
+Array [
+  Object {
+    "type": "TOGGLE_COLOR_PICKER",
+    "val": false,
+  },
+]
+`;

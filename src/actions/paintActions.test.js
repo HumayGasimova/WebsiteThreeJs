@@ -76,4 +76,17 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (toggleColorPicker)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.TOGGLE_COLOR_PICKER,
+                val: false
+            }
+        ];
+
+        store.dispatch(Actions.toggleColorPicker(false));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
