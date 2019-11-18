@@ -47,6 +47,16 @@ Array [
 ]
 `;
 
+exports[`paintActions Dispatches the correct action and payload (getSize) 1`] = `
+Array [
+  Object {
+    "tool": "eraser",
+    "type": "GET_SIZE",
+    "val": 638,
+  },
+]
+`;
+
 exports[`paintActions Dispatches the correct action and payload (mouseDown) 1`] = `
 Array [
   Object {

@@ -128,4 +128,18 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (getSize)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.GET_SIZE,
+                tool: "eraser",
+                val: 638
+            }
+        ];
+
+        store.dispatch(Actions.getSize("eraser", 638));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
