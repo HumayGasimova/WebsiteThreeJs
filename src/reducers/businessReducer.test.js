@@ -128,4 +128,20 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update buttonsName with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.WHICH_BUTTON,
+            name: "bgColor"
+        }
+        const initState = {
+            ...initialState, 
+            buttonsName: ""
+        }
+        const state = {
+            ...initialState, 
+            buttonsName: "bgColor"
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
