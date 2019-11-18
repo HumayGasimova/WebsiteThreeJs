@@ -29,8 +29,10 @@ export const initialState = {
     activeToolButton: 'pencil',
     sizePencil: 10,
     sizeEraser: 10,
-    canvasWidth: 1536,
-    canvasHeight: 754 
+    canvasWidth: window.innerWidth,
+    canvasHeight: window.innerHeight,
+    canvasWidthScreen: window.innerWidth,
+    canvasHeightScreen: window.innerHeight
 }
 
 const mouseDown = (state, action) => {
@@ -94,7 +96,43 @@ const getSize = (state, action) => {
                 sizeEraser: +action.val
             });
     }
-   
+}
+
+const updateCanvasSizeScreen = (state, action) => {
+    switch(action.arrow){
+        case "Xup":
+            if(state.canvasWidthScreen < window.innerWidth){
+                return updateObject(state, {
+                    canvasWidthScreen: state.canvasWidthScreen + 1
+                });
+            }
+            break;
+        case "Xdown":
+            if(state.canvasWidthScreen > 700){
+                return updateObject(state, {
+                    canvasWidthScreen: state.canvasWidthScreen - 1
+                });
+            }
+            break;
+        case "Yup":
+            return updateObject(state, {
+                canvasHeightScreen: state.canvasHeightScreen + 1
+            });
+        case "Ydown":
+            if(state.canvasHeightScreen > 400){
+                return updateObject(state, {
+                    canvasHeightScreen: state.canvasHeightScreen - 1
+                });
+            }
+            break;
+    }
+}
+
+const updateCanvasSize = (state, action) => {
+    return updateObject(state, {
+        canvasWidth: state.canvasWidthScreen,
+        canvasHeight: state.canvasHeightScreen
+    });
 }
 
 const paintReducer = (state = initialState, action) => {
@@ -117,6 +155,10 @@ const paintReducer = (state = initialState, action) => {
             return chooseTool(state, action);
         case actionTypes.GET_SIZE:
             return getSize(state, action);
+        case actionTypes.UPDATE_CANVAS_SIZE_SCREEN:
+            return updateCanvasSizeScreen(state, action);
+        case actionTypes.UPDATE_CANVAS_SIZE:
+            return updateCanvasSize(state, action);
         default: 
             return state;
     }

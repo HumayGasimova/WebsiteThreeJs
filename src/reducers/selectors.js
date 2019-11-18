@@ -111,3 +111,17 @@ export const getCanvasHeightState = createSelector(
     [getCanvasHeight],
     (x) => x
 );
+
+const getCanvasWidthScreen = (state) => state.paint.canvasWidthScreen;
+
+export const getCanvasWidthScreenState = createSelector(
+    [getCanvasWidthScreen],
+    (x) => x
+);
+
+const getCanvasHeightScreen = (state) => state.paint.canvasHeightScreen;
+
+export const getCanvasHeightScreenState = createSelector(
+    [getCanvasHeightScreen],
+    (x) => x
+);

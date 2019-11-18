@@ -19,5 +19,7 @@ export {
     getBgColor,
     whichButton,
     chooseTool,
-    getSize
+    getSize,
+    updateCanvasSizeScreen,
+    updateCanvasSize
 } from './paintActions';

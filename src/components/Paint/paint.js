@@ -256,13 +256,19 @@ export class Paint extends Component {
                                 X
                             </div>
                             <div className="paint-canvas-button-size">
-                                {this.props.canvasWidth - 200}
+                                {this.props.canvasWidthScreen - 200}
                             </div>
                             <div className="paint-canvas-buttons-arrows">
-                                <div className="paint-canvas-buttons-arrow-up">
+                                <div 
+                                    className="paint-canvas-buttons-arrow-up"
+                                    onClick={() => this.props.updateCanvasSizeScreen('Xup')}
+                                >
                                     <img src={Arrow}/>
                                 </div>
-                                <div className="paint-canvas-buttons-arrow-down">
+                                <div 
+                                    className="paint-canvas-buttons-arrow-down"
+                                    onClick={() => this.props.updateCanvasSizeScreen('Xdown')}
+                                >
                                     <img src={Arrow}/>
                                 </div>
                             </div>
@@ -272,18 +278,24 @@ export class Paint extends Component {
                                 Y
                             </div>
                             <div className="paint-canvas-button-size">
-                                {this.props.canvasHeight - 30} 
+                                {this.props.canvasHeightScreen - 30} 
                             </div>
                             <div className="paint-canvas-buttons-arrows">
-                                <div className="paint-canvas-buttons-arrow-up">
+                                <div 
+                                    className="paint-canvas-buttons-arrow-up"
+                                    onClick={() => this.props.updateCanvasSizeScreen('Yup')}
+                                >
                                     <img src={Arrow}/>
                                 </div>
-                                <div className="paint-canvas-buttons-arrow-down">
+                                <div 
+                                    className="paint-canvas-buttons-arrow-down"
+                                    onClick={() => this.props.updateCanvasSizeScreen('Ydown')}
+                                >
                                     <img src={Arrow}/>
                                 </div>
                             </div>
                         </div>
-                        <div className="paint-button">
+                        <div className="paint-button" onClick={this.props.updateCanvasSize}>
                             Update
                         </div>
                     </div>
@@ -325,6 +337,8 @@ export default connect(
             sizeEraser: Selectors.getSizeEraserState(state),
             canvasWidth: Selectors.getCanvasWidthState(state),
             canvasHeight: Selectors.getCanvasHeightState(state),
+            canvasWidthScreen: Selectors.getCanvasWidthScreenState(state),
+            canvasHeightScreen: Selectors.getCanvasHeightScreenState(state),
         };
     },
     (dispatch) => {
@@ -338,6 +352,8 @@ export default connect(
             whichButton: bindActionCreators(Actions.whichButton, dispatch),
             chooseTool: bindActionCreators(Actions.chooseTool, dispatch),
             getSize: bindActionCreators(Actions.getSize, dispatch),
+            updateCanvasSizeScreen: bindActionCreators(Actions.updateCanvasSizeScreen, dispatch),
+            updateCanvasSize: bindActionCreators(Actions.updateCanvasSize, dispatch),
         };
     }
 )(Paint);

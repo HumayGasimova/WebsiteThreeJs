@@ -65,3 +65,17 @@ export function getSize(option, val) {
         val: val
     };
 };
+
+export function updateCanvasSizeScreen(arrow) {
+    return { 
+        type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+        arrow: arrow
+    };
+};
+
+export function updateCanvasSize() {
+    return { 
+        type: actionTypes.UPDATE_CANVAS_SIZE
+    };
+};
+
