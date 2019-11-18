@@ -14,7 +14,6 @@ import {
 * Components
 */
 
-import MovingBalls from './components/MovingBalls/movingBalls';
 import Paint from './components/Paint/paint';
 
 /**
@@ -36,18 +35,13 @@ export class App extends Component {
 
    render(){
       return(
-            <div className="app">
-               {/* <Route 
-                  exact 
-                  path="/"
-                  component={ MovingBalls }
-               /> */}
-                <Route 
-                  exact 
-                  path="/"
-                  component={ Paint }
-               />
-            </div>
+         <div className="app">
+            <Route 
+               exact 
+               path="/"
+               component={ Paint }
+            />
+         </div>
       );
    }
 }

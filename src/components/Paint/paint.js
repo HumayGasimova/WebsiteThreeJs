@@ -90,19 +90,11 @@ export class Paint extends Component {
                 if(this.props.activeToolButton === "eraser"){
                     this.onErase();
                 }
-                
-                
             }
-            
         })
         canvas.addEventListener('mouseup', (e) => {
             this.props.mouseDown(false);
         })
-
-        // canvas.addEventListener('mouseleave', (e) => {
-        //     this.props.mouseDown(false);
-        // })
-        
     }
  
     onPaint = () => {
@@ -111,11 +103,10 @@ export class Paint extends Component {
         this.ctx.lineJoin = "round";
         this.ctx.beginPath();
         this.ctx.moveTo(this.props.lastX, this.props.lastY);
-        
         this.ctx.lineTo(this.props.x, this.props.y);
         this.ctx.closePath();
         this.ctx.stroke();
-        this.props.captureLastXY(this.props.x, this.props.y)
+        this.props.captureLastXY(this.props.x, this.props.y);
     }
 
     onErase = () => {
@@ -124,13 +115,11 @@ export class Paint extends Component {
         this.ctx.lineJoin = "round";
         this.ctx.beginPath();
         this.ctx.moveTo(this.props.lastX, this.props.lastY);
-        
         this.ctx.lineTo(this.props.x, this.props.y);
         this.ctx.closePath();
         this.ctx.stroke();
-        this.props.captureLastXY(this.props.x, this.props.y)
+        this.props.captureLastXY(this.props.x, this.props.y);
     }
-
 
     clearCanvas = () => {
         this.ctx.clearRect(0, 0, (innerWidth - 35), innerHeight);
@@ -157,7 +146,6 @@ export class Paint extends Component {
     bgColorHandler = () => {
         this.props.toggleColorPicker(true);
         this.props.whichButton("bgColor");
-       
     }
 
     pencilHandler = () => {
@@ -179,7 +167,6 @@ export class Paint extends Component {
     handleMouseLeave = () => {
         this.props.toggleColorPicker(false)
     }
-    
 
     /**
     * Markup
@@ -197,7 +184,6 @@ export class Paint extends Component {
                             onClick={this.colorHandler}    
                         />
                     </div>
-
                     <div className="paint-text">Bg Color</div>
                     <div className="paint-button">
                         <div 
@@ -206,17 +192,14 @@ export class Paint extends Component {
                             onClick={this.bgColorHandler} 
                         />
                     </div>
-
                     <div className="paint-text">Tools</div>
                     <div className="paint-tools-button">
-
                         <div 
                             className={this.props.activeToolButton === "pencil" ? "paint-tools-button-pensil-active" : "paint-tools-button-pensil" }
                             onClick={this.pencilHandler}
                         >
                             <FontAwesomeIcon icon={faPencilAlt} size="lg"/>
                         </div>
-
                         <div 
                             className={this.props.activeToolButton === "eraser" ? "paint-tools-button-erase-active" : "paint-tools-button-erase" } 
                             onClick={this.eraseHandler}
@@ -230,8 +213,6 @@ export class Paint extends Component {
                             <FontAwesomeIcon icon={faRedoAlt} color="white" size="lg"/>
                         </div>
                     </div>
-
-                   
                     <div className="paint-size-wrapper">
                         <div className="paint-size-icon">
                             <FontAwesomeIcon icon={faPencilAlt} size="lg"/>
@@ -239,7 +220,6 @@ export class Paint extends Component {
                         <div className="paint-text-size">Size ({this.props.sizePencil})</div>
                     </div>
                     <input type="range" value={this.props.sizePencil} min="1" max ="50" className="paint-size-reange" onChange={()=>this.onPencilSizeChange(event)}/>
-
                     <div className="paint-size-wrapper">
                         <div className="paint-size-icon">
                             <FontAwesomeIcon icon={faEraser} size="lg"/>
@@ -247,8 +227,6 @@ export class Paint extends Component {
                         <div className="paint-text-size">Size ({this.props.sizeEraser})</div>
                     </div>
                     <input type="range" value={this.props.sizeEraser} min="1" max ="50" onChange={()=>this.onEraserSizeChange(event)}/>
-
-
                     <div className="paint-text">Canvas</div>
                     <div className="paint-canvas-wrapper">
                         <div className="paint-canvas-button">
@@ -304,8 +282,6 @@ export class Paint extends Component {
                             <SketchPicker
                                 color={ this.props.color }
                                 onChangeComplete={this.handleChangeComplete }
-                                // onChange={ this.handleChangeComplete }
-                                // onSwatchHover={this.handleChangeComplete}
                             /> 
                         </div> : null}
                 </div>
@@ -314,7 +290,6 @@ export class Paint extends Component {
                     height={this.props.canvasHeight - 30} 
                     style={{border: "2px solid rgb(116, 67, 19)", background: `${this.props.bgColor}`}} 
                     ref="canvas"></canvas>
-                    {console.log(window.innerHeight, window.innerWidth)}
             </div>
         );
     }

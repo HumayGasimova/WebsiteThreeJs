@@ -32,7 +32,7 @@ const logger = createLogger({
 });
 
 const middleware = [];
-const epicMiddleware = createEpicMiddleware();
+// const epicMiddleware = createEpicMiddleware();
 
 if (process.env.ENVIRONMENT !== 'production') {
     // middleware.push(logger);
@@ -53,17 +53,17 @@ export default createStore(
     createRootReducer(history),
     composeEnhancers(
         applyMiddleware(
-            epicMiddleware,
+            // epicMiddleware,
             routerMiddleware(history),
            
-            logger,
+            // logger,
             
             thunk
             )
         )
     );
 
-epicMiddleware.run(rootEpic);
+// epicMiddleware.run(rootEpic);
 
 // export default function configureStore(preloadedState){
 //     const store = createStore(

@@ -110,15 +110,12 @@
                     border-top-left-radius: 7px;
                     border-bottom-left-radius: 7px;
                     width: 20px;
-                    height: 33px;
-                    padding: 7px 7px 0 7px;
+                    height: 35px;
+                    padding: 5px 7px 0 7px;
                     font-size: 20px;
                     background: rgb(207, 176, 155);
                     text-align: center;
-                }
-
-                .paint-canvas-button-size {
-
+                    font-family: 'Niconne', cursive;
                 }
 
                 .paint-canvas-buttons-arrows {
@@ -171,6 +168,8 @@
                 height: 40px;
                 background: rgb(91, 180, 91);
                 color: white;
+                font-family: 'Niconne', cursive;
+                font-size: 20px;
                 &:hover {
                     background: rgb(133, 209, 133);
                     
