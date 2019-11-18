@@ -112,4 +112,20 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update bgColor with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.GET_BG_COLOR,
+            color: "pink"
+        }
+        const initState = {
+            ...initialState, 
+            bgColor: "blue"
+        }
+        const state = {
+            ...initialState, 
+            bgColor: "pink"
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
