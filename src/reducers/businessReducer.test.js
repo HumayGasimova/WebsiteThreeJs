@@ -58,4 +58,23 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update lastX and lastY with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.CAPTURE_LAST_X_Y,
+            lastX: 463,
+            lastY: 732
+        }
+        const initState = {
+            ...initialState, 
+            lastX: 647,
+            lastY: 557
+        }
+        const state = {
+            ...initialState, 
+            lastX: 463,
+            lastY: 732
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
