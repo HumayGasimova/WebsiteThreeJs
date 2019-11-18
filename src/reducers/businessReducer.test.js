@@ -77,4 +77,23 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update x and y with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.CAPTURE_X_Y,
+            x: 731,
+            y: 373
+        }
+        const initState = {
+            ...initialState, 
+            x: 456,
+            y: 374
+        }
+        const state = {
+            ...initialState, 
+            x: 731,
+            y: 373
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
