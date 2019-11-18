@@ -20,6 +20,15 @@ Array [
 ]
 `;
 
+exports[`paintActions Dispatches the correct action and payload (getBgColor) 1`] = `
+Array [
+  Object {
+    "color": "pink",
+    "type": "GET_BG_COLOR",
+  },
+]
+`;
+
 exports[`paintActions Dispatches the correct action and payload (getColor) 1`] = `
 Array [
   Object {

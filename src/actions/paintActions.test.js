@@ -89,4 +89,17 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (getBgColor)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.GET_BG_COLOR,
+                color: "pink"
+            }
+        ];
+
+        store.dispatch(Actions.getBgColor("pink"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
