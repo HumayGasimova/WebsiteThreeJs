@@ -144,4 +144,20 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update activeToolButton with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.CHOOSE_TOOL,
+            tool: "eraser"
+        }
+        const initState = {
+            ...initialState, 
+            activeToolButton: "pencil"
+        }
+        const state = {
+            ...initialState, 
+            activeToolButton: "eraser"
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
