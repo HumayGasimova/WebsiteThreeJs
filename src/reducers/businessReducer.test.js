@@ -8,7 +8,7 @@ import * as actionTypes from "../constants/actionTypes";
 * Reducer
 */
 
-import reducer from './businessReducer';
+import reducer from './paintReducer';
 
 /**
 * Initial State
@@ -16,25 +16,30 @@ import reducer from './businessReducer';
 
 import { 
     initialState 
-} from './businessReducer'
+} from './paintReducer'
 
 
-describe('businessReducer', () => {
+describe('paintReducer', () => {
 
     it("should return the initial state", () => {
         const action = { type: "NONE" }
         expect(reducer(undefined, action)).toEqual(initialState);
     })
 
-    // it("should add 1 paperclips, add 1 to unsoldInventory and subtract 1 from wire", () => {
-    //     const action = { type: actionTypes.MAKE_PAPERCLIP }
-    //     const state = {
-    //         ...initialState, 
-    //         paperClips: 1, 
-    //         unsoldInventory: 1, 
-    //         wire: 999
-    //     }
-    //     expect(reducer(initialState, action)).toEqual(state);
-    // })
+    it("should update mousePressed with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.MOUSE_DOWN,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            mousePressed: false
+        }
+        const state = {
+            ...initialState, 
+            mousePressed: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    })
 
 });
