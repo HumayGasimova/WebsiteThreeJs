@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`paintActions Dispatches the correct action and payload (getColor) 1`] = `
+Array [
+  Object {
+    "color": "green",
+    "type": "GET_COLOR",
+  },
+]
+`;
+
 exports[`paintActions Dispatches the correct action and payload (mouseDown) 1`] = `
 Array [
   Object {
