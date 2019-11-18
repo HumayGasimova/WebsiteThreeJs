@@ -62,4 +62,18 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (captureXY)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CAPTURE_X_Y,
+                x: 64,
+                y: 784
+            }
+        ];
+
+        store.dispatch(Actions.captureXY(64, 784));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

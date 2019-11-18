@@ -10,6 +10,16 @@ Array [
 ]
 `;
 
+exports[`paintActions Dispatches the correct action and payload (captureXY) 1`] = `
+Array [
+  Object {
+    "type": "CAPTURE_X_Y",
+    "x": 64,
+    "y": 784,
+  },
+]
+`;
+
 exports[`paintActions Dispatches the correct action and payload (getColor) 1`] = `
 Array [
   Object {
