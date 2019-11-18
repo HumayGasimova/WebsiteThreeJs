@@ -96,4 +96,20 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update colorPickerIsShown with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.TOGGLE_COLOR_PICKER,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            colorPickerIsShown: false
+        }
+        const state = {
+            ...initialState, 
+            colorPickerIsShown: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
