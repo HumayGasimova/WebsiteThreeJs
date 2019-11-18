@@ -97,3 +97,17 @@ export const getSizeEraserState = createSelector(
     [getSizeEraser],
     (x) => x
 );
+
+const getCanvasWidth = (state) => state.paint.canvasWidth;
+
+export const getCanvasWidthState = createSelector(
+    [getCanvasWidth],
+    (x) => x
+);
+
+const getCanvasHeight = (state) => state.paint.canvasHeight;
+
+export const getCanvasHeightState = createSelector(
+    [getCanvasHeight],
+    (x) => x
+);

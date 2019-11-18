@@ -28,7 +28,9 @@ export const initialState = {
     buttonsName: '',
     activeToolButton: 'pencil',
     sizePencil: 10,
-    sizeEraser: 10
+    sizeEraser: 10,
+    canvasWidth: 1536,
+    canvasHeight: 754 
 }
 
 const mouseDown = (state, action) => {

@@ -256,7 +256,7 @@ export class Paint extends Component {
                                 X
                             </div>
                             <div className="paint-canvas-button-size">
-                                800
+                                {this.props.canvasWidth - 200}
                             </div>
                             <div className="paint-canvas-buttons-arrows">
                                 <div className="paint-canvas-buttons-arrow-up">
@@ -272,7 +272,7 @@ export class Paint extends Component {
                                 Y
                             </div>
                             <div className="paint-canvas-button-size">
-                                800
+                                {this.props.canvasHeight - 30} 
                             </div>
                             <div className="paint-canvas-buttons-arrows">
                                 <div className="paint-canvas-buttons-arrow-up">
@@ -298,10 +298,11 @@ export class Paint extends Component {
                         </div> : null}
                 </div>
                 <canvas 
-                    width={window.innerWidth - 200} 
-                    height={window.innerHeight - 30} 
+                    width={this.props.canvasWidth - 200} 
+                    height={this.props.canvasHeight - 30} 
                     style={{border: "2px solid rgb(116, 67, 19)", background: `${this.props.bgColor}`}} 
                     ref="canvas"></canvas>
+                    {console.log(window.innerHeight, window.innerWidth)}
             </div>
         );
     }
@@ -322,6 +323,8 @@ export default connect(
             activeToolButton: Selectors.getActiveToolButtonState(state),
             sizePencil: Selectors.getSizePencilState(state),
             sizeEraser: Selectors.getSizeEraserState(state),
+            canvasWidth: Selectors.getCanvasWidthState(state),
+            canvasHeight: Selectors.getCanvasHeightState(state),
         };
     },
     (dispatch) => {
