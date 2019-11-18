@@ -295,7 +295,7 @@ export class Paint extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="paint-button" onClick={this.props.updateCanvasSize}>
+                        <div className="paint-canvas-button-update" onClick={this.props.updateCanvasSize}>
                             Update
                         </div>
                     </div>

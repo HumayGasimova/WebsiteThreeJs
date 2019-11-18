@@ -72,9 +72,9 @@
                 width: 40px;
                 height: 31px;
                 text-align: center;
-                background: rgb(255, 112, 112);
+                background: rgb(236, 63, 63);
                 &:hover {
-                    background: rgb(236, 63, 63);
+                    background: rgb(255, 112, 112);
                 }
             }            
         }
@@ -156,6 +156,24 @@
                             background: rgb(207, 176, 155);
                         }
                     }
+                }
+            }
+
+            .paint-canvas-button-update {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                margin-top: 7px;
+                border: 1px solid rgb(116, 67, 19);
+                border-radius: 7px;
+                width: 130px;
+                height: 40px;
+                background: rgb(91, 180, 91);
+                color: white;
+                &:hover {
+                    background: rgb(133, 209, 133);
+                    
                 }
             }
         }
