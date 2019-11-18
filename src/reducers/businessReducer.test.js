@@ -160,4 +160,38 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should (if tool is pencil) update sizePencil with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.GET_SIZE,
+            tool: "pencil",
+            val: 45
+        }
+        const initState = {
+            ...initialState, 
+            sizePencil: 23
+        }
+        const state = {
+            ...initialState, 
+            sizePencil: 45
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should (if tool is eraser) update sizeEraser with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.GET_SIZE,
+            tool: "eraser",
+            val: 35
+        }
+        const initState = {
+            ...initialState, 
+            sizeEraser: 17
+        }
+        const state = {
+            ...initialState, 
+            sizeEraser: 35
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
