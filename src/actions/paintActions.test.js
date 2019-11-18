@@ -142,4 +142,17 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (updateCanvasSizeScreen)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+                arrow: "Xdown"
+            }
+        ];
+
+        store.dispatch(Actions.updateCanvasSizeScreen("Xdown"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

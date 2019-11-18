@@ -75,6 +75,15 @@ Array [
 ]
 `;
 
+exports[`paintActions Dispatches the correct action and payload (updateCanvasSizeScreen) 1`] = `
+Array [
+  Object {
+    "arrow": "Xdown",
+    "type": "UPDATE_CANVAS_SIZE_SCREEN",
+  },
+]
+`;
+
 exports[`paintActions Dispatches the correct action and payload (whichButton) 1`] = `
 Array [
   Object {
