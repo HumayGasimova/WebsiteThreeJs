@@ -115,4 +115,17 @@ describe('paintActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (chooseTool)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.CHOOSE_TOOL,
+                tool: "pencil"
+            }
+        ];
+
+        store.dispatch(Actions.chooseTool("pencil"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

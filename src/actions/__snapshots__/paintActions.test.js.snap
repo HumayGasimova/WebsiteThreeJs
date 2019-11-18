@@ -20,6 +20,15 @@ Array [
 ]
 `;
 
+exports[`paintActions Dispatches the correct action and payload (chooseTool) 1`] = `
+Array [
+  Object {
+    "tool": "pencil",
+    "type": "CHOOSE_TOOL",
+  },
+]
+`;
+
 exports[`paintActions Dispatches the correct action and payload (getBgColor) 1`] = `
 Array [
   Object {
