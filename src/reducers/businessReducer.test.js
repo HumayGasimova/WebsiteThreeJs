@@ -194,4 +194,100 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should (if arrow is Xup) update canvasWidthScreen by adding 1", () => {
+        const action = { 
+            type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+            arrow: "Xup"
+        }
+        const initState = {
+            ...initialState, 
+            canvasWidthScreen: 756
+        }
+        const state = {
+            ...initialState, 
+            canvasWidthScreen: 757
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should (if arrow is Xdown and canvasWidthScreen is greater than 700) update canvasWidthScreen by subtracting 1", () => {
+        const action = { 
+            type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+            arrow: "Xdown"
+        }
+        const initState = {
+            ...initialState, 
+            canvasWidthScreen: 1473
+        }
+        const state = {
+            ...initialState, 
+            canvasWidthScreen: 1472
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should (if arrow is Xdown and canvasWidthScreen is less than 700) do nothing", () => {
+        const action = { 
+            type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+            arrow: "Xdown"
+        }
+        const initState = {
+            ...initialState, 
+            canvasWidthScreen: 300
+        }
+        const state = {
+            ...initialState, 
+            canvasWidthScreen: 300
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should (if arrow is Yup) update canvasHeightScreen by adding 1", () => {
+        const action = { 
+            type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+            arrow: "Yup"
+        }
+        const initState = {
+            ...initialState, 
+            canvasHeightScreen: 737
+        }
+        const state = {
+            ...initialState, 
+            canvasHeightScreen: 738
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should (if arrow is Ydown and canvasHeightScreen is greater than 400) update canvasHeightScreen by subtracting 1", () => {
+        const action = { 
+            type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+            arrow: "Ydown"
+        }
+        const initState = {
+            ...initialState, 
+            canvasHeightScreen: 747
+        }
+        const state = {
+            ...initialState, 
+            canvasHeightScreen: 746
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should (if arrow is Ydown and canvasHeightScreen is less than 400) do nothing", () => {
+        const action = { 
+            type: actionTypes.UPDATE_CANVAS_SIZE_SCREEN,
+            arrow: "Ydown"
+        }
+        const initState = {
+            ...initialState, 
+            canvasHeightScreen: 200
+        }
+        const state = {
+            ...initialState, 
+            canvasHeightScreen: 200
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });

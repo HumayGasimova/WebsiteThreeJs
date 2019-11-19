@@ -105,15 +105,17 @@ const updateCanvasSizeScreen = (state, action) => {
                 return updateObject(state, {
                     canvasWidthScreen: state.canvasWidthScreen + 1
                 });
+            }else{
+                return state;    
             }
-            break;
         case "Xdown":
             if(state.canvasWidthScreen > 700){
                 return updateObject(state, {
                     canvasWidthScreen: state.canvasWidthScreen - 1
                 });
+            }else{
+                return state;    
             }
-            break;
         case "Yup":
             return updateObject(state, {
                 canvasHeightScreen: state.canvasHeightScreen + 1
@@ -123,8 +125,9 @@ const updateCanvasSizeScreen = (state, action) => {
                 return updateObject(state, {
                     canvasHeightScreen: state.canvasHeightScreen - 1
                 });
-            }
-            break;
+            }else{
+                return state;    
+            }  
     }
 }
 
