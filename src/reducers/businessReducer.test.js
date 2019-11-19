@@ -290,4 +290,25 @@ describe('paintReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update canvasWidth with the value of canvasWidthScreen and canvasHeight with the value of canvasHeightScreen", () => {
+        const action = { 
+            type: actionTypes.UPDATE_CANVAS_SIZE
+        }
+        const initState = {
+            ...initialState, 
+            canvasWidthScreen: 385,
+            canvasHeightScreen: 729,
+            canvasWidth: 482,
+            canvasHeight: 1472
+        }
+        const state = {
+            ...initialState, 
+            canvasWidthScreen: 385,
+            canvasHeightScreen: 729,
+            canvasWidth: 385,
+            canvasHeight: 729
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
