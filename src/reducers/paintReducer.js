@@ -4,10 +4,6 @@
 
 import * as actionTypes from "../constants/actionTypes";
 
-/**
-* Constants
-*/
-
 import {
     updateObject
 } from './utility';
