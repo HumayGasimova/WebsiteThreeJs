@@ -14,7 +14,7 @@ import {
 * Components
 */
 
-import Paint from './components/Paint/paint';
+import Home from './components/Home/home';
 
 /**
 * Styles
@@ -39,7 +39,7 @@ export class App extends Component {
             <Route 
                exact 
                path="/"
-               component={ Paint }
+               component={ Home }
             />
          </div>
       );

@@ -1,11 +1,1 @@
-export const MOUSE_DOWN = 'MOUSE_DOWN';
-export const GET_COLOR = 'GET_COLOR';
-export const CAPTURE_LAST_X_Y = 'CAPTURE_LAST_X_Y';
-export const CAPTURE_X_Y = 'CAPTURE_X_Y';
-export const TOGGLE_COLOR_PICKER = 'TOGGLE_COLOR_PICKER';
-export const GET_BG_COLOR = 'GET_BG_COLOR';
-export const WHICH_BUTTON = 'WHICH_BUTTON';
-export const CHOOSE_TOOL = 'CHOOSE_TOOL';
-export const GET_SIZE = 'GET_SIZE';
-export const UPDATE_CANVAS_SIZE_SCREEN = 'UPDATE_CANVAS_SIZE_SCREEN';
-export const UPDATE_CANVAS_SIZE = 'UPDATE_CANVAS_SIZE';
+// export const MOUSE_DOWN = 'MOUSE_DOWN';
