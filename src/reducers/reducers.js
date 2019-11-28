@@ -5,9 +5,9 @@ import {
      connectRouter 
 } from 'connected-react-router';
 
-import paintReducer from './paintReducer';
+import parallaxWebsiteReducer from './parallaxWebsiteReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    paint: paintReducer
+    home: parallaxWebsiteReducer
 });

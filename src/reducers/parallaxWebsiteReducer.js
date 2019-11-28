@@ -24,7 +24,7 @@ export const initialState = {
 
 
 
-const paintReducer = (state = initialState, action) => {
+const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
         // case actionTypes.MOUSE_DOWN:
         //     return mouseDown(state, action);
@@ -34,4 +34,4 @@ const paintReducer = (state = initialState, action) => {
     }
 }
 
-export default paintReducer;
+export default parallaxWebsiteReducer;

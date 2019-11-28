@@ -1,3 +1,3 @@
 export {
     mouseDown,
-} from './paintActions';
+} from './parallaxWebsiteActions';
