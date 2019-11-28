@@ -8,7 +8,7 @@ import configureStore from 'redux-mock-store';
 * Constants
 */
 
-import * as Actions from '../actions';
+import * as Actions from '.';
 import * as actionTypes from "../constants/actionTypes";
 
 /**

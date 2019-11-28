@@ -17,19 +17,22 @@ import {
 } from 'redux';
 
 /**
- * Components
- */
+* Components
+*/
+
+import Parallax from '../Parallax/Parallax'
 
 /**
- * Styles
- */
+* Styles
+*/
 
 import './home.scss';
 
 
 /**
- * Home component definition and export
- */
+* Home component definition and export
+*/
+
 export const Home = () => {
 
     /**
@@ -38,7 +41,7 @@ export const Home = () => {
 
     return(
         <div className="header">
-            cc
+           <Parallax/>
         </div>
     );
 }

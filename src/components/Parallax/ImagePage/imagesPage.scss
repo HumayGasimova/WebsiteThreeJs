@@ -1,0 +1,21 @@
+.slots {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+}
+
+// .hidden {
+//     opacity: 0;
+// }
+
+// .show {
+//     opacity: 1;
+// }
+
+.triple {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,137 @@
+// .slot {
+//     width: 300px;
+//     height: 300px;
+//     margin: 20px;
+//     & img {
+//         width: 300px;
+//         height: 300px;
+//         opacity: 1;
+//         transform: translateX(-20px);
+//         transition: all 0.3s ease-in-out;
+//     }
+// }
+
+.slotNumber0 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.slotNumber1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.slotNumber2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.slotNumber3 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.slotNumber4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.slotNumber5 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.slotNumber6 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.slotNumber7 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.slotNumber8 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    position: relative;
+    & img {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        transform: translateX(-20px);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.hidden {
+   // display: none;
+    opacity: 0;
+    transform: translateX(0px);
+}

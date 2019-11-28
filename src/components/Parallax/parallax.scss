@@ -1,0 +1,108 @@
+body {
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: transparentize(rgb(240, 221, 234), 0.3);
+}
+
+.main {
+    height: 7000px;
+    .backgroundBox {
+        position: relative;
+        height: 800px;
+        background-image: url('../../images/BackgroundImageCut.png');
+        // background-size: auto 600px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        // clip: rect(500px, 100px, 100px, 0);
+        background-position: top center;
+        background-attachment: fixed;
+        // background-size: contain;
+        // background-position: top center;
+        overflow: hidden;
+        
+        // .starsLeft {
+        //     width: 600px;
+        //     height: 500px;
+        //     background-image: url('../../images/bright-star-clipart-11.png');
+        //     // background-color: transparentize(pink, 0.3);
+        //     background-repeat: no-repeat;
+        //     background-position: left top;
+        //     background-size: 70%;
+        //     position: absolute;
+        //     // overflow: hidden;
+        //     top: 10px;
+        // }
+
+        // .starsRight {
+        //     width: 600px;
+        //     height: 500px;
+        //     background-image: url('../../images/bright-star-clipart-11.png');
+        //     // background-color: transparentize(pink, 0.3);
+        //     background-repeat: no-repeat;
+        //     background-size: 70%;
+        //     // background-position: center;
+        //     position: absolute;
+        //     // overflow: hidden;
+        //     right: 10px;
+        //     bottom: 0px;
+        //     transform: rotate(180deg);
+            
+        // }
+        
+      
+
+    }
+    
+}
+
+.backgroundBox2 {
+    position: relative;
+    height: 1000px;
+    background-image: url('../../images/abstract-magic-light-on-sweet-pink-background-vector-3421483.jpg');
+    // background-size: auto 600px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    // clip: rect(500px, 100px, 100px, 0);
+    background-position: top center;
+    background-attachment: fixed;
+    // background-size: contain;
+    // background-position: top center;
+    overflow: hidden;
+    z-index: -1;
+  
+}
+
+.text {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: absolute;
+}
+
+svg {
+    font-size: 5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1142px){
+    svg {
+        font-size: 3em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    // .starsRight {
+    //     width: 600px;
+    //     height: 500px;
+    //     background-image: url('../../images/bright-star-clipart-11.png');
+    //     background-repeat: no-repeat;
+    //     background-size: 70%;
+    //     position: absolute;
+    //     right: 10px;
+    //     top: 87px;
+    //     transform: rotate(180deg);
+    // }
+    
+}
