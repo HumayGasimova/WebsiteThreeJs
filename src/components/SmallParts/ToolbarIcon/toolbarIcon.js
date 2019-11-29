@@ -65,11 +65,11 @@ export const ToolbarIcon = (props) => {
                 <div className="toolbarIcon-line">
                     <div 
                         className="toolbarIcon-line-left-part" 
-                        style={{width: `${width/2-5}`}}
+                        style={{width: `${width/2 - 6}`}}
                     />
                     <div 
                         className="toolbarIcon-line-right-part" 
-                        style={{width: `${width/2-5}`}}
+                        style={{width: `${width/2 - 6}`}}
                     />
                 </div>
             </div>
