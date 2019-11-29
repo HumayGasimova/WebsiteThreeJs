@@ -23,6 +23,7 @@ import {
 * Components
 */
 
+import ToolbarIcon from '../../SmallParts/ToolbarIcon/toolbarIcon';
 
 /**
 * Styles
@@ -57,11 +58,11 @@ export const Toolbar = () => {
 
     return(
         <div className="toolbar" style={{width: `${size.width-100}px`}}>
-            <div>Home</div>
-            <div>About</div>
-            <div>Services</div>
-            <div>Gallery</div>
-            <div>Contact</div>
+            <ToolbarIcon text={"Home"}/>
+            <ToolbarIcon text={"Services"}/>
+            <ToolbarIcon text={"About"}/>
+            <ToolbarIcon text={"Gallery"}/>
+            <ToolbarIcon text={"Contact"}/>
         </div>
     );
 }
