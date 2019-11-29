@@ -2,7 +2,10 @@
 * Libraries
 */
 
-import React from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 
 import {
     Route
@@ -20,30 +23,40 @@ import {
 * Components
 */
 
-import Parallax from '../Parallax/Parallax';
-import Toolbar from '../Parts/Toolbar/toolbar';
 
 /**
 * Styles
 */
 
-import './home.scss';
+import './toolbar.scss';
 
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 /**
 * Home component definition and export
 */
 
-export const Home = () => {
+export const Toolbar = () => {
+
+    const[width, setWidth] = useState(900)
+    const size = useWindowSize()
+    /**
+    * Methods
+    */
+//    useEffect()
 
     /**
     * Markup
     */
 
     return(
-        <div className="home">
-            <Toolbar/>
-            <Parallax/>
+        <div className="toolbar" style={{width: `${size.width-100}px`}}>
         </div>
     );
 }
@@ -58,5 +71,5 @@ export const Home = () => {
             // startZooming: bindActionCreators(Actions.startZooming, dispatch),
         };
     }
-)(Home);
+)(Toolbar);
  

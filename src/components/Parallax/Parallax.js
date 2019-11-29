@@ -41,6 +41,7 @@ export class Parallax extends Component {
       return(
          <div className="main">
             <div className="backgroundBox">
+               <div className="toolbar2"></div>
                <Stars left/>
                <HeaderText/>
                <Stars/> 
