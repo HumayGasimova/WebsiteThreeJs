@@ -45,24 +45,46 @@ import {
 
 export const Toolbar = () => {
 
-    const[width, setWidth] = useState(900)
-    const size = useWindowSize()
+    const size = useWindowSize();
+    const [scrollTop, setScrollTop] = useState(0);
+
     /**
     * Methods
     */
-//    useEffect()
+
+   useEffect(()=>{
+        addEventListener('scroll', ()=> {
+            let scrollHeight = document.body.scrollTop;
+            setScrollTop(scrollHeight);
+        })
+    },[])
 
     /**
     * Markup
     */
 
     return(
-        <div className="toolbar" style={{width: `${size.width-100}px`}}>
-            <ToolbarIcon text={"Home"}/>
-            <ToolbarIcon text={"Services"}/>
-            <ToolbarIcon text={"About"}/>
-            <ToolbarIcon text={"Gallery"}/>
-            <ToolbarIcon text={"Contact"}/>
+        <div className={scrollTop >= 100 ? "toolbar-scroll" : "toolbar"} style={{width: `${size.width-97}px`}}>
+            <ToolbarIcon 
+                text={"Home"}
+                scrollTop={scrollTop}
+            />
+            <ToolbarIcon 
+                text={"Services"}
+                scrollTop={scrollTop}
+            />
+            <ToolbarIcon 
+                text={"About"}
+                scrollTop={scrollTop}
+            />
+            <ToolbarIcon 
+                text={"Gallery"}
+                scrollTop={scrollTop}
+            />
+            <ToolbarIcon 
+                text={"Contact"}
+                scrollTop={scrollTop}
+            />
         </div>
     );
 }

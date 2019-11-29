@@ -6,3 +6,13 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+.toolbar-scroll {
+    background: rgba(117, 71, 129, 0.7);
+    height: 120px;
+    position: fixed;
+    z-index: 700;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

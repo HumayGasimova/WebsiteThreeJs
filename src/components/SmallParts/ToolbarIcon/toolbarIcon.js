@@ -44,7 +44,7 @@ import {
 
 export const ToolbarIcon = (props) => {
     const iconRef = React.createRef();
-    const [width, setWidth] = useState(0)
+    const [width, setWidth] = useState(0);
 
     /**
     * Methods
@@ -60,7 +60,7 @@ export const ToolbarIcon = (props) => {
 
     return(
         <div className="toolbarIcon">
-            <div className="toolbarIcon-element" ref={iconRef}>
+            <div className={props.scrollTop >= 100 ? "toolbarIcon-element-scroll" : "toolbarIcon-element"} ref={iconRef}>
                 {props.text}
                 <div className="toolbarIcon-line">
                     <div 
