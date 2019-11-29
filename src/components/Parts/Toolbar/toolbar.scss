@@ -15,10 +15,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    animation: move 0.5s linear;
+    animation: moveToolBar 0.5s linear;
 }
 
-@keyframes move {
+@keyframes moveToolBar {
     0% {
         height: 130px;
     }
