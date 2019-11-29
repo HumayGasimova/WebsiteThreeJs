@@ -1,7 +1,10 @@
 .toolbar {
-    border: 2px solid red;
-    width: 900px;
-    height: 50px;
+    height: 120px;
     position: fixed;
     z-index: 700;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Handlee', cursive;
+    font-size: 27px;
+    color: rgb(136, 0, 101);
 }

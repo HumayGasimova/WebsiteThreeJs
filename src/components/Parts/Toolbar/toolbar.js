@@ -57,6 +57,11 @@ export const Toolbar = () => {
 
     return(
         <div className="toolbar" style={{width: `${size.width-100}px`}}>
+            <div>Home</div>
+            <div>About</div>
+            <div>Services</div>
+            <div>Gallery</div>
+            <div>Contact</div>
         </div>
     );
 }
