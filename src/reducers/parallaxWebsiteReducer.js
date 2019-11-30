@@ -13,21 +13,21 @@ import {
 */
 
 export const initialState = {
-   
+   menuButtonIsPressed: false
 }
 
-// const mouseDown = (state, action) => {
-//     return updateObject(state, {
-//         mousePressed: action.val
-//     });
-// }
+const toggleMenuButton = (state, action) => {
+    return updateObject(state, {
+        menuButtonIsPressed: action.val
+    });
+}
 
 
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
-        // case actionTypes.MOUSE_DOWN:
-        //     return mouseDown(state, action);
+        case actionTypes.TOGGLE_MENU_BUTTON:
+            return toggleMenuButton(state, action);
       
         default: 
             return state;

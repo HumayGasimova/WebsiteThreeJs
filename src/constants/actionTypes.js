@@ -1,1 +1,1 @@
-// export const MOUSE_DOWN = 'MOUSE_DOWN';
+export const TOGGLE_MENU_BUTTON = 'TOGGLE_MENU_BUTTON';

@@ -1,8 +1,8 @@
-// import * as actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
-// export function mouseDown(val) {
-//     return { 
-//         type: actionTypes.MOUSE_DOWN,
-//         val: val
-//     };
-// };
+export function toggleMenuButton(val) {
+    return { 
+        type: actionTypes.TOGGLE_MENU_BUTTON,
+        val: val
+    };
+};

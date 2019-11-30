@@ -1,7 +1,11 @@
-// const getMousePressed = (state) => state.paint.mousePressed;
+import { 
+    createSelector 
+} from 'reselect';
 
-// export const getMousePressedState = createSelector(
-//     [getMousePressed],
-//     (x) => x
-// );
+const getMenuButtonIsPressed = (state) => state.home.menuButtonIsPressed;
+
+export const getMenuButtonIsPressedState = createSelector(
+    [getMenuButtonIsPressed],
+    (x) => x
+);
 

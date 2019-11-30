@@ -26,10 +26,22 @@ import {
 import ToolbarIcon from '../../SmallParts/ToolbarIcon/toolbarIcon';
 
 /**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
+
+/**
 * Styles
 */
 
 import './toolbar.scss';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors'
 
 /**
 * Hooks
@@ -43,7 +55,7 @@ import {
 * Home component definition and export
 */
 
-export const Toolbar = () => {
+export const Toolbar = (props) => {
 
     const size = useWindowSize();
     const [scrollTop, setScrollTop] = useState(0);
@@ -52,7 +64,7 @@ export const Toolbar = () => {
     * Methods
     */
 
-   useEffect(()=>{
+    useEffect(()=>{
         addEventListener('scroll', ()=> {
             let scrollHeight = document.body.scrollTop;
             setScrollTop(scrollHeight);
@@ -85,7 +97,10 @@ export const Toolbar = () => {
                 text={"Contact"}
                 scrollTop={scrollTop}
             />
-            <div className="toolbar-min">
+            <div 
+                className="toolbar-min" 
+                onClick={() => props.toggleMenuButton(true)}
+            >
                 <div className="toolbar-min-line"/>
                 <div className="toolbar-min-line"/>
                 <div className="toolbar-min-line"/>
@@ -96,12 +111,12 @@ export const Toolbar = () => {
  export default connect(
     (state) => {
         return {
-            // zoom: Selectors.getZoomState(state),
+            menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
         };
     },
     (dispatch) => {
         return {
-            // startZooming: bindActionCreators(Actions.startZooming, dispatch),
+            toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
 )(Toolbar);

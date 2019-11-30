@@ -1,3 +1,3 @@
 export {
-    mouseDown,
+    toggleMenuButton,
 } from './parallaxWebsiteActions';
