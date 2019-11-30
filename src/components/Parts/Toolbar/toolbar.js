@@ -99,11 +99,11 @@ export const Toolbar = (props) => {
             />
             <div 
                 className="toolbar-min" 
-                onClick={() => props.toggleMenuButton(true)}
+                onClick={() => props.toggleMenuButton()}
             >
-                <div className="toolbar-min-line"/>
-                <div className="toolbar-min-line"/>
-                <div className="toolbar-min-line"/>
+                <div className={props.menuButtonIsPressed ? "toolbar-min-line1-effect" : "toolbar-min-line1"}/>
+                <div className={props.menuButtonIsPressed ? "toolbar-min-line2-effect" : "toolbar-min-line2"}/>
+                <div className={props.menuButtonIsPressed ? "toolbar-min-line3-effect" : "toolbar-min-line3"}/>
             </div>
         </div>
     );

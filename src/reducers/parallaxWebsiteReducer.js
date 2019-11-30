@@ -18,7 +18,7 @@ export const initialState = {
 
 const toggleMenuButton = (state, action) => {
     return updateObject(state, {
-        menuButtonIsPressed: action.val
+        menuButtonIsPressed: !state.menuButtonIsPressed
     });
 }
 

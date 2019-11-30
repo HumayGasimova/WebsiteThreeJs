@@ -1,8 +1,7 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function toggleMenuButton(val) {
+export function toggleMenuButton() {
     return { 
-        type: actionTypes.TOGGLE_MENU_BUTTON,
-        val: val
+        type: actionTypes.TOGGLE_MENU_BUTTON
     };
 };
