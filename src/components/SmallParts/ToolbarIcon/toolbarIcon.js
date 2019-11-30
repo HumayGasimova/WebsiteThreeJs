@@ -73,7 +73,6 @@ export const ToolbarIcon = (props) => {
                     />
                 </div>
             </div>
-            
         </div>
     );
 }

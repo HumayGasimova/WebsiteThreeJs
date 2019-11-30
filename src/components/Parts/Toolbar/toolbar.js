@@ -85,6 +85,11 @@ export const Toolbar = () => {
                 text={"Contact"}
                 scrollTop={scrollTop}
             />
+            <div className="toolbar-min">
+                <div className="toolbar-min-line"/>
+                <div className="toolbar-min-line"/>
+                <div className="toolbar-min-line"/>
+            </div>
         </div>
     );
 }

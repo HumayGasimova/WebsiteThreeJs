@@ -29,3 +29,25 @@
         height: 100px;
     }
 }
+
+@media only screen and (max-width: 1000px) {
+    .toolbar {
+        .toolbar-min {
+            .toolbar-min-line {
+                border: 2px solid rgb(136, 0, 101);
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+        }
+    }
+    .toolbar-scroll {
+        .toolbar-min {
+            .toolbar-min-line {
+                border: 2px solid rgb(250, 207, 239);
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+        }
+    }
+    
+}
