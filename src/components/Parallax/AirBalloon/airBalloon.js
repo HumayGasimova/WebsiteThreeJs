@@ -40,7 +40,7 @@ import './airBalloon.scss';
         let scrollHeight = document.body.scrollTop
          this.setState({
              slower: scrollHeight/2,
-             slower2x: scrollHeight/10
+             slower2x: scrollHeight/2
          })
     }
     renderImage = () => {
@@ -54,7 +54,7 @@ import './airBalloon.scss';
             return(
                 <img 
                 src={AirBalloonLogo}
-                style={{transform: `translate(0px, -${this.state.slower2x}px)`}}
+                style={{transform: `translate(0px, ${this.state.slower2x}px)`}}
             />
            ) }
         
