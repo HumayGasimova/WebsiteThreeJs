@@ -55,6 +55,7 @@ export const Home = (props) => {
                 <div>
                     <Sidebar 
                         className={"sidebar-open"} 
+                        classNameIcon={"sidebar-icon-open"}
                     /> 
                     <Backdrop 
                         show 
@@ -67,6 +68,7 @@ export const Home = (props) => {
                 <div>
                     <Sidebar 
                         className={"sidebar-close"} 
+                        classNameIcon={"sidebar-icon-close"}
                     />
                 </div>
             )
