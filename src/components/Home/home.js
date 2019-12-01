@@ -22,6 +22,8 @@ import {
 
 import Parallax from '../Parallax/Parallax';
 import Toolbar from '../Parts/Toolbar/toolbar';
+import Sidebar from '../Parts/Sidebar/sidebar';
+import Backdrop from '../../library/Backdrop/backdrop';
 
 /**
 * Styles
@@ -29,12 +31,48 @@ import Toolbar from '../Parts/Toolbar/toolbar';
 
 import './home.scss';
 
+/**
+* Actions
+*/
+
+import * as Actions from '../../actions';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../reducers/selectors';
 
 /**
 * Home component definition and export
 */
 
-export const Home = () => {
+export const Home = (props) => {
+
+    const renderSidebar = () => {
+        if(props.menuButtonIsPressed){
+            return(
+                <div>
+                    <Sidebar 
+                        className={"sidebar-open"} 
+                    /> 
+                    <Backdrop 
+                        show 
+                        onClick={() => props.menuButtonIsToggled(false)}
+                    />
+                </div>
+            )
+        }else{
+            return(
+                <div>
+                    <Sidebar 
+                        className={"sidebar-close"} 
+                    />
+                </div>
+            )
+        }
+       
+    }
 
     /**
     * Markup
@@ -43,6 +81,7 @@ export const Home = () => {
     return(
         <div className="home">
             <Toolbar/>
+                {props.sidebarOnInit ? renderSidebar() : null}
             <Parallax/>
         </div>
     );
@@ -50,12 +89,13 @@ export const Home = () => {
  export default connect(
     (state) => {
         return {
-            // zoom: Selectors.getZoomState(state),
+            menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            sidebarOnInit: Selectors.getSidebarOnInitState(state),
         };
     },
     (dispatch) => {
         return {
-            // startZooming: bindActionCreators(Actions.startZooming, dispatch),
+            menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch),
         };
     }
 )(Home);

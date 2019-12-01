@@ -39,7 +39,7 @@ import {
 } from '../../../Hooks/useWindowSize';
 
 /**
-* Home component definition and export
+* ToolbarIcon component definition and export
 */
 
 export const ToolbarIcon = (props) => {

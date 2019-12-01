@@ -16,8 +16,8 @@ import './backdrop.scss';
  * Button component definition and export
  */
 
-const backdrop = (props) => (
+const Backdrop = (props) => (
     props.show ? <div onClick={props.onClick} className = "backdrop"/> : null
 );
 
-export default backdrop;
+export default Backdrop;

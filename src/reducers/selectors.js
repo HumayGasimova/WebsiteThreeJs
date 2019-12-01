@@ -9,3 +9,10 @@ export const getMenuButtonIsPressedState = createSelector(
     (x) => x
 );
 
+const getSidebarOnInit = (state) => state.home.sidebarOnInit;
+
+export const getSidebarOnInitState = createSelector(
+    [getSidebarOnInit],
+    (x) => x
+);
+
