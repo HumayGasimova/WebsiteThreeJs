@@ -1,58 +1,41 @@
 /**
- * Libraries
- */
+* Libraries
+*/
 
 import React,{
     Component
  } from 'react';
  
- /**
-  * Components
-  */
-import StarsLogo  from '../../../images/bright-star-clipart-11.png';
- 
- /**
-  * Styles
-  */
-import './stars.scss';
- 
- /**
-  * App component definition and export
-  */
- export class Stars extends Component {
- 
-    /**
-      * Constructor
-      */
- 
-     constructor(props) {
-       super(props);
-       this.state={
-           slower: 0
-       }
-   }
-//    componentDidMount = () => {
-//     window.addEventListener('scroll', this.handleScroll)
-//  }
+/**
+* Components
+*/
 
-//     handleScroll = () => {
-//         let scrollHeight = document.body.scrollTop
-//          this.setState({
-//              slower: scrollHeight/2
-//          })
-//     }
+import StarsLogo  from '../../../images/bright-star-clipart-11.png';
+
+/**
+* Styles
+*/
+
+import './stars.scss';
+
+/**
+* Stars component definition and export
+*/
+
+export const Stars = (props) =>{
  
-    render(){
-       return(
-            <div className={this.props.left ? "starsLeft" : "starsRight"}>
-               <img 
-                    src={StarsLogo}
-                    // style={{transform: `translate(0px, ${this.state.slower}px)`}}
-                    />
-            </div>
-       );
-    }
- }
+   /**
+   * Mark up
+   */
  
- export default Stars;
+   return(
+      <div className={props.className}>
+         <img 
+            src={StarsLogo}
+         />
+      </div>
+   );
+}
+
+export default Stars;
  

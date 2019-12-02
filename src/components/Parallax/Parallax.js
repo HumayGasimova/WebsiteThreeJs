@@ -42,11 +42,11 @@ export class Parallax extends Component {
          <div className="main">
             <div className="backgroundBox">
                <div className="toolbar2"></div>
-               <Stars left/>
                <HeaderText/>
-               <Stars/> 
-               <AirBalloon left/>
-               <AirBalloon />
+               <div className="parallax-airbaloons">
+                  <AirBalloon left/>
+                  <AirBalloon />
+               </div>
             </div>
 
             <div className="text">

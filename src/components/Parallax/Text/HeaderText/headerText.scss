@@ -5,3 +5,34 @@
     top: 35%;
     font-family: 'Handlee', cursive;
 }
+
+
+@media only screen and (max-width: 1067px){
+    .headerText {
+        height: 300px;
+        width: 100%;
+        position: absolute;
+        top: 25%;
+        font-family: 'Handlee', cursive;
+    }
+}
+
+@media only screen and (max-width: 732px) {
+    .headerText {
+        height: 300px;
+        width: 100%;
+        position: absolute;
+        top: 15%;
+        font-family: 'Handlee', cursive;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .headerText {
+        height: 300px;
+        width: 100%;
+        position: absolute;
+        top: 1%;
+        font-family: 'Handlee', cursive;
+    }
+}

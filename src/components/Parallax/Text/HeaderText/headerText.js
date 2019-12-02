@@ -49,7 +49,7 @@ import './headerText.scss';
                <div  style={{transform: `translate(0px, ${this.state.slower}px)`}}>
                   <svg height="100%" width="100%"
                      >
-                     {/* <text x="50%" y="50%" fill="rgb(136, 0, 101)" textAnchor="middle">Welcome to my site</text> */}
+                     <text x="50%" y="50%" fill="rgb(136, 0, 101)" textAnchor="middle">Welcome</text>
                   </svg>
                </div>
             </div>
