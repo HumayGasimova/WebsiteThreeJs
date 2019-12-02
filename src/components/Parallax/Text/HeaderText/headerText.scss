@@ -6,6 +6,19 @@
     font-family: 'Handlee', cursive;
 }
 
+svg {
+    font-size: 5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1190px){
+    svg {
+        font-size: 3em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
 
 @media only screen and (max-width: 1067px){
     .headerText {
@@ -14,6 +27,12 @@
         position: absolute;
         top: 25%;
         font-family: 'Handlee', cursive;
+    }
+
+    svg {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 }
 
@@ -34,5 +53,11 @@
         position: absolute;
         top: 1%;
         font-family: 'Handlee', cursive;
+    }
+
+    svg {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 }

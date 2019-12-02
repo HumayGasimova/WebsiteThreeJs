@@ -3,9 +3,9 @@ body {
     background-color: transparentize(rgb(240, 221, 234), 0.3);
 }
 
-.main {
+.parallax {
     height: 7000px;
-    .backgroundBox {
+    .parallax-backgroundBox {
         position: relative;
         height: 800px;
         background-image: url('../../images/BackgroundImageCut.png');
@@ -19,23 +19,22 @@ body {
         // background-position: top center;
         overflow: hidden;
     }
-}
-
-.backgroundBox2 {
-    position: relative;
-    height: 1000px;
-    background-image: url('../../images/abstract-magic-light-on-sweet-pink-background-vector-3421483.jpg');
-    // background-size: auto 600px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    // clip: rect(500px, 100px, 100px, 0);
-    background-position: top center;
-    background-attachment: fixed;
-    // background-size: contain;
-    // background-position: top center;
-    overflow: hidden;
-    z-index: -1;
-  
+    .parallax-backgroundBox2 {
+        position: relative;
+        height: 1000px;
+        background-image: url('../../images/abstract-magic-light-on-sweet-pink-background-vector-3421483.jpg');
+        // background-size: auto 600px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        // clip: rect(500px, 100px, 100px, 0);
+        background-position: top center;
+        background-attachment: fixed;
+        // background-size: contain;
+        // background-position: top center;
+        overflow: hidden;
+        z-index: -1;
+      
+    }
 }
 
 .text {
@@ -47,16 +46,10 @@ body {
     display: absolute;
 }
 
-svg {
-    font-size: 5em;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
 @media only screen and (max-width: 1190px){
-    .main {
+    .parallax {
         height: 7000px;
-        .backgroundBox {
+        .parallax-backgroundBox {
             position: relative;
             height: 600px;
             background-image: url('../../images/BackgroundImageCut.png');
@@ -71,17 +64,12 @@ svg {
             overflow: hidden;
         }
     }
-    svg {
-        font-size: 3em;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
 }
 
 @media only screen and (max-width: 1067px){
-    .main {
+    .parallax {
         height: 7000px;
-        .backgroundBox {
+        .parallax-backgroundBox {
             position: relative;
             height: 500px;
             background-image: url('../../images/BackgroundImageCut.png');
@@ -96,17 +84,12 @@ svg {
             overflow: hidden;
         }
     }
-    svg {
-        font-size: 2.5em;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
 }
 
 @media only screen and (max-width: 900px) {
-    .main {
+    .parallax {
         height: 7000px;
-        .backgroundBox {
+        .parallax-backgroundBox {
             position: relative;
             height: 400px;
             background-image: url('../../images/BackgroundImageCut.png');
@@ -125,9 +108,9 @@ svg {
 
 
 @media only screen and (max-width: 732px) {
-    .main {
+    .parallax {
         height: 7000px;
-        .backgroundBox {
+        .parallax-backgroundBox {
             position: relative;
             height: 300px;
             background-image: url('../../images/BackgroundImageCut.png');
@@ -145,9 +128,9 @@ svg {
 }
 
 @media only screen and (max-width: 550px) {
-    .main {
+    .parallax {
         height: 7000px;
-        .backgroundBox {
+        .parallax-backgroundBox {
             position: relative;
             height: 200px;
             background-image: url('../../images/BackgroundImageCut.png');
@@ -161,11 +144,6 @@ svg {
             // background-position: top center;
             overflow: hidden;
         }
-    }
-    svg {
-        font-size: 1.5em;
-        font-weight: bold;
-        text-transform: uppercase;
     }
 }
 .parallax-airbaloons {
