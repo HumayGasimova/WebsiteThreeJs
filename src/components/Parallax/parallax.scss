@@ -1,8 +1,3 @@
-body {
-    margin: 0px 40px 0 40px;
-    background-color: transparentize(rgb(240, 221, 234), 0.3);
-}
-
 .parallax {
     height: 7000px;
     .parallax-backgroundBox {
@@ -35,15 +30,15 @@ body {
         z-index: -1;
       
     }
-}
 
-.text {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    display: absolute;
+    .text {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        display: absolute;
+    }
 }
 
 @media only screen and (max-width: 1190px){
@@ -53,14 +48,10 @@ body {
             position: relative;
             height: 600px;
             background-image: url('../../images/BackgroundImageCut.png');
-            // background-size: auto 600px;
             background-size: 100%;
             background-repeat: no-repeat;
-            // clip: rect(500px, 100px, 100px, 0);
             background-position: top center;
             background-attachment: fixed;
-            // background-size: contain;
-            // background-position: top center;
             overflow: hidden;
         }
     }
@@ -73,14 +64,10 @@ body {
             position: relative;
             height: 500px;
             background-image: url('../../images/BackgroundImageCut.png');
-            // background-size: auto 600px;
             background-size: 100%;
             background-repeat: no-repeat;
-            // clip: rect(500px, 100px, 100px, 0);
             background-position: top center;
             background-attachment: fixed;
-            // background-size: contain;
-            // background-position: top center;
             overflow: hidden;
         }
     }
@@ -93,19 +80,14 @@ body {
             position: relative;
             height: 400px;
             background-image: url('../../images/BackgroundImageCut.png');
-            // background-size: auto 600px;
             background-size: 100%;
             background-repeat: no-repeat;
-            // clip: rect(500px, 100px, 100px, 0);
             background-position: top center;
             background-attachment: fixed;
-            // background-size: contain;
-            // background-position: top center;
             overflow: hidden;
         }
     }
 }
-
 
 @media only screen and (max-width: 732px) {
     .parallax {
@@ -114,14 +96,10 @@ body {
             position: relative;
             height: 300px;
             background-image: url('../../images/BackgroundImageCut.png');
-            // background-size: auto 600px;
             background-size: 100%;
             background-repeat: no-repeat;
-            // clip: rect(500px, 100px, 100px, 0);
             background-position: top center;
             background-attachment: fixed;
-            // background-size: contain;
-            // background-position: top center;
             overflow: hidden;
         }
     }
@@ -134,18 +112,15 @@ body {
             position: relative;
             height: 200px;
             background-image: url('../../images/BackgroundImageCut.png');
-            // background-size: auto 600px;
             background-size: 100%;
             background-repeat: no-repeat;
-            // clip: rect(500px, 100px, 100px, 0);
             background-position: top center;
             background-attachment: fixed;
-            // background-size: contain;
-            // background-position: top center;
             overflow: hidden;
         }
     }
 }
+
 .parallax-airbaloons {
     display: flex;
     justify-content: space-between;

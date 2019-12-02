@@ -20,8 +20,9 @@ import ImagesPage from './ImagePage/imagesPage';
 import './parallax.scss';
 
 /**
- * Parallax component definition and export
- */
+* Parallax component definition and export
+*/
+
 export const Parallax = () => {
 
    /**
