@@ -12,6 +12,7 @@
         top: 30px;
         text-align: center;
         padding-top: 15px;
+        cursor: pointer;
         .icon {
             color: rgb(240, 221, 234);
         }  
@@ -27,6 +28,7 @@
         top: 30px;
         text-align: center;
         padding-top: 15px;
+        cursor: pointer;
         .icon {
             color: rgb(136, 0, 101);
         }  
@@ -40,6 +42,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        cursor: pointer;
         .service-inner-part-header {
             font-family: 'Roboto', sans-serif;
             font-size: 24px;
