@@ -4,16 +4,34 @@
     align-items: center;
     .service-icon {
         width: 55px;
-        height: 55px;
+        height: 40px;
         background: rgb(136, 0, 101);
         border: 1px solid rgb(136, 0, 101);
         border-radius: 50%;
         position: relative;
         top: 30px;
-        &:hover{
-            background: rgb(240, 221, 234);
-        }
+        text-align: center;
+        padding-top: 15px;
+        .icon {
+            color: rgb(240, 221, 234);
+        }  
     }
+
+    .service-icon-hover {
+        width: 55px;
+        height: 40px;
+        background: rgb(240, 221, 234);
+        border: 1px solid rgb(136, 0, 101);
+        border-radius: 50%;
+        position: relative;
+        top: 30px;
+        text-align: center;
+        padding-top: 15px;
+        .icon {
+            color: rgb(136, 0, 101);
+        }  
+    }
+
     .service-inner-part {
         border: 1px solid rgba(153, 153, 153, 0.7);
         width: 370px;
