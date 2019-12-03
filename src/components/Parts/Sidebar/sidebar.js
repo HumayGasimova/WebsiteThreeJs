@@ -26,7 +26,6 @@ import {
 */
 
 import './sidebar.scss';
-import { tsPropertySignature } from '@babel/types';
 
 
 /**

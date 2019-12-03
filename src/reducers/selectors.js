@@ -16,3 +16,9 @@ export const getSidebarOnInitState = createSelector(
     (x) => x
 );
 
+const getServices = (state) => state.home.services;
+
+export const getServicesState = createSelector(
+    [getServices],
+    (x) => x
+);

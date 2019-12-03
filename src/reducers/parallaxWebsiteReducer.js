@@ -14,7 +14,8 @@ import {
 
 export const initialState = {
    menuButtonIsPressed: false,
-   sidebarOnInit: false
+   sidebarOnInit: false,
+   services: ['','']
 }
 
 const toggleMenuButton = (state, action) => {
@@ -30,6 +31,11 @@ const menuButtonIsToggled = (state, action) => {
     });
 }
 
+const initServices = (state, action) => {
+    return updateObject(state, {
+        services: action.array
+    });
+}
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
@@ -37,6 +43,9 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return toggleMenuButton(state, action);
         case actionTypes.MENU_BUTTON_IS_TOGGLED:
             return menuButtonIsToggled(state, action);
+        case actionTypes.INIT_SERVICES:
+            return initServices(state, action);
+            
         default: 
             return state;
     }

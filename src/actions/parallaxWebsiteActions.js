@@ -13,3 +13,10 @@ export function menuButtonIsToggled(val) {
     };
 };
 
+export function initServices(array) {
+    return { 
+        type: actionTypes.INIT_SERVICES,
+        array: array
+    };
+};
+

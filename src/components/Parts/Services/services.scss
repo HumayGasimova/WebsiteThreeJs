@@ -1,0 +1,14 @@
+.services {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: absolute;
+    font-family: 'Roboto', sans-serif;
+    .services-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}

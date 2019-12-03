@@ -1,0 +1,39 @@
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .service-icon {
+        width: 55px;
+        height: 55px;
+        background: rgb(136, 0, 101);
+        border: 1px solid rgb(136, 0, 101);
+        border-radius: 50%;
+        position: relative;
+        top: 30px;
+        &:hover{
+            background: rgb(240, 221, 234);
+        }
+    }
+    .service-inner-part {
+        border: 1px solid rgba(153, 153, 153, 0.7);
+        width: 370px;
+        height: 200px;
+        background: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .service-inner-part-header {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            margin: 50px 10px 10px 10px;
+            color: rgba(black, 0.8);
+        }
+        .service-inner-part-text {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-size: 17px;
+            margin: 10px 30px 10px 30px;
+            color: rgba(black, 0.5);
+        }
+    }
+}
