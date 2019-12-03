@@ -1,37 +1,37 @@
 export const serviceCards = [
     {
         id: 1,
-        icon: "ll",
+        icon: "faLaptopCode",
         header: "Header 1",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
         id: 2,
-        icon: "ll",
+        icon: "faChartLine",
         header: "Header 2",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
         id: 3,
-        icon: "ll",
+        icon: "faPaperPlane",
         header: "Header 3",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
         id: 4,
-        icon: "ll",
+        icon: "faUniversity",
         header: "Header 4",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
         id: 5,
-        icon: "ll",
+        icon: "faCameraRetro",
         header: "Header 5",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore."
     },
     {
         id: 6,
-        icon: "ll",
+        icon: "faShoppingBag",
         header: "Header 6",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore."
     }

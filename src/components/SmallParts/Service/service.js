@@ -23,7 +23,12 @@ import {
 } from '@fortawesome/react-fontawesome';
 
 import { 
-    faLaptopCode
+    faLaptopCode,
+    faChartLine,
+    faPaperPlane,
+    faUniversity,
+    faCameraRetro,
+    faShoppingBag
 } from '@fortawesome/free-solid-svg-icons'
 
 /**
@@ -58,6 +63,23 @@ export const Service = (props) => {
         setIsHovering(false);
     }
 
+    const renderIcon = () => {
+        switch(props.icon) {
+            case "faLaptopCode":
+                return (<FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon"/>);
+            case "faChartLine":
+                return (<FontAwesomeIcon icon={faChartLine} size="lg" className="icon"/>);
+            case "faPaperPlane":
+                return (<FontAwesomeIcon icon={faPaperPlane} size="lg" className="icon"/>);
+            case "faUniversity":
+                return (<FontAwesomeIcon icon={faUniversity} size="lg" className="icon"/>);
+            case "faCameraRetro":
+                return (<FontAwesomeIcon icon={faCameraRetro} size="lg" className="icon"/>);
+            case "faShoppingBag":
+                return (<FontAwesomeIcon icon={faShoppingBag} size="lg" className="icon"/>);
+        }
+    }
+
     /**
     * Markup
     */
@@ -71,7 +93,7 @@ export const Service = (props) => {
                 onMouseEnter={handleMouseEnter} 
                 onMouseLeave={handleMouseLeave} 
             >
-                <FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon"/>
+               {renderIcon()} 
             </div>
             <div 
                 className="service-inner-part"
