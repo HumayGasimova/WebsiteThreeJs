@@ -61,27 +61,27 @@
     }
 }
 
-.card1 {
-    position: relative;
-    // left: 0px;
-}
-.card2 {
-    position: relative;
-    // left: 400px;
-}
-.card3 {
-    position: relative;
-    // left: 800px;
-}
-.card4 {
+// .card1 {
+//     position: relative;
+//     // left: 0px;
+// }
+// .card2 {
+//     position: relative;
+//     // left: 400px;
+// }
+// .card3 {
+//     position: relative;
+//     // left: 800px;
+// }
+// .card4 {
     
-}
-.card5 {
+// }
+// .card5 {
     
-}
-.card6 {
+// }
+// .card6 {
     
-}
+// }
 
 @keyframes moveCard {
     0% {
@@ -90,4 +90,28 @@
     70% {
         opacity: 1;
     }
+}
+
+@media only screen and (max-width: 1210px) {
+    // .card1 {
+    //     position: relative;
+    //     // left: 0px;
+    // }
+    // .card2 {
+    //     position: relative;
+    //     // left: 400px;
+    // }
+    // .card3 {
+    //     position: relative;
+    //     // left: 800px;
+    // }
+    // .card4 {
+        
+    // }
+    // .card5 {
+        
+    // }
+    // .card6 {
+        
+    // }
 }
