@@ -43,6 +43,11 @@ import {
 
 import './service.scss';
 
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
 
 /**
 * Service component definition and export
@@ -83,50 +88,54 @@ export const Service = (props) => {
     }
 
     const renderCard = () => {
-        return(
-            <div 
-                className="service"
-            >
+        if(props.show){
+            return(
                 <div 
-                    className={isHovering ? "service-icon-hover" : "service-icon"}
-                    onMouseEnter={handleMouseEnter} 
-                    onMouseLeave={handleMouseLeave} 
+                    className="service"
                 >
-                {renderIcon()} 
+                    <div 
+                        className={isHovering ? "service-icon-hover" : "service-icon"}
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave} 
+                    >
+                    {renderIcon()} 
+                    </div>
+                    <div 
+                        className="service-inner-part"
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave} 
+                    >
+                        <div className="service-inner-part-header">{props.header}</div>
+                        <div className="service-inner-part-text">{props.text}</div>
+                    </div>
                 </div>
-                <div 
-                    className="service-inner-part"
-                    onMouseEnter={handleMouseEnter} 
-                    onMouseLeave={handleMouseLeave} 
-                >
-                    <div className="service-inner-part-header">{props.header}</div>
-                    <div className="service-inner-part-text">{props.text}</div>
-                </div>
-            </div>
-        )
+            )
+        }
+       
     }
     
     const handleScroll = () => {
-        let scrollHeight = document.body.scrollTop
-        let el = document.getElementById("card");
-        console.log(scrollHeight, window.innerHeight, el.offsetTop)
-        if(scrollHeight > el.offsetTop - window.innerHeight/2){
-            setShowCard(true);
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById(props.cardId);
+        console.log(scrollHeight, el.offsetTop - window.innerHeight/2)
+        if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 150 ){
+            props.showCard(props.cardId);
         }else{
             // setShowCard(false);
         }
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll);
     }, [])
+
     /**
     * Markup
     */
 
     return(
-        <div id="card">
-            {showCard ? renderCard() : null}
+        <div id={props.cardId} className={props.cardId}>
+            {renderCard()}
         </div>
     );
 }
@@ -138,7 +147,7 @@ export const Service = (props) => {
     },
     (dispatch) => {
         return {
-            // startZooming: bindActionCreators(Actions.startZooming, dispatch),
+            showCard: bindActionCreators(Actions.showCard, dispatch),
         };
     }
 )(Service);

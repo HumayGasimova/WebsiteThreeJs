@@ -8,6 +8,9 @@
     display: absolute;
     font-family: 'Roboto', sans-serif;
     .services-cards{
+        // display: table;
+        // position: relative;
+        // display: inline-block;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;

@@ -1,5 +1,6 @@
 export {
     toggleMenuButton,
     menuButtonIsToggled,
-    initServices
+    initServices,
+    showCard
 } from './parallaxWebsiteActions';

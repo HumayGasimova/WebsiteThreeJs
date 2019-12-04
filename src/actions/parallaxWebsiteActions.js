@@ -20,3 +20,10 @@ export function initServices(array) {
     };
 };
 
+export function showCard(val) {
+    return { 
+        type: actionTypes.SHOW_CARD,
+        val: val
+    };
+};
+

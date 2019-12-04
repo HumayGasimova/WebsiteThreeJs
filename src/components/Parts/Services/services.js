@@ -70,6 +70,8 @@ export const Services = (props) => {
                             header={el.header}
                             text={el.text}
                             icon={el.icon}
+                            cardId={`card${i+1}`}
+                            show={el.show}
                         />
                     )
                 })}
