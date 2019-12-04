@@ -3,7 +3,8 @@
 */
 
 import React, {
-    useState
+    useState,
+    useEffect
 } from 'react';
 
 import {
@@ -50,6 +51,7 @@ import './service.scss';
 export const Service = (props) => {
 
     const [isHovering, setIsHovering] = useState(false);
+    const [showCard, setShowCard] = useState(false);
 
     /**
     * Methods
@@ -80,29 +82,51 @@ export const Service = (props) => {
         }
     }
 
+    const renderCard = () => {
+        return(
+            <div 
+                className="service"
+            >
+                <div 
+                    className={isHovering ? "service-icon-hover" : "service-icon"}
+                    onMouseEnter={handleMouseEnter} 
+                    onMouseLeave={handleMouseLeave} 
+                >
+                {renderIcon()} 
+                </div>
+                <div 
+                    className="service-inner-part"
+                    onMouseEnter={handleMouseEnter} 
+                    onMouseLeave={handleMouseLeave} 
+                >
+                    <div className="service-inner-part-header">{props.header}</div>
+                    <div className="service-inner-part-text">{props.text}</div>
+                </div>
+            </div>
+        )
+    }
+    
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop
+        let el = document.getElementById("card");
+        console.log(scrollHeight, window.innerHeight, el.offsetTop)
+        if(scrollHeight > el.offsetTop - window.innerHeight/2){
+            setShowCard(true);
+        }else{
+            // setShowCard(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    }, [])
     /**
     * Markup
     */
 
     return(
-        <div 
-            className="service"  
-        >
-            <div 
-                className={isHovering ? "service-icon-hover" : "service-icon"}
-                onMouseEnter={handleMouseEnter} 
-                onMouseLeave={handleMouseLeave} 
-            >
-               {renderIcon()} 
-            </div>
-            <div 
-                className="service-inner-part"
-                onMouseEnter={handleMouseEnter} 
-                onMouseLeave={handleMouseLeave} 
-            >
-                <div className="service-inner-part-header">{props.header}</div>
-                <div className="service-inner-part-text">{props.text}</div>
-            </div>
+        <div id="card">
+            {showCard ? renderCard() : null}
         </div>
     );
 }
