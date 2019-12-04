@@ -1,7 +1,7 @@
 .leftUnicorn {
     transform: scaleX(-1);
-    top: -620px;
-    left: 190px;
+    top: -580px;
+    left: 250px;
     z-index: -1;
     position: absolute;
     img {
@@ -19,14 +19,38 @@
         width: 300px;
         height: 300px;
     }
-    
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1250px){
     .leftUnicorn {
         transform: scaleX(-1);
-        top: -620px;
-        left: 150px;
+        top: -850px;
+        left: 250px;
+        z-index: -1;
+        position: absolute;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    
+    .rightUnicorn {
+        top: -520px;
+        right: 150px;
+        position: absolute;
+        z-index: -1;
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    .leftUnicorn {
+        transform: scaleX(-1);
+        top: -700px;
+        left: 130px;
         z-index: -1;
         position: absolute;
         img {
@@ -37,32 +61,6 @@
     
     .rightUnicorn {
         top: -470px;
-        right: 140px;
-        position: absolute;
-        z-index: -1;
-        img {
-            width: 250px;
-            height: 250px;
-        }
-        
-    }
-}
-
-@media only screen and (max-width: 850px) {
-    .leftUnicorn {
-        transform: scaleX(-1);
-        top: -620px;
-        left: 100px;
-        z-index: -1;
-        position: absolute;
-        img {
-            width: 150px;
-            height: 150px;
-        }
-    }
-    
-    .rightUnicorn {
-        top: -420px;
         right: 100px;
         position: absolute;
         z-index: -1;
@@ -74,11 +72,11 @@
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 880px) {
     .leftUnicorn {
         transform: scaleX(-1);
-        top: -620px;
-        left: 50px;
+        top: -1180px;
+        left: 150px;
         z-index: -1;
         position: absolute;
         img {
@@ -88,8 +86,60 @@
     }
     
     .rightUnicorn {
-        top: -520px;
-        right: 50px;
+        top: -750px;
+        right: 100px;
+        position: absolute;
+        z-index: -1;
+        img {
+            width: 250px;
+            height: 250px;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .leftUnicorn {
+        transform: scaleX(-1);
+        top: -1180px;
+        left: 100px;
+        z-index: -1;
+        position: absolute;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    
+    .rightUnicorn {
+        top: -750px;
+        right: 100px;
+        position: absolute;
+        z-index: -1;
+        img {
+            width: 250px;
+            height: 250px;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .leftUnicorn {
+        transform: scaleX(-1);
+        top: -1180px;
+        left: 60px;
+        z-index: -1;
+        position: absolute;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    
+    .rightUnicorn {
+        top: -750px;
+        right: 60px;
         position: absolute;
         z-index: -1;
         img {
