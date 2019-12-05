@@ -61,27 +61,30 @@
     }
 }
 
-// .card1 {
-//     position: relative;
-//     // left: 0px;
-// }
-// .card2 {
-//     position: relative;
-//     // left: 400px;
-// }
-// .card3 {
-//     position: relative;
-//     // left: 800px;
-// }
-// .card4 {
-    
-// }
-// .card5 {
-    
-// }
-// .card6 {
-    
-// }
+.card1 {
+    display: inline-block;
+    margin: 0 25px 0 25px;
+}
+.card2 {
+    display: inline-block;
+    margin: 0 25px 0 25px;
+}
+.card3 {
+    display: inline-block;
+    margin: 0 25px 0 25px;
+}
+.card4 {
+    display: inline-block;
+    margin: 0 25px 0 25px;
+}
+.card5 {
+    display: inline-block;
+    margin: 0 25px 0 25px;
+}
+.card6 {
+    display: inline-block;
+    margin: 0 25px 0 25px;
+}
 
 @keyframes moveCard {
     0% {
@@ -92,26 +95,29 @@
     }
 }
 
-@media only screen and (max-width: 1210px) {
-    // .card1 {
-    //     position: relative;
-    //     // left: 0px;
-    // }
-    // .card2 {
-    //     position: relative;
-    //     // left: 400px;
-    // }
-    // .card3 {
-    //     position: relative;
-    //     // left: 800px;
-    // }
-    // .card4 {
-        
-    // }
-    // .card5 {
-        
-    // }
-    // .card6 {
-        
-    // }
+@media only screen and (max-width: 890px) {
+    .card1 {
+        display: block;
+        // margin: 0 10px 0 10px;
+    }
+    .card2 {
+        display: block;
+        // margin: 0 10px 0 10px;
+    }
+    .card3 {
+        display: block;
+        // margin: 0 10px 0 10px;
+    }
+    .card4 {
+        display: block;
+        // margin: 0 10px 0 10px;
+    }
+    .card5 {
+        display: block;
+        // margin: 0 10px 0 10px;
+    }
+    .card6 {
+        display: block;
+        // margin: 0 10px 0 10px;
+    }
 }
