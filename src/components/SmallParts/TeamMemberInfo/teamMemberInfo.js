@@ -43,6 +43,13 @@ import {
 
 import './teamMemberInfo.scss';
 
+
+/**
+* Images
+*/
+
+import Img1 from '../../../images/Portrait_Placeholder.png';
+
 /**
 * Actions
 */
@@ -59,6 +66,13 @@ export const TeamMemberInfo = (props) => {
     * Methods
     */
 
+    const loadImage = () => {
+        switch(props.image){
+            case 'Name1':
+            return Img1;
+        }
+    }
+
     /**
     * Markup
     */
@@ -66,7 +80,7 @@ export const TeamMemberInfo = (props) => {
     return(
         <div className="teamMemberInfo">
             <div className="teamMemberInfo-image">
-                {/* <img src={}> */}
+                <img src={loadImage()}/>
             </div>
             <div className="teamMemberInfo-fullName">{props.fullName}</div>
             <div className="teamMemberInfo-position">{props.position}</div>

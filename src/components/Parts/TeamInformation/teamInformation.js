@@ -67,6 +67,7 @@ export const TeamInformation = (props) => {
                     return(
                         <TeamMemberInfo 
                             key={i}
+                            image={el.image}
                             fullName={el.fullName}
                             position={el.position}
                         />

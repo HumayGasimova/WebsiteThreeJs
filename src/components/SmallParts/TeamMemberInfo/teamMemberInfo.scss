@@ -7,6 +7,11 @@
         border-radius: 50%;
         width: 170px;
         height: 170px;
+        >img{
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;;
+        }
     }
 
     .teamMemberInfo-fullName {
@@ -20,5 +25,4 @@
         color: rgba(136, 0, 101, 0.7);
         font-size: 19px;
     }
-
 }
