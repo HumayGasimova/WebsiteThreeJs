@@ -15,6 +15,7 @@ import ImagesPage from './ImagePage/imagesPage';
 
 import Services from '../Parts/Services/services';
 import TeamInformation from '../Parts/TeamInformation/teamInformation';
+import Gallery from '../Parts/Gallery/gallery';
 
 /**
 * Styles
@@ -47,7 +48,8 @@ export const Parallax = () => {
             <Unicorn left/>
             <Unicorn />
          </div>
-            <ImagesPage/>
+         <Gallery/>
+            {/* <ImagesPage/> */}
       </div>
    );
 }
