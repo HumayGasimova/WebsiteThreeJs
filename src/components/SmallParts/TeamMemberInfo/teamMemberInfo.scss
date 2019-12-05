@@ -1,11 +1,24 @@
 .teamMemberInfo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     .teamMemberInfo-image {
-border: 2px solid red;
-width: 50px;
-height: 50px;
+        border: 2px solid rgb(136, 0, 101);
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+    }
+
+    .teamMemberInfo-fullName {
+        padding: 10px 0 4px 0;
+        color: rgb(136, 0, 101);
+        font-size: 27px;
+    }
+
+    .teamMemberInfo-position {
+        padding: 4px 0 4px 0;
+        color: rgba(136, 0, 101, 0.7);
+        font-size: 19px;
     }
 
 }

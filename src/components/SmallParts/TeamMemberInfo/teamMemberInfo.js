@@ -68,8 +68,8 @@ export const TeamMemberInfo = (props) => {
             <div className="teamMemberInfo-image">
                 {/* <img src={}> */}
             </div>
-            <div>{props.fullName}</div>
-            <div>{props.position}</div>
+            <div className="teamMemberInfo-fullName">{props.fullName}</div>
+            <div className="teamMemberInfo-position">{props.position}</div>
         </div>
     );
 }
