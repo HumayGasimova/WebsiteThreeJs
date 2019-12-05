@@ -26,3 +26,73 @@
         font-size: 19px;
     }
 }
+
+@media only screen and (max-width: 1115px) {
+    .teamMemberInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .teamMemberInfo-image {
+            border: 2px solid rgb(136, 0, 101);
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            >img{
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .teamMemberInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .teamMemberInfo-image {
+            border: 2px solid rgb(136, 0, 101);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            >img{
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .teamMemberInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        .teamMemberInfo-image {
+            border: 2px solid rgb(136, 0, 101);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            >img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;;
+            }
+        }
+
+        .teamMemberInfo-fullName {
+            padding: 5px 0 2px 0;
+            color: rgb(136, 0, 101);
+            font-size: 23px;
+        }
+    
+        .teamMemberInfo-position {
+            padding: 2px 0 2px 0;
+            color: rgba(136, 0, 101, 0.7);
+            font-size: 15px;
+        }
+    }
+}

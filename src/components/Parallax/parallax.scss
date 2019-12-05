@@ -60,6 +60,21 @@
             background-attachment: fixed;
             overflow: hidden;
         }
+        .parallax-backgroundBox2 {
+            position: relative;
+            height: 1400px;
+            background-image: url('../../images/abstract-magic-light-on-sweet-pink-background-vector-3421483.jpg');
+            // background-size: auto 600px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            // clip: rect(500px, 100px, 100px, 0);
+            background-position: top center;
+            background-attachment: fixed;
+            // background-size: contain;
+            // background-position: top center;
+            overflow: hidden;
+            z-index: -1;
+        }
     }
 }
 
@@ -95,19 +110,9 @@
     }
 }
 
-@media only screen and (max-width: 550px) {
-    .parallax {
-        height: 7000px;
-        .parallax-backgroundBox {
-            position: relative;
-            height: 200px;
-            background-image: url('../../images/BackgroundImageCut.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-attachment: fixed;
-            overflow: hidden;
-        }
+@media only screen and (max-width: 630px) {
+    .parallax-backgroundBox2 {
+        background: rgb(243, 105, 158);
     }
 }
 

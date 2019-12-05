@@ -22,8 +22,141 @@
             .teamInformation-members {
                 height: 370px;
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-evenly;
                 align-items: flex-end;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1115px) {
+    .teamInformation {
+        font-family: 'Handlee', cursive;
+        border: 2px solid rgb(136, 0, 101);
+        height: 795px;
+        .teamInformation-border1 {
+            border: 2px solid rgb(136, 0, 101);
+            margin: 3px;
+            height: 785px;
+            .teamInformation-border2 {
+                border: 2px solid rgb(136, 0, 101);
+                margin: 3px;
+                height: 776;
+
+                .teamInformation-text {
+                    padding: 0 70px 0 70px;
+                    font-size: 24px;
+                }
+
+                .teamInformation-members {
+                    height: 280px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1067px) {
+    .teamInformation {
+        font-family: 'Handlee', cursive;
+        border: 2px solid rgb(136, 0, 101);
+        height: 1396px;
+        .teamInformation-border1 {
+            border: 2px solid rgb(136, 0, 101);
+            margin: 3px;
+            height: 1386px;
+            .teamInformation-border2 {
+                border: 2px solid rgb(136, 0, 101);
+                margin: 3px;
+                height: 1376;
+
+                .teamInformation-text {
+                    padding: 0 70px 0 70px;
+                    font-size: 20px;
+                }
+                .teamInformation-members {
+                    height: 980px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    // justify-content: space-evenly;
+                    // align-items: flex-end;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 782px) {
+    .teamInformation {
+        font-family: 'Handlee', cursive;
+        border: 2px solid rgb(136, 0, 101);
+        height: 1396px;
+        .teamInformation-border1 {
+            border: 2px solid rgb(136, 0, 101);
+            margin: 3px;
+            height: 1386px;
+            .teamInformation-border2 {
+                border: 2px solid rgb(136, 0, 101);
+                margin: 3px;
+                height: 1376;
+
+                .teamInformation-text {
+                    padding: 0 70px 0 70px;
+                    font-size: 17px;
+                }
+                .teamInformation-members {
+                    height: 980px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                >h1 {
+                    color:rgb(136, 0, 101);
+                    font-size: 40px;
+                    text-align: center; 
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .teamInformation {
+        font-family: 'Handlee', cursive;
+        border: 2px solid rgb(136, 0, 101);
+        height: 1396px;
+        .teamInformation-border1 {
+            border: 2px solid rgb(136, 0, 101);
+            margin: 3px;
+            height: 1386px;
+            .teamInformation-border2 {
+                border: 2px solid rgb(136, 0, 101);
+                margin: 3px;
+                height: 1376;
+
+                .teamInformation-text {
+                    padding: 0 70px 0 70px;
+                    font-size: 17px;
+                }
+                .teamInformation-members {
+                    margin-top: 30px;
+                    height: 980px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                >h1 {
+                    color:rgb(136, 0, 101);
+                    font-size: 40px;
+                    text-align: center; 
+                }
             }
         }
     }
