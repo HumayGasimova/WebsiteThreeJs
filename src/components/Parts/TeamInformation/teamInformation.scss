@@ -1,0 +1,23 @@
+.teamInformationext {
+    font-family: 'Handlee', cursive;
+    border: 2px solid rgb(136, 0, 101);
+    height: 795px;
+    .teamInformationext-border1 {
+        border: 2px solid rgb(136, 0, 101);
+        margin: 3px;
+        height: 785px;
+        .teamInformationext-border2 {
+            border: 2px solid rgb(136, 0, 101);
+            margin: 3px;
+            height: 776;
+            .teamInformationext-text {
+                padding: 30px;
+            }
+            >h1 {
+                color:rgb(136, 0, 101);
+                font-size: 47px;
+                text-align: center; 
+            }
+        }
+    }
+}

@@ -14,6 +14,7 @@ import AirBalloon from './AirBalloon/airBalloon';
 import ImagesPage from './ImagePage/imagesPage';
 
 import Services from '../Parts/Services/services';
+import TeamInformation from '../Parts/TeamInformation/teamInformation';
 
 /**
 * Styles
@@ -40,18 +41,11 @@ export const Parallax = () => {
                <AirBalloon />
             </div>
          </div>
-
-        <Services/>
-
+         <Services/>
          <div className="parallax-backgroundBox2">
-            <div className="text">
-               <h1>Text</h1>
-               <div>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-               </div>
-               <Unicorn left/>
-               <Unicorn />
-            </div>
+            <TeamInformation/>
+            <Unicorn left/>
+            <Unicorn />
          </div>
             <ImagesPage/>
       </div>
