@@ -33,3 +33,10 @@ export function initTeamMembers(array) {
         array: array
     };
 };
+
+export function initImages(array) {
+    return { 
+        type: actionTypes.INIT_IMAGES,
+        array: array
+    };
+};

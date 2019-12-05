@@ -3,5 +3,6 @@ export {
     menuButtonIsToggled,
     initServices,
     showCard,
-    initTeamMembers
+    initTeamMembers,
+    initImages
 } from './parallaxWebsiteActions';

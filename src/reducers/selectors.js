@@ -29,3 +29,10 @@ export const getMembersState = createSelector(
     [getMembers],
     (x) => x
 );
+
+const getImages = (state) => state.home.images;
+
+export const getImagesState = createSelector(
+    [getImages],
+    (x) => x
+);

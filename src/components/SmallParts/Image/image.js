@@ -84,7 +84,7 @@ export const Image = (props) => {
         setIsHovering(false);
     }
 
-    const renderIcon = () => {
+    const renderImage = () => {
         switch(props.icon) {
             case "faLaptopCode":
                 return (<FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon"/>);
@@ -100,56 +100,14 @@ export const Image = (props) => {
                 return (<FontAwesomeIcon icon={faShoppingBag} size="lg" className="icon"/>);
         }
     }
-
-    const renderCard = () => {
-        if(props.show){
-            return(
-                <div 
-                    className="service"
-                >
-                    <div 
-                        className={isHovering ? "service-icon-hover" : "service-icon"}
-                        onMouseEnter={handleMouseEnter} 
-                        onMouseLeave={handleMouseLeave} 
-                    >
-                    {renderIcon()} 
-                    </div>
-                    <div 
-                        className="service-inner-part"
-                        onMouseEnter={handleMouseEnter} 
-                        onMouseLeave={handleMouseLeave} 
-                    >
-                        <div className="service-inner-part-header">{props.header}</div>
-                        <div className="service-inner-part-text">{props.text}</div>
-                    </div>
-                </div>
-            )
-        }
-       
-    }
     
-    const handleScroll = () => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById(props.cardId);
-        console.log(scrollHeight, el.offsetTop - window.innerHeight/2)
-        if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 150 ){
-            props.showCard(props.cardId);
-        }else{
-            // setShowCard(false);
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-    }, [])
-
     /**
     * Markup
     */
 
     return(
-        <div id={props.cardId} className={props.cardId}>
-            {renderCard()}
+        <div className={props.imageId}>
+           
         </div>
     );
 }

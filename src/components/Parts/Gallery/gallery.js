@@ -22,7 +22,7 @@ import {
 * Components
 */
 
-import Service from '../../SmallParts/Service/service';
+import Image from '../../SmallParts/Image/image';
 
 /**
 * Styles
@@ -47,8 +47,8 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-    serviceCards
-} from '../../../constants/serviceCards';
+    images
+} from '../../../constants/images';
 
 /**
 * Gallery component definition and export
@@ -62,16 +62,16 @@ export const Gallery = (props) => {
 
     const renderImages = () => {
         return (
-            <div className="services-cards">
+            <div className="gallery-images">
                 {props.images.map((el, i) => {
                     return(
-                        <Service 
+                        <Image 
                             key={i}
-                            header={el.header}
-                            text={el.text}
-                            icon={el.icon}
-                            cardId={`card${i+1}`}
-                            show={el.show}
+                            src={el.src}
+                            title={el.title}
+                            description={el.description}
+                            imageId={`image${i+1}`}
+                            hover={el.hover}
                         />
                     )
                 })}
@@ -80,7 +80,7 @@ export const Gallery = (props) => {
     }
 
     useEffect(()=>{
-        props.initImagess(serviceCards);
+        props.initImages(images);
     },[])
    
     /**
@@ -101,12 +101,12 @@ export const Gallery = (props) => {
  export default connect(
     (state) => {
         return {
-            services: Selectors.getServicesState(state),
+            images: Selectors.getImagesState(state),
         };
     },
     (dispatch) => {
         return {
-            initServices: bindActionCreators(Actions.initServices, dispatch),
+            initImages: bindActionCreators(Actions.initImages, dispatch),
         };
     }
 )(Gallery);
