@@ -22,7 +22,7 @@ import {
 * Components
 */
 
-import Service from '../../SmallParts/Service/service';
+import TeamMemberInfo from '../../SmallParts/TeamMemberInfo/teamMemberInfo';
 
 /**
 * Styles
@@ -47,8 +47,8 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-    serviceCards
-} from '../../../constants/serviceCards';
+    teamMembers
+} from '../../../constants/teamMembers';
 
 /**
 * TeamInformation component definition and export
@@ -60,19 +60,39 @@ export const TeamInformation = (props) => {
     * Methods
     */
 
+    const renderMembersInfo = () => {
+        return(
+            <div className="teamInformation-members">
+                {props.members.map((el, i) => {
+                    return(
+                        <TeamMemberInfo 
+                            key={i}
+                            fullName={el.fullName}
+                            position={el.position}
+                        />
+                    )
+                })}
+            </div>
+        )
+    }
+
+    useEffect(() => {
+        props.initTeamMembers(teamMembers);
+    }, [])
 
     /**
     * Markup
     */
 
     return(
-        <div className="teamInformationext">
-            <div className="teamInformationext-border1">
-                <div className="teamInformationext-border2">
+        <div className="teamInformation">
+            <div className="teamInformation-border1">
+                <div className="teamInformation-border2">
                     <h1>About us</h1>
-                    <div className="teamInformationext-text">
+                    <div className="teamInformation-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
+                    {renderMembersInfo()}
                 </div>
             </div>
         </div>
@@ -81,12 +101,12 @@ export const TeamInformation = (props) => {
  export default connect(
     (state) => {
         return {
-            services: Selectors.getServicesState(state),
+            members: Selectors.getMembersState(state),
         };
     },
     (dispatch) => {
         return {
-            initServices: bindActionCreators(Actions.initServices, dispatch),
+            initTeamMembers: bindActionCreators(Actions.initTeamMembers, dispatch),
         };
     }
 )(TeamInformation);

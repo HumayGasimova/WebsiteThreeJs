@@ -1,0 +1,11 @@
+.teamMemberInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .teamMemberInfo-image {
+border: 2px solid red;
+width: 50px;
+height: 50px;
+    }
+
+}

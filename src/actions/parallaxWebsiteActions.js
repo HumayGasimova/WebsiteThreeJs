@@ -27,3 +27,9 @@ export function showCard(val) {
     };
 };
 
+export function initTeamMembers(array) {
+    return { 
+        type: actionTypes.INIT_TEAM_MEMBERS,
+        array: array
+    };
+};

@@ -22,3 +22,10 @@ export const getServicesState = createSelector(
     [getServices],
     (x) => x
 );
+
+const getMembers = (state) => state.home.members;
+
+export const getMembersState = createSelector(
+    [getMembers],
+    (x) => x
+);

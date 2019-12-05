@@ -2,5 +2,6 @@ export {
     toggleMenuButton,
     menuButtonIsToggled,
     initServices,
-    showCard
+    showCard,
+    initTeamMembers
 } from './parallaxWebsiteActions';

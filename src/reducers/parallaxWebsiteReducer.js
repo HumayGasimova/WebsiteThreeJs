@@ -15,7 +15,8 @@ import {
 export const initialState = {
    menuButtonIsPressed: false,
    sidebarOnInit: false,
-   services: ['','']
+   services: [],
+   members: []
 }
 
 const toggleMenuButton = (state, action) => {
@@ -50,6 +51,12 @@ const showCard = (state, action) => {
     });
 }
 
+const initTeamMembers = (state, action) => {
+    return updateObject(state, {
+        members: action.array
+    });
+}
+
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -60,6 +67,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return initServices(state, action);
         case actionTypes.SHOW_CARD:
             return showCard(state, action); 
+        case actionTypes.INIT_TEAM_MEMBERS:
+            return initTeamMembers(state, action); 
         default: 
             return state;
     }
