@@ -69,35 +69,41 @@ import * as Actions from '../../../actions';
 
 export const Image = (props) => {
 
-    const [isHovering, setIsHovering] = useState(false);
-    const [showCard, setShowCard] = useState(false);
+    // const [isHovering, setIsHovering] = useState(false);
+    // const [showCard, setShowCard] = useState(false);
 
     /**
     * Methods
     */
 
-    const handleMouseEnter = () => {
-        setIsHovering(true);
-    }
+    // const handleMouseEnter = () => {
+    //     setIsHovering(true);
+    // }
 
-    const handleMouseLeave = () => {
-        setIsHovering(false);
-    }
+    // const handleMouseLeave = () => {
+    //     setIsHovering(false);
+    // }
 
-    const renderImage = () => {
-        switch(props.icon) {
-            case "faLaptopCode":
-                return (<FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon"/>);
-            case "faChartLine":
-                return (<FontAwesomeIcon icon={faChartLine} size="lg" className="icon"/>);
-            case "faPaperPlane":
-                return (<FontAwesomeIcon icon={faPaperPlane} size="lg" className="icon"/>);
-            case "faUniversity":
-                return (<FontAwesomeIcon icon={faUniversity} size="lg" className="icon"/>);
-            case "faCameraRetro":
-                return (<FontAwesomeIcon icon={faCameraRetro} size="lg" className="icon"/>);
-            case "faShoppingBag":
-                return (<FontAwesomeIcon icon={faShoppingBag} size="lg" className="icon"/>);
+    const loadImage = () => {
+        switch(props.src) {
+            case "pic1":
+                return Pic1;
+            case "pic2":
+                return Pic2;
+            case "pic3":
+                return Pic3;
+            case "pic4":
+                return Pic4;
+            case "pic5":
+                return Pic5;
+            case "pic6":
+                return Pic6;
+            case "pic7":
+                return Pic7;
+            case "pic8":
+                return Pic8;
+            case "pic9":
+                return Pic9;
         }
     }
     
@@ -107,7 +113,7 @@ export const Image = (props) => {
 
     return(
         <div className={props.imageId}>
-           
+            <img src={loadImage()}/>
         </div>
     );
 }

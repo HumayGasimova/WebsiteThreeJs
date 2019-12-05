@@ -7,7 +7,7 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
     .services-cards{
-        align-items: center;
+        text-align: center;
         width: 1300px;
         height: 490px;
     }
@@ -23,10 +23,9 @@
         align-items: center;
         font-family: 'Roboto', sans-serif;
         .services-cards{
-            align-items: center;
+            text-align: center;
             width: 900px;
             height: 750px;
-            margin-left: 77px;
         }
     }
 }
@@ -41,10 +40,9 @@
         align-items: center;
         font-family: 'Roboto', sans-serif;
         .services-cards{
-            align-items: center;
+            text-align: center;
             width: 900px;
             height: 1517px;
-            margin-left: 0px;
         }
     }
 }
