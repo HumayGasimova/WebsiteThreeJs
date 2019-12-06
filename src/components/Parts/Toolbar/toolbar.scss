@@ -115,7 +115,58 @@
             }
         }
     }
-    .toolbar-scroll {
+
+    .toolbar-scroll-up {
+        .toolbar-min {
+            cursor: pointer;
+            position: relative;
+            width: 60px;
+            height: 45px;
+            .toolbar-min-line1 {
+                border: 2px solid rgb(136, 0, 101);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line2 {
+                border: 2px solid rgb(136, 0, 101);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line3 {
+                border: 2px solid rgb(136, 0, 101);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line1-effect {
+                border: 2px solid rgb(136, 0, 101);
+                background: rgb(136, 0, 101);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+                transform: rotate(45deg);
+                transform-origin: 10% 90%;
+            }
+            .toolbar-min-line2-effect {
+                width: 0%;
+                opacity: 0;
+            }
+            .toolbar-min-line3-effect {
+                border: 2px solid rgb(136, 0, 101);
+                background: rgb(136, 0, 101);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+                transform: rotate(-45deg);
+                transform-origin: 43% 80%;
+               
+            }
+        }
+    }
+
+    .toolbar-scroll-down {
         .toolbar-min {
             cursor: pointer;
             position: relative;
