@@ -1,19 +1,31 @@
 .image-photoInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: 'Handlee', cursive;
     position: relative;
     width: 300px;
     height: 300px;
     bottom: 300px;
+    opacity: 1;
+    animation: photo 2s linear;
     .image-photoInfo-title {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
         background: rgba(199, 151, 187, 0.7);
-        height: 40px;
+        height: 130px;
         font-size: 25px;
-        padding-top: 90px;
+        animation: topPart 1s linear;
     }
     .image-photoInfo-description {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
         background: rgba(199, 151, 187, 0.7);
         height: 170px;
         font-size: 17px;
+        animation: bottomPart 1s linear;
     }
 }
 
@@ -124,4 +136,30 @@
         height: 300px;
     }
     // margin: 0 10px 0 10px;
+}
+
+@keyframes topPart {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 130px;
+    }
+}
+@keyframes bottomPart {
+    from{
+        height: 0;
+    }
+    to{
+        height: 170px;
+    }
+}
+
+@keyframes photo {
+    0%{
+        opacity: 0;
+    }
+    55%{
+        opacity: 1;
+    }
 }
