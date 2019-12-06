@@ -40,3 +40,11 @@ export function initImages(array) {
         array: array
     };
 };
+
+export function imageHover(id, val) {
+    return { 
+        type: actionTypes.IMAGE_HOVER,
+        id: id,
+        val: val
+    };
+};

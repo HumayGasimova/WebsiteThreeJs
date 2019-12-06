@@ -7,8 +7,12 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
     .gallery-images {
-        margin: 20px 0 20px 0;
-        width: 1100px;
-        text-align: center;
+        // margin: 20px 0 20px 0;
+        // width: 1100px;
+        // text-align: center;
+        width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+
     }
 }

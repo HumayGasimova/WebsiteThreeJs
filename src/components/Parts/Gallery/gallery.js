@@ -67,6 +67,7 @@ export const Gallery = (props) => {
                     return(
                         <Image 
                             key={i}
+                            id={el.id}
                             src={el.src}
                             title={el.title}
                             description={el.description}

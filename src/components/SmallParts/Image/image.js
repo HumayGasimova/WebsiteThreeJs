@@ -69,20 +69,21 @@ import * as Actions from '../../../actions';
 
 export const Image = (props) => {
 
-    // const [isHovering, setIsHovering] = useState(false);
-    // const [showCard, setShowCard] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
+    const [showPhotoInfo, setPhotoInfo] = useState(false);
 
     /**
     * Methods
     */
 
-    // const handleMouseEnter = () => {
-    //     setIsHovering(true);
-    // }
+    const handleMouseEnter = () => {
+        setPhotoInfo(true);
+        props.imageHover(props.id, true);
+    }
 
-    // const handleMouseLeave = () => {
-    //     setIsHovering(false);
-    // }
+    const handleMouseLeave = () => {
+        props.imageHover(props.id, false);
+    }
 
     const loadImage = () => {
         switch(props.src) {
@@ -112,14 +113,18 @@ export const Image = (props) => {
     */
 
     return(
-        <div className={props.imageId}>
+        <div 
+            className="image"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <img src={loadImage()}/>
-            <div 
-                className="image-photoInfo"
-            >
-                <div className="image-photoInfo-title">{props.title}</div>
-                <div className="image-photoInfo-description">{props.description}</div>
-            </div>
+                <div 
+                    className={props.hover ? "image-photoInfo-animation" : "image-photoInfo"}
+                >
+                    <div className="image-photoInfo-title">{props.title}</div>
+                    <div className="image-photoInfo-description">{props.description}</div>
+            </div> 
         </div>
     );
 }
@@ -132,6 +137,7 @@ export const Image = (props) => {
     (dispatch) => {
         return {
             showCard: bindActionCreators(Actions.showCard, dispatch),
+            imageHover: bindActionCreators(Actions.imageHover, dispatch),
         };
     }
 )(Image);

@@ -64,6 +64,20 @@ const initImages = (state, action) => {
     });
 }
 
+const imageHover = (state, action) => {
+    let updatedImages = [...state.images];
+    let image = updatedImages.find(x => x.id === action.id);
+    let updatedImage = {...image, hover: action.val}
+    let imageIndex = updatedImages.findIndex(x => x.id === action.id);
+    
+    updatedImages.splice(imageIndex, 1, updatedImage);
+    
+    return updateObject(state, {
+        images: updatedImages
+    });
+}
+
+
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -78,6 +92,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return initTeamMembers(state, action); 
         case actionTypes.INIT_IMAGES:
             return initImages(state, action); 
+        case actionTypes.IMAGE_HOVER:
+            return imageHover(state, action); 
         default: 
             return state;
     }
