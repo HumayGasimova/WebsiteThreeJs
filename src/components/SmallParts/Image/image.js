@@ -138,6 +138,12 @@ export const Image = (props) => {
                 <div className="image-photoInfo-medScreen-description">{props.description}</div>
                 <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
             </div>
+
+            <div className="image-photoInfo-small">
+                <div className="image-photoInfo-small-title">{props.title}</div>
+                <div className="image-photoInfo-small-description">{props.description}</div>
+                <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
+            </div>
         </div>
     );
 }
