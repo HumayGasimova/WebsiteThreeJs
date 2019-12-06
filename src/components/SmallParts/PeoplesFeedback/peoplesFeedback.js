@@ -72,6 +72,18 @@ export const PeoplesFeedback = (props) => {
         props.feedbackOnChange();
     }, 3000)
 
+    const renderDots = () => {
+        return(
+            <div className="peoplesFeedback-dots">
+                {props.dots.map((el,i) => {
+                    return(
+                        <div key={i} className="peoplesFeedback-dot"/>
+                    )
+                })}
+            </div>
+        )
+    }
+
     /**
     * Markup
     */
@@ -81,6 +93,7 @@ export const PeoplesFeedback = (props) => {
             <div className="peoplesFeedback-text">
                 {props.feedback[0]}
             </div>
+            {renderDots()}
         </div>
     );
 }
@@ -88,6 +101,7 @@ export const PeoplesFeedback = (props) => {
     (state) => {
         return {
             feedback: Selectors.getFeedbackState(state),
+            dots: Selectors.getDotsState(state),
         };
     },
     (dispatch) => {

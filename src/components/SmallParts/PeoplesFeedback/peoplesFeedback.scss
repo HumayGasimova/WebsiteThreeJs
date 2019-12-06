@@ -1,10 +1,24 @@
 .peoplesFeedback {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    height: 210px;
     .peoplesFeedback-text {
         font-size: 20px;
         width: 700px;
         text-align: center;
+    }
+    .peoplesFeedback-dots {
+        display: flex;
+        height: 70px;
+        .peoplesFeedback-dot {
+            border: 1.5px solid rgb(117, 71, 129);
+            border-radius: 50%;
+            background: rgba(117, 71, 129, 0.4);
+            width: 12px;
+            height: 12px;
+            margin: 3px;
+        }
     }
 }

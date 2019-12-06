@@ -44,3 +44,9 @@ export const getFeedbackState = createSelector(
     (x) => x
 );
 
+const getDots = (state) => state.home.dots;
+
+export const getDotsState = createSelector(
+    [getDots],
+    (x) => x
+);
