@@ -1,3 +1,22 @@
+.image-photoInfo {
+    font-family: 'Handlee', cursive;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    bottom: 300px;
+    .image-photoInfo-title {
+        background: rgba(199, 151, 187, 0.7);
+        height: 40px;
+        font-size: 25px;
+        padding-top: 90px;
+    }
+    .image-photoInfo-description {
+        background: rgba(199, 151, 187, 0.7);
+        height: 170px;
+        font-size: 17px;
+    }
+}
+
 .image1 {
     border: 1.5px solid rgba(136, 0, 101, 0.7);
     width: 300px;

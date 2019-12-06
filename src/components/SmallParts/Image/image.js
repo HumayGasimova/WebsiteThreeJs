@@ -114,6 +114,12 @@ export const Image = (props) => {
     return(
         <div className={props.imageId}>
             <img src={loadImage()}/>
+            <div 
+                className="image-photoInfo"
+            >
+                <div className="image-photoInfo-title">{props.title}</div>
+                <div className="image-photoInfo-description">{props.description}</div>
+            </div>
         </div>
     );
 }
