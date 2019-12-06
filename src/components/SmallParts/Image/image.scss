@@ -9,23 +9,61 @@
         height: 300px;
     }
     // margin: 0 10px 0 10px;
-    .image-photoInfo {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // font-family: 'Handlee', cursive;
-        // position: relative;
-        // width: 300px;
-        // height: 300px;
-        // // bottom: 300px;
-        // opacity: 1;
-        // animation: photo 2s linear;
+
+    .image-photoInfo-init {
+        display: none;
         .image-photoInfo-animation-title {
             display: none;
         }
         .image-photoInfo-animation-description {
             display: none;
         }
+
+        .image-photoInfo-medScreen {
+            display: none;
+        }
+        
+        .image-photoInfo-small {
+            display: none;
+        }
+    }
+
+    .image-photoInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: 'Handlee', cursive;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        bottom: 300px;
+        opacity: 0;
+        animation: photoClose 1s linear;
+        .image-photoInfo-animation-title {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background: rgba(199, 151, 187, 0.9);
+            height: 0px;
+            font-size: 25px;
+            animation: topPartClose 1s linear;
+            color: rgb(250, 223, 243);
+            font-weight: bold;
+        }
+        .image-photoInfo-animation-description {
+            text-align: center;
+            background: rgba(199, 151, 187, 0.9);
+            height: 0px;
+            font-size: 17px;
+            animation: bottomPartClose 1s linear;
+            color: rgb(250, 223, 243);
+            font-weight: bold;
+        }
+
+        .image-photoInfo-medScreen {
+            display: none;
+        }
+
         .image-photoInfo-small {
             display: none;
         }
@@ -82,7 +120,7 @@
 }
 @keyframes bottomPart {
     from{
-        height: 0;
+        height: 0px;
     }
     to{
         height: 170px;
@@ -95,6 +133,32 @@
     }
     55%{
         opacity: 1;
+    }
+}
+
+@keyframes topPartClose {
+    from{
+        height: 130px;
+    }
+    to{
+        height: 0px;
+    }
+}
+@keyframes bottomPartClose {
+    from{
+        height: 170px;
+    }
+    to{
+        height: 0px;
+    }
+}
+
+@keyframes photoClose {
+    0%{
+        opacity: 1;
+    }
+    55%{
+        opacity: 0;
     }
 }
 

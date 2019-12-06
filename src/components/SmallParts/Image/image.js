@@ -124,7 +124,7 @@ export const Image = (props) => {
         >
             <img src={loadImage()}/>
             <div 
-                className={props.hover ? "image-photoInfo-animation" : "image-photoInfo"}
+                className={props.hover && showPhotoInfo ? "image-photoInfo-animation" : (!props.hover && showPhotoInfo ? "image-photoInfo" : "image-photoInfo-init")}
             >
                 <div className="image-photoInfo-animation-title">{props.title}<br/></div>
                 <div className="image-photoInfo-animation-description">
