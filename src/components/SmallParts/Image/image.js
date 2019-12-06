@@ -57,6 +57,10 @@ import Pic7 from '../../../images/SlotImages/IMG_20180808_170700_758.jpg';
 import Pic8 from '../../../images/SlotImages/IMG_20180814_174126_452.jpg';
 import Pic9 from '../../../images/SlotImages/IMG_20181001_143645_993.jpg';
 
+import { 
+    faSearchPlus
+} from '@fortawesome/free-solid-svg-icons'
+
 /**
 * Actions
 */
@@ -119,12 +123,21 @@ export const Image = (props) => {
             onMouseLeave={handleMouseLeave}
         >
             <img src={loadImage()}/>
-                <div 
-                    className={props.hover ? "image-photoInfo-animation" : "image-photoInfo"}
-                >
-                    <div className="image-photoInfo-title">{props.title}</div>
-                    <div className="image-photoInfo-description">{props.description}</div>
+            <div 
+                className={props.hover ? "image-photoInfo-animation" : "image-photoInfo"}
+            >
+                <div className="image-photoInfo-animation-title">{props.title}<br/></div>
+                <div className="image-photoInfo-animation-description">
+                    {props.description}<br/><br/>
+                    <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
+                </div>
             </div> 
+
+            <div className="image-photoInfo-medScreen">
+                <div className="image-photoInfo-medScreen-title">{props.title}</div>
+                <div className="image-photoInfo-medScreen-description">{props.description}</div>
+                <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
+            </div>
         </div>
     );
 }
