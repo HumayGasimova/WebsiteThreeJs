@@ -17,6 +17,8 @@
         height: 130px;
         font-size: 25px;
         animation: topPart 1s linear;
+        color: white;
+        font-weight: bold;
     }
     .image-photoInfo-description {
         display: flex;
@@ -26,6 +28,8 @@
         height: 170px;
         font-size: 17px;
         animation: bottomPart 1s linear;
+        color: white;
+        font-weight: bold;
     }
 }
 
