@@ -60,7 +60,7 @@ export const ToolbarIcon = (props) => {
 
     return(
         <div className="toolbarIcon">
-            <div className={props.scrollTop >= 100 ? "toolbarIcon-element-scroll" : "toolbarIcon-element"} ref={iconRef}>
+            <div className={props.scrollTop > 0 ? "toolbarIcon-element-scroll-down" : (props.scrollTop === 0 && props.toolBarInit ? "toolbarIcon-element-scroll-up" : "toolbarIcon-element")} ref={iconRef}>
                 {props.text}
                 <div className="toolbarIcon-line">
                     <div 

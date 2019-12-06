@@ -59,6 +59,7 @@ export const Toolbar = (props) => {
 
     const size = useWindowSize();
     const [scrollTop, setScrollTop] = useState(0);
+    const [toolBarInit, setToolBarInit] = useState(false);
 
     /**
     * Methods
@@ -68,6 +69,7 @@ export const Toolbar = (props) => {
         addEventListener('scroll', ()=> {
             let scrollHeight = document.body.scrollTop;
             setScrollTop(scrollHeight);
+            setToolBarInit(true);
         })
     },[])
 
@@ -76,26 +78,31 @@ export const Toolbar = (props) => {
     */
 
     return(
-        <div className={scrollTop >= 100 ? "toolbar-scroll" : "toolbar"} style={{width: `${size.width-97}px`}}>
+        <div className={scrollTop > 0 && toolBarInit ? "toolbar-scroll-down" : (scrollTop === 0 && toolBarInit ? "toolbar-scroll-up" : "toolbar")} style={{width: `${size.width-97}px`}}>
             <ToolbarIcon 
                 text={"Home"}
                 scrollTop={scrollTop}
+                toolBarInit={toolBarInit}
             />
             <ToolbarIcon 
                 text={"Services"}
                 scrollTop={scrollTop}
+                toolBarInit={toolBarInit}
             />
             <ToolbarIcon 
                 text={"About"}
                 scrollTop={scrollTop}
+                toolBarInit={toolBarInit}
             />
             <ToolbarIcon 
                 text={"Gallery"}
                 scrollTop={scrollTop}
+                toolBarInit={toolBarInit}
             />
             <ToolbarIcon 
                 text={"Contact"}
                 scrollTop={scrollTop}
+                toolBarInit={toolBarInit}
             />
             <div 
                 className="toolbar-min" 
