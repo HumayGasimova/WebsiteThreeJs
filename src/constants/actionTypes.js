@@ -5,5 +5,5 @@ export const SHOW_CARD = 'SHOW_CARD';
 export const INIT_TEAM_MEMBERS = 'INIT_TEAM_MEMBERS';
 export const INIT_IMAGES = 'INIT_IMAGES';
 export const IMAGE_HOVER = 'IMAGE_HOVER';
-
+export const FEEDBACK_ON_CHANGE = 'FEEDBACK_ON_CHANGE';
 

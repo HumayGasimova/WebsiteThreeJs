@@ -48,3 +48,9 @@ export function imageHover(id, val) {
         val: val
     };
 };
+
+export function feedbackOnChange() {
+    return { 
+        type: actionTypes.FEEDBACK_ON_CHANGE
+    };
+};

@@ -13,11 +13,16 @@ import {
 */
 
 export const initialState = {
-   menuButtonIsPressed: false,
-   sidebarOnInit: false,
-   services: [],
-   members: [],
-   images: []
+    menuButtonIsPressed: false,
+    sidebarOnInit: false,
+    services: [],
+    members: [],
+    images: [],
+    feedback: [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    ]
 }
 
 const toggleMenuButton = (state, action) => {
@@ -77,6 +82,17 @@ const imageHover = (state, action) => {
     });
 }
 
+const feedbackOnChange = (state, action) => {
+    let updatedFeedback = [...state.feedback];
+    let firstElement = updatedFeedback.shift();
+
+    updatedFeedback.push(firstElement);
+    
+    return updateObject(state, {
+        feedback: updatedFeedback
+    });
+}
+
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
@@ -94,6 +110,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return initImages(state, action); 
         case actionTypes.IMAGE_HOVER:
             return imageHover(state, action); 
+        case actionTypes.FEEDBACK_ON_CHANGE:
+            return feedbackOnChange(state, action); 
         default: 
             return state;
     }

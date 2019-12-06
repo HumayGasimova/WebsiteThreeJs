@@ -5,5 +5,6 @@ export {
     showCard,
     initTeamMembers,
     initImages,
-    imageHover
+    imageHover,
+    feedbackOnChange
 } from './parallaxWebsiteActions';

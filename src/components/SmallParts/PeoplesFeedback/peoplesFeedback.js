@@ -22,13 +22,12 @@ import {
 * Components
 */
 
-import PeoplesFeedback from '../../SmallParts/PeoplesFeedback/peoplesFeedback';
 
 /**
 * Styles
 */
 
-import './feedback.scss';
+import './peoplesFeedback.scss';
 
 /**
 * Actions
@@ -43,6 +42,14 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Hooks
+*/
+
+import {
+    useInterval
+} from '../../../Hooks/useInterval';
+
+/**
 * Constants
 */
 
@@ -51,31 +58,28 @@ import {
 } from '../../../constants/teamMembers';
 
 /**
-* Feedback component definition and export
+* PeoplesFeedback component definition and export
 */
 
-export const Feedback = (props) => {
+export const PeoplesFeedback = (props) => {
 
     /**
     * Methods
     */
 
 
-    useEffect(() => {
-        props.initTeamMembers(teamMembers);
-    }, [])
+    useInterval(() => {
+        props.feedbackOnChange();
+    }, 3000)
 
     /**
     * Markup
     */
 
     return(
-        <div className="feedback">
-            <div className="feedback-border1">
-                <div className="feedback-border2">
-                    <h1>What Clients Say About Us</h1>
-                        <PeoplesFeedback/>
-                </div>
+        <div className="peoplesFeedback">
+            <div className="peoplesFeedback-text">
+                {props.feedback[0]}
             </div>
         </div>
     );
@@ -83,13 +87,13 @@ export const Feedback = (props) => {
  export default connect(
     (state) => {
         return {
-            members: Selectors.getMembersState(state),
+            feedback: Selectors.getFeedbackState(state),
         };
     },
     (dispatch) => {
         return {
-            initTeamMembers: bindActionCreators(Actions.initTeamMembers, dispatch),
+            feedbackOnChange: bindActionCreators(Actions.feedbackOnChange, dispatch),
         };
     }
-)(Feedback);
+)(PeoplesFeedback);
  

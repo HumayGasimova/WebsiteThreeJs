@@ -36,3 +36,11 @@ export const getImagesState = createSelector(
     [getImages],
     (x) => x
 );
+
+const getFeedback = (state) => state.home.feedback;
+
+export const getFeedbackState = createSelector(
+    [getFeedback],
+    (x) => x
+);
+
