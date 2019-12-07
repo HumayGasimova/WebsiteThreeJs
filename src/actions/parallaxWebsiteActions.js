@@ -61,9 +61,10 @@ export function dotOnChange() {
     };
 };
 
-export function startChangingFeedbacks() {
+export function startChangingFeedbacks(dotId) {
     return { 
-        type: actionTypes.START_CHANGING_FEEDBACKS
+        type: actionTypes.START_CHANGING_FEEDBACKS,
+        dotId: dotId
     };
 };
 

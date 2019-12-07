@@ -105,15 +105,29 @@ const feedbackOnChange = (state, action) => {
     });
 }
 
-const dotsOnChange = (state, action) => {
+const startChangingFeedbacks = (state, action) => {
     let updatedDots = [...state.dots];
-    let firstElement = updatedFeedback.shift();
+    let dot = updatedDots.find(x => x.id === action.dotId);
+    let updatedDot = {...dot, chosen: true}
+    let dotIndex = updatedDots.findIndex(x => x.id === action.dotId);
 
-    updatedFeedback.push(firstElement);
+    updatedDots.splice(dotIndex, 1, updatedDot);
 
     return updateObject(state, {
-        feedback: updatedFeedback
+        dots: updatedDots
     });
+}
+
+const dotOnChange = (state, action) => {
+    // let updatedDots = [...state.dots];
+    // let dot = updatedDots.find(x => x.id === action.id);
+    // let dotIndex = updatedDots.find(x => x.id === action.id);
+
+    // updatedFeedback.push(firstElement);
+
+    // return updateObject(state, {
+    //     feedback: updatedFeedback
+    // });
 }
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
@@ -135,9 +149,9 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
         case actionTypes.FEEDBACK_ON_CHANGE:
             return feedbackOnChange(state, action); 
         case actionTypes.DOTS_ON_CHANGE:
-            return dotsOnChange(state, action); 
+            return dotOnChange(state, action); 
         case actionTypes.START_CHANGING_FEEDBACKS:
-            return state; 
+            return startChangingFeedbacks(state, action); 
         default: 
             return state;
     }
