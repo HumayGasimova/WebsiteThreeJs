@@ -54,3 +54,21 @@ export function feedbackOnChange() {
         type: actionTypes.FEEDBACK_ON_CHANGE
     };
 };
+
+export function dotOnChange() {
+    return { 
+        type: actionTypes.DOTS_ON_CHANGE
+    };
+};
+
+export function startChangingFeedbacks() {
+    return { 
+        type: actionTypes.START_CHANGING_FEEDBACKS
+    };
+};
+
+export function stopChangingFeedbacks() {
+    return { 
+        type: actionTypes.STOP_CHANGING_FEEDBACKS
+    };
+};

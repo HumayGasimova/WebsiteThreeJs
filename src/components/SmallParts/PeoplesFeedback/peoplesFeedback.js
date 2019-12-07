@@ -68,9 +68,14 @@ export const PeoplesFeedback = (props) => {
     */
 
 
-    useInterval(() => {
-        props.feedbackOnChange();
-    }, 3000)
+    // useInterval(() => {
+    //     props.feedbackOnChange();
+    //     props.dotOnChange();
+    // }, 3000)
+
+    useEffect(()=>{
+        props.startChangingFeedbacks();
+    },[])
 
     const renderDots = () => {
         return(
@@ -106,7 +111,9 @@ export const PeoplesFeedback = (props) => {
     },
     (dispatch) => {
         return {
+            startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
             feedbackOnChange: bindActionCreators(Actions.feedbackOnChange, dispatch),
+            dotOnChange: bindActionCreators(Actions.dotOnChange, dispatch),
         };
     }
 )(PeoplesFeedback);

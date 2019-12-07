@@ -23,7 +23,18 @@ export const initialState = {
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     ],
-    dots: ['','','']
+    dots: [{
+        id: 1,
+        chosen: false
+    },{
+      
+        id: 2,
+        chosen: false
+    },
+    {
+        id: 3,
+        chosen: false
+    }]
 }
 
 const toggleMenuButton = (state, action) => {
@@ -94,6 +105,16 @@ const feedbackOnChange = (state, action) => {
     });
 }
 
+// const dotsOnChange = (state, action) => {
+//     let updatedDots = [...state.dots];
+//     let firstElement = updatedFeedback.shift();
+
+//     updatedFeedback.push(firstElement);
+
+//     return updateObject(state, {
+//         feedback: updatedFeedback
+//     });
+// }
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
@@ -113,6 +134,10 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return imageHover(state, action); 
         case actionTypes.FEEDBACK_ON_CHANGE:
             return feedbackOnChange(state, action); 
+        case actionTypes.DOTS_ON_CHANGE:
+            return dotsOnChange(state, action); 
+        case actionTypes.START_CHANGING_FEEDBACKS:
+            return state; 
         default: 
             return state;
     }

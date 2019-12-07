@@ -1,1 +1,1 @@
-export { fillCirclesArrayEpic } from './fillCirclesArrayEpic';
+export { startChangingFeedbacksEpic } from './startChangingFeedbacksEpic';

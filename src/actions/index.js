@@ -6,5 +6,8 @@ export {
     initTeamMembers,
     initImages,
     imageHover,
-    feedbackOnChange
+    feedbackOnChange,
+    dotOnChange,
+    startChangingFeedbacks,
+    stopChangingFeedbacks
 } from './parallaxWebsiteActions';
