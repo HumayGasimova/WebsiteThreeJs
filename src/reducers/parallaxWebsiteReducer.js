@@ -119,15 +119,15 @@ const startChangingFeedbacks = (state, action) => {
 }
 
 const dotOnChange = (state, action) => {
-    // let updatedDots = [...state.dots];
-    // let dot = updatedDots.find(x => x.id === action.id);
-    // let dotIndex = updatedDots.find(x => x.id === action.id);
+    let updatedDots = [...state.dots];
+    let dot = updatedDots.find(x => x.chosen === true);
+    let dotIndex = updatedDots.find(x => x.id === action.id);
 
-    // updatedFeedback.push(firstElement);
+    updatedFeedback.push(firstElement);
 
-    // return updateObject(state, {
-    //     feedback: updatedFeedback
-    // });
+    return updateObject(state, {
+        feedback: updatedFeedback
+    });
 }
 
 const parallaxWebsiteReducer = (state = initialState, action) => {

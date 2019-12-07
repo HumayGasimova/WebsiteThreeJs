@@ -42,7 +42,7 @@ export const startChangingFeedbacksEpic = (action$, state$) =>
                     console.log("fdf")
                     return of(
                         Actions.feedbackOnChange(),
-                        // Actions.dotOnChange(),
+                        Actions.dotOnChange(),
                     )   
                 }),
                 // takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))

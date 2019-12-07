@@ -82,7 +82,7 @@ export const PeoplesFeedback = (props) => {
             <div className="peoplesFeedback-dots">
                 {props.dots.map((el,i) => {
                     return(
-                        <div key={i} className="peoplesFeedback-dot"/>
+                        <div key={i} className={el.chosen ? "peoplesFeedback-dot-chosen": "peoplesFeedback-dot"}/>
                     )
                 })}
             </div>
