@@ -8,7 +8,8 @@ import {
 } from 'rxjs';
 
 import { 
-    mergeMap
+    mergeMap,
+    takeUntil
 } from 'rxjs/operators';
 
 import { 
@@ -38,12 +39,13 @@ export const startChangingFeedbacksEpic = (action$, state$) =>
         mergeMap(action => {
             return interval(3000).pipe(
                 mergeMap(() => {
+                    console.log("fdf")
                     return of(
-                                Actions.feedbackOnChange(),
-                                Actions.dotOnChange(),
-                            )   
+                        Actions.feedbackOnChange(),
+                        // Actions.dotOnChange(),
+                    )   
                 }),
-                takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
+                // takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
             )
     })
     )

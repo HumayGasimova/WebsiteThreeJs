@@ -105,16 +105,16 @@ const feedbackOnChange = (state, action) => {
     });
 }
 
-// const dotsOnChange = (state, action) => {
-//     let updatedDots = [...state.dots];
-//     let firstElement = updatedFeedback.shift();
+const dotsOnChange = (state, action) => {
+    let updatedDots = [...state.dots];
+    let firstElement = updatedFeedback.shift();
 
-//     updatedFeedback.push(firstElement);
+    updatedFeedback.push(firstElement);
 
-//     return updateObject(state, {
-//         feedback: updatedFeedback
-//     });
-// }
+    return updateObject(state, {
+        feedback: updatedFeedback
+    });
+}
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
