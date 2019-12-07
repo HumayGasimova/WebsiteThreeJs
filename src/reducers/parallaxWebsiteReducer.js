@@ -120,13 +120,15 @@ const startChangingFeedbacks = (state, action) => {
 
 const dotOnChange = (state, action) => {
     let updatedDots = [...state.dots];
-    let dot = updatedDots.find(x => x.chosen === true);
-    let dotIndex = updatedDots.find(x => x.id === action.id);
+    let dot = {...updatedDots.find(x => x.chosen === true), chosen: false};
+    let dotIndex = updatedDots.findIndex(x => x.chosen === true);
+    let nextDot = {...updatedDots[dotIndex + 1], chosen: true};
 
-    updatedFeedback.push(firstElement);
+    updatedDots.splice(dotIndex, 1, dot);
+    updatedDots.splice(dotIndex + 1, 1, nextDot);
 
     return updateObject(state, {
-        feedback: updatedFeedback
+        dots: updatedDots
     });
 }
 
