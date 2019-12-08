@@ -122,11 +122,17 @@ const dotOnChange = (state, action) => {
     let updatedDots = [...state.dots];
     let dot = {...updatedDots.find(x => x.chosen === true), chosen: false};
     let dotIndex = updatedDots.findIndex(x => x.chosen === true);
-    let nextDot = {...updatedDots[dotIndex + 1], chosen: true};
-
     updatedDots.splice(dotIndex, 1, dot);
-    updatedDots.splice(dotIndex + 1, 1, nextDot);
+    let nextDot;
 
+    if(dotIndex === updatedDots.length - 1){
+        nextDot = {...updatedDots[0], chosen: true};
+        updatedDots.splice(0, 1, nextDot);
+    }else{
+        nextDot = {...updatedDots[0 + 1], chosen: true};
+        updatedDots.splice(dotIndex + 1, 1, nextDot);
+    }
+   
     return updateObject(state, {
         dots: updatedDots
     });
