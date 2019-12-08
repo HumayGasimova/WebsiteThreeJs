@@ -74,7 +74,7 @@ export const PeoplesFeedback = (props) => {
     // }, 3000)
 
     useEffect(()=>{
-        props.startChangingFeedbacks(1);
+        props.startChangingFeedbacks(1, 0);
     },[])
 
     const renderDots = () => {

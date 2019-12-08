@@ -61,10 +61,11 @@ export function dotOnChange() {
     };
 };
 
-export function startChangingFeedbacks(dotId) {
+export function startChangingFeedbacks(dotId, feedbackIndex) {
     return { 
         type: actionTypes.START_CHANGING_FEEDBACKS,
-        dotId: dotId
+        dotId: dotId,
+        feedbackIndex: feedbackIndex
     };
 };
 

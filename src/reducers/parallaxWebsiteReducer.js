@@ -27,7 +27,6 @@ export const initialState = {
         id: 1,
         chosen: false
     },{
-      
         id: 2,
         chosen: false
     },
@@ -113,8 +112,19 @@ const startChangingFeedbacks = (state, action) => {
 
     updatedDots.splice(dotIndex, 1, updatedDot);
 
+    let updatedFeedback = [...state.feedback];
+    let moveElements = [];
+    updatedFeedback.map((el,i) => {
+        if(i < action.feedbackIndex){
+            moveElements.push(el);
+        }
+    })
+    updatedFeedback.splice(0, action.feedbackIndex);
+    updatedFeedback = updatedFeedback.concat(moveElements);
+
     return updateObject(state, {
-        dots: updatedDots
+        dots: updatedDots,
+        feedback: updatedFeedback
     });
 }
 
