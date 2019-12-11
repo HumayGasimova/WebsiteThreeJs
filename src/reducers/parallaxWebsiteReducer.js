@@ -170,6 +170,9 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return dotOnChange(state, action); 
         case actionTypes.START_CHANGING_FEEDBACKS:
             return startChangingFeedbacks(state, action); 
+        case actionTypes.STOP_CHANGING_FEEDBACKS:
+            return state; 
+            
         default: 
             return state;
     }

@@ -77,12 +77,22 @@ export const PeoplesFeedback = (props) => {
         props.startChangingFeedbacks(1, 0);
     },[])
 
+    const chooseFeedback = (i) => {
+        console.log(i)
+        props.stopChangingFeedbacks();
+        props.startChangingFeedbacks(i + 1, i);
+    }
+
     const renderDots = () => {
         return(
             <div className="peoplesFeedback-dots">
                 {props.dots.map((el,i) => {
                     return(
-                        <div key={i} className={el.chosen ? "peoplesFeedback-dot-chosen": "peoplesFeedback-dot"}/>
+                        <div 
+                            key={i} 
+                            className={el.chosen ? "peoplesFeedback-dot-chosen": "peoplesFeedback-dot"}
+                            onClick={() => chooseFeedback(i)}
+                        />
                     )
                 })}
             </div>
@@ -114,6 +124,7 @@ export const PeoplesFeedback = (props) => {
             startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
             feedbackOnChange: bindActionCreators(Actions.feedbackOnChange, dispatch),
             dotOnChange: bindActionCreators(Actions.dotOnChange, dispatch),
+            stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch),
         };
     }
 )(PeoplesFeedback);

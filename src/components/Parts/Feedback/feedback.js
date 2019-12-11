@@ -68,9 +68,11 @@ export const Feedback = (props) => {
     /**
     * Markup
     */
-
+const jjj = () => {
+    console.log("LL")
+}
     return(
-        <div className="feedback">
+        <div onClick={jjj} className="feedback">
             <div className="feedback-border1">
                 <div className="feedback-border2">
                     <h1>What Clients Say About Us</h1>

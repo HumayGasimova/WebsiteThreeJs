@@ -121,6 +121,7 @@ export const Image = (props) => {
             className="image"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={props.onClick}
         >
             <img src={loadImage()}/>
             <div 

@@ -45,7 +45,7 @@ export const startChangingFeedbacksEpic = (action$, state$) =>
                         Actions.dotOnChange(),
                     )   
                 }),
-                // takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
+                takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
             )
     })
     )
