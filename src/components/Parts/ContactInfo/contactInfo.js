@@ -79,7 +79,7 @@ export const ContactInfo = (props) => {
 
     return(
         <div className="contactInfo">
-            <h1>Get In Touch</h1>
+            <h1 className="contactInfo-header">Get In Touch</h1>
             <div className="contactInfo-wrapper">
                 <div className="contactInfo-details">
                     <div className="contactInfo-details-header-text">Contact Details</div>
