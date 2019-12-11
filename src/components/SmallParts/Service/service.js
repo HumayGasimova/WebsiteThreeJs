@@ -23,6 +23,10 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
+/**
+* Icons
+*/
+
 import { 
     faLaptopCode,
     faChartLine,

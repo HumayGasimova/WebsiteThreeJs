@@ -17,6 +17,7 @@ import Services from '../Parts/Services/services';
 import TeamInformation from '../Parts/TeamInformation/teamInformation';
 import Gallery from '../Parts/Gallery/gallery';
 import Feedback from '../Parts/Feedback/feedback';
+import ContactInfo from '../Parts/ContactInfo/contactInfo';
 
 /**
 * Styles
@@ -53,7 +54,7 @@ export const Parallax = () => {
          <div className="parallax-backgroundBox3">
             <Feedback/>
          </div>
-            {/* <ImagesPage/> */}
+         <ContactInfo/>
       </div>
    );
 }
