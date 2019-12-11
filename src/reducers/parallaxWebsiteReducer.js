@@ -148,6 +148,19 @@ const dotOnChange = (state, action) => {
     });
 }
 
+const stopChangingFeedbacks = (state, action) => {
+    let updatedDots = [...state.dots];
+    let dot = {...updatedDots.find(x => x.chosen === true), chosen: false};
+    let dotIndex = updatedDots.findIndex(x => x.chosen === true);
+    updatedDots.splice(dotIndex, 1, dot);
+   
+    return updateObject(state, {
+        dots: updatedDots
+    });
+}
+
+
+
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -171,7 +184,7 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
         case actionTypes.START_CHANGING_FEEDBACKS:
             return startChangingFeedbacks(state, action); 
         case actionTypes.STOP_CHANGING_FEEDBACKS:
-            return state; 
+            return stopChangingFeedbacks(state, action); 
             
         default: 
             return state;
