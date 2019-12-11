@@ -78,7 +78,7 @@ export const Toolbar = (props) => {
     */
 
     return(
-        <div className={scrollTop > 0 && toolBarInit ? "toolbar-scroll-down" : (scrollTop === 0 && toolBarInit ? "toolbar-scroll-up" : "toolbar")} style={{width: `${size.width-97}px`}}>
+        <div className={scrollTop > 0 && toolBarInit ? "toolbar-scroll-down" : (scrollTop === 0 && toolBarInit ? "toolbar-scroll-up" : "toolbar")} style={{width: `${size.width-95}px`}}>
             <ToolbarIcon 
                 text={"Home"}
                 scrollTop={scrollTop}

@@ -49,7 +49,7 @@ class Button extends Component {
 
     render(){
         return(
-            <div>
+            <div className={this.props.outerDivClassName}>
                 <button 
                     className = {this.props.className}
                     onClick={this.props.onClick}

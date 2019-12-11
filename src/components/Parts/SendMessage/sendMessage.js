@@ -22,7 +22,7 @@ import {
 * Components
 */
 
-import Image from '../../SmallParts/Image/image';
+import Button from '../../../library/Button/button';
 
 /**
 * Styles
@@ -68,12 +68,17 @@ export const SendMessage = (props) => {
     return(
         <div className="sendMessage">
             <div className="sendMessage-wrapper">
-                <input/>
-                <input/>
-                <input/>
-                <input/>
+                <input placeholder="Full Name"/>
+                <input placeholder="Email"/>
+                <input placeholder="Contact"/>
+                <input placeholder="Company"/>
             </div>
-            <textarea></textarea>
+            <textarea placeholder="Your Message" rows="2"></textarea>
+            <Button 
+                className={"sendMessage-submit"}
+                outerDivClassName={"sendMessage-outerDiv-submit"}
+                text={"Submit"}
+            />
         </div>
     );
 }

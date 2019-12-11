@@ -3,7 +3,7 @@
     .sendMessage-wrapper {
         display: flex;
         flex-wrap: wrap;
-    
+        margin-bottom: 10px;
         >input {
             border: none;
             border-bottom: 1px solid black;
@@ -27,5 +27,8 @@
         margin: 10px;
         resize: vertical;
         font-size: 16px;
+    }
+    :focus {
+        outline: none;
     }
 }
