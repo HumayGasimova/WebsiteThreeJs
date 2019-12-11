@@ -61,7 +61,8 @@ export const Footer = (props) => {
    
     return(
         <div className="footer">
-          
+          <div className="footer-socialMedia"></div>
+          <div className="footer-copyrights"></div>
         </div>
     );
 }
