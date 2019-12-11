@@ -15,14 +15,10 @@
         .contactInfo-details {
             width: 365px;
             height: 170px;
-            .contactInfo-details-header-text {
-                font-size: 23px;
-                padding-left: 20px;
-            }
         }
         .contactInfo-message {
             border-left: 1px solid rgb(136, 0, 101);
-            width: 530px;
+            width: 700px;
             height: 270px;
         }
     }
@@ -39,4 +35,9 @@
     .icon {
         padding-bottom: 4px;
     }
+}
+
+.contactInfo-subheader {
+    font-size: 23px;
+    padding-left: 20px;
 }

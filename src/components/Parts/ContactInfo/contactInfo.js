@@ -36,7 +36,7 @@ import {
 * Components
 */
 
-import Service from '../../SmallParts/Service/service';
+import SendMessage from '../SendMessage/sendMessage';
 
 /**
 * Styles
@@ -82,7 +82,7 @@ export const ContactInfo = (props) => {
             <h1 className="contactInfo-header">Get In Touch</h1>
             <div className="contactInfo-wrapper">
                 <div className="contactInfo-details">
-                    <div className="contactInfo-details-header-text">Contact Details</div>
+                    <div className="contactInfo-subheader">Contact Details</div>
                     <div className="contactInfo-line-wrapper">
                         <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" className="icon"/>
                         <div className="contactInfo-details-text">12 Avenue center, st. marks road, CA</div>
@@ -97,6 +97,8 @@ export const ContactInfo = (props) => {
                     </div>
                 </div>
                 <div className="contactInfo-message">
+                    <div className="contactInfo-subheader">Send Us Message</div>
+                    <SendMessage/>
                 </div>
             </div>
         </div>
