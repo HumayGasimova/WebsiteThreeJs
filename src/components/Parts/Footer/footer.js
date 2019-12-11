@@ -22,13 +22,11 @@ import {
 * Components
 */
 
-import PeoplesFeedback from '../../SmallParts/PeoplesFeedback/peoplesFeedback';
-
 /**
 * Styles
 */
 
-import './feedback.scss';
+import './footer.scss';
 
 /**
 * Actions
@@ -46,37 +44,24 @@ import * as Selectors from '../../../reducers/selectors';
 * Constants
 */
 
-import {
-    teamMembers
-} from '../../../constants/teamMembers';
 
 /**
-* Feedback component definition and export
+* Footer component definition and export
 */
 
-export const Feedback = (props) => {
+export const Footer = (props) => {
 
     /**
     * Methods
     */
-
-
-    useEffect(() => {
-        props.initTeamMembers(teamMembers);
-    }, [])
 
     /**
     * Markup
     */
    
     return(
-        <div className="feedback">
-            <div className="feedback-border1">
-                <div className="feedback-border2">
-                    <h1>What Clients Say About Us</h1>
-                        <PeoplesFeedback/>
-                </div>
-            </div>
+        <div className="footer">
+          
         </div>
     );
 }
@@ -91,5 +76,5 @@ export const Feedback = (props) => {
             initTeamMembers: bindActionCreators(Actions.initTeamMembers, dispatch),
         };
     }
-)(Feedback);
+)(Footer);
  

@@ -18,6 +18,7 @@ import TeamInformation from '../Parts/TeamInformation/teamInformation';
 import Gallery from '../Parts/Gallery/gallery';
 import Feedback from '../Parts/Feedback/feedback';
 import ContactInfo from '../Parts/ContactInfo/contactInfo';
+import Footer from '../Parts/Footer/footer';
 
 /**
 * Styles
@@ -55,6 +56,7 @@ export const Parallax = () => {
             <Feedback/>
          </div>
          <ContactInfo/>
+         <Footer/>
       </div>
    );
 }
