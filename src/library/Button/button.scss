@@ -82,3 +82,22 @@
         }
     }
 }
+
+@media only screen and (max-width: 388px){
+    .sendMessage-outerDiv-submit {
+        width: 175px;
+        padding-top: 10px;
+        text-align: center;
+        .sendMessage-submit {
+            width: 90px;
+            height: 40px;
+            border-radius: 4px;
+            background: rgb(240, 221, 234);
+            border: 1px solid rgb(136, 0, 101);
+            color: rgb(136, 0, 101);
+            &:hover {
+                background: rgb(243, 235, 241);
+            }
+        }
+    }
+}

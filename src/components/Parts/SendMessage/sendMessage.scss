@@ -111,3 +111,40 @@
         }
     }
 }
+
+@media only screen and (max-width: 388px){
+    .sendMessage {
+        margin: 20px;
+        .sendMessage-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            >input {
+                border: none;
+                border-bottom: 1px solid black;
+                background: rgb(243, 235, 241);
+                margin: 10px;
+                width: 150px;
+                height: 37px;
+                font-size: 16px;
+            }
+            :focus {
+                outline: none;
+            }
+        }
+        >textarea {
+            background: rgb(243, 235, 241);
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            width: 150px;
+            margin: 10px;
+            resize: vertical;
+            font-size: 16px;
+        }
+        :focus {
+            outline: none;
+        }
+    }
+}
