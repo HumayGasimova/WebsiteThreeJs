@@ -29,12 +29,7 @@
 
 @media only screen and (max-width: 1115px) {
     .teamMemberInfo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         .teamMemberInfo-image {
-            border: 2px solid rgb(136, 0, 101);
-            border-radius: 50%;
             width: 140px;
             height: 140px;
             >img{
@@ -48,9 +43,6 @@
 
 @media only screen and (max-width: 990px) {
     .teamMemberInfo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         .teamMemberInfo-image {
             border: 2px solid rgb(136, 0, 101);
             border-radius: 50%;
@@ -67,9 +59,6 @@
 
 @media only screen and (max-width: 640px) {
     .teamMemberInfo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         margin-bottom: 20px;
         .teamMemberInfo-image {
             border: 2px solid rgb(136, 0, 101);
