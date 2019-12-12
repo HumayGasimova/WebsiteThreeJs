@@ -109,6 +109,27 @@
     }
 }
 
+@media only screen and (max-width: 758px) {
+    .parallax {
+        // height: 7000px;
+        .parallax-backgroundBox3 {
+            position: relative;
+            height: 349px;
+            background-image: url('../../images/bokeh-1958563_960_720.png');
+            // background-size: auto 600px;
+            background-size: 100%;
+            background-repeat: repeat;
+            // clip: rect(500px, 100px, 100px, 0);
+            background-position: top center;
+            background-attachment: fixed;
+            // background-size: contain;
+            // background-position: top center;
+            overflow: hidden;
+        //     z-index: -1;
+        }
+    }
+}
+
 @media only screen and (max-width: 732px) {
     .parallax {
         // height: 7000px;
