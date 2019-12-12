@@ -96,6 +96,7 @@ export const ContactInfo = (props) => {
                         <div className="contactInfo-details-text">click@gmail.com</div>
                     </div>
                 </div>
+                <div className="contactInfo-message-up-line"/>
                 <div className="contactInfo-message">
                     <div className="contactInfo-subheader">Send Us Message</div>
                     <SendMessage/>
