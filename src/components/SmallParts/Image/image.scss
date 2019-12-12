@@ -164,7 +164,6 @@
 
 @media only screen and (max-width: 1067px){
     .image {
-        border: 1.5px solid rgba(136, 0, 101, 0.7);
         width: 250px;
         height: 400px;
         display: flex;
@@ -212,7 +211,6 @@
 
 @media only screen and (max-width: 847px){
     .image {
-        border: 1.5px solid rgba(136, 0, 101, 0.7);
         width: 300px;
         height: 300px;
         display: flex;
@@ -248,7 +246,7 @@
             font-family: 'Handlee', cursive;
             background: rgba(117, 71, 129, 0.7);
             color: rgb(250, 223, 243);
-            padding:  7px 0 7px 0;
+            padding:  6px 0 6px 0;
             .image-photoInfo-small-title {
                 font-size: 20px;
             }
