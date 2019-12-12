@@ -18,6 +18,21 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+/**
+* Icons
+*/
+
+import { 
+    faFacebookF,
+    faLinkedinIn,
+    faInstagram,
+    faTwitter
+} from '@fortawesome/fontawesome-free-brands'
+
 /**
 * Components
 */
@@ -61,8 +76,13 @@ export const Footer = (props) => {
    
     return(
         <div className="footer">
-          <div className="footer-socialMedia"></div>
-          <div className="footer-copyrights"></div>
+          <div className="footer-socialMedia">
+            <FontAwesomeIcon icon={faFacebookF} size="2x" className="icon-social-media-facebook"/>
+            <FontAwesomeIcon icon={faLinkedinIn} size="2x" className="icon-social-media-linkedIn"/>
+            <FontAwesomeIcon icon={faInstagram} size="2x" className="icon-social-media-instagram"/>
+            <FontAwesomeIcon icon={faTwitter} size="2x" className="icon-social-media-twitter"/>
+          </div>
+          <div className="footer-copyrights">Crypto347 © 2019. Designed by Humay Gasimova</div>
         </div>
     );
 }
