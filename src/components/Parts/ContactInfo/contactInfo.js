@@ -93,7 +93,7 @@ export const ContactInfo = (props) => {
                     </div>
                     <div className="contactInfo-line-wrapper">
                         <FontAwesomeIcon icon={faEnvelope} size="lg"/>
-                        <div className="contactInfo-details-text">click@gmail.com</div>
+                        <div className="contactInfo-details-text">qasimovahumay@gmail.com</div>
                     </div>
                 </div>
                 <div className="contactInfo-message-up-line"/>
