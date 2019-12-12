@@ -34,9 +34,7 @@
             .feedback-border2 {
                 height: 322px;
                 >h1 {
-                    color:rgb(136, 0, 101);
                     font-size: 33px;
-                    text-align: center; 
                 }
             }
         }
@@ -45,15 +43,10 @@
 
 @media only screen and (max-width: 530px) {
     .feedback {
-        height: 345px;
         .feedback-border1 {
-            height: 333px;
             .feedback-border2 {
-                height: 322px;
                 >h1 {
-                    color:rgb(136, 0, 101);
                     font-size: 25px;
-                    text-align: center; 
                 }
             }
         }
