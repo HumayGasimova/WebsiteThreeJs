@@ -15,7 +15,7 @@ export const serviceCards = [
         header: "Header 2",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service"
+        path: "service2"
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ export const serviceCards = [
         header: "Header 3",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service"
+        path: "service3"
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ export const serviceCards = [
         header: "Header 4",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service"
+        path: "service4"
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ export const serviceCards = [
         header: "Header 5",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service"
+        path: "service5"
     },
     {
         id: 6,
@@ -51,6 +51,6 @@ export const serviceCards = [
         header: "Header 6",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service"
+        path: "service6"
     }
 ]
