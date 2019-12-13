@@ -93,7 +93,7 @@ export const Gallery = (props) => {
     */
 
     return(
-        <div className="gallery">
+        <div className="gallery" id="gallery">
             <h1>Gallery</h1>
             <div>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit.

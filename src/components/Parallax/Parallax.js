@@ -36,7 +36,7 @@ export const Parallax = () => {
    */
 
    return(
-      <div className="parallax">
+      <div id="home" className="parallax">
          <div className="parallax-backgroundBox">
             <HeaderText/>
             <div className="parallax-airbaloons">

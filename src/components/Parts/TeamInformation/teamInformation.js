@@ -87,7 +87,7 @@ export const TeamInformation = (props) => {
     */
 
     return(
-        <div className="teamInformation">
+        <div className="teamInformation" id="about">
             <div className="teamInformation-border1">
                 <div className="teamInformation-border2">
                     <h1>About us</h1>

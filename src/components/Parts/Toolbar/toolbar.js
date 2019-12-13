@@ -86,26 +86,31 @@ export const Toolbar = (props) => {
                 text={"Home"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
+                id="home"
             />
             <ToolbarIcon 
                 text={"Services"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
+                id="services"
             />
             <ToolbarIcon 
                 text={"About"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
+                id="about"
             />
             <ToolbarIcon 
                 text={"Gallery"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
+                id="gallery"
             />
             <ToolbarIcon 
                 text={"Contact"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
+                id="contact"
             />
             <div 
                 className="toolbar-min" 

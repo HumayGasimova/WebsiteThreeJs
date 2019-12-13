@@ -59,7 +59,7 @@ export const ToolbarIcon = (props) => {
     */
 
     return(
-        <div className="toolbarIcon">
+        <a className="toolbarIcon" href={`#${props.id}`}>
             <div className={props.scrollTop > 0 ? "toolbarIcon-element-scroll-down" : (props.scrollTop === 0 && props.toolBarInit ? "toolbarIcon-element-scroll-up" : "toolbarIcon-element")} ref={iconRef}>
                 {props.text}
                 <div className="toolbarIcon-line">
@@ -73,7 +73,7 @@ export const ToolbarIcon = (props) => {
                     />
                 </div>
             </div>
-        </div>
+        </a>
     );
 }
  export default connect(
