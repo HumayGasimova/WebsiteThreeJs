@@ -60,6 +60,7 @@ import * as Selectors from '../../../reducers/selectors';
 * Constants
 */
 
+import * as Icon from '../../../constants/iconNames';
 
 /**
 * ContactInfo component definition and export
@@ -78,7 +79,7 @@ export const ContactInfo = (props) => {
     */
 
     return(
-        <div className="contactInfo" id="contact">
+        <div className="contactInfo" id={Icon.CONTACT}>
             <h1 className="contactInfo-header">Get In Touch</h1>
             <div className="contactInfo-wrapper">
                 <div className="contactInfo-details">

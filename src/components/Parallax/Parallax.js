@@ -26,6 +26,12 @@ import Footer from '../Parts/Footer/footer';
 import './parallax.scss';
 
 /**
+* Constants
+*/
+
+import * as Icon from '../../constants/iconNames';
+
+/**
 * Parallax component definition and export
 */
 
@@ -36,7 +42,7 @@ export const Parallax = () => {
    */
 
    return(
-      <div id="home" className="parallax">
+      <div className="parallax" id={Icon.HOME}>
          <div className="parallax-backgroundBox">
             <HeaderText/>
             <div className="parallax-airbaloons">

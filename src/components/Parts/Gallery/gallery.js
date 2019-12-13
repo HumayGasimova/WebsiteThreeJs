@@ -50,6 +50,8 @@ import {
     images
 } from '../../../constants/images';
 
+import * as Icon from '../../../constants/iconNames';
+
 /**
 * Gallery component definition and export
 */
@@ -93,7 +95,7 @@ export const Gallery = (props) => {
     */
 
     return(
-        <div className="gallery" id="gallery">
+        <div className="gallery" id={Icon.GALLERY}>
             <h1>Gallery</h1>
             <div>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit.

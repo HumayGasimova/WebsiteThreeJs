@@ -50,6 +50,8 @@ import {
     serviceCards
 } from '../../../constants/serviceCards';
 
+import * as Icon from '../../../constants/iconNames';
+
 /**
 * Services component definition and export
 */
@@ -94,7 +96,7 @@ export const Services = (props) => {
     */
 
     return(
-        <div className="services" id="services">
+        <div className="services" id={Icon.SERVICES}>
             <h1>Services</h1>
             <div>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit.

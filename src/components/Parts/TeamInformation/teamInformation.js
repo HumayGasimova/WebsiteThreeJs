@@ -50,6 +50,8 @@ import {
     teamMembers
 } from '../../../constants/teamMembers';
 
+import * as Icon from '../../../constants/iconNames';
+
 /**
 * TeamInformation component definition and export
 */
@@ -87,7 +89,7 @@ export const TeamInformation = (props) => {
     */
 
     return(
-        <div className="teamInformation" id="about">
+        <div className="teamInformation" id={Icon.ABOUT}>
             <div className="teamInformation-border1">
                 <div className="teamInformation-border2">
                     <h1>About us</h1>

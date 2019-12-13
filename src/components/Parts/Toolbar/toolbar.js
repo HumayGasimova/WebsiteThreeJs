@@ -51,6 +51,8 @@ import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
+import * as Icon from '../../../constants/iconNames';
+
 /**
 * Toolbar component definition and export
 */
@@ -86,31 +88,31 @@ export const Toolbar = (props) => {
                 text={"Home"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
-                id="home"
+                id={Icon.HOME}
             />
             <ToolbarIcon 
                 text={"Services"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
-                id="services"
+                id={Icon.SERVICES}
             />
             <ToolbarIcon 
                 text={"About"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
-                id="about"
+                id={Icon.ABOUT}
             />
             <ToolbarIcon 
                 text={"Gallery"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
-                id="gallery"
+                id={Icon.GALLERY}
             />
             <ToolbarIcon 
                 text={"Contact"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
-                id="contact"
+                id={Icon.CONTACT}
             />
             <div 
                 className="toolbar-min" 
