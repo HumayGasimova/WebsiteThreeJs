@@ -1,75 +1,70 @@
 /**
- * Libraries
- */
+* Libraries
+*/
 
-import React,{
-    Component
- } from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
  
- /**
-  * Components
-  */
+/**
+* Components
+*/
+
 import UnicornLogo  from '../../../images/pink-unicorn-silhouette-png-18.png';
  
- /**
-  * Styles
-  */
+/**
+* Styles
+*/
+
 import './unicorn.scss';
  
- /**
-  * App component definition and export
-  */
- export class Unicorn extends Component {
- 
-    /**
-      * Constructor
-      */
- 
-     constructor(props) {
-       super(props);
-       this.state={
-           slower: 0,
-           faster: 0
-       }
-   }
-   componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll)
- }
+/**
+* Unicorn component definition and export
+*/
 
-    handleScroll = () => {
-        let scrollHeight = document.body.scrollTop
-         this.setState({
-             slower: scrollHeight/2,
-             slower2x: scrollHeight/8
-         })
+export const Unicorn = (props) => {
+
+    const [slower, setSlower] = useState(0);
+
+    /**
+    * Methods
+    */
+    
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop;
+        setSlower(scrollHeight/2);
     }
-    renderImage = () => {
-        if(this.props.left){
-           return(
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const renderImage = () => {
+        if(props.left){
+            return(
                 <img 
                     src={UnicornLogo}
-                    style={{transform: `translate(0px, ${this.state.slower}%)`}}
+                    style={{transform: `translate(0px, ${slower}%)`}}
                 />
-           )}else{
+            )
+        }else{
             return(
                 <img 
                 src={UnicornLogo}
-                style={{transform: `translate(0px, ${this.state.slower}px)`}}
+                style={{transform: `translate(0px, ${slower}px)`}}
             />
-           ) }
-        
+            ) 
+        }
     }
-    
- 
 
-    render(){
-       return(
-            <div className={this.props.left ? "leftUnicorn": "rightUnicorn"}>
-                {this.renderImage()}
-            </div>
-       );
-    }
- }
+    return(
+        <div className={props.left ? "leftUnicorn": "rightUnicorn"}>
+            {renderImage()}
+        </div>
+    );
+}
  
- export default Unicorn;
+export default Unicorn;
  
