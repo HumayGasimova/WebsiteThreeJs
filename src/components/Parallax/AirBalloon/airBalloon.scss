@@ -30,97 +30,59 @@
 
 @media only screen and (max-width: 1190px) {
     .leftAirBallon {
-        transform: scaleX(-1);
         width: 230px;
         padding-top: 460px;
-        // bottom: 10px;
-        // left: 190px;
-    
-        // position: absolute;
         & img {
             width: 57px;
             height: 80px;
-            opacity: 0.4;
         }
     }
-    
     .rightAirBallon {
-        // bottom: 170px;
-        // right: 250px;
-        // position: absolute;
         width: 290px;
-        padding-top: 240px;
-    
         & img {
             width: 120px;
             height: 160px;
-            opacity: 0.9;
         }
-        
     }
 }
 
 @media only screen and (max-width: 1067px) {
     .leftAirBallon {
-        transform: scaleX(-1);
         width: 230px;
         padding-top: 340px;
-        // bottom: 10px;
-        // left: 190px;
-    
-        // position: absolute;
         & img {
             width: 57px;
             height: 75px;
-            opacity: 0.4;
         }
     }
     
     .rightAirBallon {
-        // bottom: 170px;
-        // right: 250px;
-        // position: absolute;
         width: 290px;
         padding-top: 230px;
-    
         & img {
             width: 120px;
             height: 160px;
-            opacity: 0.9;
         }
-        
     }
 }
 
 @media only screen and (max-width: 900px) {
     .leftAirBallon {
-        transform: scaleX(-1);
         width: 160px;
         padding-top: 300px;
-        // bottom: 10px;
-        // left: 190px;
-    
-        // position: absolute;
         & img {
             width: 47px;
             height: 65px;
-            opacity: 0.4;
         }
     }
     
     .rightAirBallon {
-        // bottom: 170px;
-        // right: 250px;
-        // position: absolute;
         width: 210px;
         padding-top: 240px;
-    
         & img {
             width: 90px;
             height: 120px;
-            opacity: 0.9;
         }
-        
     }
 }
 
