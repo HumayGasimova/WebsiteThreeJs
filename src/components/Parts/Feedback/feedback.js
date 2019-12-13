@@ -63,6 +63,7 @@ export const Feedback = (props) => {
 
     useEffect(() => {
         props.initTeamMembers(teamMembers);
+        return () => props.initTeamMembers([]);
     }, [])
 
     /**

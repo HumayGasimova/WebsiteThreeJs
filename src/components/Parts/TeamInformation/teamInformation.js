@@ -79,6 +79,7 @@ export const TeamInformation = (props) => {
 
     useEffect(() => {
         props.initTeamMembers(teamMembers);
+        return () => props.initTeamMembers([]);
     }, [])
 
     /**

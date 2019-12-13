@@ -15,6 +15,7 @@ import {
 */
 
 import Home from './components/Home/home';
+import Service1 from './components/Parts/Services/Service1/service1';
 
 /**
 * Styles
@@ -37,10 +38,31 @@ export class App extends Component {
       return(
          <div className="app">
             <Route 
+               exact
+               path="/service1"
+               component={ Service1 }
+            />
+            <Route 
                exact 
                path="/"
                component={ Home }
             />
+            
+            {/* <Route 
+               exact 
+               path="/"
+               component={ Home }
+            />
+            <Route 
+               exact 
+               path="/"
+               component={ Home }
+            />
+            <Route 
+               exact 
+               path="/"
+               component={ Home }
+            /> */}
          </div>
       );
    }

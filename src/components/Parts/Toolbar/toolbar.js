@@ -65,13 +65,16 @@ export const Toolbar = (props) => {
     * Methods
     */
 
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop;
+        setScrollTop(scrollHeight);
+        setToolBarInit(true);
+    }
+
     useEffect(()=>{
-        addEventListener('scroll', ()=> {
-            let scrollHeight = document.body.scrollTop;
-            setScrollTop(scrollHeight);
-            setToolBarInit(true);
-        })
-    },[])
+        addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [])
 
     /**
     * Markup

@@ -85,6 +85,7 @@ export const Gallery = (props) => {
 
     useEffect(()=>{
         props.initImages(images);
+        return () => props.initImages([]);
     },[])
    
     /**

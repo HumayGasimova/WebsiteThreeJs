@@ -108,6 +108,7 @@ export const Service = (props) => {
                         className="service-inner-part"
                         onMouseEnter={handleMouseEnter} 
                         onMouseLeave={handleMouseLeave} 
+                        onClick={props.onClick}
                     >
                         <div className="service-inner-part-header">{props.header}</div>
                         <div className="service-inner-part-text">{props.text}</div>
@@ -131,6 +132,7 @@ export const Service = (props) => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
     /**

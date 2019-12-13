@@ -5,7 +5,8 @@ export const serviceCards = [
         icon: "faLaptopCode",
         header: "Header 1",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false
+        show: false,
+        path: "service1"
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ export const serviceCards = [
         icon: "faChartLine",
         header: "Header 2",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false
+        show: false,
+        path: "service"
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ export const serviceCards = [
         icon: "faPaperPlane",
         header: "Header 3",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false
+        show: false,
+        path: "service"
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ export const serviceCards = [
         icon: "faUniversity",
         header: "Header 4",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false
+        show: false,
+        path: "service"
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ export const serviceCards = [
         icon: "faCameraRetro",
         header: "Header 5",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false
+        show: false,
+        path: "service"
     },
     {
         id: 6,
@@ -45,6 +50,7 @@ export const serviceCards = [
         icon: "faShoppingBag",
         header: "Header 6",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false
+        show: false,
+        path: "service"
     }
 ]

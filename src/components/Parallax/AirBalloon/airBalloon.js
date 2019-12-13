@@ -1,75 +1,69 @@
 /**
- * Libraries
- */
+* Libraries
+*/
 
-import React,{
-    Component
- } from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
  
- /**
-  * Components
-  */
+/**
+* Components
+*/
+
 import AirBalloonLogo  from '../../../images/5a1ccf951a6881.1519408315118375891082.png';
  
- /**
-  * Styles
-  */
+/**
+* Styles
+*/
+
 import './airBalloon.scss';
  
- /**
-  * App component definition and export
-  */
- export class AirBalloon extends Component {
- 
-    /**
-      * Constructor
-      */
- 
-     constructor(props) {
-       super(props);
-       this.state={
-           slower: 0,
-           faster: 0
-       }
-   }
-   componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll)
- }
+/**
+* App component definition and export
+*/
 
-    handleScroll = () => {
-        let scrollHeight = document.body.scrollTop
-         this.setState({
-             slower: scrollHeight/2,
-             slower2x: scrollHeight/2
-         })
+export const AirBalloon = (props) => {
+
+   const [slower, setSlower] = useState(0);
+
+    /**
+    * Methods
+    */
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop;
+        setSlower(scrollHeight/2);
     }
-    renderImage = () => {
-        if(this.props.left){
-           return(
-                <img 
-                    src={AirBalloonLogo}
-                    style={{transform: `translate(0px, -${this.state.slower}px)`}}
-                />
-           )}else{
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll);
+    })
+
+ 
+    const renderImage = () => {
+        if(props.left){
             return(
                 <img 
-                src={AirBalloonLogo}
-                style={{transform: `translate(0px, ${this.state.slower2x}px)`}}
-            />
-           ) }
-        
+                    src={AirBalloonLogo}
+                    style={{transform: `translate(0px, -${slower}px)`}}
+                />
+            )
+        }else{
+            return(
+                <img 
+                    src={AirBalloonLogo}
+                    style={{transform: `translate(0px, ${slower}px)`}}
+                />
+            ) 
+        }
     }
-    
- 
 
-    render(){
-       return(
-            <div className={this.props.left ? "leftAirBallon": "rightAirBallon"}>
-                {this.renderImage()}
-            </div>
-       );
-    }
- }
- 
- export default AirBalloon;
+    return(
+        <div className={props.left ? "leftAirBallon": "rightAirBallon"}>
+            {renderImage()}
+        </div>
+    );
+}
+
+export default AirBalloon;
  

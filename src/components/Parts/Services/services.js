@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 
 import {
-    Route
+    withRouter
 } from 'react-router-dom';
 
 import {
@@ -60,6 +60,10 @@ export const Services = (props) => {
     * Methods
     */
 
+    const serviceOnClick = (page) => {
+        props.history.push(`/${page}`)
+    }
+
     const renderServicesCards = () => {
         return (
             <div className="services-cards">
@@ -72,6 +76,7 @@ export const Services = (props) => {
                             icon={el.icon}
                             cardId={`card${i+1}`}
                             show={el.show}
+                            onClick={() => serviceOnClick(el.path)}
                         />
                     )
                 })}
@@ -81,7 +86,8 @@ export const Services = (props) => {
 
     useEffect(()=>{
         props.initServices(serviceCards);
-    },[])
+        return () => props.initServices([]);
+    }, [])
 
     /**
     * Markup
@@ -109,5 +115,5 @@ export const Services = (props) => {
             initServices: bindActionCreators(Actions.initServices, dispatch),
         };
     }
-)(Services);
+)(withRouter(Services));
  
