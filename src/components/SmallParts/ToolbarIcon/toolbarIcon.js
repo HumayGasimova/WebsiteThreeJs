@@ -52,7 +52,7 @@ export const ToolbarIcon = (props) => {
 
     useEffect(()=>{
         setWidth(iconRef.current.clientWidth);
-    },[])
+    }, [])
 
     /**
     * Markup

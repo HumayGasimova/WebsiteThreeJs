@@ -37,7 +37,7 @@ export const AirBalloon = (props) => {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
-    })
+    }, [])
 
  
     const renderImage = () => {

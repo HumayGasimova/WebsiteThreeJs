@@ -76,7 +76,7 @@ export const PeoplesFeedback = (props) => {
     useEffect(()=>{
         props.startChangingFeedbacks(1, 0);
         return () => props.stopChangingFeedbacks()
-    },[])
+    }, [])
 
     const chooseFeedback = (i) => {
         console.log(i)
