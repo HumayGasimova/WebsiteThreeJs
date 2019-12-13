@@ -1,4 +1,6 @@
 .sidebar-open {
+    display:flex;
+    flex-direction: column;
     background: rgba(49, 22, 58, 1);
     padding-top: 40px;
     width: 270px;
@@ -8,6 +10,8 @@
     animation: appear 1s linear;
 }
 .sidebar-close {
+    display:flex;
+    flex-direction: column;
     background: rgba(49, 22, 58, 1);
     padding-top: 40px;
     width: 0;
