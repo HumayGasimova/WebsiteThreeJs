@@ -86,7 +86,7 @@ export const Services = (props) => {
 
     useEffect(()=>{
         props.initServices(serviceCards);
-        return () => props.initServices([]);
+        return () => props.initServices(serviceCards);
     }, [])
 
     /**
