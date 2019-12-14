@@ -42,8 +42,24 @@
     cursor: pointer;
 }
 
-.sidebar-unmount{
-    display: none;
+.sidebar-mounted {
+    display:flex;
+    flex-direction: column;
+    background: rgba(49, 22, 58, 1);
+    padding-top: 40px;
+    width: 270px;
+    height: 100%;
+    position: fixed;
+    z-index: 700;
+}
+
+.sidebar-mounted-icon {
+    margin: 27px;
+    color: rgb(250, 207, 239);
+    font-family: 'Handlee', cursive;
+    font-size: 37px;
+    text-align: center;
+    cursor: pointer;
 }
 
 @keyframes appear {
@@ -87,6 +103,9 @@
         display: none;
     }
     .sidebar-close {
+        display: none;
+    }
+    .sidebar-mounted {
         display: none;
     }
 }

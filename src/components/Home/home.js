@@ -53,31 +53,35 @@ import * as Selectors from '../../reducers/selectors';
 export const Home = (props) => {
 
     const [closeOnResize, setCloseOnResize] = useState(false);
+    const [openOnResize, setOpenOnResize] = useState(false);
 
     /**
     * Methods
     */
 
     const handleSidebarOnResize = () => {
+       
         if(!props.menuButtonIsPressed){
             setCloseOnResize(true);
+        }else{
+            setOpenOnResize(true);
         }
-        console.log("dd")
+       
     }
 
     useEffect(() => {
         window.addEventListener('resize', handleSidebarOnResize);
 
         return () => window.removeEventListener('resize', handleSidebarOnResize);
-    }, [])
+    }, [props.menuButtonIsPressed])
 
     const renderSidebar = () => {
         if(props.menuButtonIsPressed){
             return(
                 <>
                     <Sidebar 
-                        className={"sidebar-open"} 
-                        classNameIcon={"sidebar-icon-open"}
+                        className={openOnResize ? "sidebar-mounted" : "sidebar-open"} 
+                        classNameIcon={openOnResize ? "sidebar-mounted-icon" : "sidebar-icon-open"}
                     /> 
                     <Backdrop 
                         show 
@@ -89,8 +93,8 @@ export const Home = (props) => {
             return(
                 <>
                     <Sidebar 
-                        className={closeOnResize ? "sidebar-unmount" : "sidebar-close"} 
-                        classNameIcon={closeOnResize ? "sidebar-unmount" : "sidebar-icon-close"}
+                        className={closeOnResize ? null : "sidebar-close"} 
+                        classNameIcon={closeOnResize ? null : "sidebar-icon-close"}
                     />
                 </>
             )
