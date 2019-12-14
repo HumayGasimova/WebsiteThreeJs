@@ -62,6 +62,14 @@
     cursor: pointer;
 }
 
+.sidebar-unmounted-close {
+    display: none;
+}
+
+.sidebar-unmounted-icon-close {
+    display: none;
+}
+
 @keyframes appear {
     from{
         width: 0;

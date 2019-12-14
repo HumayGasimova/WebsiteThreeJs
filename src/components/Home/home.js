@@ -93,8 +93,8 @@ export const Home = (props) => {
             return(
                 <>
                     <Sidebar 
-                        className={closeOnResize ? null : "sidebar-close"} 
-                        classNameIcon={closeOnResize ? null : "sidebar-icon-close"}
+                        className={closeOnResize ? "sidebar-unmounted-close" : "sidebar-close"} 
+                        classNameIcon={closeOnResize ? "sidebar-unmounted-icon-close" : "sidebar-icon-close"}
                     />
                 </>
             )
