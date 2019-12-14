@@ -42,6 +42,10 @@
     cursor: pointer;
 }
 
+.sidebar-unmount{
+    display: none;
+}
+
 @keyframes appear {
     from{
         width: 0;

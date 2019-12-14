@@ -2,7 +2,10 @@
 * Libraries
 */
 
-import React from 'react';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 
 import {
     Route
@@ -49,10 +52,29 @@ import * as Selectors from '../../reducers/selectors';
 
 export const Home = (props) => {
 
+    const [closeOnResize, setCloseOnResize] = useState(false);
+
+    /**
+    * Methods
+    */
+
+    const handleSidebarOnResize = () => {
+        if(!props.menuButtonIsPressed){
+            setCloseOnResize(true);
+        }
+        console.log("dd")
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleSidebarOnResize);
+
+        return () => window.removeEventListener('resize', handleSidebarOnResize);
+    }, [])
+
     const renderSidebar = () => {
         if(props.menuButtonIsPressed){
             return(
-                <div>
+                <>
                     <Sidebar 
                         className={"sidebar-open"} 
                         classNameIcon={"sidebar-icon-open"}
@@ -61,16 +83,16 @@ export const Home = (props) => {
                         show 
                         onClick={() => props.menuButtonIsToggled(false)}
                     />
-                </div>
+                </>
             )
         }else{
             return(
-                <div>
+                <>
                     <Sidebar 
-                        className={"sidebar-close"} 
-                        classNameIcon={"sidebar-icon-close"}
+                        className={closeOnResize ? "sidebar-unmount" : "sidebar-close"} 
+                        classNameIcon={closeOnResize ? "sidebar-unmount" : "sidebar-icon-close"}
                     />
-                </div>
+                </>
             )
         }
        
