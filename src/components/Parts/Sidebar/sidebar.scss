@@ -1,3 +1,26 @@
+.sidebar-open {
+    display:flex;
+    flex-direction: column;
+    background: rgba(49, 22, 58, 1);
+    padding-top: 40px;
+    width: 270px;
+    height: 100%;
+    position: fixed;
+    z-index: 700;
+    animation: appear 1s linear;
+}
+.sidebar-close {
+    display:flex;
+    flex-direction: column;
+    background: rgba(49, 22, 58, 1);
+    padding-top: 40px;
+    width: 0;
+    height: 100%;
+    position: fixed;
+    z-index: 700;
+    animation: disappear 1s linear;
+}
+
 .sidebar-icon-open {
     margin: 27px;
     color: rgb(250, 207, 239);
@@ -30,14 +53,15 @@
     z-index: 700;
 }
 
-// .sidebar-mounted-icon {
-//     margin: 27px;
-//     color: rgb(250, 207, 239);
-//     font-family: 'Handlee', cursive;
-//     font-size: 37px;
-//     text-align: center;
-//     cursor: pointer;
-// }
+.sidebar-mounted-icon {
+    margin: 27px;
+    color: rgb(250, 207, 239);
+    font-family: 'Handlee', cursive;
+    font-size: 37px;
+    text-align: center;
+    cursor: pointer;
+}
+
 
 // .sidebar-unmounted-close {
 //     display: none;
@@ -47,23 +71,41 @@
 //     display: none;
 // }
 
-// @keyframes appearIcon {
-//     0%{
-//         opacity: 0;
-//     }
-//     60%{
-//         opacity: 0;
-//     }
-// }
+@keyframes appear {
+    from{
+        width: 0;
+    }
+    to {
+        width: 270px;
+    }
+}
 
-// @keyframes disappearIcon {
-//     0%{
-//         opacity: 1;
-//     }
-//     20%{
-//         opacity: 0;
-//     }
-// }
+@keyframes disappear {
+    from{
+        width: 270px;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes appearIcon {
+    0%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 0;
+    }
+}
+
+@keyframes disappearIcon {
+    0%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0;
+    }
+}
 
 @media only screen and (min-width: 1000px) {
     .sidebar-open {

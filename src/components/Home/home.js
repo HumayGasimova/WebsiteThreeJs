@@ -139,24 +139,9 @@ export const Home = (props) => {
     return(
         <div className="home">
             <Toolbar/>
-            <CSSTransition 
-                in={props.menuButtonIsPressed} 
-                timeout={1000}
-                // mountOnEnter
-                unmountOnExit
-                classNames={{
-                    enter: '',
-                    enterActive: 'home-sidebar-open',
-                    exit: '',
-                    exitActive: 'home-sidebar-close'
-                }}
-            > 
-                <Sidebar 
-                    className="sidebar-mounted"
-                    classNameIcon="sidebar-icon-open"
-                    menuButtonIsPressed={props.menuButtonIsPressed}
-                /> 
-            </CSSTransition>
+            <Sidebar 
+                menuButtonIsPressed={props.menuButtonIsPressed}
+            /> 
             {props.sidebarOnInit ? renderSidebar() : null}
             <Parallax/>
         </div>

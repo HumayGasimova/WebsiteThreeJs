@@ -44,26 +44,39 @@ export const Sidebar = (props) => {
     */
 
     return(
-        <div className={props.className}>
-            {/* <CSSTransition 
-                in={props.menuButtonIsPressed} 
-                timeout={1000}
-                mountOnEnter
-                unmountOnExit
-                classNames={{
-                    enter: '',
-                    enterActive: 'sidebar-icon-open',
-                    exit: '',
-                    exitActive: 'sidebar-icon-close'
-                }}
-            >  */}
-                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#home"}>Home</a>
-                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#services"}>Services</a>
-                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#about"}>About</a>
-                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#gallery"}>Gallery</a>
-                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#contact"}>Contact</a>
-            {/* </CSSTransition> */}
-        </div>
+        <CSSTransition 
+            in={props.menuButtonIsPressed} 
+            timeout={1000}
+            // mountOnEnter
+            unmountOnExit
+            classNames={{
+                enter: '',
+                enterActive: 'sidebar-open',
+                exit: '',
+                exitActive: 'sidebar-close'
+            }}
+        > 
+            <div className="sidebar-mounted">
+                {/* <CSSTransition 
+                    in={props.menuButtonIsPressed} 
+                    timeout={1000}
+                    mountOnEnter
+                    unmountOnExit
+                    classNames={{
+                        enter: '',
+                        enterActive: 'sidebar-icon-open',
+                        exit: '',
+                        exitActive: 'sidebar-icon-close'
+                    }}
+                >  */}
+                    <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"}>Home</a>
+                    <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#services"}>Services</a>
+                    <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#about"}>About</a>
+                    <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#gallery"}>Gallery</a>
+                    <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#contact"}>Contact</a>
+                {/* </CSSTransition> */}
+            </div>
+        </CSSTransition>
     );
 }
  export default connect(
