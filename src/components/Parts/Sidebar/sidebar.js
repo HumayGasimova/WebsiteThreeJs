@@ -69,7 +69,7 @@ export const Sidebar = (props) => {
                         exitActive: 'sidebar-icon-close'
                     }}
                 >  */}
-                    <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"}>Home</a>
+                    <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#home"}>Home</a>
                     <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#services"}>Services</a>
                     <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#about"}>About</a>
                     <a className={props.menuButtonIsPressed ? "sidebar-icon-open" : "sidebar-icon-close"} href={"#gallery"}>Gallery</a>
