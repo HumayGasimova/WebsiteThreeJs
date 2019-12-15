@@ -16,6 +16,11 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    CSSTransition 
+} from 'react-transition-group';
+
+
 /**
 * Components
 */
@@ -40,11 +45,24 @@ export const Sidebar = (props) => {
 
     return(
         <div className={props.className}>
-            <a className={props.classNameIcon} href={"#home"}>Home</a>
-            <a className={props.classNameIcon} href={"#services"}>Services</a>
-            <a className={props.classNameIcon} href={"#about"}>About</a>
-            <a className={props.classNameIcon} href={"#gallery"}>Gallery</a>
-            <a className={props.classNameIcon} href={"#contact"}>Contact</a>
+            {/* <CSSTransition 
+                in={props.menuButtonIsPressed} 
+                timeout={1000}
+                mountOnEnter
+                unmountOnExit
+                classNames={{
+                    enter: '',
+                    enterActive: 'sidebar-icon-open',
+                    exit: '',
+                    exitActive: 'sidebar-icon-close'
+                }}
+            >  */}
+                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#home"}>Home</a>
+                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#services"}>Services</a>
+                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#about"}>About</a>
+                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#gallery"}>Gallery</a>
+                <a className={props.menuButtonIsPressed ? props.classNameIcon : "sidebar-icon-close"} href={"#contact"}>Contact</a>
+            {/* </CSSTransition> */}
         </div>
     );
 }

@@ -19,6 +19,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    CSSTransition ,
+} from 'react-transition-group';
+
 /**
 * Components
 */
@@ -52,55 +56,81 @@ import * as Selectors from '../../reducers/selectors';
 
 export const Home = (props) => {
 
-    const [closeOnResize, setCloseOnResize] = useState(false);
-    const [openOnResize, setOpenOnResize] = useState(false);
+    // const [closeOnResize, setCloseOnResize] = useState(false);
+    // const [openOnResize, setOpenOnResize] = useState(false);
 
     /**
     * Methods
     */
 
-    const handleSidebarOnResize = () => {
+    // const handleSidebarOnResize = (e) => {
+    //    console.log(e.target.innerWidth)
+    //     if(!props.menuButtonIsPressed && 950 <= e.target.innerWidth <= 1000){
+    //         setCloseOnResize(true);
+    //     }
+    //     if(!props.menuButtonIsPressed && e.target.innerWidth > 950){
+    //         setCloseOnResize(false);
+    //     }
+    //     if(props.menuButtonIsPressed && 950 <= e.target.innerWidth <= 1000){
+    //         setOpenOnResize(true);
+    //     }
+    //     if(props.menuButtonIsPressed && e.target.innerWidth > 950){
+    //         setOpenOnResize(false);
+    //     }
        
-        if(!props.menuButtonIsPressed){
-            setCloseOnResize(true);
-        }else{
-            setOpenOnResize(true);
-        }
-       
-    }
+    // }
 
-    useEffect(() => {
-        window.addEventListener('resize', handleSidebarOnResize);
+    // useEffect(() => {
+    //     window.addEventListener('resize', () => handleSidebarOnResize(event));
 
-        return () => window.removeEventListener('resize', handleSidebarOnResize);
-    }, [props.menuButtonIsPressed])
+    //     return () => window.removeEventListener('resize', handleSidebarOnResize);
+    // }, [props.menuButtonIsPressed])
 
     const renderSidebar = () => {
         if(props.menuButtonIsPressed){
             return(
                 <>
-                    <Sidebar 
-                        className={openOnResize ? "sidebar-mounted" : "sidebar-open"} 
-                        classNameIcon={openOnResize ? "sidebar-mounted-icon" : "sidebar-icon-open"}
-                    /> 
                     <Backdrop 
                         show 
                         onClick={() => props.menuButtonIsToggled(false)}
                     />
                 </>
             )
-        }else{
-            return(
-                <>
-                    <Sidebar 
-                        className={closeOnResize ? "sidebar-unmounted-close" : "sidebar-close"} 
-                        classNameIcon={closeOnResize ? "sidebar-unmounted-icon-close" : "sidebar-icon-close"}
-                    />
-                </>
-            )
         }
        
     }
+
+
+    // const renderSidebar = () => {
+    //     if(props.menuButtonIsPressed){
+    //         return(
+    //             <>
+    //                 <Sidebar 
+    //                     className="sidebar-open"
+    //                     // classNameIcon="sidebar-icon-open"
+    //                     // className={openOnResize ? "sidebar-mounted" : "sidebar-open"} 
+    //                     // classNameIcon={openOnResize ? "sidebar-mounted-icon" : "sidebar-icon-open"}
+    //                 /> 
+    //                 <Backdrop 
+    //                     show 
+    //                     onClick={() => props.menuButtonIsToggled(false)}
+    //                 />
+    //             </>
+    //         )
+    //     }else{
+    //         return(
+    //             <>
+    //                 <Sidebar 
+    //                     className="sidebar-close"
+    //                     classNameIcon="sidebar-icon-close"
+    //                     // className={closeOnResize ? "sidebar-unmounted-close" : "sidebar-close"} 
+    //                     // classNameIcon={closeOnResize ? "sidebar-unmounted-icon-close" : "sidebar-icon-close"}
+    //                 />
+    //             </>
+    //         )
+    //     }
+   
+    // }
 
     /**
     * Markup
@@ -109,7 +139,25 @@ export const Home = (props) => {
     return(
         <div className="home">
             <Toolbar/>
-                {props.sidebarOnInit ? renderSidebar() : null}
+            <CSSTransition 
+                in={props.menuButtonIsPressed} 
+                timeout={1000}
+                // mountOnEnter
+                unmountOnExit
+                classNames={{
+                    enter: '',
+                    enterActive: 'home-sidebar-open',
+                    exit: '',
+                    exitActive: 'home-sidebar-close'
+                }}
+            > 
+                <Sidebar 
+                    className="sidebar-mounted"
+                    classNameIcon="sidebar-icon-open"
+                    menuButtonIsPressed={props.menuButtonIsPressed}
+                /> 
+            </CSSTransition>
+            {props.sidebarOnInit ? renderSidebar() : null}
             <Parallax/>
         </div>
     );
