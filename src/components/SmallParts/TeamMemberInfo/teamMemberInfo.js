@@ -55,12 +55,15 @@ import Img1 from '../../../images/Portrait_Placeholder.png';
 */
 
 import * as Actions from '../../../actions';
+import SocialMediaIcons from '../SocialMediaIcons/socialMediaIcons';
 
 /**
 * TeamMemberInfo component definition and export
 */
 
 export const TeamMemberInfo = (props) => {
+
+    const [isHovering, setIsHovering] = useState(false);
 
     /**
     * Methods
@@ -73,13 +76,36 @@ export const TeamMemberInfo = (props) => {
         }
     }
 
+    const handleMouseEnter = () => {
+        setIsHovering(true)
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering(false)
+    }
+
     /**
     * Markup
     */
 
     return(
         <div className="teamMemberInfo">
-            <div className="teamMemberInfo-image">
+            {isHovering ? 
+            <div  
+                onMouseLeave={handleMouseLeave} 
+                className="teamMemberInfo-members-info"
+            >
+               <SocialMediaIcons 
+                    size="2x" 
+                    color="rgb(136, 0, 101)"
+                    width="130px"
+               />
+            </div> 
+            : null}
+            <div 
+                className="teamMemberInfo-image" 
+                onMouseEnter={handleMouseEnter}                
+            >
                 <img src={loadImage()}/>
             </div>
             <div className="teamMemberInfo-fullName">{props.fullName}</div>
