@@ -62,7 +62,7 @@ export const ToolbarIcon = (props) => {
         <a className="toolbarIcon" href={`#${props.id}`}>
             <div className={props.scrollTop > 0 ? "toolbarIcon-element-scroll-down" : (props.scrollTop === 0 && props.toolBarInit ? "toolbarIcon-element-scroll-up" : "toolbarIcon-element")} ref={iconRef}>
                 {props.text}
-                <div className="toolbarIcon-line">
+                <div className={`toolbarIcon-line ${props.active ? "active" : null}`}>
                     <div 
                         className="toolbarIcon-line-left-part" 
                         style={{width: `${width/2 - 6}`}}

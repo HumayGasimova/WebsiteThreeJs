@@ -41,7 +41,7 @@ import './toolbar.scss';
 * Selectors
 */
 
-import * as Selectors from '../../../reducers/selectors'
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Hooks
@@ -89,30 +89,35 @@ export const Toolbar = (props) => {
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
                 id={Icon.HOME}
+                active={Icon.HOME === props.activatedIcon}
             />
             <ToolbarIcon 
                 text={"Services"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
                 id={Icon.SERVICES}
+                active={Icon.SERVICES === props.activatedIcon}
             />
             <ToolbarIcon 
                 text={"About"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
                 id={Icon.ABOUT}
+                active={Icon.ABOUT === props.activatedIcon}
             />
             <ToolbarIcon 
                 text={"Gallery"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
                 id={Icon.GALLERY}
+                active={Icon.GALLERY === props.activatedIcon}
             />
             <ToolbarIcon 
                 text={"Contact"}
                 scrollTop={scrollTop}
                 toolBarInit={toolBarInit}
                 id={Icon.CONTACT}
+                active={Icon.CONTACT === props.activatedIcon}
             />
             <div 
                 className="toolbar-min" 
@@ -129,6 +134,7 @@ export const Toolbar = (props) => {
     (state) => {
         return {
             menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            activatedIcon: Selectors.getActivatedIconState(state),
         };
     },
     (dispatch) => {

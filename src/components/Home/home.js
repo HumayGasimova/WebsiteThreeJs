@@ -76,28 +76,21 @@ export const Home = (props) => {
         let aboutElement = document.getElementById(Icon.ABOUT).offsetTop;
         let galleryElement = document.getElementById(Icon.GALLERY).offsetTop;
         let contactElement = document.getElementById(Icon.CONTACT).offsetTop;
-      if(scrollHeight <= homeElement + 10){
+      if(scrollHeight <= homeElement + 100){
         props.activateIcon(Icon.HOME);
       }
-      if(servicesElement -10 <= scrollHeight && scrollHeight <= servicesElement + 10){
+      if(servicesElement - 100 <= scrollHeight && scrollHeight <= servicesElement + 100){
         props.activateIcon(Icon.SERVICES);
-        console.log("servicesElement", scrollHeight)
-        console.log(servicesElement-10, servicesElement+10)
       }
-      if(aboutElement - 10 <= scrollHeight && scrollHeight <= aboutElement + 10){
+      if(aboutElement - 100 <= scrollHeight && scrollHeight <= aboutElement + 100){
         props.activateIcon(Icon.ABOUT);
-        console.log("aboutElement", scrollHeight)
-        console.log(aboutElement-10, aboutElement+10)
       }
-      if(galleryElement - 10 <= scrollHeight && scrollHeight <= galleryElement + 10){
+      if(galleryElement - 100 <= scrollHeight && scrollHeight <= galleryElement + 100){
         props.activateIcon(Icon.GALLERY);
-        console.log("galleryElement", scrollHeight, galleryElement)
       }
-      if(contactElement - 200 <= scrollHeight && scrollHeight <= contactElement + 10){
+      if(contactElement - 200 <= scrollHeight && scrollHeight <= contactElement + 100){
         props.activateIcon(Icon.CONTACT);
-        console.log("contactElement", scrollHeight, contactElement)
       }
-       
     }
 
     useEffect(() => {
