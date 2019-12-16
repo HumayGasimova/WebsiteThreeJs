@@ -53,6 +53,10 @@ import {
 
 import * as Icon from '../../../constants/iconNames';
 
+import {
+    toolabarItems
+} from '../../../constants/toolbarItems';
+
 /**
 * Toolbar component definition and export
 */
@@ -66,6 +70,23 @@ export const Toolbar = (props) => {
     /**
     * Methods
     */
+
+    const renderToolbarItems = () => {
+        return(
+            <>{toolabarItems.map((el) => {
+                return(
+                    <ToolbarIcon 
+                        key={el.id}
+                        text={el.text}
+                        scrollTop={scrollTop}
+                        toolBarInit={toolBarInit}
+                        id={el.itemId}
+                        active={el.itemId === props.activatedIcon}
+                    />
+                )
+            })}</>
+        )
+    }
 
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
@@ -84,41 +105,7 @@ export const Toolbar = (props) => {
 
     return(
         <div className={scrollTop > 0 && toolBarInit ? "toolbar-scroll-down" : (scrollTop === 0 && toolBarInit ? "toolbar-scroll-up" : "toolbar")} style={{width: `${size.width-95}px`}}>
-            <ToolbarIcon 
-                text={"Home"}
-                scrollTop={scrollTop}
-                toolBarInit={toolBarInit}
-                id={Icon.HOME}
-                active={Icon.HOME === props.activatedIcon}
-            />
-            <ToolbarIcon 
-                text={"Services"}
-                scrollTop={scrollTop}
-                toolBarInit={toolBarInit}
-                id={Icon.SERVICES}
-                active={Icon.SERVICES === props.activatedIcon}
-            />
-            <ToolbarIcon 
-                text={"About"}
-                scrollTop={scrollTop}
-                toolBarInit={toolBarInit}
-                id={Icon.ABOUT}
-                active={Icon.ABOUT === props.activatedIcon}
-            />
-            <ToolbarIcon 
-                text={"Gallery"}
-                scrollTop={scrollTop}
-                toolBarInit={toolBarInit}
-                id={Icon.GALLERY}
-                active={Icon.GALLERY === props.activatedIcon}
-            />
-            <ToolbarIcon 
-                text={"Contact"}
-                scrollTop={scrollTop}
-                toolBarInit={toolBarInit}
-                id={Icon.CONTACT}
-                active={Icon.CONTACT === props.activatedIcon}
-            />
+            {renderToolbarItems()}
             <div 
                 className="toolbar-min" 
                 onClick={() => props.toggleMenuButton()}

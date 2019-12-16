@@ -62,9 +62,6 @@ import * as Icon from '../../constants/iconNames';
 
 export const Home = (props) => {
 
-    // const [closeOnResize, setCloseOnResize] = useState(false);
-    // const [openOnResize, setOpenOnResize] = useState(false);
-
     /**
     * Methods
     */
@@ -96,8 +93,8 @@ export const Home = (props) => {
     useEffect(() => {
         window.addEventListener('scroll', () => handleSidebarOnScroll(event));
 
-        return () => window.removeEventListener('resize', handleSidebarOnResize);
-    }, [props.menuButtonIsPressed])
+        return () => window.removeEventListener('scroll', handleSidebarOnScroll);
+    }, [])
 
     const renderSidebar = () => {
         if(props.menuButtonIsPressed){
