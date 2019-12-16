@@ -45,13 +45,6 @@ import {
 
 import './socialMediaIcons.scss';
 
-
-/**
-* Images
-*/
-
-import Img1 from '../../../images/Portrait_Placeholder.png';
-
 /**
 * Actions
 */
@@ -63,27 +56,6 @@ import * as Actions from '../../../actions';
 */
 
 export const SocialMediaIcons = (props) => {
-
-    const [isHovering, setIsHovering] = useState(false);
-
-    /**
-    * Methods
-    */
-
-    const loadImage = () => {
-        switch(props.image){
-            case 'Name1':
-            return Img1;
-        }
-    }
-
-    const handleMouseEnter = () => {
-        setIsHovering(true)
-    }
-
-    const handleMouseLeave = () => {
-        setIsHovering(false)
-    }
 
     /**
     * Markup

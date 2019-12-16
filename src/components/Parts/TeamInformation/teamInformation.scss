@@ -1,11 +1,11 @@
 .teamInformation {
     font-family: 'Handlee', cursive;
     border: 2px solid rgb(136, 0, 101);
-    height: 795px;
+    height: 796px;
     .teamInformation-border1 {
         border: 2px solid rgb(136, 0, 101);
         margin: 3px;
-        height: 785px;
+        height: 786px;
         .teamInformation-border2 {
             border: 2px solid rgb(136, 0, 101);
             margin: 3px;
@@ -32,17 +32,19 @@
 
 @media only screen and (max-width: 1115px) {
     .teamInformation {
+        // height: 675;
         .teamInformation-border1 {
+            // height: 675;
             .teamInformation-border2 {
                 border: 2px solid rgb(136, 0, 101);
                 margin: 3px;
-                height: 775;
+                // height: 675;
                 .teamInformation-text {
                     font-size: 24px;
                 }
 
                 .teamInformation-members {
-                    height: 280px;
+                    height: 300px;
                 }
             }
         }
@@ -51,16 +53,16 @@
 
 @media only screen and (max-width: 1067px) {
     .teamInformation {
-        height: 1396px;
+        height: 1586px;
         .teamInformation-border1 {
-            height: 1386px;
+            height: 1576px;
             .teamInformation-border2 {
-                height: 1376;
+                height: 1566;
                 .teamInformation-text {
                     font-size: 20px;
                 }
                 .teamInformation-members {
-                    height: 980px;
+                    height: 1200px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -75,16 +77,16 @@
 
 @media only screen and (max-width: 782px) {
     .teamInformation {
-        height: 1396px;
+        height: 1586px;
         .teamInformation-border1 {
-            height: 1386px;
+            height: 1576px;
             .teamInformation-border2 {
-                height: 1376;
+                height: 1566;
                 .teamInformation-text {
                     font-size: 17px;
                 }
                 .teamInformation-members {
-                    height: 980px;
+                    height: 1240px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -99,17 +101,17 @@
 
 @media only screen and (max-width: 640px) {
     .teamInformation {
-        height: 1396px;
+        height: 1426px;
         .teamInformation-border1 {
-            height: 1386px;
+            height: 1416px;
             .teamInformation-border2 {
-                height: 1376;
+                height: 1406;
                 .teamInformation-text {
                     font-size: 17px;
                 }
                 .teamInformation-members {
                     margin-top: 30px;
-                    height: 980px;
+                    height: 1070px;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
