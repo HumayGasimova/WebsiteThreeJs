@@ -9,5 +9,6 @@ export {
     feedbackOnChange,
     dotOnChange,
     startChangingFeedbacks,
-    stopChangingFeedbacks
+    stopChangingFeedbacks,
+    activateIcon
 } from './parallaxWebsiteActions';

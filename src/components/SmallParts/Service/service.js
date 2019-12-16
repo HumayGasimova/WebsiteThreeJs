@@ -122,7 +122,7 @@ export const Service = (props) => {
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById(props.cardId);
-        console.log(scrollHeight, el.offsetTop - window.innerHeight/2)
+        // console.log(scrollHeight, el.offsetTop - window.innerHeight/2)
         if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 150 ){
             props.showCard(props.cardId);
         }else{

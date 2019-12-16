@@ -33,7 +33,8 @@ export const initialState = {
     {
         id: 3,
         chosen: false
-    }]
+    }],
+    activatedIcon: 'home'
 }
 
 const toggleMenuButton = (state, action) => {
@@ -159,6 +160,12 @@ const stopChangingFeedbacks = (state, action) => {
     });
 }
 
+const activateIcon = (state, action) => {
+    return updateObject(state, {
+        activatedIcon: action.id
+    });
+}
+
 
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
@@ -185,7 +192,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return startChangingFeedbacks(state, action); 
         case actionTypes.STOP_CHANGING_FEEDBACKS:
             return stopChangingFeedbacks(state, action); 
-            
+        case actionTypes.ACTIVATE_ICON:
+            return activateIcon(state, action); 
         default: 
             return state;
     }

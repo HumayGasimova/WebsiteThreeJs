@@ -51,7 +51,7 @@ export const Parallax = () => {
             </div>
          </div>
          <Services/>
-         <div className="parallax-backgroundBox2">
+         <div id={Icon.ABOUT} className="parallax-backgroundBox2">
             <TeamInformation/>
             <Unicorn left/>
             <Unicorn />

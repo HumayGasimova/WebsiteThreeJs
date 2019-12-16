@@ -74,3 +74,11 @@ export function stopChangingFeedbacks() {
         type: actionTypes.STOP_CHANGING_FEEDBACKS
     };
 };
+
+export function activateIcon(id) {
+    return { 
+        type: actionTypes.ACTIVATE_ICON,
+        id: id
+    };
+};
+

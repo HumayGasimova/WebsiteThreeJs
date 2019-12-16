@@ -79,7 +79,7 @@ export const PeoplesFeedback = (props) => {
     }, [])
 
     const chooseFeedback = (i) => {
-        console.log(i)
+        // console.log(i)
         props.stopChangingFeedbacks();
         props.startChangingFeedbacks(i + 1, i);
     }

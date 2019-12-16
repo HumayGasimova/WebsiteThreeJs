@@ -50,3 +50,10 @@ export const getDotsState = createSelector(
     [getDots],
     (x) => x
 );
+
+const getActivatedIcon = (state) => state.home.activatedIcon;
+
+export const getActivatedIconState = createSelector(
+    [getActivatedIcon],
+    (x) => x
+);

@@ -51,6 +51,12 @@ import * as Actions from '../../actions';
 import * as Selectors from '../../reducers/selectors';
 
 /**
+* Constants
+*/
+
+import * as Icon from '../../constants/iconNames';
+
+/**
 * Home component definition and export
 */
 
@@ -63,28 +69,42 @@ export const Home = (props) => {
     * Methods
     */
 
-    // const handleSidebarOnResize = (e) => {
-    //    console.log(e.target.innerWidth)
-    //     if(!props.menuButtonIsPressed && 950 <= e.target.innerWidth <= 1000){
-    //         setCloseOnResize(true);
-    //     }
-    //     if(!props.menuButtonIsPressed && e.target.innerWidth > 950){
-    //         setCloseOnResize(false);
-    //     }
-    //     if(props.menuButtonIsPressed && 950 <= e.target.innerWidth <= 1000){
-    //         setOpenOnResize(true);
-    //     }
-    //     if(props.menuButtonIsPressed && e.target.innerWidth > 950){
-    //         setOpenOnResize(false);
-    //     }
+    const handleSidebarOnScroll = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let homeElement = document.getElementById(Icon.HOME).offsetTop;
+        let servicesElement = document.getElementById(Icon.SERVICES).offsetTop;
+        let aboutElement = document.getElementById(Icon.ABOUT).offsetTop;
+        let galleryElement = document.getElementById(Icon.GALLERY).offsetTop;
+        let contactElement = document.getElementById(Icon.CONTACT).offsetTop;
+      if(scrollHeight <= homeElement + 10){
+        props.activateIcon(Icon.HOME);
+      }
+      if(servicesElement -10 <= scrollHeight && scrollHeight <= servicesElement + 10){
+        props.activateIcon(Icon.SERVICES);
+        console.log("servicesElement", scrollHeight)
+        console.log(servicesElement-10, servicesElement+10)
+      }
+      if(aboutElement - 10 <= scrollHeight && scrollHeight <= aboutElement + 10){
+        props.activateIcon(Icon.ABOUT);
+        console.log("aboutElement", scrollHeight)
+        console.log(aboutElement-10, aboutElement+10)
+      }
+      if(galleryElement - 10 <= scrollHeight && scrollHeight <= galleryElement + 10){
+        props.activateIcon(Icon.GALLERY);
+        console.log("galleryElement", scrollHeight, galleryElement)
+      }
+      if(contactElement - 200 <= scrollHeight && scrollHeight <= contactElement + 10){
+        props.activateIcon(Icon.CONTACT);
+        console.log("contactElement", scrollHeight, contactElement)
+      }
        
-    // }
+    }
 
-    // useEffect(() => {
-    //     window.addEventListener('resize', () => handleSidebarOnResize(event));
+    useEffect(() => {
+        window.addEventListener('scroll', () => handleSidebarOnScroll(event));
 
-    //     return () => window.removeEventListener('resize', handleSidebarOnResize);
-    // }, [props.menuButtonIsPressed])
+        return () => window.removeEventListener('resize', handleSidebarOnResize);
+    }, [props.menuButtonIsPressed])
 
     const renderSidebar = () => {
         if(props.menuButtonIsPressed){
@@ -157,6 +177,7 @@ export const Home = (props) => {
     (dispatch) => {
         return {
             menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch),
+            activateIcon: bindActionCreators(Actions.activateIcon, dispatch),
         };
     }
 )(Home);

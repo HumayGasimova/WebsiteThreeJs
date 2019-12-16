@@ -79,7 +79,7 @@ export const ToolbarIcon = (props) => {
  export default connect(
     (state) => {
         return {
-            // zoom: Selectors.getZoomState(state),
+            // activatedIcon: Selectors.getActivatedIcon(state),
         };
     },
     (dispatch) => {

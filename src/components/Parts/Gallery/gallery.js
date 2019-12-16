@@ -62,7 +62,7 @@ export const Gallery = (props) => {
     * Methods
     */
     const imageOnClick = () => {
-        console.log("fff")
+        // console.log("fff")
     }
     const renderImages = () => {
         return (

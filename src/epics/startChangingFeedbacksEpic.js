@@ -39,7 +39,7 @@ export const startChangingFeedbacksEpic = (action$, state$) =>
         mergeMap(action => {
             return interval(3000).pipe(
                 mergeMap(() => {
-                    console.log(state$.value.home.dots)
+                    // console.log(state$.value.home.dots)
                     return of(
                         Actions.feedbackOnChange(),
                         Actions.dotOnChange(),
