@@ -125,6 +125,7 @@ export const Image = (props) => {
         >
             <img src={loadImage()}/>
             <div 
+                onClick={() => imageOnClick(true)}
                 className={props.hover && showPhotoInfo ? "image-photoInfo-animation" : (!props.hover && showPhotoInfo ? "image-photoInfo" : "image-photoInfo-init")}
             >
                 <div className="image-photoInfo-animation-title">{props.title}<br/></div>
@@ -158,6 +159,7 @@ export const Image = (props) => {
         return {
             showCard: bindActionCreators(Actions.showCard, dispatch),
             imageHover: bindActionCreators(Actions.imageHover, dispatch),
+            imageOnClick: bindActionCreators(Actions.imageOnClick, dispatch),
         };
     }
 )(Image);

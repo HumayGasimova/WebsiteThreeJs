@@ -34,7 +34,8 @@ export const initialState = {
         id: 3,
         chosen: false
     }],
-    activatedIcon: 'home'
+    activatedIcon: 'home',
+    imageIsEnlarged: false
 }
 
 const toggleMenuButton = (state, action) => {
@@ -166,7 +167,11 @@ const activateIcon = (state, action) => {
     });
 }
 
-
+const imageOnClick = (state, action) => {
+    return updateObject(state, {
+        imageIsEnlarged: action.val
+    });
+}
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
@@ -194,6 +199,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return stopChangingFeedbacks(state, action); 
         case actionTypes.ACTIVATE_ICON:
             return activateIcon(state, action); 
+        case actionTypes.IMAGE_ON_CLICK:
+            return imageOnClick(state, action); 
         default: 
             return state;
     }

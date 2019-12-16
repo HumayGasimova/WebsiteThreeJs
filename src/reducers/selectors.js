@@ -57,3 +57,10 @@ export const getActivatedIconState = createSelector(
     [getActivatedIcon],
     (x) => x
 );
+
+const getImageIsEnlarged = (state) => state.home.imageIsEnlarged;
+
+export const getImageIsEnlargedState = createSelector(
+    [getImageIsEnlarged],
+    (x) => x
+);

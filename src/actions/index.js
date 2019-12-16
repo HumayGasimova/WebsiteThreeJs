@@ -10,5 +10,6 @@ export {
     dotOnChange,
     startChangingFeedbacks,
     stopChangingFeedbacks,
-    activateIcon
+    activateIcon,
+    imageOnClick
 } from './parallaxWebsiteActions';

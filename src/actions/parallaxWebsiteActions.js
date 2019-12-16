@@ -82,3 +82,11 @@ export function activateIcon(id) {
     };
 };
 
+export function imageOnClick(val) {
+    return { 
+        type: actionTypes.IMAGE_ON_CLICK,
+        val: val
+    };
+};
+
+
