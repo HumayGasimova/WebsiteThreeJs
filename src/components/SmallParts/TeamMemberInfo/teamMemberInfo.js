@@ -99,6 +99,10 @@ export const TeamMemberInfo = (props) => {
                     size="2x" 
                     color="rgb(136, 0, 101)"
                     width="130px"
+                    linkFacebook={props.linkFacebook}
+                    linkLinkedIn={props.linkLinkedIn}
+                    linkInstagram={props.linkInstagram}
+                    linkTwitter={props.linkTwitter}
                />
             </div> 
             : null}

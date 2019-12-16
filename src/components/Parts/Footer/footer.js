@@ -81,6 +81,10 @@ export const Footer = (props) => {
                 size="2x" 
                 color="rgb(250, 207, 239)"
                 width="150px"
+                linkFacebook={"http://www.facebook.com/"}
+                linkLinkedIn={"http://www.linkedin.com/"}
+                linkInstagram={"http://www.instagram.com/"}
+                linkTwitter={"http://www.twitter.com/"}
             />
           <div className="footer-copyrights">Crypto347 © 2019. Designed by Humay Gasimova</div>
         </div>

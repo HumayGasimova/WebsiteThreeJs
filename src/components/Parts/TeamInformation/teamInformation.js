@@ -72,6 +72,10 @@ export const TeamInformation = (props) => {
                             image={el.image}
                             fullName={el.fullName}
                             position={el.position}
+                            linkFacebook={el.facebook}
+                            linkLinkedIn={el.linkedIn}
+                            linkInstagram={el.instagram}
+                            linkTwitter={el.twitter}
                         />
                     )
                 })}

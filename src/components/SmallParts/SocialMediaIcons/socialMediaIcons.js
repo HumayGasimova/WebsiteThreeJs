@@ -58,15 +58,56 @@ import * as Actions from '../../../actions';
 export const SocialMediaIcons = (props) => {
 
     /**
+    * Methods
+    */
+
+    const iconOnClick = (socialMedia, link) => {
+        switch(socialMedia){
+            case 'facebook':
+                return window.location = link;
+            case 'linkedIn':
+                return window.location = link;
+            case 'instagram':
+                return window.location = link;
+            case 'twitter':
+                return window.location = link;
+        }
+    }
+
+    /**
     * Markup
     */
 
     return(
         <div className="socialMediaIcons" style={{width: `${props.width}`}}>
-            <FontAwesomeIcon icon={faFacebookF} size={props.size} color={props.color} className="icon-social-media-facebook"/>
-            <FontAwesomeIcon icon={faLinkedinIn} size={props.size} color={props.color} className="icon-social-media-linkedIn"/>
-            <FontAwesomeIcon icon={faInstagram} size={props.size} color={props.color} className="icon-social-media-instagram"/>
-            <FontAwesomeIcon icon={faTwitter} size={props.size} color={props.color} className="icon-social-media-twitter"/>
+            <FontAwesomeIcon 
+                icon={faFacebookF} 
+                size={props.size} 
+                color={props.color} 
+                className="icon-social-media-facebook"
+                onClick={() => iconOnClick("facebook", props.linkFacebook)}
+            />
+            <FontAwesomeIcon 
+                icon={faLinkedinIn} 
+                size={props.size} 
+                color={props.color} 
+                className="icon-social-media-linkedIn"
+                onClick={() => iconOnClick("linkedIn", props.linkLinkedIn)}
+            />
+            <FontAwesomeIcon 
+                icon={faInstagram} 
+                size={props.size} 
+                color={props.color} 
+                className="icon-social-media-instagram"
+                onClick={() => iconOnClick("instagram", props.linkInstagram)}
+            />
+            <FontAwesomeIcon 
+                icon={faTwitter} 
+                size={props.size} 
+                color={props.color} 
+                className="icon-social-media-twitter"
+                onClick={() => iconOnClick("twitter", props.linkTwitter)}
+            />
         </div>
     );
 }
