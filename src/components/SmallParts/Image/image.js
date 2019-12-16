@@ -66,6 +66,13 @@ import {
 */
 
 import * as Actions from '../../../actions';
+import Magnifier from '../Magnifier/magnifier';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Image component definition and export
@@ -117,42 +124,45 @@ export const Image = (props) => {
     */
 
     return(
-        <div 
-            className="image"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={props.onClick}
-        >
-            <img src={loadImage()}/>
+        <>
             <div 
-                onClick={() => imageOnClick(true)}
-                className={props.hover && showPhotoInfo ? "image-photoInfo-animation" : (!props.hover && showPhotoInfo ? "image-photoInfo" : "image-photoInfo-init")}
+                className="image"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={props.onClick}
             >
-                <div className="image-photoInfo-animation-title">{props.title}<br/></div>
-                <div className="image-photoInfo-animation-description">
-                    {props.description}<br/><br/>
+                <img src={loadImage()}/>
+                <div 
+                    onClick={() => props.imageOnClick(true)}
+                    className={props.hover && showPhotoInfo ? "image-photoInfo-animation" : (!props.hover && showPhotoInfo ? "image-photoInfo" : "image-photoInfo-init")}
+                >
+                    <div className="image-photoInfo-animation-title">{props.title}<br/></div>
+                    <div className="image-photoInfo-animation-description">
+                        {props.description}<br/><br/>
+                        <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
+                    </div>
+                </div> 
+
+                <div className="image-photoInfo-medScreen">
+                    <div className="image-photoInfo-medScreen-title">{props.title}</div>
+                    <div className="image-photoInfo-medScreen-description">{props.description}</div>
                     <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
                 </div>
-            </div> 
 
-            <div className="image-photoInfo-medScreen">
-                <div className="image-photoInfo-medScreen-title">{props.title}</div>
-                <div className="image-photoInfo-medScreen-description">{props.description}</div>
-                <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
+                <div className="image-photoInfo-small">
+                    <div className="image-photoInfo-small-title">{props.title}</div>
+                    <div className="image-photoInfo-small-description">{props.description}</div>
+                    <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
+                </div>
             </div>
-
-            <div className="image-photoInfo-small">
-                <div className="image-photoInfo-small-title">{props.title}</div>
-                <div className="image-photoInfo-small-description">{props.description}</div>
-                <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
-            </div>
-        </div>
+            {props.imageIsEnlarged ? <Magnifier/> : null}
+        </>
     );
 }
  export default connect(
     (state) => {
         return {
-            // zoom: Selectors.getZoomState(state),
+            imageIsEnlarged: Selectors.getImageIsEnlargedState(state),
         };
     },
     (dispatch) => {
