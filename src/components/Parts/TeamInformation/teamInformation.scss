@@ -124,3 +124,29 @@
         }
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .teamInformation {
+        height: 1626px;
+        .teamInformation-border1 {
+            height: 1616px;
+            .teamInformation-border2 {
+                height: 1606;
+                .teamInformation-text {
+                    font-size: 17px;
+                }
+                .teamInformation-members {
+                    margin-top: 30px;
+                    height: 1170px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                >h1 {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+}
