@@ -1,6 +1,20 @@
 .magnifier {
-    // width: 100%;
-    // background: rgba(0, 0, 0, 0.5);
-    // position: absolute;
-    // z-index: 200;
+    .magnifier-icon-x {
+        color: rgb(250, 207, 239);
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .magnifier-icon-arrow-left {
+        color: rgb(250, 207, 239);
+        position: absolute;
+        left: 20px;
+        top: 350px;
+    }
+    .magnifier-icon-arrow-right {
+        color: rgb(250, 207, 239);
+        position: absolute;
+        right: 20px;
+        top: 350px;
+    }
 }

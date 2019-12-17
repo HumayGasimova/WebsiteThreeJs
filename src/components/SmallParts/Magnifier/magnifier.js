@@ -18,6 +18,20 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+/**
+* Icons
+*/
+
+import { 
+    faTimes,
+    faArrowLeft,
+    faArrowRight
+} from '@fortawesome/free-solid-svg-icons';
+
 /**
 * Components
 */
@@ -58,6 +72,7 @@ import {
     teamMembers
 } from '../../../constants/teamMembers';
 
+
 /**
 * Magnifier component definition and export
 */
@@ -80,8 +95,26 @@ export const Magnifier = (props) => {
                 show 
                 className="backdrop-magnifier"
                 onClick={() => props.imageOnClick(false)}
-            />
-            
+            >
+                <FontAwesomeIcon 
+                    icon={faTimes} 
+                    size="3x"
+                    className="magnifier-icon-x"
+                    // onClick={() => iconOnClick("instagram", props.linkInstagram)}
+                />
+                <FontAwesomeIcon 
+                    icon={faArrowLeft} 
+                    size="3x"
+                    className="magnifier-icon-arrow-left"
+                    // onClick={() => iconOnClick("instagram", props.linkInstagram)}
+                />
+                <FontAwesomeIcon 
+                    icon={faArrowRight} 
+                    size="3x"
+                    className="magnifier-icon-arrow-right"
+                    // onClick={() => iconOnClick("instagram", props.linkInstagram)}
+                />
+           </Backdrop>
         </div>
     );
 }
