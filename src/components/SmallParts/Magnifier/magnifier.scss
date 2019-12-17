@@ -5,6 +5,9 @@
         right: 20px;
         top: 20px;
         cursor: pointer;
+        &:hover {
+            color: rgb(136, 0, 101);
+        }
     }
     .magnifier-icon-arrow-left {
         color: rgb(250, 207, 239);
