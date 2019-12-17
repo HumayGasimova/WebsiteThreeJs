@@ -177,6 +177,12 @@ const imageOnClick = (state, action) => {
         updatedDisableOnNext = false;
         updatedDisableOnPrevious = false;
     }
+    if(action.val && action.id === 1){
+        updatedDisableOnPrevious = true;
+    }
+    if(action.val && state.images.length === action.id){
+        updatedDisableOnNext = true;
+    }
     return updateObject(state, {
         imageIsEnlarged: action.val,
         imageId: action.id,
