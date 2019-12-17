@@ -72,3 +72,10 @@ export const getImageIdState = createSelector(
     (x) => x
 );
 
+const getDisableOnNext = (state) => state.home.disableOnNext;
+
+export const getDisableOnNextState = createSelector(
+    [getDisableOnNext],
+    (x) => x
+);
+

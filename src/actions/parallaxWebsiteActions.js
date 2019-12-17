@@ -90,4 +90,10 @@ export function imageOnClick(val, id) {
     };
 };
 
+export function nextImage(id) {
+    return { 
+        type: actionTypes.NEXT_IMAGE,
+        id: id
+    };
+};
 

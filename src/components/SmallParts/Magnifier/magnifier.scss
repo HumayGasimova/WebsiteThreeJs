@@ -4,18 +4,27 @@
         position: absolute;
         right: 20px;
         top: 20px;
+        cursor: pointer;
     }
     .magnifier-icon-arrow-left {
         color: rgb(250, 207, 239);
+        width: 60px;
+        height: 50px;
+        border: 2px solid red;
         position: absolute;
         left: 20px;
         top: 350px;
+        cursor: pointer;
+        text-align: center;
+        z-index: 800;
     }
+
+    // .magnifier-icon-arrow-left-diasabled {
+
+    // }
+    
     .magnifier-icon-arrow-right {
         color: rgb(250, 207, 239);
-        position: absolute;
-        right: 20px;
-        top: 350px;
     }
 }
 .magnifier-image {

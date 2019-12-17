@@ -37,6 +37,7 @@ import {
 */
 
 import Backdrop from '../../../library/Backdrop/backdrop';
+import Button from '../../../library/Button/button';
 
 /**
 * Styles
@@ -128,26 +129,36 @@ export const Magnifier = (props) => {
             <Backdrop 
                 show 
                 className="backdrop-magnifier"
-                onClick={() => props.imageOnClick(false)}
+                // onClick={() => props.imageOnClick(false)}
             >
                 <FontAwesomeIcon 
                     icon={faTimes} 
                     size="3x"
                     className="magnifier-icon-x"
-                    // onClick={() => iconOnClick("instagram", props.linkInstagram)}
+                    onClick={() => props.imageOnClick(false)}
                 />
-                <FontAwesomeIcon 
-                    icon={faArrowLeft} 
-                    size="3x"
-                    className="magnifier-icon-arrow-left"
-                    // onClick={() => iconOnClick("instagram", props.linkInstagram)}
-                />
-                <FontAwesomeIcon 
-                    icon={faArrowRight} 
-                    size="3x"
-                    className="magnifier-icon-arrow-right"
-                    // onClick={() => iconOnClick("instagram", props.linkInstagram)}
-                />
+                <Button
+                    // className={props.disableOnNext ? "magnifier-icon-arrow-left-diasabled": "magnifier-icon-arrow-left"}
+                    // onClick={() => props.nextImage(props.imageId)}
+                    // disabled={props.disableOnNext}
+                >
+                    <FontAwesomeIcon 
+                        icon={faArrowLeft} 
+                        size="3x"
+                    />
+                </Button>
+                <Button 
+                    className="magnifier-button-arrow-right"
+                    onClick={() => props.nextImage(props.imageId)}
+                    disabled={props.disableOnNext}
+                >
+                    <FontAwesomeIcon 
+                        icon={faArrowRight} 
+                        size="3x"
+                        className="magnifier-icon-arrow-right"
+                        // onClick={() => props.previousImage(props.imageId)}
+                    />
+                </Button>
                 <img className="magnifier-image" src={loadImage()}/>
            </Backdrop>
         </div>
@@ -158,14 +169,14 @@ export default connect(
     (state) => {
         return {
             imageId: Selectors.getImageIdState(state),
-            // dots: Selectors.getDotsState(state),
+            disableOnNext: Selectors.getDisableOnNextState(state),
         };
     },
     (dispatch) => {
         return {
             imageOnClick: bindActionCreators(Actions.imageOnClick, dispatch),
-            // feedbackOnChange: bindActionCreators(Actions.feedbackOnChange, dispatch),
-            // dotOnChange: bindActionCreators(Actions.dotOnChange, dispatch),
+            nextImage: bindActionCreators(Actions.nextImage, dispatch),
+            // previousImage: bindActionCreators(Actions.previousImage, dispatch),
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch),
         };
     }

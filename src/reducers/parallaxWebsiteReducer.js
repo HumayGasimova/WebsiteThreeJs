@@ -36,7 +36,8 @@ export const initialState = {
     }],
     activatedIcon: 'home',
     imageIsEnlarged: false,
-    imageId: 0
+    imageId: 0,
+    disableOnNext: false
 }
 
 const toggleMenuButton = (state, action) => {
@@ -175,6 +176,21 @@ const imageOnClick = (state, action) => {
     });
 }
 
+const nextImage = (state, action) => {
+    let updatedImageId = action.id + 1;
+    let updatedDisableOnNext;
+    if(state.images.length - 1=== action.id || action.id === 0){
+        updatedDisableOnNext = true;
+    }else{
+        updatedDisableOnNext = false;
+    }
+
+    return updateObject(state, {
+        imageId: updatedImageId,
+        disableOnNext: updatedDisableOnNext
+    });
+}
+
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -203,6 +219,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return activateIcon(state, action); 
         case actionTypes.IMAGE_ON_CLICK:
             return imageOnClick(state, action); 
+        case actionTypes.NEXT_IMAGE:
+            return nextImage(state, action); 
         default: 
             return state;
     }

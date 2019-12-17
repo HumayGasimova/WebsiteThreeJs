@@ -11,5 +11,6 @@ export {
     startChangingFeedbacks,
     stopChangingFeedbacks,
     activateIcon,
-    imageOnClick
+    imageOnClick,
+    nextImage
 } from './parallaxWebsiteActions';

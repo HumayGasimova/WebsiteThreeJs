@@ -60,6 +60,7 @@ class Button extends Component {
                     // style={{ width: `${this.props.width}`, height: `${this.props.height}`, borderRadius: `${this.props.borderRadius}`}}
                     >
                         {this.props.text}
+                        {this.props.children}
                 </button>
             </div>
         );

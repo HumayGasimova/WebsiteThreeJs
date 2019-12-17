@@ -46,6 +46,34 @@
     }
 }
 
+.magnifier-button-arrow-left {
+    width: 60px;
+    height: 55px;
+    border: 2px solid red;
+    position: absolute;
+    right: 20px;
+    top: 350px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 800;
+}
+
+.magnifier-button-arrow-right {
+    width: 60px;
+    height: 55px;
+    border: 2px solid red;
+    position: absolute;
+    right: 20px;
+    top: 350px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 800;
+    &:disabled{
+        color:rgb(150, 150, 150);
+        cursor: not-allowed;
+    }
+}
+
 @media only screen and (max-width: 900px){
     .sendMessage-outerDiv-submit {
         padding-top: 10px;
