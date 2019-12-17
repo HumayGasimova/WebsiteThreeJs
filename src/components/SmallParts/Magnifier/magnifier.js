@@ -76,7 +76,11 @@ export const Magnifier = (props) => {
 
     return(
         <div className="magnifier" style={{height: `${window.innerHeight}`}}>
-            <Backdrop show className="backdrop-magnifier"/>
+            <Backdrop 
+                show 
+                className="backdrop-magnifier"
+                onClick={() => props.imageOnClick(false)}
+            />
             
         </div>
     );
@@ -90,7 +94,7 @@ export const Magnifier = (props) => {
     },
     (dispatch) => {
         return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
+            imageOnClick: bindActionCreators(Actions.imageOnClick, dispatch),
             // feedbackOnChange: bindActionCreators(Actions.feedbackOnChange, dispatch),
             // dotOnChange: bindActionCreators(Actions.dotOnChange, dispatch),
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch),
