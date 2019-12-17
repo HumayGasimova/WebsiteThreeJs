@@ -255,6 +255,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return nextImage(state, action); 
         case actionTypes.PREVIOUS_IMAGE:
             return previousImage(state, action); 
+        case actionTypes.SUBMIT_MESSAGE:
+            return state; 
         default: 
             return state;
     }

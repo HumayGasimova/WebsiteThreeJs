@@ -13,3 +13,5 @@ export const ACTIVATE_ICON = 'ACTIVATE_ICON';
 export const IMAGE_ON_CLICK = 'IMAGE_ON_CLICK';
 export const NEXT_IMAGE = 'NEXT_IMAGE';
 export const PREVIOUS_IMAGE = 'PREVIOUS_IMAGE';
+export const SUBMIT_MESSAGE = 'SUBMIT_MESSAGE';
+

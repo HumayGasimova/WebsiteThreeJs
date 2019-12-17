@@ -13,5 +13,6 @@ export {
     activateIcon,
     imageOnClick,
     nextImage,
-    previousImage
+    previousImage,
+    submitMessage
 } from './parallaxWebsiteActions';

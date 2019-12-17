@@ -104,3 +104,13 @@ export function previousImage(id) {
     };
 };
 
+export function submitMessage(name, email, contact, company, message) {
+    return { 
+        type: actionTypes.SUBMIT_MESSAGE,
+        name: name,
+        email: email,
+        contact: contact,
+        company: company,
+        message: message
+   };
+};

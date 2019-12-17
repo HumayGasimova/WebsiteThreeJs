@@ -3,7 +3,7 @@
 */
 
 import React, {
-    useEffect
+    useState
 } from 'react';
 
 import {
@@ -55,11 +55,30 @@ import {
 */
 
 export const SendMessage = (props) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [contact, setContact] = useState('');
+    const [company, setCompany] = useState('');
+    const [message, setMessage] = useState('');
 
     /**
     * Methods
     */
-    
+
+    const handleOnInputChange = (e, field) => {
+        switch(field){
+            case 'name':
+                return setName(e.target.value);
+            case 'email':
+                return setEmail(e.target.value);
+            case 'contact':
+                return setContact(e.target.value);
+            case 'company':
+                return setCompany(e.target.value);
+            case 'message':
+                return setMessage(e.target.value);
+        }
+    }
    
     /**
     * Markup
@@ -68,15 +87,16 @@ export const SendMessage = (props) => {
     return(
         <div className="sendMessage">
             <div className="sendMessage-wrapper">
-                <input placeholder="Full Name"/>
-                <input placeholder="Email"/>
-                <input placeholder="Contact"/>
-                <input placeholder="Company"/>
+                <input placeholder="Full Name" onChange={() => handleOnInputChange(event, "name")}/>
+                <input placeholder="Email" onChange={() => handleOnInputChange(event, "email")}/>
+                <input placeholder="Contact" onChange={() => handleOnInputChange(event, "contact")}/>
+                <input placeholder="Company" onChange={() => handleOnInputChange(event, "company")}/>
             </div>
-            <textarea placeholder="Your Message" rows="2"></textarea>
+            <textarea placeholder="Your Message" rows="2" onChange={() => handleOnInputChange(event, "message")}></textarea>
             <Button 
                 className={"sendMessage-submit"}
                 outerDivClassName={"sendMessage-outerDiv-submit"}
+                onClick={() => props.submitMessage(name, email, contact, company, message)}
                 text={"Submit"}
             />
         </div>
@@ -91,6 +111,7 @@ export const SendMessage = (props) => {
     (dispatch) => {
         return {
             initImages: bindActionCreators(Actions.initImages, dispatch),
+            submitMessage: bindActionCreators(Actions.submitMessage, dispatch),
         };
     }
 )(SendMessage);
