@@ -121,7 +121,7 @@ export const Magnifier = (props) => {
             <Backdrop 
                 show 
                 className="backdrop-magnifier"
-                onClick={() => props.imageOnClick(false)}
+                // onClick={() => props.imageOnClick(false)}
             >
                 <FontAwesomeIcon 
                     icon={faTimes} 
