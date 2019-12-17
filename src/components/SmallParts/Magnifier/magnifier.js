@@ -58,14 +58,6 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Hooks
-*/
-
-import {
-    useInterval
-} from '../../../Hooks/useInterval';
-
-/**
 * Constants
 */
 
@@ -129,7 +121,7 @@ export const Magnifier = (props) => {
             <Backdrop 
                 show 
                 className="backdrop-magnifier"
-                // onClick={() => props.imageOnClick(false)}
+                onClick={() => props.imageOnClick(false)}
             >
                 <FontAwesomeIcon 
                     icon={faTimes} 
@@ -137,6 +129,7 @@ export const Magnifier = (props) => {
                     className="magnifier-icon-x"
                     onClick={() => props.imageOnClick(false)}
                 />
+
                 <Button
                     className="magnifier-button-arrow-left"
                     onClick={() => props.previousImage(props.imageId)}
@@ -148,6 +141,7 @@ export const Magnifier = (props) => {
                         color={props.disableOnPrevious ? "rgb(136, 0, 101)" : "rgb(250, 207, 239)"}
                     />
                 </Button>
+
                 <Button 
                     className="magnifier-button-arrow-right"
                     onClick={() => props.nextImage(props.imageId)}
@@ -159,7 +153,9 @@ export const Magnifier = (props) => {
                         color={props.disableOnNext ? "rgb(136, 0, 101)" : "rgb(250, 207, 239)"}
                     />
                 </Button>
-                <img className="magnifier-image" src={loadImage()}/>
+                <div className="magnifier-image">
+                    <img  src={loadImage()}/>
+                </div>
            </Backdrop>
         </div>
     );
