@@ -98,23 +98,23 @@ export const Magnifier = (props) => {
 
     const loadImage = () => {
         switch(props.imageId) {
-            case 0:
-                return Pic1;
             case 1:
-                return Pic2;
+                return Pic1;
             case 2:
-                return Pic3;
+                return Pic2;
             case 3:
-                return Pic4;
+                return Pic3;
             case 4:
-                return Pic5;
+                return Pic4;
             case 5:
-                return Pic6;
+                return Pic5;
             case 6:
-                return Pic7;
+                return Pic6;
             case 7:
-                return Pic8;
+                return Pic7;
             case 8:
+                return Pic8;
+            case 9:
                 return Pic9;
         }
     }
