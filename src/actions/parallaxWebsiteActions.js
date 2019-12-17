@@ -97,3 +97,10 @@ export function nextImage(id) {
     };
 };
 
+export function previousImage(id) {
+    return { 
+        type: actionTypes.PREVIOUS_IMAGE,
+        id: id
+    };
+};
+

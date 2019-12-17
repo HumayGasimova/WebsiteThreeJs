@@ -79,3 +79,9 @@ export const getDisableOnNextState = createSelector(
     (x) => x
 );
 
+const getDisableOnPrevious = (state) => state.home.disableOnPrevious;
+
+export const getDisableOnPreviousState = createSelector(
+    [getDisableOnPrevious],
+    (x) => x
+);

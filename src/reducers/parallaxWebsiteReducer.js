@@ -37,7 +37,8 @@ export const initialState = {
     activatedIcon: 'home',
     imageIsEnlarged: false,
     imageId: 0,
-    disableOnNext: false
+    disableOnNext: false,
+    disableOnPrevious: false
 }
 
 const toggleMenuButton = (state, action) => {
@@ -170,16 +171,24 @@ const activateIcon = (state, action) => {
 }
 
 const imageOnClick = (state, action) => {
+    let updatedDisableOnNext;
+    let updatedDisableOnPrevious;
+    if(!action.val){
+        updatedDisableOnNext = false;
+        updatedDisableOnPrevious = false;
+    }
     return updateObject(state, {
         imageIsEnlarged: action.val,
-        imageId: action.id
+        imageId: action.id,
+        disableOnNext: updatedDisableOnNext,
+        disableOnPrevious: updatedDisableOnPrevious
     });
 }
 
 const nextImage = (state, action) => {
     let updatedImageId = action.id + 1;
     let updatedDisableOnNext;
-    if(state.images.length - 1=== action.id || action.id === 0){
+    if(state.images.length - 1 === action.id){
         updatedDisableOnNext = true;
     }else{
         updatedDisableOnNext = false;
@@ -187,7 +196,24 @@ const nextImage = (state, action) => {
 
     return updateObject(state, {
         imageId: updatedImageId,
-        disableOnNext: updatedDisableOnNext
+        disableOnNext: updatedDisableOnNext,
+        disableOnPrevious: false
+    });
+}
+
+const previousImage = (state, action) => {
+    let updatedImageId = action.id - 1;
+    let updatedDisableOnPrevious;
+    if(action.id - 1 === 0){
+        updatedDisableOnPrevious = true;
+    }else{
+        updatedDisableOnPrevious = false;
+    }
+
+    return updateObject(state, {
+        imageId: updatedImageId,
+        disableOnNext: false,
+        disableOnPrevious: updatedDisableOnPrevious
     });
 }
 
@@ -221,6 +247,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return imageOnClick(state, action); 
         case actionTypes.NEXT_IMAGE:
             return nextImage(state, action); 
+        case actionTypes.PREVIOUS_IMAGE:
+            return previousImage(state, action); 
         default: 
             return state;
     }

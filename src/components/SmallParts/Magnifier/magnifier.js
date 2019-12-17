@@ -138,13 +138,14 @@ export const Magnifier = (props) => {
                     onClick={() => props.imageOnClick(false)}
                 />
                 <Button
-                    // className={props.disableOnNext ? "magnifier-icon-arrow-left-diasabled": "magnifier-icon-arrow-left"}
-                    // onClick={() => props.nextImage(props.imageId)}
-                    // disabled={props.disableOnNext}
+                    className="magnifier-button-arrow-left"
+                    onClick={() => props.previousImage(props.imageId)}
+                    disabled={props.disableOnPrevious}
                 >
                     <FontAwesomeIcon 
                         icon={faArrowLeft} 
                         size="3x"
+                        color={props.disableOnPrevious ? "rgb(136, 0, 101)" : "rgb(250, 207, 239)"}
                     />
                 </Button>
                 <Button 
@@ -155,8 +156,7 @@ export const Magnifier = (props) => {
                     <FontAwesomeIcon 
                         icon={faArrowRight} 
                         size="3x"
-                        className="magnifier-icon-arrow-right"
-                        // onClick={() => props.previousImage(props.imageId)}
+                        color={props.disableOnNext ? "rgb(136, 0, 101)" : "rgb(250, 207, 239)"}
                     />
                 </Button>
                 <img className="magnifier-image" src={loadImage()}/>
@@ -170,13 +170,14 @@ export default connect(
         return {
             imageId: Selectors.getImageIdState(state),
             disableOnNext: Selectors.getDisableOnNextState(state),
+            disableOnPrevious: Selectors.getDisableOnPreviousState(state),
         };
     },
     (dispatch) => {
         return {
             imageOnClick: bindActionCreators(Actions.imageOnClick, dispatch),
             nextImage: bindActionCreators(Actions.nextImage, dispatch),
-            // previousImage: bindActionCreators(Actions.previousImage, dispatch),
+            previousImage: bindActionCreators(Actions.previousImage, dispatch),
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch),
         };
     }

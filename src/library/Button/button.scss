@@ -49,19 +49,24 @@
 .magnifier-button-arrow-left {
     width: 60px;
     height: 55px;
-    border: 2px solid red;
+    background: none;
+    border: none;
     position: absolute;
-    right: 20px;
+    left: 20px;
     top: 350px;
     cursor: pointer;
     text-align: center;
     z-index: 800;
+    &:disabled{
+        cursor: not-allowed;
+    }
 }
 
 .magnifier-button-arrow-right {
     width: 60px;
     height: 55px;
-    border: 2px solid red;
+    background: none;
+    border: none;
     position: absolute;
     right: 20px;
     top: 350px;
@@ -69,7 +74,6 @@
     text-align: center;
     z-index: 800;
     &:disabled{
-        color:rgb(150, 150, 150);
         cursor: not-allowed;
     }
 }
