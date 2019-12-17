@@ -66,7 +66,6 @@ import {
 */
 
 import * as Actions from '../../../actions';
-import Magnifier from '../Magnifier/magnifier';
 
 /**
 * Selectors
@@ -155,14 +154,13 @@ export const Image = (props) => {
                     <FontAwesomeIcon icon={faSearchPlus} size="lg" className="icon" color="rgb(250, 223, 243)"/>
                 </div>
             </div>
-            {props.imageIsEnlarged ? <Magnifier/> : null}
         </>
     );
 }
  export default connect(
     (state) => {
         return {
-            imageIsEnlarged: Selectors.getImageIsEnlargedState(state),
+            // imageIsEnlarged: Selectors.getImageIsEnlargedState(state),
         };
     },
     (dispatch) => {

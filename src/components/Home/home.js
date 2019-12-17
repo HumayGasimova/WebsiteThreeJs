@@ -103,6 +103,7 @@ export const Home = (props) => {
                     <Backdrop 
                         show 
                         onClick={() => props.menuButtonIsToggled(false)}
+                        className="backdrop-home"
                     />
                 </>
             )

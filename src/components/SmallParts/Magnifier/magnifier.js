@@ -22,6 +22,7 @@ import {
 * Components
 */
 
+import Backdrop from '../../../library/Backdrop/backdrop';
 
 /**
 * Styles
@@ -74,7 +75,8 @@ export const Magnifier = (props) => {
     */
 
     return(
-        <div className="magnifier">
+        <div className="magnifier" style={{height: `${window.innerHeight}`}}>
+            <Backdrop show className="backdrop-magnifier"/>
             
         </div>
     );

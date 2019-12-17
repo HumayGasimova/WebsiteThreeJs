@@ -23,6 +23,7 @@ import {
 */
 
 import Image from '../../SmallParts/Image/image';
+import Magnifier from '../../SmallParts/Magnifier/magnifier';
 
 /**
 * Styles
@@ -102,6 +103,7 @@ export const Gallery = (props) => {
             </div>
                 {renderImages()}
             <br/>
+            {props.imageIsEnlarged ? <Magnifier show={props.imageIsEnlarged}/> : null}
         </div>
     );
 }
@@ -109,6 +111,7 @@ export const Gallery = (props) => {
     (state) => {
         return {
             images: Selectors.getImagesState(state),
+            imageIsEnlarged: Selectors.getImageIsEnlargedState(state),
         };
     },
     (dispatch) => {

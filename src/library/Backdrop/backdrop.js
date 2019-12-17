@@ -17,7 +17,7 @@ import './backdrop.scss';
  */
 
 const Backdrop = (props) => (
-    props.show ? <div onClick={props.onClick} className = "backdrop"/> : null
+    props.show ? <div onClick={props.onClick} className = {props.className}/> : null
 );
 
 export default Backdrop;
