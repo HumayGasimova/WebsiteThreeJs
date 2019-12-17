@@ -64,3 +64,11 @@ export const getImageIsEnlargedState = createSelector(
     [getImageIsEnlarged],
     (x) => x
 );
+
+const getImageId = (state) => state.home.imageId;
+
+export const getImageIdState = createSelector(
+    [getImageId],
+    (x) => x
+);
+

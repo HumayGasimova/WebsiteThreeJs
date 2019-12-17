@@ -82,10 +82,11 @@ export function activateIcon(id) {
     };
 };
 
-export function imageOnClick(val) {
+export function imageOnClick(val, id) {
     return { 
         type: actionTypes.IMAGE_ON_CLICK,
-        val: val
+        val: val,
+        id: id
     };
 };
 

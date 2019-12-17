@@ -132,7 +132,7 @@ export const Image = (props) => {
             >
                 <img src={loadImage()}/>
                 <div 
-                    onClick={() => props.imageOnClick(true)}
+                    onClick={() => props.imageOnClick(true, props.id)}
                     className={props.hover && showPhotoInfo ? "image-photoInfo-animation" : (!props.hover && showPhotoInfo ? "image-photoInfo" : "image-photoInfo-init")}
                 >
                     <div className="image-photoInfo-animation-title">{props.title}<br/></div>

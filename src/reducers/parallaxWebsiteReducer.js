@@ -35,7 +35,8 @@ export const initialState = {
         chosen: false
     }],
     activatedIcon: 'home',
-    imageIsEnlarged: false
+    imageIsEnlarged: false,
+    imageId: 0
 }
 
 const toggleMenuButton = (state, action) => {
@@ -169,7 +170,8 @@ const activateIcon = (state, action) => {
 
 const imageOnClick = (state, action) => {
     return updateObject(state, {
-        imageIsEnlarged: action.val
+        imageIsEnlarged: action.val,
+        imageId: action.id
     });
 }
 

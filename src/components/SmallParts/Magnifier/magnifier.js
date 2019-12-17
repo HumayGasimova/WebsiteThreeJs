@@ -54,7 +54,7 @@ import * as Actions from '../../../actions';
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Hooks
@@ -72,6 +72,19 @@ import {
     teamMembers
 } from '../../../constants/teamMembers';
 
+/**
+* Images
+*/
+
+import Pic1 from '../../../images/SlotImages/IMG_20170226_150338.jpg';
+import Pic2 from '../../../images/SlotImages/IMG_20170404_133938.jpg';
+import Pic3 from '../../../images/SlotImages/IMG_20180515_081708_977.jpg';
+import Pic4 from '../../../images/SlotImages/IMG_20180707_123405_284.jpg';
+import Pic5 from '../../../images/SlotImages/IMG_20180725_165300_509.jpg';
+import Pic6 from '../../../images/SlotImages/IMG_20180731_155539_567.jpg';
+import Pic7 from '../../../images/SlotImages/IMG_20180808_170700_758.jpg';
+import Pic8 from '../../../images/SlotImages/IMG_20180814_174126_452.jpg';
+import Pic9 from '../../../images/SlotImages/IMG_20181001_143645_993.jpg';
 
 /**
 * Magnifier component definition and export
@@ -83,7 +96,28 @@ export const Magnifier = (props) => {
     * Methods
     */
 
-
+    const loadImage = () => {
+        switch(props.imageId) {
+            case 0:
+                return Pic1;
+            case 1:
+                return Pic2;
+            case 2:
+                return Pic3;
+            case 3:
+                return Pic4;
+            case 4:
+                return Pic5;
+            case 5:
+                return Pic6;
+            case 6:
+                return Pic7;
+            case 7:
+                return Pic8;
+            case 8:
+                return Pic9;
+        }
+    }
 
     /**
     * Markup
@@ -114,14 +148,16 @@ export const Magnifier = (props) => {
                     className="magnifier-icon-arrow-right"
                     // onClick={() => iconOnClick("instagram", props.linkInstagram)}
                 />
+                <img className="magnifier-image" src={loadImage()}/>
            </Backdrop>
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            imageId: Selectors.getImageIdState(state),
             // dots: Selectors.getDotsState(state),
         };
     },

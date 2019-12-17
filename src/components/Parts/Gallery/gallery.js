@@ -62,9 +62,7 @@ export const Gallery = (props) => {
     /**
     * Methods
     */
-    const imageOnClick = () => {
-        // console.log("fff")
-    }
+
     const renderImages = () => {
         return (
             <div className="gallery-images">
@@ -78,7 +76,6 @@ export const Gallery = (props) => {
                             description={el.description}
                             imageId={`image${i+1}`}
                             hover={el.hover}
-                            onClick={imageOnClick}
                         />
                     )
                 })}
