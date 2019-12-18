@@ -117,6 +117,15 @@ Array [
 ]
 `;
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (previousImage) 1`] = `
+Array [
+  Object {
+    "id": 4,
+    "type": "PREVIOUS_IMAGE",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (showCard) 1`] = `
 Array [
   Object {
