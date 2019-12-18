@@ -50,11 +50,27 @@ describe('parallaxWebsiteReducer', () => {
         }
         const initState = {
             ...initialState, 
-            menuButtonIsPressed: false,
+            menuButtonIsPressed: false
         }
         const state = {
             ...initialState, 
-            menuButtonIsPressed: true,
+            menuButtonIsPressed: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update services with the array passed through the action", () => {
+        const action = { 
+            type: actionTypes.INIT_SERVICES,
+            array: [{a: 1, b: 2}, {a: 4, b: 5}]
+        }
+        const initState = {
+            ...initialState, 
+            services: [],
+        }
+        const state = {
+            ...initialState, 
+            services: [{a: 1, b: 2}, {a: 4, b: 5}]
         }
         expect(reducer(initState, action)).toEqual(state);
     });
