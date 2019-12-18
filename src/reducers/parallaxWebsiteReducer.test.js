@@ -75,4 +75,20 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should set property show, of the object with property cardId that equal to the val passed through the action in services array, to true", () => {
+        const action = { 
+            type: actionTypes.SHOW_CARD,
+            val: "card2"
+        }
+        const initState = {
+            ...initialState, 
+            services: [{cardId: "card1", show: true}, {cardId: "card2", show: false}]
+        }
+        const state = {
+            ...initialState, 
+            services: [{cardId: "card1", show: true}, {cardId: "card2", show: true}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
