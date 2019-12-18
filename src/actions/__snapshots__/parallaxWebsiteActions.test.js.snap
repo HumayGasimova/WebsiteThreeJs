@@ -35,6 +35,16 @@ Array [
 ]
 `;
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (imageOnClick) 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "type": "IMAGE_ON_CLICK",
+    "val": true,
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (initImages) 1`] = `
 Array [
   Object {
