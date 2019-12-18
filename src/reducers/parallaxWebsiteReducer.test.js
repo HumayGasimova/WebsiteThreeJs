@@ -43,4 +43,20 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update menuButtonIsPressed with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.MENU_BUTTON_IS_TOGGLED,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            menuButtonIsPressed: false,
+        }
+        const state = {
+            ...initialState, 
+            menuButtonIsPressed: true,
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
