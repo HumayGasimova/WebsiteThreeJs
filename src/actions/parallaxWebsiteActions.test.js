@@ -216,4 +216,21 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (submitMessage)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SUBMIT_MESSAGE,
+                name: "Humay",
+                email: "qasimovahumay@gmail.com",
+                contact: "012345678",
+                company: "crypto347",
+                message: "Hey"
+            }
+        ];
+
+        store.dispatch(Actions.submitMessage("Humay", "qasimovahumay@gmail.com", "012345678", "crypto347", "Hey"));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

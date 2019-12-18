@@ -153,6 +153,19 @@ Array [
 ]
 `;
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (submitMessage) 1`] = `
+Array [
+  Object {
+    "company": "crypto347",
+    "contact": "012345678",
+    "email": "qasimovahumay@gmail.com",
+    "message": "Hey",
+    "name": "Humay",
+    "type": "SUBMIT_MESSAGE",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (toggleMenuButton) 1`] = `
 Array [
   Object {
