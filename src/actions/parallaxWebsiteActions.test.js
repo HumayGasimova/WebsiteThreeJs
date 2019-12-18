@@ -163,4 +163,17 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (activateIcon)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.ACTIVATE_ICON,
+                id: 3
+            }
+        ];
+
+        store.dispatch(Actions.activateIcon(3));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });

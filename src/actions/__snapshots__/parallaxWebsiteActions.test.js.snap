@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (activateIcon) 1`] = `
+Array [
+  Object {
+    "id": 3,
+    "type": "ACTIVATE_ICON",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (dotOnChange) 1`] = `
 Array [
   Object {
