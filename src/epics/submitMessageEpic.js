@@ -37,11 +37,15 @@ export const submitMessageEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.SUBMIT_MESSAGE),
         mergeMap(action => {
-
-            // let message = action$.message;
+            let info = {
+                name: action.name,
+                email: action.email,
+                contact: action.contact,
+                company: action.company,
+                message: action.message
+            }
                     return of(
-                        // Actions.feedbackOnChange(),
-                        // Actions.dotOnChange(),
+                        Actions.messageToSend(info),
                     )   
                 })
     )

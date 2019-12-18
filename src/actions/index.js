@@ -14,5 +14,6 @@ export {
     imageOnClick,
     nextImage,
     previousImage,
-    submitMessage
+    submitMessage,
+    messageToSend
 } from './parallaxWebsiteActions';

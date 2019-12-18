@@ -38,7 +38,8 @@ export const initialState = {
     imageIsEnlarged: false,
     imageId: 0,
     disableOnNext: false,
-    disableOnPrevious: false
+    disableOnPrevious: false,
+    messages: []
 }
 
 const toggleMenuButton = (state, action) => {
@@ -223,6 +224,15 @@ const previousImage = (state, action) => {
     });
 }
 
+const messageToSend = (state, action) => {
+    let updatedMessages = [... state.messages];
+    updatedMessages.push(action.obj)
+
+    return updateObject(state, {
+        messages: updatedMessages
+    });
+}
+
 const parallaxWebsiteReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -257,6 +267,8 @@ const parallaxWebsiteReducer = (state = initialState, action) => {
             return previousImage(state, action); 
         case actionTypes.SUBMIT_MESSAGE:
             return state; 
+        case actionTypes.MESSAGE_TO_SEND:
+            return messageToSend(state, action); 
         default: 
             return state;
     }

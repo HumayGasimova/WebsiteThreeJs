@@ -114,3 +114,10 @@ export function submitMessage(name, email, contact, company, message) {
         message: message
    };
 };
+
+export function messageToSend(obj) {
+    return { 
+        type: actionTypes.MESSAGE_TO_SEND,
+        obj: obj
+   };
+};
