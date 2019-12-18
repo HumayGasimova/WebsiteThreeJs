@@ -108,6 +108,18 @@ Array [
 ]
 `;
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (messageToSend) 1`] = `
+Array [
+  Object {
+    "obj": Object {
+      "a": 1,
+      "b": "Hey",
+    },
+    "type": "MESSAGE_TO_SEND",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (nextImage) 1`] = `
 Array [
   Object {

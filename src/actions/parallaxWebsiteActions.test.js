@@ -233,4 +233,17 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (messageToSend)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.MESSAGE_TO_SEND,
+                obj: {a: 1, b: "Hey"}
+            }
+        ];
+
+        store.dispatch(Actions.messageToSend({a: 1, b: "Hey"}));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
