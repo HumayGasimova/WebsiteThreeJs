@@ -4,10 +4,6 @@
 
 import * as actionTypes from "../constants/actionTypes";
 
-import {
-    updateObject
-} from './utility';
-
 /**
 * Initial State
 */
@@ -43,22 +39,25 @@ export const initialState = {
 }
 
 const toggleMenuButton = (state, action) => {
-    return updateObject(state, {
+    return {
+        ...state,
         menuButtonIsPressed: !state.menuButtonIsPressed,
         sidebarOnInit: true
-    });
+    };
 }
 
 const menuButtonIsToggled = (state, action) => {
-    return updateObject(state, {
+    return {
+        ...state,
         menuButtonIsPressed: action.val
-    });
+    };
 }
 
 const initServices = (state, action) => {
-    return updateObject(state, {
+    return {
+        ...state,
         services: action.array
-    });
+    };
 }
 
 const showCard = (state, action) => {
@@ -69,21 +68,24 @@ const showCard = (state, action) => {
     let serviceIndex = updatedServices.findIndex(x => x.cardId === action.val);
 
     updatedServices.splice(serviceIndex, 1, updatedService);
-    return updateObject(state, {
+    return {
+        ...state,
         services: updatedServices
-    });
+    };
 }
 
 const initTeamMembers = (state, action) => {
-    return updateObject(state, {
+    return {
+        ...state,
         members: action.array
-    });
+    };
 }
 
 const initImages = (state, action) => {
-    return updateObject(state, {
+    return {
+        ...state,
         images: action.array
-    });
+    };
 }
 
 const imageHover = (state, action) => {
@@ -94,9 +96,10 @@ const imageHover = (state, action) => {
     
     updatedImages.splice(imageIndex, 1, updatedImage);
     
-    return updateObject(state, {
+    return {
+        ...state,
         images: updatedImages
-    });
+    };
 }
 
 const feedbackOnChange = (state, action) => {
@@ -105,9 +108,10 @@ const feedbackOnChange = (state, action) => {
 
     updatedFeedback.push(firstElement);
 
-    return updateObject(state, {
+    return {
+        ...state,
         feedback: updatedFeedback
-    });
+    };
 }
 
 const startChangingFeedbacks = (state, action) => {
@@ -128,10 +132,11 @@ const startChangingFeedbacks = (state, action) => {
     updatedFeedback.splice(0, action.feedbackIndex);
     updatedFeedback = updatedFeedback.concat(moveElements);
 
-    return updateObject(state, {
+    return {
+        ...state,
         dots: updatedDots,
         feedback: updatedFeedback
-    });
+    };
 }
 
 const dotOnChange = (state, action) => {
@@ -149,9 +154,10 @@ const dotOnChange = (state, action) => {
         updatedDots.splice(dotIndex + 1, 1, nextDot);
     }
    
-    return updateObject(state, {
+    return {
+        ...state,
         dots: updatedDots
-    });
+    };
 }
 
 const stopChangingFeedbacks = (state, action) => {
@@ -160,15 +166,17 @@ const stopChangingFeedbacks = (state, action) => {
     let dotIndex = updatedDots.findIndex(x => x.chosen === true);
     updatedDots.splice(dotIndex, 1, dot);
    
-    return updateObject(state, {
+    return {
+        ...state,
         dots: updatedDots
-    });
+    };
 }
 
 const activateIcon = (state, action) => {
-    return updateObject(state, {
+    return {
+        ...state,
         activatedIcon: action.id
-    });
+    };
 }
 
 const imageOnClick = (state, action) => {
@@ -184,12 +192,13 @@ const imageOnClick = (state, action) => {
     if(action.val && state.images.length === action.id){
         updatedDisableOnNext = true;
     }
-    return updateObject(state, {
+    return {
+        ...state,
         imageIsEnlarged: action.val,
         imageId: action.id,
         disableOnNext: updatedDisableOnNext,
         disableOnPrevious: updatedDisableOnPrevious
-    });
+    };
 }
 
 const nextImage = (state, action) => {
@@ -201,11 +210,12 @@ const nextImage = (state, action) => {
         updatedDisableOnNext = false;
     }
 
-    return updateObject(state, {
+    return {
+        ...state,
         imageId: updatedImageId,
         disableOnNext: updatedDisableOnNext,
         disableOnPrevious: false
-    });
+    };
 }
 
 const previousImage = (state, action) => {
@@ -217,20 +227,22 @@ const previousImage = (state, action) => {
         updatedDisableOnPrevious = false;
     }
 
-    return updateObject(state, {
+    return {
+        ...state,
         imageId: updatedImageId,
         disableOnNext: false,
         disableOnPrevious: updatedDisableOnPrevious
-    });
+    };
 }
 
 const messageToSend = (state, action) => {
     let updatedMessages = [... state.messages];
     updatedMessages.push(action.obj)
 
-    return updateObject(state, {
+    return {
+        ...state,
         messages: updatedMessages
-    });
+    };
 }
 
 const parallaxWebsiteReducer = (state = initialState, action) => {
