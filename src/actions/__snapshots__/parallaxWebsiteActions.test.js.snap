@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (initImages) 1`] = `
+Array [
+  Object {
+    "array": Array [
+      Object {
+        "a": 1,
+        "b": 2,
+      },
+      Object {
+        "a": 1,
+        "b": 2,
+      },
+    ],
+    "type": "INIT_IMAGES",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (initServices) 1`] = `
 Array [
   Object {
