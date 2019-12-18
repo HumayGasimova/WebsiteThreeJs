@@ -18,6 +18,24 @@ Array [
 ]
 `;
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (initTeamMembers) 1`] = `
+Array [
+  Object {
+    "array": Array [
+      Object {
+        "a": 1,
+        "b": 2,
+      },
+      Object {
+        "a": 1,
+        "b": 2,
+      },
+    ],
+    "type": "INIT_TEAM_MEMBERS",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (menuButtonIsToggled) 1`] = `
 Array [
   Object {

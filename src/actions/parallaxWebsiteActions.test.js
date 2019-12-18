@@ -74,4 +74,16 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
    
+    it('Dispatches the correct action and payload (initTeamMembers)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.INIT_TEAM_MEMBERS,
+                array: [{a: 1, b: 2},{a: 1, b: 2}]
+            }
+        ];
+
+        store.dispatch(Actions.initTeamMembers([{a: 1, b: 2},{a: 1, b: 2}]));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
