@@ -108,6 +108,14 @@ Array [
 ]
 `;
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (stopChangingFeedbacks) 1`] = `
+Array [
+  Object {
+    "type": "STOP_CHANGING_FEEDBACKS",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (toggleMenuButton) 1`] = `
 Array [
   Object {
