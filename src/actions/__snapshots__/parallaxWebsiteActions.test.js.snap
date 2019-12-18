@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (imageHover) 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "type": "IMAGE_HOVER",
+    "val": true,
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (initImages) 1`] = `
 Array [
   Object {

@@ -99,4 +99,18 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (imageHover)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.IMAGE_HOVER,
+                id: 1,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.imageHover(1, true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
