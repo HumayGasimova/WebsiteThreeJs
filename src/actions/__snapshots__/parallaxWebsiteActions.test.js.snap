@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (dotOnChange) 1`] = `
+Array [
+  Object {
+    "type": "DOTS_ON_CHANGE",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (feedbackOnChange) 1`] = `
 Array [
   Object {
@@ -86,6 +94,16 @@ Array [
   Object {
     "type": "SHOW_CARD",
     "val": true,
+  },
+]
+`;
+
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (startChangingFeedbacks) 1`] = `
+Array [
+  Object {
+    "dotId": 3,
+    "feedbackIndex": 2,
+    "type": "START_CHANGING_FEEDBACKS",
   },
 ]
 `;

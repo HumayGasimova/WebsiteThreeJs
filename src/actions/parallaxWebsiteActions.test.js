@@ -125,4 +125,30 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (dotOnChange)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.DOTS_ON_CHANGE
+            }
+        ];
+
+        store.dispatch(Actions.dotOnChange());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('Dispatches the correct action and payload (startChangingFeedbacks)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.START_CHANGING_FEEDBACKS,
+                dotId: 3,
+                feedbackIndex: 2
+            }
+        ];
+
+        store.dispatch(Actions.startChangingFeedbacks(3, 2));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
