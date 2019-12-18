@@ -61,5 +61,17 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
+    it('Dispatches the correct action and payload (showCard)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.SHOW_CARD,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.showCard(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
    
 });

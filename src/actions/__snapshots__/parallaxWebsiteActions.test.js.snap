@@ -27,6 +27,15 @@ Array [
 ]
 `;
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (showCard) 1`] = `
+Array [
+  Object {
+    "type": "SHOW_CARD",
+    "val": true,
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (toggleMenuButton) 1`] = `
 Array [
   Object {
