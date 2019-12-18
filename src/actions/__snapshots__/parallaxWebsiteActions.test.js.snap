@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (feedbackOnChange) 1`] = `
+Array [
+  Object {
+    "type": "FEEDBACK_ON_CHANGE",
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (imageHover) 1`] = `
 Array [
   Object {

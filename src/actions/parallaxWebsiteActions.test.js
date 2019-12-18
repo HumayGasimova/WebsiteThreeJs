@@ -113,4 +113,16 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(store.getActions()).toMatchSnapshot();
     });
+
+    it('Dispatches the correct action and payload (feedbackOnChange)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.FEEDBACK_ON_CHANGE
+            }
+        ];
+
+        store.dispatch(Actions.feedbackOnChange());
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
 });
