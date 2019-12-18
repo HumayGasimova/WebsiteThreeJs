@@ -35,5 +35,18 @@ describe('parallaxWebsiteActions', () => {
         expect(store.getActions()).toMatchSnapshot();
     });
 
+    it('Dispatches the correct action and payload (menuButtonIsToggled)', () => {
+        const expectedActions = [
+            {
+                type: actionTypes.MENU_BUTTON_IS_TOGGLED,
+                val: true
+            }
+        ];
+
+        store.dispatch(Actions.menuButtonIsToggled(true));
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions()).toMatchSnapshot();
+    });
+
    
 });

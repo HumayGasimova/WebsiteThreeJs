@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parallaxWebsiteActions Dispatches the correct action and payload (menuButtonIsToggled) 1`] = `
+Array [
+  Object {
+    "type": "MENU_BUTTON_IS_TOGGLED",
+    "val": true,
+  },
+]
+`;
+
 exports[`parallaxWebsiteActions Dispatches the correct action and payload (toggleMenuButton) 1`] = `
 Array [
   Object {
