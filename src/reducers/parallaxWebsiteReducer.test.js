@@ -140,4 +140,19 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+     it("should move first elemnt of the feedback array to the end", () => {
+        const action = { 
+            type: actionTypes.FEEDBACK_ON_CHANGE
+        }
+        const initState = {
+            ...initialState, 
+            feedback:  ['My','first', 'feedback']
+        }
+        const state = {
+            ...initialState, 
+            feedback:  ['first', 'feedback', 'My']
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
