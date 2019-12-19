@@ -155,4 +155,23 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should set property chosen of the object (which id property equal to dotId(that passed through the action)) in the dots array to true and move all elements of feedback array with index less than feedbackIndex(that passed through the action) to the end of the feedback array", () => {
+        const action = { 
+            type: actionTypes.START_CHANGING_FEEDBACKS,
+            dotId: 2,
+            feedbackIndex: 1
+        }
+        const initState = {
+            ...initialState, 
+            dots: [{id: 1, chosen: false}, {id: 2, chosen: false}],
+            feedback: ['My','first', 'feedback']
+        }
+        const state = {
+            ...initialState, 
+            dots: [{id: 1, chosen: false}, {id: 2, chosen: true}],
+            feedback: ['first', 'feedback','My']
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
