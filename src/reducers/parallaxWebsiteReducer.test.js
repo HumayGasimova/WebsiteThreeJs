@@ -107,4 +107,20 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update members with array passed through the action", () => {
+        const action = { 
+            type: actionTypes.INIT_IMAGES,
+            array: [{a: 1, b: 2}, {a: 4, b: 5}]
+        }
+        const initState = {
+            ...initialState, 
+            images: []
+        }
+        const state = {
+            ...initialState, 
+            images: [{a: 1, b: 2}, {a: 4, b: 5}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });
