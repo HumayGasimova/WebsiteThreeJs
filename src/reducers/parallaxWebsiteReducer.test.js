@@ -107,7 +107,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update members with array passed through the action", () => {
+    it("should update images with array passed through the action", () => {
         const action = { 
             type: actionTypes.INIT_IMAGES,
             array: [{a: 1, b: 2}, {a: 4, b: 5}]
@@ -119,6 +119,23 @@ describe('parallaxWebsiteReducer', () => {
         const state = {
             ...initialState, 
             images: [{a: 1, b: 2}, {a: 4, b: 5}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update property hover of object in images array with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.IMAGE_HOVER,
+            id: 1,
+            val: true
+        }
+        const initState = {
+            ...initialState, 
+            images:  [{id: 1, hover: false}, {id: 2, hover: false}]
+        }
+        const state = {
+            ...initialState, 
+            images: [{id: 1, hover: true}, {id: 2, hover: false}]
         }
         expect(reducer(initState, action)).toEqual(state);
     });
