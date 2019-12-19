@@ -150,7 +150,8 @@ const dotOnChange = (state, action) => {
         nextDot = {...updatedDots[0], chosen: true};
         updatedDots.splice(0, 1, nextDot);
     }else{
-        nextDot = {...updatedDots[0 + 1], chosen: true};
+        nextDot = {...updatedDots[dotIndex + 1], chosen: true};
+        console.log(nextDot)
         updatedDots.splice(dotIndex + 1, 1, nextDot);
     }
    
