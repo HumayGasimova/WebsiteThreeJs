@@ -308,7 +308,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update imageId by adding 1 to the value of id that passed through the reducer, and set disableOnNext to true (if the length of images array minus 1 is equal to id that passed through the action) ", () => {
+    it("should update imageId by adding 1 to the value of id that passed through the reducer, set disableOnPrevious to false, and set disableOnNext to true (if the length of images array minus 1 is equal to id that passed through the action) ", () => {
         const action = { 
             type: actionTypes.NEXT_IMAGE,
             id: 5
@@ -330,7 +330,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update imageId by adding 1 to the value of id that passed through the reducer, and set disableOnPrevious to false (if the length of images array minus 1 is not equal to id that passed through the action", () => {
+    it("should update imageId by adding 1 to the value of id that passed through the reducer, set disableOnPrevious to false, and set disableOnNext to false (if the length of images array minus 1 is not equal to id that passed through the action", () => {
         const action = { 
             type: actionTypes.NEXT_IMAGE,
             id: 3
@@ -346,6 +346,50 @@ describe('parallaxWebsiteReducer', () => {
             ...initialState, 
             images: ['','','','','',''],
             imageId: 4,
+            disableOnNext: false,
+            disableOnPrevious: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update imageId by subtracting 1 from the value of id that passed through the reducer, set disableOnNext to false, and set disableOnPrevious to true (if id that passed through the action minus 1 is equal to 0)", () => {
+        const action = { 
+            type: actionTypes.PREVIOUS_IMAGE,
+            id: 1
+        }
+        const initState = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 2,
+            disableOnNext: false,
+            disableOnPrevious: false
+        }
+        const state = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 0,
+            disableOnNext: false,
+            disableOnPrevious: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update imageId by adding 1 to the value of id that passed through the reducer, and set disableOnPrevious to false, and set disableOnNext to true (if id that passed through the action minus 1 is not equal to 0", () => {
+        const action = { 
+            type: actionTypes.PREVIOUS_IMAGE,
+            id: 4
+        }
+        const initState = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 2,
+            disableOnNext: false,
+            disableOnPrevious: true
+        }
+        const state = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 3,
             disableOnNext: false,
             disableOnPrevious: false
         }
