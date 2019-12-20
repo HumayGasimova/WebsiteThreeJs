@@ -395,4 +395,22 @@ describe('parallaxWebsiteReducer', () => {
         }
         expect(reducer(initState, action)).toEqual(state);
     });
+
+    it("should update messages array by pushing the object passed through the action", () => {
+        const action = { 
+            type: actionTypes.MESSAGE_TO_SEND,
+            obj: {a: 1, b: 3}
+        }
+        const initState = {
+            ...initialState, 
+            images: ['','','','','',''],
+            messages: [{a: 5, b: 7}]
+        }
+        const state = {
+            ...initialState, 
+            images: ['','','','','',''],
+            messages: [{a: 5, b: 7}, {a: 1, b: 3}]
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 });
