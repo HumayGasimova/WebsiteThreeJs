@@ -26,7 +26,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(undefined, action)).toEqual(initialState);
     });
 
-    it("should update menuButtonIsPressed with opposite boolean value and  set sidebarOnInit to true", () => {
+    it("should update menuButtonIsPressed with opposite boolean value and set sidebarOnInit to true", () => {
         const action = { 
             type: actionTypes.TOGGLE_MENU_BUTTON
         }
@@ -235,7 +235,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnNext and disableOnPrevious(if val that passed through the action is false) to false", () => {
+    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnNext and disableOnPrevious to false(if val that passed through the action is false)", () => {
         const action = { 
             type: actionTypes.IMAGE_ON_CLICK,
             val: false,
@@ -258,7 +258,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnPrevious(if val that passed through the action is true and id is 1) to true", () => {
+    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnPrevious to true(if val that passed through the action is true and id is 1)", () => {
         const action = { 
             type: actionTypes.IMAGE_ON_CLICK,
             val: true,
@@ -283,7 +283,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnNext(if val that passed through the action is true and id is equal to the length of the images array) to true", () => {
+    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnNext  to true(if val that passed through the action is true and id is equal to the length of the images array)", () => {
         const action = { 
             type: actionTypes.IMAGE_ON_CLICK,
             val: true,
@@ -308,4 +308,47 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update imageId by adding 1 to the value of id that passed through the reducer, and set disableOnNext to true (if the length of images array minus 1 is equal to id that passed through the action) ", () => {
+        const action = { 
+            type: actionTypes.NEXT_IMAGE,
+            id: 5
+        }
+        const initState = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 3,
+            disableOnNext: false,
+            disableOnPrevious: true
+        }
+        const state = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 6,
+            disableOnNext: true,
+            disableOnPrevious: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update imageId by adding 1 to the value of id that passed through the reducer, and set disableOnPrevious to false (if the length of images array minus 1 is not equal to id that passed through the action", () => {
+        const action = { 
+            type: actionTypes.NEXT_IMAGE,
+            id: 3
+        }
+        const initState = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 2,
+            disableOnNext: false,
+            disableOnPrevious: true
+        }
+        const state = {
+            ...initialState, 
+            images: ['','','','','',''],
+            imageId: 4,
+            disableOnNext: false,
+            disableOnPrevious: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 });
