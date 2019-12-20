@@ -235,4 +235,77 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
+    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnNext and disableOnPrevious(if val that passed through the action is false) to false", () => {
+        const action = { 
+            type: actionTypes.IMAGE_ON_CLICK,
+            val: false,
+            id: 2
+        }
+        const initState = {
+            ...initialState, 
+            imageIsEnlarged: true,
+            imageId: 3,
+            disableOnNext: true,
+            disableOnPrevious: true
+        }
+        const state = {
+            ...initialState, 
+            imageIsEnlarged: false,
+            imageId: 2,
+            disableOnNext: false,
+            disableOnPrevious: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnPrevious(if val that passed through the action is true and id is 1) to true", () => {
+        const action = { 
+            type: actionTypes.IMAGE_ON_CLICK,
+            val: true,
+            id: 1
+        }
+        const initState = {
+            ...initialState, 
+            images: ['','','','','','','',''],
+            imageIsEnlarged: false,
+            imageId: 5,
+            disableOnNext: false,
+            disableOnPrevious: false
+        }
+        const state = {
+            ...initialState, 
+            images: ['','','','','','','',''],
+            imageIsEnlarged: true,
+            imageId: 1,
+            disableOnNext: false,
+            disableOnPrevious: true
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
+    it("should update imageIsEnlarged and imageId with values passed through the action, set disableOnNext(if val that passed through the action is true and id is equal to the length of the images array) to true", () => {
+        const action = { 
+            type: actionTypes.IMAGE_ON_CLICK,
+            val: true,
+            id: 8
+        }
+        const initState = {
+            ...initialState, 
+            images: ['','','','','','','',''],
+            imageIsEnlarged: false,
+            imageId: 7,
+            disableOnNext: false,
+            disableOnPrevious: false
+        }
+        const state = {
+            ...initialState, 
+            images: ['','','','','','','',''],
+            imageIsEnlarged: true,
+            imageId: 8,
+            disableOnNext: true,
+            disableOnPrevious: false
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
+
 });

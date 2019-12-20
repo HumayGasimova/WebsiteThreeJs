@@ -181,8 +181,8 @@ const activateIcon = (state, action) => {
 }
 
 const imageOnClick = (state, action) => {
-    let updatedDisableOnNext;
-    let updatedDisableOnPrevious;
+    let updatedDisableOnNext = false;
+    let updatedDisableOnPrevious = false;
     if(!action.val){
         updatedDisableOnNext = false;
         updatedDisableOnPrevious = false;
