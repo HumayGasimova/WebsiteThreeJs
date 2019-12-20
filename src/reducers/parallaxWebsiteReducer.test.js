@@ -204,7 +204,7 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
-    it("should set property chosen of the object (which id property equal to dotId(that passed through the action)) in the dots array to true and move all elements of feedback array with index less than feedbackIndex(that passed through the action) to the end of the feedback array", () => {
+    it("should set property chosen of the object(that property chosen equal to true) in the dots array to false", () => {
         const action = { 
             type: actionTypes.STOP_CHANGING_FEEDBACKS
         }
@@ -219,6 +219,20 @@ describe('parallaxWebsiteReducer', () => {
         expect(reducer(initState, action)).toEqual(state);
     });
 
- 
+    it("should update activatedIcon with the value passed through the action", () => {
+        const action = { 
+            type: actionTypes.ACTIVATE_ICON,
+            id: 'about'
+        }
+        const initState = {
+            ...initialState, 
+            activatedIcon: ''
+        }
+        const state = {
+            ...initialState, 
+            activatedIcon: 'about'
+        }
+        expect(reducer(initState, action)).toEqual(state);
+    });
 
 });
