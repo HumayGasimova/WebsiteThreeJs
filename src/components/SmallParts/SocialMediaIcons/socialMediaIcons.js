@@ -79,7 +79,10 @@ export const SocialMediaIcons = (props) => {
     */
 
     return(
-        <div className="socialMediaIcons" style={{width: `${props.width}`}}>
+        <div 
+            className="icons-soc-med" 
+            style={{width: `${props.width}`}}
+        >
             <FontAwesomeIcon 
                 icon={faFacebookF} 
                 size={props.size} 

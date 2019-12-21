@@ -5,8 +5,8 @@ export const teamMembers = [
         fullName: "Name1",
         position: "Developer",
         facebook: "http://www.facebook.com/",
-        linkedIn: "http://www.linkedin.com/",
-        instagram: "http://www.instagram.com/",
+        linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
+        instagram: "https://www.instagram.com/crypto347/",
         twitter: "http://www.twitter.com/"
     },
     {
@@ -15,8 +15,8 @@ export const teamMembers = [
         fullName: "Name2",
         position: "Developer",
         facebook: "http://www.facebook.com/",
-        linkedIn: "http://www.linkedin.com/",
-        instagram: "http://www.instagram.com/",
+        linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
+        instagram: "https://www.instagram.com/crypto347/",
         twitter: "http://www.twitter.com/"
     },
     {
@@ -25,8 +25,8 @@ export const teamMembers = [
         fullName: "Name3",
         position: "Developer",
         facebook: "http://www.facebook.com/",
-        linkedIn: "http://www.linkedin.com/",
-        instagram: "http://www.instagram.com/",
+        linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
+        instagram: "https://www.instagram.com/crypto347/",
         twitter: "http://www.twitter.com/"
     },
     {
@@ -35,8 +35,8 @@ export const teamMembers = [
         fullName: "Name4",
         position: "Designer",
         facebook: "http://www.facebook.com/",
-        linkedIn: "http://www.linkedin.com/",
-        instagram: "http://www.instagram.com/",
+        linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
+        instagram: "https://www.instagram.com/crypto347/",
         twitter: "http://www.twitter.com/"
     }
 ]
