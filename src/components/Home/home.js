@@ -3,13 +3,8 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
-
-import {
-    Route
-} from 'react-router-dom';
 
 import {
     connect
@@ -18,10 +13,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    CSSTransition ,
-} from 'react-transition-group';
 
 /**
 * Components
@@ -108,40 +99,7 @@ export const Home = (props) => {
                 </>
             )
         }
-       
     }
-
-
-    // const renderSidebar = () => {
-    //     if(props.menuButtonIsPressed){
-    //         return(
-    //             <>
-    //                 <Sidebar 
-    //                     className="sidebar-open"
-    //                     // classNameIcon="sidebar-icon-open"
-    //                     // className={openOnResize ? "sidebar-mounted" : "sidebar-open"} 
-    //                     // classNameIcon={openOnResize ? "sidebar-mounted-icon" : "sidebar-icon-open"}
-    //                 /> 
-    //                 <Backdrop 
-    //                     show 
-    //                     onClick={() => props.menuButtonIsToggled(false)}
-    //                 />
-    //             </>
-    //         )
-    //     }else{
-    //         return(
-    //             <>
-    //                 <Sidebar 
-    //                     className="sidebar-close"
-    //                     classNameIcon="sidebar-icon-close"
-    //                     // className={closeOnResize ? "sidebar-unmounted-close" : "sidebar-close"} 
-    //                     // classNameIcon={closeOnResize ? "sidebar-unmounted-icon-close" : "sidebar-icon-close"}
-    //                 />
-    //             </>
-    //         )
-    //     }
-   
-    // }
 
     /**
     * Markup
@@ -158,7 +116,8 @@ export const Home = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),

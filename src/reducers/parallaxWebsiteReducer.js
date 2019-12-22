@@ -38,7 +38,7 @@ export const initialState = {
     messages: []
 }
 
-const toggleMenuButton = (state, action) => {
+const toggleMenuButton = (state) => {
     return {
         ...state,
         menuButtonIsPressed: !state.menuButtonIsPressed,
@@ -102,7 +102,7 @@ const imageHover = (state, action) => {
     };
 }
 
-const feedbackOnChange = (state, action) => {
+const feedbackOnChange = (state) => {
     let updatedFeedback = [...state.feedback];
     let firstElement = updatedFeedback.shift();
 
@@ -139,7 +139,7 @@ const startChangingFeedbacks = (state, action) => {
     };
 }
 
-const dotOnChange = (state, action) => {
+const dotOnChange = (state) => {
     let updatedDots = [...state.dots];
     let dot = {...updatedDots.find(x => x.chosen === true), chosen: false};
     let dotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -151,7 +151,6 @@ const dotOnChange = (state, action) => {
         updatedDots.splice(0, 1, nextDot);
     }else{
         nextDot = {...updatedDots[dotIndex + 1], chosen: true};
-        console.log(nextDot)
         updatedDots.splice(dotIndex + 1, 1, nextDot);
     }
    
@@ -161,7 +160,7 @@ const dotOnChange = (state, action) => {
     };
 }
 
-const stopChangingFeedbacks = (state, action) => {
+const stopChangingFeedbacks = (state) => {
     let updatedDots = [...state.dots];
     let dot = {...updatedDots.find(x => x.chosen === true), chosen: false};
     let dotIndex = updatedDots.findIndex(x => x.chosen === true);
