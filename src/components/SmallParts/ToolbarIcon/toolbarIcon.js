@@ -8,21 +8,8 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
 
 /**
 * Styles
@@ -31,18 +18,15 @@ import {
 import './toolbarIcon.scss';
 
 /**
-* Hooks
-*/
-
-import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-/**
 * ToolbarIcon component definition and export
 */
 
 export const ToolbarIcon = (props) => {
+
+    /**
+    * State
+    */
+
     const iconRef = React.createRef();
     const [width, setWidth] = useState(0);
 
@@ -52,7 +36,7 @@ export const ToolbarIcon = (props) => {
 
     useEffect(()=>{
         setWidth(iconRef.current.clientWidth);
-    }, [])
+    }, []);
 
     /**
     * Markup
@@ -76,16 +60,5 @@ export const ToolbarIcon = (props) => {
         </a>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // activatedIcon: Selectors.getActivatedIcon(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // startZooming: bindActionCreators(Actions.startZooming, dispatch),
-        };
-    }
-)(ToolbarIcon);
+ export default ToolbarIcon;
  

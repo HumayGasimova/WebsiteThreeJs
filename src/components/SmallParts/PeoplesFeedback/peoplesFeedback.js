@@ -7,21 +7,12 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
 import {
     bindActionCreators
 } from 'redux';
-
-/**
-* Components
-*/
-
 
 /**
 * Styles
@@ -42,22 +33,6 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Hooks
-*/
-
-import {
-    useInterval
-} from '../../../Hooks/useInterval';
-
-/**
-* Constants
-*/
-
-import {
-    teamMembers
-} from '../../../constants/teamMembers';
-
-/**
 * PeoplesFeedback component definition and export
 */
 
@@ -67,19 +42,12 @@ export const PeoplesFeedback = (props) => {
     * Methods
     */
 
-
-    // useInterval(() => {
-    //     props.feedbackOnChange();
-    //     props.dotOnChange();
-    // }, 3000)
-
     useEffect(()=>{
         props.startChangingFeedbacks(1, 0);
         return () => props.stopChangingFeedbacks()
-    }, [])
+    }, []);
 
     const chooseFeedback = (i) => {
-        // console.log(i)
         props.stopChangingFeedbacks();
         props.startChangingFeedbacks(i + 1, i);
     }
@@ -113,19 +81,18 @@ export const PeoplesFeedback = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             feedback: Selectors.getFeedbackState(state),
-            dots: Selectors.getDotsState(state),
+            dots: Selectors.getDotsState(state)
         };
     },
     (dispatch) => {
         return {
             startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-            feedbackOnChange: bindActionCreators(Actions.feedbackOnChange, dispatch),
-            dotOnChange: bindActionCreators(Actions.dotOnChange, dispatch),
-            stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch),
+            stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }
 )(PeoplesFeedback);

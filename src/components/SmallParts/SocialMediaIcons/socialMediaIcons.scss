@@ -2,23 +2,19 @@
     display: flex;
     justify-content: space-between;
     margin: 0 0 20px 0;
-    // width: 150px;
     .icon-social-media-facebook {
-        // color: rgb(250, 207, 239);
         cursor: pointer;
         &:hover {
             color: rgb(28, 99, 146);
         }
     }
     .icon-social-media-linkedIn {
-        // color: rgb(250, 207, 239);
         cursor: pointer;
         &:hover {
             color: #158cc4;
         }
     }
     .icon-social-media-instagram {
-        // color: rgb(250, 207, 239);
         cursor: pointer;
         width: 30px;
         &:hover {
@@ -28,7 +24,6 @@
         }
     }
     .icon-social-media-twitter {
-        // color: rgb(250, 207, 239);
         cursor: pointer;
         &:hover {
             color: #00acee;

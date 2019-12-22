@@ -3,13 +3,8 @@
 */
 
 import React, {
-    useState,
-    useEffect
+    useState
 } from 'react';
-
-import {
-    Route
-} from 'react-router-dom';
 
 import {
     connect
@@ -19,30 +14,11 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-import { 
-    faLaptopCode,
-    faChartLine,
-    faPaperPlane,
-    faUniversity,
-    faCameraRetro,
-    faShoppingBag
-} from '@fortawesome/free-solid-svg-icons'
-
-/**
-* Components
-*/
-
-
 /**
 * Styles
 */
 
 import './teamMemberInfo.scss';
-
 
 /**
 * Images
@@ -117,16 +93,6 @@ export const TeamMemberInfo = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // zoom: Selectors.getZoomState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            showCard: bindActionCreators(Actions.showCard, dispatch),
-        };
-    }
-)(TeamMemberInfo);
+
+export default TeamMemberInfo;
  

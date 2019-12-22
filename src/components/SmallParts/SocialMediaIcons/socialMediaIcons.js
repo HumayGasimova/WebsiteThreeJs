@@ -2,22 +2,11 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     Route
 } from 'react-router-dom';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
 
 import { 
     FontAwesomeIcon 
@@ -35,21 +24,10 @@ import {
 } from '@fortawesome/fontawesome-free-brands'
 
 /**
-* Components
-*/
-
-
-/**
 * Styles
 */
 
 import './socialMediaIcons.scss';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
 
 /**
 * SocialMediaIcons component definition and export
@@ -114,16 +92,6 @@ export const SocialMediaIcons = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // zoom: Selectors.getZoomState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // showCard: bindActionCreators(Actions.showCard, dispatch),
-        };
-    }
-)(SocialMediaIcons);
+
+export default SocialMediaIcons;
  

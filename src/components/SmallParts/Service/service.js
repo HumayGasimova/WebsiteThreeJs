@@ -8,10 +8,6 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -37,11 +33,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 /**
-* Components
-*/
-
-
-/**
 * Styles
 */
 
@@ -59,8 +50,11 @@ import * as Actions from '../../../actions';
 
 export const Service = (props) => {
 
+    /**
+    * State
+    */
+
     const [isHovering, setIsHovering] = useState(false);
-    const [showCard, setShowCard] = useState(false);
 
     /**
     * Methods
@@ -116,24 +110,20 @@ export const Service = (props) => {
                 </div>
             )
         }
-       
     }
     
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById(props.cardId);
-        // console.log(scrollHeight, el.offsetTop - window.innerHeight/2)
         if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 150 ){
             props.showCard(props.cardId);
-        }else{
-            // setShowCard(false);
         }
     }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
     /**
     * Markup
@@ -145,12 +135,9 @@ export const Service = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // zoom: Selectors.getZoomState(state),
-        };
-    },
+
+export default connect(
+    null,
     (dispatch) => {
         return {
             showCard: bindActionCreators(Actions.showCard, dispatch),
