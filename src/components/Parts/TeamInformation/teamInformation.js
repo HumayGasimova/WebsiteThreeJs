@@ -7,10 +7,6 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -50,8 +46,6 @@ import {
     teamMembers
 } from '../../../constants/teamMembers';
 
-import * as Icon from '../../../constants/iconNames';
-
 /**
 * TeamInformation component definition and export
 */
@@ -86,7 +80,7 @@ export const TeamInformation = (props) => {
     useEffect(() => {
         props.initTeamMembers(teamMembers);
         return () => props.initTeamMembers([]);
-    }, [])
+    }, []);
 
     /**
     * Markup
@@ -106,15 +100,16 @@ export const TeamInformation = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
-            members: Selectors.getMembersState(state),
+            members: Selectors.getMembersState(state)
         };
     },
     (dispatch) => {
         return {
-            initTeamMembers: bindActionCreators(Actions.initTeamMembers, dispatch),
+            initTeamMembers: bindActionCreators(Actions.initTeamMembers, dispatch)
         };
     }
 )(TeamInformation);

@@ -2,13 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect
-} from 'react';
-
-import {
-    Route
-} from 'react-router-dom';
+import React from 'react';
 
 import {
     connect
@@ -56,14 +50,6 @@ import * as Actions from '../../../actions';
 */
 
 import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Constants
-*/
-
-import {
-    teamMembers
-} from '../../../constants/teamMembers';
 
 /**
 * Images
@@ -166,15 +152,14 @@ export default connect(
         return {
             imageId: Selectors.getImageIdState(state),
             disableOnNext: Selectors.getDisableOnNextState(state),
-            disableOnPrevious: Selectors.getDisableOnPreviousState(state),
+            disableOnPrevious: Selectors.getDisableOnPreviousState(state)
         };
     },
     (dispatch) => {
         return {
             imageOnClick: bindActionCreators(Actions.imageOnClick, dispatch),
             nextImage: bindActionCreators(Actions.nextImage, dispatch),
-            previousImage: bindActionCreators(Actions.previousImage, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch),
+            previousImage: bindActionCreators(Actions.previousImage, dispatch)
         };
     }
 )(Magnifier);

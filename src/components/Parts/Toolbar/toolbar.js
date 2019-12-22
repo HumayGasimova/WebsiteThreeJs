@@ -8,10 +8,6 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -51,8 +47,6 @@ import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
-import * as Icon from '../../../constants/iconNames';
-
 import {
     toolabarItems
 } from '../../../constants/toolbarItems';
@@ -62,6 +56,10 @@ import {
 */
 
 export const Toolbar = (props) => {
+
+    /**
+    * State
+    */
 
     const size = useWindowSize();
     const [scrollTop, setScrollTop] = useState(0);
@@ -97,7 +95,7 @@ export const Toolbar = (props) => {
     useEffect(()=>{
         addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
     /**
     * Markup

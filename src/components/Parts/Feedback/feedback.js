@@ -7,10 +7,6 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -60,7 +56,6 @@ export const Feedback = (props) => {
     * Methods
     */
 
-
     useEffect(() => {
         props.initTeamMembers(teamMembers);
         return () => props.initTeamMembers([]);
@@ -81,15 +76,16 @@ export const Feedback = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
-            members: Selectors.getMembersState(state),
+            members: Selectors.getMembersState(state)
         };
     },
     (dispatch) => {
         return {
-            initTeamMembers: bindActionCreators(Actions.initTeamMembers, dispatch),
+            initTeamMembers: bindActionCreators(Actions.initTeamMembers, dispatch)
         };
     }
 )(Feedback);

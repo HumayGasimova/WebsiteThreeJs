@@ -3,13 +3,8 @@
 */
 
 import React, {
-    useState,
-    useEffect
+    useState
 } from 'react';
-
-import {
-    Route
-} from 'react-router-dom';
 
 import {
     connect
@@ -22,20 +17,6 @@ import {
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
-
-import { 
-    faLaptopCode,
-    faChartLine,
-    faPaperPlane,
-    faUniversity,
-    faCameraRetro,
-    faShoppingBag
-} from '@fortawesome/free-solid-svg-icons'
-
-/**
-* Components
-*/
-
 
 /**
 * Styles
@@ -68,18 +49,15 @@ import {
 import * as Actions from '../../../actions';
 
 /**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
 * Image component definition and export
 */
 
 export const Image = (props) => {
 
-    const [isHovering, setIsHovering] = useState(false);
+    /**
+    * State
+    */
+
     const [showPhotoInfo, setPhotoInfo] = useState(false);
 
     /**
@@ -157,15 +135,11 @@ export const Image = (props) => {
         </>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // imageIsEnlarged: Selectors.getImageIsEnlargedState(state),
-        };
-    },
+
+export default connect(
+    null,
     (dispatch) => {
         return {
-            showCard: bindActionCreators(Actions.showCard, dispatch),
             imageHover: bindActionCreators(Actions.imageHover, dispatch),
             imageOnClick: bindActionCreators(Actions.imageOnClick, dispatch),
         };

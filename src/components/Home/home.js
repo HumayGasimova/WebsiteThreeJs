@@ -121,13 +121,13 @@ export default connect(
     (state) => {
         return {
             menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-            sidebarOnInit: Selectors.getSidebarOnInitState(state),
+            sidebarOnInit: Selectors.getSidebarOnInitState(state)
         };
     },
     (dispatch) => {
         return {
             menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch),
-            activateIcon: bindActionCreators(Actions.activateIcon, dispatch),
+            activateIcon: bindActionCreators(Actions.activateIcon, dispatch)
         };
     }
 )(Home);

@@ -7,10 +7,6 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -43,18 +39,15 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Constants
-*/
-
-import {
-    images
-} from '../../../constants/images';
-
-/**
 * SendMessage component definition and export
 */
 
 export const SendMessage = (props) => {
+
+    /**
+    * State
+    */
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [contact, setContact] = useState('');
@@ -102,16 +95,16 @@ export const SendMessage = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
-            images: Selectors.getImagesState(state),
+            images: Selectors.getImagesState(state)
         };
     },
     (dispatch) => {
         return {
-            initImages: bindActionCreators(Actions.initImages, dispatch),
-            submitMessage: bindActionCreators(Actions.submitMessage, dispatch),
+            submitMessage: bindActionCreators(Actions.submitMessage, dispatch)
         };
     }
 )(SendMessage);

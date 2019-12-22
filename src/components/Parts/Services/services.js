@@ -89,7 +89,7 @@ export const Services = (props) => {
     useEffect(()=>{
         props.initServices(serviceCards);
         return () => props.initServices(serviceCards);
-    }, [])
+    }, []);
 
     /**
     * Markup
@@ -106,15 +106,16 @@ export const Services = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
-            services: Selectors.getServicesState(state),
+            services: Selectors.getServicesState(state)
         };
     },
     (dispatch) => {
         return {
-            initServices: bindActionCreators(Actions.initServices, dispatch),
+            initServices: bindActionCreators(Actions.initServices, dispatch)
         };
     }
 )(withRouter(Services));

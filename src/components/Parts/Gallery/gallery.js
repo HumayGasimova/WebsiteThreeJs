@@ -7,10 +7,6 @@ import React, {
 } from 'react';
 
 import {
-    Route
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -86,7 +82,7 @@ export const Gallery = (props) => {
     useEffect(()=>{
         props.initImages(images);
         return () => props.initImages([]);
-    }, [])
+    }, []);
    
     /**
     * Markup
@@ -104,7 +100,8 @@ export const Gallery = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             images: Selectors.getImagesState(state),

@@ -2,21 +2,11 @@
 * Libraries
 */
 
-import React, {
-    useEffect
-} from 'react';
-
-import {
-    Route
-} from 'react-router-dom';
+import React from 'react';
 
 import {
     connect
 } from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
 
 import { 
     FontAwesomeIcon 
@@ -45,12 +35,6 @@ import SendMessage from '../SendMessage/sendMessage';
 import './contactInfo.scss';
 
 /**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
 * Selectors
 */
 
@@ -66,13 +50,7 @@ import * as Icon from '../../../constants/iconNames';
 * ContactInfo component definition and export
 */
 
-export const ContactInfo = (props) => {
-
-    /**
-    * Methods
-    */
-
-   
+export const ContactInfo = () => {
 
     /**
     * Markup
@@ -109,12 +87,7 @@ export const ContactInfo = (props) => {
  export default connect(
     (state) => {
         return {
-            services: Selectors.getServicesState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            initServices: bindActionCreators(Actions.initServices, dispatch),
+            services: Selectors.getServicesState(state)
         };
     }
 )(ContactInfo);

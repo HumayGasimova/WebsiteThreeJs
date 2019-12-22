@@ -2,13 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect
-} from 'react';
-
-import {
-    Route
-} from 'react-router-dom';
+import React from 'react';
 
 import {
     connect
@@ -17,25 +11,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-/**
-* Icons
-*/
-
-import { 
-    faFacebookF,
-    faLinkedinIn,
-    faInstagram,
-    faTwitter
-} from '@fortawesome/fontawesome-free-brands'
-
-/**
-* Components
-*/
 
 /**
 * Styles
@@ -57,19 +32,10 @@ import * as Selectors from '../../../reducers/selectors';
 import SocialMediaIcons from '../../SmallParts/SocialMediaIcons/socialMediaIcons';
 
 /**
-* Constants
-*/
-
-
-/**
 * Footer component definition and export
 */
 
-export const Footer = (props) => {
-
-    /**
-    * Methods
-    */
+export const Footer = () => {
 
     /**
     * Markup
