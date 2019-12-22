@@ -25,6 +25,10 @@ import './unicorn.scss';
 
 export const Unicorn = (props) => {
 
+    /**
+    * State
+    */
+
     const [slower, setSlower] = useState(0);
 
     /**
@@ -38,8 +42,8 @@ export const Unicorn = (props) => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const renderImage = () => {
         if(props.left){

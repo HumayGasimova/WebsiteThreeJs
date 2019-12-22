@@ -85,7 +85,7 @@ export const Home = (props) => {
         window.addEventListener('scroll', () => handleSidebarOnScroll(event));
 
         return () => window.removeEventListener('scroll', handleSidebarOnScroll);
-    }, [])
+    }, []);
 
     const renderSidebar = () => {
         if(props.menuButtonIsPressed){

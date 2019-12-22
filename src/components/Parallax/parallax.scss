@@ -1,48 +1,33 @@
 .parallax {
-    // height: 7000px;
     .parallax-backgroundBox {
         position: relative;
         height: 800px;
         background-image: url('../../images/BackgroundImageCut.png');
-        // background-size: auto 600px;
         background-size: 100%;
         background-repeat: no-repeat;
-        // clip: rect(500px, 100px, 100px, 0);
         background-position: top center;
         background-attachment: fixed;
-        // background-size: contain;
-        // background-position: top center;
         overflow: hidden;
     }
     .parallax-backgroundBox2 {
         position: relative;
         height: 800px;
         background-image: url('../../images/abstract-magic-light-on-sweet-pink-background-vector-3421483.jpg');
-        // background-size: auto 600px;
         background-size: 100%;
         background-repeat: no-repeat;
-        // clip: rect(500px, 100px, 100px, 0);
         background-position: top center;
         background-attachment: fixed;
-        // background-size: contain;
-        // background-position: top center;
         overflow: hidden;
-        // z-index: -1;
     }
     .parallax-backgroundBox3 {
         position: relative;
         height: 400px;
         background-image: url('../../images/bokeh-1958563_960_720.png');
-        // background-size: auto 600px;
         background-size: 100%;
         background-repeat: repeat;
-        // clip: rect(500px, 100px, 100px, 0);
         background-position: top center;
         background-attachment: fixed;
-        // background-size: contain;
-        // background-position: top center;
         overflow: hidden;
-    //     z-index: -1;
     }
 }
 

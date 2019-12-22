@@ -11,7 +11,6 @@ import React from 'react';
 import HeaderText from './Text/HeaderText/headerText';
 import Unicorn from './Unicorn/unicorn';
 import AirBalloon from './AirBalloon/airBalloon';
-
 import Services from '../Parts/Services/services';
 import TeamInformation from '../Parts/TeamInformation/teamInformation';
 import Gallery from '../Parts/Gallery/gallery';

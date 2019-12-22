@@ -20,25 +20,30 @@ import AirBalloonLogo  from '../../../images/5a1ccf951a6881.15194083151183758910
 import './airBalloon.scss';
  
 /**
-* App component definition and export
+* AirBalloon component definition and export
 */
 
 export const AirBalloon = (props) => {
 
-   const [slower, setSlower] = useState(0);
+    /**
+    * State
+    */
+
+    const [slower, setSlower] = useState(0);
 
     /**
     * Methods
     */
+
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         setSlower(scrollHeight/2);
     }
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
  
     const renderImage = () => {
         if(props.left){

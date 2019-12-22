@@ -18,6 +18,10 @@ import './headerText.scss';
 */
 
 export const HeaderText = (props) => {
+
+   /**
+   * State
+   */
  
    const [slower, setSlower] = useState(0);
 
@@ -33,7 +37,7 @@ export const HeaderText = (props) => {
    useEffect(() => {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
-   }, [])
+   }, []);
   
    return(
       <div className="headerText">
