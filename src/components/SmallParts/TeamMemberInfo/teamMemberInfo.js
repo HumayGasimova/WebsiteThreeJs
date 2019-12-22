@@ -6,14 +6,6 @@ import React, {
     useState
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
 * Styles
 */
@@ -30,7 +22,6 @@ import Img1 from '../../../images/Portrait_Placeholder.png';
 * Actions
 */
 
-import * as Actions from '../../../actions';
 import SocialMediaIcons from '../SocialMediaIcons/socialMediaIcons';
 
 /**
@@ -53,11 +44,11 @@ export const TeamMemberInfo = (props) => {
     }
 
     const handleMouseEnter = () => {
-        setIsHovering(true)
+        setIsHovering(true);
     }
 
     const handleMouseLeave = () => {
-        setIsHovering(false)
+        setIsHovering(false);
     }
 
     /**

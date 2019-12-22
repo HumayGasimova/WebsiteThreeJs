@@ -7,10 +7,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
 /**
 * Styles
 */
@@ -60,5 +56,6 @@ export const ToolbarIcon = (props) => {
         </a>
     );
 }
- export default ToolbarIcon;
+
+export default ToolbarIcon;
  
