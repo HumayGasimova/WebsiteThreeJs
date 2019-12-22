@@ -43,6 +43,11 @@
         &:hover {
             background: rgb(243, 235, 241);
         }
+        &:disabled{
+            border: rgb(243, 235, 241);
+            color:rgb(150, 150, 150);
+            cursor: not-allowed;
+        }
     }
 }
 

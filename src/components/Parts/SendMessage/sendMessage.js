@@ -91,6 +91,7 @@ export const SendMessage = (props) => {
                 outerDivClassName={"sendMessage-outerDiv-submit"}
                 onClick={() => props.submitMessage(name, email, contact, company, message)}
                 text={"Submit"}
+                disabled={name === '' || email === '' || contact === '' || company === '' || message === ''}
             />
         </div>
     );
