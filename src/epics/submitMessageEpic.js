@@ -8,8 +8,7 @@ import {
 } from 'rxjs';
 
 import { 
-    mergeMap,
-    takeUntil
+    mergeMap
 } from 'rxjs/operators';
 
 import { 
@@ -24,16 +23,10 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 /**
-* Utility
-*/
-
-import * as Utility from '../utility';
-
-/**
 * Epic
 */
 
-export const submitMessageEpic = (action$, state$) => 
+export const submitMessageEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.SUBMIT_MESSAGE),
         mergeMap(action => {
@@ -44,11 +37,10 @@ export const submitMessageEpic = (action$, state$) =>
                 company: action.company,
                 message: action.message
             }
-                    return of(
-                        Actions.messageToSend(info),
-                    )   
-                })
+                return of(
+                    Actions.messageToSend(info),
+                )   
+        })
     )
-    
          
 export default submitMessageEpic;

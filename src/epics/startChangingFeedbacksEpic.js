@@ -24,22 +24,15 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 /**
-* Utility
-*/
-
-import * as Utility from '../utility';
-
-/**
 * Epic
 */
 
-export const startChangingFeedbacksEpic = (action$, state$) => 
+export const startChangingFeedbacksEpic = (action$) => 
     action$.pipe(
         ofType(actionTypes.START_CHANGING_FEEDBACKS),
-        mergeMap(action => {
+        mergeMap(() => {
             return interval(3000).pipe(
                 mergeMap(() => {
-                    // console.log(state$.value.home.dots)
                     return of(
                         Actions.feedbackOnChange(),
                         Actions.dotOnChange(),
@@ -47,8 +40,7 @@ export const startChangingFeedbacksEpic = (action$, state$) =>
                 }),
                 takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
             )
-    })
+        })
     )
-    
-         
+
 export default startChangingFeedbacksEpic;
