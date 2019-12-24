@@ -86,9 +86,24 @@ export const Cube = (props) => {
 
         scene.add(cube);
 
-        renderer.render(scene, camera);
-       
+        // renderer.render(scene, camera);
+
+        const render = (time) => {
+            time *= 0.001;  // convert time to seconds
+           
+            cube.rotation.x = time;
+            cube.rotation.y = time;
+           
+            renderer.render(scene, camera);
+           
+            requestAnimationFrame(render);
+        }
+
+        requestAnimationFrame(render);
+        
     }, []);
+
+  
 
     /**
     * Markup
