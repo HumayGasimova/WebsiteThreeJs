@@ -3,7 +3,8 @@
 */
 
 import React, {
-    useEffect
+    useEffect,
+    useState
 } from 'react';
 
 import {
@@ -13,6 +14,8 @@ import {
 import {
     bindActionCreators
 } from 'redux';
+
+import * as THREE from 'three';
 
 /**
 * Components
@@ -49,14 +52,41 @@ import * as Icon from '../../constants/iconNames';
 
 export const Tutorial = (props) => {
 
+    const [container, setCounter] = useState(React.createRef());
+
     /**
     * Methods
     */
 
-  
-
     useEffect(() => {
-     
+        // Set the scene size.
+        const WIDTH = 400;
+        const HEIGHT = 300;
+
+        // Set some camera attributes.
+        const VIEW_ANGLE = 45;
+        const ASPECT = WIDTH / HEIGHT;
+        const NEAR = 0.1;
+        const FAR = 10000;
+
+        // Create a WebGL renderer, camera
+        // and a scene
+        const renderer = new THREE.WebGLRenderer();
+        const camera =
+            new THREE.PerspectiveCamera(
+                VIEW_ANGLE,
+                ASPECT,
+                NEAR,
+                FAR
+            );
+
+        const scene = new THREE.Scene();
+
+        // Add the camera to the scene.
+        scene.add(camera);
+
+        // Start the renderer.
+        renderer.setSize(WIDTH, HEIGHT);
     }, []);
 
     /**
@@ -64,7 +94,7 @@ export const Tutorial = (props) => {
     */
 
     return(
-        <div className="tutorial">
+        <div className="tutorial" ref={container}>
             KKK
         </div>
     );
