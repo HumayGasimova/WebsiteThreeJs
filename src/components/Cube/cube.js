@@ -80,11 +80,23 @@ export const Cube = (props) => {
         const boxDepth = 1;
 
         const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
-        const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+
+        // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+
+        // material which is affected by lights.
+        const material = new THREE.MeshPhongMaterial({color: 0x44aa88});
 
         const cube = new THREE.Mesh(geometry, material);
 
         scene.add(cube);
+
+        {
+            const color = 0xFFFFFF;
+            const intensity = 1;
+            const light = new THREE.DirectionalLight(color, intensity);
+            light.position.set(-1, 2, 4);
+            scene.add(light);
+        }
 
         // renderer.render(scene, camera);
 
@@ -93,6 +105,7 @@ export const Cube = (props) => {
            
             cube.rotation.x = time;
             cube.rotation.y = time;
+            cube.rotation.z = time;
            
             renderer.render(scene, camera);
            
