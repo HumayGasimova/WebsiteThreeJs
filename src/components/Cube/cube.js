@@ -84,11 +84,17 @@ export const Cube = (props) => {
         // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
 
         // material which is affected by lights.
-        const material = new THREE.MeshPhongMaterial({color: 0x44aa88});
+        // const material = new THREE.MeshPhongMaterial({color: 0x44aa88});
 
-        const cube = new THREE.Mesh(geometry, material);
+        // const cube = new THREE.Mesh(geometry, material);
 
-        scene.add(cube);
+        // scene.add(cube);
+
+        const cubes = [
+            makeInstance(geometry, 0x44aa88,  0, scene),
+            makeInstance(geometry, 0x8844aa, -2, scene),
+            makeInstance(geometry, 0xaa8844,  2, scene),
+        ];
 
         {
             const color = 0xFFFFFF;
@@ -103,9 +109,16 @@ export const Cube = (props) => {
         const render = (time) => {
             time *= 0.001;  // convert time to seconds
            
-            cube.rotation.x = time;
-            cube.rotation.y = time;
-            cube.rotation.z = time;
+            cubes.forEach((cube, ndx) => {
+                const speed = 1 + ndx * .1;
+                const rot = time * speed;
+                cube.rotation.x = rot;
+                cube.rotation.y = rot;
+            });
+
+            // cube.rotation.x = time;
+            // cube.rotation.y = time;
+            // cube.rotation.z = time;
            
             renderer.render(scene, camera);
            
@@ -116,7 +129,16 @@ export const Cube = (props) => {
         
     }, []);
 
-  
+    const makeInstance = (geometry, color, x, scene) => {
+        const material = new THREE.MeshPhongMaterial({color});
+       
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+       
+        cube.position.x = x;
+       
+        return cube;
+      }
 
     /**
     * Markup
