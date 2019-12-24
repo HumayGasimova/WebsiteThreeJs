@@ -15,6 +15,7 @@ import {
 */
 
 import Tutorial from './components/Tutorial/tutorial';
+import Cube from './components/Cube/cube';
 
 /**
 * Styles
@@ -39,7 +40,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ Tutorial }
+               component={ Cube }
             />
          </div>
       );

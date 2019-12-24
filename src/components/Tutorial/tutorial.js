@@ -59,8 +59,8 @@ export const Tutorial = (props) => {
 
     useEffect(() => {
         // Set the scene size.
-        const WIDTH = 400;
-        const HEIGHT = 300;
+        const WIDTH = 700;
+        const HEIGHT = 700;
 
         // Set some camera attributes.
         const VIEW_ANGLE = 45;
@@ -138,16 +138,16 @@ export const Tutorial = (props) => {
         renderer.render(scene, camera);
 
         // Schedule the first frame.
-        requestAnimationFrame(update);
+        // requestAnimationFrame(update(renderer, scene, camera));
     }, []);
 
-    const update = () => {
-        // Draw!
-        renderer.render(scene, camera);
+    // const update = (renderer, scene, camera) => {
+    //     // Draw!
+    //     renderer.render(scene, camera);
       
-        // Schedule the next frame.
-        requestAnimationFrame(update);
-      }
+    //     // Schedule the next frame.
+    //     requestAnimationFrame(update(renderer, scene, camera));
+    //   }
 
     /**
     * Markup
