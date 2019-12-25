@@ -47,6 +47,12 @@ import * as Selectors from '../../reducers/selectors';
 import * as Icon from '../../constants/iconNames';
 
 /**
+* Images
+*/
+
+import Background from '../../images/76-760412_lake-clip-sunset-mountains-vector-png.png';
+
+/**
 * Cube component definition and export
 */
 
@@ -78,10 +84,16 @@ export const Cube = (props) => {
 
         const scene = new THREE.Scene();
 
+        //Draw background using texture
+        const loader = new THREE.TextureLoader();
+        const bgTexture = loader.load(Background);
+        scene.background = bgTexture;
+
         const boxWidth = 1;
         const boxHeight = 1;
         const boxDepth = 1;
 
+        //Add Box Geometry
         const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
         // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
@@ -123,6 +135,19 @@ export const Cube = (props) => {
                 camera.aspect = canvas.clientWidth / canvas.clientHeight;
                 camera.updateProjectionMatrix();
             }
+
+            // Set the repeat and offset properties of the background texture
+            // to keep the image's aspect correct.
+            // Note the image may not have loaded yet.
+            const canvasAspect = canvas.clientWidth / canvas.clientHeight;
+            const imageAspect = bgTexture.image ? bgTexture.image.width / bgTexture.image.height : 1;
+            const aspect = imageAspect / canvasAspect;
+            
+            bgTexture.offset.x = aspect > 1 ? (1 - 1 / aspect) / 2 : 0;
+            bgTexture.repeat.x = aspect > 1 ? 1 / aspect : 1;
+            
+            bgTexture.offset.y = aspect > 1 ? 0 : (1 - aspect) / 2;
+            bgTexture.repeat.y = aspect > 1 ? 1 : aspect;
            
             cubes.forEach((cube, ndx) => {
                 const speed = 1 + ndx * .1;
