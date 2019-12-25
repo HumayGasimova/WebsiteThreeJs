@@ -108,6 +108,18 @@ export const Cube = (props) => {
 
         const render = (time) => {
             time *= 0.001;  // convert time to seconds
+
+            // prevent stretching when changing screen size
+            const canvas = renderer.domElement;
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+
+            //if the canvas was resized, update camera aspect
+            if (resizeRendererToDisplaySize(renderer)) {
+                const canvas = renderer.domElement;
+                camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                camera.updateProjectionMatrix();
+            }
            
             cubes.forEach((cube, ndx) => {
                 const speed = 1 + ndx * .1;
@@ -138,6 +150,17 @@ export const Cube = (props) => {
         cube.position.x = x;
        
         return cube;
+    }
+
+    const resizeRendererToDisplaySize = (renderer) => {
+        const canvas = renderer.domElement;
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+        const needResize = canvas.width !== width || canvas.height !== height;
+        if (needResize) {
+          renderer.setSize(width, height, false);
+        }
+        return needResize;
       }
 
     /**
@@ -145,7 +168,7 @@ export const Cube = (props) => {
     */
 
     return(
-        <canvas className="tutorial" id="#container">
+        <canvas className="cube" id="#container">
       
         </canvas>
     );
