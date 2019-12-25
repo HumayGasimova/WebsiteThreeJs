@@ -56,12 +56,12 @@ import * as Icon from '../../constants/iconNames';
 
 import Background from '../../images/76-760412_lake-clip-sunset-mountains-vector-png.png';
 
-import PosX from '../../images/pos-x.jpg';
-import NegX from '../../images/neg-x.jpg';
-import PosY from '../../images/pos-y.jpg';
-import NegY from '../../images/neg-y.jpg';
-import PosZ from '../../images/pos-z.jpg';
-import NegZ from '../../images/neg-z.jpg';
+import PosX from '../../images/forest/Plants/posx.jpg';
+import NegX from '../../images/forest/Plants/negx.jpg';
+import PosY from '../../images/forest/Plants/posy.jpg';
+import NegY from '../../images/forest/Plants/negy.jpg';
+import PosZ from '../../images/forest/Plants/posz.jpg';
+import NegZ from '../../images/forest/Plants/negz.jpg';
 
 /**
 * Cube component definition and export
