@@ -114,7 +114,7 @@ export const Cube = (props) => {
             camera.aspect = canvas.clientWidth / canvas.clientHeight;
             camera.updateProjectionMatrix();
 
-            //if the canvas was resized, update camera aspect
+            // if the canvas was resized, update camera aspect
             if (resizeRendererToDisplaySize(renderer)) {
                 const canvas = renderer.domElement;
                 camera.aspect = canvas.clientWidth / canvas.clientHeight;
@@ -154,8 +154,12 @@ export const Cube = (props) => {
 
     const resizeRendererToDisplaySize = (renderer) => {
         const canvas = renderer.domElement;
-        const width = canvas.clientWidth;
-        const height = canvas.clientHeight;
+        //Handling HD-DPI displays
+        const pixelRatio = window.devicePixelRatio;
+
+        const width  = canvas.clientWidth  * pixelRatio | 0;
+        const height = canvas.clientHeight * pixelRatio | 0;
+        
         const needResize = canvas.width !== width || canvas.height !== height;
         if (needResize) {
           renderer.setSize(width, height, false);
@@ -168,9 +172,7 @@ export const Cube = (props) => {
     */
 
     return(
-        <canvas className="cube" id="#container">
-      
-        </canvas>
+        <canvas className="cube" id="#container"/>
     );
 }
 
