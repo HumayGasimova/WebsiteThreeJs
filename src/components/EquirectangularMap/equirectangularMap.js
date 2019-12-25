@@ -92,7 +92,7 @@ export const EquirectangularMap = (props) => {
         const far = 100;
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
-        camera.position.z = 3;
+        camera.position.z = 7;
 
          
         const controls = new OrbitControls(camera, canvas);
