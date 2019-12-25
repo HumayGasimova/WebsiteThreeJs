@@ -63,7 +63,10 @@ export const Cube = (props) => {
 
         // Create a WebGL renderer, camera
         // and a scene
-        const renderer = new THREE.WebGLRenderer({canvas});
+        const renderer = new THREE.WebGLRenderer({
+            canvas,
+            alpha: true,
+        });
 
         const fov = 75;
         const aspect = 2;  // the canvas default
