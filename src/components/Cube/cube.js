@@ -17,6 +17,10 @@ import {
 
 import * as THREE from 'three';
 
+import {
+    OrbitControls
+} from "three/examples/jsm/controls/OrbitControls";
+
 /**
 * Components
 */
@@ -52,6 +56,13 @@ import * as Icon from '../../constants/iconNames';
 
 import Background from '../../images/76-760412_lake-clip-sunset-mountains-vector-png.png';
 
+import PosX from '../../images/pos-x.jpg';
+import NegX from '../../images/neg-x.jpg';
+import PosY from '../../images/pos-y.jpg';
+import NegY from '../../images/neg-y.jpg';
+import PosZ from '../../images/pos-z.jpg';
+import NegZ from '../../images/neg-z.jpg';
+
 /**
 * Cube component definition and export
 */
@@ -77,17 +88,36 @@ export const Cube = (props) => {
         const fov = 75;
         const aspect = 2;  // the canvas default
         const near = 0.1;
-        const far = 5;
+        const far = 100;
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
-        camera.position.z = 2;
+        camera.position.z = 3;
+
+         
+        const controls = new OrbitControls(camera, canvas);
+        controls.target.set(0, 0, 0);
+        controls.update();
 
         const scene = new THREE.Scene();
 
         //Draw background using texture
-        const loader = new THREE.TextureLoader();
-        const bgTexture = loader.load(Background);
-        scene.background = bgTexture;
+
+        // const loader = new THREE.TextureLoader();
+        // const bgTexture = loader.load(Background);
+        // scene.background = bgTexture;
+
+        {
+            const loader = new THREE.CubeTextureLoader();
+            const texture = loader.load([
+              PosX,
+              NegX,
+              PosY,
+              NegY,
+              PosZ,
+              NegZ,
+            ]);
+            scene.background = texture;
+        }
 
         const boxWidth = 1;
         const boxHeight = 1;
@@ -139,15 +169,16 @@ export const Cube = (props) => {
             // Set the repeat and offset properties of the background texture
             // to keep the image's aspect correct.
             // Note the image may not have loaded yet.
-            const canvasAspect = canvas.clientWidth / canvas.clientHeight;
-            const imageAspect = bgTexture.image ? bgTexture.image.width / bgTexture.image.height : 1;
-            const aspect = imageAspect / canvasAspect;
+
+            // const canvasAspect = canvas.clientWidth / canvas.clientHeight;
+            // const imageAspect = bgTexture.image ? bgTexture.image.width / bgTexture.image.height : 1;
+            // const aspect = imageAspect / canvasAspect;
             
-            bgTexture.offset.x = aspect > 1 ? (1 - 1 / aspect) / 2 : 0;
-            bgTexture.repeat.x = aspect > 1 ? 1 / aspect : 1;
+            // bgTexture.offset.x = aspect > 1 ? (1 - 1 / aspect) / 2 : 0;
+            // bgTexture.repeat.x = aspect > 1 ? 1 / aspect : 1;
             
-            bgTexture.offset.y = aspect > 1 ? 0 : (1 - aspect) / 2;
-            bgTexture.repeat.y = aspect > 1 ? 1 : aspect;
+            // bgTexture.offset.y = aspect > 1 ? 0 : (1 - aspect) / 2;
+            // bgTexture.repeat.y = aspect > 1 ? 1 : aspect;
            
             cubes.forEach((cube, ndx) => {
                 const speed = 1 + ndx * .1;
