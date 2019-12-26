@@ -49,13 +49,26 @@ import * as Selectors from '../../reducers/selectors';
 * Constants
 */
 
-import * as Icon from '../../constants/iconNames';
+import * as Background from '../../constants/backgrounds';
 
 /**
 * Images
 */
 
-import Autumn from '../../images/Backgrounds/anniversary_lounge_8k.jpg';
+import AnniversaryLounge from '../../images/Backgrounds/anniversary_lounge_8k.jpg';
+import AutumnHockey from '../../images/Backgrounds/autumn_hockey_8k.jpg';
+import BethnalGreenEntrance from '../../images/Backgrounds/bethnal_green_entrance_4k.jpg';
+import DresdenMoat from '../../images/Backgrounds/dresden_moat_8k.jpg';
+import GrayPier from '../../images/Backgrounds/gray_pier_8k.jpg';
+import Lebombo from '../../images/Backgrounds/lebombo_8k.jpg';
+import MistyPines from '../../images/Backgrounds/misty_pines_4k.jpg';
+import MusicHall from '../../images/Backgrounds/music_hall_01_8k.jpg';
+import SkukuzaGolf from '../../images/Backgrounds/skukuza_golf_4k.jpg';
+import SnowyPark from '../../images/Backgrounds/snowy_park_01_8k.jpg';
+import SpruitSunrise from '../../images/Backgrounds/spruit_sunrise_8k.jpg';
+import SunnyVondelpark from '../../images/Backgrounds/sunny_vondelpark_8k.jpg';
+import UmhlangaSunrise from '../../images/Backgrounds/umhlanga_sunrise_8k.jpg';
+import UrbanStreet from '../../images/Backgrounds/urban_street_01_8k.jpg';
 
 import AnniversaryLoungeCapture from '../../images/Backgrounds/capture/anniversary_lounge_capture.png';
 import AutumnHockeyCapture from '../../images/Backgrounds/capture/autumn_hockey_capture.png';
@@ -64,7 +77,7 @@ import DresdenMoatCapture from '../../images/Backgrounds/capture/dresden_moat_ca
 import GrayPierCapture from '../../images/Backgrounds/capture/gray_pier_capture.png';
 import LebomboCapture from '../../images/Backgrounds/capture/lebombo_capture.png';
 import MistyPinesCapture from '../../images/Backgrounds/capture/misty_pines_capture.png';
-import MusiHallCapture from '../../images/Backgrounds/capture/music_hall_01_capture.png';
+import MusicHallCapture from '../../images/Backgrounds/capture/music_hall_01_capture.png';
 import SkukuzaGolfCapture from '../../images/Backgrounds/capture/skukuza_golf_capture.png';
 import SnowyParkCapture from '../../images/Backgrounds/capture/snowy_park_01_capture.png';
 import SpruitSunriseCapture from '../../images/Backgrounds/capture/spruit_sunrise_capture.png';
@@ -78,6 +91,7 @@ import UrbanStreetCapture from '../../images/Backgrounds/capture/urban_street_01
 
 export const EquirectangularMap = (props) => {
 
+    const [backgroundTexture, setBackgroundTexture] = useState(AnniversaryLounge);
 
     /**
     * Methods
@@ -117,7 +131,7 @@ export const EquirectangularMap = (props) => {
         {
             const loader = new THREE.TextureLoader();
             const texture = loader.load(
-                Autumn
+                backgroundTexture
             );
             texture.magFilter = THREE.LinearFilter;
             texture.minFilter = THREE.LinearFilter;
@@ -237,7 +251,7 @@ export const EquirectangularMap = (props) => {
 
         requestAnimationFrame(render);
         
-    }, []);
+    }, [backgroundTexture]);
 
     const makeInstance = (geometry, color, x, scene) => {
         const material = new THREE.MeshPhongMaterial({color});
@@ -263,7 +277,40 @@ export const EquirectangularMap = (props) => {
           renderer.setSize(width, height, false);
         }
         return needResize;
-      }
+    }
+
+    const setBackground = (option) => {
+        switch (option){
+            case Background.AnniversaryLounge:
+                return setBackgroundTexture(AnniversaryLounge);
+            case Background.AutumnHockey:
+                return setBackgroundTexture(AutumnHockey);
+            case Background.BethnalGreenEntrance:
+                return setBackgroundTexture(BethnalGreenEntrance);
+            case Background.DresdenMoat:
+                return setBackgroundTexture(DresdenMoat);
+            case Background.GrayPier:
+                return setBackgroundTexture(GrayPier);
+            case Background.Lebombo:
+                return setBackgroundTexture(Lebombo);
+            case Background.MistyPines:
+                return setBackgroundTexture(MistyPines);
+            case Background.MusicHall:
+                return setBackgroundTexture(MusicHall);
+            case Background.SkukuzaGolf:
+                return setBackgroundTexture(SkukuzaGolf);
+            case Background.SnowyPark:
+                return setBackgroundTexture(SnowyPark);
+            case Background.SpruitSunrise:
+                return setBackgroundTexture(SpruitSunrise);
+            case Background.SunnyVondelpark:
+                return setBackgroundTexture(SunnyVondelpark);
+            case Background.UmhlangaSunrise:
+                return setBackgroundTexture(UmhlangaSunrise);
+            case Background.UrbanStreet:
+                return setBackgroundTexture(UrbanStreet); 
+        }
+    }
 
     /**
     * Markup
@@ -272,74 +319,89 @@ export const EquirectangularMap = (props) => {
     return(
         <>
             <canvas className="cube-canvas" id="#container"/>
+            {console.log("state",backgroundTexture)}
             <div className="cube-images">
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.AnniversaryLounge)}
                 >
                     <img className="cube-image" src={AnniversaryLoungeCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.AutumnHockey)}
                 >
                     <img className="cube-image" src={AutumnHockeyCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.BethnalGreenEntrance)}
                 >
                     <img className="cube-image" src={BethnalGreenEntranceCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.DresdenMoat)}
                 >
                     <img className="cube-image" src={DresdenMoatCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.GrayPier)}
                 >
                     <img className="cube-image" src={GrayPierCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.Lebombo)}
                 >
                     <img className="cube-image" src={LebomboCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.MistyPines)}
                 >
                     <img className="cube-image" src={MistyPinesCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.MusicHall)}
                 >
-                    <img className="cube-image" src={MusiHallCapture}/>
+                    <img className="cube-image" src={MusicHallCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.SkukuzaGolf)}
                 >
                     <img className="cube-image" src={SkukuzaGolfCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.SnowyPark)}
                 >
                     <img className="cube-image" src={SnowyParkCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.SpruitSunrise)}
                 >
                     <img className="cube-image" src={SpruitSunriseCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.SunnyVondelpark)}
                 >
                     <img className="cube-image" src={SunnyVondelparkCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.UmhlangaSunrise)}
                 >
                     <img className="cube-image" src={UmhlangaSunriseCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
+                    onClick={() => setBackground(Background.UrbanStreet)}
                 >
                     <img className="cube-image" src={UrbanStreetCapture}/>
                 </Button>

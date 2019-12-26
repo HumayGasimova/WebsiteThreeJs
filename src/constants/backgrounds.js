@@ -1,0 +1,14 @@
+export const AnniversaryLounge = 'AnniversaryLounge';
+export const AutumnHockey = 'AutumnHockey';
+export const BethnalGreenEntrance = 'BethnalGreenEntrance';
+export const DresdenMoat = 'DresdenMoat';
+export const GrayPier = 'GrayPier';
+export const Lebombo = 'Lebombo';
+export const MistyPines = 'MistyPines';
+export const MusicHall = 'MusicHall';
+export const SkukuzaGolf = 'SkukuzaGolf';
+export const SnowyPark = 'SnowyPark';
+export const SpruitSunrise = 'SpruitSunrise';
+export const SunnyVondelpark = 'SunnyVondelpark';
+export const UmhlangaSunrise = 'UmhlangaSunrise';
+export const UrbanStreet = 'UrbanStreet';
