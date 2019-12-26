@@ -185,6 +185,18 @@ export const EquirectangularMap = (props) => {
 
         // scene.add(cube);
 
+
+        {
+            const sphereRadius = 1;
+            const sphereWidthDivisions = 32;
+            const sphereHeightDivisions = 16;
+            const sphereGeo = new THREE.SphereBufferGeometry(sphereRadius, sphereWidthDivisions, sphereHeightDivisions);
+            const sphereMat = new THREE.MeshPhongMaterial({color: '#CA8'});
+            const mesh = new THREE.Mesh(sphereGeo, sphereMat);
+            mesh.position.set(0, 0, -2);
+            scene.add(mesh);
+        }
+
         const cubes = [
             makeInstance(geometry, 0x44aa88,  0, scene),
             makeInstance(geometry, 0x8844aa, -2, scene),
