@@ -57,6 +57,21 @@ import * as Icon from '../../constants/iconNames';
 
 import Autumn from '../../images/Backgrounds/anniversary_lounge_8k.jpg';
 
+import AnniversaryLoungeCapture from '../../images/Backgrounds/capture/anniversary_lounge_capture.png';
+import AutumnHockeyCapture from '../../images/Backgrounds/capture/autumn_hockey_capture.png';
+import BethnalGreenEntranceCapture from '../../images/Backgrounds/capture/bethnal_green_entrance_capture.png';
+import DresdenMoatCapture from '../../images/Backgrounds/capture/dresden_moat_capture.png';
+import GrayPierCapture from '../../images/Backgrounds/capture/gray_pier_capture.png';
+import LebomboCapture from '../../images/Backgrounds/capture/lebombo_capture.png';
+import MistyPinesCapture from '../../images/Backgrounds/capture/misty_pines_capture.png';
+import MusiHallCapture from '../../images/Backgrounds/capture/music_hall_01_capture.png';
+import SkukuzaGolfCapture from '../../images/Backgrounds/capture/skukuza_golf_capture.png';
+import SnowyParkCapture from '../../images/Backgrounds/capture/snowy_park_01_capture.png';
+import SpruitSunriseCapture from '../../images/Backgrounds/capture/spruit_sunrise_capture.png';
+import SunnyVondelparkCapture from '../../images/Backgrounds/capture/sunny_vondelpark_capture.png';
+import UmhlangaSunriseCapture from '../../images/Backgrounds/capture/umhlanga_sunrise_capture.png';
+import UrbanStreetCapture from '../../images/Backgrounds/capture/urban_street_01_capture.png';
+
 /**
 * EquirectangularMap component definition and export
 */
@@ -261,17 +276,72 @@ export const EquirectangularMap = (props) => {
                 <Button 
                     className="cube-options"
                 >
-                    {/* <img className="cube-image" src={PosX}/> */}
+                    <img className="cube-image" src={AnniversaryLoungeCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
                 >
-                    {/* <img className="cube-image" src={PosX}/> */}
+                    <img className="cube-image" src={AutumnHockeyCapture}/>
                 </Button>
                 <Button 
                     className="cube-options"
                 >
-                    {/* <img className="cube-image" src={PosX}/> */}
+                    <img className="cube-image" src={BethnalGreenEntranceCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={DresdenMoatCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={GrayPierCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={LebomboCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={MistyPinesCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={MusiHallCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={SkukuzaGolfCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={SnowyParkCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={SpruitSunriseCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={SunnyVondelparkCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={UmhlangaSunriseCapture}/>
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    <img className="cube-image" src={UrbanStreetCapture}/>
                 </Button>
             </div>
         </>
