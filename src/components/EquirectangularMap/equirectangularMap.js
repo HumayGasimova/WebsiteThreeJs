@@ -25,6 +25,7 @@ import {
 * Components
 */
 
+import Button from '../../library/Button/button';
 
 /**
 * Styles
@@ -54,14 +55,7 @@ import * as Icon from '../../constants/iconNames';
 * Images
 */
 
-import PosX from '../../images/forest/Plants/posx.jpg';
-import NegX from '../../images/forest/Plants/negx.jpg';
-import PosY from '../../images/forest/Plants/posy.jpg';
-import NegY from '../../images/forest/Plants/negy.jpg';
-import PosZ from '../../images/forest/Plants/posz.jpg';
-import NegZ from '../../images/forest/Plants/negz.jpg';
-
-import Autumn from '../../images/autumn_hockey.jpg';
+import Autumn from '../../images/Backgrounds/anniversary_lounge_8k.jpg';
 
 /**
 * EquirectangularMap component definition and export
@@ -261,7 +255,26 @@ export const EquirectangularMap = (props) => {
     */
 
     return(
-        <canvas className="cube" id="#container"/>
+        <>
+            <canvas className="cube-canvas" id="#container"/>
+            <div className="cube-images">
+                <Button 
+                    className="cube-options"
+                >
+                    {/* <img className="cube-image" src={PosX}/> */}
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    {/* <img className="cube-image" src={PosX}/> */}
+                </Button>
+                <Button 
+                    className="cube-options"
+                >
+                    {/* <img className="cube-image" src={PosX}/> */}
+                </Button>
+            </div>
+        </>
     );
 }
 
