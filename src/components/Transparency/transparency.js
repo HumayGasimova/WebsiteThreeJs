@@ -31,7 +31,7 @@ import Button from '../../library/Button/button';
 * Styles
 */
 
-import './equirectangularMap.scss';
+import './transparency.scss';
 
 /**
 * Actions
@@ -86,10 +86,10 @@ import UmhlangaSunriseCapture from '../../images/Backgrounds/capture/umhlanga_su
 import UrbanStreetCapture from '../../images/Backgrounds/capture/urban_street_01_capture.png';
 
 /**
-* EquirectangularMap component definition and export
+* Transparency component definition and export
 */
 
-export const EquirectangularMap = (props) => {
+export const Transparency = (props) => {
 
     const [backgroundTexture, setBackgroundTexture] = useState(AnniversaryLounge);
 
@@ -112,10 +112,10 @@ export const EquirectangularMap = (props) => {
         const fov = 75;
         const aspect = 2;  // the canvas default
         const near = 0.1;
-        const far = 100;
+        const far = 25;
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
-        camera.position.z = 7;
+        camera.position.z = 2;
 
          
         const controls = new OrbitControls(camera, canvas);
@@ -123,32 +123,33 @@ export const EquirectangularMap = (props) => {
         controls.update();
 
         const scene = new THREE.Scene();
+        scene.background = new THREE.Color('white');
 
-        //backlground scene
-        const bgScene = new THREE.Scene();
-        let bgMesh;
+        //background scene
+        // const bgScene = new THREE.Scene();
+        // let bgMesh;
 
-        {
-            const loader = new THREE.TextureLoader();
-            const texture = loader.load(
-                backgroundTexture
-            );
-            texture.magFilter = THREE.LinearFilter;
-            texture.minFilter = THREE.LinearFilter;
+        // {
+        //     const loader = new THREE.TextureLoader();
+        //     const texture = loader.load(
+        //         backgroundTexture
+        //     );
+        //     texture.magFilter = THREE.LinearFilter;
+        //     texture.minFilter = THREE.LinearFilter;
            
-            const shader = THREE.ShaderLib.equirect;
-              const material = new THREE.ShaderMaterial({
-              fragmentShader: shader.fragmentShader,
-              vertexShader: shader.vertexShader,
-              uniforms: shader.uniforms,
-              depthWrite: false,
-              side: THREE.BackSide,
-            });
-              material.uniforms.tEquirect.value = texture;
-            const plane = new THREE.BoxBufferGeometry(2, 2, 2);
-            bgMesh = new THREE.Mesh(plane, material);
-            bgScene.add(bgMesh);
-          }
+        //     const shader = THREE.ShaderLib.equirect;
+        //       const material = new THREE.ShaderMaterial({
+        //       fragmentShader: shader.fragmentShader,
+        //       vertexShader: shader.vertexShader,
+        //       uniforms: shader.uniforms,
+        //       depthWrite: false,
+        //       side: THREE.BackSide,
+        //     });
+        //       material.uniforms.tEquirect.value = texture;
+        //     const plane = new THREE.BoxBufferGeometry(2, 2, 2);
+        //     bgMesh = new THREE.Mesh(plane, material);
+        //     bgScene.add(bgMesh);
+        // }
 
         //Draw background using texture
 
@@ -197,11 +198,17 @@ export const EquirectangularMap = (props) => {
         //     scene.add(mesh);
         // }
 
-        const cubes = [
-            makeInstance(geometry, 0x44aa88,  0, scene),
-            makeInstance(geometry, 0x8844aa, -2, scene),
-            makeInstance(geometry, 0xaa8844,  2, scene),
-        ];
+        {
+            const d = 0.8;
+            makeInstance(geometry, hsl(0 / 8, 1, .5), -d, -d, -d, scene),
+            makeInstance(geometry, hsl(1 / 8, 1, .5), d, -d, -d, scene),
+            makeInstance(geometry, hsl(2 / 8, 1, .5), -d,  d, -d, scene),
+            makeInstance(geometry, hsl(3 / 8, 1, .5), d,  d, -d, scene),
+            makeInstance(geometry, hsl(4 / 8, 1, .5), -d, -d,  d, scene),
+            makeInstance(geometry, hsl(5 / 8, 1, .5), d, -d,  d, scene),
+            makeInstance(geometry, hsl(6 / 8, 1, .5), -d,  d,  d, scene),
+            makeInstance(geometry, hsl(7 / 8, 1, .5), d,  d,  d, scene)
+        }
 
         {
             const color = 0xFFFFFF;
@@ -242,19 +249,19 @@ export const EquirectangularMap = (props) => {
             // bgTexture.offset.y = aspect > 1 ? 0 : (1 - aspect) / 2;
             // bgTexture.repeat.y = aspect > 1 ? 1 : aspect;
            
-            cubes.forEach((cube, ndx) => {
-                const speed = 1 + ndx * .1;
-                const rot = time * speed;
-                cube.rotation.x = rot;
-                cube.rotation.y = rot;
-            });
+            // cubes.forEach((cube, ndx) => {
+            //     const speed = 1 + ndx * .1;
+            //     const rot = time * speed;
+            //     cube.rotation.x = rot;
+            //     cube.rotation.y = rot;
+            // });
 
             // cube.rotation.x = time;
             // cube.rotation.y = time;
             // cube.rotation.z = time;
 
-            bgMesh.position.copy(camera.position);
-            renderer.render(bgScene, camera);
+            // bgMesh.position.copy(camera.position);
+            // renderer.render(bgScene, camera);
            
             renderer.render(scene, camera);
            
@@ -265,13 +272,17 @@ export const EquirectangularMap = (props) => {
         
     }, [backgroundTexture]);
 
-    const makeInstance = (geometry, color, x, scene) => {
+    const hsl = (h, s, l) => {
+        return (new THREE.Color()).setHSL(h, s, l);
+    }
+
+    const makeInstance = (geometry, color, x, y, z, scene) => {
         const material = new THREE.MeshPhongMaterial({color});
        
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
        
-        cube.position.x = x;
+        cube.position.set(x, y, z);
        
         return cube;
     }
@@ -331,7 +342,6 @@ export const EquirectangularMap = (props) => {
     return(
         <>
             <canvas className="cube-canvas" id="#container"/>
-            {console.log("state",backgroundTexture)}
             <div className="cube-images">
                 <Button 
                     className="cube-options"
@@ -435,5 +445,5 @@ export default connect(
             // activateIcon: bindActionCreators(Actions.activateIcon, dispatch)
         };
     }
-)(EquirectangularMap);
+)(Transparency);
  
