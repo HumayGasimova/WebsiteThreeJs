@@ -19,7 +19,7 @@ import Cube from './components/Cube/cube';
 import EquirectangularMap from './components/EquirectangularMap/equirectangularMap';
 import TransparentCubes from './components/Transparency/transparentCubes';
 import TransparentPlanes from './components/Transparency/transparentPlanes';
-
+import TransparentTrees from './components/Transparency/transparentTrees';
 
 /**
 * Styles
@@ -44,7 +44,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ TransparentPlanes }
+               component={ TransparentTrees }
             />
          </div>
       );
