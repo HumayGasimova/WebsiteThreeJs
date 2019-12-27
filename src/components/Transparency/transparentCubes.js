@@ -126,7 +126,7 @@ export const TransparentCubes = (props) => {
         scene.background = new THREE.Color('white');
 
         //background scene
-        const bgScene = new THREE.Scene();
+        // const bgScene = new THREE.Scene();
         // let bgMesh;
 
         // {
