@@ -17,7 +17,9 @@ import {
 import Tutorial from './components/Tutorial/tutorial';
 import Cube from './components/Cube/cube';
 import EquirectangularMap from './components/EquirectangularMap/equirectangularMap';
-import Transparency from './components/Transparency/transparency';
+import TransparentCubes from './components/Transparency/transparentCubes';
+import TransparentPlanes from './components/Transparency/transparentPlanes';
+
 
 /**
 * Styles
@@ -42,7 +44,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ Transparency }
+               component={ TransparentPlanes }
             />
          </div>
       );

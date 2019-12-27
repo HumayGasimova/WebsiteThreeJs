@@ -86,10 +86,10 @@ import UmhlangaSunriseCapture from '../../images/Backgrounds/capture/umhlanga_su
 import UrbanStreetCapture from '../../images/Backgrounds/capture/urban_street_01_capture.png';
 
 /**
-* Transparency component definition and export
+* TransparentPlanes component definition and export
 */
 
-export const Transparency = (props) => {
+export const TransparentPlanes = (props) => {
 
     const [backgroundTexture, setBackgroundTexture] = useState(AnniversaryLounge);
 
@@ -126,7 +126,7 @@ export const Transparency = (props) => {
         scene.background = new THREE.Color('white');
 
         //background scene
-        // const bgScene = new THREE.Scene();
+        const bgScene = new THREE.Scene();
         // let bgMesh;
 
         // {
@@ -282,19 +282,22 @@ export const Transparency = (props) => {
     }
 
     const makeInstance = (geometry, color, x, y, z, scene) => {
-        const material = new THREE.MeshPhongMaterial({
-            color,
-            opacity: 0.5,
-            transparent: true,
-            side: THREE.DoubleSide, //to draw both sides of the cube
-        });
-       
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-       
-        cube.position.set(x, y, z);
-       
-        return cube;
+
+        [THREE.BackSide, THREE.FrontSide].forEach((side)=>{
+            const material = new THREE.MeshPhongMaterial({
+                color,
+                opacity: 0.5,
+                transparent: true,
+                // side: THREE.DoubleSide, //to draw both sides of the cube
+                side
+            });
+
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+           
+            cube.position.set(x, y, z);
+        })
+        // return cube;
     }
 
     const resizeRendererToDisplaySize = (renderer) => {
@@ -369,5 +372,5 @@ export default connect(
             // activateIcon: bindActionCreators(Actions.activateIcon, dispatch)
         };
     }
-)(Transparency);
+)(TransparentPlanes);
  
