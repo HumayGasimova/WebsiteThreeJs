@@ -127,8 +127,8 @@ export const TransparentPlanes = (props) => {
             requestAnimationFrame(render);
         }
 
-        makeInstanceOfPlane(geometry, 'pink', 0, pic1, scene, render, loader);
-        makeInstanceOfPlane(geometry, 'lightblue', Math.PI * 0.5, pic2, scene, render, loader);
+        makeInstanceOfPlane(geometry, 'white', 0, pic1, scene, render, loader);
+        makeInstanceOfPlane(geometry, 'white', Math.PI * 0.5, pic2, scene, render, loader);
 
         requestAnimationFrame(render);
         
