@@ -286,6 +286,7 @@ export const Transparency = (props) => {
             color,
             opacity: 0.5,
             transparent: true,
+            side: THREE.DoubleSide, //to draw both sides of the cube
         });
        
         const cube = new THREE.Mesh(geometry, material);
