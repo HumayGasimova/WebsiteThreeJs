@@ -20,6 +20,8 @@ import EquirectangularMap from './components/EquirectangularMap/equirectangularM
 import TransparentCubes from './components/Transparency/transparentCubes';
 import TransparentPlanes from './components/Transparency/transparentPlanes';
 import TransparentTrees from './components/Transparency/transparentTrees';
+import MultipleCanvases from './components/MultipleCanvases/multipleCanvases';
+
 
 /**
 * Styles
@@ -44,7 +46,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ TransparentTrees }
+               component={ MultipleCanvases }
             />
          </div>
       );

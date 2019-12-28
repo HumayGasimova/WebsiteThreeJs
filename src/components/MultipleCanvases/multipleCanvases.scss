@@ -1,0 +1,24 @@
+.canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: -1;
+}
+
+.diagram {
+    display: inline-block;
+    width: 5em;
+    height: 3em;
+    border: 1px solid black;
+}
+.left {
+    float: left;
+    margin-right: .25em;
+}
+.right {
+    float: right;
+    margin-left: .25em;
+}
