@@ -56,34 +56,7 @@ import * as Background from '../../constants/backgrounds';
 */
 
 import AnniversaryLounge from '../../images/Backgrounds/anniversary_lounge_8k.jpg';
-import AutumnHockey from '../../images/Backgrounds/autumn_hockey_8k.jpg';
-import BethnalGreenEntrance from '../../images/Backgrounds/bethnal_green_entrance_4k.jpg';
-import DresdenMoat from '../../images/Backgrounds/dresden_moat_8k.jpg';
-import GrayPier from '../../images/Backgrounds/gray_pier_8k.jpg';
-import Lebombo from '../../images/Backgrounds/lebombo_8k.jpg';
-import MistyPines from '../../images/Backgrounds/misty_pines_4k.jpg';
-import MusicHall from '../../images/Backgrounds/music_hall_01_8k.jpg';
-import SkukuzaGolf from '../../images/Backgrounds/skukuza_golf_4k.jpg';
-import SnowyPark from '../../images/Backgrounds/snowy_park_01_8k.jpg';
-import SpruitSunrise from '../../images/Backgrounds/spruit_sunrise_8k.jpg';
-import SunnyVondelpark from '../../images/Backgrounds/sunny_vondelpark_8k.jpg';
-import UmhlangaSunrise from '../../images/Backgrounds/umhlanga_sunrise_8k.jpg';
-import UrbanStreet from '../../images/Backgrounds/urban_street_01_8k.jpg';
-
-import AnniversaryLoungeCapture from '../../images/Backgrounds/capture/anniversary_lounge_capture.png';
-import AutumnHockeyCapture from '../../images/Backgrounds/capture/autumn_hockey_capture.png';
-import BethnalGreenEntranceCapture from '../../images/Backgrounds/capture/bethnal_green_entrance_capture.png';
-import DresdenMoatCapture from '../../images/Backgrounds/capture/dresden_moat_capture.png';
-import GrayPierCapture from '../../images/Backgrounds/capture/gray_pier_capture.png';
-import LebomboCapture from '../../images/Backgrounds/capture/lebombo_capture.png';
-import MistyPinesCapture from '../../images/Backgrounds/capture/misty_pines_capture.png';
-import MusicHallCapture from '../../images/Backgrounds/capture/music_hall_01_capture.png';
-import SkukuzaGolfCapture from '../../images/Backgrounds/capture/skukuza_golf_capture.png';
-import SnowyParkCapture from '../../images/Backgrounds/capture/snowy_park_01_capture.png';
-import SpruitSunriseCapture from '../../images/Backgrounds/capture/spruit_sunrise_capture.png';
-import SunnyVondelparkCapture from '../../images/Backgrounds/capture/sunny_vondelpark_capture.png';
-import UmhlangaSunriseCapture from '../../images/Backgrounds/capture/umhlanga_sunrise_capture.png';
-import UrbanStreetCapture from '../../images/Backgrounds/capture/urban_street_01_capture.png';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 /**
 * MultipleCanvases component definition and export
@@ -103,60 +76,98 @@ export const MultipleCanvases = (props) => {
 
         // Create a WebGL renderer, camera
         // and a scene
-        const renderer = new THREE.WebGLRenderer({
-            canvas,
-            // alpha: true,
+        const renderer = new THREE.WebGLRenderer({canvas});
+  
+        const sceneInfo1 = setupScene1();
+        const sceneInfo2 = setupScene2();
+
+      
+
+        const render = (time) => {
+            time *= 0.001;  // convert time to seconds
+
+            resizeRendererToDisplaySize(renderer);
+
+            renderer.setScissorTest(false);
+            renderer.clear(true, true);
+            renderer.setScissorTest(true);
+
+            sceneInfo1.mesh.rotation.y = time * .1;
+            sceneInfo2.mesh.rotation.y = time * .1;
+
+            renderSceneInfo(sceneInfo1, renderer);
+            renderSceneInfo(sceneInfo2, renderer);
+           
+            requestAnimationFrame(render);
+        }
+
+        requestAnimationFrame(render);
+        
+    }, [backgroundTexture]);
+
+    const renderSceneInfo = (sceneInfo, renderer) => {
+        const {scene, camera, elem} = sceneInfo;
+    
+        // get the viewport relative position opf this element
+        const {left, right, top, bottom, width, height} = elem.getBoundingClientRect();
+    
+        const isOffscreen =
+            bottom < 0 ||
+            top > renderer.domElement.clientHeight ||
+            right < 0 ||
+            left > renderer.domElement.clientWidth;
+    
+        if (isOffscreen) {
+          return;
+        }
+    
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    
+        const positiveYUpBottom = renderer.domElement.clientHeight - bottom;
+        renderer.setScissor(left, positiveYUpBottom, width, height);
+        renderer.setViewport(left, positiveYUpBottom, width, height);
+    
+        renderer.render(scene, camera);
+      }
+
+    const setupScene1 = () => {
+        const sceneInfo = makeScene(document.getElementById('#box'));
+        const geometry = new THREE.BoxBufferGeometry(1, 1, 1);
+        const material = new THREE.MeshPhongMaterial({color: 'red'});
+        const mesh = new THREE.Mesh(geometry, material);
+        sceneInfo.scene.add(mesh);
+        sceneInfo.mesh = mesh;
+        return sceneInfo;
+    }
+
+    const setupScene2 = () => {
+        const sceneInfo = makeScene(document.getElementById('#pyramid'));
+        const radius = .8;
+        const widthSegments = 4;
+        const heightSegments = 2;
+        const geometry = new THREE.SphereBufferGeometry(radius, widthSegments, heightSegments);
+        const material = new THREE.MeshPhongMaterial({
+          color: 'blue',
+          flatShading: true,
         });
-        // renderer.autoClearColor = false;
+        const mesh = new THREE.Mesh(geometry, material);
+        sceneInfo.scene.add(mesh);
+        sceneInfo.mesh = mesh;
+        return sceneInfo;
+    }
 
-        const fov = 75;
-        const aspect = 2;  // the canvas default
-        const near = 0.1;
-        const far = 100;
-        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-
-        camera.position.z = 7;
-
-        const controls = new OrbitControls(camera, canvas);
-        controls.target.set(0, 0, 0);
-        controls.update();
-
+    const makeScene = (elem) => {
         const scene = new THREE.Scene();
         scene.background = new THREE.Color("white");
 
-        const boxWidth = 1;
-        const boxHeight = 1;
-        const boxDepth = 1;
-
-        //Add Box Geometry
-        const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
-
-        // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
-
-        // material which is affected by lights.
-        // const material = new THREE.MeshPhongMaterial({color: 0x44aa88});
-
-        // const cube = new THREE.Mesh(geometry, material);
-
-        // scene.add(cube);
-
-
-        // {
-        //     const sphereRadius = 1;
-        //     const sphereWidthDivisions = 32;
-        //     const sphereHeightDivisions = 16;
-        //     const sphereGeo = new THREE.SphereBufferGeometry(sphereRadius, sphereWidthDivisions, sphereHeightDivisions);
-            // const sphereMat = new THREE.MeshPhongMaterial({color: '#CA8'});
-        //     const mesh = new THREE.Mesh(sphereGeo, sphereMat);
-        //     mesh.position.set(0, 0, -2);
-        //     scene.add(mesh);
-        // }
-
-        const cubes = [
-            makeInstance(geometry, 0x44aa88,  0, scene),
-            makeInstance(geometry, 0x8844aa, -2, scene),
-            makeInstance(geometry, 0xaa8844,  2, scene),
-        ];
+        const fov = 45;
+        const aspect = 2;  // the canvas default
+        const near = 0.1;
+        const far = 5;
+        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+        camera.position.set(0, 1, 2);
+        camera.lookAt(0, 0, 0);
 
         {
             const color = 0xFFFFFF;
@@ -166,51 +177,8 @@ export const MultipleCanvases = (props) => {
             scene.add(light);
         }
 
-        // renderer.render(scene, camera);
-
-        const render = (time) => {
-            time *= 0.001;  // convert time to seconds
-
-            // if the canvas was resized, update camera aspect
-            if (resizeRendererToDisplaySize(renderer)) {
-                const canvas = renderer.domElement;
-                camera.aspect = canvas.clientWidth / canvas.clientHeight;
-                camera.updateProjectionMatrix();
-            }
-
-            // Set the repeat and offset properties of the background texture
-            // to keep the image's aspect correct.
-            // Note the image may not have loaded yet.
-
-            // const canvasAspect = canvas.clientWidth / canvas.clientHeight;
-            // const imageAspect = bgTexture.image ? bgTexture.image.width / bgTexture.image.height : 1;
-            // const aspect = imageAspect / canvasAspect;
-            
-            // bgTexture.offset.x = aspect > 1 ? (1 - 1 / aspect) / 2 : 0;
-            // bgTexture.repeat.x = aspect > 1 ? 1 / aspect : 1;
-            
-            // bgTexture.offset.y = aspect > 1 ? 0 : (1 - aspect) / 2;
-            // bgTexture.repeat.y = aspect > 1 ? 1 : aspect;
-           
-            cubes.forEach((cube, ndx) => {
-                const speed = 1 + ndx * .1;
-                const rot = time * speed;
-                cube.rotation.x = rot;
-                cube.rotation.y = rot;
-            });
-
-            // cube.rotation.x = time;
-            // cube.rotation.y = time;
-            // cube.rotation.z = time;
-           
-            renderer.render(scene, camera);
-           
-            requestAnimationFrame(render);
-        }
-
-        requestAnimationFrame(render);
-        
-    }, [backgroundTexture]);
+        return {scene, camera, elem};
+    }
 
     const makeInstance = (geometry, color, x, scene) => {
         const material = new THREE.MeshPhongMaterial({color});
@@ -245,12 +213,14 @@ export const MultipleCanvases = (props) => {
     return(
         <>
             <canvas className="canvas" id="#container"/>
-                <div className="diagram left">
-                    I love boxes. Presents come in boxes. When I find a new box I'm always excited to find out what's inside.
-                </div>
-                <div className="diagram right">
-                    When I was a kid I dreamed of going on an expedition inside a pyramid and finding a undiscovered tomb full of mummies and treasure.
-                </div>
+            <div className="text">
+                <span id="#box" className="diagram left"></span>
+                I love boxes. Presents come in boxes. When I find a new box I'm always excited to find out what's inside.
+            </div>
+            <div className="text">
+                <span id="#pyramid" className="diagram right"></span>
+                When I was a kid I dreamed of going on an expedition inside a pyramid and finding a undiscovered tomb full of mummies and treasure.
+            </div>
         </>
     );
 }
