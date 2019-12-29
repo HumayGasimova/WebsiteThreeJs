@@ -91,7 +91,7 @@ import Bg from '../../images/9f1c9c168dbb37bb37eccbffd0e0-1448493.jpg';
 
 export const Dots = (props) => {
 
-    // const [backgroundTexture, setBackgroundTexture] = useState(AnniversaryLounge);
+    const [spheres, setSpheres] = useState(['','','','','','','','','','','','','','','','','','']);
 
     /**
     * Methods
@@ -152,12 +152,10 @@ export const Dots = (props) => {
         //     scene.add(mesh);
         // }
 
-        const spheres = [
-            makeInstanceOfSphere(0.2, 32, 16, 'white', 0, 0 , -1, scene),
-            makeInstanceOfSphere(0.2, 32, 16, 'white', 1, 0 , 1, scene),
-            makeInstanceOfSphere(0.2, 32, 16, 'white', -1, 1 , -1, scene),
-        ];
-
+       let updatedSpheres =  spheres.map((el,i) => {
+            return makeInstanceOfSphere(0.2, 32, 16, 'white', 0, 0 , -1, scene);
+        })
+        
         {
             const color = 0xFFFFFF;
             const intensity = 1;
@@ -168,7 +166,6 @@ export const Dots = (props) => {
         }
 
         // renderer.render(scene, camera);
-
         const render = (time) => {
             time *= 0.001;  // convert time to seconds
 
@@ -193,14 +190,14 @@ export const Dots = (props) => {
             // bgTexture.offset.y = aspect > 1 ? 0 : (1 - aspect) / 2;
             // bgTexture.repeat.y = aspect > 1 ? 1 : aspect;
            
-            spheres.forEach((sphere, ndx) => {
+            updatedSpheres.forEach((sphere, ndx) => {
                 const speed = 1 + ndx * .1;
                 const rot = time * speed;
                 sphere.rotation.x = rot;
                 sphere.rotation.y = rot;
 
                 sphere.translateX(0.01);
-                sphere.translateY(0.01);
+                sphere.translateY(-0.01);
                 sphere.translateZ(0.01);
             });
 
