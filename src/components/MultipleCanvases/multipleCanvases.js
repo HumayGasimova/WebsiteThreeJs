@@ -89,6 +89,7 @@ export const MultipleCanvases = (props) => {
             const material = new THREE.MeshPhongMaterial({color: 'red'});
             const mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
+            scene.background = new THREE.Color("green")
             addScene(sceneElements, elem, (time, rect) => {
               camera.aspect = rect.width / rect.height;
               camera.updateProjectionMatrix();
@@ -109,6 +110,7 @@ export const MultipleCanvases = (props) => {
               flatShading: true,
             });
             const mesh = new THREE.Mesh(geometry, material);
+            scene.background = new THREE.Color("red")
             scene.add(mesh);
             addScene(sceneElements, elem, (time, rect) => {
               camera.aspect = rect.width / rect.height;
@@ -117,7 +119,7 @@ export const MultipleCanvases = (props) => {
               renderer.render(scene, camera);
             });
         }
-console.log(sceneElements)
+        
         const clearColor = new THREE.Color('#000');
 
         const render = (time) => {
