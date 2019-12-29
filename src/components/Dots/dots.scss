@@ -1,0 +1,20 @@
+.cube-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    // background: url('../../images/76-760412_lake-clip-sunset-mountains-vector-png.png') no-repeat center center;
+    // background-size: cover;
+}
+
+.cube-images {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    .cube-image {
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+    }
+}

@@ -22,6 +22,7 @@ import TransparentPlanes from './components/Transparency/transparentPlanes';
 import TransparentTrees from './components/Transparency/transparentTrees';
 import MultipleCanvases from './components/MultipleCanvases/multipleCanvases';
 import MultipleCanvases2D from './components/MultipleCanvases/multipleCanvases2D';
+import Dots from './components/Dots/dots';
 
 /**
 * Styles
@@ -46,7 +47,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ MultipleCanvases2D }
+               component={ Dots }
             />
          </div>
       );
