@@ -198,6 +198,10 @@ export const Dots = (props) => {
                 const rot = time * speed;
                 sphere.rotation.x = rot;
                 sphere.rotation.y = rot;
+
+                sphere.translateX(0.01);
+                sphere.translateY(0.01);
+                sphere.translateZ(0.01);
             });
 
             // cube.rotation.x = time;
