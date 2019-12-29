@@ -76,7 +76,7 @@ export const MultipleCanvases = (props) => {
 
         // Create a WebGL renderer, camera
         // and a scene
-        const renderer = new THREE.WebGLRenderer({canvas});
+        const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
   
         const sceneInfo1 = setupScene1();
         const sceneInfo2 = setupScene2();
@@ -125,8 +125,8 @@ export const MultipleCanvases = (props) => {
         camera.updateProjectionMatrix();
     
         const positiveYUpBottom = renderer.domElement.clientHeight - bottom;
-        renderer.setScissor(left + 80, positiveYUpBottom + 140, width, height);
-        renderer.setViewport(left + 80, positiveYUpBottom + 140, width, height);
+        renderer.setScissor(left, positiveYUpBottom, width, height);
+        renderer.setViewport(left, positiveYUpBottom, width, height);
     
         renderer.render(scene, camera);
       }
@@ -159,7 +159,7 @@ export const MultipleCanvases = (props) => {
 
     const makeScene = (elem) => {
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color("white");
+        // scene.background = new THREE.Color("white");
 
         const fov = 45;
         const aspect = 2;  // the canvas default
@@ -193,11 +193,13 @@ export const MultipleCanvases = (props) => {
 
     const resizeRendererToDisplaySize = (renderer) => {
         const canvas = renderer.domElement;
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
         //Handling HD-DPI displays
-        const pixelRatio = window.devicePixelRatio;
+        // const pixelRatio = window.devicePixelRatio;
 
-        const width  = canvas.clientWidth  * pixelRatio | 0;
-        const height = canvas.clientHeight * pixelRatio | 0;
+        // const width  = canvas.clientWidth  * pixelRatio | 0;
+        // const height = canvas.clientHeight * pixelRatio | 0;
         
         const needResize = canvas.width !== width || canvas.height !== height;
         if (needResize) {
