@@ -78,32 +78,106 @@ export const MultipleCanvases = (props) => {
         // and a scene
         const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
   
-        const sceneInfo1 = setupScene1();
-        const sceneInfo2 = setupScene2();
-
+        // const sceneInfo1 = setupScene1();
+        // const sceneInfo2 = setupScene2();
+        const sceneElements = [];
       
+        {
+            const elem = document.getElementById('#box');
+            const {scene, camera} = makeScene();
+            const geometry = new THREE.BoxBufferGeometry(1, 1, 1);
+            const material = new THREE.MeshPhongMaterial({color: 'red'});
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+            addScene(sceneElements, elem, (time, rect) => {
+              camera.aspect = rect.width / rect.height;
+              camera.updateProjectionMatrix();
+              mesh.rotation.y = time * .1;
+              renderer.render(scene, camera);
+            });
+        }
+        
+        {
+            const elem = document.getElementById('#pyramid');
+            const {scene, camera} = makeScene();
+            const radius = .8;
+            const widthSegments = 4;
+            const heightSegments = 2;
+            const geometry = new THREE.SphereBufferGeometry(radius, widthSegments, heightSegments);
+            const material = new THREE.MeshPhongMaterial({
+              color: 'blue',
+              flatShading: true,
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+            addScene(sceneElements, elem, (time, rect) => {
+              camera.aspect = rect.width / rect.height;
+              camera.updateProjectionMatrix();
+              mesh.rotation.y = time * .1;
+              renderer.render(scene, camera);
+            });
+        }
+console.log(sceneElements)
+        const clearColor = new THREE.Color('#000');
 
         const render = (time) => {
-            time *= 0.001;  // convert time to seconds
+            time *= 0.001;
 
             resizeRendererToDisplaySize(renderer);
 
             renderer.setScissorTest(false);
+            renderer.setClearColor(clearColor, 0);
             renderer.clear(true, true);
             renderer.setScissorTest(true);
 
-            sceneInfo1.mesh.rotation.y = time * .1;
-            sceneInfo2.mesh.rotation.y = time * .1;
+            const transform = `translateY(${window.scrollY}px)`;
+            renderer.domElement.style.transform = transform;
 
-            renderSceneInfo(sceneInfo1, renderer);
-            renderSceneInfo(sceneInfo2, renderer);
-           
+            for (const {elem, fn} of sceneElements) {
+                // get the viewport relative position opf this element
+                const rect = elem.getBoundingClientRect();
+                const {left, right, top, bottom, width, height} = rect;
+
+                const isOffscreen =
+                    bottom < 0 ||
+                    top > renderer.domElement.clientHeight ||
+                    right < 0 ||
+                    left > renderer.domElement.clientWidth;
+
+                if (!isOffscreen) {
+                    const positiveYUpBottom = renderer.domElement.clientHeight - bottom;
+                    renderer.setScissor(left, positiveYUpBottom, width, height);
+                    renderer.setViewport(left, positiveYUpBottom, width, height);
+
+                    fn(time, rect);
+                }
+            }
+
             requestAnimationFrame(render);
+            // time *= 0.001;  // convert time to seconds
+
+            // resizeRendererToDisplaySize(renderer);
+
+            // renderer.setScissorTest(false);
+            // renderer.clear(true, true);
+            // renderer.setScissorTest(true);
+
+            // sceneInfo1.mesh.rotation.y = time * .1;
+            // sceneInfo2.mesh.rotation.y = time * .1;
+
+            // renderSceneInfo(sceneInfo1, renderer);
+            // renderSceneInfo(sceneInfo2, renderer);
+           
+            // requestAnimationFrame(render);
         }
 
         requestAnimationFrame(render);
         
     }, [backgroundTexture]);
+
+    const addScene = (sceneElements, elem, fn) => {
+        sceneElements.push({elem, fn});
+    }
 
     const renderSceneInfo = (sceneInfo, renderer) => {
         const {scene, camera, elem} = sceneInfo;
@@ -136,6 +210,7 @@ export const MultipleCanvases = (props) => {
         const geometry = new THREE.BoxBufferGeometry(1, 1, 1);
         const material = new THREE.MeshPhongMaterial({color: 'red'});
         const mesh = new THREE.Mesh(geometry, material);
+        sceneInfo.scene.background = new THREE.Color("green")
         sceneInfo.scene.add(mesh);
         sceneInfo.mesh = mesh;
         return sceneInfo;
@@ -157,7 +232,7 @@ export const MultipleCanvases = (props) => {
         return sceneInfo;
     }
 
-    const makeScene = (elem) => {
+    const makeScene = () => {
         const scene = new THREE.Scene();
         // scene.background = new THREE.Color("white");
 
@@ -177,7 +252,7 @@ export const MultipleCanvases = (props) => {
             scene.add(light);
         }
 
-        return {scene, camera, elem};
+        return {scene, camera};
     }
 
     const makeInstance = (geometry, color, x, scene) => {
