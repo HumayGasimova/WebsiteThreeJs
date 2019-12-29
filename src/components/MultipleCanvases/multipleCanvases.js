@@ -125,8 +125,8 @@ export const MultipleCanvases = (props) => {
         camera.updateProjectionMatrix();
     
         const positiveYUpBottom = renderer.domElement.clientHeight - bottom;
-        renderer.setScissor(left, positiveYUpBottom, width, height);
-        renderer.setViewport(left, positiveYUpBottom, width, height);
+        renderer.setScissor(left + 80, positiveYUpBottom + 140, width, height);
+        renderer.setViewport(left + 80, positiveYUpBottom + 140, width, height);
     
         renderer.render(scene, camera);
       }
