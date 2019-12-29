@@ -21,6 +21,10 @@ import {
     OrbitControls
 } from "three/examples/jsm/controls/OrbitControls";
 
+import {
+    TrackballControls
+} from "three/examples/jsm/controls/TrackballControls";
+
 /**
 * Components
 */
@@ -56,7 +60,6 @@ import * as Background from '../../constants/backgrounds';
 */
 
 import AnniversaryLounge from '../../images/Backgrounds/anniversary_lounge_8k.jpg';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 /**
 * MultipleCanvases component definition and export
@@ -84,7 +87,7 @@ export const MultipleCanvases = (props) => {
       
         {
             const elem = document.getElementById('#box');
-            const {scene, camera} = makeScene();
+            const {scene, camera, controls} = makeScene(elem);
             const geometry = new THREE.BoxBufferGeometry(1, 1, 1);
             const material = new THREE.MeshPhongMaterial({color: 'red'});
             const mesh = new THREE.Mesh(geometry, material);
@@ -93,6 +96,8 @@ export const MultipleCanvases = (props) => {
             addScene(sceneElements, elem, (time, rect) => {
               camera.aspect = rect.width / rect.height;
               camera.updateProjectionMatrix();
+              controls.handleResize();
+              controls.update();
               mesh.rotation.y = time * .1;
               renderer.render(scene, camera);
             });
@@ -100,7 +105,7 @@ export const MultipleCanvases = (props) => {
         
         {
             const elem = document.getElementById('#pyramid');
-            const {scene, camera} = makeScene();
+            const {scene, camera, controls} = makeScene(elem);
             const radius = .8;
             const widthSegments = 4;
             const heightSegments = 2;
@@ -115,6 +120,8 @@ export const MultipleCanvases = (props) => {
             addScene(sceneElements, elem, (time, rect) => {
               camera.aspect = rect.width / rect.height;
               camera.updateProjectionMatrix();
+              controls.handleResize();
+              controls.update();
               mesh.rotation.y = time * .1;
               renderer.render(scene, camera);
             });
@@ -234,7 +241,7 @@ export const MultipleCanvases = (props) => {
         return sceneInfo;
     }
 
-    const makeScene = () => {
+    const makeScene = (elem) => {
         const scene = new THREE.Scene();
         // scene.background = new THREE.Color("white");
 
@@ -245,16 +252,23 @@ export const MultipleCanvases = (props) => {
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
         camera.position.set(0, 1, 2);
         camera.lookAt(0, 0, 0);
+        scene.add(camera);
+
+        const controls = new TrackballControls(camera, elem);
+        controls.noZoom = true;
+        controls.noPan = true;
 
         {
             const color = 0xFFFFFF;
             const intensity = 1;
             const light = new THREE.DirectionalLight(color, intensity);
             light.position.set(-1, 2, 4);
-            scene.add(light);
+            // scene.add(light);
+            camera.add(light);
         }
 
-        return {scene, camera};
+        // return {scene, camera};
+        return {scene, camera, controls};
     }
 
     const makeInstance = (geometry, color, x, scene) => {
