@@ -113,18 +113,23 @@ export const Dots = (props) => {
         const aspect = 2;  // the canvas default
         const near = 0.1;
         const far = 100;
-        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+        // const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
-        camera.position.z = 7;
-
-        // const controls = new OrbitControls(camera, canvas);
-        // controls.target.set(0, 0, 0);
-        // controls.update();
+        // camera.position.z = 7;
 
         const scene = new THREE.Scene();
         const loader = new THREE.TextureLoader();
         const bgTexture = loader.load(Bg);
         scene.background = bgTexture;
+
+        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+        camera.position.set(0, 1, 7);
+        camera.lookAt(0, 0, 0);
+        scene.add(camera);
+
+        const controls = new OrbitControls(camera, canvas);
+        controls.target.set(0, 0, 0);
+        controls.update();
 
         // const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
 
@@ -148,9 +153,9 @@ export const Dots = (props) => {
         // }
 
         const spheres = [
-            makeInstanceOfSphere(0.2, 32, 16, 'white', 0, scene),
-            makeInstanceOfSphere(0.2, 32, 16, 'white', 1, scene),
-            makeInstanceOfSphere(0.2, 32, 16, 'white', 2, scene),
+            makeInstanceOfSphere(0.2, 32, 16, 'white', 0, 0 , -1, scene),
+            makeInstanceOfSphere(0.2, 32, 16, 'white', 1, 0 , 1, scene),
+            makeInstanceOfSphere(0.2, 32, 16, 'white', -1, 1 , -1, scene),
         ];
 
         {
@@ -158,7 +163,8 @@ export const Dots = (props) => {
             const intensity = 1;
             const light = new THREE.DirectionalLight(color, intensity);
             light.position.set(-1, 2, 4);
-            scene.add(light);
+            // scene.add(light);
+            camera.add(light);
         }
 
         // renderer.render(scene, camera);
@@ -192,7 +198,6 @@ export const Dots = (props) => {
                 const rot = time * speed;
                 sphere.rotation.x = rot;
                 sphere.rotation.y = rot;
-                sphere.position.y = rot;
             });
 
             // cube.rotation.x = time;
@@ -208,14 +213,14 @@ export const Dots = (props) => {
         
     }, []);
 
-    const makeInstanceOfSphere = (spRadius, spWidth, spHeight, color, x, scene) => {
+    const makeInstanceOfSphere = (spRadius, spWidth, spHeight, color, x, y, z, scene) => {
         const sphereRadius = spRadius;
         const sphereWidthDivisions = spWidth;
         const sphereHeightDivisions = spHeight;
         const sphereGeo = new THREE.SphereBufferGeometry(sphereRadius, sphereWidthDivisions, sphereHeightDivisions);
         const sphereMat = new THREE.MeshPhongMaterial({color});
         const sphere = new THREE.Mesh(sphereGeo, sphereMat);
-        sphere.position.set(0, 0, -2);
+        sphere.position.set(x, y, z);
 
         scene.add(sphere);
             
