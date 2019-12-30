@@ -152,8 +152,8 @@ export const Dots = (props) => {
         //     scene.add(mesh);
         // }
 
-       let updatedSpheres =  spheres.map((el,i) => {
-            return makeInstanceOfSphere(0.2, 32, 16, 'white', 0, 0 , -1, scene);
+        let updatedSpheres =  spheres.map((el,i) => {
+            return makeInstanceOfSphere(0.2, 32, 16, 'white', randPosition(), randPosition() , randPosition(), scene);
         })
         
         {
@@ -202,7 +202,7 @@ export const Dots = (props) => {
                 sphere.rotation.x = rot;
                 sphere.rotation.y = rot;
                 
-                console.log(valueX)
+                console.log(randPosition())
 
                 sphere.translateX(valueX);
                 sphere.translateY(valueY);
@@ -221,8 +221,13 @@ export const Dots = (props) => {
         requestAnimationFrame(render);
         
     }, []);
+
     const randTranslation = () => {
         return (Math.floor(Math.random()*3) + 1) / 100;
+    }
+
+    const randPosition = () => {
+        return (Math.random()*2 - 1);
     }
 
     const makeInstanceOfSphere = (spRadius, spWidth, spHeight, color, x, y, z, scene) => {
