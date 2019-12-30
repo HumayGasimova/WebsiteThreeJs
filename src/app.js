@@ -24,6 +24,8 @@ import MultipleCanvases from './components/MultipleCanvases/multipleCanvases';
 import MultipleCanvases2D from './components/MultipleCanvases/multipleCanvases2D';
 import Dots from './components/Dots/dots';
 import Picking from './components/Picking/picking';
+import PickingBoxesWithTransparentCenter from './components/Picking/pickingBoxesWithTransparentCenter';
+
 
 /**
 * Styles
@@ -48,7 +50,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ Picking }
+               component={ PickingBoxesWithTransparentCenter }
             />
          </div>
       );
