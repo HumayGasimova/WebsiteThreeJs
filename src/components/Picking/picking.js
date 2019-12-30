@@ -56,6 +56,7 @@ import * as Background from '../../constants/backgrounds';
 */
 
 import Bg from '../../images/9f1c9c168dbb37bb37eccbffd0e0-1448493.jpg';
+import Frame from '../../images/frame.png';
 
 /**
 * Picking component definition and export
@@ -132,12 +133,19 @@ export const Picking = (props) => {
         const boxHeight = 1;
         const boxDepth = 1;
         const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+        const loader = new THREE.TextureLoader();
+        const texture = loader.load(Frame);
     
         const numObjects = 100;
 
         for (let i = 0; i < numObjects; ++i) {
             const material = new THREE.MeshPhongMaterial({
               color: randomColor(),
+              map: texture,
+              transparent: true,
+              side: THREE.DoubleSide,
+              alphaTest: 0.1,
             });
         
             const cube = new THREE.Mesh(geometry, material);
