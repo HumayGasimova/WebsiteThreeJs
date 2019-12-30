@@ -164,7 +164,8 @@ export const Dots = (props) => {
             // scene.add(light);
             camera.add(light);
         }
-
+        console.log(renderer.getContext().drawingBufferWidth)
+        console.log(renderer.getContext().drawingBufferHeight)
         // renderer.render(scene, camera);
         const render = (time) => {
             time *= 0.001;  // convert time to seconds
@@ -190,15 +191,22 @@ export const Dots = (props) => {
             // bgTexture.offset.y = aspect > 1 ? 0 : (1 - aspect) / 2;
             // bgTexture.repeat.y = aspect > 1 ? 1 : aspect;
            
-            updatedSpheres.forEach((sphere, ndx) => {
-                const speed = 1 + ndx * .1;
+            updatedSpheres.forEach((sphere, i) => {
+                const speed = 1 + i * .1;
                 const rot = time * speed;
+                const bufferWidth = renderer.getContext().drawingBufferWidth;
+                const bufferHeight = renderer.getContext().drawingBufferHeight;
+                let valueX = randTranslation();
+                let valueY = randTranslation();
+                let valueZ = randTranslation();
                 sphere.rotation.x = rot;
                 sphere.rotation.y = rot;
+                
+                console.log(valueX)
 
-                sphere.translateX(0.01);
-                sphere.translateY(-0.01);
-                sphere.translateZ(0.01);
+                sphere.translateX(valueX);
+                sphere.translateY(valueY);
+                sphere.translateZ(valueZ);
             });
 
             // cube.rotation.x = time;
@@ -213,6 +221,9 @@ export const Dots = (props) => {
         requestAnimationFrame(render);
         
     }, []);
+    const randTranslation = () => {
+        return (Math.floor(Math.random()*3) + 1) / 100;
+    }
 
     const makeInstanceOfSphere = (spRadius, spWidth, spHeight, color, x, y, z, scene) => {
         const sphereRadius = spRadius;

@@ -50,7 +50,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ PickingBoxesWithTransparentCenter }
+               component={ Dots }
             />
          </div>
       );
