@@ -91,7 +91,7 @@ import Bg from '../../images/9f1c9c168dbb37bb37eccbffd0e0-1448493.jpg';
 
 export const Dots = (props) => {
 
-    const [spheres, setSpheres] = useState(['','','','','','','','','','','','','','','','','','']);
+    const [spheres, setSpheres] = useState(['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
 
     /**
     * Methods
@@ -153,7 +153,17 @@ export const Dots = (props) => {
         // }
 
         let updatedSpheres =  spheres.map((el,i) => {
-            return makeInstanceOfSphere(0.2, 32, 16, 'white', randPosition(), randPosition() , randPosition(), scene);
+            return makeInstanceOfSphere(0.2, 
+                32, 
+                16, 
+                'white',
+                randPosition(),
+                randPosition(),
+                randPosition(),
+                // Math.random() * 10000 - 5000, 
+                // Math.random() * 10000 - 5000, 
+                // Math.random() * 10000 - 5000, 
+                scene);
         })
         
         {
@@ -164,8 +174,8 @@ export const Dots = (props) => {
             // scene.add(light);
             camera.add(light);
         }
-        console.log(renderer.getContext().drawingBufferWidth)
-        console.log(renderer.getContext().drawingBufferHeight)
+        // console.log(renderer.getContext().drawingBufferWidth)
+        // console.log(renderer.getContext().drawingBufferHeight)
         // renderer.render(scene, camera);
         const render = (time) => {
             time *= 0.001;  // convert time to seconds
@@ -202,11 +212,13 @@ export const Dots = (props) => {
                 sphere.rotation.x = rot;
                 sphere.rotation.y = rot;
                 
-                console.log(randPosition())
-
-                sphere.translateX(valueX);
-                sphere.translateY(valueY);
-                sphere.translateZ(valueZ);
+                // console.log(randPosition())
+                sphere.position.x = 3 * Math.cos( time + i );
+                sphere.position.y = 3 * Math.sin( time + i * 1.1);
+                sphere.position.y = 3 * Math.sin( time + i * 2.2);
+                // sphere.translateX(valueX);
+                // sphere.translateY(valueY);
+                // sphere.translateZ(valueZ);
             });
 
             // cube.rotation.x = time;
