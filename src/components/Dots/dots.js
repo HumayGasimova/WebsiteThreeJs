@@ -52,38 +52,24 @@ import * as Selectors from '../../reducers/selectors';
 import * as Background from '../../constants/backgrounds';
 
 /**
+* Shaders
+*/
+
+import * as Shaders from './Shaders';
+
+/**
 * Images
 */
 
 import Bg from '../../images/9f1c9c168dbb37bb37eccbffd0e0-1448493.jpg';
-// import AutumnHockey from '../../images/Backgrounds/autumn_hockey_8k.jpg';
-// import BethnalGreenEntrance from '../../images/Backgrounds/bethnal_green_entrance_4k.jpg';
-// import DresdenMoat from '../../images/Backgrounds/dresden_moat_8k.jpg';
-// import GrayPier from '../../images/Backgrounds/gray_pier_8k.jpg';
-// import Lebombo from '../../images/Backgrounds/lebombo_8k.jpg';
-// import MistyPines from '../../images/Backgrounds/misty_pines_4k.jpg';
-// import MusicHall from '../../images/Backgrounds/music_hall_01_8k.jpg';
-// import SkukuzaGolf from '../../images/Backgrounds/skukuza_golf_4k.jpg';
-// import SnowyPark from '../../images/Backgrounds/snowy_park_01_8k.jpg';
-// import SpruitSunrise from '../../images/Backgrounds/spruit_sunrise_8k.jpg';
-// import SunnyVondelpark from '../../images/Backgrounds/sunny_vondelpark_8k.jpg';
-// import UmhlangaSunrise from '../../images/Backgrounds/umhlanga_sunrise_8k.jpg';
-// import UrbanStreet from '../../images/Backgrounds/urban_street_01_8k.jpg';
 
-// import AnniversaryLoungeCapture from '../../images/Backgrounds/capture/anniversary_lounge_capture.png';
-// import AutumnHockeyCapture from '../../images/Backgrounds/capture/autumn_hockey_capture.png';
-// import BethnalGreenEntranceCapture from '../../images/Backgrounds/capture/bethnal_green_entrance_capture.png';
-// import DresdenMoatCapture from '../../images/Backgrounds/capture/dresden_moat_capture.png';
-// import GrayPierCapture from '../../images/Backgrounds/capture/gray_pier_capture.png';
-// import LebomboCapture from '../../images/Backgrounds/capture/lebombo_capture.png';
-// import MistyPinesCapture from '../../images/Backgrounds/capture/misty_pines_capture.png';
-// import MusicHallCapture from '../../images/Backgrounds/capture/music_hall_01_capture.png';
-// import SkukuzaGolfCapture from '../../images/Backgrounds/capture/skukuza_golf_capture.png';
-// import SnowyParkCapture from '../../images/Backgrounds/capture/snowy_park_01_capture.png';
-// import SpruitSunriseCapture from '../../images/Backgrounds/capture/spruit_sunrise_capture.png';
-// import SunnyVondelparkCapture from '../../images/Backgrounds/capture/sunny_vondelpark_capture.png';
-// import UmhlangaSunriseCapture from '../../images/Backgrounds/capture/umhlanga_sunrise_capture.png';
-// import UrbanStreetCapture from '../../images/Backgrounds/capture/urban_street_01_capture.png';
+import PosX from '../../images/mountains/dejavu_ft.png';
+import NegX from '../../images/mountains/dejavu_bk.png';
+import PosY from '../../images/mountains/dejavu_up.png';
+import NegY from '../../images/mountains/dejavu_dn.png';
+import PosZ from '../../images/mountains/dejavu_rt.png';
+import NegZ from '../../images/mountains/dejavu_lf.png';
+//http://www.custommapmakers.org/skyboxes.php
 
 /**
 * Dots component definition and export
@@ -124,10 +110,25 @@ export const Dots = (props) => {
 
         // camera.position.z = 7;
 
+        
+        const loader = new THREE.CubeTextureLoader();
+        const texture = loader.load([
+            PosX,
+            NegX,
+            PosY,
+            NegY,
+            PosZ,
+            NegZ,
+        ]);
+        texture.format = THREE.RGBFormat;
+     
+
         const scene = new THREE.Scene();
-        const loader = new THREE.TextureLoader();
-        const bgTexture = loader.load(Bg);
-        scene.background = bgTexture;
+        scene.background = texture;
+
+        // const loader = new THREE.TextureLoader();
+        // const bgTexture = loader.load(Bg);
+        // scene.background = bgTexture;
 
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
         camera.position.set(0, 1, 12);
@@ -160,7 +161,7 @@ export const Dots = (props) => {
         // }
 
         let updatedSpheres =  spheres.map((el,i) => {
-            return makeInstanceOfSphere(0.2, 
+            return makeInstanceOfSphere(randRadius(), 
                 32, 
                 16, 
                 'white',
@@ -170,7 +171,8 @@ export const Dots = (props) => {
                 // Math.random() * 10000 - 5000, 
                 // Math.random() * 10000 - 5000, 
                 // Math.random() * 10000 - 5000, 
-                scene);
+                scene,
+                texture);
         })
         console.log(updatedSpheres)
         {
@@ -241,6 +243,10 @@ export const Dots = (props) => {
         
     }, []);
 
+    const randRadius = () => {
+        return (Math.floor(Math.random()*7) + 2) / 10;
+    }
+
     const randTranslation = () => {
         return (Math.floor(Math.random()*3) + 1) / 100;
     }
@@ -249,13 +255,30 @@ export const Dots = (props) => {
         return (Math.random()*40 - 1);
     }
 
-    const makeInstanceOfSphere = (spRadius, spWidth, spHeight, color, x, y, z, scene) => {
+    const makeInstanceOfSphere = (spRadius, spWidth, spHeight, color, x, y, z, scene, texture) => {
+
         const sphereRadius = spRadius;
         const sphereWidthDivisions = spWidth;
         const sphereHeightDivisions = spHeight;
         const sphereGeo = new THREE.SphereBufferGeometry(sphereRadius, sphereWidthDivisions, sphereHeightDivisions);
-        const sphereMat = new THREE.MeshPhongMaterial({color});
-        const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+        // const sphereMat = new THREE.MeshPhongMaterial({color});
+        const uniforms = {
+            mRefractionRatio: { value: 1.02 },
+            mFresnelBias: { value: 0.1 },
+            mFresnelPower: { value: 2.0 },
+            mFresnelScale: { value: 1.0 },
+            tCube: { value: null }
+        }
+        
+        var uniforms2 = THREE.UniformsUtils.clone( uniforms );
+        uniforms["tCube"].value = texture;
+
+        const material = new THREE.ShaderMaterial( {
+            uniforms: uniforms2,
+            vertexShader: Shaders.vert,
+            fragmentShader: Shaders.frag
+        } );
+        const sphere = new THREE.Mesh(sphereGeo, material);
         sphere.position.set(x, y, z);
 
         scene.add(sphere);
