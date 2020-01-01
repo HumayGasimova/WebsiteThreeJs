@@ -91,7 +91,14 @@ import Bg from '../../images/9f1c9c168dbb37bb37eccbffd0e0-1448493.jpg';
 
 export const Dots = (props) => {
 
-    const [spheres, setSpheres] = useState(['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
+    const [spheres, setSpheres] = useState(['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+    '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+    '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+    '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+    '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+    '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+    '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+    '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',]);
 
     /**
     * Methods
@@ -123,7 +130,7 @@ export const Dots = (props) => {
         scene.background = bgTexture;
 
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-        camera.position.set(0, 1, 7);
+        camera.position.set(0, 1, 12);
         camera.lookAt(0, 0, 0);
         scene.add(camera);
 
@@ -165,7 +172,7 @@ export const Dots = (props) => {
                 // Math.random() * 10000 - 5000, 
                 scene);
         })
-        
+        console.log(updatedSpheres)
         {
             const color = 0xFFFFFF;
             const intensity = 1;
@@ -213,9 +220,9 @@ export const Dots = (props) => {
                 sphere.rotation.y = rot;
                 
                 // console.log(randPosition())
-                sphere.position.x = 3 * Math.cos( time + i );
-                sphere.position.y = 3 * Math.sin( time + i * 1.1);
-                sphere.position.y = 3 * Math.sin( time + i * 2.2);
+                sphere.position.x = 7 * Math.cos( time/7 + i * 1.1);
+                sphere.position.y = 7 * Math.sin( time/7 + i * 1.1);
+                sphere.position.y = 7 * Math.sin( time/7 + i * 6.2);
                 // sphere.translateX(valueX);
                 // sphere.translateY(valueY);
                 // sphere.translateZ(valueZ);
@@ -239,7 +246,7 @@ export const Dots = (props) => {
     }
 
     const randPosition = () => {
-        return (Math.random()*2 - 1);
+        return (Math.random()*40 - 1);
     }
 
     const makeInstanceOfSphere = (spRadius, spWidth, spHeight, color, x, y, z, scene) => {
