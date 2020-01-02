@@ -25,7 +25,7 @@ import MultipleCanvases2D from './components/MultipleCanvases/multipleCanvases2D
 import Dots from './components/Dots/dots';
 import Picking from './components/Picking/picking';
 import PickingBoxesWithTransparentCenter from './components/Picking/pickingBoxesWithTransparentCenter';
-
+import MovingBubbles from './components/Dots/movingBubbles';
 
 /**
 * Styles
@@ -50,7 +50,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ Dots }
+               component={ MovingBubbles }
             />
          </div>
       );
