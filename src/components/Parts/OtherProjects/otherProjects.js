@@ -18,14 +18,12 @@ import {
 * Styles
 */
 
-import './main.scss';
+import './otherProjects.scss';
 
 /**
-* Components
+* Actions
 */
 
-import MovingBubbles from '../components/Parts/MovingBubbles/movingBubbles';
-import OtherProjects from '../components/Parts/OtherProjects/otherProjects';
 
 /**
 * Actions
@@ -40,10 +38,10 @@ import OtherProjects from '../components/Parts/OtherProjects/otherProjects';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Main component definition and export
+* OtherProjects component definition and export
 */
 
-export const Main = (props) => {
+export const OtherProjects = (props) => {
 
     /**
     * Methods
@@ -56,9 +54,8 @@ export const Main = (props) => {
     */
 
     return(
-        <div className="main">
-            <MovingBubbles/>
-            <OtherProjects/>
+        <div className="other-projects">
+            vdddddf
         </div>
     );
 }
@@ -76,5 +73,5 @@ export default connect(
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }
-)(Main);
+)(OtherProjects);
  
