@@ -24,6 +24,12 @@ import './main.scss';
 * Actions
 */
 
+import MovingBubbles from '../components/Parts/MovingBubbles/movingBubbles';
+
+/**
+* Actions
+*/
+
 // import * as Actions from '../../../actions';
 
 /**
@@ -50,7 +56,7 @@ export const Main = (props) => {
 
     return(
         <div className="main">
-         sss
+            <MovingBubbles/>
         </div>
     );
 }

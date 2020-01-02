@@ -61,8 +61,8 @@ export const MovingBubbles = (props) => {
 
     useEffect(() => {
         let mouseX = 0, mouseY = 0;
-        const windowHalfX = window.innerWidth / 2;
-        const windowHalfY = window.innerHeight / 2;
+        let windowHalfX = window.innerWidth / 2;
+        let windowHalfY = window.innerHeight / 2;
         let spheres = [];
 
         document.addEventListener( 'mousemove', () => {
@@ -157,7 +157,14 @@ export const MovingBubbles = (props) => {
 
     return(
         <>
-            <canvas className="cube-canvas" id="#container"/>
+            <canvas className="moving-bubbles-canvas" id="#container"/>
+            <div className="moving-bubbles-text">
+                <div>
+                    <svg height="100%" width="100%">
+                    <text x="50%" y="50%" fill="rgb(139, 160, 230)" textAnchor="middle">Welcome</text>
+                    </svg>
+                </div>
+            </div>
         </>
     );
 }
