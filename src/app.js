@@ -14,18 +14,8 @@ import {
 * Components
 */
 
-import Tutorial from './components/Tutorial/tutorial';
-import Cube from './components/Cube/cube';
-import EquirectangularMap from './components/EquirectangularMap/equirectangularMap';
-import TransparentCubes from './components/Transparency/transparentCubes';
-import TransparentPlanes from './components/Transparency/transparentPlanes';
-import TransparentTrees from './components/Transparency/transparentTrees';
-import MultipleCanvases from './components/MultipleCanvases/multipleCanvases';
-import MultipleCanvases2D from './components/MultipleCanvases/multipleCanvases2D';
-import Dots from './components/Dots/dots';
-import Picking from './components/Picking/picking';
-import PickingBoxesWithTransparentCenter from './components/Picking/pickingBoxesWithTransparentCenter';
-import MovingBubbles from './components/Dots/movingBubbles';
+import MovingBubbles from './components/Parts/MovingBubbles/movingBubbles';
+import Main from './components/main';
 
 /**
 * Styles
@@ -50,7 +40,7 @@ export class App extends Component {
             <Route 
                exact
                path="/"
-               component={ MovingBubbles }
+               component={ Main }
             />
          </div>
       );
