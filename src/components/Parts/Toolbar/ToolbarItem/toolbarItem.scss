@@ -1,9 +1,13 @@
 .toolbar-item {
     padding: 15px;
-    color: rgb(139, 160, 230);
+    color: rgba(139, 160, 230, 0.4);
     font-size: 30px;
     font-family: 'Abhaya Libre', serif;
+    font-weight: bold;
     cursor: pointer;
+    &:hover{
+        color: rgba(139, 160, 230, 1);
+    }
 }
 
 // @keyframes move {
