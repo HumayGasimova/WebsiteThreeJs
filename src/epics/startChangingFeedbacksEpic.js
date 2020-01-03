@@ -29,18 +29,18 @@ import * as Actions from '../actions';
 
 export const startChangingFeedbacksEpic = (action$) => 
     action$.pipe(
-        ofType(actionTypes.START_CHANGING_FEEDBACKS),
-        mergeMap(() => {
-            return interval(3000).pipe(
-                mergeMap(() => {
-                    return of(
-                        Actions.feedbackOnChange(),
-                        Actions.dotOnChange(),
-                    )   
-                }),
-                takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
-            )
-        })
+        // ofType(actionTypes.START_CHANGING_FEEDBACKS),
+        // mergeMap(() => {
+        //     return interval(3000).pipe(
+        //         mergeMap(() => {
+        //             return of(
+        //                 Actions.feedbackOnChange(),
+        //                 Actions.dotOnChange(),
+        //             )   
+        //         }),
+        //         takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
+            // )
+        // })
     )
 
 export default startChangingFeedbacksEpic;

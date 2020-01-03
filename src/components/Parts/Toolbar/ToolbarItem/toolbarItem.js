@@ -34,9 +34,9 @@ export const ToolbarItem = (props) => {
     */
 
     return(
-            <div className="toolbar-item">
-                {props.text}
-            </div>
+        <div className="toolbar-item">
+            {props.text}
+        </div>
     );
 }
 

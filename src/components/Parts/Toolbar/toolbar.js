@@ -110,7 +110,6 @@ const size = useWindowSize();
     (state) => {
         return {
             menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-            activatedIcon: Selectors.getActivatedIconState(state),
         };
     },
     (dispatch) => {

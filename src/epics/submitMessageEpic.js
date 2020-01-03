@@ -28,19 +28,19 @@ import * as Actions from '../actions';
 
 export const submitMessageEpic = (action$) => 
     action$.pipe(
-        ofType(actionTypes.SUBMIT_MESSAGE),
-        mergeMap(action => {
-            let info = {
-                name: action.name,
-                email: action.email,
-                contact: action.contact,
-                company: action.company,
-                message: action.message
-            }
-                return of(
-                    Actions.messageToSend(info),
-                )   
-        })
+        // ofType(actionTypes.SUBMIT_MESSAGE),
+        // mergeMap(action => {
+        //     let info = {
+        //         name: action.name,
+        //         email: action.email,
+        //         contact: action.contact,
+        //         company: action.company,
+        //         message: action.message
+        //     }
+        //         return of(
+        //             Actions.messageToSend(info),
+        //         )   
+        // })
     )
          
 export default submitMessageEpic;
