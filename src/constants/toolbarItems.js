@@ -6,21 +6,26 @@ export const toolabarItems = [
     },
     {
         id: 2,
-        text: "Services",
-        itemId: "services"
-    },
-    {
-        id: 3,
         text: "About",
         itemId: "about"
     },
     {
+        id: 3,
+        text: "Services",
+        itemId: "services"
+    },
+    {
         id: 4,
-        text: "Gallery",
-        itemId: "gallery"
+        text: "Portfolio",
+        itemId: "portfolio"
     },
     {
         id: 5,
+        text: "Case Studies",
+        itemId: "caseStudies"
+    },
+    {
+        id: 6,
         text: "Contact",
         itemId: "contact"
     }

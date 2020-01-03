@@ -24,6 +24,7 @@ import './main.scss';
 * Components
 */
 
+import Toolbar from '../components/Parts/Toolbar/toolbar';
 import MovingBubbles from '../components/Parts/MovingBubbles/movingBubbles';
 import OtherProjects from '../components/Parts/OtherProjects/otherProjects';
 
@@ -57,6 +58,7 @@ export const Main = (props) => {
 
     return(
         <div className="main">
+            <Toolbar/>
             <MovingBubbles/>
             <OtherProjects/>
         </div>
