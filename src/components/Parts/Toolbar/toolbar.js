@@ -75,6 +75,7 @@ export const Toolbar = (props) => {
                     <ToolbarItem 
                         key={el.id}
                         text={el.text}
+                        className="toolbar-item"
                         // toolBarInit={toolBarInit}
                         // id={el.itemId}
                         // active={el.itemId === props.activatedIcon}
@@ -110,7 +111,7 @@ export const Toolbar = (props) => {
                     onClick={() => props.toggleMenuButton()}
                 >MENU</div>
             </div>
-            {props.menuButtonIsPressed ? <Sidebar/> : null}
+            <Sidebar menuButtonIsPressed={props.menuButtonIsPressed}/>
         </>
     );
 }

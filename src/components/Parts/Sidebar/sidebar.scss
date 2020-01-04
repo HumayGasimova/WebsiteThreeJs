@@ -1,8 +1,66 @@
-.sidebar {
+.sidebar-mounted {
     position: absolute;
     top: 98;
-    // background: rgba(125, 151, 52, 0.7);
-    height: 75px;
-    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    background: rgba(52, 52, 151, 0.7);
+    height: 400px;
     width: 100%;
+    z-index: 100;
+    animation: appear 1s linear;
+}
+
+.sidebar-unmounted {
+    position: absolute;
+    top: 98;
+    display: flex;
+    flex-direction: column;
+    background: rgba(52, 52, 151, 0.7);
+    height: 0px;
+    width: 100%;
+    z-index: 100;
+    animation: disappear 1s linear;
+}
+
+// .sidebar-open {
+//     position: absolute;
+//     top: 98;
+//     display: flex;
+//     background: rgba(52, 52, 151, 0.7);
+//     height: 115px;
+//     border: 2px solid red;
+//     width: 100%;
+//     position: fixed;
+//     z-index: 700;
+//     animation: appear 1s linear;
+// }
+// .sidebar-close {
+//     position: absolute;
+//     top: 98;
+//     display: flex;
+//     background: rgba(52, 52, 151, 0.7);
+//     height: 115px;
+//     border: 2px solid red;
+//     width: 100%;
+//     position: fixed;
+//     z-index: 700;
+//     animation: disappear 1s linear;
+// }
+
+@keyframes appear {
+    from{
+        height: 0;
+    }
+    to {
+        height: 400px;
+    }
+}
+
+@keyframes disappear {
+    from{
+        height: 400px;
+    }
+    to {
+        height: 0;
+    }
 }

@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    CSSTransition 
+} from 'react-transition-group';
+
 /**
 * Components
 */
@@ -61,7 +65,7 @@ export const Sidebar = (props) => {
     * State
     */
 
-const size = useWindowSize();
+    const size = useWindowSize();
 
     /**
     * Methods
@@ -74,6 +78,7 @@ const size = useWindowSize();
                     <ToolbarItem 
                         key={el.id}
                         text={el.text}
+                        className="sidebar-item"
                         // toolBarInit={toolBarInit}
                         // id={el.itemId}
                         // active={el.itemId === props.activatedIcon}
@@ -93,9 +98,22 @@ const size = useWindowSize();
     */
 
     return(
-        <div className={"sidebar"}>
-            {renderToolbarItems()}
-        </div>
+        // <CSSTransition 
+        //     in={props.menuButtonIsPressed} 
+        //     timeout={1000}
+        //     // mountOnEnter
+        //     unmountOnExit
+        //     classNames={{
+        //         enter: '',
+        //         enterActive: 'sidebar-open',
+        //         exit: '',
+        //         exitActive: 'sidebar-close'
+        //     }}
+        // > 
+            <div className={props.menuButtonIsPressed ? "sidebar-mounted" : "sidebar-unmounted"}>
+                {renderToolbarItems()}
+            </div>
+        // </CSSTransition>
     );
 }
  export default connect(

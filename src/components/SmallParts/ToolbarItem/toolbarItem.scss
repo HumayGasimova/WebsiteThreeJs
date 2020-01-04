@@ -14,6 +14,18 @@
     color: rgba(139, 160, 230, 0.4);
 }
 
+.sidebar-item {
+    padding: 15px 15px 15px 30px;
+    color: rgba(139, 160, 230, 0.4);
+    font-size: 30px;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+        color: rgba(139, 160, 230, 1);
+    }
+}
+
 // @keyframes move {
 //     0% {
 //         width: 0;
