@@ -1,3 +1,16 @@
+.sidebar {
+    position: absolute;
+    top: 98;
+    background: rgba(52, 52, 151, 0.7);
+    height: 400px;
+    width: 100%;
+    z-index: 100;
+    .sidebar-mounted-items {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .sidebar-mounted {
     position: absolute;
     top: 98;
@@ -21,12 +34,18 @@
     height: 0px;
     width: 100%;
     z-index: 100;
-    animation: disappear 1s linear;
+    animation: disappear 1.5s linear;
     .sidebar-unmounted-items {
         display: flex;
         flex-direction: column;
         opacity: 0;
-        animation: disappearItems 1s linear;
+        animation: disappearItems 0.5s linear;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .sidebar {
+        display: none;
     }
 }
 

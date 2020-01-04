@@ -75,16 +75,16 @@ export const Sidebar = (props) => {
         return(
             <div className={props.menuButtonIsPressed ? "sidebar-mounted-items" : "sidebar-unmounted-items"}>
                 {toolabarItems.map((el) => {
-                return(
-                    <ToolbarItem 
-                        key={el.id}
-                        text={el.text}
-                        className="sidebar-item"
-                        // toolBarInit={toolBarInit}
-                        // id={el.itemId}
-                        // active={el.itemId === props.activatedIcon}
-                    />
-                )
+                    return(
+                        <ToolbarItem 
+                            key={el.id}
+                            text={el.text}
+                            className="sidebar-item"
+                            // toolBarInit={toolBarInit}
+                            // id={el.itemId}
+                            // active={el.itemId === props.activatedIcon}
+                        />
+                    )
             })}</div>
         )
     }
@@ -99,22 +99,22 @@ export const Sidebar = (props) => {
     */
 
     return(
-        // <CSSTransition 
-        //     in={props.menuButtonIsPressed} 
-        //     timeout={1000}
-        //     // mountOnEnter
-        //     unmountOnExit
-        //     classNames={{
-        //         enter: '',
-        //         enterActive: 'sidebar-open',
-        //         exit: '',
-        //         exitActive: 'sidebar-close'
-        //     }}
-        // > 
-            <div className={props.menuButtonIsPressed ? "sidebar-mounted" : "sidebar-unmounted"}>
+        <CSSTransition 
+            in={props.menuButtonIsPressed} 
+            timeout={2000}
+            // mountOnEnter
+            unmountOnExit
+            classNames={{
+                enter: '',
+                enterActive: 'sidebar-mounted',
+                exit: '',
+                exitActive: 'sidebar-unmounted'
+            }}
+        > 
+            <div className="sidebar">
                 {renderToolbarItems()}
             </div>
-        // </CSSTransition>
+        </CSSTransition>
     );
 }
  export default connect(
