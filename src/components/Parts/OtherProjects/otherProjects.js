@@ -96,6 +96,12 @@ export const OtherProjects = (props) => {
     return(
         <div className="other-projects"  style={{transform: `translate(0px, -${slower}px)`}}>
             {renderProjects()}
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+                ut aliquip ex ea commodo consequat. 
+            </div>
         </div>
     );
 }

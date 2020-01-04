@@ -1,7 +1,7 @@
 .project-number-1 {
-    position: relative;
+    position: absolute;
     top: 160px;
-    left: 20px;
+    left: 15px;
     width: 240px;
     cursor: pointer;
     .project-image {
@@ -14,9 +14,9 @@
 }
 
 .project-number-2 {
-    position: relative;
-    top: -135px;
-    left: 271px;
+    position: absolute;
+    top: 45px;
+    left: 265px;
     width: 240px;
     cursor: pointer;
     .project-image {
@@ -29,9 +29,9 @@
 }
 
 .project-number-3 {
-    position: relative;
-    top: -620px;
-    left: 504px;
+    position: absolute;
+    top: 20px;
+    left: 516px;
     width: 210px;
     cursor: pointer;
     .project-image {
@@ -44,9 +44,9 @@
 }
 
 .project-number-4 {
-    position: relative;
-    top: -627px;
-    left: 504px;
+    position: absolute;
+    top: 203px;
+    left: 516px;
     width: 210px;
     cursor: pointer;
     .project-image {
@@ -59,9 +59,9 @@
 }
 
 .project-number-5 {
-    position: relative;
-    top: -1077px;
-    left: 724px;
+    position: absolute;
+    top: 80px;
+    left: 738px;
     width: 300px;
     cursor: pointer;
     .project-image {
@@ -74,9 +74,9 @@
 }
 
 .project-number-6 {
-    position: relative;
-    top: -1084px;
-    left: 724px;
+    position: absolute;
+    top: 273px;
+    left: 738px;
     width: 300px;
     cursor: pointer;
     .project-image {
@@ -89,9 +89,9 @@
 }
 
 .project-number-7 {
-    position: relative;
-    top: -1374px;
-    left: 1035px;
+    position: absolute;
+    top: 173px;
+    left: 1049px;
     width: 270px;
     cursor: pointer;
     .project-image {
@@ -100,5 +100,29 @@
             width: 270px;
             height: 180px;
         }
+    }
+}
+
+@media only screen and (min-width: 1371px) {
+    .project-number-1 {
+        left: 270px;
+    }
+    .project-number-2 {
+        left: 521px;
+    }
+    .project-number-3 {
+        left: 772px;
+    }
+    .project-number-4 {
+        left: 772px;
+    }
+    .project-number-5 {
+        left: 993px;
+    }
+    .project-number-6 {
+        left: 993px;
+    }
+    .project-number-7 {
+        left: 1303px;
     }
 }
