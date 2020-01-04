@@ -3,54 +3,36 @@ export const serviceCards = [
         id: 1,
         cardId: "card1",
         icon: "faLaptopCode",
-        header: "Header 1",
+        header: "Strategy",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service1"
+        path: "strategy"
     },
     {
         id: 2,
         cardId: "card2",
-        icon: "faChartLine",
-        header: "Header 2",
+        icon: "faLaptopCode",
+        header: "Design",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service2"
+        path: "design"
     },
     {
         id: 3,
         cardId: "card3",
         icon: "faPaperPlane",
-        header: "Header 3",
+        header: "Development",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service3"
+        path: "development"
     },
     {
         id: 4,
         cardId: "card4",
         icon: "faUniversity",
-        header: "Header 4",
+        header: "Help & Supports",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "service4"
-    },
-    {
-        id: 5,
-        cardId: "card5",
-        icon: "faCameraRetro",
-        header: "Header 5",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false,
-        path: "service5"
-    },
-    {
-        id: 6,
-        cardId: "card6",
-        icon: "faShoppingBag",
-        header: "Header 6",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        show: false,
-        path: "service6"
+        path: "helpAndSupports"
     }
 ]

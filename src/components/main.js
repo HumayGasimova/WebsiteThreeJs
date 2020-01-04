@@ -27,6 +27,7 @@ import './main.scss';
 import Toolbar from '../components/Parts/Toolbar/toolbar';
 import MovingBubbles from '../components/Parts/MovingBubbles/movingBubbles';
 import OtherProjects from '../components/Parts/OtherProjects/otherProjects';
+import Services from '../components/Parts/Services/services';
 
 /**
 * Actions
@@ -61,6 +62,7 @@ export const Main = (props) => {
             <Toolbar/>
             <MovingBubbles/>
             <OtherProjects/>
+            <Services/>
         </div>
     );
 }
