@@ -73,7 +73,8 @@ export const Sidebar = (props) => {
 
     const renderToolbarItems = () => {
         return(
-            <>{toolabarItems.map((el) => {
+            <div className={props.menuButtonIsPressed ? "sidebar-mounted-items" : "sidebar-unmounted-items"}>
+                {toolabarItems.map((el) => {
                 return(
                     <ToolbarItem 
                         key={el.id}
@@ -84,7 +85,7 @@ export const Sidebar = (props) => {
                         // active={el.itemId === props.activatedIcon}
                     />
                 )
-            })}</>
+            })}</div>
         )
     }
 
