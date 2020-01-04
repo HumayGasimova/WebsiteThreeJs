@@ -9,6 +9,10 @@
     margin-right: 40px;
 }
 
+.toolbar-menu-text {
+   display: none;
+}
+
 // @keyframes toolBarOpen {
 //     0% {
 //         height: 130px;
@@ -39,17 +43,20 @@
 @keyframes spin {
     100% {
         transform: rotate(45deg);
-        
         transform-origin: top left;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .toolbar {
+        background: rgba(52, 52, 151, 0.7);
+        padding-top: 23px;
+        height: 75px;
+        width: 100%;
         .toolbar-min {
             cursor: pointer;
             position: relative;
-            width: 60px;
+            width: 40px;
             height: 45px;
             .toolbar-min-line1 {
                 border: 2px solid rgb(139, 160, 230);
@@ -91,6 +98,14 @@
                 transform: rotate(-45deg);
                 transform-origin: 43% 80%;
             }
+        }
+        .toolbar-menu-text {
+            display: inline;
+            font-size: 25px;
+            font-weight: bold;
+            color: rgba(139, 160, 230, 1);
+            padding-bottom: 17px;
+            padding-right: 15px;
         }
     }
 

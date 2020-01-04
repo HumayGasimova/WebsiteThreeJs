@@ -103,6 +103,7 @@ const size = useWindowSize();
                 <div className={props.menuButtonIsPressed ? "toolbar-min-line2-effect" : "toolbar-min-line2"}/>
                 <div className={props.menuButtonIsPressed ? "toolbar-min-line3-effect" : "toolbar-min-line3"}/>
             </div>
+            <div className="toolbar-menu-text">MENU</div>
         </div>
     );
 }
