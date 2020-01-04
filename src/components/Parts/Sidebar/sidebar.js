@@ -20,7 +20,6 @@ import {
 */
 
 import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
-import Sidebar from '../Sidebar/sidebar';
 
 /**
 * Actions
@@ -32,7 +31,7 @@ import * as Actions from '../../../actions';
 * Styles
 */
 
-import './toolbar.scss';
+import './sidebar.scss';
 
 /**
 * Selectors
@@ -53,16 +52,16 @@ import {
 } from '../../../constants/toolbarItems';
 
 /**
-* Toolbar component definition and export
+* Sidebar component definition and export
 */
 
-export const Toolbar = (props) => {
+export const Sidebar = (props) => {
 
     /**
     * State
     */
 
-    const size = useWindowSize();
+const size = useWindowSize();
 
     /**
     * Methods
@@ -94,24 +93,9 @@ export const Toolbar = (props) => {
     */
 
     return(
-        <>
-            <div className={"toolbar"}>
-                {renderToolbarItems()}
-                <div 
-                    className="toolbar-min" 
-                    onClick={() => props.toggleMenuButton()}
-                >
-                    <div className={props.menuButtonIsPressed ? "toolbar-min-line1-effect" : "toolbar-min-line1"}/>
-                    <div className={props.menuButtonIsPressed ? "toolbar-min-line2-effect" : "toolbar-min-line2"}/>
-                    <div className={props.menuButtonIsPressed ? "toolbar-min-line3-effect" : "toolbar-min-line3"}/>
-                </div>
-                <div 
-                    className="toolbar-menu-text"
-                    onClick={() => props.toggleMenuButton()}
-                >MENU</div>
-            </div>
-            {props.menuButtonIsPressed ? <Sidebar/> : null}
-        </>
+        <div className={"sidebar"}>
+            {renderToolbarItems()}
+        </div>
     );
 }
  export default connect(
@@ -125,5 +109,5 @@ export const Toolbar = (props) => {
             toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
-)(Toolbar);
+)(Sidebar);
  
