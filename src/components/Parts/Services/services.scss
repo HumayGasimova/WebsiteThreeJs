@@ -1,5 +1,5 @@
 .services {
-    width: 100%;
+    width: calc(100% - 20px);
     height: 400px;
     background: white;
     display: flex;
@@ -7,6 +7,7 @@
     justify-content: space-evenly;
     align-items: center;
     height: 550px;
+    border: 10px solid rgb(39, 49, 85);
     .services-paragraph {
         width: 45%;
         display: flex;
