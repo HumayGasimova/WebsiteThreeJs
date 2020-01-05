@@ -6,7 +6,8 @@ export const serviceCards = [
         header: "Strategy",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "strategy"
+        path: "strategy",
+        hexagonStyle: "service-hexagon-bulb"
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ export const serviceCards = [
         header: "Design",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "design"
+        path: "design",
+        hexagonStyle: "service-hexagon-laptop"
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ export const serviceCards = [
         header: "Development",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "development"
+        path: "development",
+        hexagonStyle: "service-hexagon-cog"
     },
     {
         id: 4,
@@ -33,6 +36,7 @@ export const serviceCards = [
         header: "Help & Supports",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
         show: false,
-        path: "helpAndSupports"
+        path: "helpAndSupports",
+        hexagonStyle: "service-hexagon-question"
     }
 ]

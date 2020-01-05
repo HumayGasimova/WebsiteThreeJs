@@ -1,19 +1,94 @@
-.service {
-    border: 2px solid red;
-    width: 240px;
-    height: 320px;
-    .service-icon{
-        .icon-bulb {
-            color: blue;
-        }
-        .icon-laptop {
-            color: pink;
-        }
-        .icon-cog {
-            color: orange;
-        }
-        .icon-question {
-            color: green;
-        }
+
+@mixin hexagon($size, $color) {
+    position: relative;
+    width: $size;
+    height: $size / 2;
+    background-color: $color;
+    margin: ($size / 3.6) 0;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      border-left: $size / 2 solid transparent;
+      border-right: $size / 2 solid transparent;
+    }
+    &:before {
+      bottom: 100%;
+      border-bottom: $size / 3.5 solid $color;
+    }
+    &:after {
+      top: 100%;
+      width: 0;
+      border-top: $size / 3.5 solid $color;
     }
 }
+
+@mixin hextainer($pos, $alpha, $deg){
+    position: $pos;
+    opacity: $alpha;
+    transform: rotate($deg);
+}
+
+.service {
+    width: 240px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    .service-hexagon-container{
+        @include hextainer(inline, 0.4, 0deg);
+        top: 0;
+        left: 30px;
+        .service-hexagon-bulb {
+            @include hexagon(100px, rgb(103, 201, 206));
+        }
+        .service-hexagon-laptop {
+            @include hexagon(100px, rgb(233, 141, 213));
+        }
+        .service-hexagon-cog {
+            @include hexagon(100px, rgb(228, 179, 116));
+        }
+        .service-hexagon-question {
+            @include hexagon(100px, rgb(138, 231, 119));
+        }
+    }
+    .icon-bulb {
+        position: relative;
+        top: -70px;
+        color: rgb(107, 146, 219);
+    }
+    .icon-laptop {
+        position: relative;
+        top: -70px;
+        color: rgb(209, 97, 181);
+    }
+    .icon-cog {
+        position: relative;
+        top: -70px;
+        color: rgb(238, 168, 76);
+    }
+    .icon-question {
+        position: relative;
+        top: -70px;
+        color: rgb(81, 211, 81);
+    }
+
+    .service-header {
+        font-family: 'Abhaya Libre', serif;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0px 0 10px 0;
+    }
+
+    .service-text {
+        font-family: 'Abhaya Libre', serif;
+        font-size: 18px;
+        text-align: center;
+        opacity: 0.5;
+    }
+}
+
+

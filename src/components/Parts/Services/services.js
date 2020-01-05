@@ -66,6 +66,8 @@ export const Services = (props) => {
                         icon={el.icon}
                         header={el.header}
                         text={el.text}
+                        color={"red"}
+                        hexagonStyle={el.hexagonStyle}
                     />
                 )
             })}</div>

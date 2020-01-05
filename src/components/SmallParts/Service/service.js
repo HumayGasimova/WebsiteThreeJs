@@ -39,7 +39,7 @@ export const Service = (props) => {
     * State
     */
 
-
+let color = "red"
     /**
     * Methods
     */
@@ -47,13 +47,13 @@ export const Service = (props) => {
    const renderIcon = () => {
         switch(props.icon) {
             case "faLightbulb":
-                return (<FontAwesomeIcon icon={faLightbulb} size="lg" className="icon-bulb"/>);
+                return (<FontAwesomeIcon icon={faLightbulb} size="2x" className="icon-bulb"/>);
             case "faLaptopCode":
-                return (<FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon-laptop"/>);
+                return (<FontAwesomeIcon icon={faLaptopCode} size="2x" className="icon-laptop"/>);
             case "faCog":
-                return (<FontAwesomeIcon icon={faCog} size="lg" className="icon-cog"/>);
+                return (<FontAwesomeIcon icon={faCog} size="2x" className="icon-cog"/>);
             case "faQuestionCircle":
-                return (<FontAwesomeIcon icon={faQuestionCircle} size="lg" className="icon-question"/>);
+                return (<FontAwesomeIcon icon={faQuestionCircle} size="2x" className="icon-question"/>);
         }
     }
 
@@ -64,9 +64,10 @@ export const Service = (props) => {
 
     return(
         <div className="service">
-            <div className="service-icon">
-                {renderIcon(props.icon)}
+            <div className="service-hexagon-container">
+                <div className={props.hexagonStyle}/>
             </div>
+            {renderIcon(props.icon)}
             <div className="service-header">{props.header}</div>
             <div className="service-text">{props.text}</div>
         </div>
