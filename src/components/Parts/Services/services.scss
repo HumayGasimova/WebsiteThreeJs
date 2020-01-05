@@ -1,12 +1,11 @@
 .services {
     width: calc(100% - 20px);
-    height: 400px;
     background: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 550px;
+    height: 750px;
     border: 10px solid rgb(39, 49, 85);
     .services-paragraph {
         width: 45%;
@@ -36,7 +35,9 @@
     }
     
     .services-cards {
+        width: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
     }
 }

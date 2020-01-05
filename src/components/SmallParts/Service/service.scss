@@ -1,5 +1,19 @@
 .service {
     border: 2px solid red;
-    width: 100px;
-    height: 100px;
+    width: 240px;
+    height: 320px;
+    .service-icon{
+        .icon-bulb {
+            color: blue;
+        }
+        .icon-laptop {
+            color: pink;
+        }
+        .icon-cog {
+            color: orange;
+        }
+        .icon-question {
+            color: green;
+        }
+    }
 }

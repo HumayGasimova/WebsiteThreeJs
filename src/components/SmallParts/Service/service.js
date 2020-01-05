@@ -23,12 +23,10 @@ import './service.scss';
 */
 
 import { 
+    faLightbulb,
     faLaptopCode,
-    faChartLine,
-    faPaperPlane,
-    faUniversity,
-    faCameraRetro,
-    faShoppingBag
+    faCog,
+    faQuestionCircle
 } from '@fortawesome/free-solid-svg-icons'
 
 /**
@@ -47,20 +45,16 @@ export const Service = (props) => {
     */
 
    const renderIcon = () => {
-        // switch(props.icon) {
-        //     case "faLaptopCode":
-        //         return (<FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon"/>);
-        //     case "faChartLine":
-        //         return (<FontAwesomeIcon icon={faChartLine} size="lg" className="icon"/>);
-        //     case "faPaperPlane":
-        //         return (<FontAwesomeIcon icon={faPaperPlane} size="lg" className="icon"/>);
-        //     case "faUniversity":
-        //         return (<FontAwesomeIcon icon={faUniversity} size="lg" className="icon"/>);
-        //     case "faCameraRetro":
-        //         return (<FontAwesomeIcon icon={faCameraRetro} size="lg" className="icon"/>);
-        //     case "faShoppingBag":
-        //         return (<FontAwesomeIcon icon={faShoppingBag} size="lg" className="icon"/>);
-        // }
+        switch(props.icon) {
+            case "faLightbulb":
+                return (<FontAwesomeIcon icon={faLightbulb} size="lg" className="icon-bulb"/>);
+            case "faLaptopCode":
+                return (<FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon-laptop"/>);
+            case "faCog":
+                return (<FontAwesomeIcon icon={faCog} size="lg" className="icon-cog"/>);
+            case "faQuestionCircle":
+                return (<FontAwesomeIcon icon={faQuestionCircle} size="lg" className="icon-question"/>);
+        }
     }
 
 
@@ -70,7 +64,11 @@ export const Service = (props) => {
 
     return(
         <div className="service">
-            
+            <div className="service-icon">
+                {renderIcon(props.icon)}
+            </div>
+            <div className="service-header">{props.header}</div>
+            <div className="service-text">{props.text}</div>
         </div>
     );
 }

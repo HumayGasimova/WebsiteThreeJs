@@ -63,6 +63,9 @@ export const Services = (props) => {
                 return(
                     <Service
                         key={i}
+                        icon={el.icon}
+                        header={el.header}
+                        text={el.text}
                     />
                 )
             })}</div>
@@ -83,10 +86,7 @@ export const Services = (props) => {
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </div>
             </div>
-            <div>
-                {renderServices()}
-            </div>
-         
+            {renderServices()}
         </div>
     );
 }
