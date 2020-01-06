@@ -21,6 +21,7 @@
         }
         .portfolio-text-line2 {
             font-family: 'Abhaya Libre', serif;
+            color: rgb(39, 49, 85);
             font-size: 50px;
             font-weight: bold;
             text-align: center;
@@ -36,10 +37,11 @@
 
     .portfolio-template {
         display: flex;
+        justify-content: center;
         align-items: center;
-        width: 97%;
+        width: 100%;
         .portfolio-image {
-            margin: 50px;
+            margin: 0 50px 0 0;
             box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
             >img {
                 width: 550px;
@@ -48,7 +50,7 @@
         }
 
         .portfolio-image-middle {
-            margin: 50px;
+            margin: 50px 0 50px 50px;
             box-shadow: -10px 10px 10px 0 rgb(101, 64, 136);
             >img {
                 width: 550px;
@@ -57,15 +59,17 @@
         }
 
         .portfolio-description {
-            margin: 0px 270px 0px 4px;
             display: flex;
             flex-direction: column;
+            width: 400px;
+            margin: 50px 0 50px 50px;
         }
 
         .portfolio-description-middle {
-            margin: 0px 4px 0px 270px;
             display: flex;
             flex-direction: column;
+            width: 400px;
+            margin: 0 50px 0 0;
         }
     }
 }
@@ -79,6 +83,7 @@
     font-family: 'Abhaya Libre', serif;
     font-size: 30px;
     font-weight: bold;
+    color: rgb(39, 49, 85);
     padding: 10px 0 15px 0;
 }
 .portfolio-description-text {

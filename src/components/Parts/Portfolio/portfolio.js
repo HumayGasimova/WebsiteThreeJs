@@ -31,8 +31,6 @@ import Project from '../../SmallParts/Project/project';
 * Components
 */
 
-import Service from '../../SmallParts/Service/service';
-
 /**
 * Selectors
 */
@@ -53,17 +51,31 @@ import Pic3 from '../../../images/flowers-table-pink-roses-decorations.jpg';
 
 export const Portfolio = (props) => {
 
+    const [slower, setSlower] = useState(0);
+
     /**
     * Methods
     */
 
+    // const handleScroll = () => {
+    //     let scrollHeight = document.body.scrollTop;
+    //     let portfolioTop = document.getElementById("portfolio").offsetTop;
+    //     console.log(scrollHeight)
+    //     console.log(portfolioTop)
+    //     setSlower(scrollHeight/2);
+    // }
+
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
 
     /**
     * Markup
     */
 
     return(
-        <div className="portfolio">
+        <div className="portfolio" id="portfolio">
             <div className="portfolio-paragraph">
                 <div className="portfolio-text-line1">WORKS</div>
                 <div className="portfolio-text-line2">Lorem ipsum dolor sit amet.</div>
@@ -75,7 +87,7 @@ export const Portfolio = (props) => {
                 </div>
             </div>
             <div className="portfolio-template">
-                <div className="portfolio-image">
+                <div className="portfolio-image" style={{transform: `translate(0px, -${slower}px)`}}>
                     <img src={Pic1}/>
                 </div>
                 <div className="portfolio-description">
