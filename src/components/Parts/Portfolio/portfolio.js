@@ -59,18 +59,16 @@ export const Portfolio = (props) => {
     * Methods
     */
 
-    // const handleScroll = () => {
-    //     let scrollHeight = document.body.scrollTop;
-    //     let portfolioTop = document.getElementById("portfolio").offsetTop;
-    //     console.log(scrollHeight)
-    //     console.log(portfolioTop)
-    //     setSlower(scrollHeight/2);
-    // }
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop;
+        console.log(scrollHeight)
+        setSlower(scrollHeight/2);
+    }
 
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     /**
     * Markup
@@ -89,7 +87,7 @@ export const Portfolio = (props) => {
                 </div>
             </div>
             <div className="portfolio-template">
-                <div className="portfolio-image" style={{transform: `translate(0px, -${slower}px)`}}>
+                <div className="portfolio-image-first" style={{transform: `translate(0px, -${slower}px)`}}>
                     <img src={Pic1}/>
                 </div>
                 <div className="portfolio-description">
@@ -104,7 +102,7 @@ export const Portfolio = (props) => {
                     <Button text={"View Portfolio"}/>
                 </div>
             </div>
-            <div className="portfolio-template">
+            <div className="portfolio-template-middle">
                 <div className="portfolio-description-middle">
                     <div className="portfolio-description-name">APPLICATION</div>
                     <div className="portfolio-description-header">Lorem ipsum dolor sit amet.</div>
@@ -116,12 +114,12 @@ export const Portfolio = (props) => {
                     </div>
                     <Button text={"View Portfolio"}/>
                 </div>
-                <div className="portfolio-image-middle">
+                <div className="portfolio-image-second" style={{transform: `translate(0px, -${slower}px)`}}>
                     <img src={Pic2}/>
                 </div>
             </div>
             <div className="portfolio-template">
-                <div className="portfolio-image">
+                <div className="portfolio-image-third" style={{transform: `translate(0px, -${slower}px)`}}>
                     <img src={Pic3}/>
                 </div>
                 <div className="portfolio-description">

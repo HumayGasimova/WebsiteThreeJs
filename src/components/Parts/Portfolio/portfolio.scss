@@ -3,9 +3,9 @@
     background: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    height: 1800px;
+    height: 1600px;
     border: 10px solid rgb(39, 49, 85);
     .portfolio-paragraph {
         width: 55%;
@@ -37,10 +37,13 @@
 
     .portfolio-template {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        width: 100%;
-        .portfolio-image {
+        width: 70%;
+        .portfolio-image-first {
+            position: absolute;
+            left: 100px;
+            top: 4000px;
             margin: 0 50px 0 0;
             box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
             >img {
@@ -49,9 +52,12 @@
             }
         }
 
-        .portfolio-image-middle {
-            margin: 50px 0 50px 50px;
-            box-shadow: -10px 10px 10px 0 rgb(101, 64, 136);
+        .portfolio-image-third {
+            position: absolute;
+            left: 100px;
+            top: 5300px;
+            margin: 0 50px 0 0;
+            box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
             >img {
                 width: 550px;
                 height: 410px;
@@ -62,7 +68,25 @@
             display: flex;
             flex-direction: column;
             width: 400px;
+            margin: 0px 0 50px 0px;
+        }
+    }
+
+    .portfolio-template-middle {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 70%;
+        .portfolio-image-second {
+            position: absolute;
+            right: 100px;
+            top: 4600px;
             margin: 50px 0 50px 50px;
+            box-shadow: -10px 10px 10px 0 rgb(101, 64, 136);
+            >img {
+                width: 550px;
+                height: 410px;
+            }
         }
 
         .portfolio-description-middle {
