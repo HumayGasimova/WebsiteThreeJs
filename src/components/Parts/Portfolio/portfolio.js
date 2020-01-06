@@ -31,6 +31,8 @@ import Project from '../../SmallParts/Project/project';
 * Components
 */
 
+import Button from '../../../library/Button/button';
+
 /**
 * Selectors
 */
@@ -99,6 +101,7 @@ export const Portfolio = (props) => {
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat. 
                     </div>
+                    <Button text={"View Portfolio"}/>
                 </div>
             </div>
             <div className="portfolio-template">
@@ -111,6 +114,7 @@ export const Portfolio = (props) => {
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat. 
                     </div>
+                    <Button text={"View Portfolio"}/>
                 </div>
                 <div className="portfolio-image-middle">
                     <img src={Pic2}/>
@@ -129,6 +133,7 @@ export const Portfolio = (props) => {
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat. 
                     </div>
+                    <Button text={"View Portfolio"}/>
                 </div>
             </div>
         </div>
