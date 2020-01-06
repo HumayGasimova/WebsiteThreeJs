@@ -24,10 +24,11 @@ import './main.scss';
 * Components
 */
 
-import Toolbar from '../components/Parts/Toolbar/toolbar';
-import MovingBubbles from '../components/Parts/MovingBubbles/movingBubbles';
-import OtherProjects from '../components/Parts/OtherProjects/otherProjects';
-import Services from '../components/Parts/Services/services';
+import Toolbar from './Parts/Toolbar/toolbar';
+import MovingBubbles from './Parts/MovingBubbles/movingBubbles';
+import OtherProjects from './Parts/OtherProjects/otherProjects';
+import Services from './Parts/Services/services';
+import Newsletter from './Parts/Newslatter/newsletter';
 
 /**
 * Actions
@@ -63,6 +64,7 @@ export const Main = (props) => {
             <MovingBubbles/>
             <OtherProjects/>
             <Services/>
+            <Newsletter/>
         </div>
     );
 }
