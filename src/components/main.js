@@ -29,6 +29,7 @@ import MovingBubbles from './Parts/MovingBubbles/movingBubbles';
 import OtherProjects from './Parts/OtherProjects/otherProjects';
 import Services from './Parts/Services/services';
 import Newsletter from './Parts/Newslatter/newsletter';
+import Portfolio from './Parts/Portfolio/portfolio';
 
 /**
 * Actions
@@ -65,6 +66,7 @@ export const Main = (props) => {
             <OtherProjects/>
             <Services/>
             <Newsletter/>
+            <Portfolio/>
         </div>
     );
 }
