@@ -72,7 +72,7 @@ export const OtherProjects = (props) => {
 
     const renderProjects = () => {
         return(
-            <>{projects.map((el,i)=>{
+            <div className="projects-small-screen">{projects.map((el,i)=>{
                 return(
                     <Project
                         key={i}
@@ -86,7 +86,7 @@ export const OtherProjects = (props) => {
                         path={el.path}
                     />
                 )
-            })}</>
+            })}</div>
         )
     }
 
