@@ -2,7 +2,7 @@ export const projects = [
     {
         id: 1,
         cardId: "card1",
-        projectName: "3DReality",
+        projectName: "3D Reality",
         projectDescription: "Project",
         projectImage: "3DReality",
         developerPhoto: "pic1",
@@ -13,7 +13,7 @@ export const projects = [
     {
         id: 2,
         cardId: "card7",
-        projectName: "ticTacToe",
+        projectName: "TicTacToe",
         projectDescription: "Game",
         projectImage: "ticTacToe",
         developerPhoto: "pic1",
@@ -24,7 +24,7 @@ export const projects = [
     {
         id: 3,
         cardId: "card2",
-        projectName: "movingBalls",
+        projectName: "Moving Balls",
         projectDescription: "Game",
         projectImage: "movingBalls",
         developerPhoto: "pic1",
@@ -35,7 +35,7 @@ export const projects = [
     {
         id: 4,
         cardId: "card4",
-        projectName: "paperclipsGame",
+        projectName: "Paperclips Game",
         projectDescription: "Game",
         projectImage: "paperclipsGame",
         developerPhoto: "pic1",
@@ -46,7 +46,7 @@ export const projects = [
     {
         id: 5,
         cardId: "card5",
-        projectName: "parallaxWebsite",
+        projectName: "Parallax Website",
         projectDescription: "Website",
         projectImage: "parallaxWebsite",
         developerPhoto: "pic1",
@@ -57,7 +57,7 @@ export const projects = [
     {
         id: 6,
         cardId: "card3",
-        projectName: "paint",
+        projectName: "Paint",
         projectDescription: "Game",
         projectImage: "paint",
         developerPhoto: "pic1",
@@ -68,7 +68,7 @@ export const projects = [
     {
         id: 7,
         cardId: "card6",
-        projectName: "theGameOfLife",
+        projectName: "The Game Of Life",
         projectDescription: "Game",
         projectImage: "theGameOfLife",
         developerPhoto: "pic1",

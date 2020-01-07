@@ -128,6 +128,8 @@
     top: 45px;
     left: 271px;
     width: 240px;
+    height: 452px;
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
@@ -153,10 +155,15 @@
     top: 45px;
     left: 271px;
     width: 240px;
+    height: 452px;
+    z-index: 100;
+    transform: scale(1.7);
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
-            border: 3px solid rgb(39, 49, 85);
+            border-left: 3px solid rgb(39, 49, 85);
+            border-right: 3px solid rgb(39, 49, 85);
             width: 252px;
             height: 452px;
             .project-image-border2 {
@@ -178,6 +185,8 @@
     top: 20px;
     left: 527px;
     width: 210px;
+    height: 182px;
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
@@ -203,10 +212,15 @@
     top: 20px;
     left: 527px;
     width: 210px;
+    height: 182px;
+    z-index: 100;
+    transform: scale(1.7);
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
-            border: 3px solid rgb(39, 49, 85);
+            border-left: 3px solid rgb(39, 49, 85);
+            border-right: 3px solid rgb(39, 49, 85);
             width: 222px;
             height: 182px;
             .project-image-border2 {
@@ -228,6 +242,8 @@
     top: 206px;
     left: 527px;
     width: 210px;
+    height: 312px;
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
@@ -253,10 +269,15 @@
     top: 206px;
     left: 527px;
     width: 210px;
+    height: 312px;
+    z-index: 100;
+    transform: scale(1.7);
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
-            border: 3px solid rgb(39, 49, 85);
+            border-left: 3px solid rgb(39, 49, 85);
+            border-right: 3px solid rgb(39, 49, 85);
             width: 222px;
             height: 312px;
             .project-image-border2 {
@@ -278,6 +299,8 @@
     top: 80px;
     left: 753px;
     width: 300px;
+    height: 192px;
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
@@ -303,10 +326,15 @@
     top: 80px;
     left: 753px;
     width: 300px;
+    height: 192px;
+    z-index: 100;
+    transform: scale(1.7);
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
-            border: 3px solid rgb(39, 49, 85);
+            border-left: 3px solid rgb(39, 49, 85);
+            border-right: 3px solid rgb(39, 49, 85);
             width: 312px;
             height: 192px;
             .project-image-border2 {
@@ -328,6 +356,8 @@
     top: 276px;
     left: 753px;
     width: 300px;
+    height: 192px;
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
@@ -353,10 +383,15 @@
     top: 276px;
     left: 753px;
     width: 300px;
+    height: 182px;
+    z-index: 100;
+    transform: scale(1.7);
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
-            border: 3px solid rgb(39, 49, 85);
+            border-left: 3px solid rgb(39, 49, 85);
+            border-right: 3px solid rgb(39, 49, 85);
             width: 312px;
             height: 192px;
             .project-image-border2 {
@@ -378,6 +413,8 @@
     top: 173px;
     left: 1069px;
     width: 270px;
+    height: 192px;
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
@@ -403,10 +440,15 @@
     top: 173px;
     left: 1069px;
     width: 270px;
+    height: 182px;
+    z-index: 100;
+    transform: scale(1.7);
+    transition: transform .2s;
     cursor: pointer;
     .project-image {
         .project-image-border1 {
-            border: 3px solid rgb(39, 49, 85);
+            border-left: 3px solid rgb(39, 49, 85);
+            border-right: 3px solid rgb(39, 49, 85);
             width: 282px;
             height: 192px;
             .project-image-border2 {
