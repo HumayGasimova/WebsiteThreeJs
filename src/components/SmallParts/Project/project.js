@@ -71,7 +71,11 @@ export const Project = (props) => {
                 <div className="project-info-description">{props.projectDescription}</div>
             </div> */}
             <a className="project-image" href={props.path}>
-                <img src={loadImage(props.projectImage)}/>
+                <div className="project-image-border1">
+                    <div className="project-image-border2">
+                        <img src={loadImage(props.projectImage)}/>
+                    </div>
+                </div>
             </a>
             {/* <div className="project-developer-info">
                 <div className="project-developer-info-name">{props.developerName}</div>
