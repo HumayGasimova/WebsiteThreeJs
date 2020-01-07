@@ -24,6 +24,7 @@ import paperclipsGame from '../../../images/projectImages/PaperclipsGame.png';
 import parallaxWebsite from '../../../images/projectImages/ParallaxWebsite.png';
 import theGameOfLife from '../../../images/projectImages/TheGameOfLife.png';
 import ticTacToe from '../../../images/projectImages/TicTacToe.png';
+import photo from '../../../images/Portrait_Placeholder.png';
 
 /**
 * Project component definition and export
@@ -35,6 +36,7 @@ export const Project = (props) => {
     * State
     */
 
+    const [isHovering, setIsHovering] = useState(true);
 
     /**
     * Methods
@@ -59,28 +61,44 @@ export const Project = (props) => {
         }
     }
 
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    }
 
     /**
     * Markup
     */
 
     return(
-        <div className={props.className}>
-            {/* <div className="project-info">
-                <div className="project-info-name">{props.projectName}</div>
-                <div className="project-info-description">{props.projectDescription}</div>
-            </div> */}
+        <div 
+            className={isHovering ? `${props.className}-hover` : props.className}
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave} 
+        >
             <a className="project-image" href={props.path}>
+                <div className={isHovering ? "project-info-open" : "project-info-close"}>
+                    <div className="project-info-name">{props.projectName}</div>
+                    <div className="project-info-description">{props.projectDescription}</div>
+                </div> 
                 <div className="project-image-border1">
                     <div className="project-image-border2">
                         <img src={loadImage(props.projectImage)}/>
                     </div>
                 </div>
+                <div className={isHovering ? "project-developer-info-open" : "project-developer-info-close"}>
+                    <div className="project-developer-info-photo">
+                        <img src={photo}/>
+                    </div>
+                    <div className="project-developer-info-general">
+                        <div className="project-developer-info-name">{props.developerName}</div>
+                        <div className="project-developer-info-position">{props.developerPosition}</div>
+                    </div>
+                </div>
             </a>
-            {/* <div className="project-developer-info">
-                <div className="project-developer-info-name">{props.developerName}</div>
-                <div className="project-developer-info-position">{props.developerPosition}</div>
-            </div> */}
         </div>
     );
 }
