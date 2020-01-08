@@ -76,8 +76,6 @@ export const Project = (props) => {
     return(
         <div 
             className={isHovering ? `${props.className}-hover` : props.className}
-            onMouseEnter={handleMouseEnter} 
-            onMouseLeave={handleMouseLeave} 
         >
             <a className="project-image" href={props.path}>
                 <div className={isHovering ? `${props.className}-info-open` : "project-info-close"}>
@@ -85,7 +83,10 @@ export const Project = (props) => {
                     <div className="project-info-description">{props.projectDescription}</div>
                 </div> 
                 <div className="project-image-border1">
-                    <div className="project-image-border2">
+                    <div className="project-image-border2"   
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave} 
+                    >
                         <img src={loadImage(props.projectImage)}/>
                     </div>
                 </div>
