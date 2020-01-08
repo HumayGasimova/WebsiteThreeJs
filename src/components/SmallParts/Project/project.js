@@ -80,7 +80,7 @@ export const Project = (props) => {
             onMouseLeave={handleMouseLeave} 
         >
             <a className="project-image" href={props.path}>
-                <div className={isHovering ? "project-info-open" : "project-info-close"}>
+                <div className={isHovering ? `${props.className}-info-open` : "project-info-close"}>
                     <div className="project-info-name">{props.projectName}</div>
                     <div className="project-info-description">{props.projectDescription}</div>
                 </div> 
@@ -89,7 +89,7 @@ export const Project = (props) => {
                         <img src={loadImage(props.projectImage)}/>
                     </div>
                 </div>
-                <div className={isHovering ? "project-developer-info-open" : "project-developer-info-close"}>
+                <div className={isHovering ? `${props.className}-developer-info-open` : "project-developer-info-close"}>
                     <div className="project-developer-info-photo">
                         <img src={photo}/>
                     </div>

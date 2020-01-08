@@ -1,65 +1,65 @@
-.project-info-open {
-    background: rgb(175, 192, 255);
-    border-left: 3px solid rgb(39, 49, 85);
-    border-top: 3px solid rgb(39, 49, 85);
-    border-right: 3px solid rgb(39, 49, 85);
-    width: 252px;
-    height: 50px;
-    font-family: 'Abhaya Libre', serif;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    color: rgb(39, 49, 85);
-    .project-info-name {
-        height: 10px;
-    }
-    .project-info-description {
-        height: 10px;
-        opacity: 0.4;
-        font-size: 14px;
-    }
-}
+// .project-info-open {
+//     background: rgb(175, 192, 255);
+//     border-left: 3px solid rgb(39, 49, 85);
+//     border-top: 3px solid rgb(39, 49, 85);
+//     border-right: 3px solid rgb(39, 49, 85);
+//     width: 252px;
+//     height: 50px;
+//     font-family: 'Abhaya Libre', serif;
+//     text-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     color: rgb(39, 49, 85);
+//     .project-info-name {
+//         height: 10px;
+//     }
+//     .project-info-description {
+//         height: 10px;
+//         opacity: 0.4;
+//         font-size: 14px;
+//     }
+// }
 
 .project-info-close {
     opacity: 0;
     height: 55px;
 }
 
-.project-developer-info-open {
-    display: flex;
-    align-items: center;
-    background: rgb(175, 192, 255);
-    border-left: 3px solid rgb(39, 49, 85);
-    border-bottom: 3px solid rgb(39, 49, 85);
-    border-right: 3px solid rgb(39, 49, 85);
-    width: 252px;
-    height: 55px;
-    font-family: 'Abhaya Libre', serif;
-    color: rgb(39, 49, 85);
-    .project-developer-info-photo {
-        width: 40px;
-        height: 40px;
-        padding-left: 10px;
-        >img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-        }
-    }
-    .project-developer-info-general {
-        height: 35px;
-        padding-left: 10px;
-        .project-developer-info-name {
-            height: 20px;
-        }
-        .project-developer-info-position {
-            height: 20px;
-            opacity: 0.4;
-            font-size: 14px;
-        }
-    }
-}
+// .project-developer-info-open {
+//     display: flex;
+//     align-items: center;
+//     background: rgb(175, 192, 255);
+//     border-left: 3px solid rgb(39, 49, 85);
+//     border-bottom: 3px solid rgb(39, 49, 85);
+//     border-right: 3px solid rgb(39, 49, 85);
+//     width: 252px;
+//     height: 55px;
+//     font-family: 'Abhaya Libre', serif;
+//     color: rgb(39, 49, 85);
+//     .project-developer-info-photo {
+//         width: 40px;
+//         height: 40px;
+//         padding-left: 10px;
+//         >img {
+//             border-radius: 50%;
+//             width: 40px;
+//             height: 40px;
+//         }
+//     }
+//     .project-developer-info-general {
+//         height: 35px;
+//         padding-left: 10px;
+//         .project-developer-info-name {
+//             height: 20px;
+//         }
+//         .project-developer-info-position {
+//             height: 20px;
+//             opacity: 0.4;
+//             font-size: 14px;
+//         }
+//     }
+// }
 
 .project-developer-info-close {
     opacity: 0;
@@ -123,6 +123,65 @@
     }
 }
 
+.project-number-1-info-open {
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-top: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 252px;
+    height: 50px;
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(39, 49, 85);
+    .project-info-name {
+        height: 10px;
+    }
+    .project-info-description {
+        height: 10px;
+        opacity: 0.4;
+        font-size: 14px;
+    }
+}
+
+.project-number-1-developer-info-open {
+    display: flex;
+    align-items: center;
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-bottom: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 252px;
+    height: 55px;
+    font-family: 'Abhaya Libre', serif;
+    color: rgb(39, 49, 85);
+    .project-developer-info-photo {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        >img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .project-developer-info-general {
+        height: 35px;
+        padding-left: 10px;
+        .project-developer-info-name {
+            height: 20px;
+        }
+        .project-developer-info-position {
+            height: 20px;
+            opacity: 0.4;
+            font-size: 14px;
+        }
+    }
+}
+
+
 .project-number-2 {
     position: absolute;
     top: 45px;
@@ -176,6 +235,65 @@
                     height: 440px;
                 }
             }
+        }
+    }
+}
+
+
+.project-number-2-info-open {
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-top: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 252px;
+    height: 50px;
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(39, 49, 85);
+    .project-info-name {
+        height: 10px;
+    }
+    .project-info-description {
+        height: 10px;
+        opacity: 0.4;
+        font-size: 14px;
+    }
+}
+
+.project-number-2-developer-info-open {
+    display: flex;
+    align-items: center;
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-bottom: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 252px;
+    height: 55px;
+    font-family: 'Abhaya Libre', serif;
+    color: rgb(39, 49, 85);
+    .project-developer-info-photo {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        >img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .project-developer-info-general {
+        height: 35px;
+        padding-left: 10px;
+        .project-developer-info-name {
+            height: 20px;
+        }
+        .project-developer-info-position {
+            height: 20px;
+            opacity: 0.4;
+            font-size: 14px;
         }
     }
 }
@@ -237,6 +355,65 @@
     }
 }
 
+
+.project-number-3-info-open {
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-top: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 222px;
+    height: 50px;
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(39, 49, 85);
+    .project-info-name {
+        height: 10px;
+    }
+    .project-info-description {
+        height: 10px;
+        opacity: 0.4;
+        font-size: 14px;
+    }
+}
+
+.project-number-3-developer-info-open {
+    display: flex;
+    align-items: center;
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-bottom: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 222px;
+    height: 55px;
+    font-family: 'Abhaya Libre', serif;
+    color: rgb(39, 49, 85);
+    .project-developer-info-photo {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        >img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .project-developer-info-general {
+        height: 35px;
+        padding-left: 10px;
+        .project-developer-info-name {
+            height: 20px;
+        }
+        .project-developer-info-position {
+            height: 20px;
+            opacity: 0.4;
+            font-size: 14px;
+        }
+    }
+}
+
 .project-number-4 {
     position: absolute;
     top: 206px;
@@ -290,6 +467,65 @@
                     height: 300px;
                 }
             }
+        }
+    }
+}
+
+
+.project-number-4-info-open {
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-top: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 222px;
+    height: 50px;
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(39, 49, 85);
+    .project-info-name {
+        height: 10px;
+    }
+    .project-info-description {
+        height: 10px;
+        opacity: 0.4;
+        font-size: 14px;
+    }
+}
+
+.project-number-4-developer-info-open {
+    display: flex;
+    align-items: center;
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-bottom: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 222px;
+    height: 55px;
+    font-family: 'Abhaya Libre', serif;
+    color: rgb(39, 49, 85);
+    .project-developer-info-photo {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        >img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .project-developer-info-general {
+        height: 35px;
+        padding-left: 10px;
+        .project-developer-info-name {
+            height: 20px;
+        }
+        .project-developer-info-position {
+            height: 20px;
+            opacity: 0.4;
+            font-size: 14px;
         }
     }
 }
@@ -351,6 +587,65 @@
     }
 }
 
+
+.project-number-5-info-open {
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-top: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 312px;
+    height: 50px;
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(39, 49, 85);
+    .project-info-name {
+        height: 10px;
+    }
+    .project-info-description {
+        height: 10px;
+        opacity: 0.4;
+        font-size: 14px;
+    }
+}
+
+.project-number-5-developer-info-open {
+    display: flex;
+    align-items: center;
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-bottom: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 312px;
+    height: 55px;
+    font-family: 'Abhaya Libre', serif;
+    color: rgb(39, 49, 85);
+    .project-developer-info-photo {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        >img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .project-developer-info-general {
+        height: 35px;
+        padding-left: 10px;
+        .project-developer-info-name {
+            height: 20px;
+        }
+        .project-developer-info-position {
+            height: 20px;
+            opacity: 0.4;
+            font-size: 14px;
+        }
+    }
+}
+
 .project-number-6 {
     position: absolute;
     top: 276px;
@@ -404,6 +699,65 @@
                     height: 180px;
                 }
             }
+        }
+    }
+}
+
+
+.project-number-6-info-open {
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-top: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 312px;
+    height: 50px;
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(39, 49, 85);
+    .project-info-name {
+        height: 10px;
+    }
+    .project-info-description {
+        height: 10px;
+        opacity: 0.4;
+        font-size: 14px;
+    }
+}
+
+.project-number-6-developer-info-open {
+    display: flex;
+    align-items: center;
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-bottom: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 312px;
+    height: 55px;
+    font-family: 'Abhaya Libre', serif;
+    color: rgb(39, 49, 85);
+    .project-developer-info-photo {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        >img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .project-developer-info-general {
+        height: 35px;
+        padding-left: 10px;
+        .project-developer-info-name {
+            height: 20px;
+        }
+        .project-developer-info-position {
+            height: 20px;
+            opacity: 0.4;
+            font-size: 14px;
         }
     }
 }
@@ -465,6 +819,64 @@
     }
 }
 
+
+.project-number-7-info-open {
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-top: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 282px;
+    height: 50px;
+    font-family: 'Abhaya Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(39, 49, 85);
+    .project-info-name {
+        height: 10px;
+    }
+    .project-info-description {
+        height: 10px;
+        opacity: 0.4;
+        font-size: 14px;
+    }
+}
+
+.project-number-7-developer-info-open {
+    display: flex;
+    align-items: center;
+    background: rgb(175, 192, 255);
+    border-left: 3px solid rgb(39, 49, 85);
+    border-bottom: 3px solid rgb(39, 49, 85);
+    border-right: 3px solid rgb(39, 49, 85);
+    width: 282px;
+    height: 55px;
+    font-family: 'Abhaya Libre', serif;
+    color: rgb(39, 49, 85);
+    .project-developer-info-photo {
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        >img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .project-developer-info-general {
+        height: 35px;
+        padding-left: 10px;
+        .project-developer-info-name {
+            height: 20px;
+        }
+        .project-developer-info-position {
+            height: 20px;
+            opacity: 0.4;
+            font-size: 14px;
+        }
+    }
+}
 
 @media only screen and (max-width: 1366px) {
     .project-number-1 {
