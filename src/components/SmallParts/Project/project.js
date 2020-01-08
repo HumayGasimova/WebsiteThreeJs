@@ -103,7 +103,7 @@ export const Project = (props) => {
                 </a>
             </div>
             <div 
-                className="project-number-1-small"
+                className={`${props.className}-small`}
             >
                 <a className="project-image-small" href={props.path}>
                     <div className={`${props.className}-info-open-small`}>
