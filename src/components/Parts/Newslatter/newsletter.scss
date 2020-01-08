@@ -21,3 +21,36 @@
         color: rgb(214, 221, 243);
     }
 }
+
+@media only screen and (max-width: 874px) {
+    .newsletter {
+        .newsletter-header {
+            font-size: 30px;
+        }
+        .newsletter-text {
+            font-size: 17px;
+            width: 500px;
+        }
+    }
+}
+
+@media only screen and (max-width: 628px) {
+    .newsletter {
+        .newsletter-text {
+            width: 350px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 428px) {
+    .newsletter {
+        .newsletter-header {
+            font-size: 24px;
+        }
+        .newsletter-text {
+            font-size: 15px;
+            width: 250px;
+        }
+    }
+}
