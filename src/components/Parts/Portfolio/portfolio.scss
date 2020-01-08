@@ -7,6 +7,7 @@
     align-items: center;
     height: 1600px;
     border: 10px solid rgb(39, 49, 85);
+    padding-bottom: 140px;
     .portfolio-paragraph {
         width: 55%;
         display: flex;
@@ -39,11 +40,11 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        width: 70%;
+        width: 67%;
         .portfolio-image-first {
             position: absolute;
-            left: 100px;
-            top: 4100px;
+            left: 200px;
+            top: 4250px;
             margin: 0 50px 0 0;
             box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
             >img {
@@ -54,8 +55,8 @@
 
         .portfolio-image-third {
             position: absolute;
-            left: 100px;
-            top: 5400px;
+            left: 200px;
+            top: 5600px;
             margin: 0 50px 0 0;
             box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
             >img {
@@ -77,10 +78,11 @@
         justify-content: flex-start;
         align-items: center;
         width: 70%;
+        margin: 40px 0 40px 0;
         .portfolio-image-second {
             position: absolute;
-            right: 100px;
-            top: 4650px;
+            right: 200px;
+            top: 4860px;
             margin: 50px 0 50px 50px;
             box-shadow: -10px 10px 10px 0 rgb(101, 64, 136);
             >img {
