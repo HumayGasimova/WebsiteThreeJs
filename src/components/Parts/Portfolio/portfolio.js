@@ -78,7 +78,7 @@ export const Portfolio = (props) => {
         <div className="portfolio" id="portfolio">
             <div className="portfolio-paragraph">
                 <div className="portfolio-text-line1">WORKS</div>
-                <div className="portfolio-text-line2">Lorem ipsum dolor sit amet.</div>
+                <div className="portfolio-text-line2">View our works below to see our design and way of development.</div>
                 <div className="portfolio-text-line3">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -124,7 +124,7 @@ export const Portfolio = (props) => {
                 </div>
                 <div className="portfolio-description">
                     <div className="portfolio-description-name">WEB DESIGN</div>
-                    <div className="portfolio-description-header">View our works below to see our design and way of development.</div>
+                    <div className="portfolio-description-header">Lorem ipsum dolor sit amet.</div>
                     <div className="portfolio-description-text"> 
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
