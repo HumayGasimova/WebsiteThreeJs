@@ -15,6 +15,11 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+
 /**
 * Styles
 */
@@ -34,6 +39,15 @@ import Feedbacks from '../../SmallParts/Feedbacks/feedbacks';
 import Button from '../../../library/Button/button';
 
 /**
+* Icons
+*/
+
+import { 
+    faChevronLeft,
+    faChevronRight
+} from '@fortawesome/free-solid-svg-icons'
+
+/**
 * Selectors
 */
 
@@ -45,9 +59,19 @@ import Button from '../../../library/Button/button';
 
 export const CustomerFeedbacks = (props) => {
     
+    const [isHovering, setIsHovering] = useState(false);
+
     /**
     * Methods
     */
+
+   const handleMouseEnter = () => {
+        setIsHovering(true);
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    }
 
     /**
     * Markup
@@ -63,7 +87,15 @@ export const CustomerFeedbacks = (props) => {
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </div>
             </div>
-            <Feedbacks/>
+            <div 
+                className="customer-feedbacks-section"
+                onMouseLeave={handleMouseLeave} 
+                onMouseEnter={handleMouseEnter} 
+            >
+                {isHovering ? <FontAwesomeIcon icon={faChevronLeft} size="2x" className="icon-bulb"/> : null}
+                <Feedbacks/>
+                {isHovering ? <FontAwesomeIcon icon={faChevronRight} size="2x" className="icon-bulb"/> : null}
+            </div>
         </div>
     );
 }
