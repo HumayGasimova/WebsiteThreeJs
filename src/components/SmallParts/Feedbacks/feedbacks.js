@@ -19,7 +19,7 @@ import {
 * Styles
 */
 
-import './feedback.scss';
+import './feedbacks.scss';
 
 /**
 * Components
@@ -43,15 +43,11 @@ import Button from '../../../library/Button/button';
 * Images
 */
 
-import Pic1 from '../../../images/coffee-cafe-table-food.jpg';
-import Pic2 from '../../../images/notebook-laptop-camera-diary-pink-silver.jpg';
-import Pic3 from '../../../images/flowers-table-pink-roses-decorations.jpg';
-
 /**
-* Feedback component definition and export
+* Feedbacks component definition and export
 */
 
-export const Feedback = (props) => {
+export const Feedbacks = (props) => {
     
     /**
     * Methods
@@ -62,8 +58,8 @@ export const Feedback = (props) => {
     */
 
     return(
-        <div className="feedback" >
-       
+        <div className="feedbacks" >
+          
         </div>
     );
 }
@@ -79,5 +75,5 @@ export default connect(
             // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
         };
     }
-)(Feedback);
+)(Feedbacks);
  
