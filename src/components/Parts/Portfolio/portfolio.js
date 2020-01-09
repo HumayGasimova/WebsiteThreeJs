@@ -99,7 +99,10 @@ export const Portfolio = (props) => {
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat. 
                     </div>
-                    <Button text={"View Portfolio"}/>
+                    <Button 
+                        className="portfolio-description-button"
+                        text={"View Portfolio"}
+                    />
                 </div>
             </div>
             <div className="portfolio-template-middle">
@@ -112,7 +115,10 @@ export const Portfolio = (props) => {
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat. 
                     </div>
-                    <Button text={"View Portfolio"}/>
+                    <Button 
+                        className="portfolio-description-button-middle"
+                        text={"View Portfolio"}
+                    />
                 </div>
                 <div className="portfolio-image-second" style={{transform: `translate(0px, -${slower}px)`}}>
                     <img src={Pic2}/>
@@ -131,7 +137,10 @@ export const Portfolio = (props) => {
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea commodo consequat. 
                     </div>
-                    <Button text={"View Portfolio"}/>
+                    <Button 
+                        className="portfolio-description-button"
+                        text={"View Portfolio"}
+                    />
                 </div>
             </div>
         </div>
