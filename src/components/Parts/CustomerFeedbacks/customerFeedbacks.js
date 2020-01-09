@@ -92,9 +92,19 @@ export const CustomerFeedbacks = (props) => {
                 onMouseLeave={handleMouseLeave} 
                 onMouseEnter={handleMouseEnter} 
             >
-                {isHovering ? <FontAwesomeIcon icon={faChevronLeft} size="2x" className="icon-arrow-left"/> : null}
+                {isHovering ? 
+                    <Button 
+                        className={"customer-feddbacks-button"}
+                    >
+                        <FontAwesomeIcon icon={faChevronLeft} size="2x" className="icon-arrow-left"/>
+                    </Button> : null}
                 <Feedbacks/>
-                {isHovering ? <FontAwesomeIcon icon={faChevronRight} size="2x" className="icon-arrow-right"/> : null}
+                {isHovering ? 
+                    <Button 
+                        className={"customer-feddbacks-button"}
+                    >
+                        <FontAwesomeIcon icon={faChevronRight} size="2x" className="icon-arrow-right"/>
+                    </Button> : null}
             </div>
         </div>
     );
