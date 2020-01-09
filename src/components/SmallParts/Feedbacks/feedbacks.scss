@@ -1,10 +1,35 @@
 .feedbacks { 
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     .feedbacks-section {
         display: flex;
         justify-content: center;
         width: 100%;
+    }
+    .feedbacks-dots {
+        padding-top: 27px;
+        display: flex;
+        height: 70px;
+        cursor: pointer;
+        z-index: 100;
+        .feedbacks-dot {
+            border: 1.5px solid rgb(117, 71, 129);
+            border-radius: 50%;
+            background: rgba(117, 71, 129, 0.4);
+            width: 12px;
+            height: 12px;
+            margin: 3px;
+        }
+        // .feedbacks-dot-chosen {
+        //     border: 1.5px solid rgb(117, 71, 129);
+        //     border-radius: 50%;
+        //     background: rgba(117, 71, 129, 1);
+        //     width: 12px;
+        //     height: 12px;
+        //     margin: 3px;
+        // }
     }
 }

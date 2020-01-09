@@ -5,9 +5,9 @@ import {
      connectRouter 
 } from 'connected-react-router';
 
-import parallaxWebsiteReducer from './parallaxWebsiteReducer';
+import websiteThreeJsReducer from './websiteThreeJsReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    home: parallaxWebsiteReducer
+    home: websiteThreeJsReducer
 });

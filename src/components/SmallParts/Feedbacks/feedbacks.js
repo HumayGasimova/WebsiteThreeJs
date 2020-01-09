@@ -28,14 +28,10 @@ import './feedbacks.scss';
 import Feedback from '../../SmallParts/Feedback/feedback';
 
 /**
-* Constants
+* Selectors
 */
 
-import {
-    feedbacks
-} from '../../../constants/feedbacks';
-
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -53,7 +49,7 @@ export const Feedbacks = (props) => {
 
     const renderFeedbacks = () => {
         return(
-            <div className="feedbacks-section">{feedbacks.map((el, i) => {
+            <div className="feedbacks-section">{props.feedbacks.map((el, i) => {
                     return(
                         <Feedback
                             key={i}
@@ -69,6 +65,23 @@ export const Feedbacks = (props) => {
         )
     }
 
+    const renderDots = () => {
+        return(
+            <div className="feedbacks-dots">
+                {props.dots.map((el,i) => {
+                    return(
+                        <div 
+                            key={i} 
+                            // className={el.chosen ? "feedbacks-dot-chosen": "feedbacks-dot"}
+                            className="feedbacks-dot"
+                            onClick={() => chooseFeedback(i)}
+                        />
+                    )
+                })}
+            </div>
+        )
+    }
+
     /**
     * Markup
     */
@@ -76,6 +89,7 @@ export const Feedbacks = (props) => {
     return(
         <div className="feedbacks" >
           {renderFeedbacks()}
+          {renderDots()}
         </div>
     );
 }
@@ -83,7 +97,7 @@ export const Feedbacks = (props) => {
 export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            dots: Selectors.getDotsState(state)
         };
     },
     (dispatch) => {

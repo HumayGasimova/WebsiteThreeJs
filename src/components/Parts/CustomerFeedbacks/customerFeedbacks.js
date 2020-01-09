@@ -19,7 +19,6 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
-
 /**
 * Styles
 */
@@ -27,15 +26,16 @@ import {
 import './customerFeedbacks.scss';
 
 /**
-* Components
+* Actions
 */
 
-import Feedbacks from '../../SmallParts/Feedbacks/feedbacks';
+import * as Actions from '../../../actions';
 
 /**
 * Components
 */
 
+import Feedbacks from '../../SmallParts/Feedbacks/feedbacks';
 import Button from '../../../library/Button/button';
 
 /**
@@ -45,13 +45,21 @@ import Button from '../../../library/Button/button';
 import { 
     faChevronLeft,
     faChevronRight
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
+
+/**
+* Constants
+*/
+
+import {
+    feedbacksArray
+} from '../../../constants/feedbacks';
 
 /**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * CustomerFeedbacks component definition and export
@@ -65,7 +73,10 @@ export const CustomerFeedbacks = (props) => {
     * Methods
     */
 
-   const handleMouseEnter = () => {
+    useEffect(() => {
+        props.initFeedbacks(feedbacksArray);
+    }, [])
+    const handleMouseEnter = () => {
         setIsHovering(true);
     }
 
@@ -94,14 +105,14 @@ export const CustomerFeedbacks = (props) => {
             >
                 {isHovering ? 
                     <Button 
-                        className={"customer-feddbacks-button"}
+                        className={"customer-feedbacks-button"}
                     >
                         <FontAwesomeIcon icon={faChevronLeft} size="2x" className="icon-arrow-left"/>
                     </Button> : null}
-                <Feedbacks/>
+                <Feedbacks feedbacks={props.feedbacks}/>
                 {isHovering ? 
                     <Button 
-                        className={"customer-feddbacks-button"}
+                        className={"customer-feedbacks-button"}
                     >
                         <FontAwesomeIcon icon={faChevronRight} size="2x" className="icon-arrow-right"/>
                     </Button> : null}
@@ -113,12 +124,12 @@ export const CustomerFeedbacks = (props) => {
 export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            feedbacks: Selectors.getFeedbacksState(state),
         };
     },
     (dispatch) => {
         return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
+            initFeedbacks: bindActionCreators(Actions.initFeedbacks, dispatch),
         };
     }
 )(CustomerFeedbacks);

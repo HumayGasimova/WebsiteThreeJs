@@ -12,3 +12,10 @@ export function menuButtonIsToggled(val) {
         val: val
     };
 };
+
+export function initFeedbacks(array) {
+    return { 
+        type: actionTypes.INIT_FEEDBACKS,
+        array: array
+    };
+};

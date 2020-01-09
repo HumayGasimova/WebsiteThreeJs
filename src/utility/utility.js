@@ -31,3 +31,9 @@ export const getRandomColor = () => {
 export const getRandomAlfa = () => {
     return  Math.random();
 } 
+
+export const getArrayOfDots = (val) => {
+    let array = new Array(val).fill(0);
+    // array.map((el,i) => array[i] = i+1)
+    return array;
+} 

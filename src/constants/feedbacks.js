@@ -1,4 +1,4 @@
-export const feedbacks = [
+export const feedbacksArray = [
     {
         id: 1,
         cardId: "card1",

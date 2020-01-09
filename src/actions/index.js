@@ -1,1 +1,1 @@
-export * from './parallaxWebsiteActions';
+export * from './websiteThreeJsActions';
