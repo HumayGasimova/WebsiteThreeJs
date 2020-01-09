@@ -25,17 +25,15 @@ import './feedbacks.scss';
 * Components
 */
 
-import Project from '../../SmallParts/Project/project';
+import Feedback from '../../SmallParts/Feedback/feedback';
 
 /**
-* Components
+* Constants
 */
 
-import Button from '../../../library/Button/button';
-
-/**
-* Selectors
-*/
+import {
+    feedbacks
+} from '../../../constants/feedbacks';
 
 // import * as Selectors from '../../../reducers/selectors';
 
@@ -53,13 +51,31 @@ export const Feedbacks = (props) => {
     * Methods
     */
 
+    const renderFeedbacks = () => {
+        return(
+            <div className="feedbacks-section">{feedbacks.map((el, i) => {
+                    return(
+                        <Feedback
+                            key={i}
+                            image={el.image}
+                            icon={el.icon}
+                            feedback={el.feedback}
+                            name={el.name}
+                            position={el.position}
+                        />
+                    )
+                })
+            }</div>
+        )
+    }
+
     /**
     * Markup
     */
 
     return(
         <div className="feedbacks" >
-          
+          {renderFeedbacks()}
         </div>
     );
 }

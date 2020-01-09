@@ -59,7 +59,8 @@ export const Services = (props) => {
 
     const renderServices = () => {
         return(
-            <div className="services-cards">{serviceCards.map((el,i)=>{
+            <div className="services-cards">{
+                serviceCards.map((el,i)=>{
                 return(
                     <Service
                         key={i}

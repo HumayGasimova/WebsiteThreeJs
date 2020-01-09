@@ -1,5 +1,10 @@
-.feedbacks {
-    width: 200px;
-    height: 200px;
-    border: 2px solid red;
+.feedbacks { 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .feedbacks-section {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 }

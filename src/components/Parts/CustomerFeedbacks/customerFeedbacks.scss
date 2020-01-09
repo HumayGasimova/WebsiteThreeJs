@@ -35,5 +35,11 @@
     .customer-feedbacks-section {
         display: flex;
         align-items: center;
+        .icon-arrow-left {
+            color: rgb(101, 64, 136);
+        }
+        .icon-arrow-right {
+            color: rgb(101, 64, 136);
+        }
     }
 }

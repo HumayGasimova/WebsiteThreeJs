@@ -1,0 +1,53 @@
+.feedback {
+    width: 300px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(231, 223, 240);
+    box-shadow: 5px 5px 5px 3px rgb(101, 64, 136);
+    margin: 0 20px 0 20px;
+    border-radius: 7px;
+    .feedback-image {
+        >img{
+            position: relative;
+            top: 20px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .feedback-image-icon {
+            position: relative;
+            top: -15px;
+            left: 60px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgb(218, 161, 192);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .icon-quate {
+                color: rgb(136, 64, 126);
+            }
+        }
+    }
+    .feedback-text {
+        width: 250px;
+        font-size: 19px;
+        text-align: center;
+        opacity: 0.7;
+    }
+    .feedback-name {
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+    .feedback-position {
+        text-align: center;
+        font-size: 17px;
+        opacity: 0.5;
+        padding-bottom: 15px;
+    }
+}
