@@ -55,35 +55,44 @@ import Img1 from '../../../images/Portrait_Placeholder.png';
 
 export const Feedback = (props) => {
     
+    const select = React.createRef();
+
     /**
     * Methods
     */
 
-   const loadImage = () => {
+    const loadImage = () => {
         switch(props.image){
             case 'Name1':
             return Img1;
         }
     }
 
+    useEffect(() => {
+        const rect = select.current.getBoundingClientRect();
+        props.getLeft(rect.left, rect.width, props.id);
+    }, [props.coordinateX]) 
+
     /**
     * Markup
     */
 
     return(
-        <div className="feedback">
-            <div className="feedback-image">
-                <img src={loadImage()}/>
-                <div className="feedback-image-icon">
-                    <FontAwesomeIcon icon={faQuoteLeft} size="sm" className="icon-quate"/>
+            <div className="feedback" ref={select}>
+                <div className="feedback-clear">
+                    <div className="feedback-image">
+                        <img src={loadImage()}/>
+                        <div className="feedback-image-icon">
+                            <FontAwesomeIcon icon={faQuoteLeft} size="sm" className="icon-quate"/>
+                        </div>
+                    </div>
+                    <div className="feedback-text">{props.feedback}</div>
+                    <div>
+                        <div className="feedback-name">{props.name}</div>
+                        <div className="feedback-position">{props.position}</div>
+                    </div>
                 </div>
             </div>
-            <div className="feedback-text">{props.feedback}</div>
-            <div>
-                <div className="feedback-name">{props.name}</div>
-                <div className="feedback-position">{props.position}</div>
-            </div>
-        </div>
     );
 }
 

@@ -3,11 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
     .feedbacks-section {
         display: flex;
-        justify-content: center;
-        width: 100%;
+        justify-content: end;
+        // width: 100%;
+        width: 1015px;
+        padding-top: 5px;
+        // border: 2px solid red;
+        height: 400px;
+        overflow: hidden;
     }
     .feedbacks-dots {
         padding-top: 27px;

@@ -32,3 +32,10 @@ export function rightArrowOnClick() {
         type: actionTypes.RIGHT_ARROW_ON_CLICK
     };
 };
+
+export function chooseDotOnScroll(id) {
+    return { 
+        type: actionTypes.CHOOSE_DOT_ON_SCROLL,
+        id: id
+    };
+};

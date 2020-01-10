@@ -47,7 +47,7 @@ const initFeedbacks = (state, action) => {
 }
 
 const leftArrowOnClick = (state, action) => {
-    let updatedFeedbacksToShow =  [...state.feedbacksToShow];
+    let updatedFeedbacksToShow = [...state.feedbacksToShow];
     let updatedDots = [... state.dots];
 
     let firstFeedbackId = updatedFeedbacksToShow[0].id;
@@ -77,7 +77,7 @@ const leftArrowOnClick = (state, action) => {
 }
 
 const rightArrowOnClick = (state, action) => {
-    let updatedFeedbacksToShow =  [...state.feedbacksToShow];
+    let updatedFeedbacksToShow = [...state.feedbacksToShow];
     let updatedDots = [... state.dots];
 
     let lastFeedbackId = updatedFeedbacksToShow[updatedFeedbacksToShow.length-1].id;
@@ -106,6 +106,24 @@ const rightArrowOnClick = (state, action) => {
     };
 }
 
+const chooseDotOnScroll = (state, action) => {
+    let updatedDots =  [...state.dots];
+    let previousDot = {...updatedDots.find(x => x.chosen === true), chosen: false};
+    let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
+
+    updatedDots.splice(previousDotIndex, 1, previousDot);
+
+    let nextDot = {...updatedDots.find(x => x.id === action.id), chosen: true};
+    let nextDotIndex = updatedDots.findIndex(x => x.id === action.id);
+
+    updatedDots.splice(nextDotIndex, 1, nextDot);
+
+    return {
+        ...state,
+        dots: updatedDots
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -118,6 +136,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return leftArrowOnClick(state, action);
         case actionTypes.RIGHT_ARROW_ON_CLICK:
             return rightArrowOnClick(state, action);
+        case actionTypes.CHOOSE_DOT_ON_SCROLL:
+            return chooseDotOnScroll(state, action);
         default: 
             return state;
     }
