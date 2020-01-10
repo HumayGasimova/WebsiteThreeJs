@@ -48,6 +48,8 @@ const initFeedbacks = (state, action) => {
 
 const leftArrowOnClick = (state, action) => {
     let updatedFeedbacksToShow =  [...state.feedbacksToShow];
+    let updatedDots = [... state.dots];
+
     let firstFeedbackId = updatedFeedbacksToShow[0].id;
     let feedbackToAdd = state.feedbacks[state.feedbacks.findIndex(x => x.id === firstFeedbackId) - 1];
     updatedFeedbacksToShow.pop();
@@ -59,14 +61,25 @@ const leftArrowOnClick = (state, action) => {
         updatedFeedbacksToShow.unshift(feedbackToAdd);
     }
 
+    let previousDotId = updatedDots.findIndex(x => x.chosen === true);
+    let previousDot = {...updatedDots.find(x => x.chosen === true), chosen: false};
+    updatedDots.splice(previousDotId, 1, previousDot);
+
+    let nextDotId = updatedFeedbacksToShow[0].id;
+    let nextDot = {...updatedDots.find(x => x.id === nextDotId), chosen: true};
+    updatedDots.splice(nextDotId - 1, 1, nextDot);
+
     return {
         ...state,
         feedbacksToShow: updatedFeedbacksToShow,
+        dots: updatedDots
     };
 }
 
 const rightArrowOnClick = (state, action) => {
     let updatedFeedbacksToShow =  [...state.feedbacksToShow];
+    let updatedDots = [... state.dots];
+
     let lastFeedbackId = updatedFeedbacksToShow[updatedFeedbacksToShow.length-1].id;
     let feedbackToAdd = state.feedbacks[state.feedbacks.findIndex(x => x.id === lastFeedbackId) + 1];
     updatedFeedbacksToShow.shift();
@@ -78,9 +91,18 @@ const rightArrowOnClick = (state, action) => {
         updatedFeedbacksToShow.push(feedbackToAdd);
     }
 
+    let previousDotId = updatedDots.findIndex(x => x.chosen === true);
+    let previousDot = {...updatedDots.find(x => x.chosen === true), chosen: false};
+    updatedDots.splice(previousDotId, 1, previousDot);
+
+    let nextDotId = updatedFeedbacksToShow[0].id;
+    let nextDot = {...updatedDots.find(x => x.id === nextDotId), chosen: true};
+    updatedDots.splice(nextDotId - 1, 1, nextDot);
+ 
     return {
         ...state,
         feedbacksToShow: updatedFeedbacksToShow,
+        dots: updatedDots
     };
 }
 
