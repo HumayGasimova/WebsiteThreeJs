@@ -72,9 +72,8 @@ export const Feedbacks = (props) => {
                     return(
                         <div 
                             key={i} 
-                            // className={el.chosen ? "feedbacks-dot-chosen": "feedbacks-dot"}
-                            className="feedbacks-dot"
-                            onClick={() => chooseFeedback(i)}
+                            className={el.chosen ? "feedbacks-dot-chosen": "feedbacks-dot"}
+                            // onClick={() => chooseFeedback(i)}
                         />
                     )
                 })}

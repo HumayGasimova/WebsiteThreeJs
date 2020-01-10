@@ -34,6 +34,17 @@ export const getRandomAlfa = () => {
 
 export const getArrayOfDots = (val) => {
     let array = new Array(val).fill(0);
+    let updateChosen;
     // array.map((el,i) => array[i] = i+1)
-    return array;
+    return array.map((el,i) => {
+        if(i === 0){
+            updateChosen = true;
+        }else{
+            updateChosen = false;
+        }
+        return {
+            id: i + 1,
+            chosen: updateChosen
+        }
+    });
 } 
