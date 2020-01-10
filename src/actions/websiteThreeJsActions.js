@@ -13,9 +13,22 @@ export function menuButtonIsToggled(val) {
     };
 };
 
-export function initFeedbacks(array) {
+export function initFeedbacks(array, arrayToShow) {
     return { 
         type: actionTypes.INIT_FEEDBACKS,
-        array: array
+        array: array,
+        arrayToShow: arrayToShow
+    };
+};
+
+export function leftArrowOnClick() {
+    return { 
+        type: actionTypes.LEFT_ARROW_ON_CLICK
+    };
+};
+
+export function rightArrowOnClick() {
+    return { 
+        type: actionTypes.RIGHT_ARROW_ON_CLICK
     };
 };

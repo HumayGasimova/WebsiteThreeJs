@@ -74,8 +74,10 @@ export const CustomerFeedbacks = (props) => {
     */
 
     useEffect(() => {
-        props.initFeedbacks(feedbacksArray);
+        let feedbacks = feedbacksArray.slice(0, 3);
+        props.initFeedbacks(feedbacksArray, feedbacks);
     }, [])
+
     const handleMouseEnter = () => {
         setIsHovering(true);
     }
@@ -106,13 +108,15 @@ export const CustomerFeedbacks = (props) => {
                 {isHovering ? 
                     <Button 
                         className={"customer-feedbacks-button"}
+                        onClick={props.leftArrowOnClick}
                     >
                         <FontAwesomeIcon icon={faChevronLeft} size="2x" className="icon-arrow-left"/>
                     </Button> : null}
-                <Feedbacks feedbacks={props.feedbacks}/>
+                <Feedbacks feedbacks={props.feedbacksToShow}/>
                 {isHovering ? 
                     <Button 
                         className={"customer-feedbacks-button"}
+                        onClick={props.rightArrowOnClick}
                     >
                         <FontAwesomeIcon icon={faChevronRight} size="2x" className="icon-arrow-right"/>
                     </Button> : null}
@@ -124,12 +128,14 @@ export const CustomerFeedbacks = (props) => {
 export default connect(
     (state) => {
         return {
-            feedbacks: Selectors.getFeedbacksState(state),
+            feedbacksToShow: Selectors.getFeedbacksToShowState(state),
         };
     },
     (dispatch) => {
         return {
             initFeedbacks: bindActionCreators(Actions.initFeedbacks, dispatch),
+            leftArrowOnClick: bindActionCreators(Actions.leftArrowOnClick, dispatch),
+            rightArrowOnClick: bindActionCreators(Actions.rightArrowOnClick, dispatch),
         };
     }
 )(CustomerFeedbacks);

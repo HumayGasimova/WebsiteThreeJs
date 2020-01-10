@@ -23,6 +23,13 @@ export const getFeedbacksState = createSelector(
     (x) => x
 );
 
+const getFeedbacksToShow = (state) => state.home.feedbacksToShow;
+
+export const getFeedbacksToShowState = createSelector(
+    [getFeedbacksToShow],
+    (x) => x
+);
+
 const getDots = (state) => state.home.dots;
 
 export const getDotsState = createSelector(
