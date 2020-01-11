@@ -59,7 +59,9 @@ export const Feedbacks = (props) => {
     const [cardPosition3, setCardPosition3] = useState({left: 0, width:0, id: 0});
     const [cardPosition4, setCardPosition4] = useState({left: 0, width:0, id: 0});
     const [cardPosition5, setCardPosition5] = useState({left: 0, width:0, id: 0});
-    
+    const [cardPosition6, setCardPosition6] = useState({left: 0, width:0, id: 0});
+    const [cardPosition7, setCardPosition7] = useState({left: 0, width:0, id: 0});
+
     /**
     * Methods
     */
@@ -115,9 +117,14 @@ export const Feedbacks = (props) => {
             props.chooseDotOnScroll(cardPosition5.id);
         }
         if(cardPosition5.left < feedbacksDiv.offsetLeft/2 && cardPosition5.left > feedbacksDiv.offsetLeft/2-200){
+            props.chooseDotOnScroll(cardPosition6.id);
+        }
+        if(cardPosition6.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition1.id);
         }
-        console.log(cardPosition1, cardPosition2, cardPosition3, cardPosition4, cardPosition5)
+        if(cardPosition6.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
+            props.chooseDotOnScroll(cardPosition7.id);
+        }
     }, [cardPosition1])
 
     const leftOfFeedbackDiv = (left, width, cardId) => {
@@ -132,6 +139,10 @@ export const Feedbacks = (props) => {
                 return setCardPosition4({left, width, id: cardId});
             case 5:
                 return setCardPosition5({left, width, id: cardId});
+            case 6:
+                return setCardPosition6({left, width, id: cardId});
+            case 7:
+                return setCardPosition7({left, width, id: cardId});
         }
         // console.log({left, width, cardId})
     }
