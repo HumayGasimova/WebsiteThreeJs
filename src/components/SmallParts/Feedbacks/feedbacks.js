@@ -52,21 +52,21 @@ export const Feedbacks = (props) => {
     const select = React.createRef();
 
     const [xCoordinate, setXCoordinate] = useState(false);
-    const [feedbacksDivRefPosition, setFeedbacksDivRefPosition] = useState(0);
+    // const [feedbacksDivRefOffsetLeft, setFeedbacksDivRefOffsetLeft] = useState(0);
     
-    const [cardPosition1, setCardPosition1] = useState({left: 0, id: 0});
-    const [cardPosition2, setCardPosition2] = useState({left: 0, id: 0});
-    const [cardPosition3, setCardPosition3] = useState({left: 0, id: 0});
-    const [cardPosition4, setCardPosition4] = useState({left: 0, id: 0});
-    const [cardPosition5, setCardPosition5] = useState({left: 0, id: 0});
+    const [cardPosition1, setCardPosition1] = useState({left: 0, width:0, id: 0});
+    const [cardPosition2, setCardPosition2] = useState({left: 0, width:0, id: 0});
+    const [cardPosition3, setCardPosition3] = useState({left: 0, width:0, id: 0});
+    const [cardPosition4, setCardPosition4] = useState({left: 0, width:0, id: 0});
+    const [cardPosition5, setCardPosition5] = useState({left: 0, width:0, id: 0});
     
     /**
     * Methods
     */
 
     useEffect(()=>{
-        const feedbacksDivRef = select.current.getBoundingClientRect();
-        setFeedbacksDivRefPosition(feedbacksDivRef.left);
+        // const feedbacksDivRef = select.current.getBoundingClientRect();
+        // setFeedbacksDivRefOffsetLeft(feedbacksDivRef.offsetLeft);
 
         let feedbacksDiv = document.getElementById("feedbacks");
         let isDown = false;
@@ -101,38 +101,37 @@ export const Feedbacks = (props) => {
             // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
             // console.log(feedbacksDiv.offsetLeft)
         });
-
-        if(cardPosition1.left < 0 && cardPosition1.left > -200){
-            props.chooseDotOnScroll(cardPosition1.id);
-        }
-        if(cardPosition2.left < 0 && cardPosition2.left > -200){
+        
+        if(cardPosition1.left < feedbacksDiv.offsetLeft/2 && cardPosition1.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition2.id);
         }
-        if(cardPosition3.left < 0 && cardPosition3.left > -200){
+        if(cardPosition2.left < feedbacksDiv.offsetLeft/2 && cardPosition2.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition3.id);
         }
-        if(cardPosition4.left < 0 && cardPosition4.left > -200){
+        if(cardPosition3.left < feedbacksDiv.offsetLeft/2 && cardPosition3.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition4.id);
         }
-        if(cardPosition5.left < 0 && cardPosition5.left > -200){
+        if(cardPosition4.left < feedbacksDiv.offsetLeft/2 && cardPosition4.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition5.id);
         }
-        console.log(feedbacksDivRefPosition, cardPosition1, cardPosition2, cardPosition3, cardPosition4, cardPosition5)
+        if(cardPosition5.left < feedbacksDiv.offsetLeft/2 && cardPosition5.left > feedbacksDiv.offsetLeft/2-200){
+            props.chooseDotOnScroll(cardPosition1.id);
+        }
+        console.log(cardPosition1, cardPosition2, cardPosition3, cardPosition4, cardPosition5)
     }, [cardPosition1])
 
     const leftOfFeedbackDiv = (left, width, cardId) => {
-        // console.log(left)
         switch(cardId) {
             case 1:
-                return setCardPosition1({left, id: cardId});
+                return setCardPosition1({left, width, id: cardId});
             case 2:
-                return setCardPosition2({left, id: cardId});
+                return setCardPosition2({left, width, id: cardId});
             case 3:
-                return setCardPosition3({left, id: cardId});
+                return setCardPosition3({left, width, id: cardId});
             case 4:
-                return setCardPosition4({left, id: cardId});
+                return setCardPosition4({left, width, id: cardId});
             case 5:
-                return setCardPosition5({left, id: cardId});
+                return setCardPosition5({left, width, id: cardId});
         }
         // console.log({left, width, cardId})
     }
