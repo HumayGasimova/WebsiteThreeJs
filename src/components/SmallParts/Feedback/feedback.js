@@ -78,7 +78,7 @@ export const Feedback = (props) => {
     */
 
     return(
-            <div className="feedback" ref={select}>
+            <div className={`feedback ${props.className}`} ref={select}>
                 <div className="feedback-clear">
                     <div className="feedback-image">
                         <img src={loadImage()}/>

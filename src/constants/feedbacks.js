@@ -5,7 +5,7 @@ export const feedbacksArray = [
         image: "Name1",
         icon: "faLightbulb",
         feedback: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        name: "Name",
+        name: "Name1",
         position: "Web Developer",
         show: false
     },
@@ -15,7 +15,7 @@ export const feedbacksArray = [
         image: "Name1",
         icon: "faLightbulb",
         feedback: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        name: "Name1",
+        name: "Name2",
         position: "System Analytics",
         show: false
     },
@@ -25,7 +25,7 @@ export const feedbacksArray = [
         image: "Name1",
         icon: "faLightbulb",
         feedback: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        name: "Name2",
+        name: "Name3",
         position: "Marketing Manager",
         show: false
     },
@@ -35,7 +35,7 @@ export const feedbacksArray = [
         image: "Name1",
         icon: "faLightbulb",
         feedback: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        name: "Name3",
+        name: "Name4",
         position: "Interface Designer",
         show: false
     },
@@ -45,7 +45,7 @@ export const feedbacksArray = [
         image: "Name1",
         icon: "faLightbulb",
         feedback: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        name: "Name4",
+        name: "Name5",
         position: "UI Designer",
         show: false
     },
@@ -55,7 +55,7 @@ export const feedbacksArray = [
         image: "Name1",
         icon: "faLightbulb",
         feedback: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        name: "Name5",
+        name: "Name6",
         position: "UI Designer2",
         show: false
     },
@@ -65,7 +65,7 @@ export const feedbacksArray = [
         image: "Name1",
         icon: "faLightbulb",
         feedback: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-        name: "Name6",
+        name: "Name7",
         position: "UI Designer3",
         show: false
     }

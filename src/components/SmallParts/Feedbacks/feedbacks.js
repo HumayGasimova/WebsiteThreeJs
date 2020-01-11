@@ -52,8 +52,14 @@ export const Feedbacks = (props) => {
     const select = React.createRef();
 
     const [xCoordinate, setXCoordinate] = useState(false);
-    // const [feedbacksDivRefOffsetLeft, setFeedbacksDivRefOffsetLeft] = useState(0);
-    
+    const [addClassNameCard1, setAddClassNameCard1] = useState('');
+    const [addClassNameCard2, setAddClassNameCard2] = useState('');
+    const [addClassNameCard3, setAddClassNameCard3] = useState('');
+    const [addClassNameCard4, setAddClassNameCard4] = useState('');
+    const [addClassNameCard5, setAddClassNameCard5] = useState('');
+    const [addClassNameCard6, setAddClassNameCard6] = useState('');
+    const [addClassNameCard7, setAddClassNameCard7] = useState('');
+
     const [cardPosition1, setCardPosition1] = useState({left: 0, width:0, id: 0});
     const [cardPosition2, setCardPosition2] = useState({left: 0, width:0, id: 0});
     const [cardPosition3, setCardPosition3] = useState({left: 0, width:0, id: 0});
@@ -68,12 +74,12 @@ export const Feedbacks = (props) => {
 
     useEffect(()=>{
         // const feedbacksDivRef = select.current.getBoundingClientRect();
-        // setFeedbacksDivRefOffsetLeft(feedbacksDivRef.offsetLeft);
 
         let feedbacksDiv = document.getElementById("feedbacks");
         let isDown = false;
         let startX;
         let scrollLeft;
+        let walk;
 
         // card.addEventListener('dragstart', dragStart);
         // card.addEventListener('dragend', dragEnd);
@@ -96,13 +102,100 @@ export const Feedbacks = (props) => {
             if(!isDown) return;
             e.preventDefault();
             const x = e.pageX - feedbacksDiv.offsetLeft;
-            const walk = x - startX;
+            walk = x - startX;
             feedbacksDiv.scrollLeft = scrollLeft - walk;
             setXCoordinate(x);
             // feedbacksDiv.scrollLeft = (scrollLeft - walk) * 4; // scrolling with speed
             // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
+            // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
             // console.log(feedbacksDiv.offsetLeft)
         });
+        if(cardPosition1.left < -600){
+            // if(walk < 0 && addClassNameCard1 === ''){
+                setAddClassNameCard1("card1-move-to-right");
+                console.log("KK")
+            // }
+            // if(addClassNameCard1 === 'card1-move-to-right'){
+            //     setAddClassNameCard1("card1-move-to-right-updated");
+            // }
+            // console.log("KKK")
+            // if(addClassNameCard1 === 'card1-move-to-right-updated'){
+            //     setAddClassNameCard1("card1-move-to-right");
+            // }
+        }
+
+        if(cardPosition2.left < -600){
+            // if(addClassNameCard2 === ''){
+                setAddClassNameCard2("card2-move-to-right");
+            // }
+            // if(addClassNameCard2 === 'card2-move-to-right'){
+            //     setAddClassNameCard2("card2-move-to-right-updated");
+            // }
+            // if(addClassNameCard2 === 'card2-move-to-right-updated'){
+            //     setAddClassNameCard2("card2-move-to-right");
+            // }
+        }
+
+        if(cardPosition3.left < -600){
+           
+            // if(addClassNameCard3 === ''){
+                setAddClassNameCard3("card3-move-to-right");
+            // }
+            // if(addClassNameCard3 === 'card3-move-to-right'){
+            //     setAddClassNameCard3("card3-move-to-right-updated");
+            // }
+            // if(addClassNameCard3 === 'card3-move-to-right-updated'){
+            //     setAddClassNameCard3("card3-move-to-right");
+            // }
+        }
+
+        if(cardPosition4.left < -600){
+            // if(addClassNameCard4 === ''){
+                setAddClassNameCard4("card4-move-to-right");
+            // }
+            // if(addClassNameCard4 === 'card4-move-to-right'){
+            //     setAddClassNameCard4("card4-move-to-right-updated");
+            // }
+            // if(addClassNameCard4 === 'card4-move-to-right-updated'){
+            //     setAddClassNameCard4("card4-move-to-right");
+            // }
+        }
+
+        if(cardPosition5.left < -600){
+            // if(addClassNameCard5 === ''){
+                setAddClassNameCard5("card5-move-to-right");
+            // }
+            // if(addClassNameCard5 === 'card5-move-to-right'){
+            //     setAddClassNameCard1("card5-move-to-right-updated");
+            // }
+            // if(addClassNameCard5 === 'card5-move-to-right-updated'){
+            //     setAddClassNameCard5("card5-move-to-right");
+            // }
+        }
+
+        if(cardPosition6.left < -600){
+            // if(addClassNameCard6 === ''){
+                setAddClassNameCard6("card6-move-to-right");
+            // }
+            // if(addClassNameCard6 === 'card6-move-to-right'){
+            //     setAddClassNameCard6("card6-move-to-right-updated");
+            // }
+            // if(addClassNameCard6 === 'card6-move-to-right-updated'){
+            //     setAddClassNameCard6("card6-move-to-right");
+            // }
+        }
+
+        if(cardPosition7.left < -600){
+            // if(addClassNameCard7 === ''){
+                setAddClassNameCard7("card7-move-to-right");
+            // }
+            // if(addClassNameCard7 === 'card7-move-to-right'){
+            //     setAddClassNameCard1("card7-move-to-right-updated");
+            // }
+            // if(addClassNameCard7 === 'card7-move-to-right-updated'){
+            //     setAddClassNameCard7("card7-move-to-right");
+            // }
+        }
         
         if(cardPosition1.left < feedbacksDiv.offsetLeft/2 && cardPosition1.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition2.id);
@@ -125,13 +218,16 @@ export const Feedbacks = (props) => {
         if(cardPosition6.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition7.id);
         }
-    }, [cardPosition1])
+    }, [cardPosition1, addClassNameCard1])
 
     const leftOfFeedbackDiv = (left, width, cardId) => {
+      
         switch(cardId) {
             case 1:
+                console.log({left, width, cardId})
                 return setCardPosition1({left, width, id: cardId});
             case 2:
+                // console.log({left, width, cardId})
                 return setCardPosition2({left, width, id: cardId});
             case 3:
                 return setCardPosition3({left, width, id: cardId});
@@ -142,14 +238,42 @@ export const Feedbacks = (props) => {
             case 6:
                 return setCardPosition6({left, width, id: cardId});
             case 7:
+                // console.log({left, width, cardId})
                 return setCardPosition7({left, width, id: cardId});
         }
-        // console.log({left, width, cardId})
+       
     }
 
     const renderFeedbacks = () => {
         return(
             <div className="feedbacks-section" id="feedbacks">{props.feedbacks.map((el, i) => {
+                let additionalClassName = '';
+                switch(el.id){
+                    case 1:
+                        additionalClassName = addClassNameCard1;
+                        break;
+                    case 2:
+                        additionalClassName = addClassNameCard2;
+                        break;
+                    case 3:
+                        additionalClassName = addClassNameCard3;
+                        break;
+                    case 4:
+                        additionalClassName = addClassNameCard4;
+                        break;
+                    case 5:
+                        additionalClassName = addClassNameCard5;
+                        break;
+                    case 6:
+                        additionalClassName = addClassNameCard6;
+                        break;
+                    case 7:
+                        additionalClassName = addClassNameCard7;
+                    // default:
+                    //     additionalClassName = "";
+                    //     break;
+                }
+
                     return(
                         <Feedback
                             key={i}
@@ -162,6 +286,7 @@ export const Feedbacks = (props) => {
                             position={el.position}
                             getLeft={(left, width, cardId) => leftOfFeedbackDiv(left, width, cardId)}
                             coordinateX={xCoordinate}
+                            className={additionalClassName}
                         />
                     )
                 })
@@ -208,6 +333,7 @@ export default connect(
     (dispatch) => {
         return {
             chooseDotOnScroll: bindActionCreators(Actions.chooseDotOnScroll, dispatch),
+           
         };
     }
 )(Feedbacks);
