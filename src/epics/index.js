@@ -1,2 +1,2 @@
-export { startChangingFeedbacksEpic } from './startChangingFeedbacksEpic';
+export { startAddingClassNameToFeedbackCardEpic } from './startAddingClassNameToFeedbackCardEpic';
 export { submitMessageEpic } from './submitMessageEpic';

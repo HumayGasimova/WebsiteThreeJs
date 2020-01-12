@@ -18,7 +18,31 @@ export const initialState = {
     menuButtonIsPressed: false,
     feedbacks: [],
     feedbacksToShow: [],
-    dots: []
+    dots: [],
+    feedbacksStyle: {
+        card1: {
+            left: 0
+        },
+        card2: {
+            left: 0
+        },
+        card3: {
+            left: 0
+        },
+        card4: {
+            left: 0
+        },
+        card5: {
+            left: 0
+        },
+        card6: {
+            left: 0
+        },
+        card7: {
+            left: 0
+        }
+    },
+    feedbacksOnScroll: false,
 }
 
 const toggleMenuButton = (state) => {
@@ -124,6 +148,33 @@ const chooseDotOnScroll = (state, action) => {
     };
 }
 
+const updateFeedbackCardStyle = (state, action) => {
+    let updatedFeedbacksStyle = {...state.feedbacksStyle};
+    updatedFeedbacksStyle[action.cardId] = action.className;
+    
+
+    return {
+        ...state,
+        feedbacksStyle: updatedFeedbacksStyle
+    };
+}
+
+const feedbacksUpdated = (state, action) => {
+    return {
+        ...state,
+        feedbacksOnScroll: action.val
+    };
+}
+
+const feedbacksStylesUpdated = (state, action) => {
+    let updatedFeedbacksStyle = {...state.feedbacksStyle};
+    updatedFeedbacksStyle[action.id].left = action.val;
+    return {
+        ...state,
+        feedbacksStyle: updatedFeedbacksStyle
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -138,6 +189,15 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return rightArrowOnClick(state, action);
         case actionTypes.CHOOSE_DOT_ON_SCROLL:
             return chooseDotOnScroll(state, action);
+        case actionTypes.START_ADDING_CLASSNAME_TO_FEEDBACK_CARD:
+            return state;
+        case actionTypes.UPDATE_FEEDBACK_CARD_STYLE:
+            return updateFeedbackCardStyle(state, action); 
+        case actionTypes.FEEDBACKS_UPDATED:
+            return feedbacksUpdated(state, action);   
+        case actionTypes.FEEDBACKS_STYLES_UPDATED:
+            return feedbacksStylesUpdated(state, action);   
+            
         default: 
             return state;
     }

@@ -71,14 +71,14 @@ export const Feedback = (props) => {
     useEffect(() => {
         const rect = select.current.getBoundingClientRect();
         props.getLeft(rect.left, rect.width, props.id);
-    }, [props.coordinateX]) 
+    }, [props.coordinateX, props.feedbacksOnScroll]) 
 
     /**
     * Markup
     */
 
     return(
-            <div className={`feedback ${props.className}`} ref={select}>
+            <div className="feedback" style={{left: `${props.leftPosition}px`}} ref={select}>
                 <div className="feedback-clear">
                     <div className="feedback-image">
                         <img src={loadImage()}/>

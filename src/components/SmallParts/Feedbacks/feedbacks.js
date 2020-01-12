@@ -52,13 +52,13 @@ export const Feedbacks = (props) => {
     const select = React.createRef();
 
     const [xCoordinate, setXCoordinate] = useState(false);
-    const [addClassNameCard1, setAddClassNameCard1] = useState('');
-    const [addClassNameCard2, setAddClassNameCard2] = useState('');
-    const [addClassNameCard3, setAddClassNameCard3] = useState('');
-    const [addClassNameCard4, setAddClassNameCard4] = useState('');
-    const [addClassNameCard5, setAddClassNameCard5] = useState('');
-    const [addClassNameCard6, setAddClassNameCard6] = useState('');
-    const [addClassNameCard7, setAddClassNameCard7] = useState('');
+    // const [addClassNameCard1, setAddClassNameCard1] = useState('');
+    // const [addClassNameCard2, setAddClassNameCard2] = useState('');
+    // const [addClassNameCard3, setAddClassNameCard3] = useState('');
+    // const [addClassNameCard4, setAddClassNameCard4] = useState('');
+    // const [addClassNameCard5, setAddClassNameCard5] = useState('');
+    // const [addClassNameCard6, setAddClassNameCard6] = useState('');
+    // const [addClassNameCard7, setAddClassNameCard7] = useState('');
 
     const [cardPosition1, setCardPosition1] = useState({left: 0, width:0, id: 0});
     const [cardPosition2, setCardPosition2] = useState({left: 0, width:0, id: 0});
@@ -88,7 +88,6 @@ export const Feedbacks = (props) => {
             isDown = true;
             startX = e.pageX - feedbacksDiv.offsetLeft;
             scrollLeft = feedbacksDiv.scrollLeft;
-            // console.log("mouseDown", startX);
         });
         feedbacksDiv.addEventListener('mouseleave', () => {
             isDown = false
@@ -110,121 +109,42 @@ export const Feedbacks = (props) => {
             // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
             // console.log(feedbacksDiv.offsetLeft)
         });
-        if(cardPosition1.left < -600){
-            // if(walk < 0 && addClassNameCard1 === ''){
-                setAddClassNameCard1("card1-move-to-right");
-                console.log("KK")
-            // }
-            // if(addClassNameCard1 === 'card1-move-to-right'){
-            //     setAddClassNameCard1("card1-move-to-right-updated");
-            // }
-            // console.log("KKK")
-            // if(addClassNameCard1 === 'card1-move-to-right-updated'){
-            //     setAddClassNameCard1("card1-move-to-right");
-            // }
-        }
 
-        if(cardPosition2.left < -600){
-            // if(addClassNameCard2 === ''){
-                setAddClassNameCard2("card2-move-to-right");
-            // }
-            // if(addClassNameCard2 === 'card2-move-to-right'){
-            //     setAddClassNameCard2("card2-move-to-right-updated");
-            // }
-            // if(addClassNameCard2 === 'card2-move-to-right-updated'){
-            //     setAddClassNameCard2("card2-move-to-right");
-            // }
-        }
-
-        if(cardPosition3.left < -600){
-           
-            // if(addClassNameCard3 === ''){
-                setAddClassNameCard3("card3-move-to-right");
-            // }
-            // if(addClassNameCard3 === 'card3-move-to-right'){
-            //     setAddClassNameCard3("card3-move-to-right-updated");
-            // }
-            // if(addClassNameCard3 === 'card3-move-to-right-updated'){
-            //     setAddClassNameCard3("card3-move-to-right");
-            // }
-        }
-
-        if(cardPosition4.left < -600){
-            // if(addClassNameCard4 === ''){
-                setAddClassNameCard4("card4-move-to-right");
-            // }
-            // if(addClassNameCard4 === 'card4-move-to-right'){
-            //     setAddClassNameCard4("card4-move-to-right-updated");
-            // }
-            // if(addClassNameCard4 === 'card4-move-to-right-updated'){
-            //     setAddClassNameCard4("card4-move-to-right");
-            // }
-        }
-
-        if(cardPosition5.left < -600){
-            // if(addClassNameCard5 === ''){
-                setAddClassNameCard5("card5-move-to-right");
-            // }
-            // if(addClassNameCard5 === 'card5-move-to-right'){
-            //     setAddClassNameCard1("card5-move-to-right-updated");
-            // }
-            // if(addClassNameCard5 === 'card5-move-to-right-updated'){
-            //     setAddClassNameCard5("card5-move-to-right");
-            // }
-        }
-
-        if(cardPosition6.left < -600){
-            // if(addClassNameCard6 === ''){
-                setAddClassNameCard6("card6-move-to-right");
-            // }
-            // if(addClassNameCard6 === 'card6-move-to-right'){
-            //     setAddClassNameCard6("card6-move-to-right-updated");
-            // }
-            // if(addClassNameCard6 === 'card6-move-to-right-updated'){
-            //     setAddClassNameCard6("card6-move-to-right");
-            // }
-        }
-
-        if(cardPosition7.left < -600){
-            // if(addClassNameCard7 === ''){
-                setAddClassNameCard7("card7-move-to-right");
-            // }
-            // if(addClassNameCard7 === 'card7-move-to-right'){
-            //     setAddClassNameCard1("card7-move-to-right-updated");
-            // }
-            // if(addClassNameCard7 === 'card7-move-to-right-updated'){
-            //     setAddClassNameCard7("card7-move-to-right");
-            // }
-        }
-        
         if(cardPosition1.left < feedbacksDiv.offsetLeft/2 && cardPosition1.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition2.id);
+            props.startAddingClassNameToFeedbackCard("card1", false);
         }
         if(cardPosition2.left < feedbacksDiv.offsetLeft/2 && cardPosition2.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition3.id);
+            props.startAddingClassNameToFeedbackCard("card2", false);
         }
         if(cardPosition3.left < feedbacksDiv.offsetLeft/2 && cardPosition3.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition4.id);
+            props.startAddingClassNameToFeedbackCard("card3", false);
         }
         if(cardPosition4.left < feedbacksDiv.offsetLeft/2 && cardPosition4.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition5.id);
+            props.startAddingClassNameToFeedbackCard("card4", false);
         }
         if(cardPosition5.left < feedbacksDiv.offsetLeft/2 && cardPosition5.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition6.id);
-        }
-        if(cardPosition6.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
-            props.chooseDotOnScroll(cardPosition1.id);
+            props.startAddingClassNameToFeedbackCard("card5", false);
         }
         if(cardPosition6.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition7.id);
+            props.startAddingClassNameToFeedbackCard("card6", false);
         }
-    }, [cardPosition1, addClassNameCard1])
+        if(cardPosition7.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
+            props.chooseDotOnScroll(cardPosition1.id);
+            props.startAddingClassNameToFeedbackCard("card7", false);
+        }
+    }, [cardPosition1])
 
     const leftOfFeedbackDiv = (left, width, cardId) => {
       
         switch(cardId) {
             case 1:
-                console.log({left, width, cardId})
+                // console.log({left, width, cardId})
                 return setCardPosition1({left, width, id: cardId});
             case 2:
                 // console.log({left, width, cardId})
@@ -250,28 +170,28 @@ export const Feedbacks = (props) => {
                 let additionalClassName = '';
                 switch(el.id){
                     case 1:
-                        additionalClassName = addClassNameCard1;
+                        additionalClassName = props.feedbacksStyle.card1;
                         break;
                     case 2:
-                        additionalClassName = addClassNameCard2;
+                        additionalClassName = props.feedbacksStyle.card2;
                         break;
                     case 3:
-                        additionalClassName = addClassNameCard3;
+                        additionalClassName = props.feedbacksStyle.card3;
                         break;
                     case 4:
-                        additionalClassName = addClassNameCard4;
+                        additionalClassName = props.feedbacksStyle.card4;
                         break;
                     case 5:
-                        additionalClassName = addClassNameCard5;
+                        additionalClassName = props.feedbacksStyle.card5;
                         break;
                     case 6:
-                        additionalClassName = addClassNameCard6;
+                        additionalClassName = props.feedbacksStyle.card6;
                         break;
                     case 7:
-                        additionalClassName = addClassNameCard7;
-                    // default:
-                    //     additionalClassName = "";
-                    //     break;
+                        additionalClassName = props.feedbacksStyle.card7;
+                    default:
+                        additionalClassName = "";
+                        break;
                 }
 
                     return(
@@ -287,6 +207,7 @@ export const Feedbacks = (props) => {
                             getLeft={(left, width, cardId) => leftOfFeedbackDiv(left, width, cardId)}
                             coordinateX={xCoordinate}
                             className={additionalClassName}
+                            leftPosition={props.feedbacksStyle[el.cardId].left}
                         />
                     )
                 })
@@ -318,7 +239,6 @@ export const Feedbacks = (props) => {
         <div className="feedbacks" ref={select}>
           {renderFeedbacks()}
           {renderDots()}
-          {/* {console.log("coord")} */}
           {/* {console.log("rectPosition",{cardPosition1, cardPosition2, cardPosition3, cardPosition4, cardPosition5})} */}
         </div>
     );
@@ -327,13 +247,15 @@ export const Feedbacks = (props) => {
 export default connect(
     (state) => {
         return {
-            dots: Selectors.getDotsState(state)
+            dots: Selectors.getDotsState(state),
+            feedbacksStyle: Selectors.getFeedbacksStyleState(state),
+            feedbacksOnScroll: Selectors.getFeedbacksOnScrollState(state)
         };
     },
     (dispatch) => {
         return {
             chooseDotOnScroll: bindActionCreators(Actions.chooseDotOnScroll, dispatch),
-           
+            startAddingClassNameToFeedbackCard: bindActionCreators(Actions.startAddingClassNameToFeedbackCard, dispatch),
         };
     }
 )(Feedbacks);

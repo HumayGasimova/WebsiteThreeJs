@@ -39,3 +39,34 @@ export function chooseDotOnScroll(id) {
         id: id
     };
 };
+
+export function startAddingClassNameToFeedbackCard(id, update) {
+    return { 
+        type: actionTypes.START_ADDING_CLASSNAME_TO_FEEDBACK_CARD,
+        id: id,
+        update: update
+    };
+};
+
+export function updateFeedbackCardStyle(cardId, str) {
+    return { 
+        type: actionTypes.UPDATE_FEEDBACK_CARD_STYLE,
+        cardId: cardId,
+        className: str
+    };
+};
+
+export function feedbacksUpdated(val) {
+    return { 
+        type: actionTypes.FEEDBACKS_UPDATED,
+        val: val
+    };
+};
+
+export function feedbacksStylesUpdated(id, val) {
+    return { 
+        type: actionTypes.FEEDBACKS_STYLES_UPDATED,
+        id: id,
+        val: val
+    };
+};

@@ -37,3 +37,16 @@ export const getDotsState = createSelector(
     (x) => x
 );
 
+const getFeedbacksStyle = (state) => state.home.feedbacksStyle;
+
+export const getFeedbacksStyleState = createSelector(
+    [getFeedbacksStyle],
+    (x) => x
+);
+
+const getFeedbacksOnScroll = (state) => state.home.feedbacksOnScroll;
+
+export const getFeedbacksOnScrollState = createSelector(
+    [getFeedbacksOnScroll],
+    (x) => x
+);
