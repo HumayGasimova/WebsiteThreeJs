@@ -18,20 +18,12 @@ import {
 * Styles
 */
 
-import './main.scss';
+import './achievements.scss';
 
 /**
 * Components
 */
 
-import Toolbar from './Parts/Toolbar/toolbar';
-import MovingBubbles from './Parts/MovingBubbles/movingBubbles';
-import OtherProjects from './Parts/OtherProjects/otherProjects';
-import Services from './Parts/Services/services';
-import Newsletter from './Parts/Newslatter/newsletter';
-import Portfolio from './Parts/Portfolio/portfolio';
-import CustomerFeedbacks from './Parts/CustomerFeedbacks/customerFeedbacks';
-import Achievements from './Parts/Achievements/achievements';
 
 /**
 * Actions
@@ -46,10 +38,10 @@ import Achievements from './Parts/Achievements/achievements';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Main component definition and export
+* Achievements component definition and export
 */
 
-export const Main = (props) => {
+export const Achievements = (props) => {
 
     /**
     * Methods
@@ -62,15 +54,15 @@ export const Main = (props) => {
     */
 
     return(
-        <div className="main">
-            <Toolbar/>
-            <MovingBubbles/>
-            <OtherProjects/>
-            <Services/>
-            <Newsletter/>
-            <Portfolio/>
-            <CustomerFeedbacks/>
-            <Achievements/>
+        <div className="achievements">
+            <div className="achievements-feedbacks-paragraph">
+                <div className="achievements-feedbacks-text-line1">ACHIEVEMENTS</div>
+                <div className="achievements-feedbacks-text-line2">Our achievements</div>
+                <div className="achievements-feedbacks-text-line3"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </div>
+            </div>
         </div>
     );
 }
@@ -88,5 +80,5 @@ export default connect(
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }
-)(Main);
+)(Achievements);
  

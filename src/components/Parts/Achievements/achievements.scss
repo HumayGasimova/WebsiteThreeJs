@@ -1,0 +1,37 @@
+.achievements {
+    height: 700px;
+    background-image: url('../../../images/748582-pretty-pictures-for-backgrounds-1920x1080-windows.jpg');
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: context-menu;
+    .achievements-feedbacks-paragraph {
+        width: 57%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;;
+        align-items: center;
+    
+        .achievements-feedbacks-text-line1 {
+            font-family: 'Abhaya Libre', serif;
+            font-size: 13px;
+            // opacity: 0.5;
+        }
+        .achievements-feedbacks-text-line2 {
+            font-family: 'Abhaya Libre', serif;
+            color: rgb(39, 49, 85);
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0 15px 0;
+        }
+        .achievements-feedbacks-text-line3 {
+            font-family: 'Abhaya Libre', serif;
+            font-size: 19px;
+            text-align: center;
+            // opacity: 0.5;
+        }
+    }
+}
