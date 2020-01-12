@@ -74,8 +74,8 @@ export const CustomerFeedbacks = (props) => {
     */
 
     useEffect(() => {
-        let feedbacks = feedbacksArray.slice(0, 3);
-        props.initFeedbacks(feedbacksArray, feedbacks);
+        // let feedbacks = feedbacksArray.slice(0, 3);
+        props.initFeedbacks(feedbacksArray, feedbacksArray);
     }, [])
 
     const handleMouseEnter = () => {

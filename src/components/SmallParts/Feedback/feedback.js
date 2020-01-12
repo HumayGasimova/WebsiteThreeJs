@@ -78,7 +78,11 @@ export const Feedback = (props) => {
     */
 
     return(
-            <div className="feedback" style={{left: `${props.leftPosition}px`}} ref={select}>
+            <div 
+                className="feedback" 
+                // style={{left: `${props.leftPosition}px`}} 
+                ref={select}
+            >
                 <div className="feedback-clear">
                     <div className="feedback-image">
                         <img src={loadImage()}/>

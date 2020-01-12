@@ -30,7 +30,7 @@ import OtherProjects from './Parts/OtherProjects/otherProjects';
 import Services from './Parts/Services/services';
 import Newsletter from './Parts/Newslatter/newsletter';
 import Portfolio from './Parts/Portfolio/portfolio';
-import CustomerFeedbacks2 from './Parts/CustomerFeedbacks/customerFeedbacks2';
+import CustomerFeedbacks from './Parts/CustomerFeedbacks/customerFeedbacks';
 
 /**
 * Actions
@@ -68,7 +68,7 @@ export const Main = (props) => {
             <Services/>
             <Newsletter/>
             <Portfolio/>
-            <CustomerFeedbacks2/>
+            <CustomerFeedbacks/>
         </div>
     );
 }

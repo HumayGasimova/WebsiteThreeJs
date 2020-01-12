@@ -52,13 +52,6 @@ export const Feedbacks = (props) => {
     const select = React.createRef();
 
     const [xCoordinate, setXCoordinate] = useState(false);
-    // const [addClassNameCard1, setAddClassNameCard1] = useState('');
-    // const [addClassNameCard2, setAddClassNameCard2] = useState('');
-    // const [addClassNameCard3, setAddClassNameCard3] = useState('');
-    // const [addClassNameCard4, setAddClassNameCard4] = useState('');
-    // const [addClassNameCard5, setAddClassNameCard5] = useState('');
-    // const [addClassNameCard6, setAddClassNameCard6] = useState('');
-    // const [addClassNameCard7, setAddClassNameCard7] = useState('');
 
     const [cardPosition1, setCardPosition1] = useState({left: 0, width:0, id: 0});
     const [cardPosition2, setCardPosition2] = useState({left: 0, width:0, id: 0});
@@ -80,9 +73,6 @@ export const Feedbacks = (props) => {
         let startX;
         let scrollLeft;
         let walk;
-
-        // card.addEventListener('dragstart', dragStart);
-        // card.addEventListener('dragend', dragEnd);
 
         feedbacksDiv.addEventListener('mousedown', (e) => {
             isDown = true;
@@ -107,36 +97,35 @@ export const Feedbacks = (props) => {
             // feedbacksDiv.scrollLeft = (scrollLeft - walk) * 4; // scrolling with speed
             // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
             // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
-            // console.log(feedbacksDiv.offsetLeft)
         });
 
         if(cardPosition1.left < feedbacksDiv.offsetLeft/2 && cardPosition1.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition2.id);
-            props.startAddingClassNameToFeedbackCard("card1", false);
+            // props.startAddingClassNameToFeedbackCard("card1", false);
         }
         if(cardPosition2.left < feedbacksDiv.offsetLeft/2 && cardPosition2.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition3.id);
-            props.startAddingClassNameToFeedbackCard("card2", false);
+            // props.startAddingClassNameToFeedbackCard("card2", false);
         }
         if(cardPosition3.left < feedbacksDiv.offsetLeft/2 && cardPosition3.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition4.id);
-            props.startAddingClassNameToFeedbackCard("card3", false);
+            // props.startAddingClassNameToFeedbackCard("card3", false);
         }
         if(cardPosition4.left < feedbacksDiv.offsetLeft/2 && cardPosition4.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition5.id);
-            props.startAddingClassNameToFeedbackCard("card4", false);
+            // props.startAddingClassNameToFeedbackCard("card4", false);
         }
         if(cardPosition5.left < feedbacksDiv.offsetLeft/2 && cardPosition5.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition6.id);
-            props.startAddingClassNameToFeedbackCard("card5", false);
+            // props.startAddingClassNameToFeedbackCard("card5", false);
         }
         if(cardPosition6.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition7.id);
-            props.startAddingClassNameToFeedbackCard("card6", false);
+            // props.startAddingClassNameToFeedbackCard("card6", false);
         }
         if(cardPosition7.left < feedbacksDiv.offsetLeft/2 && cardPosition6.left > feedbacksDiv.offsetLeft/2-200){
             props.chooseDotOnScroll(cardPosition1.id);
-            props.startAddingClassNameToFeedbackCard("card7", false);
+            // props.startAddingClassNameToFeedbackCard("card7", false);
         }
     }, [cardPosition1])
 
@@ -166,35 +155,9 @@ export const Feedbacks = (props) => {
 
     const renderFeedbacks = () => {
         return(
-            <div className="feedbacks-section" id="feedbacks">{props.feedbacks.map((el, i) => {
-                let additionalClassName = '';
-                switch(el.id){
-                    case 1:
-                        additionalClassName = props.feedbacksStyle.card1;
-                        break;
-                    case 2:
-                        additionalClassName = props.feedbacksStyle.card2;
-                        break;
-                    case 3:
-                        additionalClassName = props.feedbacksStyle.card3;
-                        break;
-                    case 4:
-                        additionalClassName = props.feedbacksStyle.card4;
-                        break;
-                    case 5:
-                        additionalClassName = props.feedbacksStyle.card5;
-                        break;
-                    case 6:
-                        additionalClassName = props.feedbacksStyle.card6;
-                        break;
-                    case 7:
-                        additionalClassName = props.feedbacksStyle.card7;
-                    default:
-                        additionalClassName = "";
-                        break;
-                }
-
-                    return(
+            <div className="feedbacks-section" id="feedbacks">
+                {props.feedbacks.map((el, i) => {
+                     return(
                         <Feedback
                             key={i}
                             cardId={el.cardId}
@@ -206,12 +169,11 @@ export const Feedbacks = (props) => {
                             position={el.position}
                             getLeft={(left, width, cardId) => leftOfFeedbackDiv(left, width, cardId)}
                             coordinateX={xCoordinate}
-                            className={additionalClassName}
-                            leftPosition={props.feedbacksStyle[el.cardId].left}
+                            // leftPosition={props.feedbacksStyle[el.cardId].left}
                         />
                     )
-                })
-            }</div>
+                })}
+            </div>
         )
     }
 
