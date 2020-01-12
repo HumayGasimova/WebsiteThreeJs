@@ -1,5 +1,5 @@
 .customer-feedbacks {
-    height: 870px;
+    height: 740px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -7,6 +7,7 @@
     background: rgb(198, 204, 228);
     cursor: context-menu;
         .customer-feedbacks-paragraph {
+            padding-top: 50px;
             width: 57%;
             display: flex;
             flex-direction: column;
@@ -34,6 +35,7 @@
             }
         }
     .customer-feedbacks-section {
+        padding-top: 50px;
         display: flex;
         align-items: center;
         .icon-arrow-left {
