@@ -1,6 +1,7 @@
 .achievements {
-    height: 700px;
-    background-image: url('../../../images/748582-pretty-pictures-for-backgrounds-1920x1080-windows.jpg');
+    height: 500px;
+    background-image: url('../../../images/photo-1504177847824-d075f5706770.jpg');
+    background-size: 1900px 1300px;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -8,7 +9,7 @@
     align-items: center;
     cursor: context-menu;
     .achievements-feedbacks-paragraph {
-        width: 57%;
+        width: 47%;
         display: flex;
         flex-direction: column;
         justify-content: center;;
@@ -16,12 +17,13 @@
     
         .achievements-feedbacks-text-line1 {
             font-family: 'Abhaya Libre', serif;
+            color: rgb(181, 196, 243);
             font-size: 13px;
             // opacity: 0.5;
         }
         .achievements-feedbacks-text-line2 {
             font-family: 'Abhaya Libre', serif;
-            color: rgb(39, 49, 85);
+            color: rgb(181, 196, 243);
             font-size: 50px;
             font-weight: bold;
             text-align: center;
@@ -29,9 +31,31 @@
         }
         .achievements-feedbacks-text-line3 {
             font-family: 'Abhaya Libre', serif;
+            color: rgb(181, 196, 243);
             font-size: 19px;
             text-align: center;
             // opacity: 0.5;
+        }
+    }
+
+    .achievements-wrapper {
+        display: flex;
+        justify-content: space-around;
+        // width: 800px;
+        height: 100px;
+        text-align: center;
+        padding-top: 50px;
+        .achievements-achievment1 {
+            width: 350px;
+            padding: 0 20px 0 20px;
+        }
+        .achievements-achievment2 {
+            width: 350px;
+            padding: 0 20px 0 20px;
+        }
+        .achievements-achievment3 {
+            width: 350px;
+            padding: 0 20px 0 20px;
         }
     }
 }

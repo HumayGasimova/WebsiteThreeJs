@@ -24,6 +24,7 @@ import './achievements.scss';
 * Components
 */
 
+import Achievement from '../../SmallParts/Achievement/achievement';
 
 /**
 * Actions
@@ -61,6 +62,26 @@ export const Achievements = (props) => {
                 <div className="achievements-feedbacks-text-line3"> 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </div>
+            </div>
+            <div className="achievements-wrapper">
+                <div className="achievements-achievment1">
+                    <Achievement
+                        achievementValue={400}
+                        achievementText={"Customers are satisfied with our professional support"}
+                    />
+                </div>
+                <div className="achievements-achievment2">
+                    <Achievement
+                        achievementValue={1000}
+                        achievementText={"Amazing preset options to be mixed and combined"}
+                    />
+                </div>
+                <div className="achievements-achievment3">
+                    <Achievement
+                        achievementValue={8000}
+                        achievementText={"Average response time on live chat support channel"}
+                    />
                 </div>
             </div>
         </div>
