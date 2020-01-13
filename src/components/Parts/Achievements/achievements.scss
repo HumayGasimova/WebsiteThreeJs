@@ -47,17 +47,51 @@
         height: 100px;
         text-align: center;
         padding-top: 50px;
-        .achievements-achievment1 {
+        .achievements-achievment {
             width: 350px;
             padding: 0 20px 0 20px;
         }
-        .achievements-achievment2 {
-            width: 350px;
-            padding: 0 20px 0 20px;
+    }
+}
+
+@media only screen and (max-width: 1140px) {
+    .achievements {  
+        .achievements-wrapper {
+            .achievements-achievment {
+                width: 270px;
+                padding: 0 20px 0 20px;
+            }
         }
-        .achievements-achievment3 {
-            width: 350px;
-            padding: 0 20px 0 20px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .achievements {    
+        height: 740px;
+        .achievements-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 400px;
+            text-align: center;
+            padding-top: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .achievements {
+        height: 770px;
+        .achievements-paragraph {
+            .achievements-text-line1 {
+                font-size: 12px;
+            }
+            .achievements-text-line2 {
+                font-size: 40px;
+            }
+            .achievements-text-line3 {
+                font-size: 17px;
+            }
         }
     }
 }

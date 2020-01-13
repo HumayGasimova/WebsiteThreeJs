@@ -69,19 +69,19 @@ export const Achievements = (props) => {
     const renderAchievements = () => {
         return(
             <div className="achievements-wrapper">
-                <div className="achievements-achievment1">
+                <div className="achievements-achievment">
                     <Achievement
                         achievementValue={400}
                         achievementText={"Customers are satisfied with our professional support"}
                     />
                 </div>
-                <div className="achievements-achievment2">
+                <div className="achievements-achievment">
                     <Achievement
                         achievementValue={1000}
                         achievementText={"Amazing preset options to be mixed and combined"}
                     />
                 </div>
-                <div className="achievements-achievment3">
+                <div className="achievements-achievment">
                     <Achievement
                         achievementValue={8000}
                         achievementText={"Average response time on live chat support channel"}
