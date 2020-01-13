@@ -33,6 +33,7 @@ import Portfolio from './Parts/Portfolio/portfolio';
 import CustomerFeedbacks from './Parts/CustomerFeedbacks/customerFeedbacks';
 import Achievements from './Parts/Achievements/achievements';
 import Blog from './Parts/Blog/blog';
+import Footer from './Parts/Footer/footer';
 
 /**
 * Actions
@@ -73,6 +74,7 @@ export const Main = (props) => {
             <CustomerFeedbacks/>
             <Achievements/>
             <Blog/>
+            <Footer/>
         </div>
     );
 }

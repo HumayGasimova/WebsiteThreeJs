@@ -78,25 +78,25 @@ export const Feedback = (props) => {
     */
 
     return(
-            <div 
-                className="feedback" 
-                // style={{left: `${props.leftPosition}px`}} 
-                ref={select}
-            >
-                <div className="feedback-clear">
-                    <div className="feedback-image">
-                        <img src={loadImage()}/>
-                        <div className="feedback-image-icon">
-                            <FontAwesomeIcon icon={faQuoteLeft} size="sm" className="icon-quate"/>
-                        </div>
-                    </div>
-                    <div className="feedback-text">{props.feedback}</div>
-                    <div>
-                        <div className="feedback-name">{props.name}</div>
-                        <div className="feedback-position">{props.position}</div>
+        <div 
+            className="feedback" 
+            // style={{left: `${props.leftPosition}px`}} 
+            ref={select}
+        >
+            <div className="feedback-clear">
+                <div className="feedback-image">
+                    <img src={loadImage()}/>
+                    <div className="feedback-image-icon">
+                        <FontAwesomeIcon icon={faQuoteLeft} size="sm" className="icon-quate"/>
                     </div>
                 </div>
+                <div className="feedback-text">{props.feedback}</div>
+                <div>
+                    <div className="feedback-name">{props.name}</div>
+                    <div className="feedback-position">{props.position}</div>
+                </div>
             </div>
+        </div>
     );
 }
 

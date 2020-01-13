@@ -1,0 +1,21 @@
+.footer {
+    height: 400px;
+    background-image: url('../../../images/abstract-439142_960_720.jpg');
+    background-position: center;
+    background-size: 2000px 800px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    .footer-items {
+        display: flex;
+        padding-top: 40px;
+    }
+    .footer-get-in-touch {
+        .footer-get-in-touch-header {
+
+        }
+        .footer-get-in-touch-item {
+            display: flex;
+        }
+    }
+}

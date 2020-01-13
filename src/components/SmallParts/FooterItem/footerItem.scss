@@ -1,0 +1,17 @@
+.footer-item {
+    width: 30px;
+    height: 30px;
+    width: 300px;
+    .footer-item-header {
+        font-family: 'Abhaya Libre', serif;
+        color: rgb(39, 49, 85);
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .footer-item-links {
+        padding-left: 10px;
+        .footer-item-links-link {
+            display: flex;
+        }
+    }
+}
