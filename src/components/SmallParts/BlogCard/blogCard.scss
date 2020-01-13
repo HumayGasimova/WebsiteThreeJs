@@ -45,3 +45,98 @@
         }
     }
 }
+
+@media only screen and (max-width: 1524px) {
+    .blog-card {
+        width: 320px;
+        height: 423px;
+        .blog-card-image {
+            >img {
+                width: 320px;
+                height: 230px;
+            }
+        }
+        .blog-card-wrapper {
+            margin: 25px;
+            .blog-card-info {
+                .blog-card-date {
+                    font-size: 17px;
+                }
+                .blog-card-author{
+                    font-size: 17px;
+                }
+                .blog-card-number-of-comments {
+                    font-size: 17px;
+                }
+            }
+            .blog-card-text {
+                font-size: 19px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1270px) {
+    .blog-card {
+        width: 374px;
+        height: 443px;
+        .blog-card-image {
+            >img {
+                width: 374px;
+                height: 270px;
+            }
+        }
+        .blog-card-wrapper {
+            margin: 20px;
+            .blog-card-info {
+                display: flex;
+                justify-content: flex-start;
+                .blog-card-date {
+                    font-size: 19px;
+                }
+                .blog-card-author{
+                    font-size: 19px;
+                }
+                .blog-card-number-of-comments {
+                    font-size: 19px;
+                }
+            }
+            .blog-card-text {
+                font-size: 21px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 456px) {
+    .blog-card {
+        width: 250px;
+        height: 354px;
+        .blog-card-image {
+            >img {
+                width: 250px;
+                height: 175px;
+            }
+        }
+        .blog-card-wrapper {
+            margin: 30px 20px 30px 20px;
+            .blog-card-info {
+                display: flex;
+                justify-content: flex-start;
+                .blog-card-date {
+                    font-size: 15px;
+                }
+                .blog-card-author{
+                    font-size: 15px;
+                    padding: 0 10px 0 10px;
+                }
+                .blog-card-number-of-comments {
+                    font-size: 15px;
+                }
+            }
+            .blog-card-text {
+                font-size: 17px;
+            }
+        }
+    }
+}
