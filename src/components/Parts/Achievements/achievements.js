@@ -97,10 +97,10 @@ export const Achievements = (props) => {
 
     return(
         <div className="achievements" id="achievements">
-            <div className="achievements-feedbacks-paragraph">
-                <div className="achievements-feedbacks-text-line1">ACHIEVEMENTS</div>
-                <div className="achievements-feedbacks-text-line2">Our achievements</div>
-                <div className="achievements-feedbacks-text-line3"> 
+            <div className="achievements-paragraph">
+                <div className="achievements-text-line1">ACHIEVEMENTS</div>
+                <div className="achievements-text-line2">Our achievements</div>
+                <div className="achievements-text-line3"> 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </div>

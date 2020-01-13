@@ -10,20 +10,20 @@
     background-attachment: fixed;
     overflow: hidden;
     cursor: context-menu;
-    .achievements-feedbacks-paragraph {
+    .achievements-paragraph {
         width: 47%;
         display: flex;
         flex-direction: column;
         justify-content: center;;
         align-items: center;
     
-        .achievements-feedbacks-text-line1 {
+        .achievements-text-line1 {
             font-family: 'Abhaya Libre', serif;
             color: rgb(181, 196, 243);
             font-size: 13px;
             opacity: 0.7;
         }
-        .achievements-feedbacks-text-line2 {
+        .achievements-text-line2 {
             font-family: 'Abhaya Libre', serif;
             color: rgb(181, 196, 243);
             font-size: 50px;
@@ -31,7 +31,7 @@
             text-align: center;
             padding: 10px 0 15px 0;
         }
-        .achievements-feedbacks-text-line3 {
+        .achievements-text-line3 {
             font-family: 'Abhaya Libre', serif;
             color: rgb(181, 196, 243);
             font-size: 19px;

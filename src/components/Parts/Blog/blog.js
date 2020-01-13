@@ -25,7 +25,7 @@ import './blog.scss';
 * Components
 */
 
-import Achievement from '../../SmallParts/Achievement/achievement';
+import BlogCard from '../../SmallParts/BlogCard/blogCard';
 
 /**
 * Actions
@@ -40,6 +40,14 @@ import Achievement from '../../SmallParts/Achievement/achievement';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Constants
+*/
+
+import {
+    blogCards
+} from '../../../constants/blogCards';
+
+/**
 * Blog component definition and export
 */
 
@@ -49,7 +57,22 @@ export const Blog = (props) => {
     * Methods
     */
 
-
+    const renderBlogCards = () => {
+        return(
+            <div className="blog-wrapper">{blogCards.map((el, i) => {
+                return(
+                    <BlogCard
+                        key={i}
+                        image={el.image}
+                        date={el.date}
+                        author={el.author}
+                        numberOfComments={el.numberOfComments}
+                        text={el.text}
+                    />
+                )
+            })}</div>
+        )
+    }
 
     /**
     * Markup
@@ -57,7 +80,17 @@ export const Blog = (props) => {
 
     return(
         <div className="blog">
-
+            <div className="blog-paragraph">
+                <div className="blog-text-line1">BLOG</div>
+                <div className="blog-text-line2">Recent Blog</div>
+                <div className="blog-text-line3"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </div>
+            </div>
+            {/* <div > */}
+                {renderBlogCards()}
+            {/* </div> */}
         </div>
     );
 }
