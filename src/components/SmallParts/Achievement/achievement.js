@@ -88,8 +88,8 @@ export const Achievement = (props) => {
             setValue(props.achievementValue);
         }, 7000);
         return () => clearTimeout(timer);
-    },[])
-
+    }, [])
+    
     /**
     * Markup
     */

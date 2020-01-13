@@ -3,6 +3,7 @@
 */
 
 import React, {
+    useState,
     useEffect
 } from 'react';
 
@@ -44,26 +45,29 @@ import Achievement from '../../SmallParts/Achievement/achievement';
 
 export const Achievements = (props) => {
 
+    const [showComponent, setShowComponent] = useState(false);
+
     /**
     * Methods
     */
 
-  
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("achievements");
+        console.log(el.offsetTop)
+        if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 150 ){
+            setShowComponent(true);
+        }
+    }
 
-    /**
-    * Markup
-    */
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
 
-    return(
-        <div className="achievements">
-            <div className="achievements-feedbacks-paragraph">
-                <div className="achievements-feedbacks-text-line1">ACHIEVEMENTS</div>
-                <div className="achievements-feedbacks-text-line2">Our achievements</div>
-                <div className="achievements-feedbacks-text-line3"> 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </div>
-            </div>
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, []);
+
+    const renderAchievements = () => {
+        return(
             <div className="achievements-wrapper">
                 <div className="achievements-achievment1">
                     <Achievement
@@ -84,6 +88,24 @@ export const Achievements = (props) => {
                     />
                 </div>
             </div>
+        )
+    }
+
+    /**
+    * Markup
+    */
+
+    return(
+        <div className="achievements" id="achievements">
+            <div className="achievements-feedbacks-paragraph">
+                <div className="achievements-feedbacks-text-line1">ACHIEVEMENTS</div>
+                <div className="achievements-feedbacks-text-line2">Our achievements</div>
+                <div className="achievements-feedbacks-text-line3"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                </div>
+            </div>
+            {showComponent ? renderAchievements() : null}
         </div>
     );
 }
