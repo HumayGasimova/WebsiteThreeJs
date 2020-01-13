@@ -57,16 +57,19 @@ export const FooterItem = (props) => {
 
     const renderLinks = () => {
         return(
-        <>{props.links.map((el, i) => {
-            return(
-                <div className="footer-item-links-link">
-                    <FontAwesomeIcon icon={faCaretRight} size="lg" className="icon-phone"/>
-                    <div key={i}>
-                        {el.link}
+            <>{props.links.map((el, i) => {
+                return(
+                    <div className="footer-item-links-link">
+                        <FontAwesomeIcon icon={faCaretRight} size="lg" className="icon-arrow"/>
+                        <a 
+                            key={i}
+                            // href="http://www.google.ru"
+                        >
+                            {el.link}
+                        </a>
                     </div>
-                </div>
-            )
-        })}</>
+                )
+            })}</>
         )
     }
 

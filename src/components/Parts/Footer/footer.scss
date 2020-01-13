@@ -4,18 +4,40 @@
     background-position: center;
     background-size: 2000px 800px;
     display: flex;
-    width: 100%;
-    justify-content: center;
-    .footer-items {
+    flex-direction: column;
+    align-items: center;
+    .footer-section1 {
         display: flex;
-        padding-top: 40px;
-    }
-    .footer-get-in-touch {
-        .footer-get-in-touch-header {
-
-        }
-        .footer-get-in-touch-item {
+        width: 100%;
+        height: 270px;
+        justify-content: center;
+        .footer-section1-items {
             display: flex;
+            padding-top: 40px;
         }
+        .footer-section1-get-in-touch {
+            padding-top: 40px;
+            .footer-section1-get-in-touch-header {
+                font-family: 'Abhaya Libre', serif;
+                color: rgb(39, 49, 85);
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .footer-section1-get-in-touch-item {
+                display: flex;
+                padding-top:10px;
+                font-size: 17px;
+                .footer-section1-get-in-touch-item-text {
+                    padding: 3px 0  0 10px;
+                }
+                .icon-info {
+                    color: rgb(39, 49, 85);
+                }
+            }
+        }
+    }
+    .footer-copyrights {
+        color:  rgb(39, 49, 85);
+        font-size: 20px;
     }
 }
