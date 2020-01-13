@@ -70,3 +70,12 @@ export function feedbacksStylesUpdated(id, val) {
         val: val
     };
 };
+
+export function chooseFeedback(id) {
+    return { 
+        type: actionTypes.CHOOSE_FEEDBACK,
+        dotId: id
+    };
+};
+
+

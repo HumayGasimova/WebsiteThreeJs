@@ -78,6 +78,7 @@ export const Feedbacks = (props) => {
             isDown = true;
             startX = e.pageX - feedbacksDiv.offsetLeft;
             scrollLeft = feedbacksDiv.scrollLeft;
+            feedbacksDiv.classList.add('active');
         });
         feedbacksDiv.addEventListener('mouseleave', () => {
             isDown = false
@@ -85,6 +86,7 @@ export const Feedbacks = (props) => {
         });
         feedbacksDiv.addEventListener('mouseup', () => {
             isDown = false
+            feedbacksDiv.classList.remove('active');
             // console.log("mouseUp");
         });
         feedbacksDiv.addEventListener('mousemove', (e) => {
@@ -185,7 +187,7 @@ export const Feedbacks = (props) => {
                         <div 
                             key={i} 
                             className={el.chosen ? "feedbacks-dot-chosen": "feedbacks-dot"}
-                            // onClick={() => chooseFeedback(i)}
+                            // onClick={() => props.chooseFeedback(i + 1)}
                         />
                     )
                 })}
@@ -218,6 +220,7 @@ export default connect(
         return {
             chooseDotOnScroll: bindActionCreators(Actions.chooseDotOnScroll, dispatch),
             startAddingClassNameToFeedbackCard: bindActionCreators(Actions.startAddingClassNameToFeedbackCard, dispatch),
+            chooseFeedback: bindActionCreators(Actions.chooseFeedback, dispatch),
         };
     }
 )(Feedbacks);

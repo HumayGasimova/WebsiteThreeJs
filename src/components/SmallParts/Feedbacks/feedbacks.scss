@@ -17,7 +17,6 @@
         padding-top: 27px;
         display: flex;
         height: 70px;
-        cursor: pointer;
         z-index: 100;
         .feedbacks-dot {
             border: 1.5px solid rgb(117, 71, 129);
@@ -36,4 +35,8 @@
             margin: 3px;
         }
     }
+}
+
+.active {
+    cursor: grabbing;
 }

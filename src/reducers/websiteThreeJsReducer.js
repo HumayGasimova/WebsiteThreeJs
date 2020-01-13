@@ -175,6 +175,27 @@ const feedbacksStylesUpdated = (state, action) => {
     };
 }
 
+// const chooseFeedback = (state, action) => {
+    // let updatedDots = [...state.dots];
+    // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
+    // let previousDot = { ...updatedDots.find(x => x.chosen === true), chosen: false};
+    // updatedDots.splice(previousDotIndex, 1, previousDot);
+
+    // let nextDotIndex = updatedDots.findIndex(x => x.id === action.dotId);
+    // let nextDot = { ...updatedDots.find(x => x.id === action.dotId), chosen: true}
+    // updatedDots.splice(nextDotIndex, 1, nextDot);
+
+    // let updatedFeedbacksToShow = [...state.feedbacksToShow];
+    // let firstElementsOfArray = updatedFeedbacksToShow.slice(0, action.dotId - 2);
+    // updatedFeedbacksToShow.splice(0, action.dotId - 2);
+    // updatedFeedbacksToShow.push(...firstElementsOfArray);
+    // return {
+    //     ...state,
+    //     feedbacksToShow: updatedFeedbacksToShow,
+    //     dots: updatedDots
+    // };
+// }
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.TOGGLE_MENU_BUTTON:
@@ -197,7 +218,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return feedbacksUpdated(state, action);   
         case actionTypes.FEEDBACKS_STYLES_UPDATED:
             return feedbacksStylesUpdated(state, action);   
-            
+        // case actionTypes.CHOOSE_FEEDBACK:
+        //     return chooseFeedback(state, action);     
         default: 
             return state;
     }
