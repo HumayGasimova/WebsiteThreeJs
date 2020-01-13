@@ -73,16 +73,22 @@ import {
 export const Achievement = (props) => {
     
     const [value, setValue] = useState(0);
-    const [delay, setDelay] = useState(10);
+    const [delay, setDelay] = useState(0.01);
 
     /**
     * Methods
     */
 
     useInterval(() => {
-        setValue(count + 1);
-        props.onNextHandler();
-    }, value === props.achievementValue ? delay : null)
+        setValue(value + 1);
+    }, value === props.achievementValue ? null : delay)
+    
+    useEffect(() => {
+        let timer = setTimeout(() => {
+            setValue(props.achievementValue);
+        }, 7000);
+        return () => clearTimeout(timer);
+    },[])
 
     /**
     * Markup
