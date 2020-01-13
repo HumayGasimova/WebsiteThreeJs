@@ -7,6 +7,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-attachment: fixed;
+    overflow: hidden;
     cursor: context-menu;
     .achievements-feedbacks-paragraph {
         width: 47%;

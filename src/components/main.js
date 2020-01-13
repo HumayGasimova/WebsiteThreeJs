@@ -32,6 +32,7 @@ import Newsletter from './Parts/Newslatter/newsletter';
 import Portfolio from './Parts/Portfolio/portfolio';
 import CustomerFeedbacks from './Parts/CustomerFeedbacks/customerFeedbacks';
 import Achievements from './Parts/Achievements/achievements';
+import Blog from './Parts/Blog/blog';
 
 /**
 * Actions
@@ -71,6 +72,7 @@ export const Main = (props) => {
             <Portfolio/>
             <CustomerFeedbacks/>
             <Achievements/>
+            <Blog/>
         </div>
     );
 }
