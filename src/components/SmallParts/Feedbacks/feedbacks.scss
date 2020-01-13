@@ -40,3 +40,19 @@
 .active {
     cursor: grabbing;
 }
+
+@media only screen and (max-width: 1065px) {
+    .feedbacks { 
+        .feedbacks-section {
+            width: 670px;
+        }
+    }
+}
+
+@media only screen and (max-width: 737px) {
+    .feedbacks { 
+        .feedbacks-section {
+            width: 340px;
+        }
+    }
+}

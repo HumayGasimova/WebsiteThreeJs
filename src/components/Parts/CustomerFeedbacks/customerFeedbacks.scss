@@ -49,3 +49,26 @@
             }
         }
 }
+
+@media only screen and (max-width: 1065px) {
+    .customer-feedbacks {
+        height: 790px;
+    }
+}
+
+@media only screen and (max-width: 737px) {
+    .customer-feedbacks {
+        height: 840px;
+        .customer-feedbacks-paragraph {
+            .customer-feedbacks-text-line1 {
+                font-size: 11px;
+            }
+            .customer-feedbacks-text-line2 {
+                font-size: 35px;
+            }
+            .customer-feedbacks-text-line3 {
+                font-size: 17px;
+            }
+        }
+    }
+}
