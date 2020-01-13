@@ -1,5 +1,4 @@
 .footer-item {
-    width: 30px;
     height: 30px;
     width: 300px;
     .footer-item-header {
@@ -29,6 +28,23 @@
                     color: rgb(39, 49, 85);
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1226px) {
+    .footer-item {
+        width: 230px;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    .footer-item {
+        height: 200px;
+        width: 300px;
+        padding: 10px 0px 10px 0px;
+        .footer-item-header {
+            text-align: center;
         }
     }
 }

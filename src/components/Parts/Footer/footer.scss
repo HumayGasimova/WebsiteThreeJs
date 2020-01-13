@@ -41,3 +41,26 @@
         font-size: 20px;
     }
 }
+
+
+@media only screen and (max-width: 1010px) {
+    .footer {
+        height: 800px;
+        justify-content: center;
+        .footer-section1 {
+            flex-direction: column;
+            align-items: center;
+            height: 650px;
+            .footer-section1-items {
+                flex-direction: column;
+                height: 490px;
+                padding-top: 0px;
+            }
+            .footer-section1-get-in-touch {
+                height: 300px;
+                text-align: center;
+                padding: 10px 0px 10px 0px;
+            }
+        }
+    }
+}
