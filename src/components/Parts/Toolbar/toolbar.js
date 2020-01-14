@@ -8,6 +8,10 @@ import React, {
 } from 'react';
 
 import {
+    withRouter
+} from 'react-router-dom';
+
+import {
     connect
 } from 'react-redux';
 
@@ -69,6 +73,7 @@ export const Toolbar = (props) => {
     */
 
     const toolbarOnClick = (page) => {
+        console.log("4r")
         props.history.push(`/${page}`)
     }
 
@@ -131,5 +136,5 @@ export const Toolbar = (props) => {
             toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
-)(Toolbar);
+)(withRouter(Toolbar));
  

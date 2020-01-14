@@ -14,8 +14,12 @@ import {
 * Components
 */
 
-import MovingBubbles from './components/Parts/MovingBubbles/movingBubbles';
 import Main from './components/main';
+import AboutPage from './components/Pages/AboutPage/aboutPage';
+import SrvicesPage from './components/Pages/ServicesPage/servicesPage';
+import PortfolioPage from './components/Pages/PortfolioPage/portfolioPage';
+import BlogPage from './components/Pages/BlogPage/blogPage';
+import ContactPage from './components/Pages/ContactPage/contactPage';
 
 /**
 * Styles
@@ -40,27 +44,27 @@ export class App extends Component {
             <Route 
                exact 
                path="/contact"
-               // component={  }
+               component={ ContactPage }
             />
             <Route 
                exact
                path="/blog"
-               // component={  }
+               component={ BlogPage }
             />
             <Route 
                exact 
                path="/porfolio"
-               // component={  }
+               component={ PortfolioPage }
             />
             <Route 
                exact
                path="/services"
-               // component={  }
+               component={ SrvicesPage }
             />
             <Route 
                exact 
                path="/about"
-               // component={  }
+               component={ AboutPage }
             />
             <Route 
                exact
