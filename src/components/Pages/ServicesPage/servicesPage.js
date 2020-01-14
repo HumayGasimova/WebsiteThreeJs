@@ -19,6 +19,7 @@ import {
 * Components
 */
 
+import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
 import Services from '../../Parts/Services/services';
 import Footer from '../../Parts/Footer/footer';
@@ -61,6 +62,7 @@ export const ServicesPage = (props) => {
 
     return(
         <div className="services-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={"Services"}
             />

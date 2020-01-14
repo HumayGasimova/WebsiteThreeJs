@@ -19,6 +19,7 @@ import {
 * Components
 */
 
+import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
 import CustomerFeedbacks from '../../Parts/CustomerFeedbacks/customerFeedbacks';
 import Footer from '../../Parts/Footer/footer';
@@ -62,6 +63,7 @@ export const AboutPage = (props) => {
 
     return(
         <div className="about-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={"About Us"}
             />
