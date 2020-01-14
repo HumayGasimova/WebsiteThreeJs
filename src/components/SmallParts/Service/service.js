@@ -37,8 +37,7 @@ export const Service = (props) => {
     /**
     * State
     */
-
-let color = "red"
+   
     /**
     * Methods
     */

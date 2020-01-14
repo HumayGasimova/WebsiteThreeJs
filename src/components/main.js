@@ -66,7 +66,9 @@ export const Main = (props) => {
     return(
         <div className="main">
             <Toolbar/>
-            <MovingBubbles/>
+            <MovingBubbles 
+                mainHeader={"Welcome"}
+            />
             <OtherProjects/>
             <Services/>
             <Newsletter/>

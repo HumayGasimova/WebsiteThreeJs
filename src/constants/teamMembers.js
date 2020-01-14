@@ -1,9 +1,10 @@
 export const teamMembers = [
     {
         id: 1,
-        image: "Name1",
+        image: "Image1",
         fullName: "Name1",
-        position: "Developer",
+        position: "Web Developer",
+        info: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         facebook: "http://www.facebook.com/",
         linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
         instagram: "https://www.instagram.com/crypto347/",
@@ -11,9 +12,10 @@ export const teamMembers = [
     },
     {
         id: 2,
-        image: "Name1",
+        image: "Image1",
         fullName: "Name2",
-        position: "Developer",
+        position: "UI Designer",
+        info: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         facebook: "http://www.facebook.com/",
         linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
         instagram: "https://www.instagram.com/crypto347/",
@@ -21,19 +23,10 @@ export const teamMembers = [
     },
     {
         id: 3,
-        image: "Name1",
+        image: "Image1",
         fullName: "Name3",
-        position: "Developer",
-        facebook: "http://www.facebook.com/",
-        linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
-        instagram: "https://www.instagram.com/crypto347/",
-        twitter: "http://www.twitter.com/"
-    },
-    {
-        id: 4,
-        image: "Name1",
-        fullName: "Name4",
-        position: "Designer",
+        position: "System Analytics",
+        info: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         facebook: "http://www.facebook.com/",
         linkedIn: "https://www.linkedin.com/in/humay-gasimova-53b50b182/",
         instagram: "https://www.instagram.com/crypto347/",

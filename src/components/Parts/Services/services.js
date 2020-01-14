@@ -25,12 +25,6 @@ import './services.scss';
 * Components
 */
 
-import Project from '../../SmallParts/Project/project';
-
-/**
-* Components
-*/
-
 import Service from '../../SmallParts/Service/service';
 
 /**
@@ -67,7 +61,6 @@ export const Services = (props) => {
                         icon={el.icon}
                         header={el.header}
                         text={el.text}
-                        color={"red"}
                         hexagonStyle={el.hexagonStyle}
                     />
                 )

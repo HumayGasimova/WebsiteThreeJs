@@ -58,7 +58,7 @@ import {
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Hooks
+* Images
 */
 
 import Image1 from '../../../images/roses-1566792_960_720.jpg';

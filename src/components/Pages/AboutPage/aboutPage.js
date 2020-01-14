@@ -19,6 +19,11 @@ import {
 * Components
 */
 
+import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
+import CustomerFeedbacks from '../../Parts/CustomerFeedbacks/customerFeedbacks';
+import Footer from '../../Parts/Footer/footer';
+import Team from '../../Parts/Team/team';
+
 /**
 * Actions
 */
@@ -56,8 +61,18 @@ export const AboutPage = (props) => {
     */
 
     return(
-        <div className="about-age">
-        
+        <div className="about-page">
+            <MovingBubbles 
+                mainHeader={"About Us"}
+            />
+            <div className="about-page-section">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua.
+            </div>
+            <Team/>
+            <CustomerFeedbacks/>
+            <Footer/>
         </div>
     );
 }
