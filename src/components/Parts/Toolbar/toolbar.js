@@ -86,6 +86,7 @@ export const Toolbar = (props) => {
                         options={el.options}
                         className="toolbar-item"
                         onClick={() => toolbarOnClick(el.path)}
+                        optionClassName="toolbar-item-options"
                         // toolBarInit={toolBarInit}
                         // id={el.itemId}
                         // active={el.itemId === props.activatedIcon}

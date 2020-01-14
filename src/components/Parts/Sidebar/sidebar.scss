@@ -2,7 +2,7 @@
     position: absolute;
     top: 98;
     background: rgba(52, 52, 151, 0.7);
-    height: 400px;
+    height: 470px;
     width: 100%;
     z-index: 100;
     .sidebar-mounted-items {
@@ -15,7 +15,7 @@
     position: absolute;
     top: 98;
     background: rgba(52, 52, 151, 0.7);
-    height: 400px;
+    height: 470px;
     width: 100%;
     z-index: 100;
     animation: appear 0.5s linear;
@@ -79,13 +79,13 @@
         height: 0;
     }
     to {
-        height: 400px;
+        height: 470px;
     }
 }
 
 @keyframes disappear {
     from{
-        height: 400px;
+        height: 470px;
     }
     to {
         height: 0;

@@ -63,13 +63,13 @@ export const ToolbarItem = (props) => {
     const renderOptions = () => {
         return(
             <div 
-                className="toolbar-item-options" 
+                className={props.optionClassName} 
                 onMouseLeave={handleMouseLeave} 
             >{props.options.map((el, i) => {
                 return(
                     <div 
                         key={i}
-                        className="toolbar-item-option" 
+                        className="item-option" 
                         onClick={() => toolbarOptionOnClick(el.optPath)}
                     >
                         {el.optText}

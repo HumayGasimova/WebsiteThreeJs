@@ -19,6 +19,10 @@ import {
     CSSTransition 
 } from 'react-transition-group';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
 * Components
 */
@@ -71,6 +75,10 @@ export const Sidebar = (props) => {
     * Methods
     */
 
+    const sidebarOnClick = (path) => {
+        props.history.push(`/${path}`)
+    }
+
     const renderToolbarItems = () => {
         return(
             <div className={props.menuButtonIsPressed ? "sidebar-mounted-items" : "sidebar-unmounted-items"}>
@@ -80,6 +88,9 @@ export const Sidebar = (props) => {
                             key={el.id}
                             text={el.text}
                             className="sidebar-item"
+                            options={el.options}
+                            onClick={() => sidebarOnClick(el.path)}
+                            optionClassName="sidebar-item-options"
                             // toolBarInit={toolBarInit}
                             // id={el.itemId}
                             // active={el.itemId === props.activatedIcon}
@@ -128,5 +139,5 @@ export const Sidebar = (props) => {
             toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
-)(Sidebar);
+)(withRouter(Sidebar));
  

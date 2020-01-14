@@ -29,7 +29,7 @@
     height: 85px;
     background-color: rgba(101, 64, 136, 0.2);
     box-shadow: 3px 3px 5px 3px rgb(101, 64, 136);
-    .toolbar-item-option {
+    .item-option {
         padding: 10px;
         color: rgba(139, 160, 230,1);
         font-size: 20px;
@@ -39,6 +39,21 @@
         &:hover {
             background-color: rgb(198, 204, 228);
             color: rgb(101, 64, 136);
+        }
+    }
+}
+
+.sidebar-item-options {
+    width: 300px;
+    .item-option {
+        color: rgba(139, 160, 230, 0.4);
+        padding: 5px 0 5px 70px;
+        font-size: 25px;
+        font-family: 'Abhaya Libre', serif;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+            color: rgba(139, 160, 230, 1);
         }
     }
 }
@@ -70,5 +85,9 @@
         &:hover{
             color: rgba(139, 160, 230, 1);
         }
+        
+    }
+    .toolbar-item-options {
+       display: none
     }
 }
