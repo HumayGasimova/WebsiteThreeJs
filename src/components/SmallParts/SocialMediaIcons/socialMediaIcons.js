@@ -75,7 +75,7 @@ export const SocialMediaIcons = (props) => {
                 icon={faInstagram} 
                 size={props.size} 
                 color={props.color} 
-                className="icon-social-media-instagram"
+                className={props.instagramIconStyle}
                 onClick={() => iconOnClick("instagram", props.linkInstagram)}
             />
             <FontAwesomeIcon 

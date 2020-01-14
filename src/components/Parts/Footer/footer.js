@@ -119,6 +119,7 @@ export const Footer = (props) => {
                 linkLinkedIn={"http://www.linkedin.com/"}
                 linkInstagram={"http://www.instagram.com/"}
                 linkTwitter={"http://www.twitter.com/"}
+                instagramIconStyle={"icon-social-media-instagram"}
             />
           <div className="footer-copyrights">Crypto347 © 2019. Designed by Humay Gasimova</div>
         </div>

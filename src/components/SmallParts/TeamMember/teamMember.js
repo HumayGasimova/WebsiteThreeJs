@@ -7,10 +7,6 @@ import React, {
     useEffect
 } from 'react';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
 /**
 * Styles
 */
@@ -18,21 +14,17 @@ import {
 import './teamMember.scss';
 
 /**
-* Icons
+* Components
 */
 
-import { 
-    faLightbulb,
-    faLaptopCode,
-    faCog,
-    faQuestionCircle
-} from '@fortawesome/free-solid-svg-icons'
+import SocialMediaIcons from '../../SmallParts/SocialMediaIcons/socialMediaIcons';
 
 /**
 * Images
 */
 
 import Image1 from '../../../images/Portrait_Placeholder.png';
+
 
 /**
 * TeamMember component definition and export
@@ -68,6 +60,16 @@ export const TeamMember = (props) => {
                 <img src={renderIamge(props.image)}/>
             </div>
             <div className="team-member-info">{props.info}</div>
+            <SocialMediaIcons 
+                size="lg" 
+                color="rgba(39, 49, 85, 0.5)"
+                width="100px"
+                linkFacebook={"http://www.facebook.com/"}
+                linkLinkedIn={"http://www.linkedin.com/"}
+                linkInstagram={"http://www.instagram.com/"}
+                linkTwitter={"http://www.twitter.com/"}
+                instagramIconStyle={"icon-social-media-instagram-team"}
+            />
         </div>
     );
 }

@@ -1,7 +1,6 @@
 .team-member {
     width: 320px;
     height: 500px;
-    // border: 2px solid red;
     margin: 20px;
     .team-member-full-name {
         font-family: 'Abhaya Libre', serif;
@@ -24,6 +23,6 @@
         font-family: 'Abhaya Libre', serif;
         font-size: 16px;
         opacity: 0.5;
-        padding: 15px 0 0 0;
+        padding: 15px 0 15px 0;
     }
 }
