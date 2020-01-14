@@ -11,11 +11,24 @@ import {
     withRouter
 } from 'react-router-dom';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
 /**
 * Styles
 */
 
 import './toolbarItem.scss';
+
+/**
+* Icons
+*/
+
+import { 
+    faCaretDown
+} from '@fortawesome/free-solid-svg-icons'
+
 
 /**
 * ToolbarIcon component definition and export
@@ -77,6 +90,7 @@ export const ToolbarItem = (props) => {
                 onMouseEnter={() => handleMouseEnter(props.text)} 
             >
                 {props.text}
+                {props.options.length !== 0 ? <FontAwesomeIcon icon={faCaretDown} size="sm" className="icon-arrow-down"/> : null}
             </div>
             {isHovering ? renderOptions() : null}
         </>
