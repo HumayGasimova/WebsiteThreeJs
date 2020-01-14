@@ -53,7 +53,7 @@ export class App extends Component {
             />
             <Route 
                exact 
-               path="/porfolio"
+               path="/portfolio"
                component={ PortfolioPage }
             />
             <Route 
