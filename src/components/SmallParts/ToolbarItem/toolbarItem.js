@@ -7,6 +7,10 @@ import React, {
     useEffect
 } from 'react';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
 * Styles
 */
@@ -39,6 +43,28 @@ export const ToolbarItem = (props) => {
         setIsHovering(false);
     }
 
+    const toolbarOptionOnClick = (path) => {
+        props.history.push(`/${path}`)
+    }
+
+    const renderOptions = () => {
+        return(
+            <div 
+                className="toolbar-item-options" 
+                onMouseLeave={handleMouseLeave} 
+            >{props.options.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="toolbar-item-option" 
+                        onClick={() => toolbarOptionOnClick(el.optPath)}
+                    >
+                        {el.optText}
+                    </div>
+                )
+            })}</div>
+        )
+    }
     /**
     * Markup
     */
@@ -47,22 +73,14 @@ export const ToolbarItem = (props) => {
         <>
             <div 
                 className={`${props.className}`}
-                onClick={props.onClick}
+                onClick={props.text !== "Portfolio" ? props.onClick : null}
                 onMouseEnter={() => handleMouseEnter(props.text)} 
             >
                 {props.text}
             </div>
-            {isHovering ? 
-                <div 
-                    className="toolbar-item-options" 
-                    onMouseLeave={handleMouseLeave} 
-                >
-                    <div className="toolbar-item-option">Portfolio</div>
-                    <div className="toolbar-item-option">Portfolio Single</div>
-                </div> : null}
+            {isHovering ? renderOptions() : null}
         </>
     );
 }
 
-export default ToolbarItem;
- 
+export default withRouter(ToolbarItem);

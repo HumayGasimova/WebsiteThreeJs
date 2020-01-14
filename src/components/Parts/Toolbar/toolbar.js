@@ -72,9 +72,8 @@ export const Toolbar = (props) => {
     * Methods
     */
 
-    const toolbarOnClick = (page) => {
-        console.log("4r")
-        props.history.push(`/${page}`)
+    const toolbarOnClick = (path) => {
+        props.history.push(`/${path}`)
     }
 
     const renderToolbarItems = () => {
@@ -84,6 +83,7 @@ export const Toolbar = (props) => {
                     <ToolbarItem 
                         key={el.id}
                         text={el.text}
+                        options={el.options}
                         className="toolbar-item"
                         onClick={() => toolbarOnClick(el.path)}
                         // toolBarInit={toolBarInit}
