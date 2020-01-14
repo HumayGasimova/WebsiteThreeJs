@@ -72,7 +72,7 @@ export const Main = (props) => {
             <OtherProjects/>
             <Services/>
             <Newsletter/>
-            <Portfolio/>
+            <Portfolio className="portfolio"/>
             <CustomerFeedbacks/>
             <Achievements/>
             <Blog/>

@@ -104,6 +104,110 @@
     }
 }
 
+.portfolio-page-all {
+    width: calc(100% - 20px);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 1800px;
+    border: 10px solid rgb(39, 49, 85);
+    padding-bottom: 140px;
+    cursor: context-menu;
+    .portfolio-page-all-paragraph {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;;
+        align-items: center;
+        
+        .portfolio-page-all-text-line1 {
+            font-family: 'Abhaya Libre', serif;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+        .portfolio-page-all-text-line2 {
+            font-family: 'Abhaya Libre', serif;
+            color: rgb(39, 49, 85);
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0 15px 0;
+        }
+        .portfolio-page-all-text-line3 {
+            font-family: 'Abhaya Libre', serif;
+            font-size: 19px;
+            text-align: center;
+            opacity: 0.5;
+        }
+    }
+
+    .portfolio-page-all-template {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 57%;
+        box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
+        background: rgb(198, 204, 228);
+        .portfolio-page-all-image-first {
+            padding: 20px 70px 20px 20px;
+            z-index: 10;
+            >img {
+                box-shadow: 5px 5px 10px 3px rgb(101, 64, 136);
+                width: 500px;
+                height: 390px;
+            }
+        }
+
+        .portfolio-page-all-image-third {
+            padding: 20px 70px 20px 20px;
+            z-index: 10;
+            >img {
+                box-shadow: 5px 5px 10px 3px rgb(101, 64, 136);
+                width: 500px;
+                height: 390px;
+            }
+        }
+
+        .portfolio-page-all-description {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            margin: 0px 0 50px 0px;
+            padding-right: 20px;
+        }
+    }
+
+    .portfolio-page-all-template-middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 57%;
+        margin: 40px 0 40px 0;
+        box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
+        background: rgb(198, 204, 228);
+        .portfolio-page-all-image-second {
+            z-index: 10;
+            // padding: 20px;
+            padding: 20px 20px 20px 70px;
+            >img {
+                box-shadow: 5px 5px 10px 3px rgb(101, 64, 136);
+                width: 500px;
+                height: 390px;
+            }
+        }
+
+        .portfolio-page-all-description-middle {
+            display: flex;
+            flex-direction: column;
+            width: 370px;
+            margin: 0 50px 0 0;
+            padding-left: 20px;            
+        }
+    }
+}
+
 .portfolio-description-name {
     font-family: 'Abhaya Libre', serif;
     font-size: 13px;
@@ -124,7 +228,25 @@
     opacity: 0.5;
 }
 
+.portfolio-page-all-description-name {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 13px;
+    opacity: 0.5;
+}
 
+.portfolio-page-all-description-header {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(39, 49, 85);
+    padding: 10px 0 15px 0;
+}
+
+.portfolio-page-all-description-text {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 19px;
+    opacity: 0.5;
+}
 
 @media only screen and (max-width: 1571px) {
     .portfolio {

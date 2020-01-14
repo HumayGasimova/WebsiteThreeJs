@@ -19,6 +19,11 @@ import {
 * Components
 */
 
+import Toolbar from '../../Parts/Toolbar/toolbar';
+import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
+import Portfolio from '../../Parts/Portfolio/portfolio';
+import Footer from '../../Parts/Footer/footer';
+
 /**
 * Actions
 */
@@ -56,8 +61,13 @@ export const PortfolioPage = (props) => {
     */
 
     return(
-        <div className="about-age">
-        
+        <div className="portfolio-page">
+            <Toolbar/>
+            <MovingBubbles 
+                mainHeader={"Portfolio"}
+            />
+            <Portfolio className="portfolio-page-all"/>
+            <Footer/>
         </div>
     );
 }

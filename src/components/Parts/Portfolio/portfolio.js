@@ -75,25 +75,28 @@ export const Portfolio = (props) => {
     */
 
     return(
-        <div className="portfolio" id="portfolio">
-            <div className="portfolio-paragraph">
-                <div className="portfolio-text-line1">WORKS</div>
-                <div className="portfolio-text-line2">View our works below to see our design and way of development.</div>
-                <div className="portfolio-text-line3">
+        <div className={`${props.className}`} id="portfolio">
+            <div className={`${props.className}-paragraph`}>
+                <div className={`${props.className}-text-line1`}>WORKS</div>
+                <div className={`${props.className}-text-line2`}>View our works below to see our design and way of development.</div>
+                <div className={`${props.className}-text-line3`}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                     nisi ut aliquip ex ea commodo consequat. 
                 </div>
             </div>
-            <div className="portfolio-template">
-                <div className="portfolio-image-first" style={{transform: `translate(0px, -${slower}px)`}}>
+            <div className={`${props.className}-template`}>
+                <div 
+                    className={`${props.className}-image-first`} 
+                    style={props.className === "portfolio" ? {transform: `translate(0px, -${slower}px)`} : null}
+                >
                     <img src={Pic1}/>
                 </div>
-                <div className="portfolio-description">
-                    <div className="portfolio-description-name">ILLUSTRATION</div>
-                    <div className="portfolio-description-header">Lorem ipsum dolor sit amet.</div>
-                    <div className="portfolio-description-text"> 
+                <div className={`${props.className}-description`}>
+                    <div className={`${props.className}-description-name`}>ILLUSTRATION</div>
+                    <div className={`${props.className}-description-header`}>Lorem ipsum dolor sit amet.</div>
+                    <div className={`${props.className}-description-text`}> 
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -105,11 +108,11 @@ export const Portfolio = (props) => {
                     />
                 </div>
             </div>
-            <div className="portfolio-template-middle">
-                <div className="portfolio-description-middle">
-                    <div className="portfolio-description-name">APPLICATION</div>
-                    <div className="portfolio-description-header">Lorem ipsum dolor sit amet.</div>
-                    <div className="portfolio-description-text"> 
+            <div className={`${props.className}-template-middle`}>
+                <div className={`${props.className}-description-middle`}>
+                    <div className={`${props.className}-description-name`}>APPLICATION</div>
+                    <div className={`${props.className}-description-header`}>Lorem ipsum dolor sit amet.</div>
+                    <div className={`${props.className}-description-text`}> 
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -120,18 +123,24 @@ export const Portfolio = (props) => {
                         text={"View Portfolio"}
                     />
                 </div>
-                <div className="portfolio-image-second" style={{transform: `translate(0px, -${slower}px)`}}>
+                <div 
+                    className={`${props.className}-image-second`} 
+                    style={props.className === "portfolio" ? {transform: `translate(0px, -${slower}px)`} : null}
+                >
                     <img src={Pic2}/>
                 </div>
             </div>
-            <div className="portfolio-template">
-                <div className="portfolio-image-third" style={{transform: `translate(0px, -${slower}px)`}}>
+            <div className={`${props.className}-template`}>
+                <div 
+                    className={`${props.className}-image-third`} 
+                    style={props.className === "portfolio" ? {transform: `translate(0px, -${slower}px)`} : null}
+                >
                     <img src={Pic3}/>
                 </div>
-                <div className="portfolio-description">
-                    <div className="portfolio-description-name">WEB DESIGN</div>
-                    <div className="portfolio-description-header">Lorem ipsum dolor sit amet.</div>
-                    <div className="portfolio-description-text"> 
+                <div className={`${props.className}-description`}>
+                    <div className={`${props.className}-description-name`}>WEB DESIGN</div>
+                    <div className={`${props.className}-description-header`}>Lorem ipsum dolor sit amet.</div>
+                    <div className={`${props.className}-description-text`}> 
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
