@@ -1136,9 +1136,18 @@
     
         .portfolio-page-all-template {
             height: 347px;
+            .portfolio-page-all-image-first {
+                padding: 20px 15px 20px 20px;
+            }
+    
+            .portfolio-page-all-image-third {
+                padding: 20px 15px 20px 20px;
+            }
+
             .portfolio-page-all-description {
                 padding-right: 20px;
             }
+            
         }
     
         .portfolio-page-all-template-middle {
@@ -1149,7 +1158,8 @@
             }
     
             .portfolio-page-all-description-middle {
-                padding-left: 20px;            
+                padding-left: 20px;    
+                margin: 0;       
             }
         }
     }
@@ -1433,6 +1443,19 @@
             .portfolio-image-second {
                 right: 100px;
             }
+        }
+    }
+    .portfolio-page-all {
+        height: 2100px;
+        .portfolio-page-all-template {
+            height: 360px;
+            .portfolio-page-all-description {
+                width: 130px;
+            }
+        }
+    
+        .portfolio-page-all-template-middle {
+            height: 360px;
         }
     }
 }

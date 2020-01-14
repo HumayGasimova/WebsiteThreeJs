@@ -65,3 +65,13 @@
     border: none;
     margin-bottom: 80px;
 }
+
+@media only screen and (max-width: 441px){
+    .portfolio-description-button {
+        width: 110px;
+    }
+    
+    .portfolio-description-button-middle {
+        width: 110px;
+    }
+}
