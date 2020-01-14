@@ -38,6 +38,31 @@ export class App extends Component {
       return(
          <div className="app">
             <Route 
+               exact 
+               path="/contact"
+               // component={  }
+            />
+            <Route 
+               exact
+               path="/blog"
+               // component={  }
+            />
+            <Route 
+               exact 
+               path="/porfolio"
+               // component={  }
+            />
+            <Route 
+               exact
+               path="/services"
+               // component={  }
+            />
+            <Route 
+               exact 
+               path="/about"
+               // component={  }
+            />
+            <Route 
                exact
                path="/"
                component={ Main }

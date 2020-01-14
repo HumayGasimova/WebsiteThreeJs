@@ -68,6 +68,10 @@ export const Toolbar = (props) => {
     * Methods
     */
 
+    const toolbarOnClick = (page) => {
+        props.history.push(`/${page}`)
+    }
+
     const renderToolbarItems = () => {
         return(
             <>{toolabarItems.map((el) => {
@@ -76,6 +80,7 @@ export const Toolbar = (props) => {
                         key={el.id}
                         text={el.text}
                         className="toolbar-item"
+                        onClick={() => toolbarOnClick(el.path)}
                         // toolBarInit={toolBarInit}
                         // id={el.itemId}
                         // active={el.itemId === props.activatedIcon}
@@ -96,7 +101,7 @@ export const Toolbar = (props) => {
 
     return(
         <>
-            <div className={"toolbar"}>
+            <div className="toolbar">
                 {renderToolbarItems()}
                 <div 
                     className="toolbar-min" 

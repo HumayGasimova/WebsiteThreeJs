@@ -2,31 +2,37 @@ export const toolabarItems = [
     {
         id: 1,
         text: "Home",
-        itemId: "home"
+        itemId: "home",
+        path: ""
     },
     {
         id: 2,
         text: "About",
-        itemId: "about"
+        itemId: "about",
+        path: "about"
     },
     {
         id: 3,
         text: "Services",
-        itemId: "services"
+        itemId: "services",
+        path: "services"
     },
     {
         id: 4,
         text: "Portfolio",
-        itemId: "portfolio"
+        itemId: "portfolio",
+        path: "porfolio"
     },
     {
         id: 5,
-        text: "Case Studies",
-        itemId: "caseStudies"
+        text: "Blog",
+        itemId: "blog",
+        path: "blog"
     },
     {
         id: 6,
         text: "Contact",
-        itemId: "contact"
+        itemId: "contact",
+        path: "contact"
     }
 ]
