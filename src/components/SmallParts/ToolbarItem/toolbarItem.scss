@@ -18,6 +18,28 @@
     display: none;
 }
 
+.toolbar-item-options {
+    position: absolute;
+    top: 90px;
+    right: 185px;
+    width: 170px;
+    height: 85px;
+    background-color: rgba(101, 64, 136, 0.2);
+    box-shadow: 3px 3px 5px 3px rgb(101, 64, 136);
+    .toolbar-item-option {
+        padding: 10px;
+        color: rgba(139, 160, 230,1);
+        font-size: 20px;
+        font-family: 'Abhaya Libre', serif;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(198, 204, 228);
+            color: rgb(101, 64, 136);
+        }
+    }
+}
+
 // @keyframes move {
 //     0% {
 //         width: 0;
