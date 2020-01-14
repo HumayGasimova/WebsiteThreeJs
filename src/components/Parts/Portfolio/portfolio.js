@@ -61,7 +61,7 @@ export const Portfolio = (props) => {
 
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
-        console.log(scrollHeight)
+        // console.log(scrollHeight)
         setSlower(scrollHeight/2);
     }
 

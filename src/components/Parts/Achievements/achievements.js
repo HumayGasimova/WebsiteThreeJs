@@ -54,7 +54,7 @@ export const Achievements = (props) => {
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("achievements");
-        console.log(el.offsetTop)
+        // console.log(el.offsetTop)
         if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 150 ){
             setShowComponent(true);
         }
