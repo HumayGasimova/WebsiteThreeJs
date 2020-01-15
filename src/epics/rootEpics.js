@@ -3,5 +3,6 @@ import * as Epic from './index'
 
 export const rootEpic = combineEpics(
     Epic.startInitPaginationEpic,
+    Epic.startChoosingPageEpic
     // Epic.submitMessageEpic
 );

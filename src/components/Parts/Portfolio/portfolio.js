@@ -48,6 +48,15 @@ import * as Selectors from '../../../reducers/selectors';
 import Pic1 from '../../../images/coffee-cafe-table-food.jpg';
 import Pic2 from '../../../images/notebook-laptop-camera-diary-pink-silver.jpg';
 import Pic3 from '../../../images/flowers-table-pink-roses-decorations.jpg';
+import Pic4 from '../../../images/workspace-workplace-computer-macbook.jpg';
+import Pic5 from '../../../images/volleyball-2639700_1280.jpg';
+import Pic6 from '../../../images/research-3691930_960_720.jpg';
+import Pic7 from '../../../images/opened-book-on-brown-wooden-surface.jpg';
+import Pic8 from '../../../images/mathematics-formula-smartphone-mobile-phone.jpg';
+import Pic9 from '../../../images/headphones-2591890_960_720.jpg';
+import Pic10 from '../../../images/grey-sport-shoes-sneakers-thumbnail.jpg';
+import Pic11 from '../../../images/education-4611289_960_720.jpg';
+import Pic12 from '../../../images/education-4382169_960_720.jpg';
 
 /**
 * Constants
@@ -77,6 +86,24 @@ export const Portfolio = (props) => {
                 return Pic2;
             case "Pic3":
                 return Pic3;
+            case "Pic4":
+                return Pic4;
+            case "Pic5":
+                return Pic5;
+            case "Pic6":
+                return Pic6;
+            case "Pic7":
+                return Pic7;
+            case "Pic8":
+                return Pic8;
+            case "Pic9":
+                return Pic9;
+            case "Pic10":
+                return Pic10;
+            case "Pic11":
+                return Pic11;
+            case "Pic12":
+                return Pic12;
         }
     }
 

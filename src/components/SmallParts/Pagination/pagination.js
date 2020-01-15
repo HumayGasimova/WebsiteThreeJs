@@ -63,7 +63,7 @@ export const Pagination = (props) => {
     */
 
     const paginationOnClick = (id) => {
-        props.choosePage(id);
+        props.startChoosingPage(id);
     }
 
     const renderPageNumbers = () => {
@@ -85,7 +85,8 @@ export const Pagination = (props) => {
   
     useEffect(() => {
         props.startInitPagination(props.page);
-    }, [])
+    }, []);
+
     /**
     * Markup
     */
@@ -118,7 +119,7 @@ export default connect(
     (dispatch) => {
         return {
             startInitPagination: bindActionCreators(Actions.startInitPagination, dispatch),
-            choosePage: bindActionCreators(Actions.choosePage, dispatch),
+            startChoosingPage: bindActionCreators(Actions.startChoosingPage, dispatch),
         };
     }
 )(Pagination);

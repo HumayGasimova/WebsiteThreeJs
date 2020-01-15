@@ -99,9 +99,23 @@ export function initPagination(array) {
     };
 };
 
+export function startChoosingPage(id) {
+    return { 
+        type: actionTypes.START_CHOOSING_PAGE,
+        id: id
+    };
+};
+
 export function choosePage(id) {
     return { 
         type: actionTypes.CHOOSE_PAGE,
         id: id
+    };
+};
+
+export function loadPortfolioAccordingToPage(array) {
+    return { 
+        type: actionTypes.LOAD_PORTFOLIO_ACCORDING_TO_PAGE,
+        array: array
     };
 };

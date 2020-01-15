@@ -184,6 +184,13 @@ const choosePage = (state, action) => {
     };
 }
 
+const loadPortfolioAccordingToPage = (state, action) => {
+    return {
+        ...state,
+        portfolio: action.array
+    };
+}
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -233,6 +240,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initPagination(state, action);  
         case actionTypes.CHOOSE_PAGE:
             return choosePage(state, action); 
+        case actionTypes.LOAD_PORTFOLIO_ACCORDING_TO_PAGE:
+            return loadPortfolioAccordingToPage(state, action); 
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 
