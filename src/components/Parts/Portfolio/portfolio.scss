@@ -150,17 +150,7 @@
         width: 57%;
         box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
         background: rgb(198, 204, 228);
-        .portfolio-page-all-image-first {
-            padding: 20px 70px 20px 20px;
-            z-index: 10;
-            >img {
-                box-shadow: 5px 5px 10px 3px rgb(101, 64, 136);
-                width: 500px;
-                height: 390px;
-            }
-        }
-
-        .portfolio-page-all-image-third {
+        .portfolio-page-all-image-with-even-id {
             padding: 20px 70px 20px 20px;
             z-index: 10;
             >img {
@@ -187,7 +177,7 @@
         margin: 40px 0 40px 0;
         box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
         background: rgb(198, 204, 228);
-        .portfolio-page-all-image-second {
+        .portfolio-page-all-image-with-odd-id {
             z-index: 10;
             // padding: 20px;
             padding: 20px 20px 20px 70px;
@@ -273,14 +263,7 @@
 
     .portfolio-page-all {
         .portfolio-page-all-template {
-            .portfolio-page-all-image-first {
-                >img {
-                    width: 430px;
-                    height: 350px;
-                }
-            }
-    
-            .portfolio-page-all-image-third {
+            .portfolio-page-all-image-with-even-id {
                 >img {
                     width: 430px;
                     height: 350px;
@@ -293,7 +276,7 @@
         }
     
         .portfolio-page-all-template-middle {
-            .portfolio-page-all-image-second {
+            .portfolio-page-all-image-with-odd-id {
                 >img {
                     width: 430px;
                     height: 350px;
@@ -382,24 +365,16 @@
 
     .portfolio-page-all {
         .portfolio-page-all-template {
-            .portfolio-page-all-image-first {
+            .portfolio-page-all-image-with-even-id {
                 >img {
                     width: 340px;
                     height: 270px;
                 }
             }
-    
-            .portfolio-page-all-image-third {
-                >img {
-                    width: 340px;
-                    height: 270px;
-                }
-            }
-    
         }
     
         .portfolio-page-all-template-middle {
-            .portfolio-page-all-image-second {
+            .portfolio-page-all-image-with-odd-id {
                 >img {
                     width: 340px;
                     height: 270px;
@@ -764,20 +739,12 @@
     .portfolio-page-all {
         .portfolio-page-all-template {
             width: 90%;
-            .portfolio-page-all-image-first {
+            .portfolio-page-all-image-with-even-id {
                 padding: 20px 40px 20px 20px;
                 >img {
                     width: 250px;
                     height: 200px;
                 }
-            }
-    
-            .portfolio-page-all-image-third {
-                padding: 20px 40px 20px 20px;
-                    >img {
-                        width: 250px;
-                    height: 200px;
-                    }
             }
             .portfolio-page-all-description {
                 padding-right: 90px;
@@ -786,7 +753,7 @@
     
         .portfolio-page-all-template-middle {
             width: 90%;
-            .portfolio-page-all-image-second {
+            .portfolio-page-all-image-with-odd-id {
                 >img {
                     width: 250px;
                     height: 200px;
@@ -883,7 +850,7 @@
     
         .portfolio-page-all-template-middle {
             height: 347px;
-            .portfolio-page-all-image-second {
+            .portfolio-page-all-image-with-odd-id {
                 z-index: 10;
                 padding: 20px 20px 20px 10px;
             }
@@ -1045,14 +1012,7 @@
     .portfolio-page-all {
         .portfolio-page-all-template {
             height: 347px;
-            .portfolio-page-all-image-first {
-                >img {
-                    width: 170px;
-                    height: 140px;
-                }
-            }
-    
-            .portfolio-page-all-image-third {
+            .portfolio-page-all-image-with-even-id {
                 >img {
                     width: 170px;
                     height: 140px;
@@ -1065,7 +1025,7 @@
     
         .portfolio-page-all-template-middle {
             height: 347px;
-            .portfolio-page-all-image-second {
+            .portfolio-page-all-image-with-odd-id {
                 z-index: 10;
                 padding: 20px 20px 20px 10px;
                 >img {
@@ -1136,11 +1096,7 @@
     
         .portfolio-page-all-template {
             height: 347px;
-            .portfolio-page-all-image-first {
-                padding: 20px 15px 20px 20px;
-            }
-    
-            .portfolio-page-all-image-third {
+            .portfolio-page-all-image-with-even-id {
                 padding: 20px 15px 20px 20px;
             }
 
@@ -1152,7 +1108,7 @@
     
         .portfolio-page-all-template-middle {
             height: 347px;
-            .portfolio-page-all-image-second {
+            .portfolio-page-all-image-with-odd-id {
                 z-index: 10;
                 padding: 20px 20px 20px 10px;
             }

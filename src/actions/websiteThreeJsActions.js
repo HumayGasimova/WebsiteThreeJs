@@ -78,4 +78,9 @@ export function chooseFeedback(id) {
     };
 };
 
-
+export function initPortfolio(array) {
+    return { 
+        type: actionTypes.INIT_PORTFOLIO,
+        array: array
+    };
+};

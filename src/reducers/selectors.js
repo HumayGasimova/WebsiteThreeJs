@@ -50,3 +50,10 @@ export const getFeedbacksOnScrollState = createSelector(
     [getFeedbacksOnScroll],
     (x) => x
 );
+
+const getPortfolio = (state) => state.home.portfolio;
+
+export const getPortfolioState = createSelector(
+    [getPortfolio],
+    (x) => x
+);

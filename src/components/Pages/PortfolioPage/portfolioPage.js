@@ -66,7 +66,7 @@ export const PortfolioPage = (props) => {
             <MovingBubbles 
                 mainHeader={"Portfolio"}
             />
-            <Portfolio className="portfolio-page-all"/>
+            <Portfolio className="portfolio-page-all" portfolioPage/>
             <Footer/>
         </div>
     );

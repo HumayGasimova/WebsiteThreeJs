@@ -19,29 +19,7 @@ export const initialState = {
     feedbacks: [],
     feedbacksToShow: [],
     dots: [],
-    feedbacksStyle: {
-        card1: {
-            left: 0
-        },
-        card2: {
-            left: 0
-        },
-        card3: {
-            left: 0
-        },
-        card4: {
-            left: 0
-        },
-        card5: {
-            left: 0
-        },
-        card6: {
-            left: 0
-        },
-        card7: {
-            left: 0
-        }
-    },
+    portfolio: [],
     feedbacksOnScroll: false,
 }
 
@@ -175,6 +153,13 @@ const feedbacksStylesUpdated = (state, action) => {
     };
 }
 
+const initPortfolio = (state, action) => {
+    return {
+        ...state,
+        portfolio: action.array
+    };
+}
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -218,6 +203,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return feedbacksUpdated(state, action);   
         case actionTypes.FEEDBACKS_STYLES_UPDATED:
             return feedbacksStylesUpdated(state, action);   
+        case actionTypes.INIT_PORTFOLIO:
+            return initPortfolio(state, action);   
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 
