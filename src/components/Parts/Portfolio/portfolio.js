@@ -150,7 +150,29 @@ export const Portfolio = (props) => {
    
     const renderPortfolio = () => {
         return(
-            <>
+            <>   
+                <div className={`${props.className}-template`}>
+                    <div 
+                        className={`${props.className}-image-first`} 
+                        style={props.className === "portfolio" ? {transform: `translate(0px, -${slower}px)`} : null}
+                    >
+                        <img src={Pic1}/>
+                    </div>
+                    <div className={`${props.className}-description`}>
+                        <div className={`${props.className}-description-name`}>ILLUSTRATION</div>
+                        <div className={`${props.className}-description-header`}>Lorem ipsum dolor sit amet.</div>
+                        <div className={`${props.className}-description-text`}> 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip ex ea commodo consequat. 
+                        </div>
+                        <Button 
+                            className="portfolio-description-button"
+                            text={"View Portfolio"}
+                        />
+                    </div>
+                </div>
                 <div className="portfolio-template-middle">
                     <div className="portfolio-description-middle">
                         <div className="portfolio-description-name">APPLICATION</div>
@@ -231,6 +253,7 @@ export const Portfolio = (props) => {
                     nisi ut aliquip ex ea commodo consequat. 
                 </div>
             </div>
+
            {props.portfolioPage ? renderPortfolioPage() : renderPortfolio()}
 
             {/* {props.portfolioPage ? 
