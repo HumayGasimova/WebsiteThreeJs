@@ -18,6 +18,7 @@ import Main from './components/main';
 import AboutPage from './components/Pages/AboutPage/aboutPage';
 import SrvicesPage from './components/Pages/ServicesPage/servicesPage';
 import PortfolioPage from './components/Pages/PortfolioPage/portfolioPage';
+import PortfolioSinglePage from './components/Pages/PortfolioSinglePage/portfolioSinglePage';
 import BlogPage from './components/Pages/BlogPage/blogPage';
 import ContactPage from './components/Pages/ContactPage/contactPage';
 
@@ -55,6 +56,11 @@ export class App extends Component {
                exact 
                path="/portfolio"
                component={ PortfolioPage }
+            />
+             <Route 
+               exact 
+               path="/portfolioSingle"
+               component={ PortfolioSinglePage }
             />
             <Route 
                exact
