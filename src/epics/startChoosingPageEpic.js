@@ -42,7 +42,6 @@ export const startChoosingPageEpic = (action$, state$) =>
         mergeMap((action) => {
             let updatedPortfolio = [...portfolioArray];
             updatedPortfolio = updatedPortfolio.slice((action.id * 3) - 3, action.id * 3);
-            console.log(updatedPortfolio)
             return of(
                 Actions.choosePage(action.id),
                 Actions.loadPortfolioAccordingToPage(updatedPortfolio),

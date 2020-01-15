@@ -119,3 +119,24 @@ export function loadPortfolioAccordingToPage(array) {
         array: array
     };
 };
+
+export function startChoosingPageOnArrowButton(direction) {
+    return { 
+        type: actionTypes.START_CHOOSING_PAGE_ON_ARROW_BUTTON,
+        direction: direction
+    };
+};
+
+export function updatePaging(array) {
+    return { 
+        type: actionTypes.UPDATE_PAGING,
+        array: array
+    };
+};
+
+export function updatePortfolio(array) {
+    return { 
+        type: actionTypes.UPDATE_PORTFOLIO,
+        array: array
+    };
+};

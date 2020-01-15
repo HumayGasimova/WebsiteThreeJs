@@ -95,14 +95,16 @@ export const Pagination = (props) => {
         <div className="pagination">
             <Button 
                 className="pagination-button"
-                onClick={props.leftArrowOnClick}
+                onClick={() => props.startChoosingPageOnArrowButton("arrowLeft")}
+                // disabled={}
             >
                 <FontAwesomeIcon icon={faChevronLeft} size="sm" className="icon-arrow-left"/>
             </Button> 
             {renderPageNumbers()}
             <Button 
                 className="pagination-button"
-                onClick={props.rightArrowOnClick}
+                onClick={() => props.startChoosingPageOnArrowButton("arrowRight")}
+                // disabled={}
             >
                 <FontAwesomeIcon icon={faChevronRight} size="sm" className="icon-arrow-right"/>
             </Button>
@@ -120,6 +122,7 @@ export default connect(
         return {
             startInitPagination: bindActionCreators(Actions.startInitPagination, dispatch),
             startChoosingPage: bindActionCreators(Actions.startChoosingPage, dispatch),
+            startChoosingPageOnArrowButton: bindActionCreators(Actions.startChoosingPageOnArrowButton, dispatch),
         };
     }
 )(Pagination);
