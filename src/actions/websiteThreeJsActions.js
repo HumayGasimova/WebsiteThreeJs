@@ -84,3 +84,17 @@ export function initPortfolio(array) {
         array: array
     };
 };
+
+export function startInitPagination(page) {
+    return { 
+        type: actionTypes.START_INIT_PAGINATION,
+        page: page
+    };
+};
+
+export function initPagination(array) {
+    return { 
+        type: actionTypes.INIT_PAGINATION,
+        array: array
+    };
+};

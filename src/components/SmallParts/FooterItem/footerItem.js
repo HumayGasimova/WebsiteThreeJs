@@ -81,7 +81,7 @@ export const FooterItem = (props) => {
             <div className="footer-item-header">{props.header}</div>
             {renderLinks()}
         </div>
-);
+    );
 }
 
 export default connect(

@@ -48,3 +48,20 @@ export const getArrayOfDots = (val) => {
         }
     });
 } 
+
+export const getArrayOfPaging = (val) => {
+    let array = new Array(val).fill(0);
+    let updateChosen;
+    // array.map((el,i) => array[i] = i+1)
+    return array.map((el,i) => {
+        if(i === 0){
+            updateChosen = true;
+        }else{
+            updateChosen = false;
+        }
+        return {
+            id: i + 1,
+            chosen: updateChosen
+        }
+    });
+} 

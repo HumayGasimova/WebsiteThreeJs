@@ -15,6 +15,7 @@ import {
     bindActionCreators
 } from 'redux';
 
+
 /**
 * Styles
 */
@@ -26,6 +27,7 @@ import './portfolio.scss';
 */
 
 import Button from '../../../library/Button/button';
+import Pagination from '../../SmallParts/Pagination/pagination';
 
 /**
 * Actions
@@ -66,23 +68,6 @@ export const Portfolio = (props) => {
     /**
     * Methods
     */
-
-    const renderPageNumbers = () => {
-        // return(
-        //     <div className="portfolio-page-all-">{
-        //         serviceCards.map((el,i)=>{
-        //         return(
-        //             <Service
-        //                 key={i}
-        //                 icon={el.icon}
-        //                 header={el.header}
-        //                 text={el.text}
-        //                 hexagonStyle={el.hexagonStyle}
-        //             />
-        //         )
-        //     })}</div>
-        // )
-    }
 
     const loadImage = (img) => {
         switch(img){
@@ -229,8 +214,7 @@ export const Portfolio = (props) => {
 
     useEffect(() => {
         let portfolioProjectsToShow = portfolioArray.slice(0, 3);
-        props.initPortfolio(portfolioProjectsToShow)
-        // props.initPagination()
+        props.initPortfolio(portfolioProjectsToShow);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -238,8 +222,6 @@ export const Portfolio = (props) => {
     /**
     * Markup
     */
-
-
 
     return(
         <div className={`${props.className}`} id="portfolio">
@@ -253,15 +235,11 @@ export const Portfolio = (props) => {
                     nisi ut aliquip ex ea commodo consequat. 
                 </div>
             </div>
-
            {props.portfolioPage ? renderPortfolioPage() : renderPortfolio()}
-
-            {/* {props.portfolioPage ? 
-                <div>
-                    <div></div>
-                    {renderPageNumbers()}
-                    <div></div>
-                </div> : null} */}
+               {props.portfolioPage ? 
+               <Pagination 
+                    page="portfolio"
+               /> : null}
         </div>
     );
 }

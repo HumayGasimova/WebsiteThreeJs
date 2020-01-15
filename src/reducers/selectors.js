@@ -57,3 +57,11 @@ export const getPortfolioState = createSelector(
     [getPortfolio],
     (x) => x
 );
+
+const getPaging = (state) => state.home.paging;
+
+export const getPagingState = createSelector(
+    [getPaging],
+    (x) => x
+);
+

@@ -21,6 +21,7 @@ export const initialState = {
     dots: [],
     portfolio: [],
     feedbacksOnScroll: false,
+    paging: []
 }
 
 const toggleMenuButton = (state) => {
@@ -160,6 +161,15 @@ const initPortfolio = (state, action) => {
     };
 }
 
+const initPagination = (state, action) => {
+    return {
+        ...state,
+        paging: action.array
+    };
+}
+
+
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -205,6 +215,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return feedbacksStylesUpdated(state, action);   
         case actionTypes.INIT_PORTFOLIO:
             return initPortfolio(state, action);   
+        case actionTypes.INIT_PAGINATION:
+            return initPagination(state, action);  
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

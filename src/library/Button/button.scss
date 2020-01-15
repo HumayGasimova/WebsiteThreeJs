@@ -66,6 +66,13 @@
     margin-bottom: 80px;
 }
 
+.pagination-button {
+    background: none;
+    border: none;
+    // margin-bottom: 80px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 441px){
     .portfolio-description-button {
         width: 110px;
