@@ -140,3 +140,10 @@ export function updatePortfolio(array) {
         array: array
     };
 };
+
+export function disablePaginationArrowButton(direction) {
+    return { 
+        type: actionTypes.DISABLE_PAGINATION_ARROW_BUTTON,
+        direction: direction
+    };
+};

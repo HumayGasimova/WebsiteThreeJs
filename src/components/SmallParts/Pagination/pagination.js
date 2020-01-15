@@ -85,6 +85,8 @@ export const Pagination = (props) => {
   
     useEffect(() => {
         props.startInitPagination(props.page);
+        props.disablePaginationArrowButton("arrowLeft");
+        props.disablePaginationArrowButton("arrowRight");
     }, []);
 
     /**
@@ -96,7 +98,7 @@ export const Pagination = (props) => {
             <Button 
                 className="pagination-button"
                 onClick={() => props.startChoosingPageOnArrowButton("arrowLeft")}
-                // disabled={}
+                disabled={props.padinationArrowLeft}
             >
                 <FontAwesomeIcon icon={faChevronLeft} size="sm" className="icon-arrow-left"/>
             </Button> 
@@ -104,7 +106,7 @@ export const Pagination = (props) => {
             <Button 
                 className="pagination-button"
                 onClick={() => props.startChoosingPageOnArrowButton("arrowRight")}
-                // disabled={}
+                disabled={props.padinationArrowRight}
             >
                 <FontAwesomeIcon icon={faChevronRight} size="sm" className="icon-arrow-right"/>
             </Button>
@@ -116,6 +118,8 @@ export default connect(
     (state) => {
         return {
             paging: Selectors.getPagingState(state),
+            padinationArrowLeft: Selectors.getPadinationArrowLeftState(state),
+            padinationArrowRight: Selectors.getPadinationArrowRightState(state),
         };
     },
     (dispatch) => {
@@ -123,6 +127,7 @@ export default connect(
             startInitPagination: bindActionCreators(Actions.startInitPagination, dispatch),
             startChoosingPage: bindActionCreators(Actions.startChoosingPage, dispatch),
             startChoosingPageOnArrowButton: bindActionCreators(Actions.startChoosingPageOnArrowButton, dispatch),
+            disablePaginationArrowButton: bindActionCreators(Actions.disablePaginationArrowButton, dispatch),
         };
     }
 )(Pagination);

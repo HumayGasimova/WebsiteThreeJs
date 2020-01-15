@@ -65,3 +65,17 @@ export const getPagingState = createSelector(
     (x) => x
 );
 
+const getPadinationArrowLeft = (state) => state.home.padinationArrowLeft;
+
+export const getPadinationArrowLeftState = createSelector(
+    [getPadinationArrowLeft],
+    (x) => x
+);
+
+const getPadinationArrowRight = (state) => state.home.padinationArrowRight;
+
+export const getPadinationArrowRightState = createSelector(
+    [getPadinationArrowRight],
+    (x) => x
+);
+

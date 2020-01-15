@@ -45,6 +45,8 @@ export const startChoosingPageEpic = (action$, state$) =>
             return of(
                 Actions.choosePage(action.id),
                 Actions.loadPortfolioAccordingToPage(updatedPortfolio),
+                Actions.disablePaginationArrowButton("arrowLeft"),
+                Actions.disablePaginationArrowButton("arrowRight")
             )   
         }),
                 

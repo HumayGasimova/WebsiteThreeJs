@@ -71,6 +71,10 @@
     border: none;
     // margin-bottom: 80px;
     cursor: pointer;
+    &:disabled{
+        color:rgb(150, 150, 150);
+        cursor: not-allowed;
+    }
 }
 
 @media only screen and (max-width: 441px){

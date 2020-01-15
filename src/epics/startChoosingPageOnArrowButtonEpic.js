@@ -68,7 +68,9 @@ export const startChoosingPageOnArrowButtonEpic = (action$, state$) =>
 
             return of(
                 Actions.updatePaging(paging),
-                Actions.updatePortfolio(updatedPortfolio)
+                Actions.updatePortfolio(updatedPortfolio),
+                Actions.disablePaginationArrowButton("arrowLeft"),
+                Actions.disablePaginationArrowButton("arrowRight")
             )   
         }),
                 

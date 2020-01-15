@@ -21,7 +21,9 @@ export const initialState = {
     dots: [],
     portfolio: [],
     feedbacksOnScroll: false,
-    paging: []
+    paging: [],
+    padinationArrowLeft: true,
+    padinationArrowRight: false,
 }
 
 const toggleMenuButton = (state) => {
@@ -205,6 +207,35 @@ const updatePortfolio = (state, action) => {
     };
 }
 
+const disablePaginationArrowButton = (state, action) => {
+    switch(action.direction){
+        case 'arrowLeft':
+            let updatedPaginationArrowLeft;
+            if(state.paging[0].chosen){
+                updatedPaginationArrowLeft = true;
+            }else{
+                updatedPaginationArrowLeft = false;
+            }
+            return {
+                ...state,
+                padinationArrowLeft: updatedPaginationArrowLeft
+            };
+        case 'arrowRight':
+            let updatedPaginationArrowRight;
+            if(state.paging[state.paging.length - 1].chosen){
+                updatedPaginationArrowRight = true;
+            }else{
+                updatedPaginationArrowRight = false;
+            }
+            return {
+                ...state,
+                padinationArrowRight: updatedPaginationArrowRight
+            };
+            default:
+                return state;
+    }
+}
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -262,6 +293,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return updatePaging(state, action); 
         case actionTypes.UPDATE_PORTFOLIO:
             return updatePortfolio(state, action); 
+        case actionTypes.DISABLE_PAGINATION_ARROW_BUTTON:
+            return disablePaginationArrowButton(state, action); 
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 
