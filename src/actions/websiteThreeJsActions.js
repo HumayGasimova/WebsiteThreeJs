@@ -98,3 +98,10 @@ export function initPagination(array) {
         array: array
     };
 };
+
+export function choosePage(id) {
+    return { 
+        type: actionTypes.CHOOSE_PAGE,
+        id: id
+    };
+};

@@ -168,7 +168,21 @@ const initPagination = (state, action) => {
     };
 }
 
+const choosePage = (state, action) => {
+    let updatedPaging = [...state.paging];
+    updatedPaging = updatedPaging.map((el, i) => {
+        return {...el, chosen: false}
+    })
+    let chosenPage = {...updatedPaging.find(x => x.id === action.id), chosen: true};
+    let chosenPageIndex = updatedPaging.findIndex(x => x.id === action.id);
 
+    updatedPaging.splice(chosenPageIndex, 1, chosenPage)
+
+    return {
+        ...state,
+        paging: updatedPaging
+    };
+}
 
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
@@ -217,6 +231,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initPortfolio(state, action);   
         case actionTypes.INIT_PAGINATION:
             return initPagination(state, action);  
+        case actionTypes.CHOOSE_PAGE:
+            return choosePage(state, action); 
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

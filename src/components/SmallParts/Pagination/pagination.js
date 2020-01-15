@@ -62,6 +62,10 @@ export const Pagination = (props) => {
     * Methods
     */
 
+    const paginationOnClick = (id) => {
+        props.choosePage(id);
+    }
+
     const renderPageNumbers = () => {
         return(
             <div className="pagination-items">{
@@ -70,8 +74,9 @@ export const Pagination = (props) => {
                    <div 
                         key={i}
                         className={el.chosen ? "pagination-item-chosen" : "pagination-item"}
+                        onClick={() => paginationOnClick(el.id)}
                    >
-                       {i+1}
+                       {i + 1}
                    </div>
                 )
             })}</div>
@@ -113,6 +118,7 @@ export default connect(
     (dispatch) => {
         return {
             startInitPagination: bindActionCreators(Actions.startInitPagination, dispatch),
+            choosePage: bindActionCreators(Actions.choosePage, dispatch),
         };
     }
 )(Pagination);
