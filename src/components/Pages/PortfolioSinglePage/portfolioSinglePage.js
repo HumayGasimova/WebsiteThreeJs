@@ -27,7 +27,7 @@ import Footer from '../../Parts/Footer/footer';
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../../../actions';
 
 /**
 * Styles
@@ -39,7 +39,7 @@ import './portfolioSinglePage.scss';
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * PortfolioSinglePage component definition and export
@@ -55,6 +55,12 @@ export const PortfolioSinglePage = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        let portfolioIdString = props.match.params.id;
+        let portfolioId = portfolioIdString.slice(1, portfolioIdString.length);
+        props.startInitPortfolioSingle(+portfolioId);
+    })
+
     /**
     * Markup
     */
@@ -65,6 +71,7 @@ export const PortfolioSinglePage = (props) => {
             <MovingBubbles 
                 mainHeader={"Portfolio"}
             />
+            {/* <div>{props.singlePortfolio.id}</div> */}
            <Footer/>
         </div>
     );
@@ -72,12 +79,12 @@ export const PortfolioSinglePage = (props) => {
  export default connect(
     (state) => {
         return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            singlePortfolio: Selectors.getSinglePortfolioState(state),
         };
     },
     (dispatch) => {
         return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            startInitPortfolioSingle: bindActionCreators(Actions.startInitPortfolioSingle, dispatch),
         };
     }
 )(PortfolioSinglePage);

@@ -59,7 +59,7 @@ export class App extends Component {
             />
              <Route 
                exact 
-               path="/portfolioSingle"
+               path="/portfolioSingleId:id"
                component={ PortfolioSinglePage }
             />
             <Route 

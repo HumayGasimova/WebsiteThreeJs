@@ -24,6 +24,7 @@ export const initialState = {
     paging: [],
     padinationArrowLeft: true,
     padinationArrowRight: false,
+    singlePortfolio: {}
 }
 
 const toggleMenuButton = (state) => {
@@ -236,6 +237,14 @@ const disablePaginationArrowButton = (state, action) => {
     }
 }
 
+const loadSinglePortfolio = (state, action) => {
+    return {
+        ...state,
+        singlePortfolio: action.obj
+    };
+}
+
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -295,6 +304,11 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return updatePortfolio(state, action); 
         case actionTypes.DISABLE_PAGINATION_ARROW_BUTTON:
             return disablePaginationArrowButton(state, action); 
+        case actionTypes.START_INIT_PORTFOLIO_SINGLE:
+            return state; 
+        case actionTypes.LOAD_SINGLE_PORTFOLIO:
+            return loadSinglePortfolio(state, action); 
+            
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

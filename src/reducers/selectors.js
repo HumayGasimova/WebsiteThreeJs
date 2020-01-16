@@ -79,3 +79,10 @@ export const getPadinationArrowRightState = createSelector(
     (x) => x
 );
 
+const getSinglePortfolio = (state) => state.home.singlePortfolio;
+
+export const getSinglePortfolioState = createSelector(
+    [getSinglePortfolio],
+    (x) => x
+);
+

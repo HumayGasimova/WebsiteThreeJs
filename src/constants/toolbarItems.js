@@ -34,7 +34,7 @@ export const toolabarItems = [
             {
                 optId: 2,
                 optText: "Portfolio Single",
-                optPath: "portfolioSingle"
+                optPath: "portfolioSingleId"
             }
         ]
     },

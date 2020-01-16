@@ -57,7 +57,13 @@ export const ToolbarItem = (props) => {
     }
 
     const toolbarOptionOnClick = (path) => {
-        props.history.push(`/${path}`)
+        console.log(path)
+        if(path === "portfolioSingleId"){
+            props.history.push(`/${path}:1`);
+        }else{
+            props.history.push(`/${path}`);
+        }
+        
     }
 
     const renderOptions = () => {

@@ -35,24 +35,17 @@ import * as Utility from '../utility';
 * Epic
 */
 
-export const startInitPaginationEpic = (action$) => 
+export const startInitPortfolioSingleEpic = (action$) => 
     action$.pipe(
-        ofType(actionTypes.START_INIT_PAGINATION),
+        ofType(actionTypes.START_INIT_PORTFOLIO_SINGLE),
         mergeMap((action) => {
-            let portfolioPaging;
-            let numberOfPages;
+            let portfolio = portfolioArray.find(x => x.id === action.potfolioId);
 
-            switch(action.page) {
-                case "portfolio":
-                    numberOfPages = +(portfolioArray.length / 3).toFixed();
-                    portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
-                    break;
-            }
             return of(
-                Actions.initPagination(portfolioPaging),
+                Actions.loadSinglePortfolio(portfolio),
             )   
         }),
                 
     )
 
-export default startInitPaginationEpic;
+export default startInitPortfolioSingleEpic;

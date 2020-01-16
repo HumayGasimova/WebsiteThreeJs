@@ -147,3 +147,18 @@ export function disablePaginationArrowButton(direction) {
         direction: direction
     };
 };
+
+export function startInitPortfolioSingle(id) {
+    return { 
+        type: actionTypes.START_INIT_PORTFOLIO_SINGLE,
+        potfolioId: id
+    };
+};
+
+export function loadSinglePortfolio(obj) {
+    return { 
+        type: actionTypes.LOAD_SINGLE_PORTFOLIO,
+        obj: obj
+    };
+};
+
