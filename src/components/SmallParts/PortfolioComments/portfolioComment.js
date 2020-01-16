@@ -62,7 +62,13 @@ export const PortfolioComments = (props) => {
         return(
             <div className="portfolio-comments-all">{props.comments.array.map((el, i) => {
                 return(
-                   <Comment key={i}/>
+                    <Comment 
+                        key={i}
+                        image={el.image}
+                        fullName={el.fullName}
+                        date={el.date}
+                        comment={el.comment}
+                    />
                 )
             })}</div>
         )

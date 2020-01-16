@@ -35,6 +35,7 @@ import * as Actions from '../../../actions';
 * Components
 */
 
+import Button from '../../../library/Button/button'
 /**
 * Icons
 */
@@ -82,7 +83,19 @@ export const Comment = (props) => {
 
     return(
         <div className="comment">
-            
+            <div className="comment-image">
+                {/* <img src={}> */}
+            </div>
+            <div className="comment-wrapper">
+                <div className="comment-full-name">{props.fullName}</div>
+                <div className="comment-date">{props.date}</div>
+                <div className="comment-text">{props.comment}</div>
+                <Button 
+                    className="portfolio-description-button-middle"
+                    text={"View Portfolio"}
+                    onClick={() => viewPortfolioButtonOnClick(el.id)}
+                />
+            </div>
         </div>
     );
 }
