@@ -42,7 +42,7 @@ export const Service = (props) => {
     * Methods
     */
 
-   const renderIcon = () => {
+    const renderIcon = () => {
         switch(props.icon) {
             case "faLightbulb":
                 return (<FontAwesomeIcon icon={faLightbulb} size="2x" className="icon-bulb"/>);

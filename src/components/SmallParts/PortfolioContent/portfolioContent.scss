@@ -1,0 +1,19 @@
+.portfolio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .portfolio-content-image{
+        >img {
+            width: 600px;
+            height: 470px;
+        }
+    }
+    .portfolio-content-spinner {
+        position: fixed;
+        left: 45%;
+        top: 45%;
+    }
+    .portfolio-content-buttons {
+
+    }
+}

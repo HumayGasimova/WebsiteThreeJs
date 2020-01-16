@@ -21,6 +21,8 @@ import {
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
+import PortfolioContent from '../../SmallParts/PortfolioContent/portfolioContent';
+import Pagination from '../../SmallParts/Pagination/pagination';
 import Footer from '../../Parts/Footer/footer';
 
 /**
@@ -62,7 +64,7 @@ export const PortfolioSinglePage = (props) => {
         let portfolioId = portfolioIdString.slice(1, portfolioIdString.length);
         setPortfolioId(portfolioId);
         props.startInitPortfolioSingle(+portfolioId);
-    }, [props.match.params.id])
+    }, [props.match.params.id]);
 
     /**
     * Markup
@@ -78,7 +80,10 @@ export const PortfolioSinglePage = (props) => {
                 <div className="portfolio-single-page-wrapper2">
                     <div className="portfolio-single-page-wrapper3">
                         <div className="portfolio-single-page-content">
-                        
+                            <PortfolioContent
+                                image={props.singlePortfolio !== {} ? props.singlePortfolio.image : null}
+                                paragraphs={props.singlePortfolio !== {} ? props.singlePortfolio.paragraphs : null}
+                            />
                         </div>
                         <div className="portfolio-single-page-cooments">
                     
@@ -88,9 +93,11 @@ export const PortfolioSinglePage = (props) => {
                     
                     </div>
                 </div>
-                <div className="portfolio-single-page-pagination">
-                
-                </div>
+                {/* <div className="portfolio-single-page-pagination"> */}
+                    <Pagination 
+                        page="portfolio"
+                    /> 
+                {/* </div> */}
             </div>
             {/* <div>{props.singlePortfolio.id}</div> */}
            <Footer/>
