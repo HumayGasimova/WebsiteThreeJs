@@ -26,11 +26,6 @@ import './portfolioContent.scss';
 */
 
 import Button from '../../../library/Button/button';
-
-/**
-* Loading
-*/
-
 import Spinner from '../../../library/Spinner/spinner';
 
 /**
@@ -135,22 +130,25 @@ export const PortfolioContent = (props) => {
     */
 
     return(
-        <div className="portfolio-content">
-            <div className="portfolio-content-image">
-                <img src={loadImage(props.image)}/>
-            </div>
-            {props.paragraphs ? renderParagraph() : <div className="portfolio-content-spinner"><Spinner/></div>}
-            <div className="portfolio-content-buttons">
-                <Button 
-                    className="portfolio-content-button"
-                    text={"See Demo"}
-                />
-                 <Button 
-                    className="portfolio-content-button"
-                    text={"Download"}
-                />
-            </div>
-        </div>
+        <>{props.paragraphs ? 
+            <div className="portfolio-content">
+                <div className="portfolio-content-image">
+                    <img src={loadImage(props.image)}/>
+                </div>
+                {renderParagraph()}
+                <div className="portfolio-content-buttons">
+                    <Button 
+                        className="portfolio-content-button"
+                        text={"See Demo"}
+                    />
+                    <Button 
+                        className="portfolio-content-button"
+                        text={"Download"}
+                    />
+                </div>
+            </div> :
+            <div className="portfolio-content-spinner"><Spinner/></div>
+        }</>
     );
 }
 

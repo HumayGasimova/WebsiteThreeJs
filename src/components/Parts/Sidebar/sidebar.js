@@ -76,7 +76,7 @@ export const Sidebar = (props) => {
     */
 
     const sidebarOnClick = (path) => {
-        props.history.push(`/${path}`)
+        props.history.push(`/${path}`);
     }
 
     const renderToolbarItems = () => {

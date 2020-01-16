@@ -22,6 +22,7 @@ import {
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
 import PortfolioContent from '../../SmallParts/PortfolioContent/portfolioContent';
+import PortfolioComments from '../../SmallParts/PortfolioComments/portfolioComment';
 import Pagination from '../../SmallParts/Pagination/pagination';
 import Footer from '../../Parts/Footer/footer';
 
@@ -85,9 +86,11 @@ export const PortfolioSinglePage = (props) => {
                                 paragraphs={props.singlePortfolio !== {} ? props.singlePortfolio.paragraphs : null}
                             />
                         </div>
-                        <div className="portfolio-single-page-cooments">
-                    
-                        </div>
+                        {/* <div className="portfolio-single-page-cooments"> */}
+                        <PortfolioComments
+                            comments={props.singlePortfolio !== {} ? props.singlePortfolio.comments : null}
+                        />
+                        {/* </div> */}
                     </div>
                     <div className="portfolio-single-page-guide">
                     

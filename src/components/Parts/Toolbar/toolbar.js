@@ -74,7 +74,7 @@ export const Toolbar = (props) => {
     */
 
     const toolbarOnClick = (path) => {
-        props.history.push(`/${path}`)
+        props.history.push(`/${path}`);
     }
 
     const renderToolbarItems = () => {
@@ -131,7 +131,9 @@ export const Toolbar = (props) => {
                     onClick={() => props.toggleMenuButton()}
                 >MENU</div>
             </div>
-            <Sidebar menuButtonIsPressed={props.menuButtonIsPressed}/>
+            <Sidebar 
+                menuButtonIsPressed={props.menuButtonIsPressed}
+            />
             {props.menuButtonIsPressed ? renderBackdrop() : null}
         </>
     );

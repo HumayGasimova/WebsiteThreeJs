@@ -82,6 +82,7 @@ export const ToolbarItem = (props) => {
             })}</div>
         )
     }
+    
     /**
     * Markup
     */
