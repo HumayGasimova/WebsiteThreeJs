@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: center;
     .portfolio-content-image{
+        box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
+        background: rgb(198, 204, 228);
+        margin-top: 40px;
         >img {
             width: 600px;
             height: 470px;
@@ -13,7 +16,30 @@
         left: 45%;
         top: 45%;
     }
+    .portfolio-content-paragraphs {
+        margin: 30px 30px 10px 30px;
+        .portfolio-content-paragraph {
+            padding: 20px 0 20px 0;
+            .portfolio-content-paragraph-title {
+                font-family: 'Abhaya Libre', serif;
+                font-size: 27px;
+                text-align: center;
+                color: rgb(39, 49, 85);
+                padding-bottom: 10px;
+            }
+            .portfolio-content-paragraph-text {
+                .portfolio-content-paragraph-text-item {
+                    font-family: 'Abhaya Libre', serif;
+                    font-size: 22px;
+                    opacity: 0.7;
+                    padding-bottom: 15px;
+                }
+            }
+        }
+    }
     .portfolio-content-buttons {
-
+        display: flex;
+        padding-bottom: 20px;
+        width: 93%;
     }
 }

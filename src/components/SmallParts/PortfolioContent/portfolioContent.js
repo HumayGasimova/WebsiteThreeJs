@@ -22,6 +22,12 @@ import {
 import './portfolioContent.scss';
 
 /**
+* Components
+*/
+
+import Button from '../../../library/Button/button';
+
+/**
 * Loading
 */
 
@@ -135,7 +141,14 @@ export const PortfolioContent = (props) => {
             </div>
             {props.paragraphs ? renderParagraph() : <div className="portfolio-content-spinner"><Spinner/></div>}
             <div className="portfolio-content-buttons">
-              
+                <Button 
+                    className="portfolio-content-button"
+                    text={"See Demo"}
+                />
+                 <Button 
+                    className="portfolio-content-button"
+                    text={"Download"}
+                />
             </div>
         </div>
     );
