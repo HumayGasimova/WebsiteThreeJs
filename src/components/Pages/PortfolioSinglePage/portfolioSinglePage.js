@@ -51,6 +51,7 @@ export const PortfolioSinglePage = (props) => {
     * State
     */
 
+    const [portfolioId, setPortfolioId] = useState(0)
     /**
     * Methods
     */
@@ -58,8 +59,9 @@ export const PortfolioSinglePage = (props) => {
     useEffect(() => {
         let portfolioIdString = props.match.params.id;
         let portfolioId = portfolioIdString.slice(1, portfolioIdString.length);
+        setPortfolioId(portfolioId);
         props.startInitPortfolioSingle(+portfolioId);
-    })
+    }, [props.match.params.id])
 
     /**
     * Markup
@@ -69,7 +71,7 @@ export const PortfolioSinglePage = (props) => {
         <div className="portfolio-single-age">
             <Toolbar/>
             <MovingBubbles 
-                mainHeader={"Portfolio"}
+                mainHeader={`Portfolio #${portfolioId}`}
             />
             {/* <div>{props.singlePortfolio.id}</div> */}
            <Footer/>

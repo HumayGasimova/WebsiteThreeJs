@@ -31,6 +31,7 @@ import {
 */
 
 import * as Utility from '../utility';
+
 /**
 * Epic
 */
