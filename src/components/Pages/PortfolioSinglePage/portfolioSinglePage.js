@@ -51,7 +51,8 @@ export const PortfolioSinglePage = (props) => {
     * State
     */
 
-    const [portfolioId, setPortfolioId] = useState(0)
+    const [portfolioId, setPortfolioId] = useState(0);
+
     /**
     * Methods
     */
@@ -68,11 +69,29 @@ export const PortfolioSinglePage = (props) => {
     */
 
     return(
-        <div className="portfolio-single-age">
+        <div className="portfolio-single-page">
             <Toolbar/>
             <MovingBubbles 
                 mainHeader={`Portfolio #${portfolioId}`}
             />
+            <div className="portfolio-single-page-wrapper">
+                <div className="portfolio-single-page-wrapper2">
+                    <div className="portfolio-single-page-wrapper3">
+                        <div className="portfolio-single-page-content">
+                        
+                        </div>
+                        <div className="portfolio-single-page-cooments">
+                    
+                        </div>
+                    </div>
+                    <div className="portfolio-single-page-guide">
+                    
+                    </div>
+                </div>
+                <div className="portfolio-single-page-pagination">
+                
+                </div>
+            </div>
             {/* <div>{props.singlePortfolio.id}</div> */}
            <Footer/>
         </div>
