@@ -25,6 +25,7 @@ import {
 
 import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
 import Sidebar from '../Sidebar/sidebar';
+import Backdrop from '../../../library/Backdrop/backdrop';
 
 /**
 * Actions
@@ -95,11 +96,19 @@ export const Toolbar = (props) => {
             })}</>
         )
     }
-
-    // useEffect(()=>{
-    //     addEventListener('scroll', handleScroll)
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
+    const renderBackdrop = () => {
+        if(props.menuButtonIsPressed){
+            return(
+                <>
+                    <Backdrop 
+                        show 
+                        onClick={() => props.menuButtonIsToggled(false)}
+                        className="backdrop-home"
+                    />
+                </>
+            )
+        }
+    }
 
     /**
     * Markup
@@ -123,6 +132,7 @@ export const Toolbar = (props) => {
                 >MENU</div>
             </div>
             <Sidebar menuButtonIsPressed={props.menuButtonIsPressed}/>
+            {props.menuButtonIsPressed ? renderBackdrop() : null}
         </>
     );
 }
@@ -135,6 +145,7 @@ export const Toolbar = (props) => {
     (dispatch) => {
         return {
             toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch),
         };
     }
 )(withRouter(Toolbar));
