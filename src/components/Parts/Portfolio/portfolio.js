@@ -15,6 +15,9 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
 
 /**
 * Styles
@@ -78,6 +81,10 @@ export const Portfolio = (props) => {
     * Methods
     */
 
+    const viewPortfolioButtonOnClick = (id) => {
+            props.history.push(`/portfolioSingleId:${id}`);
+    }
+
     const loadImage = (img) => {
         switch(img){
             case "Pic1":
@@ -126,6 +133,7 @@ export const Portfolio = (props) => {
                                     <Button 
                                         className="portfolio-description-button-middle"
                                         text={"View Portfolio"}
+                                        onClick={() => viewPortfolioButtonOnClick(el.id)}
                                     />
                                 </div>
                                 <div className="portfolio-page-all-image-with-odd-id">
@@ -151,6 +159,7 @@ export const Portfolio = (props) => {
                                     <Button 
                                         className="portfolio-description-button"
                                         text={"View Portfolio"}
+                                        onClick={() => viewPortfolioButtonOnClick(el.id)}
                                     />
                                 </div>
                             </div>
@@ -182,6 +191,7 @@ export const Portfolio = (props) => {
                         <Button 
                             className="portfolio-description-button"
                             text={"View Portfolio"}
+                            onClick={() => viewPortfolioButtonOnClick(1)}
                         />
                     </div>
                 </div>
@@ -198,6 +208,7 @@ export const Portfolio = (props) => {
                         <Button 
                             className="portfolio-description-button-middle"
                             text={"View Portfolio"}
+                            onClick={() => viewPortfolioButtonOnClick(2)}
                         />
                     </div>
                     <div 
@@ -226,6 +237,7 @@ export const Portfolio = (props) => {
                         <Button 
                             className="portfolio-description-button"
                             text={"View Portfolio"}
+                            onClick={() => viewPortfolioButtonOnClick(3)}
                         />
                     </div>
                 </div>
@@ -282,5 +294,5 @@ export default connect(
             initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch),
         };
     }
-)(Portfolio);
+)(withRouter(Portfolio));
  
