@@ -35,7 +35,8 @@ import * as Actions from '../../../actions';
 * Components
 */
 
-import Button from '../../../library/Button/button'
+import Button from '../../../library/Button/button';
+
 /**
 * Icons
 */
