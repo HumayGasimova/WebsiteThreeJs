@@ -95,7 +95,8 @@ export const PortfolioSinglePage = (props) => {
                 </div>
                 {/* <div className="portfolio-single-page-pagination"> */}
                     <Pagination 
-                        page="portfolio"
+                        page="portfolioSingle"
+                        
                     /> 
                 {/* </div> */}
             </div>

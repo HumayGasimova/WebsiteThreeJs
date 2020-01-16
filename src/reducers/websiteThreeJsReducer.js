@@ -296,7 +296,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return choosePage(state, action); 
         case actionTypes.LOAD_PORTFOLIO_ACCORDING_TO_PAGE:
             return loadPortfolioAccordingToPage(state, action); 
-        case actionTypes.START_CHOOSING_PAGE_ON_ARROW_BUTTON:
+        case actionTypes.START_CHOOSING_PORTFOLIO_PAGE_ON_ARROW_BUTTON:
+            return state; 
+        case actionTypes.START_CHOOSING_PORTFOLIO_SINGLE_PAGE_ON_ARROW_BUTTON:
             return state; 
         case actionTypes.UPDATE_PAGING:
             return updatePaging(state, action); 

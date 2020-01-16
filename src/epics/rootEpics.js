@@ -4,7 +4,8 @@ import * as Epic from './index'
 export const rootEpic = combineEpics(
     Epic.startInitPaginationEpic,
     Epic.startChoosingPageEpic,
-    Epic.startChoosingPageOnArrowButtonEpic,
-    Epic.startInitPortfolioSingleEpic
+    Epic.startChoosingPortfolioPageOnArrowButtonEpic,
+    Epic.startInitPortfolioSingleEpic,
+    Epic.startChoosingPortfolioSinglePageOnArrowButtonEpic
     // Epic.submitMessageEpic
 );

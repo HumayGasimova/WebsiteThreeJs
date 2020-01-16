@@ -63,7 +63,7 @@ export const Pagination = (props) => {
     */
 
     const paginationOnClick = (id) => {
-        props.startChoosingPage(id);
+        props.startChoosingPage(props.page, id);
     }
 
     const renderPageNumbers = () => {
@@ -82,6 +82,24 @@ export const Pagination = (props) => {
             })}</div>
         )
     }
+
+    const handleOnClickLeftArrow = (direction) => {
+        switch(props.page){
+            case 'portfolio':
+                return props.startChoosingPortfolioPageOnArrowButton(direction);
+            case 'portfolioSingle':
+                return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
+        }
+    }
+
+    const handleOnClickRightArrow = (direction) => {
+        switch(props.page){
+            case 'portfolio':
+                return props.startChoosingPortfolioPageOnArrowButton(direction);
+            case 'portfolioSingle':
+                return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
+        }
+    }
   
     useEffect(() => {
         props.startInitPagination(props.page);
@@ -97,7 +115,7 @@ export const Pagination = (props) => {
         <div className="pagination">
             <Button 
                 className="pagination-button"
-                onClick={() => props.startChoosingPageOnArrowButton("arrowLeft")}
+                onClick={() => handleOnClickLeftArrow("arrowLeft")}
                 disabled={props.padinationArrowLeft}
             >
                 <FontAwesomeIcon icon={faChevronLeft} size="sm" className="icon-arrow-left"/>
@@ -105,7 +123,7 @@ export const Pagination = (props) => {
             {renderPageNumbers()}
             <Button 
                 className="pagination-button"
-                onClick={() => props.startChoosingPageOnArrowButton("arrowRight")}
+                onClick={() => handleOnClickRightArrow("arrowRight")}
                 disabled={props.padinationArrowRight}
             >
                 <FontAwesomeIcon icon={faChevronRight} size="sm" className="icon-arrow-right"/>
@@ -126,7 +144,8 @@ export default connect(
         return {
             startInitPagination: bindActionCreators(Actions.startInitPagination, dispatch),
             startChoosingPage: bindActionCreators(Actions.startChoosingPage, dispatch),
-            startChoosingPageOnArrowButton: bindActionCreators(Actions.startChoosingPageOnArrowButton, dispatch),
+            startChoosingPortfolioPageOnArrowButton: bindActionCreators(Actions.startChoosingPortfolioPageOnArrowButton, dispatch),
+            startChoosingPortfolioSinglePageOnArrowButton: bindActionCreators(Actions.startChoosingPortfolioSinglePageOnArrowButton, dispatch),
             disablePaginationArrowButton: bindActionCreators(Actions.disablePaginationArrowButton, dispatch),
         };
     }

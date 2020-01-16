@@ -1,6 +1,8 @@
 export { startInitPaginationEpic } from './startInitPaginationEpic';
 export { startChoosingPageEpic } from './startChoosingPageEpic';
-export { startChoosingPageOnArrowButtonEpic } from './startChoosingPageOnArrowButtonEpic';
+export { startChoosingPortfolioPageOnArrowButtonEpic } from './startChoosingPortfolioPageOnArrowButtonEpic';
 export { startInitPortfolioSingleEpic } from './startInitPortfolioSingleEpic';
+export { startChoosingPortfolioSinglePageOnArrowButtonEpic } from './startChoosingPortfolioSinglePageOnArrowButtonEpic';
+
 
 export { submitMessageEpic } from './submitMessageEpic';

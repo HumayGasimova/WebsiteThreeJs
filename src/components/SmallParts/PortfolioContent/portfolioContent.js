@@ -49,7 +49,7 @@ import Pic3 from '../../../images/flowers-table-pink-roses-decorations.jpg';
 import Pic4 from '../../../images/workspace-workplace-computer-macbook.jpg';
 import Pic5 from '../../../images/volleyball-2639700_1280.jpg';
 import Pic6 from '../../../images/research-3691930_960_720.jpg';
-import Pic7 from '../../../images/opened-book-on-brown-wooden-surface.jpg';
+import Pic7 from '../../../images/book-page-on-black-table.jpg';
 import Pic8 from '../../../images/mathematics-formula-smartphone-mobile-phone.jpg';
 import Pic9 from '../../../images/headphones-2591890_960_720.jpg';
 import Pic10 from '../../../images/grey-sport-shoes-sneakers-thumbnail.jpg';

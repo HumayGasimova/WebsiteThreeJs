@@ -99,9 +99,10 @@ export function initPagination(array) {
     };
 };
 
-export function startChoosingPage(id) {
+export function startChoosingPage(page, id) {
     return { 
         type: actionTypes.START_CHOOSING_PAGE,
+        page: page,
         id: id
     };
 };
@@ -120,9 +121,16 @@ export function loadPortfolioAccordingToPage(array) {
     };
 };
 
-export function startChoosingPageOnArrowButton(direction) {
+export function startChoosingPortfolioPageOnArrowButton(direction) {
     return { 
-        type: actionTypes.START_CHOOSING_PAGE_ON_ARROW_BUTTON,
+        type: actionTypes.START_CHOOSING_PORTFOLIO_PAGE_ON_ARROW_BUTTON,
+        direction: direction
+    };
+};
+
+export function startChoosingPortfolioSinglePageOnArrowButton(direction) {
+    return { 
+        type: actionTypes.START_CHOOSING_PORTFOLIO_SINGLE_PAGE_ON_ARROW_BUTTON,
         direction: direction
     };
 };

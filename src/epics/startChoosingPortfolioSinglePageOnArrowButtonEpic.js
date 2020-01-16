@@ -36,9 +36,9 @@ import * as Utility from '../utility';
 * Epic
 */
 
-export const startChoosingPageOnArrowButtonEpic = (action$, state$) => 
+export const startChoosingPortfolioSinglePageOnArrowButtonEpic = (action$, state$) => 
     action$.pipe(
-        ofType(actionTypes.START_CHOOSING_PAGE_ON_ARROW_BUTTON),
+        ofType(actionTypes.START_CHOOSING_PORTFOLIO_SINGLE_PAGE_ON_ARROW_BUTTON),
         mergeMap((action) => {
             let paging = [...state$.value.home.paging];
             let nextPageId;
@@ -61,14 +61,11 @@ export const startChoosingPageOnArrowButtonEpic = (action$, state$) =>
             paging = paging.map((el, i) => {
                 return {...el, chosen: false};
             });
-
             paging.splice(nextPageIndex, 1, nextPage);
-            let updatedPortfolio = [...portfolioArray];
-            updatedPortfolio = updatedPortfolio.slice((nextPageId * 3) - 3, nextPageId * 3);
 
             return of(
                 Actions.updatePaging(paging),
-                Actions.updatePortfolio(updatedPortfolio),
+                Actions.startInitPortfolioSingle(nextPageId),
                 Actions.disablePaginationArrowButton("arrowLeft"),
                 Actions.disablePaginationArrowButton("arrowRight")
             )   
@@ -76,4 +73,4 @@ export const startChoosingPageOnArrowButtonEpic = (action$, state$) =>
                 
     )
 
-export default startChoosingPageOnArrowButtonEpic;
+export default startChoosingPortfolioSinglePageOnArrowButtonEpic;

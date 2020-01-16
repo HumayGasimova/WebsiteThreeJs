@@ -4,7 +4,8 @@
 
 import { 
     of,
-    interval
+    interval,
+    empty
 } from 'rxjs';
 
 import { 
@@ -40,15 +41,28 @@ export const startChoosingPageEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_CHOOSING_PAGE),
         mergeMap((action) => {
-            let updatedPortfolio = [...portfolioArray];
-            updatedPortfolio = updatedPortfolio.slice((action.id * 3) - 3, action.id * 3);
-            return of(
-                Actions.choosePage(action.id),
-                Actions.loadPortfolioAccordingToPage(updatedPortfolio),
-                Actions.disablePaginationArrowButton("arrowLeft"),
-                Actions.disablePaginationArrowButton("arrowRight")
-            )   
-        }),
+            let updatedArray;
+            
+            switch(action.page) {
+                case "portfolio":
+                    updatedArray = [...portfolioArray];
+                    updatedArray = updatedArray.slice((action.id * 3) - 3, action.id * 3);
+                    return of(
+                        Actions.choosePage(action.id),
+                        Actions.loadPortfolioAccordingToPage(updatedArray),
+                        Actions.disablePaginationArrowButton("arrowLeft"),
+                        Actions.disablePaginationArrowButton("arrowRight")
+                    ) 
+                case "portfolioSingle":
+                    return of(
+                        Actions.choosePage(action.id),
+                        Actions.startInitPortfolioSingle(action.id),
+                        Actions.disablePaginationArrowButton("arrowLeft"),
+                        Actions.disablePaginationArrowButton("arrowRight")
+                    ) 
+            }
+            return empty();
+        })
                 
     )
 
