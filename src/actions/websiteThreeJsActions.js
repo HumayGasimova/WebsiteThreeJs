@@ -170,12 +170,12 @@ export function loadSinglePortfolio(obj) {
     };
 };
 
-export function startShowingCommentInputArea(inputState, thread, userId) {
+export function startShowingCommentInputArea(threadId, userId, thread) {
     return { 
         type: actionTypes.START_SHOWING_COMMENT_INPUT_AREA,
-        inputState: inputState,
-        thread: thread,
-        userId: userId
+        threadId: threadId,
+        userId: userId,
+        thread: thread
     };
 };
 

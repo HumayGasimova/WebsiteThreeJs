@@ -64,9 +64,9 @@ export const PortfolioComments = (props) => {
     * Methods
     */
 
-    const replay = (inputState, thread, userId, array) => {
+    const replay = (threadId, userId, thread) => {
     //    props.startAddingReply(inputState, thread, userId, array);
-        props.startShowingCommentInputArea(inputState, thread, userId)
+        props.startShowingCommentInputArea(threadId, userId, thread);
     }
 
     const renderReplies = (replyObj) => {
@@ -81,7 +81,7 @@ export const PortfolioComments = (props) => {
                                 date={el.date}
                                 comment={el.comment}
                                 inputIsShown={el.inputIsShown}
-                                onClick={el.reply ? () => replay(el.inputIsShown, replyObj.thread, el.id, el.reply.arrayOfReplies) : () => replay(el.inputIsShown, replyObj.thread, el.id, [])}
+                                onClick={() => replay(replyObj.threadId, el.id, "secondThread")}
                             />
                             {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
                         </div>
@@ -103,7 +103,7 @@ export const PortfolioComments = (props) => {
                             date={el.date}
                             comment={el.comment}
                             inputIsShown={el.inputIsShown}
-                            onClick={() => replay(el.inputIsShown, 0, el.id, el.reply.arrayOfReplies)}
+                            onClick={() => replay(0, el.id, "mainThread")}
                         />
                         {/* {console.log(el.reply.length)} */}
                         {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}

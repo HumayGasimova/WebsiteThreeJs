@@ -38,7 +38,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -48,7 +48,7 @@ export const portfolioArray = [
                                 comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                                 inputIsShown: false,
                                 reply: {
-                                    thread: 2,
+                                    threadId: 4,
                                     arrayOfReplies: [
                                         {
                                             id: 1,
@@ -77,7 +77,7 @@ export const portfolioArray = [
                                 comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                                 inputIsShown: false,
                                 reply: {
-                                    thread: 2,
+                                    threadId: 5,
                                     arrayOfReplies: [
                                         {
                                             id: 1,
@@ -101,7 +101,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -122,7 +122,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -175,7 +175,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -196,7 +196,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -217,7 +217,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -268,7 +268,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -289,7 +289,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -310,7 +310,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -375,7 +375,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -396,7 +396,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -416,7 +416,7 @@ export const portfolioArray = [
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -471,7 +471,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -492,7 +492,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -513,7 +513,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -568,7 +568,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -589,7 +589,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -610,7 +610,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -665,7 +665,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -686,7 +686,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -707,7 +707,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -762,7 +762,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -783,7 +783,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -804,7 +804,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -859,7 +859,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -880,7 +880,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -901,7 +901,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -956,7 +956,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -977,7 +977,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -998,7 +998,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -1053,7 +1053,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -1074,7 +1074,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -1095,7 +1095,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -1147,7 +1147,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 1,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -1168,7 +1168,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 2,
                         arrayOfReplies: [
                             {
                                 id: 1,
@@ -1189,7 +1189,7 @@ export const portfolioArray = [
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     inputIsShown: false,
                     reply: {
-                        thread: 1,
+                        threadId: 3,
                         arrayOfReplies: [
                             {
                                 id: 1,

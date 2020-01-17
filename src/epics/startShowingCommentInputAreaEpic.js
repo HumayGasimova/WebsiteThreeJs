@@ -34,14 +34,21 @@ export const startShowingCommentInputAreaEpic = (action$, state$) =>
             let singlePortfolio = {...state$.value.home.singlePortfolio};
             let updatedObj;
             let updatedObjIndex;
-
+            
             switch(action.thread){
-                case 0:
+                case "mainThread":
                     updatedObj = {...singlePortfolio.comments.array.find(x => x.id === action.userId), inputIsShown: true};
                     updatedObjIndex = singlePortfolio.comments.array.findIndex(x => x.id === action.userId);
                     singlePortfolio.comments.array.splice(updatedObjIndex, 1, updatedObj);
                     break;
-                case 1: ''
+                case "secondThread":
+                    singlePortfolio.comments.array.map(x => {
+                        if(x.reply.threadId === action.threadId){
+                            updatedObj = {...x.reply.arrayOfReplies.find(x => x.id === action.userId), inputIsShown: true};
+                            updatedObjIndex = x.reply.arrayOfReplies.findIndex(x => x.id === action.userId)
+                            x.reply.arrayOfReplies.splice(updatedObjIndex, 1, updatedObj);
+                        }
+                    })
                     break;
                 case 2: 
                     break;
