@@ -69,7 +69,7 @@ export const PortfolioComments = (props) => {
         props.startShowingCommentInputArea(threadId, userId, thread);
     }
 
-    const renderReplies = (replyObj) => {
+    const renderReplies = (replyObj, threadNumber) => {
         // console.log(replyObj)
             return(
                 <div className="portfolio-comments-reply">{replyObj.arrayOfReplies.map((el, i) => {
@@ -81,9 +81,9 @@ export const PortfolioComments = (props) => {
                                 date={el.date}
                                 comment={el.comment}
                                 inputIsShown={el.inputIsShown}
-                                onClick={() => replay(replyObj.threadId, el.id, "secondThread")}
+                                onClick={() => replay(replyObj.threadId, el.id, `threadN${threadNumber}`)}
                             />
-                            {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
+                            {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply, threadNumber + 1) : null}
                         </div>
                     )
                 })}</div>
@@ -94,7 +94,6 @@ export const PortfolioComments = (props) => {
     const renderComments = () => {
         return(
             <div className="portfolio-comments-all">{props.singlePortfolio.comments.array.map((el, i) => {
-                console.log(el.inputIsShown)
                 return(
                     <div  key={i} className="portfolio-comment">
                         <Comment 
@@ -106,7 +105,7 @@ export const PortfolioComments = (props) => {
                             onClick={() => replay(0, el.id, "mainThread")}
                         />
                         {/* {console.log(el.reply.length)} */}
-                        {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
+                        {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply, 1) : null}
                     </div>
                 )
             })}</div>

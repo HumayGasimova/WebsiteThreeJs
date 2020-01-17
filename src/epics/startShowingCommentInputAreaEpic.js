@@ -41,7 +41,7 @@ export const startShowingCommentInputAreaEpic = (action$, state$) =>
                     updatedObjIndex = singlePortfolio.comments.array.findIndex(x => x.id === action.userId);
                     singlePortfolio.comments.array.splice(updatedObjIndex, 1, updatedObj);
                     break;
-                case "secondThread":
+                case "threadN1":
                     singlePortfolio.comments.array.map(x => {
                         if(x.reply.threadId === action.threadId){
                             updatedObj = {...x.reply.arrayOfReplies.find(x => x.id === action.userId), inputIsShown: true};
@@ -50,7 +50,8 @@ export const startShowingCommentInputAreaEpic = (action$, state$) =>
                         }
                     })
                     break;
-                case 2: 
+                case "threadN2": 
+                    console.log("KK")
                     break;
             }
             // console.log(action.inputIsShown, action.thread, action.userId)
