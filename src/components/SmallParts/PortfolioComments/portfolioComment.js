@@ -59,21 +59,20 @@ export const PortfolioComments = (props) => {
     * Methods
     */
 
-    const renderReplies = (array) => {
-        // console.log(array)
+    const renderReplies = (replyObj) => {
+        // console.log(replyObj)
             return(
-                <div className="portfolio-comments-reply">{array.map((el, i) => {
+                <div className="portfolio-comments-reply">{replyObj.arrayOfReplies.map((el, i) => {
                     return(
                         <div  key={i}>
-                            <Comment 
-                              
+                            <Comment
                                 image={el.image}
                                 fullName={el.fullName}
                                 date={el.date}
                                 comment={el.comment}
-                                onClick={() => replay(el.replay)}
+                                onClick={() => replay(el.reply)}
                             />
-                            {el.reply && el.reply.length !== 0 ? renderReplies(el.reply) : null}
+                            {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
                         </div>
                     )
                 })}</div>
@@ -94,7 +93,7 @@ export const PortfolioComments = (props) => {
                             // onClick={() => replay(el.replay)}
                         />
                         {/* {console.log(el.reply.length)} */}
-                        {el.reply.length !== 0 ? renderReplies(el.reply) : null}
+                        {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
                     </div>
                 )
             })}</div>
