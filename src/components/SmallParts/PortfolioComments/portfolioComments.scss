@@ -1,5 +1,13 @@
 .portfolio-comments {
     .portfolio-comments-total-number-of-comments {
-
+        font-family: 'Abhaya Libre', serif;
+        font-size: 37px;
+        font-weight: bold;
+        margin-left: 30px;
+    }
+    .portfolio-comment {
+        .portfolio-comments-reply {
+            margin-left: 70px;
+        }
     }
 }

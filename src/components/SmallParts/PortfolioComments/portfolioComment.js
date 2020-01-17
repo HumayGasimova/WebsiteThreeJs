@@ -40,6 +40,7 @@ import {
 
 import Comment from '../../SmallParts/Comment/comment';
 import Spinner from '../../../library/Spinner/spinner';
+import { ReplaySubject } from 'rxjs';
 
 /**
 * Selectors
@@ -58,17 +59,43 @@ export const PortfolioComments = (props) => {
     * Methods
     */
 
+    const renderReplies = (array) => {
+        // console.log(array)
+            return(
+                <div className="portfolio-comments-reply">{array.map((el, i) => {
+                    return(
+                        <div  key={i}>
+                            <Comment 
+                              
+                                image={el.image}
+                                fullName={el.fullName}
+                                date={el.date}
+                                comment={el.comment}
+                                onClick={() => replay(el.replay)}
+                            />
+                            {el.reply && el.reply.length !== 0 ? renderReplies(el.reply) : null}
+                        </div>
+                    )
+                })}</div>
+            )
+       
+    }
+
     const renderComments = () => {
         return(
             <div className="portfolio-comments-all">{props.comments.array.map((el, i) => {
                 return(
-                    <Comment 
-                        key={i}
-                        image={el.image}
-                        fullName={el.fullName}
-                        date={el.date}
-                        comment={el.comment}
-                    />
+                    <div  key={i} className="portfolio-comment">
+                        <Comment 
+                            image={el.image}
+                            fullName={el.fullName}
+                            date={el.date}
+                            comment={el.comment}
+                            // onClick={() => replay(el.replay)}
+                        />
+                        {/* {console.log(el.reply.length)} */}
+                        {el.reply.length !== 0 ? renderReplies(el.reply) : null}
+                    </div>
                 )
             })}</div>
         )

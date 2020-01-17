@@ -32,31 +32,47 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
+                            reply: [
+                                {
+                                    id: 1,
+                                    image: "Name1",
+                                    fullName: "Name3",
+                                    date: "January 16, 2020 AT 11:20AM",
+                                    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
+                                },
+                                {
+                                    id: 2,
+                                    image: "Name1",
+                                    fullName: "Name3",
+                                    date: "January 16, 2020 AT 11:20AM",
+                                    comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -64,15 +80,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -112,15 +128,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -128,15 +144,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -144,15 +160,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -190,15 +206,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -206,15 +222,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -222,15 +238,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -282,15 +298,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -298,15 +314,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -314,15 +330,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -364,15 +380,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -380,15 +396,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -396,15 +412,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -446,15 +462,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -462,15 +478,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -478,15 +494,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -528,15 +544,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -544,15 +560,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -560,15 +576,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -610,15 +626,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -626,15 +642,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -642,15 +658,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -692,15 +708,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -708,15 +724,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -724,15 +740,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -774,15 +790,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -790,15 +806,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -806,15 +822,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -856,15 +872,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -872,15 +888,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -888,15 +904,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -935,15 +951,15 @@ export const portfolioArray = [
             array: [
                 {
                     id: 1,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -951,15 +967,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 2,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }
@@ -967,15 +983,15 @@ export const portfolioArray = [
                 },
                 {
                     id: 3,
-                    image: "Image1",
+                    image: "Name1",
                     fullName: "Name1",
                     date: "January 16, 2020 AT 11:20AM",
                     comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                     reply: [
                         {
                             id: 1,
-                            image: "Image1",
-                            fullName: "Name1",
+                            image: "Name1",
+                            fullName: "Name2",
                             date: "January 16, 2020 AT 11:20AM",
                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
                         }

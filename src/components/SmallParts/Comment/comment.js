@@ -61,6 +61,12 @@ import {
 import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Images
+*/
+
+import Img1 from '../../../images/Portrait_Placeholder.png';
+
+/**
 * Hooks
 */
 
@@ -82,19 +88,26 @@ export const Comment = (props) => {
     * Markup
     */
 
+    const loadImage = (img) => {
+        switch(img){
+            case 'Name1':
+            return Img1;
+        }
+    }
+
     return(
         <div className="comment">
             <div className="comment-image">
-                {/* <img src={}> */}
+                <img src={loadImage(props.image)}/>
             </div>
             <div className="comment-wrapper">
                 <div className="comment-full-name">{props.fullName}</div>
                 <div className="comment-date">{props.date}</div>
                 <div className="comment-text">{props.comment}</div>
                 <Button 
-                    className="portfolio-description-button-middle"
-                    text={"View Portfolio"}
-                    onClick={() => viewPortfolioButtonOnClick(el.id)}
+                    className="comment-button"
+                    text={"Reply"}
+                    // onClick={() => viewPortfolioButtonOnClick(el.id)}
                 />
             </div>
         </div>
