@@ -88,7 +88,8 @@ export const PortfolioSinglePage = (props) => {
                         </div>
                         {/* <div className="portfolio-single-page-cooments"> */}
                         <PortfolioComments
-                            comments={props.singlePortfolio !== {} ? props.singlePortfolio.comments : null}
+                            // comments={props.singlePortfolio !== {} ? props.singlePortfolio.comments : null}
+                            singlePortfolio={props.singlePortfolio !== {} ? props.singlePortfolio : null}
                         />
                         {/* </div> */}
                     </div>
@@ -99,11 +100,10 @@ export const PortfolioSinglePage = (props) => {
                 {/* <div className="portfolio-single-page-pagination"> */}
                     <Pagination 
                         page="portfolioSingle"
-                        
                     /> 
                 {/* </div> */}
             </div>
-            {/* <div>{props.singlePortfolio.id}</div> */}
+            {/* <div>{console.log(props.singlePortfolio.comments)}</div> */}
            <Footer/>
         </div>
     );

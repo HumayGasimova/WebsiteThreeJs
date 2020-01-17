@@ -170,3 +170,21 @@ export function loadSinglePortfolio(obj) {
     };
 };
 
+export function startShowingCommentInputArea(inputState, thread, userId) {
+    return { 
+        type: actionTypes.START_SHOWING_COMMENT_INPUT_AREA,
+        inputState: inputState,
+        thread: thread,
+        userId: userId
+    };
+};
+
+export function startAddingReply(val, thread, userId, array) {
+    return { 
+        type: actionTypes.START_ADDING_REPLY,
+        inputIsShown: val,
+        thread: thread,
+        userId: userId,
+        array: array
+    };
+};

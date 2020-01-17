@@ -95,6 +95,19 @@ export const Comment = (props) => {
         }
     }
 
+    const renderInput = () => {
+        return(
+            <div className="comment-wrapper-input">
+                <input placeholder="add coment"/>
+                <Button 
+                    className="comment-button-input"
+                    text={"OK"}
+                    // onClick={props.onClick}
+                />
+            </div>
+        )
+    }
+
     return(
         <div className="comment">
             <div className="comment-image">
@@ -104,11 +117,12 @@ export const Comment = (props) => {
                 <div className="comment-full-name">{props.fullName}</div>
                 <div className="comment-date">{props.date}</div>
                 <div className="comment-text">{props.comment}</div>
-                <Button 
+                {props.inputIsShown ? renderInput() : <Button 
                     className="comment-button"
                     text={"Reply"}
                     onClick={props.onClick}
-                />
+                />}
+                {/* {console.log(props.inputIsShown)} */}
             </div>
         </div>
     );

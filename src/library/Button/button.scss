@@ -109,6 +109,22 @@
         box-shadow: -5px 5px 5px 0 rgb(101, 64, 136);
     }
 }
+
+.comment-button-input {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 100px;
+    height: 27px;
+    color: rgb(39, 49, 85);
+    // border: 1px solid rgb(39, 49, 85);
+    border: none;
+    background: rgb(231, 223, 240);
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(175, 192, 255);
+        color: rgb(13, 48, 42); 
+    }
+}
 @media only screen and (max-width: 441px){
     .portfolio-description-button {
         width: 110px;

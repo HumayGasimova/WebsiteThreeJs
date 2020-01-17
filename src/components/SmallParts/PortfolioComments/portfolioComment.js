@@ -40,13 +40,18 @@ import {
 
 import Comment from '../../SmallParts/Comment/comment';
 import Spinner from '../../../library/Spinner/spinner';
-import { ReplaySubject } from 'rxjs';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
 
 /**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 
 /**
@@ -59,9 +64,9 @@ export const PortfolioComments = (props) => {
     * Methods
     */
 
-    const replay = (thread, array) => {
-            console.log(thread, array)
-       
+    const replay = (inputState, thread, userId, array) => {
+    //    props.startAddingReply(inputState, thread, userId, array);
+        props.startShowingCommentInputArea(inputState, thread, userId)
     }
 
     const renderReplies = (replyObj) => {
@@ -75,7 +80,8 @@ export const PortfolioComments = (props) => {
                                 fullName={el.fullName}
                                 date={el.date}
                                 comment={el.comment}
-                                onClick={ el.reply ? () => replay(replyObj.thread, el.reply.arrayOfReplies) : () => replay(replyObj.thread, [])}
+                                inputIsShown={el.inputIsShown}
+                                onClick={el.reply ? () => replay(el.inputIsShown, replyObj.thread, el.id, el.reply.arrayOfReplies) : () => replay(el.inputIsShown, replyObj.thread, el.id, [])}
                             />
                             {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
                         </div>
@@ -87,7 +93,8 @@ export const PortfolioComments = (props) => {
 
     const renderComments = () => {
         return(
-            <div className="portfolio-comments-all">{props.comments.array.map((el, i) => {
+            <div className="portfolio-comments-all">{props.singlePortfolio.comments.array.map((el, i) => {
+                console.log(el.inputIsShown)
                 return(
                     <div  key={i} className="portfolio-comment">
                         <Comment 
@@ -95,7 +102,8 @@ export const PortfolioComments = (props) => {
                             fullName={el.fullName}
                             date={el.date}
                             comment={el.comment}
-                            onClick={() => replay(0, el.reply.arrayOfReplies)}
+                            inputIsShown={el.inputIsShown}
+                            onClick={() => replay(el.inputIsShown, 0, el.id, el.reply.arrayOfReplies)}
                         />
                         {/* {console.log(el.reply.length)} */}
                         {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
@@ -110,10 +118,11 @@ export const PortfolioComments = (props) => {
     */
 
     return(
-       <>{props.comments ? 
+       <>{props.singlePortfolio.comments ? 
             <div className="portfolio-comments">
-                <div className="portfolio-comments-total-number-of-comments">{props.comments.sum} Comments</div>
+                <div className="portfolio-comments-total-number-of-comments">{props.singlePortfolio.comments.sum} Comments</div>
                 {renderComments()}
+                {/* <div>{console.log(props.comments.array)}</div> */}
             </div> : 
             <div className="portfolio-comments-spinner"><Spinner/></div>
        }</> 
@@ -123,12 +132,13 @@ export const PortfolioComments = (props) => {
 export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            // comments: Selectors.getSinglePortfolioState(state).comments,
         };
     },
     (dispatch) => {
         return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
+            startAddingReply: bindActionCreators(Actions.startAddingReply, dispatch),
+            startShowingCommentInputArea: bindActionCreators(Actions.startShowingCommentInputArea, dispatch),
         };
     }
 )(PortfolioComments);

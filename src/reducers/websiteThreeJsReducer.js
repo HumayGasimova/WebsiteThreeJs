@@ -244,7 +244,6 @@ const loadSinglePortfolio = (state, action) => {
     };
 }
 
-
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -310,6 +309,10 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return state; 
         case actionTypes.LOAD_SINGLE_PORTFOLIO:
             return loadSinglePortfolio(state, action); 
+        case actionTypes.START_SHOWING_COMMENT_INPUT_AREA:
+            return state;    
+        case actionTypes.START_ADDING_REPLY:
+            return state;
             
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
