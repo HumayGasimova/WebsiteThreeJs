@@ -107,7 +107,7 @@ export const Comment = (props) => {
                 <Button 
                     className="comment-button"
                     text={"Reply"}
-                    // onClick={() => viewPortfolioButtonOnClick(el.id)}
+                    onClick={props.onClick}
                 />
             </div>
         </div>

@@ -59,6 +59,11 @@ export const PortfolioComments = (props) => {
     * Methods
     */
 
+    const replay = (thread, array) => {
+            console.log(thread, array)
+       
+    }
+
     const renderReplies = (replyObj) => {
         // console.log(replyObj)
             return(
@@ -70,7 +75,7 @@ export const PortfolioComments = (props) => {
                                 fullName={el.fullName}
                                 date={el.date}
                                 comment={el.comment}
-                                onClick={() => replay(el.reply)}
+                                onClick={ el.reply ? () => replay(replyObj.thread, el.reply.arrayOfReplies) : () => replay(replyObj.thread, [])}
                             />
                             {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
                         </div>
@@ -90,7 +95,7 @@ export const PortfolioComments = (props) => {
                             fullName={el.fullName}
                             date={el.date}
                             comment={el.comment}
-                            // onClick={() => replay(el.replay)}
+                            onClick={() => replay(0, el.reply.arrayOfReplies)}
                         />
                         {/* {console.log(el.reply.length)} */}
                         {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply) : null}
