@@ -130,11 +130,14 @@ export const Comment = (props) => {
                 <div className="comment-full-name">{props.fullName}</div>
                 <div className="comment-date">{props.date}</div>
                 <div className="comment-text">{props.comment}</div>
-                {props.inputIsShown ? renderInput() : <Button 
-                    className="comment-button"
-                    text={"Reply"}
-                    onClick={props.onClick}
-                />}
+                {props.inputIsShown ? 
+                    renderInput() : 
+                    <Button 
+                        className="comment-button"
+                        text={"Reply"}
+                        onClick={props.onClick}
+                        disabled={props.fullName === "Name3"}
+                    />}
             </div>
         </div>
     );
