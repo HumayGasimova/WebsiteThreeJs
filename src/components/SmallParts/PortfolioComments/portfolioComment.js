@@ -63,32 +63,40 @@ export const PortfolioComments = (props) => {
     /**
     * Methods
     */
+    const clearInputValue = (fieldId) => {
+        document.getElementById(fieldId).value = '';
+    }
 
-    const replay = (threadId, userId, thread) => {
+    const showInputField = (threadId, userId, thread) => {
     //    props.startAddingReply(inputState, thread, userId, array);
         props.startShowingCommentInputArea(threadId, userId, thread);
     }
 
+    const reply = (threadId, userId, thread) => (val) => {
+            props.startAddingReply(val, threadId, userId, thread);
+
+            // console.log(val)
+    }
+
     const renderReplies = (replyObj, threadNumber) => {
-        // console.log(replyObj)
             return(
                 <div className="portfolio-comments-reply">{replyObj.arrayOfReplies.map((el, i) => {
                     return(
-                        <div  key={i}>
+                        <div key={i}>
                             <Comment
                                 image={el.image}
                                 fullName={el.fullName}
                                 date={el.date}
                                 comment={el.comment}
                                 inputIsShown={el.inputIsShown}
-                                onClick={() => replay(replyObj.threadId, el.id, `threadN${threadNumber}`)}
+                                onClick={() => showInputField(replyObj.threadId, el.id, `threadN${threadNumber}`)}
+                                addComment={reply(replyObj.threadId, el.id, `threadN${threadNumber}`)}
                             />
                             {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply, threadNumber + 1) : null}
                         </div>
                     )
                 })}</div>
             )
-       
     }
 
     const renderComments = () => {
@@ -102,9 +110,9 @@ export const PortfolioComments = (props) => {
                             date={el.date}
                             comment={el.comment}
                             inputIsShown={el.inputIsShown}
-                            onClick={() => replay(0, el.id, "mainThread")}
+                            onClick={() => showInputField(0, el.id, "mainThread")}
+                            addComment={reply(0, el.id, "mainThread")}
                         />
-                        {/* {console.log(el.reply.length)} */}
                         {el.reply && el.reply.arrayOfReplies.length !== 0 ? renderReplies(el.reply, 1) : null}
                     </div>
                 )

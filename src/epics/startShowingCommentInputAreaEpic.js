@@ -51,7 +51,6 @@ export const startShowingCommentInputAreaEpic = (action$, state$) =>
                     })
                     break;
                 case "threadN2": 
-                    console.log("KK")
                     break;
             }
             // console.log(action.inputIsShown, action.thread, action.userId)

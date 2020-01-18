@@ -179,12 +179,12 @@ export function startShowingCommentInputArea(threadId, userId, thread) {
     };
 };
 
-export function startAddingReply(val, thread, userId, array) {
+export function startAddingReply(val, threadId, userId, thread) {
     return { 
         type: actionTypes.START_ADDING_REPLY,
-        inputIsShown: val,
-        thread: thread,
+        comment: val,
+        threadId: threadId,
         userId: userId,
-        array: array
+        thread : thread
     };
 };

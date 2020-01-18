@@ -80,6 +80,7 @@ import {
 
 export const Comment = (props) => {
 
+    const [value, setValue] = useState('')
     /**
     * Methods
     */
@@ -95,14 +96,26 @@ export const Comment = (props) => {
         }
     }
 
+    const onChangeHandler = (e) => {
+        setValue(e.target.value)
+    }
+
+    const clearInputValue = (fieldId) => {
+        document.getElementById(fieldId).value = '';
+    }
+
     const renderInput = () => {
+        if(!props.inputIsShown) {
+            setValue('')
+            clearInputValue("comment")
+        }
         return(
             <div className="comment-wrapper-input">
-                <input placeholder="add coment"/>
+                <input placeholder="add coment"  id="comment" onChange={() => onChangeHandler(event)}/>
                 <Button 
                     className="comment-button-input"
                     text={"OK"}
-                    // onClick={props.onClick}
+                    onClick={() => props.addComment(value)}
                 />
             </div>
         )
@@ -122,7 +135,6 @@ export const Comment = (props) => {
                     text={"Reply"}
                     onClick={props.onClick}
                 />}
-                {/* {console.log(props.inputIsShown)} */}
             </div>
         </div>
     );

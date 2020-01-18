@@ -56,7 +56,7 @@ export const portfolioArray = [
                                             fullName: "Name3",
                                             date: "January 16, 2020 AT 11:20AM",
                                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
-                                            inputIsShown: false
+                                            inputIsShown: false,
                                         },
                                         {
                                             id: 2,
@@ -64,7 +64,7 @@ export const portfolioArray = [
                                             fullName: "Name3",
                                             date: "January 16, 2020 AT 11:20AM",
                                             comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?",
-                                            inputIsShown: false
+                                            inputIsShown: false,
                                         }
                                     ]
                                 }
