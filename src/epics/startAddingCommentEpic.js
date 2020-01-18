@@ -24,6 +24,12 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../utility';
+
+/**
 * Epic
 */
 
@@ -31,6 +37,8 @@ export const startAddingCommentEpic = (action$, state$) =>
     action$.pipe(
         ofType(actionTypes.START_ADDING_REPLY),
         mergeMap((action) => {
+            let date = Utility.getCurrentDateAndTime();
+            console.log(date)
             let singlePortfolio = {...state$.value.home.singlePortfolio};
             let comment;
             let updatedObj;
@@ -45,7 +53,7 @@ export const startAddingCommentEpic = (action$, state$) =>
                         id: id + 1,
                         image: "Name1",
                         fullName: "Name2",
-                        date: "January 16, 2020 AT 11:20AM",
+                        date: date,
                         comment: action.comment,
                         inputIsShown: false,
                     }
@@ -63,7 +71,7 @@ export const startAddingCommentEpic = (action$, state$) =>
                                     id: id + 1,
                                     image: "Name1",
                                     fullName: "Name3",
-                                    date: "January 16, 2020 AT 11:20AM",
+                                    date: date,
                                     comment: action.comment,
                                     inputIsShown: false,
                                 }
@@ -79,7 +87,7 @@ export const startAddingCommentEpic = (action$, state$) =>
                                             id: 1,
                                             image: "Name1",
                                             fullName: "Name3",
-                                            date: "January 16, 2020 AT 11:20AM",
+                                            date: date,
                                             comment: action.comment,
                                             inputIsShown: false,
                                         }
