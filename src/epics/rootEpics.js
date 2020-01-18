@@ -7,7 +7,7 @@ export const rootEpic = combineEpics(
     Epic.startChoosingPortfolioPageOnArrowButtonEpic,
     Epic.startInitPortfolioSingleEpic,
     Epic.startChoosingPortfolioSinglePageOnArrowButtonEpic,
-    Epic.startAddingReplyEpic,
+    Epic.startAddingCommentEpic,
     Epic.startShowingCommentInputAreaEpic
     // Epic.submitMessageEpic
 );
