@@ -39,6 +39,7 @@ import {
 */
 
 import Comment from '../../SmallParts/Comment/comment';
+import LeaveComment from '../../SmallParts/LeaveComment/leaveComment';
 import Spinner from '../../../library/Spinner/spinner';
 
 /**
@@ -63,19 +64,13 @@ export const PortfolioComments = (props) => {
     /**
     * Methods
     */
-    const clearInputValue = (fieldId) => {
-        document.getElementById(fieldId).value = '';
-    }
 
     const showInputField = (threadId, userId, thread) => {
-    //    props.startAddingReply(inputState, thread, userId, array);
         props.startShowingCommentInputArea(threadId, userId, thread);
     }
 
     const reply = (threadId, userId, thread) => (val) => {
-            props.startAddingReply(val, threadId, userId, thread);
-
-            // console.log(val)
+        props.startAddingReply(val, threadId, userId, thread);
     }
 
     const renderReplies = (replyObj, threadNumber) => {
@@ -129,7 +124,7 @@ export const PortfolioComments = (props) => {
             <div className="portfolio-comments">
                 <div className="portfolio-comments-total-number-of-comments">{props.singlePortfolio.comments.sum} Comments</div>
                 {renderComments()}
-                {/* <div>{console.log(props.comments.array)}</div> */}
+                <LeaveComment/>
             </div> : 
             <div className="portfolio-comments-spinner"><Spinner/></div>
        }</> 

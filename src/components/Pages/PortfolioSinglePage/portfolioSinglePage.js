@@ -86,7 +86,7 @@ export const PortfolioSinglePage = (props) => {
                                 paragraphs={props.singlePortfolio !== {} ? props.singlePortfolio.paragraphs : null}
                             />
                         </div>
-                        {/* <div className="portfolio-single-page-cooments"> */}
+                        {/* <div className="portfolio-single-page-comments"> */}
                         <PortfolioComments
                             // comments={props.singlePortfolio !== {} ? props.singlePortfolio.comments : null}
                             singlePortfolio={props.singlePortfolio !== {} ? props.singlePortfolio : null}

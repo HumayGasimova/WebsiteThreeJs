@@ -1,0 +1,19 @@
+.leave-comment {
+    margin-top: 30px;
+    margin-left: 30px;
+    .leave-comment-text {
+        font-family: 'Abhaya Libre', serif;
+        font-size: 37px;
+        font-weight: bold;
+    }
+    .leave-comment-form {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        width: 77%;
+        height: 40%;
+        margin: 40px 0 40px 0;
+        box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
+        background: rgb(231, 223, 240);
+    }
+}

@@ -106,8 +106,8 @@ export const Comment = (props) => {
 
     const renderInput = () => {
         if(!props.inputIsShown) {
-            setValue('')
-            clearInputValue("comment")
+            setValue('');
+            clearInputValue("comment");
         }
         return(
             <div className="comment-wrapper-input">
