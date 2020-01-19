@@ -65,7 +65,8 @@ export const leaveCommentInputForm = [
             elementType: 'textarea',
             elementConfig: {
                 type: 'text',
-                placeholder: ' Your comment'
+                placeholder: ' Your comment',
+                rows: "5"
             },
             value: '',
             validation: [

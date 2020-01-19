@@ -70,17 +70,20 @@ export const LeaveComment = (props) => {
 
     const renderLeaveCommentInputs = () => {
         return(
-            <>
+            <div className="leave-comment-form-inputs">
                 {props.leaveCommentForm.map((el, i)=>{
                     return(
-                        <Input
-                            key={i}
-                            className="leave-comment-input"
-                            elementType={el.elementType}
-                        />
+                        <div key={i} className="leave-comment-form-input">
+                            <div className="leave-comment-form-input-name">{el.inputFieldName}</div>
+                            <Input
+                                className="leave-comment-input"
+                                elementType={el.elementType}
+                                rows={el.elementConfig.rows}
+                            />
+                        </div>
                     )
                 })}
-            </>
+            </div>
         )
     }
 

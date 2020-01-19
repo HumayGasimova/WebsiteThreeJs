@@ -5,15 +5,30 @@
         font-family: 'Abhaya Libre', serif;
         font-size: 37px;
         font-weight: bold;
+        color: rgb(39, 49, 85);
     }
     .leave-comment-form {
-        // display: flex;
+        display: flex;
+        flex-direction: column;
         // justify-content: center;
         // align-items: center;
         width: 77%;
         height: 40%;
         margin: 40px 0 40px 0;
+        padding: 30px;
         box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
         background: rgb(231, 223, 240);
+        .leave-comment-form-inputs {
+            margin: 0px 0 20px 0;
+            .leave-comment-form-input {
+                margin: 10px 0 10px 0;
+                .leave-comment-form-input-name {
+                    font-family: 'Abhaya Libre', serif;
+                    color: rgb(39, 49, 85);
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
     }
 }

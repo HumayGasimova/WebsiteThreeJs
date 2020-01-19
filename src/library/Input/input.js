@@ -63,6 +63,7 @@ export const Input = (props) => {
                             value={props.value}
                             type={props.type}
                             onChange={props.onChange}
+                            rows={props.rows}
                         />
                         {renderErrorMessage()}
                     </div>
