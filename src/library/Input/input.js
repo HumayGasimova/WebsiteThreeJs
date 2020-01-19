@@ -1,132 +1,40 @@
 /**
- * Libraries
- */
+* Libraries
+*/
 
-import React,{
-    Component
+import React, {
+    useEffect,
+    useState
 } from 'react';
 
 /**
- * Components
- */
-
-/**
- * Styles
- */
+* Styles
+*/
 
 import './input.scss';
 
 /**
- * WelcomePage component definition and export
- */
+* Components
+*/
 
-class Input extends Component {
+/**
+* Input component definition and export
+*/
+
+export const Input = (props) => {
 
     /**
-    * Constructor
+    * Methods
     */
 
-    // constructor (props){
-    //     super(props);
-    //     this.state={
-    //         value: ''
-    //     }
-    // }
-    
-    // handleOnChange = (e) => {
-    //    this.props.getValue(e)
-    // }
-
-    // handleOnClick = () => {
-    //     alert(this.state.value)
-    // }
-
-    // keyPressed = (event) => {
-    //     if(event.key === 'Enter'){
-    //         // this.props.
-    //     }
-    // }
-
-    renderInput = () => {
-        switch (this.props.elementtype){
-            case ('input'):
-                return( 
-                    <div>
-                        <input 
-                            className={
-                                this.props.valid === "false" && 
-                                this.props.shouldvalidate !== "undefined" && 
-                                this.props.touched === "true"  ? "invalid" : this.props.classNameInput
-                            } 
-                            value={this.props.value} 
-                            {...this.props.elementconfig}
-                            onChange={this.props.onChange}
-                        />
-                        {this.renderErrorMessage()}
-                    </div>
-                );
-            case ('textarea'):
-                return(
-                <textarea 
-                    className={
-                        this.props.valid === "false" && 
-                        this.props.shouldvalidate !== "undefined" && 
-                        this.props.touched === "true"  ? "invalid" : this.props.classNameInput
-                    }  
-                    {...this.props}
-                    onChange={this.props.onChange}
-                />
-                );
-            case ('select'):
-                return(
-                <select 
-                    className={
-                        this.props.valid === "false" && 
-                        this.props.shouldvalidate !== "undefined" && 
-                        this.props.touched === "true"  ? "invalid" : this.props.classNameInput
-                    } 
-                    {...this.props}
-                    onChange={this.props.onChange}
-                >
-                   {this.props.elementconfig.options.map(option => (
-                    <option 
-                        key={option.value}
-                        value={option.value}
-                    >
-                        {option.displayValue}
-                    </option>
-                   ))}
-                </select>
-                );
-            default:
-                return(
-                    <input 
-                        className={
-                            this.props.valid === "false" && 
-                            this.props.shouldvalidate !== "undefined" && 
-                            this.props.touched === "true"  ? "invalid" : this.props.classNameInput
-                        }
-                        value={this.props.value} 
-                        {...this.props.elementconfig}
-                        onChange={this.props.onChange}
-                    />
-                   
-                );
-               
-        }
-    }
-
-    renderErrorMessage = () => {
-        let errorMessages = this.props.errormessage;
-    
-        
-        if(this.props.valid === "false" && this.props.touched === "true"){
+    const renderErrorMessage = () => {
+        if(props.valid === "false" && props.touched === "true"){
             return(
-                <div className={this.props.classnameerror}>
-                    {errorMessages.map((msg, i) => {
+                <div className={props.errorClassName}>
+                    {props.erroeMessages.map((el, i) => {
                         return(
                             <div key={i}>
-                                {msg}
+                                {el}
                             </div>
                         )
                     })}
@@ -134,22 +42,45 @@ class Input extends Component {
             )
         }
     }
+
+    const renderInputField = () => {
+        switch(props.elementType){
+            case "input":
+                return(
+                    <div className={props.className}>
+                        <input 
+                            value={props.value}
+                            type={props.type}
+                            onChange={props.onChange}
+                        />
+                        {renderErrorMessage()}
+                    </div>
+                )
+            case "textarea":
+                return(
+                    <div className={props.className}>
+                        <textarea 
+                            value={props.value}
+                            type={props.type}
+                            onChange={props.onChange}
+                        />
+                        {renderErrorMessage()}
+                    </div>
+                )
+        }
+    }
+
     /**
     * Markup
     */
 
-    render(){
-        return(
-            <div 
-                className={this.props.className}
-            >
-                <label>
-                    {this.props.label}
-                </label>
-                {this.renderInput()}
-            </div>
-        );
-    }
+    return(
+        <>
+            {renderInputField()}
+        </>
+        
+    );
 }
 
 export default Input;
+ 

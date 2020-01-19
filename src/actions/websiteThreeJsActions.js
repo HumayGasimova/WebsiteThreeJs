@@ -188,3 +188,12 @@ export function startAddingReply(val, threadId, userId, thread) {
         thread : thread
     };
 };
+
+export function initLeaveCommentForm(array) {
+    return { 
+        type: actionTypes.INIT_LEAVE_COMMENT_FORM,
+        array: array
+    };
+};
+
+

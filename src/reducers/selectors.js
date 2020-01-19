@@ -86,3 +86,11 @@ export const getSinglePortfolioState = createSelector(
     (x) => x
 );
 
+const getLeaveCommentForm = (state) => state.home.leaveCommentForm;
+
+export const getLeaveCommentFormState = createSelector(
+    [getLeaveCommentForm],
+    (x) => x
+);
+
+

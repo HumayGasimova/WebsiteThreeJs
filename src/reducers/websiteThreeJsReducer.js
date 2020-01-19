@@ -24,7 +24,8 @@ export const initialState = {
     paging: [],
     padinationArrowLeft: true,
     padinationArrowRight: false,
-    singlePortfolio: {}
+    singlePortfolio: {},
+    leaveCommentForm: []
 }
 
 const toggleMenuButton = (state) => {
@@ -244,6 +245,13 @@ const loadSinglePortfolio = (state, action) => {
     };
 }
 
+const initLeaveCommentForm = (state, action) => {
+    return {
+        ...state,
+        leaveCommentForm: action.array
+    };
+}
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -313,6 +321,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return state;    
         case actionTypes.START_ADDING_REPLY:
             return state;
+        case actionTypes.INIT_LEAVE_COMMENT_FORM:
+            return initLeaveCommentForm(state, action); 
             
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     

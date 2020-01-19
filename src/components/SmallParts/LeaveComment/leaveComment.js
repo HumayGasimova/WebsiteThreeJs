@@ -31,7 +31,7 @@ import './leaveComment.scss';
 */
 
 import Button from '../../../library/Button/button';
-import Spinner from '../../../library/Spinner/spinner';
+import Input from '../../../library/Input/input';
 
 /**
 * Actions
@@ -45,6 +45,13 @@ import * as Actions from '../../../actions';
 
 import * as Selectors from '../../../reducers/selectors';
 
+/**
+* Constants
+*/
+
+import {
+    leaveCommentInputForm
+} from '../../../constants/leaveCommentInputsForm';
 
 /**
 * LeaveComment component definition and export
@@ -56,7 +63,26 @@ export const LeaveComment = (props) => {
     * Methods
     */
 
-   
+    
+    useEffect(() => {
+        props.initLeaveCommentForm(leaveCommentInputForm);
+    }, [])
+
+    const renderLeaveCommentInputs = () => {
+        return(
+            <>
+                {props.leaveCommentForm.map((el, i)=>{
+                    return(
+                        <Input
+                            key={i}
+                            className="leave-comment-input"
+                            elementType={el.elementType}
+                        />
+                    )
+                })}
+            </>
+        )
+    }
 
     /**
     * Markup
@@ -66,6 +92,7 @@ export const LeaveComment = (props) => {
         <div className="leave-comment">
             <div className="leave-comment-text">Leave a comment</div>
             <div className="leave-comment-form">
+                {renderLeaveCommentInputs()}
                 <Button 
                     className="post-comment-button"
                     text={"Post Comment"}
@@ -80,12 +107,12 @@ export const LeaveComment = (props) => {
 export default connect(
     (state) => {
         return {
-            // comments: Selectors.getSinglePortfolioState(state).comments,
+            leaveCommentForm: Selectors.getLeaveCommentFormState(state),
         };
     },
     (dispatch) => {
         return {
-            // startAddingReply: bindActionCreators(Actions.startAddingReply, dispatch),
+            initLeaveCommentForm: bindActionCreators(Actions.initLeaveCommentForm, dispatch),
         };
     }
 )(LeaveComment);
