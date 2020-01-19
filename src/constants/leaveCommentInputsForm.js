@@ -1,5 +1,6 @@
 export const leaveCommentInputForm = [
         {
+            id: 1,
             inputFieldName: "First Name",
             elementType: 'input',
             elementConfig: {
@@ -10,15 +11,20 @@ export const leaveCommentInputForm = [
             validation: [
                 {
                     required: true,
-                    valid: "false"
-                }
+                    valid: false
+                },
+                {
+                    minLength: 8,
+                    valid: false
+                }  
             ],
-            validField: "false",
-            touched: "false",
+            validField: false,
+            touched: false,
             errorMessage: [],
             type: "text"
         },
         {
+            id: 2,
             inputFieldName: "Last Name",
             elementType: 'input',
             elementConfig: {
@@ -29,15 +35,16 @@ export const leaveCommentInputForm = [
             validation: [
                 {
                     required: true,
-                    valid: "false"
+                    valid: false
                 }
             ],
-            validField: "false",
-            touched: "false",
+            validField: false,
+            touched: false,
             errorMessage: [],
             type: "text"
         },
-        {
+        { 
+            id: 3,
             inputFieldName: "Email",
             elementType: 'input',
             elementConfig: {
@@ -48,19 +55,20 @@ export const leaveCommentInputForm = [
             validation: [
                 {
                     required: true,
-                    valid: "false"
+                    valid: false
                 },
                 {
                     isEmail: true,
-                    valid: "false"
+                    valid: false
                 }
             ],
-            validField: "false",
-            touched: "false",
+            validField: false,
+            touched: false,
             errorMessage: [],
             type: "text"
         },
         {
+            id: 4,
             inputFieldName: "Comment",
             elementType: 'textarea',
             elementConfig: {
@@ -72,11 +80,11 @@ export const leaveCommentInputForm = [
             validation: [
                 {
                     required: true,
-                    valid: "false"
+                    valid: false
                 }
             ],
-            validField: "false",
-            touched: "false",
+            validField: false,
+            touched: false,
             errorMessage: [],
             type: "text"
         }

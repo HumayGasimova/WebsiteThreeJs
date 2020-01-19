@@ -1,15 +1,24 @@
 .leave-comment-input {
+    .error {
+        width: 100%;
+        height: 10px;
+        border: 2px solid red;
+        
+
+    }
     >input {
         width: 100%;
         height: 30px;
         font-family: 'Abhaya Libre', serif;
         font-size: 20px;
         padding-left: 5px;
+        resize: none;
     }
     >textarea {
         width: 100%;
         font-family: 'Abhaya Libre', serif;
         font-size: 20px;
         padding-left: 5px;
+        resize: vertical;
     }
 }

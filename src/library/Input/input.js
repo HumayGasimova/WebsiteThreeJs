@@ -28,9 +28,9 @@ export const Input = (props) => {
     */
 
     const renderErrorMessage = () => {
-        if(props.valid === "false" && props.touched === "true"){
+        if(props.validField === false && props.touched === true){
             return(
-                <div className={props.errorClassName}>
+                <div className="error">
                     {props.erroeMessages.map((el, i) => {
                         return(
                             <div key={i}>

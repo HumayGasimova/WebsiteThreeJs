@@ -63,10 +63,13 @@ export const LeaveComment = (props) => {
     * Methods
     */
 
-    
     useEffect(() => {
         props.initLeaveCommentForm(leaveCommentInputForm);
     }, [])
+
+    const inputChangeHandler = (e, inputFieldId) => {
+        console.log(e.target.value, inputFieldId)
+    }
 
     const renderLeaveCommentInputs = () => {
         return(
@@ -77,8 +80,11 @@ export const LeaveComment = (props) => {
                             <div className="leave-comment-form-input-name">{el.inputFieldName}</div>
                             <Input
                                 className="leave-comment-input"
+                                onChange={(event) => inputChangeHandler(event, el.id)}
                                 elementType={el.elementType}
                                 rows={el.elementConfig.rows}
+                                validField={el.validField}
+                                touched={el.touched}
                             />
                         </div>
                     )
