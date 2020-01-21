@@ -80,30 +80,22 @@ export const PortfolioSinglePage = (props) => {
             <div className="portfolio-single-page-wrapper">
                 <div className="portfolio-single-page-wrapper2">
                     <div className="portfolio-single-page-wrapper3">
-                        <div className="portfolio-single-page-content">
-                            <PortfolioContent
-                                image={props.singlePortfolio !== {} ? props.singlePortfolio.image : null}
-                                paragraphs={props.singlePortfolio !== {} ? props.singlePortfolio.paragraphs : null}
-                            />
-                        </div>
-                        {/* <div className="portfolio-single-page-comments"> */}
+                        <PortfolioContent
+                            image={props.singlePortfolio !== {} ? props.singlePortfolio.image : null}
+                            paragraphs={props.singlePortfolio !== {} ? props.singlePortfolio.paragraphs : null}
+                        />
                         <PortfolioComments
-                            // comments={props.singlePortfolio !== {} ? props.singlePortfolio.comments : null}
                             singlePortfolio={props.singlePortfolio !== {} ? props.singlePortfolio : null}
                         />
-                        {/* </div> */}
                     </div>
                     <div className="portfolio-single-page-guide">
                     
                     </div>
                 </div>
-                {/* <div className="portfolio-single-page-pagination"> */}
                     <Pagination 
                         page="portfolioSingle"
-                    /> 
-                {/* </div> */}
+                    />
             </div>
-            {/* <div>{console.log(props.singlePortfolio.comments)}</div> */}
            <Footer/>
         </div>
     );

@@ -28,7 +28,7 @@ export const portfolioArray = [
             }
         ],
         comments: {
-            sum: 6,
+            sum: 10,
             array: [
                 {
                     id: 1,

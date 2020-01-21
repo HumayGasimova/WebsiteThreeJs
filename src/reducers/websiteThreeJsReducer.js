@@ -291,6 +291,7 @@ const postComment = (state, action) => {
             comment: state.leaveCommentForm.find(x => x.inputFieldName === "Comment").value,
         }
         updatedSinglePortfolio.comments.array.push(comment);
+        updatedSinglePortfolio.comments = {...updatedSinglePortfolio.comments, sum: updatedSinglePortfolio.comments.sum + 1};
         updatedLeaveCommentForm = updatedLeaveCommentForm.map(el => {return {...el, value: ''}})
     }else{
         updatedLeaveCommentForm = updatedLeaveCommentForm.map((el, i) => {

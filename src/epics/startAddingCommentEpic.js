@@ -59,6 +59,7 @@ export const startAddingCommentEpic = (action$, state$) =>
                     }
                     updatedObj.reply.arrayOfReplies.push(comment);
                     singlePortfolio.comments.array.splice(updatedObjIndex, 1, updatedObj);
+                    singlePortfolio.comments = {...singlePortfolio.comments, sum: singlePortfolio.comments.sum + 1}
                     break;
                 case "threadN1":
                     singlePortfolio.comments.array.map(x => {
@@ -98,6 +99,7 @@ export const startAddingCommentEpic = (action$, state$) =>
                             }
                         }
                     })
+                    singlePortfolio.comments = {...singlePortfolio.comments, sum: singlePortfolio.comments.sum + 1}
                     break;
                 case "threadN2": 
                     break;
