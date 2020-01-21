@@ -131,6 +131,12 @@
         background-color: rgb(175, 192, 255);
         color: rgb(13, 48, 42); 
     }
+    &:disabled{
+        box-shadow: none;
+        background-color: rgb(231, 223, 240);
+        color:rgb(150, 150, 150);
+        cursor: not-allowed;
+    }
 }
 
 .post-comment-button {

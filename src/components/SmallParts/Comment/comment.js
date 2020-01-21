@@ -36,6 +36,7 @@ import * as Actions from '../../../actions';
 */
 
 import Button from '../../../library/Button/button';
+import Input from '../../../library/Input/input';
 
 /**
 * Icons
@@ -67,12 +68,10 @@ import * as Selectors from '../../../reducers/selectors';
 import Img1 from '../../../images/Portrait_Placeholder.png';
 
 /**
-* Hooks
+* Utility
 */
 
-import {
-    useInterval
-} from '../../../Hooks/useInterval';
+import * as Utility from "../../../utility";
 
 /**
 * Comment component definition and export
@@ -80,14 +79,57 @@ import {
 
 export const Comment = (props) => {
 
-    const [value, setValue] = useState('')
+    // const [value, setValue] = useState('');
+    const [replyInput, setReplyInput] = useState(
+        {
+            id: 1,
+            inputFieldName: "Comment",
+            elementType: 'input',
+            elementConfig: {
+                type: 'text',
+                placeholder: 'add comment'
+            },
+            value: '',
+            validation: [],
+            validField: false,
+            touched: false,
+            errorMessage: [],
+            type: "text",
+            inputID: 'comment'
+        }
+    )
+
     /**
     * Methods
     */
-    
-    /**
-    * Markup
-    */
+
+    const handleOnClick = () => {
+        props.addComment(replyInput.value);
+        setReplyInput({...replyInput, value: '', validField: false});
+        clearInputValue("comment");    
+    }
+
+    const clearInputValue = (fieldId) => {
+        document.getElementById(fieldId).value = '';
+    }
+
+    const onChangeHandler = (e) => {
+        let inputField = {
+            ...replyInput, 
+            value: e.target.value,
+            // validation: Utility.checkValidity(e.target.value, inputField.validation),
+            // touched: true
+        };
+
+        inputField = {
+            ...inputField, 
+            validField: inputField.value !== '' ? true : false
+            // errorMessage: Utility.errorMessages(replyInput.inputFieldName, replyInput.validation),
+            // validField: Utility.checkValidityOfField(replyInput.validation),
+        }
+   
+        setReplyInput(inputField);
+    }
 
     const loadImage = (img) => {
         switch(img){
@@ -96,30 +138,30 @@ export const Comment = (props) => {
         }
     }
 
-    const onChangeHandler = (e) => {
-        setValue(e.target.value)
-    }
-
-    const clearInputValue = (fieldId) => {
-        document.getElementById(fieldId).value = '';
-    }
-
     const renderInput = () => {
-        if(!props.inputIsShown) {
-            setValue('');
-            clearInputValue("comment");
-        }
         return(
             <div className="comment-wrapper-input">
-                <input placeholder="add coment"  id="comment" onChange={() => onChangeHandler(event)}/>
+                <Input
+                    className="add-comment-input"
+                    onChange={() => onChangeHandler(event)}
+                    elementType={replyInput.elementType}
+                    validField={replyInput.validField}
+                    inputID={replyInput.inputID}
+                />
+            {/* <input placeholder="add coment"  id="comment" onChange={() => onChangeHandler(event)}/> */}
                 <Button 
                     className="comment-button-input"
                     text={"OK"}
-                    onClick={() => props.addComment(value)}
+                    onClick={handleOnClick}
+                    disabled={!replyInput.validField}
                 />
             </div>
         )
     }
+    
+    /**
+    * Markup
+    */
 
     return(
         <div className="comment">
