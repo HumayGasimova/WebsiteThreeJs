@@ -204,3 +204,9 @@ export function setInputFiledValueAndCheckValidation(array, e, id) {
         inputFieldId: id
     };
 };
+
+export function postComment() {
+    return { 
+        type: actionTypes.POST_COMMENT
+    };
+};

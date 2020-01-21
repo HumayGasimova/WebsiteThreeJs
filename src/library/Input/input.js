@@ -27,6 +27,8 @@ export const Input = (props) => {
     * Methods
     */
 
+    
+
     const renderErrorMessage = () => {
         if(props.validField === false && props.touched === true){
             return(
@@ -52,6 +54,7 @@ export const Input = (props) => {
                             value={props.value}
                             type={props.type}
                             onChange={props.onChange}
+                            id={props.inputID}
                         />
                         {renderErrorMessage()}
                     </div>
@@ -64,6 +67,7 @@ export const Input = (props) => {
                             type={props.type}
                             onChange={props.onChange}
                             rows={props.rows}
+                            id={props.textareaID}
                         />
                         {renderErrorMessage()}
                     </div>

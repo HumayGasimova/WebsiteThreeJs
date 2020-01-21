@@ -12,16 +12,13 @@ export const leaveCommentInputForm = [
                 {
                     required: true,
                     valid: false
-                },
-                {
-                    minLength: 8,
-                    valid: false
-                }  
+                }
             ],
             validField: false,
             touched: false,
             errorMessage: [],
-            type: "text"
+            type: "text",
+            inputID: 'inputLeaveComment1'
         },
         {
             id: 2,
@@ -41,7 +38,8 @@ export const leaveCommentInputForm = [
             validField: false,
             touched: false,
             errorMessage: [],
-            type: "text"
+            type: "text",
+            inputID: 'inputLeaveComment2'
         },
         { 
             id: 3,
@@ -65,7 +63,8 @@ export const leaveCommentInputForm = [
             validField: false,
             touched: false,
             errorMessage: [],
-            type: "text"
+            type: "text",
+            inputID: 'inputLeaveComment3'
         },
         {
             id: 4,
@@ -86,6 +85,7 @@ export const leaveCommentInputForm = [
             validField: false,
             touched: false,
             errorMessage: [],
-            type: "text"
+            type: "text",
+            textareaID: 'textareaLeaveComment1'
         }
     ]

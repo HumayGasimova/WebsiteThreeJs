@@ -67,9 +67,20 @@ export const LeaveComment = (props) => {
         props.initLeaveCommentForm(leaveCommentInputForm);
     }, [])
 
+    const onClickHandler = () => {
+        props.postComment();
+        clearInputValue("inputLeaveComment1");
+        clearInputValue("inputLeaveComment2");
+        clearInputValue("inputLeaveComment3");
+        clearInputValue("textareaLeaveComment1");
+    }
+
     const inputChangeHandler = (e, inputFieldId) => {
         props.setInputFiledValueAndCheckValidation(props.leaveCommentForm, e, inputFieldId);
-        console.log(e.target.value, inputFieldId)
+    }
+
+    const clearInputValue = (fieldId) => {
+        document.getElementById(fieldId).value = '';
     }
 
     const renderLeaveCommentInputs = () => {
@@ -87,6 +98,8 @@ export const LeaveComment = (props) => {
                                 validField={el.validField}
                                 touched={el.touched}
                                 erroeMessages={el.errorMessage}
+                                inputID={el.inputID}
+                                textareaID={el.textareaID}
                             />
                         </div>
                     )
@@ -107,7 +120,7 @@ export const LeaveComment = (props) => {
                 <Button 
                     className="post-comment-button"
                     text={"Post Comment"}
-                    // onClick={() => props.addComment(value)}
+                    onClick={onClickHandler}
                 />
             </div>
           
@@ -125,6 +138,7 @@ export default connect(
         return {
             initLeaveCommentForm: bindActionCreators(Actions.initLeaveCommentForm, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
+            postComment: bindActionCreators(Actions.postComment, dispatch),
         };
     }
 )(LeaveComment);

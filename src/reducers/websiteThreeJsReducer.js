@@ -9,6 +9,7 @@ import * as actionTypes from "../constants/actionTypes";
 */
 
 import * as Utility from "../utility";
+import uuid from "uuid";
 
 /**
 * Initial State
@@ -277,6 +278,39 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
     };
 }
 
+const postComment = (state, action) => {
+    let updatedSinglePortfolio = {...state.singlePortfolio};
+    let updatedLeaveCommentForm = [...state.leaveCommentForm];
+    let checkIfFormIsValid = state.leaveCommentForm.map(el => el.validField === true);
+    if(checkIfFormIsValid.every(x => x === true)){
+        let comment = {
+            id: uuid(),
+            image: "Name1",
+            fullName: `${state.leaveCommentForm.find(x => x.inputFieldName === "First Name").value} ${state.leaveCommentForm.find(x => x.inputFieldName === "Last Name").value}`,
+            date: Utility.getCurrentDateAndTime(),
+            comment: state.leaveCommentForm.find(x => x.inputFieldName === "Comment").value,
+        }
+        updatedSinglePortfolio.comments.array.push(comment);
+        updatedLeaveCommentForm = updatedLeaveCommentForm.map(el => {return {...el, value: ''}})
+    }else{
+        updatedLeaveCommentForm = updatedLeaveCommentForm.map((el, i) => {
+            return {
+                    ...el, 
+                    touched: true,
+                    errorMessage: ["Fill the field"]
+                }
+                
+        })
+        console.log(updatedLeaveCommentForm)
+    }
+    
+    return {
+        ...state,
+        singlePortfolio: updatedSinglePortfolio,
+        leaveCommentForm: updatedLeaveCommentForm
+    }; 
+}
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -350,7 +384,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initLeaveCommentForm(state, action); 
         case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION:
             return setInputFiledValueAndCheckValidation(state, action); 
-            
+        case actionTypes.POST_COMMENT:
+            return postComment(state, action);     
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 
