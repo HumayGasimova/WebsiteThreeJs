@@ -1,0 +1,35 @@
+.recent-blog-card {
+    display: flex;
+    padding: 20px 0 50px 0;
+    .recent-blog-card-image {
+        >img {
+            width: 100px;
+            height: 75px;
+        }
+    }
+    .recent-blog-card-wrapper1 {
+        padding-left: 10px;
+        .recent-blog-card-header {
+            font-family: 'Abhaya Libre', serif;
+            font-size: 20px;
+            color: rgb(39, 49, 85);
+            cursor: pointer;
+            &:hover {
+                color:rgb(158, 82, 173);
+            }
+        }
+        .recent-blog-card-wrapper2 {
+            display: flex;
+            padding-top: 15px;
+            cursor: context-menu;
+            .recent-blog-card-info {
+                padding-right: 10px;
+                opacity: 0.5;
+                display: flex;
+                .recent-blog-card-info-text {
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+}

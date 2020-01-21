@@ -1,7 +1,7 @@
 .portfolio-single-page {
     .portfolio-single-page-wrapper {
-        padding: 0 150px 0 150px;
-        width: calc(100% - 300px);
+        padding: 0 130px 0 130px;
+        width: calc(100% - 260px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -15,9 +15,10 @@
                 height: 100%;
             }
             .portfolio-single-page-guide {
-                width: 20%;
+                top: 10px;
+                width: 30%;
                 height: 100%;
-                padding: 40px 40px 0 40px;
+                padding: 40px 0px 0 40px;
                 .portfolio-single-page-guide-paragraph {
                     font-family: 'Abhaya Libre', serif;
                     color:  rgb(39, 49, 85);

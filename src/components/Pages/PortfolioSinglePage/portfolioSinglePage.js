@@ -87,6 +87,11 @@ export const PortfolioSinglePage = (props) => {
                    return(
                        <RecentBlogCard
                             key={i}
+                            image={el.image}
+                            shortInfo={el.shortInfo}
+                            creationDate={el.creationDate}
+                            author={el.author}
+                            numberOfComments={el.comments.sum}
                        />
                    )
                })}
