@@ -27,8 +27,6 @@ export const Input = (props) => {
     * Methods
     */
 
-    
-
     const renderErrorMessage = () => {
         if(props.validField === false && props.touched === true){
             return(

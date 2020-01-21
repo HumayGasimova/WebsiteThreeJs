@@ -89,7 +89,17 @@ export const PortfolioSinglePage = (props) => {
                         />
                     </div>
                     <div className="portfolio-single-page-guide">
-                    
+                        <div className="portfolio-single-page-guide-paragraph">Paragraph</div>
+                        <div className="portfolio-single-page-guide-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, 
+                            autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam 
+                            vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!
+                            Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis 
+                            repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate 
+                            quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque 
+                            sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor 
+                            minima esse vero ut ea, repudiandae suscipit!
+                        </div>
                     </div>
                 </div>
                     <Pagination 
