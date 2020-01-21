@@ -196,4 +196,11 @@ export function initLeaveCommentForm(array) {
     };
 };
 
-
+export function setInputFiledValueAndCheckValidation(array, e, id) {
+    return { 
+        type: actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION,
+        array: array,
+        event: e,
+        inputFieldId: id
+    };
+};

@@ -8,7 +8,7 @@ import * as actionTypes from "../constants/actionTypes";
 * Utility
 */
 
-import * as utility from "../utility";
+import * as Utility from "../utility";
 
 /**
 * Initial State
@@ -43,7 +43,7 @@ const menuButtonIsToggled = (state, action) => {
 }
 
 const initFeedbacks = (state, action) => {
-    let updatedDots =  utility.getArrayOfDots(action.array.length);
+    let updatedDots =  Utility.getArrayOfDots(action.array.length);
    
     return {
         ...state,
@@ -252,6 +252,31 @@ const initLeaveCommentForm = (state, action) => {
     };
 }
 
+const setInputFiledValueAndCheckValidation = (state, action) => {
+    let updatedInputFieldArray = [...action.array];
+    let inputField = updatedInputFieldArray.find(x => x.id === action.inputFieldId);
+    let inputFieldIndex = updatedInputFieldArray.findIndex(x => x.id === action.inputFieldId);
+    inputField = {
+        ...inputField, 
+        value: action.event.target.value,
+        validation: Utility.checkValidity(action.event.target.value, inputField.validation),
+        touched: true
+    };
+
+    inputField = {
+        ...inputField, 
+        errorMessage: Utility.errorMessages(inputField.inputFieldName, inputField.validation),
+        validField: Utility.checkValidityOfField(inputField.validation),
+    }
+   
+    updatedInputFieldArray.splice(inputFieldIndex, 1, inputField)
+
+    return {
+        ...state,
+        leaveCommentForm: updatedInputFieldArray
+    };
+}
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -323,6 +348,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return state;
         case actionTypes.INIT_LEAVE_COMMENT_FORM:
             return initLeaveCommentForm(state, action); 
+        case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION:
+            return setInputFiledValueAndCheckValidation(state, action); 
             
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     

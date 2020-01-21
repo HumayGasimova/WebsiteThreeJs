@@ -68,6 +68,7 @@ export const LeaveComment = (props) => {
     }, [])
 
     const inputChangeHandler = (e, inputFieldId) => {
+        props.setInputFiledValueAndCheckValidation(props.leaveCommentForm, e, inputFieldId);
         console.log(e.target.value, inputFieldId)
     }
 
@@ -85,6 +86,7 @@ export const LeaveComment = (props) => {
                                 rows={el.elementConfig.rows}
                                 validField={el.validField}
                                 touched={el.touched}
+                                erroeMessages={el.errorMessage}
                             />
                         </div>
                     )
@@ -122,6 +124,7 @@ export default connect(
     (dispatch) => {
         return {
             initLeaveCommentForm: bindActionCreators(Actions.initLeaveCommentForm, dispatch),
+            setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
         };
     }
 )(LeaveComment);
