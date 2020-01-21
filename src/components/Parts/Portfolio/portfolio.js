@@ -82,7 +82,7 @@ export const Portfolio = (props) => {
     */
 
     const viewPortfolioButtonOnClick = (id) => {
-            props.history.push(`/portfolioSingleId:${id}`);
+        props.history.push(`/portfolioSingleId:${id}`);
     }
 
     const loadImage = (img) => {

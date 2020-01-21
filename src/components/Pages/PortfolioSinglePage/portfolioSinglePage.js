@@ -21,6 +21,7 @@ import {
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
+import RecentBlogCard from '../../SmallParts/RecentBlogCard/recentBlogCard';
 import PortfolioContent from '../../SmallParts/PortfolioContent/portfolioContent';
 import PortfolioComments from '../../SmallParts/PortfolioComments/portfolioComment';
 import Pagination from '../../SmallParts/Pagination/pagination';
@@ -45,6 +46,14 @@ import './portfolioSinglePage.scss';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Constants
+*/
+
+import {
+    portfolioArray
+} from '../../../constants/portfolio';
+
+/**
 * PortfolioSinglePage component definition and export
 */
 
@@ -61,11 +70,29 @@ export const PortfolioSinglePage = (props) => {
     */
 
     useEffect(() => {
+        let portfolioProjectsToShow = portfolioArray.slice(0, 3);
+        props.initPortfolio(portfolioProjectsToShow);
+        
         let portfolioIdString = props.match.params.id;
         let portfolioId = portfolioIdString.slice(1, portfolioIdString.length);
         setPortfolioId(portfolioId);
         props.startInitPortfolioSingle(+portfolioId);
+
     }, [props.match.params.id]);
+
+    const renderRecentBlog = () => {
+        return(
+            <div className="portfolio-page-all-template-middle">
+               {props.portfolio.map((el, i) => {
+                   return(
+                       <RecentBlogCard
+                            key={i}
+                       />
+                   )
+               })}
+            </div>
+        )
+    }
 
     /**
     * Markup
@@ -89,6 +116,8 @@ export const PortfolioSinglePage = (props) => {
                         />
                     </div>
                     <div className="portfolio-single-page-guide">
+                        <div className="portfolio-single-page-guide-paragraph">Recent Blog</div>
+                        {renderRecentBlog()}
                         <div className="portfolio-single-page-guide-paragraph">Paragraph</div>
                         <div className="portfolio-single-page-guide-text">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, 
@@ -102,23 +131,26 @@ export const PortfolioSinglePage = (props) => {
                         </div>
                     </div>
                 </div>
-                    <Pagination 
-                        page="portfolioSingle"
-                    />
+                <Pagination 
+                    page="portfolioSingle"
+                />
             </div>
            <Footer/>
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             singlePortfolio: Selectors.getSinglePortfolioState(state),
+            portfolio: Selectors.getPortfolioState(state),
         };
     },
     (dispatch) => {
         return {
             startInitPortfolioSingle: bindActionCreators(Actions.startInitPortfolioSingle, dispatch),
+            initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch),
         };
     }
 )(PortfolioSinglePage);
