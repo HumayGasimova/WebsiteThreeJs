@@ -84,7 +84,12 @@ export const RecentBlogCard = (props) => {
                 <img src={loadImage(props.image)}/>
             </div>
             <div className="recent-blog-card-wrapper1">
-                <div className="recent-blog-card-header">{props.shortInfo}</div>
+                <div 
+                    className="recent-blog-card-header" 
+                    onClick={props.onClick}
+                >
+                    {props.shortInfo}
+                </div>
                 <div className="recent-blog-card-wrapper2">
                     <div className="recent-blog-card-info">
                         <FontAwesomeIcon icon={faCalendarAlt} size="sm" className="icon-caledar"/>

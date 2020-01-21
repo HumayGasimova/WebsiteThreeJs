@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
 * Components
 */
@@ -80,6 +84,10 @@ export const PortfolioSinglePage = (props) => {
 
     }, [props.match.params.id]);
 
+    const viewPortfolioParagraphOnClick = (id) => {
+        props.history.push(`/portfolioSingleId:${id}`);
+    }
+
     const renderRecentBlog = () => {
         return(
             <div className="portfolio-page-all-template-middle">
@@ -92,6 +100,7 @@ export const PortfolioSinglePage = (props) => {
                             creationDate={el.creationDate}
                             author={el.author}
                             numberOfComments={el.comments.sum}
+                            onClick={() => viewPortfolioParagraphOnClick(el.id)}
                        />
                    )
                })}
@@ -158,5 +167,5 @@ export default connect(
             initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch),
         };
     }
-)(PortfolioSinglePage);
+)(withRouter(PortfolioSinglePage));
  
