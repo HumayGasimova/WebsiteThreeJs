@@ -53,9 +53,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //         applyMiddleware(thunk,logger)
 // ));
 
-
-
-
 export default createStore(
     createRootReducer(history),
     composeEnhancers(

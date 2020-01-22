@@ -42,7 +42,7 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
         ofType(actionTypes.START_CHOOSING_PAGE),
         mergeMap((action) => {
             let updatedArray;
-            console.log( dependencies$)
+            
             switch(action.page) {
                 case "portfolio":
                     updatedArray = [...portfolioArray];
@@ -54,9 +54,9 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
                         Actions.disablePaginationArrowButton("arrowRight")
                     ) 
                 case "portfolioSingle":
+                    dependencies$.history.push(`/portfolioSingleId:${action.id}`);
                     return of(
                         Actions.choosePage(action.id),
-                        Actions.startInitPortfolioSingle(action.id),
                         Actions.disablePaginationArrowButton("arrowLeft"),
                         Actions.disablePaginationArrowButton("arrowRight")
                     ) 
