@@ -72,7 +72,7 @@ import Image8 from '../../../images/blogImages/music-1874621_960_720.jpg';
 import Image9 from '../../../images/blogImages/nail-4682903_960_720.jpg';
 import Image10 from '../../../images/blogImages/closed-up-photo-of-assorted-cosmetic-products.jpg';
 import Image11 from '../../../images/blogImages/pink-gerbera-daisies-on-brown-hardbound-book-on-brown-wooden-bench.jpg';
-import Image12 from '../../../images/blogImages/roses-1566792_960_720.jpg';
+import Image12 from '../../../images/blogImages/tea-4289171_960_720.jpg';
 import Image13 from '../../../images/blogImages/cosmetic-oil-of-calendula.jpg';
 import Image14 from '../../../images/blogImages/pink-floral-wooden-rack-filled-with-make-up-brush-lot.jpg';
 
