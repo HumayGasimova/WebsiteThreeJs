@@ -54,7 +54,7 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
                         Actions.disablePaginationArrowButton("arrowRight")
                     ) 
                 case "portfolioSingle":
-                    dependencies$.history.push(`/portfolioSingleId:${action.id}`);
+                    dependencies$.history.push(`/portfolioSingleId:${action.id}`, {id: action.id});
                     return of(
                         Actions.choosePage(action.id),
                         Actions.disablePaginationArrowButton("arrowLeft"),

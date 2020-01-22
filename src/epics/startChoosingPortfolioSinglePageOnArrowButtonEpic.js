@@ -22,15 +22,6 @@ import {
 
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
-import {
-    portfolioArray
-} from '../constants/portfolio';
-
-/**
-* Constants
-*/
-
-import * as Utility from '../utility';
 
 /**
 * Epic
@@ -50,13 +41,13 @@ export const startChoosingPortfolioSinglePageOnArrowButtonEpic = (action$, state
                         nextPageId = paging.find(x => x.chosen === true).id - 1;
                         nextPage = {...paging.find(x => x.id === nextPageId), chosen: true};
                         nextPageIndex = paging.findIndex(x => x.id === nextPageId);
-                        dependencies$.history.push(`/portfolioSingleId:${nextPageId}`);
+                        dependencies$.history.push(`/portfolioSingleId:${nextPageId}`, {id: nextPageId});
                     break;
                 case 'arrowRight':
                         nextPageId = paging.find(x => x.chosen === true).id + 1;
                         nextPage = {...paging.find(x => x.id === nextPageId), chosen: true};
                         nextPageIndex = paging.findIndex(x => x.id === nextPageId);
-                        dependencies$.history.push(`/portfolioSingleId:${nextPageId}`);
+                        dependencies$.history.push(`/portfolioSingleId:${nextPageId}`, {id: nextPageId});
                     break;
             }
 

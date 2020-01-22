@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -103,6 +107,9 @@ export const Pagination = (props) => {
   
     useEffect(() => {
         props.startInitPagination(props.page);
+        if(props.page === "portfolioSingle"){
+            props.choosePage(props.location.state.id)
+        }
         props.disablePaginationArrowButton("arrowLeft");
         props.disablePaginationArrowButton("arrowRight");
     }, []);
@@ -147,7 +154,8 @@ export default connect(
             startChoosingPortfolioPageOnArrowButton: bindActionCreators(Actions.startChoosingPortfolioPageOnArrowButton, dispatch),
             startChoosingPortfolioSinglePageOnArrowButton: bindActionCreators(Actions.startChoosingPortfolioSinglePageOnArrowButton, dispatch),
             disablePaginationArrowButton: bindActionCreators(Actions.disablePaginationArrowButton, dispatch),
+            choosePage: bindActionCreators(Actions.choosePage, dispatch),
         };
     }
-)(Pagination);
+)(withRouter(Pagination));
  

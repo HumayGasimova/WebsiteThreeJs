@@ -58,7 +58,7 @@ export const ToolbarItem = (props) => {
 
     const toolbarOptionOnClick = (path) => {
         if(path === "portfolioSingleId"){
-            props.history.push(`/${path}:1`);
+            props.history.push(`/${path}:1`, {id: 1});
         }else{
             props.history.push(`/${path}`);
         }

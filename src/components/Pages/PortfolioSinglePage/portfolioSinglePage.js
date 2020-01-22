@@ -85,7 +85,7 @@ export const PortfolioSinglePage = (props) => {
     }, [props.match.params.id]);
 
     const viewPortfolioParagraphOnClick = (id) => {
-        props.history.push(`/portfolioSingleId:${id}`);
+        props.history.push(`/portfolioSingleId:${id}`, {id});
     }
 
     const renderRecentBlog = () => {
