@@ -1,0 +1,17 @@
+.blog-page {
+    .blog-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 20px 0;
+        .blog-page-cards {
+            width: 77%;
+            padding: 20px 0 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            .blog-page-card {
+                padding: 10px;
+            }
+        }
+    }
+}

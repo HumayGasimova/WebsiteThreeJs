@@ -27,6 +27,10 @@ import {
     portfolioArray
 } from '../constants/portfolio';
 
+import {
+    blogCards
+} from '../constants/blogCards';
+
 /**
 * Constants
 */
@@ -57,6 +61,16 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
                     dependencies$.history.push(`/portfolioSingleId:${action.id}`, {id: action.id});
                     return of(
                         Actions.choosePage(action.id),
+                        Actions.disablePaginationArrowButton("arrowLeft"),
+                        Actions.disablePaginationArrowButton("arrowRight")
+                    ) 
+                case "blogPage":
+                    updatedArray = [...blogCards];
+                    updatedArray = updatedArray.slice((action.id * 6) - 6, action.id * 6);
+                    console.log(updatedArray)
+                    return of(
+                        Actions.choosePage(action.id),
+                        Actions.loadBlogCardsToBlogPage(updatedArray),
                         Actions.disablePaginationArrowButton("arrowLeft"),
                         Actions.disablePaginationArrowButton("arrowRight")
                     ) 

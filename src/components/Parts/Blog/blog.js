@@ -59,7 +59,6 @@ export const Blog = (props) => {
 
     useEffect(() => {
         let updatedBlogCards = [...blogCards].slice(0, 3);
-        console.log(updatedBlogCards)
         props.initBlogCards(updatedBlogCards);
     }, [])
 

@@ -26,22 +26,23 @@ import Pagination from '../../SmallParts/Pagination/pagination';
 import Footer from '../../Parts/Footer/footer';
 
 /**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
 * Styles
 */
 
 import './blogPage.scss';
 
 /**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
+
+
+/**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Constants
@@ -65,18 +66,24 @@ export const BlogPage = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        let updatedBlogCards = [...blogCards].slice(0, 6);
+        props.initBlogCards(updatedBlogCards);
+    }, [])
+
     const renderBlogCards = () => {
         return(
-            <div className="blog-wrapper">{blogCards.map((el, i) => {
+            <div className="blog-page-cards">{props.blogCardsToShow.map((el, i) => {
                 return(
-                    <BlogCard
-                        key={i}
-                        image={el.image}
-                        date={el.date}
-                        author={el.author}
-                        numberOfComments={el.numberOfComments}
-                        text={el.text}
-                    />
+                    <div key={i} className="blog-page-card">
+                        <BlogCard
+                            image={el.image}
+                            date={el.date}
+                            author={el.author}
+                            numberOfComments={el.numberOfComments}
+                            text={el.text}
+                        />
+                    </div>
                 )
             })}</div>
         )
@@ -92,10 +99,12 @@ export const BlogPage = (props) => {
             <MovingBubbles 
                 mainHeader={"Portfolio"}
             />
-            {renderBlogCards()}
-            <Pagination 
-                page="blogPage"
-            />
+            <div className="blog-page-wrapper">
+                {renderBlogCards()}
+                <Pagination 
+                    page="blogPage"
+                />
+            </div>
             <Footer/>
         </div>
     );
@@ -103,12 +112,12 @@ export const BlogPage = (props) => {
  export default connect(
     (state) => {
         return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            blogCardsToShow: Selectors.getBlogCardsToShowState(state),
         };
     },
     (dispatch) => {
         return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            initBlogCards: bindActionCreators(Actions.initBlogCards, dispatch),
         };
     }
 )(BlogPage);

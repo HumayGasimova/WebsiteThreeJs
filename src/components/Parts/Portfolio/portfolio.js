@@ -81,6 +81,13 @@ export const Portfolio = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        let portfolioProjectsToShow = portfolioArray.slice(0, 3);
+        props.initPortfolio(portfolioProjectsToShow);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const viewPortfolioButtonOnClick = (id) => {
         props.history.push(`/portfolioSingleId:${id}`, {id});
     }
@@ -250,13 +257,6 @@ export const Portfolio = (props) => {
         // console.log(scrollHeight)
         setSlower(scrollHeight/2);
     }
-
-    useEffect(() => {
-        let portfolioProjectsToShow = portfolioArray.slice(0, 3);
-        props.initPortfolio(portfolioProjectsToShow);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     /**
     * Markup

@@ -320,6 +320,15 @@ const initBlogCards = (state, action) => {
     }; 
 }
 
+const loadBlogCardsToBlogPage = (state, action) => {
+    return {
+        ...state,
+        blogCardsToShow: action.array
+    }; 
+}
+
+
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -397,6 +406,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return postComment(state, action); 
         case actionTypes.INIT_BLOG_CARDS:
             return initBlogCards(state, action);     
+        case actionTypes.LOAD_BLOG_CARDS_TO_BLOG_PAGE:
+            return loadBlogCardsToBlogPage(state, action);  
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

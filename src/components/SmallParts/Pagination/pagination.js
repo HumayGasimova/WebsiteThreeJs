@@ -69,7 +69,7 @@ export const Pagination = (props) => {
     useEffect(() => {
         props.startInitPagination(props.page);
         if(props.page === "portfolioSingle"){
-            props.choosePage(props.location.state.id)
+            props.choosePage(props.location.state.id);
         }
         props.disablePaginationArrowButton("arrowLeft");
         props.disablePaginationArrowButton("arrowRight");
@@ -102,6 +102,8 @@ export const Pagination = (props) => {
                 return props.startChoosingPortfolioPageOnArrowButton(direction);
             case 'portfolioSingle':
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
+            case 'blogPage':
+                // return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
         }
     }
 
@@ -111,6 +113,8 @@ export const Pagination = (props) => {
                 return props.startChoosingPortfolioPageOnArrowButton(direction);
             case 'portfolioSingle':
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
+            case 'blogPage':
+                // return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
         }
     }
   

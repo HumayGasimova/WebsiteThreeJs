@@ -64,17 +64,17 @@ import * as Selectors from '../../../reducers/selectors';
 import Image1 from '../../../images/blogImages/roses-1566792_960_720.jpg';
 import Image2 from '../../../images/blogImages/antique_watch.jpg';
 import Image3 from '../../../images/blogImages/brush.jpg';
-import Image4 from '../../../images/blogImages/closed-up-photo-of-assorted-cosmetic-products.jpg';
-import Image5 from '../../../images/blogImages/cosmetic-oil-of-calendula.jpg';
+import Image4 from '../../../images/blogImages/white-daisy-flowers-on-chocolate-bar.jpg';
+import Image5 from '../../../images/blogImages/cosmetology-oil-cosmetic-calendula-cosmetics.jpg';
 import Image6 from '../../../images/blogImages/flatlay-makeup-beauty-cosmetics.jpg';
 import Image7 from '../../../images/blogImages/mac-2585220_1280.jpg';
 import Image8 from '../../../images/blogImages/music-1874621_960_720.jpg';
 import Image9 from '../../../images/blogImages/nail-4682903_960_720.jpg';
-import Image10 from '../../../images/blogImages/pink-floral-wooden-rack-filled-with-make-up-brush-lot.jpg';
+import Image10 from '../../../images/blogImages/closed-up-photo-of-assorted-cosmetic-products.jpg';
 import Image11 from '../../../images/blogImages/pink-gerbera-daisies-on-brown-hardbound-book-on-brown-wooden-bench.jpg';
 import Image12 from '../../../images/blogImages/roses-1566792_960_720.jpg';
-import Image13 from '../../../images/blogImages/cosmetology-oil-cosmetic-calendula-cosmetics.jpg';
-import Image14 from '../../../images/blogImages/white-daisy-flowers-on-chocolate-bar.jpg';
+import Image13 from '../../../images/blogImages/cosmetic-oil-of-calendula.jpg';
+import Image14 from '../../../images/blogImages/pink-floral-wooden-rack-filled-with-make-up-brush-lot.jpg';
 
 /**
 * BlogCard component definition and export

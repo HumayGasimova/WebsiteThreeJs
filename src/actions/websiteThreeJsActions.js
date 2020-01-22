@@ -217,3 +217,10 @@ export function initBlogCards(array) {
         array: array
     };
 };
+
+export function loadBlogCardsToBlogPage(array) {
+    return { 
+        type: actionTypes.LOAD_BLOG_CARDS_TO_BLOG_PAGE,
+        array: array
+    };
+};

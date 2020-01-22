@@ -48,7 +48,7 @@ export const startInitPaginationEpic = (action$) =>
 
             switch(action.page) {
                 case "portfolio":
-                    numberOfPages = +(portfolioArray.length / 3).toFixed();
+                    numberOfPages = 4;
                     portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
                     break;
                 case "portfolioSingle":
@@ -56,7 +56,7 @@ export const startInitPaginationEpic = (action$) =>
                     portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
                     break;
                 case "blogPage":
-                    numberOfPages = blogCards.length;
+                    numberOfPages = 3;
                     portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
                     break;
             }
