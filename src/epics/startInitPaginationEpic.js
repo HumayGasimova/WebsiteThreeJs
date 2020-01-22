@@ -26,6 +26,10 @@ import {
     portfolioArray
 } from '../constants/portfolio';
 
+import {
+    blogCards
+} from '../constants/blogCards';
+
 /**
 * Constants
 */
@@ -49,6 +53,10 @@ export const startInitPaginationEpic = (action$) =>
                     break;
                 case "portfolioSingle":
                     numberOfPages = portfolioArray.length;
+                    portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
+                    break;
+                case "blogPage":
+                    numberOfPages = blogCards.length;
                     portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
                     break;
             }

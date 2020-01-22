@@ -21,7 +21,9 @@ import {
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
-import Footer from '../../Parts/Footer/footer'
+import BlogCard from '../../SmallParts/BlogCard/blogCard';
+import Pagination from '../../SmallParts/Pagination/pagination';
+import Footer from '../../Parts/Footer/footer';
 
 /**
 * Actions
@@ -42,6 +44,14 @@ import './blogPage.scss';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Constants
+*/
+
+import {
+    blogCards
+} from '../../../constants/blogCards';
+
+/**
 * BlogPage component definition and export
 */
 
@@ -55,6 +65,23 @@ export const BlogPage = (props) => {
     * Methods
     */
 
+    const renderBlogCards = () => {
+        return(
+            <div className="blog-wrapper">{blogCards.map((el, i) => {
+                return(
+                    <BlogCard
+                        key={i}
+                        image={el.image}
+                        date={el.date}
+                        author={el.author}
+                        numberOfComments={el.numberOfComments}
+                        text={el.text}
+                    />
+                )
+            })}</div>
+        )
+    }
+
     /**
     * Markup
     */
@@ -65,7 +92,10 @@ export const BlogPage = (props) => {
             <MovingBubbles 
                 mainHeader={"Portfolio"}
             />
-            
+            {renderBlogCards()}
+            <Pagination 
+                page="blogPage"
+            />
             <Footer/>
         </div>
     );

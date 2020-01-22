@@ -66,6 +66,15 @@ export const Pagination = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        props.startInitPagination(props.page);
+        if(props.page === "portfolioSingle"){
+            props.choosePage(props.location.state.id)
+        }
+        props.disablePaginationArrowButton("arrowLeft");
+        props.disablePaginationArrowButton("arrowRight");
+    }, []);
+
     const paginationOnClick = (id) => {
         props.startChoosingPage(props.page, id);
     }
@@ -105,15 +114,6 @@ export const Pagination = (props) => {
         }
     }
   
-    useEffect(() => {
-        props.startInitPagination(props.page);
-        if(props.page === "portfolioSingle"){
-            props.choosePage(props.location.state.id)
-        }
-        props.disablePaginationArrowButton("arrowLeft");
-        props.disablePaginationArrowButton("arrowRight");
-    }, []);
-
     /**
     * Markup
     */
