@@ -210,3 +210,10 @@ export function postComment() {
         type: actionTypes.POST_COMMENT
     };
 };
+
+export function initBlogCards(array) {
+    return { 
+        type: actionTypes.INIT_BLOG_CARDS,
+        array: array
+    };
+};

@@ -26,7 +26,8 @@ export const initialState = {
     padinationArrowLeft: true,
     padinationArrowRight: false,
     singlePortfolio: {},
-    leaveCommentForm: []
+    leaveCommentForm: [],
+    blogCardsToShow: []
 }
 
 const toggleMenuButton = (state) => {
@@ -312,6 +313,13 @@ const postComment = (state, action) => {
     }; 
 }
 
+const initBlogCards = (state, action) => {
+    return {
+        ...state,
+        blogCardsToShow: action.array
+    }; 
+}
+
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
     // let previousDotIndex = updatedDots.findIndex(x => x.chosen === true);
@@ -386,7 +394,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION:
             return setInputFiledValueAndCheckValidation(state, action); 
         case actionTypes.POST_COMMENT:
-            return postComment(state, action);     
+            return postComment(state, action); 
+        case actionTypes.INIT_BLOG_CARDS:
+            return initBlogCards(state, action);     
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

@@ -31,13 +31,13 @@ import BlogCard from '../../SmallParts/BlogCard/blogCard';
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../../../actions';
 
 /**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Constants
@@ -57,9 +57,15 @@ export const Blog = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        let updatedBlogCards = [...blogCards].slice(0, 3);
+        console.log(updatedBlogCards)
+        props.initBlogCards(updatedBlogCards);
+    }, [])
+
     const renderBlogCards = () => {
         return(
-            <div className="blog-wrapper">{blogCards.map((el, i) => {
+            <div className="blog-wrapper">{props.blogCardsToShow.map((el, i) => {
                 return(
                     <BlogCard
                         key={i}
@@ -98,13 +104,13 @@ export const Blog = (props) => {
 export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            blogCardsToShow: Selectors.getBlogCardsToShowState(state),
             // dots: Selectors.getDotsState(state)
         };
     },
     (dispatch) => {
         return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
+            initBlogCards: bindActionCreators(Actions.initBlogCards, dispatch),
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }

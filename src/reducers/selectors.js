@@ -93,4 +93,9 @@ export const getLeaveCommentFormState = createSelector(
     (x) => x
 );
 
+const getBlogCardsToShow = (state) => state.home.blogCardsToShow;
 
+export const getBlogCardsToShowState = createSelector(
+    [getBlogCardsToShow],
+    (x) => x
+);
