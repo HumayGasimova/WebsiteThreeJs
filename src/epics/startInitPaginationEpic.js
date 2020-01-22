@@ -59,6 +59,10 @@ export const startInitPaginationEpic = (action$) =>
                     numberOfPages = 3;
                     portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
                     break;
+                case "blogSinglePage":
+                    numberOfPages = blogCards.length;
+                    portfolioPaging = Utility.getArrayOfPaging(numberOfPages);
+                    break;
             }
             return of(
                 Actions.initPagination(portfolioPaging),

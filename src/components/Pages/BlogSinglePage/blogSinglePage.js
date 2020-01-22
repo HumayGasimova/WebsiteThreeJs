@@ -150,7 +150,7 @@ export const BlogSinglePage = (props) => {
                     </div>
                 </div>
                 <Pagination 
-                    page="portfolioSingle"
+                    page="blogSinglePage"
                 />
             </div> 
            <Footer/>
