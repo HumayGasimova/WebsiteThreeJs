@@ -82,7 +82,7 @@ export const Portfolio = (props) => {
     */
 
     useEffect(() => {
-        let portfolioProjectsToShow = portfolioArray.slice(0, 3);
+        let portfolioProjectsToShow = [...portfolioArray].slice(0, 3);
         props.initPortfolio(portfolioProjectsToShow);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);

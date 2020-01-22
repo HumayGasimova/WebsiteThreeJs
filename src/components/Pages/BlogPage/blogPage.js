@@ -69,7 +69,11 @@ export const BlogPage = (props) => {
     useEffect(() => {
         let updatedBlogCards = [...blogCards].slice(0, 6);
         props.initBlogCards(updatedBlogCards);
-    }, [])
+    }, []);
+
+    const viewBlogCardOnClick = (id) => {
+        props.history.push(`/blogSingleId:${id}`, {id});
+    }
 
     const renderBlogCards = () => {
         return(
@@ -82,6 +86,7 @@ export const BlogPage = (props) => {
                             author={el.author}
                             numberOfComments={el.numberOfComments}
                             text={el.text}
+                            onClick={() => viewBlogCardOnClick(el.id)}
                         />
                     </div>
                 )
@@ -109,7 +114,8 @@ export const BlogPage = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             blogCardsToShow: Selectors.getBlogCardsToShowState(state),

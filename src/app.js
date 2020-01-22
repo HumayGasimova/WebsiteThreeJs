@@ -20,6 +20,7 @@ import SrvicesPage from './components/Pages/ServicesPage/servicesPage';
 import PortfolioPage from './components/Pages/PortfolioPage/portfolioPage';
 import PortfolioSinglePage from './components/Pages/PortfolioSinglePage/portfolioSinglePage';
 import BlogPage from './components/Pages/BlogPage/blogPage';
+import BlogSinglePage from './components/Pages/BlogSinglePage/blogSinglePage';
 import ContactPage from './components/Pages/ContactPage/contactPage';
 
 /**
@@ -51,6 +52,12 @@ export class App extends Component {
                exact
                path="/blog"
                component={ BlogPage }
+               
+            />
+            <Route 
+               exact 
+               path="/blogSingleId:id"
+               component={ BlogSinglePage }
             />
             <Route 
                exact 

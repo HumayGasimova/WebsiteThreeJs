@@ -224,3 +224,11 @@ export function loadBlogCardsToBlogPage(array) {
         array: array
     };
 };
+
+export function startChoosingBlogCardsOnArrowButton(direction) {
+    return { 
+        type: actionTypes.START_CHOOSING_BLOG_CARDS_ON_ARROW_BUTTON,
+        direction: direction
+    };
+};
+

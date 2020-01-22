@@ -5,6 +5,6 @@ export { startInitPortfolioSingleEpic } from './startInitPortfolioSingleEpic';
 export { startChoosingPortfolioSinglePageOnArrowButtonEpic } from './startChoosingPortfolioSinglePageOnArrowButtonEpic';
 export { startAddingCommentEpic } from './startAddingCommentEpic';
 export { startShowingCommentInputAreaEpic } from './startShowingCommentInputAreaEpic';
-
+export { startChoosingBlogCardsOnArrowButtonEpic } from './startChoosingBlogCardsOnArrowButtonEpic';
 
 export { submitMessageEpic } from './submitMessageEpic';

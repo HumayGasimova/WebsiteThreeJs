@@ -103,7 +103,7 @@ export const Pagination = (props) => {
             case 'portfolioSingle':
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
             case 'blogPage':
-                // return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
+                return props.startChoosingBlogCardsOnArrowButton(direction);
         }
     }
 
@@ -114,7 +114,7 @@ export const Pagination = (props) => {
             case 'portfolioSingle':
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
             case 'blogPage':
-                // return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
+                return props.startChoosingBlogCardsOnArrowButton(direction);
         }
     }
   
@@ -159,6 +159,7 @@ export default connect(
             startChoosingPortfolioSinglePageOnArrowButton: bindActionCreators(Actions.startChoosingPortfolioSinglePageOnArrowButton, dispatch),
             disablePaginationArrowButton: bindActionCreators(Actions.disablePaginationArrowButton, dispatch),
             choosePage: bindActionCreators(Actions.choosePage, dispatch),
+            startChoosingBlogCardsOnArrowButton: bindActionCreators(Actions.startChoosingBlogCardsOnArrowButton, dispatch),
         };
     }
 )(withRouter(Pagination));

@@ -124,7 +124,7 @@ export const BlogCard = (props) => {
     */
 
     return(
-        <div className="blog-card">
+        <div className="blog-card" onClick={props.onClick}>
             <div className="blog-card-image">
                 <img src={loadImage(props.image)}/>
             </div>

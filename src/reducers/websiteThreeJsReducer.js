@@ -408,6 +408,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initBlogCards(state, action);     
         case actionTypes.LOAD_BLOG_CARDS_TO_BLOG_PAGE:
             return loadBlogCardsToBlogPage(state, action);  
+        case actionTypes.START_CHOOSING_BLOG_CARDS_ON_ARROW_BUTTON:
+            return state;  
+            
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 
