@@ -26,7 +26,7 @@ import {
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
 import RecentBlogCard from '../../SmallParts/RecentBlogCard/recentBlogCard';
-import PortfolioContent from '../../SmallParts/PortfolioContent/portfolioContent';
+import BlogContent from '../../SmallParts/BlogContent/blogContent';
 import PortfolioComments from '../../SmallParts/PortfolioComments/portfolioComment';
 import Pagination from '../../SmallParts/Pagination/pagination';
 import Footer from '../../Parts/Footer/footer';
@@ -84,7 +84,7 @@ export const BlogSinglePage = (props) => {
         let blogIdString = props.match.params.id;
         let blogId = blogIdString.slice(1, blogIdString.length);
         setBlogId(blogId);
-        // props.startInitPortfolioSingle(+blogId);
+        props.startInitBlogSingle(+blogId);
 
     }, [props.match.params.id]);
 
@@ -140,11 +140,11 @@ export const BlogSinglePage = (props) => {
                         </div>
                     </div>
                     <div className="blog-single-page-wrapper3">
-                        {/* <PortfolioContent
-                            image={props.singlePortfolio !== {} ? props.singlePortfolio.image : null}
-                            paragraphs={props.singlePortfolio !== {} ? props.singlePortfolio.paragraphs : null}
+                        <BlogContent
+                            image={props.singleBlog !== {} ? props.singleBlog.image : null}
+                            paragraphs={props.singleBlog !== {} ? props.singleBlog.paragraphs : null}
                         />
-                        <PortfolioComments
+                        {/* <PortfolioComments
                             singlePortfolio={props.singlePortfolio !== {} ? props.singlePortfolio : null}
                         /> */}
                     </div>
@@ -161,13 +161,13 @@ export const BlogSinglePage = (props) => {
 export default connect(
     (state) => {
         return {
-            // singlePortfolio: Selectors.getSinglePortfolioState(state),
+            singleBlog: Selectors.getSingleBlogState(state),
             portfolio: Selectors.getPortfolioState(state),
         };
     },
     (dispatch) => {
         return {
-            // startInitPortfolioSingle: bindActionCreators(Actions.startInitPortfolioSingle, dispatch),
+            startInitBlogSingle: bindActionCreators(Actions.startInitBlogSingle, dispatch),
             initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch),
         };
     }

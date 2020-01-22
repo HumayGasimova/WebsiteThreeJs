@@ -111,7 +111,7 @@ export const PortfolioContent = (props) => {
     const renderParagraph = () => {
         return(
             <div className="portfolio-content-paragraphs">
-                {props.singlePortfolio.paragraphs.map((el, i) => {
+                {props.paragraphs.map((el, i) => {
                     return(
                         <div key={i} className="portfolio-content-paragraph">
                             <div className="portfolio-content-paragraph-title">
@@ -155,7 +155,7 @@ export const PortfolioContent = (props) => {
 export default connect(
     (state) => {
         return {
-            singlePortfolio: Selectors.getSinglePortfolioState(state),
+            // singlePortfolio: Selectors.getSinglePortfolioState(state),
         };
     },
     (dispatch) => {

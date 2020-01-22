@@ -9,6 +9,7 @@ export const rootEpic = combineEpics(
     Epic.startChoosingPortfolioSinglePageOnArrowButtonEpic,
     Epic.startAddingCommentEpic,
     Epic.startShowingCommentInputAreaEpic,
-    Epic.startChoosingBlogCardsOnArrowButtonEpic
+    Epic.startChoosingBlogCardsOnArrowButtonEpic,
+    Epic.startInitBlogSingleEpic
     // Epic.submitMessageEpic
 );

@@ -104,6 +104,8 @@ export const Pagination = (props) => {
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
             case 'blogPage':
                 return props.startChoosingBlogCardsOnArrowButton(direction);
+            case 'blogSinglePage':
+                // return props.startChoosingBlogCardsOnArrowButton(direction);
         }
     }
 
@@ -115,6 +117,8 @@ export const Pagination = (props) => {
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
             case 'blogPage':
                 return props.startChoosingBlogCardsOnArrowButton(direction);
+            case 'blogSinglePage':
+                // return props.startChoosingBlogCardsOnArrowButton(direction);
         }
     }
   

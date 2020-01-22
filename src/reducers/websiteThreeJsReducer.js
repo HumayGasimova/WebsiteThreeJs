@@ -27,7 +27,8 @@ export const initialState = {
     padinationArrowRight: false,
     singlePortfolio: {},
     leaveCommentForm: [],
-    blogCardsToShow: []
+    blogCardsToShow: [],
+    singleBlog: {}
 }
 
 const toggleMenuButton = (state) => {
@@ -327,7 +328,12 @@ const loadBlogCardsToBlogPage = (state, action) => {
     }; 
 }
 
-
+const loadSingleBlog = (state, action) => {
+    return {
+        ...state,
+        singleBlog: action.obj
+    };
+}
 
 // const chooseFeedback = (state, action) => {
     // let updatedDots = [...state.dots];
@@ -410,7 +416,10 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return loadBlogCardsToBlogPage(state, action);  
         case actionTypes.START_CHOOSING_BLOG_CARDS_ON_ARROW_BUTTON:
             return state;  
-            
+        case actionTypes.START_INIT_BLOG_SINGLE:
+            return state;  
+        case actionTypes.LOAD_SINGLE_BLOG:
+            return loadSingleBlog(state, action);    
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

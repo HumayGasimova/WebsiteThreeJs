@@ -232,3 +232,17 @@ export function startChoosingBlogCardsOnArrowButton(direction) {
     };
 };
 
+export function startInitBlogSingle(id) {
+    return { 
+        type: actionTypes.START_INIT_BLOG_SINGLE,
+        blogId: id
+    };
+};
+
+export function loadSingleBlog(obj) {
+    return { 
+        type: actionTypes.LOAD_SINGLE_BLOG,
+        obj: obj
+    };
+};
+

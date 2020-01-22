@@ -99,3 +99,10 @@ export const getBlogCardsToShowState = createSelector(
     [getBlogCardsToShow],
     (x) => x
 );
+
+const getSingleBlog = (state) => state.home.singleBlog;
+
+export const getSingleBlogState = createSelector(
+    [getSingleBlog],
+    (x) => x
+);
