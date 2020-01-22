@@ -20,19 +20,26 @@ import {
 
 import thunk from 'redux-thunk';
 import createRootReducer from '../reducers/reducers';
-import {rootEpic} from '../epics/rootEpics';
+import {
+    rootEpic
+} from '../epics/rootEpics';
 
 // import pingEpic from '../epics/exEpic1';
 
 
 // const middleware = [thunk];
+export const history = createBrowserHistory();
 
 const logger = createLogger({
     collapsed: true
 });
 
 const middleware = [];
-const epicMiddleware = createEpicMiddleware();
+const epicMiddleware = createEpicMiddleware({
+    dependencies: {
+        history: history
+    }
+});
 
 if (process.env.ENVIRONMENT !== 'production') {
     // middleware.push(logger);
@@ -47,7 +54,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // ));
 
 
-export const history = createBrowserHistory();
+
 
 export default createStore(
     createRootReducer(history),

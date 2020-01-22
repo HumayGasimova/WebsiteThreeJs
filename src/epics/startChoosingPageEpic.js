@@ -37,12 +37,12 @@ import * as Utility from '../utility';
 * Epic
 */
 
-export const startChoosingPageEpic = (action$, state$) => 
+export const startChoosingPageEpic = (action$, state$, dependencies$) => 
     action$.pipe(
         ofType(actionTypes.START_CHOOSING_PAGE),
         mergeMap((action) => {
             let updatedArray;
-            
+            console.log( dependencies$)
             switch(action.page) {
                 case "portfolio":
                     updatedArray = [...portfolioArray];
