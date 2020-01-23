@@ -109,7 +109,7 @@
 @media only screen and (max-width: 456px) {
     .blog-card {
         width: 250px;
-        height: 354px;
+        height: 374px;
         .blog-card-image {
             >img {
                 width: 250px;
@@ -117,23 +117,23 @@
             }
         }
         .blog-card-wrapper {
-            margin: 30px 20px 30px 20px;
             .blog-card-info {
                 display: flex;
                 justify-content: flex-start;
                 .blog-card-date {
-                    font-size: 15px;
+                    font-size: 14px;
                 }
                 .blog-card-author{
-                    font-size: 15px;
+                    font-size: 14px;
                     padding: 0 10px 0 10px;
                 }
                 .blog-card-number-of-comments {
-                    font-size: 15px;
+                    font-size: 14px;
                 }
             }
             .blog-card-text {
                 font-size: 17px;
+                padding-top: 10px;
             }
         }
     }
