@@ -65,7 +65,20 @@ export const ContactPage = (props) => {
             <MovingBubbles 
                 mainHeader={"Contact"}
             />
-            
+            <div className="contact-page-wrapper">
+                <div className="contact-page-header">Contact Information</div>
+                <div className="contact-page-wrapper2">
+                    <div className="contact-page-info">Address: 25 West 27th Street, Suite 581  734716</div>
+                    <div className="contact-page-info">Phone: + 0123456798</div>
+                    <div className="contact-page-info">Email: info@yoursite.com</div>
+                    <div className="contact-page-info">Website yoursite.com</div>
+                </div>
+                <div className="contact-page-wrapper2">
+                    <div className="contact-page-form"></div>
+                    <div className="contact-page-map"></div>
+                </div>
+
+            </div>
             <Footer/>
         </div>
     );
