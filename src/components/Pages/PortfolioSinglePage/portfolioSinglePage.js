@@ -130,7 +130,7 @@ export const PortfolioSinglePage = (props) => {
                         />
                     </div>
                     <div className="portfolio-single-page-guide">
-                        <div className="portfolio-single-page-guide-paragraph">Recent Blog</div>
+                        <div className="portfolio-single-page-guide-paragraph">Recent Portfolio</div>
                         {renderRecentBlog()}
                         <div className="portfolio-single-page-guide-paragraph">Paragraph</div>
                         <div className="portfolio-single-page-guide-text">

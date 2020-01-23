@@ -125,7 +125,7 @@ export const BlogSinglePage = (props) => {
             <div className="blog-single-page-wrapper">
                 <div className="blog-single-page-wrapper2">
                     <div className="blog-single-page-guide">
-                        <div className="blog-single-page-guide-paragraph">Recent Blog</div>
+                        <div className="blog-single-page-guide-paragraph">Recent Portfolio</div>
                         {renderRecentBlog()}
                         <div className="blog-single-page-guide-paragraph">Paragraph</div>
                         <div className="blog-single-page-guide-text">
