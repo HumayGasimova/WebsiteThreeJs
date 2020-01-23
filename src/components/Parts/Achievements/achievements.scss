@@ -1,5 +1,6 @@
 .achievements {
-    height: 500px;
+    height: 550px;
+    padding-bottom: 30px;
     background-image: url('../../../images/photo-1504177847824-d075f5706770.jpg');
     background-size: 1900px 1300px;
     background-position: center;
@@ -68,6 +69,12 @@
 @media only screen and (max-width: 920px) {
     .achievements {    
         height: 740px;
+        .achievements-paragraph {
+            .achievements-text-line2 {
+                font-size: 40px;
+            }
+        }
+
         .achievements-wrapper {
             display: flex;
             flex-direction: column;
@@ -93,5 +100,11 @@
                 font-size: 17px;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .achievements {
+        height: 850px;
     }
 }
