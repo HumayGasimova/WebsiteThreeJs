@@ -2,8 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: white;;
+    border: 3px solid rgb(39, 49, 85);
+    margin: 15px;
+    border-radius: 255px 20px 105px 30px/30px 125px 30px 255px;
+    box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
     .portfolio-content-image{
-        box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
         background: rgb(198, 204, 228);
         margin-top: 40px;
         >img {
