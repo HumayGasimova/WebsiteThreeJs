@@ -94,7 +94,7 @@ export const BlogSinglePage = (props) => {
 
     const renderRecentBlog = () => {
         return(
-            <div className="portfolio-page-all-template-middle">
+            <div className="blog-single-page-recent-blog">
                {props.portfolio.map((el, i) => {
                    return(
                        <RecentBlogCard

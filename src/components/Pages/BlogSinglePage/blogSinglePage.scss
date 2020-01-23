@@ -1,6 +1,6 @@
 .blog-single-page {
     .blog-single-page-wrapper {
-        padding: 0 130px 10px 130px;
+        padding: 0 110px 10px 110px;
         width: calc(100% - 260px);
         display: flex;
         flex-direction: column;
@@ -18,20 +18,25 @@
                 top: 10px;
                 width: 30%;
                 height: 100%;
-                padding: 40px 0px 0 40px;
+                padding: 40px 30px 0 50px;
+                .blog-single-page-recent-blog {
+                    width: 370px;
+                }
                 .blog-single-page-guide-paragraph {
-                   font-family: 'Indie Flower', cursive;
+                    font-family: 'Indie Flower', cursive;
                     color:  rgb(39, 49, 85);
                     font-size: 27px;
                     padding-bottom: 5px;
                     font-size: bold;
+                    text-align: center;
                 }
                 .blog-single-page-guide-text {
-                   font-family: 'Indie Flower', cursive;
+                    font-family: 'Indie Flower', cursive;
                     font-size: 20px;
                     padding-top: 5px;
                     text-align: justify;
                     text-justify: inter-word;
+                    width: 370px;
                 }
             }
         }

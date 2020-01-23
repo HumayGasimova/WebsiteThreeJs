@@ -84,9 +84,8 @@ export const Pagination = (props) => {
             <div className="pagination-items">{
                 props.paging.map((el,i)=>{
                 return(
-                    <div className={el.chosen ? "pagination-item-chosen-stage" : "pagination-item-stage"}>
-                        <div 
-                            key={i}
+                    <div key={i} className={el.chosen ? "pagination-item-chosen-stage" : "pagination-item-stage"}>
+                        <div
                             className={el.chosen ? "pagination-item-chosen pagination-item-chosen-bubble" : "pagination-item pagination-item-bubble"}
                             onClick={() => paginationOnClick(el.id)}
                         />

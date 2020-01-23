@@ -13,6 +13,8 @@
             font-family: 'Indie Flower', cursive;
             font-size: 20px;
             color: rgb(39, 49, 85);
+            text-align: justify;
+            text-justify: inter-word;
             cursor: pointer;
             &:hover {
                 color:rgb(158, 82, 173);
