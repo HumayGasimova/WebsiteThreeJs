@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
 * Styles
 */
@@ -62,6 +66,10 @@ export const Blog = (props) => {
         props.initBlogCards(updatedBlogCards);
     }, [])
 
+    const viewBlogCardOnClick = (id) => {
+        props.history.push(`/blogSingleId:${id}`, {id});
+    }
+
     const renderBlogCards = () => {
         return(
             <div className="blog-wrapper">{props.blogCardsToShow.map((el, i) => {
@@ -73,6 +81,7 @@ export const Blog = (props) => {
                         author={el.author}
                         numberOfComments={el.numberOfComments}
                         text={el.text}
+                        onClick={() => viewBlogCardOnClick(el.id)}
                     />
                 )
             })}</div>
@@ -113,5 +122,5 @@ export default connect(
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }
-)(Blog);
+)(withRouter(Blog));
  
