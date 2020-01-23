@@ -246,3 +246,9 @@ export function loadSingleBlog(obj) {
     };
 };
 
+export function startChoosingSingleBlogCardsOnArrowButton(direction) {
+    return { 
+        type: actionTypes.START_CHOOSING_SINGLE_BLOG_CARDS_ON_ARROW_BUTTON,
+        direction: direction
+    };
+};

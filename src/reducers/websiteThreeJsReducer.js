@@ -419,7 +419,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.START_INIT_BLOG_SINGLE:
             return state;  
         case actionTypes.LOAD_SINGLE_BLOG:
-            return loadSingleBlog(state, action);    
+            return loadSingleBlog(state, action);   
+        case actionTypes.START_CHOOSING_SINGLE_BLOG_CARDS_ON_ARROW_BUTTON:
+            return state;   
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

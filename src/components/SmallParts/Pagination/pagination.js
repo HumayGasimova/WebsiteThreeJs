@@ -105,7 +105,7 @@ export const Pagination = (props) => {
             case 'blogPage':
                 return props.startChoosingBlogCardsOnArrowButton(direction);
             case 'blogSinglePage':
-                // return props.startChoosingBlogCardsOnArrowButton(direction);
+                return props.startChoosingSingleBlogCardsOnArrowButton(direction);
         }
     }
 
@@ -118,7 +118,7 @@ export const Pagination = (props) => {
             case 'blogPage':
                 return props.startChoosingBlogCardsOnArrowButton(direction);
             case 'blogSinglePage':
-                // return props.startChoosingBlogCardsOnArrowButton(direction);
+                return props.startChoosingSingleBlogCardsOnArrowButton(direction);
         }
     }
   
@@ -164,6 +164,7 @@ export default connect(
             disablePaginationArrowButton: bindActionCreators(Actions.disablePaginationArrowButton, dispatch),
             choosePage: bindActionCreators(Actions.choosePage, dispatch),
             startChoosingBlogCardsOnArrowButton: bindActionCreators(Actions.startChoosingBlogCardsOnArrowButton, dispatch),
+            startChoosingSingleBlogCardsOnArrowButton: bindActionCreators(Actions.startChoosingSingleBlogCardsOnArrowButton, dispatch),
         };
     }
 )(withRouter(Pagination));
