@@ -1,13 +1,16 @@
 .portfolio {
-    width: calc(100% - 20px);
+    // width: calc(100% - 20px);
     background: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 1600px;
-    border: 10px solid rgb(39, 49, 85);
+    // border: 10px solid rgb(39, 49, 85);
     padding-bottom: 140px;
+    border: solid 5px rgb(39, 49, 85);
+    margin: 15px;
+    border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
     cursor: context-menu;
     .portfolio-paragraph {
         width: 55%;

@@ -10,6 +10,9 @@
     align-items: center;
     background-attachment: fixed;
     overflow: hidden;
+    border: solid 3px rgb(39, 49, 85);
+    margin: 15px;
+    border-radius: 255px 20px 205px 30px/30px 205px 30px 255px;
     cursor: context-menu;
     .achievements-paragraph {
         width: 47%;
