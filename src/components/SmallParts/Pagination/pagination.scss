@@ -3,6 +3,7 @@
     align-items: center;
     .pagination-items {
         display: flex;
+        font-family: 'Indie Flower', cursive;
         .pagination-item {
             margin: 5px;
             width: 30px;
@@ -12,7 +13,7 @@
             background: rgb(231, 223, 240);
             border-radius: 50%;
             text-align: center;
-            padding-top: 5px;
+            padding-top: 3px;
             cursor: pointer;
         }
         .pagination-item-chosen {
@@ -25,7 +26,7 @@
             box-shadow: 3px 3px 5px 0px rgb(101, 64, 136);
             border-radius: 50%;
             text-align: center;
-            padding-top: 5px;
+            padding-top: 3px;
             cursor: pointer;
         }
     }
