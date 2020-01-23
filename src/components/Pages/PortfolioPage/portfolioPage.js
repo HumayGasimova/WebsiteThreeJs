@@ -71,7 +71,8 @@ export const PortfolioPage = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
