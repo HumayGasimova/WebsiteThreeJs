@@ -5,15 +5,18 @@ export const footerInfo = [
         links: [
             {
                 id: "aboutUs1",
-                link: "Company"
+                link: "Company",
+                path: ""
             },
             {
                 id: "aboutUs2",
-                link: "Blog"
+                link: "Blog",
+                path: ""
             },
             {
                 id: "aboutUs3",
-                link: "Press"
+                link: "Press",
+                path: ""
             }
         ]
     },
@@ -23,27 +26,33 @@ export const footerInfo = [
         links: [
             {
                 id: "link1",
-                link: "Home"
+                link: "Home",
+                path: ""
             },
             {
                 id: "link2",
-                link: "About"
+                link: "About",
+                path: "about"
             },
             {
                 id: "link3",
-                link: "Services"
+                link: "Services",
+                path: "services"
             },
             {
                 id: "link4",
-                link: "Porfolio"
+                link: "Porfolio",
+                path: "portfolio"
             },
             {
                 id: "link5",
-                link: "Blog"
+                link: "Blog",
+                path: "blog"
             },
             {
                 id: "link6",
-                link: "Contact"
+                link: "Contact",
+                path: "contact"
             }
         ]
     },
@@ -53,19 +62,23 @@ export const footerInfo = [
         links: [
             {
                 id: "useful1",
-                link: "Contact"
+                link: "Contact",
+                path: ""
             },
             {
                 id: "useful3",
-                link: "FAQs"
+                link: "FAQs",
+                path: ""
             },
             {
                 id: "useful4",
-                link: "Privacy Policy"
+                link: "Privacy Policy",
+                path: ""
             },
             {
                 id: "useful5",
-                link: "Terms and Conditions"
+                link: "Terms and Conditions",
+                path: ""
             }
         ]
     }

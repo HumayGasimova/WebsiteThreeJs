@@ -55,6 +55,10 @@ export const FooterItem = (props) => {
     * Methods
     */
 
+    const viewBlogCardOnClick = (path) => {
+        props.history.push(`/${path}`);
+    }
+
     const renderLinks = () => {
         return(
             <div className="footer-item-links">{props.links.map((el, i) => {
@@ -62,7 +66,7 @@ export const FooterItem = (props) => {
                     <div key={i} className="footer-item-links-link">
                         <FontAwesomeIcon icon={faCaretRight} size="lg" className="icon-arrow"/>
                         <a 
-                            // href="http://www.google.ru"
+                            href={`/${el.path}`}
                         >
                             {el.link}
                         </a>
