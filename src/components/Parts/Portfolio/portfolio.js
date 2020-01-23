@@ -277,7 +277,7 @@ export const Portfolio = (props) => {
            {props.portfolioPage ? renderPortfolioPage() : renderPortfolio()}
                {props.portfolioPage ? 
                <Pagination 
-                    page="portfolio"
+                    page="portfolioPage"
                /> : null}
         </div>
     );

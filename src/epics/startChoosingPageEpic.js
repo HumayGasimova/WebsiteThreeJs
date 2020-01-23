@@ -48,7 +48,7 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
             let updatedArray;
             
             switch(action.page) {
-                case "portfolio":
+                case "portfolioPage":
                     updatedArray = [...portfolioArray];
                     updatedArray = updatedArray.slice((action.id * 3) - 3, action.id * 3);
                     return of(
@@ -57,7 +57,7 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
                         Actions.disablePaginationArrowButton("arrowLeft"),
                         Actions.disablePaginationArrowButton("arrowRight")
                     ) 
-                case "portfolioSingle":
+                case "portfolioSinglePage":
                     dependencies$.history.push(`/portfolioSingleId:${action.id}`, {id: action.id});
                     return of(
                         Actions.choosePage(action.id),
@@ -71,6 +71,13 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
                     return of(
                         Actions.choosePage(action.id),
                         Actions.loadBlogCardsToBlogPage(updatedArray),
+                        Actions.disablePaginationArrowButton("arrowLeft"),
+                        Actions.disablePaginationArrowButton("arrowRight")
+                    ) 
+                case "blogSinglePage":
+                    dependencies$.history.push(`/blogSingleId:${action.id}`, {id: action.id});
+                    return of(
+                        Actions.choosePage(action.id),
                         Actions.disablePaginationArrowButton("arrowLeft"),
                         Actions.disablePaginationArrowButton("arrowRight")
                     ) 

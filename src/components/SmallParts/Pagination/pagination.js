@@ -68,7 +68,7 @@ export const Pagination = (props) => {
 
     useEffect(() => {
         props.startInitPagination(props.page);
-        if(props.page === "portfolioSingle"){
+        if(props.page === "portfolioSinglePage"){
             props.choosePage(props.location.state.id);
         }
         props.disablePaginationArrowButton("arrowLeft");
@@ -98,9 +98,9 @@ export const Pagination = (props) => {
 
     const handleOnClickLeftArrow = (direction) => {
         switch(props.page){
-            case 'portfolio':
+            case 'portfolioPage':
                 return props.startChoosingPortfolioPageOnArrowButton(direction);
-            case 'portfolioSingle':
+            case 'portfolioSinglePage':
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
             case 'blogPage':
                 return props.startChoosingBlogCardsOnArrowButton(direction);
@@ -111,9 +111,9 @@ export const Pagination = (props) => {
 
     const handleOnClickRightArrow = (direction) => {
         switch(props.page){
-            case 'portfolio':
+            case 'portfolioPage':
                 return props.startChoosingPortfolioPageOnArrowButton(direction);
-            case 'portfolioSingle':
+            case 'portfolioSinglePage':
                 return props.startChoosingPortfolioSinglePageOnArrowButton(direction);
             case 'blogPage':
                 return props.startChoosingBlogCardsOnArrowButton(direction);

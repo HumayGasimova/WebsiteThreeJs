@@ -102,7 +102,7 @@ export const BlogPage = (props) => {
         <div className="blog-page">
             <Toolbar/>
             <MovingBubbles 
-                mainHeader={"Portfolio"}
+                mainHeader={"Blog"}
             />
             <div className="blog-page-wrapper">
                 {renderBlogCards()}

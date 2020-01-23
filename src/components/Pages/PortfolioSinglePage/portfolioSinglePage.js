@@ -146,7 +146,7 @@ export const PortfolioSinglePage = (props) => {
                     </div>
                 </div>
                 <Pagination 
-                    page="portfolioSingle"
+                    page="portfolioSinglePage"
                 />
             </div>
            <Footer/>
