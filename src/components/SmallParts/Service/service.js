@@ -62,8 +62,11 @@ export const Service = (props) => {
 
     return(
         <div className="service">
-            <div className="service-hexagon-container">
+            {/* <div className="service-hexagon-container">
                 <div className={props.hexagonStyle}/>
+            </div> */}
+            <div className="stage">
+                <div className="ball bubble"/>
             </div>
             {renderIcon(props.icon)}
             <div className="service-header">{props.header}</div>
