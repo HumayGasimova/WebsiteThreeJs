@@ -26,10 +26,10 @@ export const initialState = {
     padinationArrowLeft: true,
     padinationArrowRight: false,
     singlePortfolio: {},
-    leaveCommentForm: [],
+    leaveCommentForm: {},
     blogCardsToShow: [],
     singleBlog: {},
-    sendMessageForm: [],
+    sendMessageForm: {},
     messages: []
 }
 
@@ -253,14 +253,14 @@ const loadSinglePortfolio = (state, action) => {
 const initLeaveCommentForm = (state, action) => {
     return {
         ...state,
-        leaveCommentForm: action.array
+        leaveCommentForm: action.obj
     };
 }
 
 const setInputFiledValueAndCheckValidation = (state, action) => {
-    let updatedInputFieldArray = [...action.array];
-    let inputField = updatedInputFieldArray.find(x => x.id === action.inputFieldId);
-    let inputFieldIndex = updatedInputFieldArray.findIndex(x => x.id === action.inputFieldId);
+    let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
+    let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
+    let inputFieldIndex = updatedInputFieldObj.inputsArray.findIndex(x => x.id === action.inputFieldId);
     inputField = {
         ...inputField, 
         value: action.event.target.value,
@@ -274,17 +274,21 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
         validField: Utility.checkValidityOfField(inputField.validation),
     }
    
-    updatedInputFieldArray.splice(inputFieldIndex, 1, inputField)
+    updatedInputFieldObj.inputsArray.splice(inputFieldIndex, 1, inputField)
+
+    let checkIfFormIsValid = updatedInputFieldObj.inputsArray.map(el => el.validField === true);
+    updatedInputFieldObj = {...updatedInputFieldObj, formIsValid: checkIfFormIsValid.every(x => x === true)};
+
     switch(action.formName) {
         case 'leaveCommentForm':
             return {
                 ...state,
-                leaveCommentForm: updatedInputFieldArray
+                leaveCommentForm: updatedInputFieldObj
             };
         case 'sendMessageForm':
             return {
                 ...state,
-                sendMessageForm: updatedInputFieldArray
+                sendMessageForm: updatedInputFieldObj
             };
     }
 }
@@ -347,23 +351,27 @@ const loadSingleBlog = (state, action) => {
 const initSendMessageForm = (state, action) => {
     return {
         ...state,
-        sendMessageForm: action.array
+        sendMessageForm: action.obj
     };
 }
 
 const postMessage = (state, action) => {
     let updatedMessages = [...state.messages];
-    let messageObj = {
-        name: state.sendMessageForm.find(x => x.controlName === "name").value,
-        email: state.sendMessageForm.find(x => x.controlName === "email").value,
-        subject: state.sendMessageForm.find(x => x.controlName === "subject").value,
-        message: state.sendMessageForm.find(x => x.controlName === "message").value
+    let updatedSendMessageForm = {...state.sendMessageForm}
+    if(state.sendMessageForm.formIsValid){
+        let messageObj = {
+            name: state.sendMessageForm.inputsArray.find(x => x.controlName === "name").value,
+            email: state.sendMessageForm.inputsArray.find(x => x.controlName === "email").value,
+            subject: state.sendMessageForm.inputsArray.find(x => x.controlName === "subject").value,
+            message: state.sendMessageForm.inputsArray.find(x => x.controlName === "message").value
+        }
+        updatedMessages.push(messageObj);
     }
-
-    updatedMessages.push(messageObj)
+    updatedSendMessageForm.formIsValid = false;
     return {
         ...state,
-        messages: updatedMessages
+        messages: updatedMessages,
+        sendMessageForm: updatedSendMessageForm
     };
 }
 
@@ -456,7 +464,7 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return state;
         case actionTypes.INIT_SEND_MESSAGE_FORM:
             return initSendMessageForm(state, action);      
-        case actionTypes.POST_MESSAGES:
+        case actionTypes.POST_MESSAGE:
             return postMessage(state, action);    
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     

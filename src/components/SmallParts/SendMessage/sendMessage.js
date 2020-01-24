@@ -84,29 +84,31 @@ export const SendMessage = (props) => {
     }
 
     const renderLeaveCommentInputs = () => {
-        return(
-            <div className="send-message-form-inputs">
-                {props.sendMessageForm.map((el, i)=>{
-                    return(
-                        <div key={i} className="send-message-form-input">
-                            <div className="send-message-form-input-name">{el.inputFieldName}</div>
-                            <Input
-                                className="send-message-input"
-                                onChange={(event) => inputChangeHandler(event, el.id)}
-                                elementType={el.elementType}
-                                rows={el.elementConfig.rows}
-                                validField={el.validField}
-                                touched={el.touched}
-                                erroeMessages={el.errorMessage}
-                                inputID={el.inputID}
-                                textareaID={el.textareaID}
-                                placeholder={el.elementConfig.placeholder}
-                            />
-                        </div>
-                    )
-                })}
-            </div>
-        )
+        if(props.sendMessageForm.inputsArray){
+            return(
+                <div className="send-message-form-inputs">
+                    {props.sendMessageForm.inputsArray.map((el, i)=>{
+                        return(
+                            <div key={i} className="send-message-form-input">
+                                <div className="send-message-form-input-name">{el.inputFieldName}</div>
+                                <Input
+                                    className="send-message-input"
+                                    onChange={(event) => inputChangeHandler(event, el.id)}
+                                    elementType={el.elementType}
+                                    rows={el.elementConfig.rows}
+                                    validField={el.validField}
+                                    touched={el.touched}
+                                    erroeMessages={el.errorMessage}
+                                    inputID={el.inputID}
+                                    textareaID={el.textareaID}
+                                    placeholder={el.elementConfig.placeholder}
+                                />
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        }
     }
 
     /**
@@ -120,7 +122,7 @@ export const SendMessage = (props) => {
                 className="post-comment-button"
                 text={"Post Comment"}
                 onClick={onClickHandler}
-                // disabled={}
+                disabled={!props.sendMessageForm.formIsValid}
             />
         </div>
     );

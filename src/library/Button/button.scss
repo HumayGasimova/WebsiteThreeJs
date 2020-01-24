@@ -161,6 +161,12 @@
         color: rgb(13, 48, 42); 
         box-shadow: 5px 5px 5px 0 rgb(101, 64, 136);
     }
+    &:disabled{
+        box-shadow: none;
+        background-color: rgb(231, 223, 240);
+        color:rgb(150, 150, 150);
+        cursor: not-allowed;
+    }
 }
 
 @media only screen and (max-width: 441px){

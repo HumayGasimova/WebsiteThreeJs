@@ -1,4 +1,6 @@
-export const leaveCommentInputForm = [
+export const leaveCommentInputForm = {
+    formIsValid: false,
+    inputsArray: [
         {
             id: 1,
             inputFieldName: "First Name",
@@ -93,3 +95,4 @@ export const leaveCommentInputForm = [
             controlName: "comment"
         }
     ]
+}

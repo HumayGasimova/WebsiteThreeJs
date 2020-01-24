@@ -84,28 +84,30 @@ export const LeaveComment = (props) => {
     }
 
     const renderLeaveCommentInputs = () => {
-        return(
-            <div className="leave-comment-form-inputs">
-                {props.leaveCommentForm.map((el, i)=>{
-                    return(
-                        <div key={i} className="leave-comment-form-input">
-                            <div className="leave-comment-form-input-name">{el.inputFieldName}</div>
-                            <Input
-                                className="leave-comment-input"
-                                onChange={(event) => inputChangeHandler(event, el.id)}
-                                elementType={el.elementType}
-                                rows={el.elementConfig.rows}
-                                validField={el.validField}
-                                touched={el.touched}
-                                erroeMessages={el.errorMessage}
-                                inputID={el.inputID}
-                                textareaID={el.textareaID}
-                            />
-                        </div>
-                    )
-                })}
-            </div>
-        )
+        if(props.leaveCommentForm.inputsArray){
+            return(
+                <div className="leave-comment-form-inputs">
+                    {props.leaveCommentForm.inputsArray.map((el, i)=>{
+                        return(
+                            <div key={i} className="leave-comment-form-input">
+                                <div className="leave-comment-form-input-name">{el.inputFieldName}</div>
+                                <Input
+                                    className="leave-comment-input"
+                                    onChange={(event) => inputChangeHandler(event, el.id)}
+                                    elementType={el.elementType}
+                                    rows={el.elementConfig.rows}
+                                    validField={el.validField}
+                                    touched={el.touched}
+                                    erroeMessages={el.errorMessage}
+                                    inputID={el.inputID}
+                                    textareaID={el.textareaID}
+                                />
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        }
     }
 
     /**
