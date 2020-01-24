@@ -28,7 +28,9 @@ export const initialState = {
     singlePortfolio: {},
     leaveCommentForm: [],
     blogCardsToShow: [],
-    singleBlog: {}
+    singleBlog: {},
+    sendMessageForm: [],
+    messages: []
 }
 
 const toggleMenuButton = (state) => {
@@ -273,11 +275,18 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
     }
    
     updatedInputFieldArray.splice(inputFieldIndex, 1, inputField)
-
-    return {
-        ...state,
-        leaveCommentForm: updatedInputFieldArray
-    };
+    switch(action.formName) {
+        case 'leaveCommentForm':
+            return {
+                ...state,
+                leaveCommentForm: updatedInputFieldArray
+            };
+        case 'sendMessageForm':
+            return {
+                ...state,
+                sendMessageForm: updatedInputFieldArray
+            };
+    }
 }
 
 const postComment = (state, action) => {
@@ -288,9 +297,9 @@ const postComment = (state, action) => {
         let comment = {
             id: uuid(),
             image: "Name1",
-            fullName: `${state.leaveCommentForm.find(x => x.inputFieldName === "First Name").value} ${state.leaveCommentForm.find(x => x.inputFieldName === "Last Name").value}`,
+            fullName: `${state.leaveCommentForm.find(x => x.controlName === "firstName").value} ${state.leaveCommentForm.find(x => x.controlName === "lastName").value}`,
             date: Utility.getCurrentDateAndTime(),
-            comment: state.leaveCommentForm.find(x => x.inputFieldName === "Comment").value,
+            comment: state.leaveCommentForm.find(x => x.controlName === "comment").value,
         }
         updatedSinglePortfolio.comments.array.push(comment);
         updatedSinglePortfolio.comments = {...updatedSinglePortfolio.comments, sum: updatedSinglePortfolio.comments.sum + 1};
@@ -332,6 +341,29 @@ const loadSingleBlog = (state, action) => {
     return {
         ...state,
         singleBlog: action.obj
+    };
+}
+
+const initSendMessageForm = (state, action) => {
+    return {
+        ...state,
+        sendMessageForm: action.array
+    };
+}
+
+const postMessage = (state, action) => {
+    let updatedMessages = [...state.messages];
+    let messageObj = {
+        name: state.sendMessageForm.find(x => x.controlName === "name").value,
+        email: state.sendMessageForm.find(x => x.controlName === "email").value,
+        subject: state.sendMessageForm.find(x => x.controlName === "subject").value,
+        message: state.sendMessageForm.find(x => x.controlName === "message").value
+    }
+
+    updatedMessages.push(messageObj)
+    return {
+        ...state,
+        messages: updatedMessages
     };
 }
 
@@ -421,7 +453,11 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.LOAD_SINGLE_BLOG:
             return loadSingleBlog(state, action);   
         case actionTypes.START_CHOOSING_SINGLE_BLOG_CARDS_ON_ARROW_BUTTON:
-            return state;   
+            return state;
+        case actionTypes.INIT_SEND_MESSAGE_FORM:
+            return initSendMessageForm(state, action);      
+        case actionTypes.POST_MESSAGES:
+            return postMessage(state, action);    
         // case actionTypes.CHOOSE_FEEDBACK:
         //     return chooseFeedback(state, action);     
         default: 

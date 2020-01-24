@@ -1,23 +1,46 @@
 .contact-page {
     .contact-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
         border: 3px solid rgb(39, 49, 85);
         margin: 15px;
         border-radius: 255px 20px 105px 30px/30px 125px 30px 255px;
         background: white;
         .contact-page-header {
-
+            font-family: 'Indie Flower', cursive;
+            color: rgb(39, 49, 85);
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 50px;
         }
         .contact-page-wrapper2{
+            padding: 50px 0 50px 0;
             .contact-page-info {
-
+                font-family: 'Indie Flower', cursive;
+                font-size: 19px;
+                text-align: center;
+                opacity: 0.5;
             }
         }
-        .contact-page-wrapper2 {
-            .contact-page-form {
-
-            }
+        .contact-page-wrapper3 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 60%;
+            height: 40%;
+            padding: 30px;
+            box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
+            background: rgb(231, 223, 240);
+            margin-bottom: 50px;
             .contact-page-map {
-
+                margin-left: 50px;
+                width: 50%;
+                height: 425px;
+                background-image: url('../../../images/BakuMap.png');
+                background-position: center;
             }
         }
     }

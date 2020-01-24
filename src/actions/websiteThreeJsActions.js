@@ -196,12 +196,13 @@ export function initLeaveCommentForm(array) {
     };
 };
 
-export function setInputFiledValueAndCheckValidation(array, e, id) {
+export function setInputFiledValueAndCheckValidation(array, e, id, formName) {
     return { 
         type: actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION,
         array: array,
         event: e,
-        inputFieldId: id
+        inputFieldId: id,
+        formName: formName
     };
 };
 
@@ -250,5 +251,18 @@ export function startChoosingSingleBlogCardsOnArrowButton(direction) {
     return { 
         type: actionTypes.START_CHOOSING_SINGLE_BLOG_CARDS_ON_ARROW_BUTTON,
         direction: direction
+    };
+};
+
+export function initSendMessageForm(array) {
+    return { 
+        type: actionTypes.INIT_SEND_MESSAGE_FORM,
+        array: array
+    };
+};
+
+export function postMessage() {
+    return { 
+        type: actionTypes.POST_MESSAGE
     };
 };

@@ -18,7 +18,8 @@ export const leaveCommentInputForm = [
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'inputLeaveComment1'
+            inputID: 'inputLeaveComment1',
+            controlName: "firstName"
         },
         {
             id: 2,
@@ -39,7 +40,8 @@ export const leaveCommentInputForm = [
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'inputLeaveComment2'
+            inputID: 'inputLeaveComment2',
+            controlName: "lastName"
         },
         { 
             id: 3,
@@ -64,7 +66,8 @@ export const leaveCommentInputForm = [
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'inputLeaveComment3'
+            inputID: 'inputLeaveComment3',
+            controlName: "email"
         },
         {
             id: 4,
@@ -86,6 +89,7 @@ export const leaveCommentInputForm = [
             touched: false,
             errorMessage: [],
             type: "text",
-            textareaID: 'textareaLeaveComment1'
+            textareaID: 'textareaLeaveComment1',
+            controlName: "comment"
         }
     ]

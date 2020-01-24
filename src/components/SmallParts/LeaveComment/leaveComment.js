@@ -76,7 +76,7 @@ export const LeaveComment = (props) => {
     }
 
     const inputChangeHandler = (e, inputFieldId) => {
-        props.setInputFiledValueAndCheckValidation(props.leaveCommentForm, e, inputFieldId);
+        props.setInputFiledValueAndCheckValidation(props.leaveCommentForm, e, inputFieldId, 'leaveCommentForm');
     }
 
     const clearInputValue = (fieldId) => {

@@ -53,6 +53,7 @@ export const Input = (props) => {
                             type={props.type}
                             onChange={props.onChange}
                             id={props.inputID}
+                            placeholder={props.placeholder}
                         />
                         {renderErrorMessage()}
                     </div>
@@ -66,6 +67,7 @@ export const Input = (props) => {
                             onChange={props.onChange}
                             rows={props.rows}
                             id={props.textareaID}
+                            placeholder={props.placeholder}
                         />
                         {renderErrorMessage()}
                     </div>

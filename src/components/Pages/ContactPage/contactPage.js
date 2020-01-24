@@ -21,6 +21,7 @@ import {
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
+import SendMessage from '../../SmallParts/SendMessage/sendMessage';
 import Footer from '../../Parts/Footer/footer';
 
 /**
@@ -36,10 +37,10 @@ import Footer from '../../Parts/Footer/footer';
 import './contactPage.scss';
 
 /**
-* Selectors
+* Images
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import Map from '../../../images/BakuMap.png';
 
 /**
 * ContactPage component definition and export
@@ -73,11 +74,10 @@ export const ContactPage = (props) => {
                     <div className="contact-page-info">Email: info@yoursite.com</div>
                     <div className="contact-page-info">Website yoursite.com</div>
                 </div>
-                <div className="contact-page-wrapper2">
-                    <div className="contact-page-form"></div>
-                    <div className="contact-page-map"></div>
+                <div className="contact-page-wrapper3">
+                    <SendMessage/>
+                    <div className="contact-page-map"/>
                 </div>
-
             </div>
             <Footer/>
         </div>

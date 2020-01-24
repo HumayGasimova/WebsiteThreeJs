@@ -106,3 +106,10 @@ export const getSingleBlogState = createSelector(
     [getSingleBlog],
     (x) => x
 );
+
+const getSendMessageForm = (state) => state.home.sendMessageForm;
+
+export const getSendMessageFormState = createSelector(
+    [getSendMessageForm],
+    (x) => x
+);
