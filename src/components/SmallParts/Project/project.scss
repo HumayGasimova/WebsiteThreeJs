@@ -1,65 +1,7 @@
-// .project-info-open {
-//     background: rgb(175, 192, 255);
-//     border-left: 3px solid rgb(39, 49, 85);
-//     border-top: 3px solid rgb(39, 49, 85);
-//     border-right: 3px solid rgb(39, 49, 85);
-//     width: 252px;
-//     height: 50px;
-//     font-family: 'Indie Flower', cursive;
-//     text-align: center;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-evenly;
-//     color: rgb(39, 49, 85);
-//     .project-info-name {
-//         height: 10px;
-//     }
-//     .project-info-description {
-//         height: 10px;
-//         opacity: 0.4;
-//         font-size: 14px;
-//     }
-// }
-
 .project-info-close {
     opacity: 0;
     height: 55px;
 }
-
-// .project-developer-info-open {
-//     display: flex;
-//     align-items: center;
-//     background: rgb(175, 192, 255);
-//     border-left: 3px solid rgb(39, 49, 85);
-//     border-bottom: 3px solid rgb(39, 49, 85);
-//     border-right: 3px solid rgb(39, 49, 85);
-//     width: 252px;
-//     height: 55px;
-//     font-family: 'Indie Flower', cursive;
-//     color: rgb(39, 49, 85);
-//     .project-developer-info-photo {
-//         width: 40px;
-//         height: 40px;
-//         padding-left: 10px;
-//         >img {
-//             border-radius: 50%;
-//             width: 40px;
-//             height: 40px;
-//         }
-//     }
-//     .project-developer-info-general {
-//         height: 35px;
-//         padding-left: 10px;
-//         .project-developer-info-name {
-//             height: 20px;
-//         }
-//         .project-developer-info-position {
-//             height: 20px;
-//             opacity: 0.4;
-//             font-size: 14px;
-//         }
-//     }
-// }
 
 .project-developer-info-close {
     opacity: 0;
@@ -77,16 +19,21 @@
     .project-image {
         .project-image-border1 {
             border: 3px solid rgb(39, 49, 85);
+            border-radius: 80px 225px 40px 255px/205px 70px 225px 70px;
             width: 252px;
             height: 182px;
             .project-image-border2 {
                 border: 3px solid rgb(175, 192, 255);
                 width: 246px;
                 height: 176;
+                border: 3px solid rgb(175, 192, 255);
+                border-radius: 80px 225px 40px 255px/205px 70px 225px 70px;
                 >img{
                     border: 3px solid rgb(39, 49, 85);
                     width: 240px;
                     height: 170px;
+                    border: 3px solid rgb(39, 49, 85);
+                    border-radius: 80px 225px 40px 255px/205px 70px 225px 70px;
                 }
             }
         }
@@ -194,14 +141,20 @@
             border: 3px solid rgb(39, 49, 85);
             width: 252px;
             height: 452px;
+            border: 3px solid rgb(39, 49, 85);
+            border-radius: 255px 30px 75px 70px/70px 85px 70px 255px;
             .project-image-border2 {
                 border: 3px solid rgb(175, 192, 255);
                 width: 246px;
                 height: 446;
+                border: 3px solid rgb(175, 192, 255);
+                border-radius: 255px 30px 75px 70px/70px 85px 70px 255px;
                 >img{
                     border: 3px solid rgb(39, 49, 85);
                     width: 240px;
                     height: 440px;
+                    border: 3px solid rgb(39, 49, 85);
+                    border-radius: 255px 30px 75px 70px/70px 85px 70px 255px;
                 }
             }
         }
@@ -310,14 +263,20 @@
             border: 3px solid rgb(39, 49, 85);
             width: 222px;
             height: 182px;
+            border: 3px solid rgb(39, 49, 85);
+            border-radius: 70px 225px 20px 255px/255px 30px 225px 70px;
             .project-image-border2 {
                 border: 3px solid rgb(175, 192, 255);
                 width: 216px;
                 height: 176;
+                border: 3px solid rgb(175, 192, 255);
+                border-radius: 70px 225px 20px 255px/255px 30px 225px 70px;
                 >img{
                     border: 3px solid rgb(39, 49, 85);
                     width: 210px;
                     height: 170px;
+                    border: 3px solid rgb(39, 49, 85);
+                    border-radius: 70px 225px 20px 255px/255px 30px 225px 70px;
                 }
             }
         }
@@ -425,14 +384,20 @@
             border: 3px solid rgb(39, 49, 85);
             width: 222px;
             height: 312px;
+            border: 3px solid rgb(39, 49, 85);
+            border-radius: 235px 20px 235px 70px/20px 235px 70px 235px;
             .project-image-border2 {
                 border: 3px solid rgb(175, 192, 255);
                 width: 216px;
                 height: 306;
+                border: 3px solid rgb(175, 192, 255);
+                border-radius: 235px 20px 235px 70px/20px 235px 70px 235px;
                 >img{
                     border: 3px solid rgb(39, 49, 85);
                     width: 210px;
                     height: 300px;
+                    border: 3px solid rgb(39, 49, 85);
+                    border-radius: 235px 20px 235px 70px/20px 235px 70px 235px;
                 }
             }
         }
@@ -540,14 +505,20 @@
             border: 3px solid rgb(39, 49, 85);
             width: 312px;
             height: 192px;
+            border: 3px solid rgb(39, 49, 85);
+            border-radius: 70px 235px 70px 235px/235px 50px 75px 70px;
             .project-image-border2 {
                 border: 3px solid rgb(175, 192, 255);
                 width: 306px;
                 height: 186;
+                border: 3px solid rgb(175, 192, 255);
+                border-radius: 70px 235px 70px 235px/235px 50px 75px 70px;
                 >img{
                     border: 3px solid rgb(39, 49, 85);
                     width: 300px;
                     height: 180px;
+                    border: 3px solid rgb(39, 49, 85);
+                    border-radius: 70px 235px 70px 235px/235px 50px 75px 70px;
                 }
             }
         }
@@ -655,14 +626,20 @@
             border: 3px solid rgb(39, 49, 85);
             width: 312px;
             height: 192px;
+            border: 3px solid rgb(39, 49, 85);
+            border-radius: 105px 50px 225px 30px/30px 175px 90px 205px;
             .project-image-border2 {
                 border: 3px solid rgb(175, 192, 255);
                 width: 306px;
                 height: 186;
+                border: 3px solid rgb(175, 192, 255);
+                border-radius: 105px 50px 225px 30px/30px 175px 90px 205px;
                 >img{
                     border: 3px solid rgb(39, 49, 85);
                     width: 300px;
                     height: 180px;
+                    border: 3px solid rgb(39, 49, 85);
+                    border-radius: 105px 50px 225px 30px/30px 175px 90px 205px;
                 }
             }
         }
@@ -771,14 +748,20 @@
             border: 3px solid rgb(39, 49, 85);
             width: 282px;
             height: 192px;
+            border: 3px solid rgb(39, 49, 85);
+            border-radius: 105px 50px 175px 30px/30px 115px 90px 205px;
             .project-image-border2 {
                 border: 3px solid rgb(175, 192, 255);
                 width: 276px;
                 height: 186;
+                border: 3px solid rgb(175, 192, 255);
+                border-radius: 105px 50px 175px 30px/30px 115px 90px 205px;
                 >img{
                     border: 3px solid rgb(39, 49, 85);
                     width: 270px;
                     height: 180px;
+                    border: 3px solid rgb(39, 49, 85);
+                    border-radius: 105px 50px 175px 30px/30px 115px 90px 205px;
                 }
             }
         }

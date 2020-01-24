@@ -78,7 +78,6 @@ export const LeaveComment = (props) => {
         props.leaveCommentForm.inputsArray.map(el => {
             if(!el.validField){
                 clearInputValue(el.inputID);
-                // console.log(el.inputID)
             }
         })
     }
