@@ -68,14 +68,25 @@
     }
 }
 
-@media only screen and (max-width: 435px) {
+@media only screen and (max-width: 570px) {
     .services {   
         height: 1900px; 
     }
 }
 
 @media only screen and (max-width: 456px) {
-    .services {   
+    .services {    
         height: 1970px; 
+        .services-paragraph {    
+            .services-text-line1 {
+                font-size: 11px;
+            }        
+            .services-text-line2 {
+                font-size: 30px;
+            }
+            .services-text-line3 {
+                font-size: 17px;
+            }
+        }
     }
 }
