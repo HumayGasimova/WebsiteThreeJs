@@ -69,10 +69,18 @@ export const LeaveComment = (props) => {
 
     const onClickHandler = () => {
         props.postComment();
-        clearInputValue("inputLeaveComment1");
-        clearInputValue("inputLeaveComment2");
-        clearInputValue("inputLeaveComment3");
-        clearInputValue("textareaLeaveComment1");
+        if(props.leaveCommentForm.formIsValid){
+            clearInputValue("inputLeaveComment1");
+            clearInputValue("inputLeaveComment2");
+            clearInputValue("inputLeaveComment3");
+            clearInputValue("textareaLeaveComment1");
+        }
+        props.leaveCommentForm.inputsArray.map(el => {
+            if(!el.validField){
+                clearInputValue(el.inputID);
+                // console.log(el.inputID)
+            }
+        })
     }
 
     const inputChangeHandler = (e, inputFieldId) => {

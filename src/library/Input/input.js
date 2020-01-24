@@ -66,7 +66,7 @@ export const Input = (props) => {
                             type={props.type}
                             onChange={props.onChange}
                             rows={props.rows}
-                            id={props.textareaID}
+                            id={props.inputID}
                             placeholder={props.placeholder}
                         />
                         {renderErrorMessage()}

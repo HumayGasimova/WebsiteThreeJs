@@ -91,7 +91,7 @@ export const sendMessageInputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            textareaID: 'textareaSendMessage1',
+            inputID: 'textareaSendMessage1',
             controlName: "message"
         }
     ]

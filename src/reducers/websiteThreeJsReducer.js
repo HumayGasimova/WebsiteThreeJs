@@ -295,21 +295,23 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
 
 const postComment = (state, action) => {
     let updatedSinglePortfolio = {...state.singlePortfolio};
-    let updatedLeaveCommentForm = [...state.leaveCommentForm];
-    let checkIfFormIsValid = state.leaveCommentForm.map(el => el.validField === true);
-    if(checkIfFormIsValid.every(x => x === true)){
+    let updatedLeaveCommentForm = {...state.leaveCommentForm, inputsArray: [...state.leaveCommentForm.inputsArray]};
+    if(state.leaveCommentForm.formIsValid && state.leaveCommentForm.inputsArray){
         let comment = {
             id: uuid(),
             image: "Name1",
-            fullName: `${state.leaveCommentForm.find(x => x.controlName === "firstName").value} ${state.leaveCommentForm.find(x => x.controlName === "lastName").value}`,
+            fullName: `${state.leaveCommentForm.inputsArray.find(x => x.controlName === "firstName").value} ${state.leaveCommentForm.inputsArray.find(x => x.controlName === "lastName").value}`,
             date: Utility.getCurrentDateAndTime(),
-            comment: state.leaveCommentForm.find(x => x.controlName === "comment").value,
+            comment: state.leaveCommentForm.inputsArray.find(x => x.controlName === "comment").value,
         }
         updatedSinglePortfolio.comments.array.push(comment);
         updatedSinglePortfolio.comments = {...updatedSinglePortfolio.comments, sum: updatedSinglePortfolio.comments.sum + 1};
-        updatedLeaveCommentForm = updatedLeaveCommentForm.map(el => {return {...el, value: ''}})
+        updatedLeaveCommentForm.inputsArray = updatedLeaveCommentForm.inputsArray.map(el => {return {...el, value: ''}});
+        
+        updatedLeaveCommentForm.formIsValid = false;
+        updatedLeaveCommentForm.inputsArray = updatedLeaveCommentForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
     }else{
-        updatedLeaveCommentForm = updatedLeaveCommentForm.map((el, i) => {
+        updatedLeaveCommentForm.inputsArray = updatedLeaveCommentForm.inputsArray.map((el, i) => {
             return {
                     ...el, 
                     touched: true,
@@ -368,6 +370,7 @@ const postMessage = (state, action) => {
         updatedMessages.push(messageObj);
     }
     updatedSendMessageForm.formIsValid = false;
+    updatedSendMessageForm.inputsArray = updatedSendMessageForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
     return {
         ...state,
         messages: updatedMessages,

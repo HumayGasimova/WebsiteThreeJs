@@ -91,7 +91,7 @@ export const leaveCommentInputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            textareaID: 'textareaLeaveComment1',
+            inputID: 'textareaLeaveComment1',
             controlName: "comment"
         }
     ]
