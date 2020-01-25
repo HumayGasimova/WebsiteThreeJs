@@ -108,6 +108,7 @@ export const LeaveComment = (props) => {
                                     erroeMessages={el.errorMessage}
                                     inputID={el.inputID}
                                     textareaID={el.textareaID}
+                                    placeholder={el.elementConfig.placeholder}
                                 />
                             </div>
                         )
