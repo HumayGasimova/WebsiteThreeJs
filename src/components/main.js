@@ -65,7 +65,7 @@ export const Main = (props) => {
 
     return(
         <div className="main">
-            <Toolbar/>
+            <Toolbar className={"-main"}/>
             <MovingBubbles 
                 mainHeader={"Welcome"}
             />

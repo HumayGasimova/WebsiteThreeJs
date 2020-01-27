@@ -87,7 +87,7 @@ export const Toolbar = (props) => {
                         options={el.options}
                         className="toolbar-item"
                         onClick={() => toolbarOnClick(el.path)}
-                        optionClassName="toolbar-item-options"
+                        optionClassName={`toolbar-item-options`}
                         // toolBarInit={toolBarInit}
                         // id={el.itemId}
                         // active={el.itemId === props.activatedIcon}
@@ -116,7 +116,7 @@ export const Toolbar = (props) => {
 
     return(
         <>
-            <div className="toolbar">
+            <div className={`toolbar${props.className}`}>
                 {renderToolbarItems()}
                 <div 
                     className="toolbar-min" 

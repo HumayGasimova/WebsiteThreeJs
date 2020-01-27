@@ -65,7 +65,7 @@ export const ServicesPage = (props) => {
             <MovingBubbles 
                 mainHeader={"Services"}
             />
-            <Toolbar/>
+            <Toolbar className=""/>
             <Services/>
                 <div className="services-page-wrapper">
                     <div className="services-page-column">

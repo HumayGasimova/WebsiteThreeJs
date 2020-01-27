@@ -68,7 +68,7 @@ export const ToolbarItem = (props) => {
         return(
             <div 
                 className={props.optionClassName} 
-                onMouseLeave={handleMouseLeave} 
+                onMouseLeave={handleMouseLeave}
             >{props.options.map((el, i) => {
                 return(
                     <div 
@@ -88,7 +88,7 @@ export const ToolbarItem = (props) => {
     */
 
     return(
-        <>
+        <div className="toolbar-item-wrapper">
             <div 
                 className={`${props.className}`}
                 onClick={props.text !== "Portfolio" ? props.onClick : null}
@@ -98,7 +98,7 @@ export const ToolbarItem = (props) => {
                 {props.options.length !== 0 ? <FontAwesomeIcon icon={faCaretDown} size="sm" className="icon-arrow-down"/> : null}
             </div>
             {isHovering ? renderOptions() : null}
-        </>
+        </div>
     );
 }
 

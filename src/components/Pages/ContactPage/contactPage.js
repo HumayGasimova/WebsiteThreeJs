@@ -65,7 +65,7 @@ export const ContactPage = (props) => {
             <MovingBubbles 
                 mainHeader={"Contact"}
             />
-            <Toolbar/>
+            <Toolbar className=""/>
             <div className="contact-page-wrapper">
                 <div className="contact-page-header">Contact Information</div>
                 <div className="contact-page-wrapper2">

@@ -103,7 +103,7 @@ export const BlogPage = (props) => {
             <MovingBubbles 
                 mainHeader={"Blog"}
             />
-            <Toolbar/>
+            <Toolbar className=""/>
             <div className="blog-page-wrapper">
                 {renderBlogCards()}
                 <Pagination 

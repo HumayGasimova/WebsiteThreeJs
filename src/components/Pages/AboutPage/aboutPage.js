@@ -66,7 +66,7 @@ export const AboutPage = (props) => {
             <MovingBubbles 
                 mainHeader={"About Us"}
             />
-            <Toolbar/>
+            <Toolbar className=""/>
             <div className="about-page-section">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna 
