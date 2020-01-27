@@ -8,7 +8,7 @@
     height: 1600px;
     // border: 10px solid rgb(39, 49, 85);
     padding-bottom: 140px;
-    border: 5px solid rgb(39, 49, 85);
+    border: 5px solid rgb(42, 20, 33);
     margin: 15px;
     border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
     cursor: context-menu;
@@ -23,10 +23,11 @@
             font-family: 'Indie Flower', cursive;
             font-size: 13px;
             opacity: 0.5;
+            color: rgb(42, 20, 33);
         }
         .portfolio-text-line2 {
             font-family: 'Indie Flower', cursive;
-            color: rgb(39, 49, 85);
+            color: rgb(42, 20, 33);
             font-size: 50px;
             font-weight: bold;
             text-align: center;
@@ -37,6 +38,7 @@
             font-size: 19px;
             text-align: center;
             opacity: 0.5;
+            color: rgb(42, 20, 33);
         }
     }
 
@@ -50,7 +52,7 @@
             left: 200px;
             top: 4470px;
             margin: 0 50px 0 0;
-            box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
+            box-shadow: 10px 10px 10px 0 rgb(238, 203, 184);
             z-index: 10;
             >img {
                 width: 550px;
@@ -63,7 +65,7 @@
             left: 200px;
             top: 5670px;
             margin: 0 50px 0 0;
-            box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
+            box-shadow: 10px 10px 10px 0 rgb(238, 203, 184);
             z-index: 10;
             >img {
                 width: 550px;
@@ -90,7 +92,7 @@
             right: 200px;
             top: 5020px;
             margin: 50px 0 50px 50px;
-            box-shadow: -10px 10px 10px 0 rgb(101, 64, 136);
+            box-shadow: -10px 10px 10px 0 rgb(238, 203, 184);
             z-index: 10;
             >img {
                 width: 550px;
@@ -131,10 +133,11 @@
             font-family: 'Indie Flower', cursive;
             font-size: 13px;
             opacity: 0.5;
+            color: rgb(42, 20, 33);
         }
         .portfolio-page-all-text-line2 {
             font-family: 'Indie Flower', cursive;
-            color: rgb(39, 49, 85);
+            color: rgb(42, 20, 33);
             font-size: 50px;
             font-weight: bold;
             text-align: center;
@@ -145,6 +148,7 @@
             font-size: 19px;
             text-align: center;
             opacity: 0.5;
+            color: rgb(42, 20, 33);
         }
     }
 
@@ -207,13 +211,14 @@
     font-family: 'Indie Flower', cursive;
     font-size: 13px;
     opacity: 0.5;
+    color: rgb(42, 20, 33);
 }
 
 .portfolio-description-header {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(39, 49, 85);
+    color: rgb(42, 20, 33);
     padding: 10px 0 15px 0;
 }
 
@@ -221,6 +226,7 @@
     font-family: 'Indie Flower', cursive;
     font-size: 19px;
     opacity: 0.5;
+    color: rgb(42, 20, 33);
 }
 
 .portfolio-page-all-description-name {
