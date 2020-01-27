@@ -111,13 +111,13 @@
 
 .portfolio-page-all {
     // width: calc(100% - 20px);
-    background: white;
+    background: rgb(238, 203, 184);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 1800px;
-    border: 5px solid rgb(39, 49, 85);
+    border: 5px solid rgb(42, 20, 33);
     margin: 15px;
     border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
     padding-bottom: 140px;
@@ -128,12 +128,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
         .portfolio-page-all-text-line1 {
             font-family: 'Indie Flower', cursive;
             font-size: 13px;
             opacity: 0.5;
             color: rgb(42, 20, 33);
+            padding-top: 20px;
         }
         .portfolio-page-all-text-line2 {
             font-family: 'Indie Flower', cursive;
@@ -157,13 +157,13 @@
         justify-content: center;
         align-items: center;
         width: 57%;
-        box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
-        background: rgb(198, 204, 228);
+        box-shadow: 10px 10px 10px 5px rgb(73, 38, 52);
+        background: rgb(238, 203, 184);
         .portfolio-page-all-image-with-even-id {
             padding: 20px 70px 20px 20px;
             z-index: 10;
             >img {
-                box-shadow: 5px 5px 10px 3px rgb(101, 64, 136);
+                box-shadow: 5px 5px 10px 3px rgb(73, 38, 52);
                 width: 500px;
                 height: 390px;
             }
@@ -184,14 +184,14 @@
         align-items: center;
         width: 57%;
         margin: 40px 0 40px 0;
-        box-shadow: 10px 10px 10px 0 rgb(101, 64, 136);
-        background: rgb(198, 204, 228);
+        box-shadow: 10px 10px 10px 5px rgb(73, 38, 52);
+        background: rgb(238, 203, 184);
         .portfolio-page-all-image-with-odd-id {
             z-index: 10;
             // padding: 20px;
             padding: 20px 20px 20px 70px;
             >img {
-                box-shadow: 5px 5px 10px 3px rgb(101, 64, 136);
+                box-shadow: 5px 5px 10px 3px rgb(73, 38, 52);
                 width: 500px;
                 height: 390px;
             }
@@ -233,13 +233,14 @@
     font-family: 'Indie Flower', cursive;
     font-size: 13px;
     opacity: 0.5;
+    color: rgb(42, 20, 33);
 }
 
 .portfolio-page-all-description-header {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(39, 49, 85);
+    color: rgb(42, 20, 33);
     padding: 10px 0 15px 0;
 }
 
@@ -247,6 +248,7 @@
     font-family: 'Indie Flower', cursive;
     font-size: 19px;
     opacity: 0.5;
+    color: rgb(42, 20, 33);
 }
 
 @media only screen and (max-width: 1571px) {

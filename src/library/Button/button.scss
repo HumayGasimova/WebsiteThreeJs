@@ -9,7 +9,7 @@
     font-family: 'Indie Flower', cursive;
     cursor: pointer;
     &:hover {
-        background-color: rgb(238, 203, 184);
+        background-color: rgb(249, 142, 108);
         color: rgb(42, 20, 33);
         box-shadow: 5px 5px 5px 0 rgb(73, 38, 52);
     }
@@ -25,7 +25,7 @@
     font-family: 'Indie Flower', cursive;
     cursor: pointer;
     &:hover {
-        background-color: rgb(238, 203, 184);
+        background-color: rgb(249, 142, 108);
         color: rgb(42, 20, 33);
         box-shadow: -5px 5px 5px 0 rgb(73, 38, 52);
     }
@@ -41,7 +41,7 @@
     background: none;
     border: none;
     font-family: 'Indie Flower', cursive;
-    // margin-bottom: 80px;
+    color: rgb(42, 20, 33);
     cursor: pointer;
     &:disabled{
         color:rgb(150, 150, 150);

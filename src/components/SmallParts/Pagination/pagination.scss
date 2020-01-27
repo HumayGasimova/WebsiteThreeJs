@@ -29,7 +29,7 @@
                 height: 30px;
                 border-radius: 100%;
                 position: relative;
-                background: radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%); 
+                background: radial-gradient(circle at 50% 55%, rgba(237,200,184,1) 0%, rgba(231,168,154,1) 10%, rgba(135,43,86,1) 80%, rgba(27,3,10,1) 100%);
                 cursor: pointer;
             }
     
@@ -58,7 +58,7 @@
                 z-index: 2;
             }
             .pagination-item.pagination-item-bubble {
-                background: radial-gradient(circle at 50% 55%, rgba(240, 245, 255, 0.9), rgba(240, 245, 255, 0.9) 40%, rgba(225, 238, 255, 0.8) 60%, rgba(43, 130, 255, 0.4));
+              background: radial-gradient(circle at 50% 55%, rgba(237,200,184,1) 0%, rgba(231,168,154,1) 10%, rgba(135,43,86,1) 80%, rgba(27,3,10,1) 100%);
             }
             .pagination-item.pagination-item-bubble:before {
                 filter: blur(0);
@@ -75,6 +75,7 @@
                 top: -26px;
                 left: 8px;
                 opacity: 0.5;
+                color: rgb(42, 20, 33);
             }
         }
         
@@ -102,7 +103,7 @@
                 height: 40px;
                 border-radius: 100%;
                 position: relative;
-                background: radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%); 
+                background: radial-gradient(circle at 50% 55%, rgba(237,200,184,1) 0%, rgba(231,168,154,1) 10%, rgba(135,43,86,1) 80%, rgba(27,3,10,1) 100%);
                 cursor: pointer;
             }
     
@@ -133,7 +134,7 @@
                 transform: rotateZ(-30deg); 
             }
             .pagination-item-chosen.pagination-item-chosen-bubble {
-                background: radial-gradient(circle at 50% 55%, rgba(240, 245, 255, 0.9), rgba(240, 245, 255, 0.9) 40%, rgba(225, 238, 255, 0.8) 60%, rgba(43, 130, 255, 0.4));
+              background: radial-gradient(circle at 50% 55%, rgba(237,200,184,1) 0%, rgba(231,168,154,1) 10%, rgba(135,43,86,1) 80%, rgba(27,3,10,1) 100%);
                 animation: bubble-anim 2s ease-out infinite; 
             }
             .pagination-item-chosen.pagination-item-chosen-bubble:before {
@@ -153,6 +154,7 @@
                 position: relative;
                 top: -30px;
                 left: 14px;
+                color: rgb(42, 20, 33);
             }
         }
     }
