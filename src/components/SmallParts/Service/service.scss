@@ -59,28 +59,28 @@
         position: relative;
         top: -70px;
         // color: rgb(107, 146, 219);
-        color: rgb(70, 100, 155);
+        color: rgb(42, 20, 33);
         opacity: 0.7;
     }
     .icon-laptop {
         position: relative;
         top: -70px;
         // color: rgb(209, 97, 181);
-        color: rgb(70, 100, 155);
+        color: rgb(42, 20, 33);
         opacity: 0.7;
     }
     .icon-cog {
         position: relative;
         top: -70px;
         // color: rgb(238, 168, 76);
-        color: rgb(70, 100, 155);
+        color: rgb(42, 20, 33);
         opacity: 0.7;
     }
     .icon-question {
         position: relative;
         top: -70px;
         // color: rgb(81, 211, 81);
-        color: rgb(70, 100, 155);
+        color: rgb(42, 20, 33);
         opacity: 0.7;
     }
 
@@ -88,7 +88,7 @@
         font-family: 'Indie Flower', cursive;
         font-size: 20px;
         font-weight: bold;
-        color: rgb(39, 49, 85);
+        color: rgb(42, 20, 33);
         padding: 0px 0 10px 0;
     }
 
@@ -97,6 +97,7 @@
         font-size: 18px;
         text-align: center;
         opacity: 0.5;
+        color: rgb(42, 20, 33);
     }
 }
 
@@ -106,7 +107,7 @@
     height: 130px;
     border-radius: 100%;
     position: relative;
-    background: radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%); 
+    background: radial-gradient(circle at bottom, rgba(237,200,184,1) 0%, rgba(231,168,154,1) 10%, rgba(135,43,86,1) 80%, rgba(27,3,10,1) 100%); 
 }
 .ball:before {
     content: "";
@@ -152,7 +153,7 @@
 //     display: none; 
 // }
 .ball.bubble {
-    background: radial-gradient(circle at 50% 55%, rgba(240, 245, 255, 0.9), rgba(240, 245, 255, 0.9) 40%, rgba(225, 238, 255, 0.8) 60%, rgba(43, 130, 255, 0.4));
+    background: radial-gradient(circle at 50% 55%, rgba(237,200,184,1) 0%, rgba(231,168,154,1) 10%, rgba(135,43,86,1) 80%, rgba(27,3,10,1) 100%);
     -webkit-animation: bubble-anim 2s ease-out infinite;
     animation: bubble-anim 2s ease-out infinite; 
 }
