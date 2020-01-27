@@ -118,10 +118,10 @@ export const BlogSinglePage = (props) => {
 
     return(
         <div className="blog-single-page">
-            <Toolbar/>
             <MovingBubbles 
                 mainHeader={`Blog #${blogId}`}
             />
+            <Toolbar/>
             <div className="blog-single-page-wrapper">
                 <div className="blog-single-page-wrapper2">
                     <div className="blog-single-page-guide">

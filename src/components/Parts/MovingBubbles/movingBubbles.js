@@ -161,7 +161,7 @@ export const MovingBubbles = (props) => {
             <div className="moving-bubbles-text">
                 <div>
                     <svg height="100%" width="100%">
-                        <text x="50%" y="50%" fill="rgb(139, 160, 230)" textAnchor="middle">{props.mainHeader}</text>
+                        <text x="50%" y="50%" fill="rgb(238, 203, 184)" textAnchor="middle">{props.mainHeader}</text>
                     </svg>
                 </div>
             </div>
