@@ -16,3 +16,21 @@ body {
 ::-webkit-scrollbar {
     width: 0px;
 }
+
+@media only screen and (max-width: 1366px) {
+    body {
+        background-size: 100% 12000px;
+    }
+}
+
+@media only screen and (max-width: 1234px) {
+    body {
+        background-size: 100% 14000px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    body {
+        background-size: 100% 14700px;
+    }
+}
