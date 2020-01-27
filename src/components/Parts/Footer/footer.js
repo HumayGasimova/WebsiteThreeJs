@@ -112,7 +112,7 @@ export const Footer = (props) => {
             </div>
             <SocialMediaIcons 
                 size="2x" 
-                color="rgba(39, 49, 85, 0.7)"
+                color="rgba(42, 20, 33, 0.7)"
                 width="150px"
                 linkFacebook={"http://www.facebook.com/"}
                 linkLinkedIn={"http://www.linkedin.com/"}

@@ -3,9 +3,10 @@
     width: 300px;
     .footer-item-header {
         font-family: 'Indie Flower', cursive;
-        color: rgb(39, 49, 85);
+        color: rgb(42, 20, 33);
         font-size: 20px;
         font-weight: bold;
+        cursor: context-menu;
     }
     .footer-item-links {
         padding: 10px 0 0 15px;
@@ -15,18 +16,18 @@
             font-family: 'Indie Flower', cursive;
             cursor: pointer;
             >a{
-                color: rgba(39, 49, 85, 0.7);
+                color: rgba(42, 20, 33, 1);
             }
             .icon-arrow {
-                color: rgba(39, 49, 85, 0.7);
+                color: rgba(42, 20, 33, 1);
                 padding-right: 10px;
             }
             &:hover {
                 >a{
-                    color: rgb(39, 49, 85);
+                    color: rgb(163, 58, 102);
                 }
                 .icon-arrow {
-                    color: rgb(39, 49, 85);
+                    color: rgb(163, 58, 102);
                 }
             }
         }

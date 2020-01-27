@@ -17,9 +17,10 @@
         }
         .footer-section1-get-in-touch {
             padding-top: 40px;
+            cursor: context-menu;
             .footer-section1-get-in-touch-header {
                 font-family: 'Indie Flower', cursive;
-                color: rgb(39, 49, 85);
+                color: rgb(42, 20, 33);
                 font-size: 20px;
                 font-weight: bold;
             }
@@ -32,16 +33,17 @@
                     padding: 3px 0  0 10px;
                 }
                 .icon-info {
-                    color: rgb(39, 49, 85);
+                    color: rgb(42, 20, 33);
                 }
             }
         }
     }
     .footer-copyrights {
         font-family: 'Indie Flower', cursive;
-        color:  rgb(39, 49, 85);
+        color:  rgb(42, 20, 33);
         font-size: 20px;
         text-align: center;
+        cursor: context-menu;
     }
 }
 
