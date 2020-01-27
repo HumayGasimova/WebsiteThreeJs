@@ -62,7 +62,7 @@ export const TeamMember = (props) => {
             <div className="team-member-info">{props.info}</div>
             <SocialMediaIcons 
                 size="lg" 
-                color="rgba(39, 49, 85, 0.5)"
+                color="rgba(42, 20, 33, 0.5)"
                 width="100px"
                 linkFacebook={"http://www.facebook.com/"}
                 linkLinkedIn={"http://www.linkedin.com/"}

@@ -4,7 +4,7 @@
     margin: 20px;
     .team-member-full-name {
         font-family: 'Indie Flower', cursive;
-        color: rgb(39, 49, 85);
+        color: rgb(42, 20, 33);
         font-size: 21px;
     }
     .team-member-position {
@@ -12,6 +12,7 @@
         font-size: 16px;
         opacity: 0.5;
         padding: 5px 0 15px 0;
+        color: rgb(42, 20, 33);
     }
     .team-member-image {
         >img {
@@ -24,6 +25,7 @@
         font-size: 16px;
         opacity: 0.5;
         padding: 15px 0 15px 0;
+        color: rgb(42, 20, 33);
     }
 }
 
