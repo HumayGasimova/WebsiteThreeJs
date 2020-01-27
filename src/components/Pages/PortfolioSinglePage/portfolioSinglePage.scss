@@ -6,9 +6,10 @@
         rgba(111, 9, 55, 1) 34%, 
         rgba(163, 58, 102, 1) 56%, 
         rgba(249, 142, 108, 1) 75%, 
-        rgba(238, 203, 184, 1) 88%
-    );
-    background-size: 100% 3500px;
+        rgba(238, 203, 184, 1) 88%,
+    ), rgba(238, 203, 184, 1);
+    background-size: 100% 3400px;
+    background-repeat: no-repeat, repeat;
     .portfolio-single-page-wrapper {
         padding: 0 130px 10px 130px;
         width: calc(100% - 260px);

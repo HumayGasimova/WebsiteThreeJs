@@ -9,8 +9,9 @@ body {
         rgba(163, 58, 102, 1) 56%, 
         rgba(249, 142, 108, 1) 75%, 
         rgba(238, 203, 184, 1) 88%
-    );
+    ), rgba(238, 203, 184, 1);
     background-size: 100% 7340px;
+    background-repeat: no-repeat, repeat;
     // overflow: hidden;
 }
 ::-webkit-scrollbar {
