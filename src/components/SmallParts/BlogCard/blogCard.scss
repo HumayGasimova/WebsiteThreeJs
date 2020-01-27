@@ -1,8 +1,8 @@
 .blog-card {
     width: 374px;
     height: 473px;
-    background-color: rgb(231, 223, 240);
-    box-shadow: 5px 5px 5px 3px rgb(101, 64, 136);
+    background-color: rgb(238, 203, 184);
+    box-shadow: 5px 5px 5px 3px rgb(73, 38, 52);
     cursor: pointer;
     .blog-card-image {
         >img {
@@ -17,20 +17,20 @@
             justify-content: flex-start;
             .blog-card-date {
                 font-family: 'Indie Flower', cursive;
-                color: rgb(39, 49, 85);
+                color: rgb(42, 20, 33);
                 font-size: 19px;
                 opacity: 0.5;
             }
             .blog-card-author{
                 font-family: 'Indie Flower', cursive;
-                color: rgb(39, 49, 85);
+                color: rgb(42, 20, 33);
                 font-size: 19px;
                 opacity: 0.5;
                 padding: 0 20px 0 20px;
             }
             .blog-card-number-of-comments {
                 font-family: 'Indie Flower', cursive;
-                color: rgb(39, 49, 85);
+                color: rgb(42, 20, 33);
                 font-size: 19px;
                 opacity: 0.5;
                 .icon-comment {
@@ -42,6 +42,7 @@
             font-family: 'Indie Flower', cursive;
             font-size: 21px;
             padding-top: 20px;
+            color: rgb(42, 20, 33);
         }
     }
 }
