@@ -63,10 +63,10 @@ export const AboutPage = (props) => {
 
     return(
         <div className="about-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={"About Us"}
             />
-            <Toolbar className=""/>
             <div className="about-page-section">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna 

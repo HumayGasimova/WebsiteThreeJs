@@ -3,24 +3,17 @@
     flex-direction: column;
     .toolbar-item {
         padding: 15px;
-        color: rgba(238, 203, 184, 0.4);
+        color: rgba(238, 203, 184, 1);
         font-size: 30px;
         font-family: 'Indie Flower', cursive;
         font-weight: bold;
         cursor: pointer;
         &:hover{
-            color: rgba(238, 203, 184, 1);
+            color: rgba(249, 142, 108, 1);
         }
         .icon-arrow-down {
             padding-left: 5px;
         }
-    }
-    .toolbar-item-active {
-        color: rgba(238, 203, 184, 0.4);
-    }
-
-    .toolbar-item-active {
-        color: rgba(238, 203, 184, 0.4);
     }
     
     .sidebar-item {
@@ -42,7 +35,7 @@
             font-weight: bold;
             cursor: pointer;
             &:hover {
-                background-color: rgb(238, 203, 184);
+                background-color: rgb(249, 142, 108);
                 color: rgb(42,20,33);
             }
         }
@@ -63,9 +56,6 @@
         }
     }
 }
-
-
-
 
 @media only screen and (max-width: 1000px) {
     .toolbar-item-wrapper {

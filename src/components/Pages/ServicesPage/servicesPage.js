@@ -62,10 +62,10 @@ export const ServicesPage = (props) => {
 
     return(
         <div className="services-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={"Services"}
             />
-            <Toolbar className=""/>
             <Services/>
                 <div className="services-page-wrapper">
                     <div className="services-page-column">

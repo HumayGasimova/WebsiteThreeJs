@@ -100,10 +100,10 @@ export const BlogPage = (props) => {
 
     return(
         <div className="blog-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={"Blog"}
             />
-            <Toolbar className=""/>
             <div className="blog-page-wrapper">
                 {renderBlogCards()}
                 <Pagination 

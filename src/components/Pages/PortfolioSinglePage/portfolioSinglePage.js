@@ -114,10 +114,10 @@ export const PortfolioSinglePage = (props) => {
 
     return(
         <div className="portfolio-single-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={`Portfolio #${portfolioId}`}
             />
-            <Toolbar className=""/>
             <div className="portfolio-single-page-wrapper">
                 <div className="portfolio-single-page-wrapper2">
                     <div className="portfolio-single-page-wrapper3">

@@ -62,10 +62,10 @@ export const PortfolioPage = (props) => {
 
     return(
         <div className="portfolio-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={"Portfolio"}
             />
-            <Toolbar className=""/>
             <Portfolio className="portfolio-page-all" portfolioPage/>
             <Footer/>
         </div>

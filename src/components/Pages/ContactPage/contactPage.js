@@ -62,10 +62,10 @@ export const ContactPage = (props) => {
 
     return(
         <div className="contact-page">
+            <Toolbar/>
             <MovingBubbles 
                 mainHeader={"Contact"}
             />
-            <Toolbar className=""/>
             <div className="contact-page-wrapper">
                 <div className="contact-page-header">Contact Information</div>
                 <div className="contact-page-wrapper2">
