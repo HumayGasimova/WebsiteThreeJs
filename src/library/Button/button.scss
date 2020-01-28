@@ -134,8 +134,9 @@
     }
     &:disabled{
         box-shadow: none;
-        background-color: rgb(231, 223, 240);
+        background-color: rgb(249, 142, 108);
         color:rgb(150, 150, 150);
+        border: none;
         cursor: not-allowed;
     }
 }
