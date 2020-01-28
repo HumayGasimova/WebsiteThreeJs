@@ -1,4 +1,15 @@
 .blog-single-page {
+    background: linear-gradient(
+        180deg,
+        rgba(42, 20, 33, 1) 0%,
+        rgba(73, 38, 52, 1) 18%,
+        rgba(111, 9, 55, 1) 34%, 
+        rgba(163, 58, 102, 1) 56%, 
+        rgba(249, 142, 108, 1) 75%, 
+        rgba(238, 203, 184, 1) 88%
+    ), rgba(238, 203, 184, 1);
+    background-size: 100% 3470px;
+    background-repeat: no-repeat, repeat;
     .blog-single-page-wrapper {
         padding: 0 110px 10px 110px;
         width: calc(100% - 260px);
@@ -24,7 +35,7 @@
                 }
                 .blog-single-page-guide-paragraph {
                     font-family: 'Indie Flower', cursive;
-                    color:  rgb(39, 49, 85);
+                    color: rgb(249, 142, 108);
                     font-size: 27px;
                     padding-bottom: 5px;
                     font-size: bold;
@@ -37,6 +48,7 @@
                     text-align: justify;
                     text-justify: inter-word;
                     width: 370px;
+                    color: rgb(238, 203, 184);
                 }
             }
         }
