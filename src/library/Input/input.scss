@@ -7,6 +7,7 @@
         padding-left: 5px;
         resize: none;
         outline: none;
+        color: rgb(42, 20, 33);
     }
     >textarea {
         width: 100%;
@@ -15,6 +16,7 @@
         padding-left: 5px;
         resize: vertical;
         outline: none;
+        color: rgb(42, 26, 20);
     }
 }
 
@@ -27,7 +29,8 @@
         border-top-left-radius: 30px;
         border-bottom-left-radius: 30px;
         padding: 10px;
-        border: none
+        border: none;
+        color: rgb(42, 20, 33);
     }
 }  
 
@@ -40,6 +43,7 @@
         padding-left: 5px;
         resize: none;
         outline: none;
+        color: rgb(42, 20, 33);
     }
     >textarea {
         width: 100%;
@@ -48,6 +52,7 @@
         padding-left: 5px;
         resize: vertical;
         outline: none;
+        color: rgb(42, 20, 33);
     }
 }
 
@@ -61,6 +66,7 @@
         padding-left: 5px;
         resize: none;
         outline: none;
+        color: rgb(42, 20, 33);
     }  
     >textarea {
         width: 100%;
@@ -70,6 +76,7 @@
         padding-left: 5px;
         resize: vertical;
         outline: none;
+        color: rgb(42, 20, 33);
     }
     .error {
         font-family: 'Indie Flower', cursive;
@@ -78,3 +85,8 @@
         color: red;
     }
 }
+
+::-webkit-input-placeholder { /* Edge */
+    color: rgb(42, 20, 33);
+    opacity: 0.7;
+  }
