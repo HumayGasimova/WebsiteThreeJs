@@ -16,7 +16,7 @@
         width: 80%;
         .comment-full-name {
             font-family: 'Indie Flower', cursive;
-            color:  rgb(39, 49, 85);
+            color:  rgb(42, 20, 33);
             font-size: 27px;
             padding-top: 5px;
         }
@@ -25,6 +25,7 @@
             font-size: 16px;
             opacity: 0.5;
             padding: 15px 0 5px 0;
+            color:  rgb(42, 20, 33);
         }
         .comment-text {
             font-family: 'Indie Flower', cursive;
@@ -32,11 +33,13 @@
             opacity: 0.8;
             text-align: justify;
             text-justify: inter-word;
+            color:  rgb(42, 20, 33);
         }
         .comment-wrapper-input {
             display: flex;
             align-items: center;
             margin-top: 10px;
+            color:  rgb(42, 20, 33);
         }
     }
 }
