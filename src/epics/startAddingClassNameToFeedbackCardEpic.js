@@ -68,43 +68,7 @@ export const startAddingClassNameToFeedbackCardEpic = (action$, state$) =>
                         ) 
                 }
             }
-            // if(state$.value.home.feedbacksOnScroll){
-            //     switch(id){
-            //         case 1:
-            //             console.log("EPIC")
-            //             return of(
-            //                 Actions.updateFeedbackCardStyle("card7", "card7-move-to-right-updated"),
-            //             ) 
-            //         case 2:
-            //             return of(
-            //                 Actions.updateFeedbackCardStyle("card1", "card1-move-to-right-updated"),
-            //                 Actions.feedbacksStylesUpdated()
-            //             ) 
-            //         case 3:
-            //             return of(
-            //                 Actions.updateFeedbackCardStyle("card2", "card2-move-to-right-updated")
-            //             ) 
-            //         case 4:
-            //             return of(
-            //                 Actions.updateFeedbackCardStyle("card3", "card3-move-to-right-updated")
-            //             ) 
-            //         case 5:
-            //             return of(
-            //                 Actions.updateFeedbackCardStyle("card4", "card4-move-to-right-updated")
-            //             ) 
-            //         case 6:
-            //             return of(
-            //                 Actions.updateFeedbackCardStyle("card5", "card5-move-to-right-updated")
-            //             ) 
-            //         case 7:
-            //             return of(
-            //                 Actions.updateFeedbackCardStyle("card6", "card6-move-to-right-updated"),
-                           
-            //             ) 
-            //     }
-            // }
-            return empty() 
-                // takeUntil(action$.ofType(actionTypes.STOP_CHANGING_FEEDBACKS))
+            return empty();
             
         })
     )

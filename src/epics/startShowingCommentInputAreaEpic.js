@@ -53,8 +53,6 @@ export const startShowingCommentInputAreaEpic = (action$, state$) =>
                 case "threadN2": 
                     break;
             }
-            // console.log(action.inputIsShown, action.thread, action.userId)
-
                 return of(
                     Actions.loadSinglePortfolio(singlePortfolio),
                     // Actions.dotOnChange(),

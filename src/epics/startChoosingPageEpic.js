@@ -67,7 +67,6 @@ export const startChoosingPageEpic = (action$, state$, dependencies$) =>
                 case "blogPage":
                     updatedArray = [...blogCards];
                     updatedArray = updatedArray.slice((action.id * 6) - 6, action.id * 6);
-                    console.log(updatedArray)
                     return of(
                         Actions.choosePage(action.id),
                         Actions.loadBlogCardsToBlogPage(updatedArray),

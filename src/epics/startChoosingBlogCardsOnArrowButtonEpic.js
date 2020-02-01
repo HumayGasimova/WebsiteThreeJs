@@ -65,7 +65,6 @@ export const startChoosingBlogCardsOnArrowButtonEpic = (action$, state$) =>
             paging.splice(nextPageIndex, 1, nextPage);
             let updatedBlogCardsArray = [...blogCards];
             updatedBlogCardsArray = updatedBlogCardsArray.slice((nextPageId * 6) - 6, nextPageId * 6);
-console.log(updatedBlogCardsArray)
             return of(
                 Actions.updatePaging(paging),
                 Actions.loadBlogCardsToBlogPage(updatedBlogCardsArray),

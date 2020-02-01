@@ -82,12 +82,10 @@ export const Feedbacks = (props) => {
         });
         feedbacksDiv.addEventListener('mouseleave', () => {
             isDown = false
-            // console.log("mouseLeave");
         });
         feedbacksDiv.addEventListener('mouseup', () => {
             isDown = false
             feedbacksDiv.classList.remove('active');
-            // console.log("mouseUp");
         });
         feedbacksDiv.addEventListener('mousemove', (e) => {
             if(!isDown) return;
@@ -97,8 +95,6 @@ export const Feedbacks = (props) => {
             feedbacksDiv.scrollLeft = scrollLeft - walk;
             setXCoordinate(x);
             // feedbacksDiv.scrollLeft = (scrollLeft - walk) * 4; // scrolling with speed
-            // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
-            // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
         });
 
         if(cardPosition1.left < feedbacksDiv.offsetLeft/2 && cardPosition1.left > feedbacksDiv.offsetLeft/2-200){
@@ -135,10 +131,8 @@ export const Feedbacks = (props) => {
       
         switch(cardId) {
             case 1:
-                // console.log({left, width, cardId})
                 return setCardPosition1({left, width, id: cardId});
             case 2:
-                // console.log({left, width, cardId})
                 return setCardPosition2({left, width, id: cardId});
             case 3:
                 return setCardPosition3({left, width, id: cardId});
@@ -149,7 +143,6 @@ export const Feedbacks = (props) => {
             case 6:
                 return setCardPosition6({left, width, id: cardId});
             case 7:
-                // console.log({left, width, cardId})
                 return setCardPosition7({left, width, id: cardId});
         }
        
@@ -203,7 +196,6 @@ export const Feedbacks = (props) => {
         <div className="feedbacks" ref={select}>
           {renderFeedbacks()}
           {renderDots()}
-          {/* {console.log("rectPosition",{cardPosition1, cardPosition2, cardPosition3, cardPosition4, cardPosition5})} */}
         </div>
     );
 }
