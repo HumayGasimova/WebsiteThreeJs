@@ -7,14 +7,6 @@ import React, {
     useState
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
 * Styles
 */
@@ -26,18 +18,6 @@ import './otherProjects.scss';
 */
 
 import Project from '../../SmallParts/Project/project';
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Constants
@@ -106,18 +86,5 @@ export const OtherProjects = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedback: Selectors.getFeedbackState(state),
-            // dots: Selectors.getDotsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
-        };
-    }
-)(OtherProjects);
+export default OtherProjects;
  

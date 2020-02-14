@@ -44,7 +44,7 @@
     .sidebar-item-options {
         width: 300px;
         .item-option {
-            color: rgba(139, 160, 230, 0.4);
+            color: rgba(238, 203, 184, 0.4);
             padding: 5px 0 5px 70px;
             font-size: 25px;
             font-family: 'Indie Flower', cursive;
@@ -65,13 +65,13 @@
         .sidebar-item {
             display: inline;
             padding: 15px 15px 15px 30px;
-            color: rgba(139, 160, 230, 0.4);
+            color: rgba(238, 203, 184, 0.4);
             font-size: 25px;
             font-family: 'Indie Flower', cursive;
             font-weight: bold;
             cursor: pointer;
             &:hover{
-                color: rgba(139, 160, 230, 1);
+                color: rgba(238, 203, 184, 1);
             }
             
         }

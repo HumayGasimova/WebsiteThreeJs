@@ -158,13 +158,13 @@ export default connect(
     (state) => {
         return {
             singlePortfolio: Selectors.getSinglePortfolioState(state),
-            portfolio: Selectors.getPortfolioState(state),
+            portfolio: Selectors.getPortfolioState(state)
         };
     },
     (dispatch) => {
         return {
             startInitPortfolioSingle: bindActionCreators(Actions.startInitPortfolioSingle, dispatch),
-            initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch),
+            initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch)
         };
     }
 )(withRouter(PortfolioSinglePage));

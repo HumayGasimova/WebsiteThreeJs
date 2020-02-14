@@ -3,39 +3,16 @@
 */
 
 import React, {
-    useEffect,
-    useState
+    useEffect
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
 import * as THREE from 'three';
-
-import {
-    OrbitControls
-} from "three/examples/jsm/controls/OrbitControls";
-
-/**
-* Components
-*/
 
 /**
 * Styles
 */
 
 import './movingBubbles.scss';
-
-/**
-* Shaders
-*/
-
-import * as Shaders from './Shaders';
 
 /**
 * Images
@@ -47,7 +24,12 @@ import PosY from '../../../images/mountains/dejavu_up.png';
 import NegY from '../../../images/mountains/dejavu_dn.png';
 import PosZ from '../../../images/mountains/dejavu_rt.png';
 import NegZ from '../../../images/mountains/dejavu_lf.png';
-//http://www.custommapmakers.org/skyboxes.php
+
+/**
+* Shaders
+*/
+
+import * as Shaders from './Shaders';
 
 /**
 * MovingBubbles component definition and export

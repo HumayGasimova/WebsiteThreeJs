@@ -5,6 +5,12 @@
 import React from 'react';
 
 /**
+* Styles
+*/
+
+import './servicesPage.scss';
+
+/**
 * Components
 */
 
@@ -12,12 +18,6 @@ import Toolbar from '../../Parts/Toolbar/toolbar';
 import MovingBubbles from '../../Parts/MovingBubbles/movingBubbles';
 import Services from '../../Parts/Services/services';
 import Footer from '../../Parts/Footer/footer';
-
-/**
-* Styles
-*/
-
-import './servicesPage.scss';
 
 /**
 * ServicesPage component definition and export

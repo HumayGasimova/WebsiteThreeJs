@@ -2,22 +2,11 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     connect
 } from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
 
 /**
 * Styles
@@ -29,15 +18,7 @@ import './newsletter.scss';
 * Newsletter component definition and export
 */
 
-export const Newsletter = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const Newsletter = () => {
 
     /**
     * Markup
@@ -55,16 +36,5 @@ export const Newsletter = (props) => {
         </div>
     )
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(Newsletter);
+ export default Newsletter;
  

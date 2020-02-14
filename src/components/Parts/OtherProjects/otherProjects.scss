@@ -3,8 +3,6 @@
     height: 550px;
     margin: 0 0 0 250px;
     .other-projects-text {
-        // position: absolute;
-        // left: -600px;
         font-family: 'Indie Flower', cursive;
         width: calc(100% - 600px);
         font-size: 40px;
@@ -32,8 +30,6 @@
 @media only screen and (max-width: 1530px) {
     .other-projects {
         .other-projects-text {
-            // position: absolute;
-            // left: -600px;
             width: calc(100% - 100px);
         }
     }
@@ -44,7 +40,6 @@
         margin: 0 0 0 20px;
     }
 }
-
 
 @media only screen and (max-width: 1386px) {
     .other-projects {
@@ -78,7 +73,6 @@
     .other-projects {
         .projects-small-screen {
             width: 270px;
-
         }
     }
 }
@@ -88,7 +82,6 @@
         .projects-small-screen {
             width: 110px;
             height: 6150px;
-
         }
     }
 }
@@ -99,7 +92,6 @@
         .projects-small-screen {
             width: 370px;
             height: 4150px;
-
         }
         .other-projects-text {
             font-size: 30px;
@@ -113,7 +105,6 @@
         .projects-small-screen {
             width: 230px;
             height: 4150px;
-
         }
     }
 }
@@ -124,7 +115,6 @@
         .projects-small-screen {
             width: 130px;
             height: 4150px;
-
         }
     }
 }
@@ -134,7 +124,6 @@
         .projects-small-screen {
             width: 70px;
             height: 4150px;
-
         }
         .other-projects-text {
             font-size: 27px;
@@ -148,7 +137,6 @@
         .projects-small-screen {
             width: 230px;
             height: 3150px;
-
         }
         .other-projects-text {
             font-size: 23px;
@@ -159,12 +147,10 @@
 
 @media only screen and (max-width: 440px) {
     .other-projects {
-        // width: 1300px;
         height: 2310px;
         .projects-small-screen {
             width: 150px;
             height: 3150px;
-
         }
         .other-projects-text {
             width: calc(100% - 100px);
@@ -180,7 +166,6 @@
         .projects-small-screen {
             width: 70px;
             height: 3150px;
-
         }
         .other-projects-text {
             padding: 0px 45px 120px 40px; 
@@ -190,12 +175,10 @@
 
 @media only screen and (max-width: 310px) {
     .other-projects {
-        // width: 1300px;
         height: 2200px;
         .projects-small-screen {
             width: 30px;
             height: 3150px;
-
         }
         .other-projects-text {
             font-size: 17px;

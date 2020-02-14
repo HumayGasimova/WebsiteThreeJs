@@ -113,12 +113,12 @@ export const BlogPage = (props) => {
 export default connect(
     (state) => {
         return {
-            blogCardsToShow: Selectors.getBlogCardsToShowState(state),
+            blogCardsToShow: Selectors.getBlogCardsToShowState(state)
         };
     },
     (dispatch) => {
         return {
-            initBlogCards: bindActionCreators(Actions.initBlogCards, dispatch),
+            initBlogCards: bindActionCreators(Actions.initBlogCards, dispatch)
         };
     }
 )(BlogPage);

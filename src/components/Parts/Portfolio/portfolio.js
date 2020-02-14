@@ -285,12 +285,12 @@ export const Portfolio = (props) => {
 export default connect(
     (state) => {
         return {
-            portfolio: Selectors.getPortfolioState(state),
+            portfolio: Selectors.getPortfolioState(state)
         };
     },
     (dispatch) => {
         return {
-            initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch),
+            initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch)
         };
     }
 )(withRouter(Portfolio));
