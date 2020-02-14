@@ -13,13 +13,6 @@
    display: none;
 }
 
-@keyframes spin {
-    100% {
-        transform: rotate(45deg);
-        transform-origin: top left;
-    }
-}
-
 @media only screen and (max-width: 1000px) {
     .toolbar-main {
         background: rgba(73, 38, 52, 0.7);

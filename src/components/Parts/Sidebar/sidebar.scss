@@ -18,11 +18,17 @@
     height: 470px;
     width: 100%;
     z-index: 100;
+    -webkit-animation: appear 0.5s linear;
+    -moz-animation: appear 0.5s linear;
+    -o-animation: appear 0.5s linear;
     animation: appear 0.5s linear;
     .sidebar-mounted-items {
         display: flex;
         flex-direction: column;
         opacity: 1;
+        -webkit-animation: appearItems 2s linear;
+        -moz-animation: appearItems 2s linear;
+        -o-animation: appearItems 2s linear;
         animation: appearItems 2s linear;
     }
 }
@@ -34,11 +40,17 @@
     height: 0px;
     width: 100%;
     z-index: 100;
+    -webkit-animation: disappear 1.5s linear;
+    -moz-animation: disappear 1.5s linear;
+    -o-animation: disappear 1.5s linear;
     animation: disappear 1.5s linear;
     .sidebar-unmounted-items {
         display: flex;
         flex-direction: column;
         opacity: 0;
+        -webkit-animation: disappearItems 0.5s linear;
+        -moz-animation: disappearItems 0.5s linear;
+        -o-animation: disappearItems 0.5s linear;
         animation: disappearItems 0.5s linear;
     }
 }
@@ -49,6 +61,30 @@
     }
 }
 
+@-webkit-keyframes appear {
+    from{
+        height: 0;
+    }
+    to {
+        height: 470px;
+    }
+}
+@-moz-keyframes appear {
+    from{
+        height: 0;
+    }
+    to {
+        height: 470px;
+    }
+}
+@-o-keyframes appear {
+    from{
+        height: 0;
+    }
+    to {
+        height: 470px;
+    }
+}
 @keyframes appear {
     from{
         height: 0;
@@ -58,6 +94,30 @@
     }
 }
 
+@-webkit-keyframes disappear {
+    from{
+        height: 470px;
+    }
+    to {
+        height: 0;
+    }
+}
+@-moz-keyframes disappear {
+    from{
+        height: 470px;
+    }
+    to {
+        height: 0;
+    }
+}
+@-o-keyframes disappear {
+    from{
+        height: 470px;
+    }
+    to {
+        height: 0;
+    }
+}
 @keyframes disappear {
     from{
         height: 470px;
@@ -67,6 +127,30 @@
     }
 }
 
+@-webkit-keyframes appearItems {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes appearItems {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-o-keyframes appearItems {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
 @keyframes appearItems {
     0% {
         opacity: 0;
@@ -76,6 +160,30 @@
     }
 }
 
+@-webkit-keyframes disappearItems {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes disappearItems {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
+@-o-keyframes disappearItems {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
 @keyframes disappearItems {
     0% {
         opacity: 1;
