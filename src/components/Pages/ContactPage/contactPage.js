@@ -2,18 +2,13 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
-import {
-    connect
-} from 'react-redux';
+/**
+* Styles
+*/
 
-import {
-    bindActionCreators
-} from 'redux';
+import './contactPage.scss';
 
 /**
 * Components
@@ -25,36 +20,10 @@ import SendMessage from '../../SmallParts/SendMessage/sendMessage';
 import Footer from '../../Parts/Footer/footer';
 
 /**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
-* Styles
-*/
-
-import './contactPage.scss';
-
-/**
-* Images
-*/
-
-import Map from '../../../images/BakuMap.png';
-
-/**
 * ContactPage component definition and export
 */
 
-export const ContactPage = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const ContactPage = () => {
 
     /**
     * Markup
@@ -83,16 +52,6 @@ export const ContactPage = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(ContactPage);
+
+export default ContactPage;
  

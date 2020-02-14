@@ -20,6 +20,12 @@ import {
 } from 'react-router-dom';
 
 /**
+* Styles
+*/
+
+import './portfolioSinglePage.scss';
+
+/**
 * Components
 */
 
@@ -36,12 +42,6 @@ import Footer from '../../Parts/Footer/footer';
 */
 
 import * as Actions from '../../../actions';
-
-/**
-* Styles
-*/
-
-import './portfolioSinglePage.scss';
 
 /**
 * Selectors

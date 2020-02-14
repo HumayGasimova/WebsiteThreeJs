@@ -16,6 +16,12 @@ import {
 } from 'redux';
 
 /**
+* Styles
+*/
+
+import './blogPage.scss';
+
+/**
 * Components
 */
 
@@ -26,17 +32,10 @@ import Pagination from '../../SmallParts/Pagination/pagination';
 import Footer from '../../Parts/Footer/footer';
 
 /**
-* Styles
-*/
-
-import './blogPage.scss';
-
-/**
 * Actions
 */
 
 import * as Actions from '../../../actions';
-
 
 /**
 * Selectors
@@ -57,10 +56,6 @@ import {
 */
 
 export const BlogPage = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods

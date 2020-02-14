@@ -2,17 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 /**
 * Styles
@@ -36,28 +26,10 @@ import Blog from './Parts/Blog/blog';
 import Footer from './Parts/Footer/footer';
 
 /**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
 * Main component definition and export
 */
 
-export const Main = (props) => {
-
-    /**
-    * Methods
-    */
-
-  
+export const Main = () => {
 
     /**
     * Markup
@@ -81,18 +53,5 @@ export const Main = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedback: Selectors.getFeedbackState(state),
-            // dots: Selectors.getDotsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
-        };
-    }
-)(Main);
+export default Main;
  
