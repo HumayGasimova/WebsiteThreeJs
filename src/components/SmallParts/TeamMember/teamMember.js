@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 /**
 * Styles
@@ -25,7 +22,6 @@ import SocialMediaIcons from '../../SmallParts/SocialMediaIcons/socialMediaIcons
 
 import Image1 from '../../../images/Portrait_Placeholder.png';
 
-
 /**
 * TeamMember component definition and export
 */
@@ -33,20 +29,15 @@ import Image1 from '../../../images/Portrait_Placeholder.png';
 export const TeamMember = (props) => {
 
     /**
-    * State
-    */
-
-    /**
     * Methods
     */
 
-   const renderIamge = (img) => {
+    const renderIamge = (img) => {
         switch(img) {
             case "Image1":
                 return Image1;
         }
     }
-
 
     /**
     * Markup

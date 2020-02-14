@@ -3,33 +3,14 @@
 */
 
 import React, {
-    useEffect,
     useState
 } from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
 
 /**
 * Styles
 */
 
 import './comment.scss';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
 
 /**
 * Components
@@ -39,39 +20,10 @@ import Button from '../../../library/Button/button';
 import Input from '../../../library/Input/input';
 
 /**
-* Icons
-*/
-
-import { 
-    faChevronLeft,
-    faChevronRight
-} from '@fortawesome/free-solid-svg-icons';
-
-/**
-* Constants
-*/
-
-import {
-    feedbacksArray
-} from '../../../constants/feedbacks';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
 * Images
 */
 
 import Img1 from '../../../images/Portrait_Placeholder.png';
-
-/**
-* Utility
-*/
-
-import * as Utility from "../../../utility";
 
 /**
 * Comment component definition and export
@@ -79,7 +31,10 @@ import * as Utility from "../../../utility";
 
 export const Comment = (props) => {
 
-    // const [value, setValue] = useState('');
+    /**
+    * State
+    */
+
     const [replyInput, setReplyInput] = useState(
         {
             id: 1,
@@ -148,7 +103,6 @@ export const Comment = (props) => {
                     validField={replyInput.validField}
                     inputID={replyInput.inputID}
                 />
-            {/* <input placeholder="add coment"  id="comment" onChange={() => onChangeHandler(event)}/> */}
                 <Button 
                     className="comment-button-input"
                     text={"OK"}
@@ -185,16 +139,5 @@ export const Comment = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedbacksToShow: Selectors.getFeedbacksToShowState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // initFeedbacks: bindActionCreators(Actions.initFeedbacks, dispatch),
-        };
-    }
-)(Comment);
+export default Comment;
  

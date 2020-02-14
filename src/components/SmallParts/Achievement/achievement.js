@@ -7,56 +7,11 @@ import React, {
     useState
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
 /**
 * Styles
 */
 
 import './achievement.scss';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
-* Components
-*/
-
-/**
-* Icons
-*/
-
-import { 
-    faChevronLeft,
-    faChevronRight
-} from '@fortawesome/free-solid-svg-icons';
-
-/**
-* Constants
-*/
-
-import {
-    feedbacksArray
-} from '../../../constants/feedbacks';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Hooks
@@ -71,6 +26,10 @@ import {
 */
 
 export const Achievement = (props) => {
+
+    /**
+    * State
+    */
     
     const [value, setValue] = useState(0);
     const [delay, setDelay] = useState(0.01);
@@ -102,16 +61,5 @@ export const Achievement = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedbacksToShow: Selectors.getFeedbacksToShowState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // initFeedbacks: bindActionCreators(Actions.initFeedbacks, dispatch),
-        };
-    }
-)(Achievement);
+export default Achievement;
  

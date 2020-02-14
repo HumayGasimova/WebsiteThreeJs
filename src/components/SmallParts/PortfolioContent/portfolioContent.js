@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 /**
 * Styles
@@ -27,12 +16,6 @@ import './portfolioContent.scss';
 
 import Button from '../../../library/Button/button';
 import Spinner from '../../../library/Spinner/spinner';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -56,10 +39,6 @@ import Pic12 from '../../../images/education-4382169_960_720.jpg';
 */
 
 export const PortfolioContent = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -152,16 +131,5 @@ export const PortfolioContent = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // singlePortfolio: Selectors.getSinglePortfolioState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // startInitPortfolioSingle: bindActionCreators(Actions.startInitPortfolioSingle, dispatch),
-        };
-    }
-)(PortfolioContent);
+export default PortfolioContent;
  

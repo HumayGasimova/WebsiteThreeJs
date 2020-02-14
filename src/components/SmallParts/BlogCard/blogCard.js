@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect,
-    useState
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 import { 
     FontAwesomeIcon 
@@ -26,36 +15,12 @@ import {
 import './blogCard.scss';
 
 /**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
-* Components
-*/
-
-/**
 * Icons
 */
 
 import { 
   faComment
 } from '@fortawesome/free-solid-svg-icons';
-
-/**
-* Constants
-*/
-
-import {
-    feedbacksArray
-} from '../../../constants/feedbacks';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -143,16 +108,5 @@ export const BlogCard = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedbacksToShow: Selectors.getFeedbacksToShowState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // initFeedbacks: bindActionCreators(Actions.initFeedbacks, dispatch),
-        };
-    }
-)(BlogCard);
+export default BlogCard;
  

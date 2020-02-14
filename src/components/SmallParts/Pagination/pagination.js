@@ -3,8 +3,7 @@
 */
 
 import React, {
-    useEffect,
-    useState
+    useEffect
 } from 'react';
 
 import {
@@ -30,31 +29,31 @@ import {
 import './pagination.scss';
 
 /**
-* Icons
-*/
-
-import { 
-    faChevronLeft,
-    faChevronRight  
-} from '@fortawesome/free-solid-svg-icons'
-
-/**
 * Components
 */
 
 import Button from '../../../library/Button/button';
 
 /**
-* Selectors
+* Icons
 */
 
-import * as Selectors from '../../../reducers/selectors';
+import { 
+    faChevronLeft,
+    faChevronRight  
+} from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Actions
 */
 
 import * as Actions from '../../../actions';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Pagination component definition and export
@@ -152,7 +151,7 @@ export default connect(
         return {
             paging: Selectors.getPagingState(state),
             padinationArrowLeft: Selectors.getPadinationArrowLeftState(state),
-            padinationArrowRight: Selectors.getPadinationArrowRightState(state),
+            padinationArrowRight: Selectors.getPadinationArrowRightState(state)
         };
     },
     (dispatch) => {
@@ -164,7 +163,7 @@ export default connect(
             disablePaginationArrowButton: bindActionCreators(Actions.disablePaginationArrowButton, dispatch),
             choosePage: bindActionCreators(Actions.choosePage, dispatch),
             startChoosingBlogCardsOnArrowButton: bindActionCreators(Actions.startChoosingBlogCardsOnArrowButton, dispatch),
-            startChoosingSingleBlogCardsOnArrowButton: bindActionCreators(Actions.startChoosingSingleBlogCardsOnArrowButton, dispatch),
+            startChoosingSingleBlogCardsOnArrowButton: bindActionCreators(Actions.startChoosingSingleBlogCardsOnArrowButton, dispatch)
         };
     }
 )(withRouter(Pagination));

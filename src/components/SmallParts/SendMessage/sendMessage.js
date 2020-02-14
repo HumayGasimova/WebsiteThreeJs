@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect,
-    useState
-} from 'react';
+import React from 'react';
 
 import {
     connect
@@ -14,11 +11,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
 
 /**
 * Styles
@@ -131,14 +123,14 @@ export const SendMessage = (props) => {
 export default connect(
     (state) => {
         return {
-            sendMessageForm: Selectors.getSendMessageFormState(state),
+            sendMessageForm: Selectors.getSendMessageFormState(state)
         };
     },
     (dispatch) => {
         return {
             initSendMessageForm: bindActionCreators(Actions.initSendMessageForm, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
-            postMessage: bindActionCreators(Actions.postMessage, dispatch),
+            postMessage: bindActionCreators(Actions.postMessage, dispatch)
         };
     }
 )(SendMessage);

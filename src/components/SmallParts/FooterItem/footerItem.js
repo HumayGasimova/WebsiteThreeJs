@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect,
-    useState
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 import { 
     FontAwesomeIcon 
@@ -35,17 +24,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 /**
-* Components
-*/
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-
-/**
 * FooterItem component definition and export
 */
 
@@ -54,10 +32,6 @@ export const FooterItem = (props) => {
     /**
     * Methods
     */
-
-    const viewBlogCardOnClick = (path) => {
-        props.history.push(`/${path}`);
-    }
 
     const renderLinks = () => {
         return(
@@ -88,16 +62,5 @@ export const FooterItem = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedback: Selectors.getFeedbackState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-        };
-    }
-)(FooterItem);
+export default FooterItem;
  

@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import { 
     FontAwesomeIcon 
@@ -33,11 +30,7 @@ import {
 */
 
 export const Service = (props) => {
-
-    /**
-    * State
-    */
-   
+    
     /**
     * Methods
     */
