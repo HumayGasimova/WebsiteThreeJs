@@ -319,7 +319,6 @@ const postComment = (state, action) => {
                 }
                 
         })
-        console.log(updatedLeaveCommentForm)
     }
     
     return {

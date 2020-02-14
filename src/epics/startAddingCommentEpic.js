@@ -38,7 +38,6 @@ export const startAddingCommentEpic = (action$, state$) =>
         ofType(actionTypes.START_ADDING_REPLY),
         mergeMap((action) => {
             let date = Utility.getCurrentDateAndTime();
-            console.log(date)
             let singlePortfolio = {...state$.value.home.singlePortfolio};
             let comment;
             let updatedObj;
