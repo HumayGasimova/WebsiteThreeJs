@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     withRouter
@@ -18,6 +15,12 @@ import {
 import {
     bindActionCreators
 } from 'redux';
+
+/**
+* Styles
+*/
+
+import './toolbar.scss';
 
 /**
 * Components
@@ -34,24 +37,14 @@ import Backdrop from '../../../library/Backdrop/backdrop';
 import * as Actions from '../../../actions';
 
 /**
-* Styles
-*/
-
-import './toolbar.scss';
-
-/**
 * Selectors
 */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Hooks
+* Constants
 */
-
-import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
 
 import {
     toolabarItems
@@ -62,12 +55,6 @@ import {
 */
 
 export const Toolbar = (props) => {
-
-    /**
-    * State
-    */
-
-    const size = useWindowSize();
 
     /**
     * Methods
@@ -88,14 +75,12 @@ export const Toolbar = (props) => {
                         className="toolbar-item"
                         onClick={() => toolbarOnClick(el.path)}
                         optionClassName="toolbar-item-options"
-                        // toolBarInit={toolBarInit}
-                        // id={el.itemId}
-                        // active={el.itemId === props.activatedIcon}
                     />
                 )
             })}</>
         )
     }
+
     const renderBackdrop = () => {
         if(props.menuButtonIsPressed){
             return(
@@ -141,13 +126,13 @@ export const Toolbar = (props) => {
  export default connect(
     (state) => {
         return {
-            menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state)
         };
     },
     (dispatch) => {
         return {
             toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-            menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch),
+            menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch)
         };
     }
 )(withRouter(Toolbar));

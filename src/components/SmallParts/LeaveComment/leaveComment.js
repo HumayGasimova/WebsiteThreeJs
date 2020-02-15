@@ -3,8 +3,7 @@
 */
 
 import React, {
-    useEffect,
-    useState
+    useEffect
 } from 'react';
 
 import {
@@ -14,11 +13,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
 
 /**
 * Styles

@@ -2,18 +2,13 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
-import {
-    connect
-} from 'react-redux';
+/**
+* Styles
+*/
 
-import {
-    bindActionCreators
-} from 'redux';
+import './aboutPage.scss';
 
 /**
 * Components
@@ -26,36 +21,10 @@ import Footer from '../../Parts/Footer/footer';
 import Team from '../../Parts/Team/team';
 
 /**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
-* Styles
-*/
-
-import './aboutPage.scss';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
 * AboutPage component definition and export
 */
 
-export const AboutPage = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const AboutPage = () => {
 
     /**
     * Markup
@@ -78,16 +47,6 @@ export const AboutPage = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(AboutPage);
+
+export default AboutPage;
  

@@ -3,8 +3,7 @@
 */
 
 import React, {
-    useState,
-    useEffect
+    useState
 } from 'react';
 
 /**

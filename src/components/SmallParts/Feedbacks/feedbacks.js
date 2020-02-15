@@ -40,14 +40,14 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
-*/
-
-/**
 * Feedbacks component definition and export
 */
 
 export const Feedbacks = (props) => {
+
+    /**
+    * State
+    */
 
     const select = React.createRef();
 
@@ -204,15 +204,14 @@ export default connect(
     (state) => {
         return {
             dots: Selectors.getDotsState(state),
-            feedbacksStyle: Selectors.getFeedbacksStyleState(state),
-            feedbacksOnScroll: Selectors.getFeedbacksOnScrollState(state)
+            feedbacksStyle: Selectors.getFeedbacksStyleState(state)
         };
     },
     (dispatch) => {
         return {
             chooseDotOnScroll: bindActionCreators(Actions.chooseDotOnScroll, dispatch),
             startAddingClassNameToFeedbackCard: bindActionCreators(Actions.startAddingClassNameToFeedbackCard, dispatch),
-            chooseFeedback: bindActionCreators(Actions.chooseFeedback, dispatch),
+            chooseFeedback: bindActionCreators(Actions.chooseFeedback, dispatch)
         };
     }
 )(Feedbacks);

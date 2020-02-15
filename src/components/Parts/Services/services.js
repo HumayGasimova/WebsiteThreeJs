@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect,
-    useState
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 /**
 * Styles
@@ -28,12 +17,6 @@ import './services.scss';
 import Service from '../../SmallParts/Service/service';
 
 /**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
 * Constants
 */
 
@@ -45,7 +28,7 @@ import {
 * Services component definition and export
 */
 
-export const Services = (props) => {
+export const Services = () => {
 
     /**
     * Methods
@@ -89,18 +72,5 @@ export const Services = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedback: Selectors.getFeedbackState(state),
-            // dots: Selectors.getDotsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
-        };
-    }
-)(Services);
+export default Services;
  

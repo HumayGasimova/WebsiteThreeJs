@@ -9,6 +9,12 @@ import {
 } from '@fortawesome/react-fontawesome';
 
 /**
+* Styles
+*/
+
+import './socialMediaIcons.scss';
+
+/**
 * Icons
 */
 
@@ -18,12 +24,6 @@ import {
     faInstagram,
     faTwitter
 } from '@fortawesome/fontawesome-free-brands'
-
-/**
-* Styles
-*/
-
-import './socialMediaIcons.scss';
 
 /**
 * SocialMediaIcons component definition and export

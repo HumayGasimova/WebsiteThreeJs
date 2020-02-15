@@ -102,9 +102,7 @@ export const Blog = (props) => {
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </div>
             </div>
-            {/* <div > */}
-                {renderBlogCards()}
-            {/* </div> */}
+            {renderBlogCards()}
         </div>
     );
 }
@@ -112,14 +110,12 @@ export const Blog = (props) => {
 export default connect(
     (state) => {
         return {
-            blogCardsToShow: Selectors.getBlogCardsToShowState(state),
-            // dots: Selectors.getDotsState(state)
+            blogCardsToShow: Selectors.getBlogCardsToShowState(state)
         };
     },
     (dispatch) => {
         return {
-            initBlogCards: bindActionCreators(Actions.initBlogCards, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
+            initBlogCards: bindActionCreators(Actions.initBlogCards, dispatch)
         };
     }
 )(withRouter(Blog));

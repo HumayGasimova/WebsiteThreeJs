@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 import { 
     FontAwesomeIcon 
@@ -26,33 +15,11 @@ import {
 import './footer.scss';
 
 /**
-* Icons
-*/
-
-import { 
-    faPhoneAlt,
-    faEnvelope,
-    faMapMarkerAlt    
-} from '@fortawesome/free-solid-svg-icons'
-
-/**
 * Components
 */
 
 import FooterItem from '../../SmallParts/FooterItem/footerItem';
 import SocialMediaIcons from '../../SmallParts/SocialMediaIcons/socialMediaIcons';
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Constants
@@ -63,10 +30,20 @@ import {
 } from '../../../constants/footerInfo';
 
 /**
+* Icons
+*/
+
+import { 
+    faPhoneAlt,
+    faEnvelope,
+    faMapMarkerAlt    
+} from '@fortawesome/free-solid-svg-icons'
+
+/**
 * Footer component definition and export
 */
 
-export const Footer = (props) => {
+export const Footer = () => {
 
     /**
     * Methods
@@ -125,18 +102,5 @@ export const Footer = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedback: Selectors.getFeedbackState(state),
-            // dots: Selectors.getDotsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
-        };
-    }
-)(Footer);
+export default Footer;
  

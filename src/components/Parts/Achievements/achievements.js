@@ -7,14 +7,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
 * Styles
 */
@@ -28,22 +20,10 @@ import './achievements.scss';
 import Achievement from '../../SmallParts/Achievement/achievement';
 
 /**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
 * Achievements component definition and export
 */
 
-export const Achievements = (props) => {
+export const Achievements = () => {
 
     const [showComponent, setShowComponent] = useState(false);
 
@@ -61,7 +41,6 @@ export const Achievements = (props) => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-
         return () => window.removeEventListener('scroll', handleScroll)
     }, []);
 
@@ -109,18 +88,5 @@ export const Achievements = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedback: Selectors.getFeedbackState(state),
-            // dots: Selectors.getDotsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
-        };
-    }
-)(Achievements);
+export default Achievements;
  

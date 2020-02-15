@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 /**
 * Styles
@@ -25,14 +14,7 @@ import './blogContent.scss';
 * Components
 */
 
-import Button from '../../../library/Button/button';
 import Spinner from '../../../library/Spinner/spinner';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -58,10 +40,6 @@ import Image14 from '../../../images/blogImages/pink-floral-wooden-rack-filled-w
 */
 
 export const BlogContent = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -150,16 +128,5 @@ export const BlogContent = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            singleBlog: Selectors.getSingleBlogState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // startInitPortfolioSingle: bindActionCreators(Actions.startInitPortfolioSingle, dispatch),
-        };
-    }
-)(BlogContent);
+export default BlogContent;
  

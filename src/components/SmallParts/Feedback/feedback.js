@@ -3,29 +3,12 @@
 */
 
 import React, {
-    useEffect,
-    useState
+    useEffect
 } from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
 
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
-
-/**
-* Icons
-*/
-
-import { 
-   faQuoteLeft
-} from '@fortawesome/free-solid-svg-icons'
 
 /**
 * Styles
@@ -34,14 +17,12 @@ import {
 import './feedback.scss';
 
 /**
-* Components
+* Icons
 */
 
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
+import { 
+    faQuoteLeft
+ } from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Images
@@ -54,6 +35,10 @@ import Img1 from '../../../images/Portrait_Placeholder.png';
 */
 
 export const Feedback = (props) => {
+
+    /**
+    * State
+    */
     
     const select = React.createRef();
 
@@ -79,8 +64,7 @@ export const Feedback = (props) => {
 
     return(
         <div 
-            className="feedback" 
-            // style={{left: `${props.leftPosition}px`}} 
+            className="feedback"
             ref={select}
         >
             <div className="feedback-clear">
@@ -100,16 +84,5 @@ export const Feedback = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedback: Selectors.getFeedbackState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-        };
-    }
-)(Feedback);
+export default Feedback;
  

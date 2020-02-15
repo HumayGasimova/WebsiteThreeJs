@@ -2,30 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
-import TeamMember from '../../SmallParts/TeamMember/teamMember';
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
+import React from 'react';
 
 /**
 * Styles
@@ -34,11 +11,10 @@ import TeamMember from '../../SmallParts/TeamMember/teamMember';
 import './team.scss';
 
 /**
-* Selectors
+* Components
 */
 
-// import * as Selectors from '../../../reducers/selectors';
-
+import TeamMember from '../../SmallParts/TeamMember/teamMember';
 
 /**
 * Constants
@@ -52,11 +28,7 @@ import {
 * Team component definition and export
 */
 
-export const Team = (props) => {
-
-    /**
-    * State
-    */
+export const Team = () => {
 
     /**
     * Methods
@@ -103,16 +75,6 @@ export const Team = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(Team);
+
+export default Team;
  

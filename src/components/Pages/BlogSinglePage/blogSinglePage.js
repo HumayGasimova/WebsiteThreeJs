@@ -20,6 +20,12 @@ import {
 } from 'react-router-dom';
 
 /**
+* Styles
+*/
+
+import './blogSinglePage.scss';
+
+/**
 * Components
 */
 
@@ -38,12 +44,6 @@ import Footer from '../../Parts/Footer/footer';
 import * as Actions from '../../../actions';
 
 /**
-* Styles
-*/
-
-import './blogSinglePage.scss';
-
-/**
 * Selectors
 */
 
@@ -56,10 +56,6 @@ import * as Selectors from '../../../reducers/selectors';
 import {
     portfolioArray
 } from '../../../constants/portfolio';
-
-import {
-    blogCards
-} from '../../../constants/blogCards';
 
 /**
 * BlogSinglePage component definition and export
@@ -162,13 +158,13 @@ export default connect(
     (state) => {
         return {
             singleBlog: Selectors.getSingleBlogState(state),
-            portfolio: Selectors.getPortfolioState(state),
+            portfolio: Selectors.getPortfolioState(state)
         };
     },
     (dispatch) => {
         return {
             startInitBlogSingle: bindActionCreators(Actions.startInitBlogSingle, dispatch),
-            initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch),
+            initPortfolio: bindActionCreators(Actions.initPortfolio, dispatch)
         };
     }
 )(withRouter(BlogSinglePage));

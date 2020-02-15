@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useEffect,
-    useState
-} from 'react';
+import React from 'react';
 
 import {
     connect
@@ -15,24 +12,11 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-
 /**
 * Styles
 */
 
 import './portfolioComments.scss';
-
-/**
-* Icons
-*/
-
-import { 
-    faCaretRight  
-} from '@fortawesome/free-solid-svg-icons'
 
 /**
 * Components
@@ -47,13 +31,6 @@ import Spinner from '../../../library/Spinner/spinner';
 */
 
 import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
-
 
 /**
 * PortfolioComments component definition and export
@@ -132,11 +109,7 @@ export const PortfolioComments = (props) => {
 }
 
 export default connect(
-    (state) => {
-        return {
-            // comments: Selectors.getSinglePortfolioState(state).comments,
-        };
-    },
+    null,
     (dispatch) => {
         return {
             startAddingReply: bindActionCreators(Actions.startAddingReply, dispatch),

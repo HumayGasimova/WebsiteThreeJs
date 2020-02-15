@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     connect
@@ -24,22 +21,16 @@ import {
 } from 'react-router-dom';
 
 /**
-* Components
-*/
-
-import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
 * Styles
 */
 
 import './sidebar.scss';
+
+/**
+* Components
+*/
+
+import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
 
 /**
 * Selectors
@@ -48,12 +39,8 @@ import './sidebar.scss';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Hooks
+* Constants
 */
-
-import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
 
 import {
     toolabarItems
@@ -64,12 +51,6 @@ import {
 */
 
 export const Sidebar = (props) => {
-
-    /**
-    * State
-    */
-
-    const size = useWindowSize();
 
     /**
     * Methods
@@ -91,19 +72,11 @@ export const Sidebar = (props) => {
                             options={el.options}
                             onClick={() => sidebarOnClick(el.path)}
                             optionClassName="sidebar-item-options"
-                            // toolBarInit={toolBarInit}
-                            // id={el.itemId}
-                            // active={el.itemId === props.activatedIcon}
                         />
                     )
             })}</div>
         )
     }
-
-    // useEffect(()=>{
-    //     addEventListener('scroll', handleScroll)
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
 
     /**
     * Markup
@@ -132,11 +105,6 @@ export const Sidebar = (props) => {
     (state) => {
         return {
             menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
 )(withRouter(Sidebar));
